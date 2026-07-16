@@ -7,7 +7,7 @@
   --bright-blue: #1f65ff;
   --orange: #ff6a00;
   --green: #0ba85b;
-  --cream: #f4f0e7;
+  --cream: #f8f5ee;
   --white: #ffffff;
   --text: #071326;
   --grey: #657086;
@@ -773,7 +773,7 @@ img {
 
   color: var(--white);
 
-  background: var(--navy);
+  background: #0b234d;
 }
 
 .roadmap-image {

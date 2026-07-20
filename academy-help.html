@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>
+
+Help & Support |
+FIFA Mission India
+
+</title>
+
+<link
+rel="stylesheet"
+href="academy-help.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar"
+>
+
+<div class="academy-sidebar-top">
+
+<div class="academy-logo">
+
+<img
+src="images/logo.png"
+alt="FIFA Mission India Logo"
+/>
+
+<div>
+
+<h3>FIFA Mission India</h3>
+
+<p>Academy Portal</p>
+
+</div>
+
+</div>
+
+<button
+id="academySidebarClose"
+class="academy-icon-button"
+type="button"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches
+
+</a>
+
+<a href="academy-messages.html">
+
+<i class="fa-solid fa-comments"></i>
+
+Messages
+
+</a>
+
+<a href="academy-notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+<a href="academy-documents.html">
+
+<i class="fa-solid fa-folder-open"></i>
+
+Documents
+
+</a>
+
+<a href="academy-settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+<a
+class="active"
+href="academy-help.html"
+>
+
+<i class="fa-solid fa-circle-question"></i>
+
+Help & Support
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+id="academySidebarOverlay"
+hidden
+></div>
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<div class="academy-main">
+
+<!-- =====================================================
+     TOPBAR
+====================================================== -->
+
+<header class="academy-topbar">
+
+<button
+id="academySidebarToggle"
+class="academy-icon-button"
+type="button"
+>
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="academy-topbar-right">
+
+<button
+class="academy-icon-button"
+type="button"
+>
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<div
+class="academy-profile"
+id="academyProfileTrigger"
+>
+
+<img
+src="images/admin.jpg"
+alt="Academy Administrator"
+/>
+
+<span>
+
+Green Valley Football Academy
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div
+id="academyProfileDropdown"
+class="academy-dropdown"
+hidden
+>
+
+<a href="academy-profile.html">
+
+Profile
+
+</a>
+
+<a href="academy-settings.html">
+
+Settings
+
+</a>
+
+<button
+id="academyLogoutButton"
+type="button"
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="academy-page-hero">
+
+<div>
+
+<span class="academy-eyebrow">
+
+SUPPORT CENTER
+
+</span>
+
+<h2>
+
+Academy Help & Support
+
+</h2>
+
+<p>
+
+Find answers, browse guides, contact our support team,
+and keep your academy running smoothly.
+
+</p>
+
+</div>
+
+<div class="academy-help-search">
+
+<input
+id="academyHelpSearch"
+type="search"
+placeholder="Search articles, FAQs, tutorials..."
+/>
+
+<button
+id="academySearchButton"
+class="academy-primary-button"
+type="button"
+>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Search
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     QUICK HELP
+====================================================== -->
+
+<section class="academy-help-grid">
+
+<article class="academy-help-card">
+
+<div class="academy-help-icon">
+
+<i class="fa-solid fa-circle-question"></i>
+
+</div>
+
+<h3>
+
+Frequently Asked Questions
+
+</h3>
+
+<p>
+
+Browse answers to the most common academy questions.
+
+</p>
+
+<button
+class="academy-secondary-button"
+type="button"
+>
+
+View FAQs
+
+</button>
+
+</article>
+
+<article class="academy-help-card">
+
+<div class="academy-help-icon">
+
+<i class="fa-solid fa-book-open"></i>
+
+</div>
+
+<h3>
+
+Documentation
+
+</h3>
+
+<p>
+
+Read complete platform documentation and user guides.
+
+</p>
+
+<button
+class="academy-secondary-button"
+type="button"
+>
+
+Open Docs
+
+</button>
+
+</article>
+
+<article class="academy-help-card">
+
+<div class="academy-help-icon">
+
+<i class="fa-solid fa-circle-play"></i>
+
+</div>
+
+<h3>
+
+Video Tutorials
+
+</h3>
+
+<p>
+
+Watch step-by-step tutorials for every academy feature.
+
+</p>
+
+<button
+class="academy-secondary-button"
+type="button"
+>
+
+Watch Videos
+
+</button>
+
+</article>
+
+<article class="academy-help-card">
+
+<div class="academy-help-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h3>
+
+Community Forum
+
+</h3>
+
+<p>
+
+Connect with other academies and share experiences.
+
+</p>
+
+<button
+class="academy-secondary-button"
+type="button"
+>
+
+Visit Community
+
+</button>
+
+</article>
+
+</section>
+
+<!-- =====================================================
+     KNOWLEDGE BASE
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+KNOWLEDGE BASE
+
+</span>
+
+<h2>
+
+Browse Help Categories
+
+</h2>
+
+<p>
+
+Explore detailed guides for every feature of the Academy Portal.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-knowledge-grid">
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Player Management</h3>
+
+<p>
+
+Register players, manage profiles and track player development.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-futbol"></i>
+
+<h3>Trials</h3>
+
+<p>
+
+Create, schedule and manage football trials efficiently.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h3>Documents</h3>
+
+<p>
+
+Upload, verify and organize academy documents securely.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<h3>Coaches</h3>
+
+<p>
+
+Manage coaching staff, assignments and certifications.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Security</h3>
+
+<p>
+
+Passwords, authentication and academy account protection.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<h3>Billing</h3>
+
+<p>
+
+Subscriptions, invoices and payment information.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-gear"></i>
+
+<h3>Settings</h3>
+
+<p>
+
+Customize branding, preferences and notifications.
+
+</p>
+
+</article>
+
+<article class="academy-knowledge-card">
+
+<i class="fa-solid fa-circle-user"></i>
+
+<h3>Account</h3>
+
+<p>
+
+Update account details and manage active sessions.
+
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+FAQ
+
+</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<p>
+
+Quick answers to the questions academies ask most often.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-faq-container">
+
+<div class="academy-faq-item active">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How do I register a new player?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Navigate to the Players section, click
+<strong>Add Player</strong>,
+fill in the required information,
+upload the necessary documents
+and save the profile.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="academy-faq-item">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How do I create a football trial?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Open the Trials page,
+select Create Trial,
+choose the venue,
+date,
+age group,
+capacity
+and publish the event.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="academy-faq-item">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How do I upload academy documents?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Go to Documents,
+select Upload,
+choose your file,
+assign the document category
+and submit it for storage.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="academy-faq-item">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How can I reset my password?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Open Settings,
+visit the Security section,
+enter your current password,
+choose a new secure password
+and save your changes.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="academy-faq-item">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How do I export academy data?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Navigate to Settings →
+Data Management
+and select the type of information
+you would like to export.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="academy-faq-item">
+
+<button
+class="academy-faq-question"
+type="button"
+>
+
+<span>
+
+How do I permanently delete my academy account?
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div class="academy-faq-answer">
+
+<p>
+
+Open Settings →
+Danger Zone
+and select
+<strong>Delete Academy Account</strong>.
+This action requires confirmation and cannot be undone.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT SUPPORT
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+CONTACT SUPPORT
+
+</span>
+
+<h2>
+
+Submit a Support Ticket
+
+</h2>
+
+<p>
+
+Need additional help? Send a ticket to our support team and we'll get back to you as soon as possible.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-support-layout">
+
+<div class="academy-support-form">
+
+<div class="academy-settings-card">
+
+<h3>
+
+Support Request
+
+</h3>
+
+<form
+id="academySupportForm"
+novalidate
+>
+
+<div class="academy-form-grid">
+
+<label>
+
+Full Name
+
+<input
+id="supportName"
+type="text"
+placeholder="Enter your full name"
+required
+/>
+
+</label>
+
+<label>
+
+Email Address
+
+<input
+id="supportEmail"
+type="email"
+placeholder="academy@example.com"
+required
+/>
+
+</label>
+
+<label>
+
+Subject
+
+<input
+id="supportSubject"
+type="text"
+placeholder="Briefly describe your issue"
+required
+/>
+
+</label>
+
+<label>
+
+Priority
+
+<select id="supportPriority">
+
+<option value="low">
+
+Low
+
+</option>
+
+<option value="medium" selected>
+
+Medium
+
+</option>
+
+<option value="high">
+
+High
+
+</option>
+
+<option value="critical">
+
+Critical
+
+</option>
+
+</select>
+
+</label>
+
+<label class="academy-full-width">
+
+Message
+
+<textarea
+id="supportMessage"
+rows="7"
+placeholder="Describe your issue in detail..."
+required
+></textarea>
+
+</label>
+
+<label class="academy-full-width">
+
+Attachment
+
+<input
+id="supportAttachment"
+type="file"
+accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+/>
+
+</label>
+
+</div>
+
+<div
+style="
+margin-top:30px;
+display:flex;
+justify-content:flex-end;
+"
+>
+
+<button
+type="submit"
+class="academy-primary-button"
+>
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Ticket
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUPPORT INFORMATION
+====================================================== -->
+
+<div class="academy-support-info">
+
+<div class="academy-settings-card">
+
+<h3>
+
+Support Information
+
+</h3>
+
+<div class="academy-info-list">
+
+<div>
+
+<i class="fa-solid fa-clock"></i>
+
+<div>
+
+<h4>
+
+Average Response Time
+
+</h4>
+
+<p>
+
+Within 24 Hours
+
+</p>
+
+</div>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-headset"></i>
+
+<div>
+
+<h4>
+
+Support Availability
+
+</h4>
+
+<p>
+
+Monday - Saturday
+
+9:00 AM - 6:00 PM
+
+</p>
+
+</div>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-language"></i>
+
+<div>
+
+<h4>
+
+Languages Supported
+
+</h4>
+
+<p>
+
+English • Hindi
+
+</p>
+
+</div>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+<h4>
+
+Official Email
+
+</h4>
+
+<p>
+
+support@fifamissionindia.com
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TICKET HISTORY
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+SUPPORT HISTORY
+
+</span>
+
+<h2>
+
+Previous Support Tickets
+
+</h2>
+
+<p>
+
+Track all your previous requests and their current status.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-settings-card">
+
+<table class="academy-simple-table">
+
+<thead>
+
+<tr>
+
+<th>
+
+Ticket ID
+
+</th>
+
+<th>
+
+Subject
+
+</th>
+
+<th>
+
+Priority
+
+</th>
+
+<th>
+
+Status
+
+</th>
+
+<th>
+
+Updated
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+#SUP-1042
+
+</td>
+
+<td>
+
+Unable to upload academy logo
+
+</td>
+
+<td>
+
+<span class="academy-badge warning">
+
+Medium
+
+</span>
+
+</td>
+
+<td>
+
+<span class="academy-badge verified">
+
+Resolved
+
+</span>
+
+</td>
+
+<td>
+
+2 Days Ago
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+#SUP-1048
+
+</td>
+
+<td>
+
+Player registration issue
+
+</td>
+
+<td>
+
+<span class="academy-badge danger">
+
+High
+
+</span>
+
+</td>
+
+<td>
+
+<span class="academy-badge pending">
+
+In Progress
+
+</span>
+
+</td>
+
+<td>
+
+Today
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+#SUP-1050
+
+</td>
+
+<td>
+
+Password reset request
+
+</td>
+
+<td>
+
+<span class="academy-badge">
+
+Low
+
+</span>
+
+</td>
+
+<td>
+
+<span class="academy-badge verified">
+
+Closed
+
+</span>
+
+</td>
+
+<td>
+
+Yesterday
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+#SUP-1053
+
+</td>
+
+<td>
+
+Trial page loading slowly
+
+</td>
+
+<td>
+
+<span class="academy-badge warning">
+
+Medium
+
+</span>
+
+</td>
+
+<td>
+
+<span class="academy-badge pending">
+
+Open
+
+</span>
+
+</td>
+
+<td>
+
+1 Hour Ago
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     PLATFORM STATUS
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+SYSTEM STATUS
+
+</span>
+
+<h2>
+
+Platform Health
+
+</h2>
+
+<p>
+
+Monitor the operational status of FIFA Mission India services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-status-grid">
+
+<div class="academy-status-card online">
+
+<div>
+
+<h3>
+
+API Services
+
+</h3>
+
+<p>
+
+Operational
+
+</p>
+
+</div>
+
+<span class="academy-status-indicator"></span>
+
+</div>
+
+<div class="academy-status-card online">
+
+<div>
+
+<h3>
+
+Cloud Storage
+
+</h3>
+
+<p>
+
+Operational
+
+</p>
+
+</div>
+
+<span class="academy-status-indicator"></span>
+
+</div>
+
+<div class="academy-status-card online">
+
+<div>
+
+<h3>
+
+Authentication
+
+</h3>
+
+<p>
+
+Operational
+
+</p>
+
+</div>
+
+<span class="academy-status-indicator"></span>
+
+</div>
+
+<div class="academy-status-card maintenance">
+
+<div>
+
+<h3>
+
+Messaging Service
+
+</h3>
+
+<p>
+
+Scheduled Maintenance
+
+</p>
+
+</div>
+
+<span class="academy-status-indicator"></span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     USEFUL RESOURCES
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-section-heading">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+RESOURCES
+
+</span>
+
+<h2>
+
+Useful Links
+
+</h2>
+
+<p>
+
+Helpful documentation and important platform resources.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-button-grid">
+
+<button
+type="button"
+class="academy-secondary-button"
+>
+
+<i class="fa-solid fa-book"></i>
+
+User Guide
+
+</button>
+
+<button
+type="button"
+class="academy-secondary-button"
+>
+
+<i class="fa-solid fa-code"></i>
+
+Developer Docs
+
+</button>
+
+<button
+type="button"
+class="academy-secondary-button"
+>
+
+<i class="fa-solid fa-file-lines"></i>
+
+Release Notes
+
+</button>
+
+<button
+type="button"
+class="academy-secondary-button"
+>
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+Terms & Conditions
+
+</button>
+
+<button
+type="button"
+class="academy-secondary-button"
+>
+
+<i class="fa-solid fa-user-shield"></i>
+
+Privacy Policy
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EMERGENCY SUPPORT
+====================================================== -->
+
+<section class="academy-help-section">
+
+<div class="academy-settings-card academy-emergency-card">
+
+<div class="academy-emergency-content">
+
+<div>
+
+<span class="academy-section-eyebrow">
+
+24/7 SUPPORT
+
+</span>
+
+<h2>
+
+Need Immediate Assistance?
+
+</h2>
+
+<p>
+
+For critical issues affecting academy operations,
+contact our emergency support team.
+
+</p>
+
+</div>
+
+<div class="academy-emergency-actions">
+
+<div>
+
+<i class="fa-solid fa-envelope"></i>
+
+<strong>Email</strong>
+
+<p>
+
+support@fifamissionindia.com
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-phone"></i>
+
+<strong>Phone</strong>
+
+<p>
+
++91 1800 000 000
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-clock"></i>
+
+<strong>Business Hours</strong>
+
+<p>
+
+Mon – Sat • 9:00 AM – 6:00 PM
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden
+>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2
+id="academyLogoutModalTitle"
+>
+
+Logout?
+
+</h2>
+
+<p>
+
+Are you sure you want to logout from your academy account?
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+type="button"
+class="academy-secondary-button"
+data-close-logout
+>
+
+Cancel
+
+</button>
+
+<button
+id="academyConfirmLogout"
+type="button"
+class="academy-danger-button"
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST CONTAINER
+====================================================== -->
+
+<div
+id="academyToastContainer"
+class="academy-toast-container"
+></div>
+
+
+
+<!-- =====================================================
+     BACKEND PLACEHOLDERS
+====================================================== -->
+
+<!--
+
+=========================
+Mr. Harsh Backend APIs
+=========================
+
+GET    /api/support/articles
+
+GET    /api/support/faqs
+
+GET    /api/support/tickets
+
+POST   /api/support/ticket
+
+POST   /api/support/upload
+
+GET    /api/support/status
+
+GET    /api/support/resources
+
+=========================
+Future Enhancements
+=========================
+
+• AI Help Assistant
+• Live Chat
+• Video Call Support
+• WhatsApp Support
+• Screen Sharing
+• Ticket Rating
+• Community Discussions
+• Smart Search
+• Knowledge Analytics
+• Ticket Notifications
+
+-->
+
+</div>
+
+<script src="academy-help.js"></script>
+
+</body>
+
+</html>

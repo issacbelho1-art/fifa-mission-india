@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore the latest football news, academy updates, grassroots stories, player development news and Mission FIFA 2034 announcements."
+  >
+
+  <title>Football News | FIFA Mission India</title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/news.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="news-page-loader"
+    id="newsPageLoader"
+    aria-label="Loading football news"
+  >
+
+    <div class="news-page-loader-spinner"></div>
+
+    <p>
+      Loading football stories...
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="news-navbar"
+    id="newsNavbar"
+  >
+
+    <div class="news-navbar-container">
+
+
+      <a
+        href="index.html"
+        class="news-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="news-brand-icon">
+          <i class="fa-solid fa-futbol"></i>
+        </span>
+
+        <span class="news-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="news-desktop-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#vision">
+          Vision
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a
+          href="news.html"
+          class="active"
+        >
+          News
+        </a>
+
+      </nav>
+
+
+      <div class="news-navbar-actions">
+
+        <a
+          href="register.html"
+          class="news-join-button"
+        >
+
+          Join the Mission
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <button
+          class="news-menu-toggle"
+          id="newsMenuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="newsMobileMenu"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE OVERLAY
+  ====================================================== -->
+
+  <div
+    class="news-mobile-overlay"
+    id="newsMobileOverlay"
+    hidden
+  ></div>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <aside
+    class="news-mobile-menu"
+    id="newsMobileMenu"
+    aria-label="Mobile navigation"
+    hidden
+  >
+
+    <div class="news-mobile-menu-header">
+
+      <strong>
+        Navigation
+      </strong>
+
+      <button
+        id="newsMobileMenuClose"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <nav>
+
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home
+      </a>
+
+      <a href="index.html#vision">
+        <i class="fa-solid fa-bullseye"></i>
+        Vision 2034
+      </a>
+
+      <a href="players.html">
+        <i class="fa-solid fa-person-running"></i>
+        Players
+      </a>
+
+      <a href="academies.html">
+        <i class="fa-solid fa-building"></i>
+        Academies
+      </a>
+
+      <a href="news.html">
+        <i class="fa-regular fa-newspaper"></i>
+        Football News
+      </a>
+
+      <a href="register.html">
+        <i class="fa-solid fa-user-plus"></i>
+        Join the Mission
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
+  <main
+  class="news-main"
+  id="newsMain"
+>
+
+
+    <!-- ===================================================
+         NEWS HERO
+    ==================================================== -->
+
+    <section class="news-hero">
+
+      <div class="news-hero-background"></div>
+
+      <div class="news-hero-container">
+
+        <div class="news-hero-content">
+
+          <span class="news-hero-eyebrow">
+
+            <i class="fa-regular fa-newspaper"></i>
+
+            Football Newsroom
+
+          </span>
+
+
+          <h1>
+            Stories Building the Future of
+            <span>Indian Football</span>
+          </h1>
+
+
+          <p>
+            Follow the latest Mission FIFA 2034 announcements, academy stories,
+            grassroots development, player journeys, trials, events and
+            football community updates from across India.
+          </p>
+
+
+          <div class="news-hero-actions">
+
+            <a
+              href="#latestStories"
+              class="news-primary-button"
+            >
+
+              Explore Latest Stories
+
+              <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a
+              href="register.html"
+              class="news-secondary-button"
+            >
+
+              Join the Mission
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="news-hero-stats">
+
+          <div class="news-hero-stat">
+
+            <strong id="newsTotalArticles">
+              0
+            </strong>
+
+            <span>
+              Published Stories
+            </span>
+
+          </div>
+
+
+          <div class="news-hero-stat">
+
+            <strong>
+              6
+            </strong>
+
+            <span>
+              News Categories
+            </span>
+
+          </div>
+
+
+          <div class="news-hero-stat">
+
+            <strong>
+              2034
+            </strong>
+
+            <span>
+              National Mission
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FEATURED ARTICLE
+    ==================================================== -->
+
+    <section class="news-featured-section">
+
+      <div class="news-page-container">
+
+        <div class="news-section-heading">
+
+          <div>
+
+            <span class="news-section-eyebrow">
+              Featured Story
+            </span>
+
+            <h2>
+              Today's Top Football Story
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <article
+          class="news-featured-article"
+          id="newsFeaturedArticle"
+        >
+
+          <!-- Rendered by news.js -->
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         LATEST NEWS
+    ==================================================== -->
+
+    <section
+      class="news-latest-section"
+      id="latestStories"
+    >
+
+      <div class="news-page-container">
+
+
+        <div class="news-latest-header">
+
+          <div class="news-section-heading">
+
+            <span class="news-section-eyebrow">
+              Latest Updates
+            </span>
+
+            <h2>
+              Explore Football Stories
+            </h2>
+
+            <p>
+              Browse mission updates, grassroots development, academy news,
+              player stories, community updates and football events.
+            </p>
+
+          </div>
+
+
+          <div class="news-search-wrapper">
+
+            <label
+              class="sr-only"
+              for="newsSearchInput"
+            >
+              Search football news
+            </label>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              id="newsSearchInput"
+              type="search"
+              placeholder="Search football stories..."
+              autocomplete="off"
+            >
+
+            <button
+              id="newsClearSearch"
+              type="button"
+              aria-label="Clear search"
+              hidden
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- CATEGORY FILTERS -->
+
+        <div
+          class="news-filter-bar"
+          id="newsFilterBar"
+          aria-label="Filter news by category"
+        >
+
+          <button
+            class="news-filter-button active"
+            type="button"
+            data-category="all"
+          >
+            All Stories
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Mission Update"
+          >
+            Mission Updates
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Grassroots"
+          >
+            Grassroots
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Academies"
+          >
+            Academies
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Players"
+          >
+            Players
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Community"
+          >
+            Community
+          </button>
+
+          <button
+            class="news-filter-button"
+            type="button"
+            data-category="Events"
+          >
+            Events
+          </button>
+
+        </div>
+
+
+        <!-- RESULTS INFORMATION -->
+
+        <div class="news-results-row">
+
+          <p id="newsResultsText">
+            Showing all football stories
+          </p>
+
+          <select
+            id="newsSortSelect"
+            aria-label="Sort football stories"
+          >
+
+            <option value="latest">
+              Latest First
+            </option>
+
+            <option value="oldest">
+              Oldest First
+            </option>
+
+            <option value="title">
+              Title A–Z
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- NEWS GRID -->
+
+        <div
+          class="news-all-grid"
+          id="newsAllGrid"
+          aria-live="polite"
+        >
+
+          <!-- News cards rendered by news.js -->
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+          class="news-empty-state"
+          id="newsEmptyState"
+          hidden
+        >
+
+          <div class="news-empty-icon">
+            <i class="fa-regular fa-newspaper"></i>
+          </div>
+
+          <h3>
+            No Football Stories Found
+          </h3>
+
+          <p>
+            Try changing the selected category or searching with a different
+            keyword.
+          </p>
+
+          <button
+            id="newsResetFilters"
+            type="button"
+          >
+            Reset Filters
+          </button>
+
+        </div>
+
+
+        <!-- LOAD MORE -->
+
+        <div
+          class="news-load-more-wrapper"
+          id="newsLoadMoreWrapper"
+        >
+
+          <button
+            class="news-load-more-button"
+            id="newsLoadMoreButton"
+            type="button"
+          >
+
+            Load More Stories
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWS CATEGORIES
+    ==================================================== -->
+
+    <section class="news-categories-section">
+
+      <div class="news-page-container">
+
+        <div class="news-section-heading news-heading-centered">
+
+          <span class="news-section-eyebrow">
+            Explore by Topic
+          </span>
+
+          <h2>
+            Football News Categories
+          </h2>
+
+          <p>
+            Discover stories from every part of India's football development
+            ecosystem.
+          </p>
+
+        </div>
+
+
+        <div class="news-category-grid">
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Mission Update"
+          >
+
+            <span>
+              <i class="fa-solid fa-bullhorn"></i>
+            </span>
+
+            <h3>
+              Mission Updates
+            </h3>
+
+            <p>
+              Important announcements and progress from Mission FIFA 2034.
+            </p>
+
+          </button>
+
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Grassroots"
+          >
+
+            <span>
+              <i class="fa-solid fa-seedling"></i>
+            </span>
+
+            <h3>
+              Grassroots
+            </h3>
+
+            <p>
+              Local football development, coaching and youth programs.
+            </p>
+
+          </button>
+
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Academies"
+          >
+
+            <span>
+              <i class="fa-solid fa-building"></i>
+            </span>
+
+            <h3>
+              Academies
+            </h3>
+
+            <p>
+              Academy achievements, programs, facilities and trials.
+            </p>
+
+          </button>
+
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Players"
+          >
+
+            <span>
+              <i class="fa-solid fa-person-running"></i>
+            </span>
+
+            <h3>
+              Player Stories
+            </h3>
+
+            <p>
+              Player journeys, performances, opportunities and achievements.
+            </p>
+
+          </button>
+
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Community"
+          >
+
+            <span>
+              <i class="fa-solid fa-people-group"></i>
+            </span>
+
+            <h3>
+              Community
+            </h3>
+
+            <p>
+              Supporter stories, volunteers and football community movements.
+            </p>
+
+          </button>
+
+
+          <button
+            class="news-category-card"
+            type="button"
+            data-category-target="Events"
+          >
+
+            <span>
+              <i class="fa-regular fa-calendar"></i>
+            </span>
+
+            <h3>
+              Events
+            </h3>
+
+            <p>
+              Football events, tournaments, trials and national activities.
+            </p>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section class="news-newsletter-section">
+
+      <div class="news-newsletter-container">
+
+        <div class="news-newsletter-content">
+
+          <span>
+            Never Miss an Update
+          </span>
+
+          <h2>
+            Get Indian Football News in Your Inbox
+          </h2>
+
+          <p>
+            Receive academy updates, player stories, trials, grassroots news,
+            football events and Mission FIFA 2034 announcements.
+          </p>
+
+        </div>
+
+
+        <form
+          class="news-newsletter-form"
+          id="newsNewsletterForm"
+          novalidate
+        >
+
+          <label
+            class="sr-only"
+            for="newsNewsletterEmail"
+          >
+            Email address
+          </label>
+
+
+          <div class="news-newsletter-field">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+              id="newsNewsletterEmail"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <button type="submit">
+
+            Subscribe
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="news-footer">
+
+    <div class="news-footer-container">
+
+      <div class="news-footer-top">
+
+        <div class="news-footer-brand">
+
+          <span>
+            <i class="fa-solid fa-futbol"></i>
+          </span>
+
+          <div>
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <p>
+              Building India's football future together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="news-footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="players.html">
+            Players
+          </a>
+
+          <a href="academies.html">
+            Academies
+          </a>
+
+          <a href="news.html">
+            News
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="news-footer-bottom">
+
+        <p>
+          © 2026 FIFA Mission India. All rights reserved.
+        </p>
+
+        <div>
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="news-toast"
+    id="newsToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <i
+      id="newsToastIcon"
+      class="fa-solid fa-circle-check"
+    ></i>
+
+    <span id="newsToastMessage">
+      Action completed successfully.
+    </span>
+
+  </div>
+
+
+  <!-- PAGE JAVASCRIPT -->
+
+<script>
+  window.addEventListener("load", function () {
+
+    window.setTimeout(function () {
+
+      const loader = document.getElementById("newsPageLoader");
+      const main = document.getElementById("newsMain");
+
+      if (loader) {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        loader.style.pointerEvents = "none";
+
+        window.setTimeout(function () {
+          loader.hidden = true;
+          loader.style.display = "none";
+        }, 300);
+      }
+
+      if (main) {
+        main.hidden = false;
+      }
+
+    }, 700);
+
+  });
+</script>
+
+<script src="js/news.js"></script>
+
+</body>
+</html>

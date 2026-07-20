@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Help & Support | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="css/player-dashboard.css">
+  <link rel="stylesheet" href="css/player-help-support.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <!-- =======================================================
+         COPY THE SAME PLAYER SIDEBAR FROM player-dashboard.html
+         Set Help & Support as the active sidebar link.
+    ======================================================== -->
+
+    <main class="dashboard-main">
+
+      <!-- ================= PAGE HEADER ================= -->
+
+      <header class="support-page-header">
+
+        <div>
+          <span class="support-eyebrow">PLAYER SUPPORT</span>
+
+          <h1>Help & Support</h1>
+
+          <p>
+            Find answers, contact the support team and track your requests.
+          </p>
+        </div>
+
+        <button type="button" class="new-ticket-btn" id="openTicketBtn">
+          <i class="fa-solid fa-headset"></i>
+          Contact Support
+        </button>
+
+      </header>
+
+      <!-- ================= HERO SEARCH ================= -->
+
+      <section class="support-hero">
+
+        <div class="support-hero-copy">
+
+          <span class="hero-label">
+            FIFA MISSION INDIA SUPPORT CENTRE
+          </span>
+
+          <h2>How can we help you today?</h2>
+
+          <p>
+            Search common questions or choose a support category below.
+          </p>
+
+          <div class="support-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="supportSearch"
+              placeholder="Search profile, trials, documents, account..."
+              autocomplete="off"
+              aria-label="Search help topics"
+            >
+
+            <button type="button" id="supportSearchBtn">
+              Search
+            </button>
+
+          </div>
+
+          <div class="popular-searches">
+            <span>Popular:</span>
+
+            <button type="button" data-search-term="trial application">
+              Trial application
+            </button>
+
+            <button type="button" data-search-term="document verification">
+              Document verification
+            </button>
+
+            <button type="button" data-search-term="profile completion">
+              Profile completion
+            </button>
+          </div>
+
+        </div>
+
+        <div class="support-hero-visual" aria-hidden="true">
+
+          <div class="support-orbit orbit-one"></div>
+          <div class="support-orbit orbit-two"></div>
+
+          <div class="support-visual-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+
+          <span class="floating-support-card card-one">
+            <i class="fa-solid fa-circle-check"></i>
+            Verified support
+          </span>
+
+          <span class="floating-support-card card-two">
+            <i class="fa-solid fa-clock"></i>
+            Quick response
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= QUICK SUPPORT ================= -->
+
+      <section class="support-section">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-kicker">QUICK HELP</span>
+            <h2>Choose a support category</h2>
+            <p>Get help based on the area you are having trouble with.</p>
+          </div>
+
+        </div>
+
+        <div class="support-category-grid">
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="account"
+          >
+            <span class="category-icon">
+              <i class="fa-regular fa-user"></i>
+            </span>
+
+            <span>
+              <strong>Account & Profile</strong>
+              <small>Login, profile, personal information</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="trials"
+          >
+            <span class="category-icon">
+              <i class="fa-solid fa-futbol"></i>
+            </span>
+
+            <span>
+              <strong>Trials & Applications</strong>
+              <small>Eligibility, applications, invitations</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="documents"
+          >
+            <span class="category-icon">
+              <i class="fa-regular fa-file-lines"></i>
+            </span>
+
+            <span>
+              <strong>Documents</strong>
+              <small>Upload, verification, rejected files</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="performance"
+          >
+            <span class="category-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+
+            <span>
+              <strong>Performance Data</strong>
+              <small>Statistics, scores and assessments</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="messages"
+          >
+            <span class="category-icon">
+              <i class="fa-regular fa-message"></i>
+            </span>
+
+            <span>
+              <strong>Messages & Notifications</strong>
+              <small>Chat, alerts and communication</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+          <button
+            type="button"
+            class="support-category-card"
+            data-category="privacy"
+          >
+            <span class="category-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <span>
+              <strong>Safety & Privacy</strong>
+              <small>Security, reporting and privacy</small>
+            </span>
+
+            <i class="fa-solid fa-arrow-right category-arrow"></i>
+          </button>
+
+        </div>
+
+      </section>
+
+      <!-- ================= MAIN SUPPORT GRID ================= -->
+
+      <section class="support-main-grid">
+
+        <!-- ================= FAQ ================= -->
+
+        <div class="faq-panel">
+
+          <div class="section-heading compact-heading">
+
+            <div>
+              <span class="section-kicker">COMMON QUESTIONS</span>
+              <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <span class="faq-result-count" id="faqResultCount">
+              8 questions
+            </span>
+
+          </div>
+
+          <div class="faq-list" id="faqList">
+
+            <article
+              class="faq-item"
+              data-category="account"
+              data-search="profile completion complete player profile account percentage"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>How do I complete my player profile?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open the Profile page and complete your personal details,
+                  football information, playing position, physical information
+                  and media. Your completion percentage updates as required
+                  fields are added.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="trials"
+              data-search="trial application apply eligibility submit application"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>How can I apply for a football trial?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Visit the Trials page, open an available trial and review its
+                  eligibility requirements. Select Apply Now and confirm the
+                  information requested in the application form.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="documents"
+              data-search="document verification pending rejected upload identity"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>Why is my document verification still pending?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Verification may take time when a file is unclear, incomplete
+                  or requires manual review. Check that the document is readable
+                  and that the name and date of birth match your profile.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="documents"
+              data-search="replace rejected document upload new file"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>How do I replace a rejected document?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open Player Documents, select the rejected document and use
+                  Replace File. Review the rejection reason before uploading a
+                  clearer or corrected version.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="performance"
+              data-search="performance score statistics assessment update"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>Who updates my performance scores?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Verified coaches, academies and authorised assessors can
+                  submit performance information after training sessions,
+                  matches or official assessments.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="messages"
+              data-search="message scout academy coach reply contact communication"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>Can I directly message a scout or academy?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Messaging depends on the organisation's communication
+                  settings. You can reply to existing conversations and contact
+                  organisations that permit direct player messages.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="privacy"
+              data-search="profile privacy visibility scouts private public"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>How do I control who can view my profile?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Open Settings & Privacy and choose your preferred profile
+                  visibility. You can separately control scout discovery,
+                  academy invitations and public performance statistics.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="faq-item"
+              data-category="privacy"
+              data-search="report inappropriate message scam suspicious user safety"
+            >
+              <button type="button" class="faq-question" aria-expanded="false">
+
+                <span>How can I report suspicious or inappropriate activity?</span>
+
+                <i class="fa-solid fa-plus"></i>
+              </button>
+
+              <div class="faq-answer" hidden>
+                <p>
+                  Use the report option in the relevant profile or conversation,
+                  or submit a Safety & Privacy support request. Include enough
+                  information for the support team to review the issue.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="faq-empty-state" id="faqEmptyState" hidden>
+            <i class="fa-regular fa-circle-question"></i>
+            <h3>No matching help topic found</h3>
+            <p>Try another search or contact the support team directly.</p>
+
+            <button type="button" class="empty-contact-btn">
+              Contact Support
+            </button>
+          </div>
+
+        </div>
+
+        <!-- ================= CONTACT PANEL ================= -->
+
+        <aside class="support-side-panel">
+
+          <div class="contact-support-card">
+
+            <span class="contact-card-icon">
+              <i class="fa-solid fa-headset"></i>
+            </span>
+
+            <h2>Still need help?</h2>
+
+            <p>
+              Send your question to the FIFA Mission India support team.
+            </p>
+
+            <button type="button" class="contact-card-btn" id="sideContactBtn">
+              Submit a Request
+            </button>
+
+            <div class="support-response-time">
+              <i class="fa-regular fa-clock"></i>
+
+              <span>
+                <strong>Typical response</strong>
+                Within 24–48 hours
+              </span>
+            </div>
+
+          </div>
+
+          <div class="safety-card">
+
+            <span class="safety-icon">
+              <i class="fa-solid fa-shield-heart"></i>
+            </span>
+
+            <div>
+              <h3>Player Safety</h3>
+
+              <p>
+                Never share passwords, OTPs or payment details through messages.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="support-hours-card">
+
+            <h3>Support Hours</h3>
+
+            <div>
+              <span>Monday–Friday</span>
+              <strong>9:00 AM–6:00 PM</strong>
+            </div>
+
+            <div>
+              <span>Saturday</span>
+              <strong>10:00 AM–2:00 PM</strong>
+            </div>
+
+            <div>
+              <span>Sunday</span>
+              <strong>Closed</strong>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+      <!-- ================= RECENT REQUESTS ================= -->
+
+      <section class="support-section request-section">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-kicker">YOUR SUPPORT</span>
+            <h2>Recent Requests</h2>
+            <p>Track the status of your submitted support tickets.</p>
+          </div>
+
+          <button type="button" class="view-all-requests-btn">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </div>
+
+        <div class="support-request-list" id="supportRequestList">
+
+          <article class="support-request-card">
+
+            <div class="request-main">
+
+              <span class="request-icon">
+                <i class="fa-regular fa-file-lines"></i>
+              </span>
+
+              <div>
+                <span class="request-reference">#FMI-20341</span>
+                <h3>Document verification taking longer than expected</h3>
+                <p>Submitted 15 July 2026 · Documents</p>
+              </div>
+
+            </div>
+
+            <span class="request-status in-progress">
+              In Progress
+            </span>
+
+            <button
+              type="button"
+              class="request-details-btn"
+              aria-label="View support request FMI-20341"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+          </article>
+
+          <article class="support-request-card">
+
+            <div class="request-main">
+
+              <span class="request-icon">
+                <i class="fa-solid fa-futbol"></i>
+              </span>
+
+              <div>
+                <span class="request-reference">#FMI-20287</span>
+                <h3>Unable to submit trial application</h3>
+                <p>Submitted 9 July 2026 · Trials & Applications</p>
+              </div>
+
+            </div>
+
+            <span class="request-status resolved">
+              Resolved
+            </span>
+
+            <button
+              type="button"
+              class="request-details-btn"
+              aria-label="View support request FMI-20287"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ================= SUPPORT MODAL ================= -->
+
+  <div
+    class="support-modal"
+    id="supportModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="supportModalTitle"
+    hidden
+  >
+
+    <div class="support-modal-backdrop" data-support-close></div>
+
+    <div class="support-modal-card">
+
+      <button
+        type="button"
+        class="support-modal-close"
+        data-support-close
+        aria-label="Close support form"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-heading">
+        <span class="modal-icon">
+          <i class="fa-solid fa-headset"></i>
+        </span>
+
+        <div>
+          <span class="section-kicker">CONTACT SUPPORT</span>
+          <h2 id="supportModalTitle">Submit a Support Request</h2>
+
+          <p>
+            Give us enough detail so the support team can assist you.
+          </p>
+        </div>
+      </div>
+
+      <form id="supportTicketForm">
+
+        <div class="ticket-form-grid">
+
+          <div class="ticket-form-group">
+            <label for="ticketCategory">Category</label>
+
+            <select id="ticketCategory" required>
+              <option value="">Select category</option>
+              <option value="account">Account & Profile</option>
+              <option value="trials">Trials & Applications</option>
+              <option value="documents">Documents</option>
+              <option value="performance">Performance Data</option>
+              <option value="messages">Messages & Notifications</option>
+              <option value="privacy">Safety & Privacy</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="ticket-form-group">
+            <label for="ticketPriority">Priority</label>
+
+            <select id="ticketPriority" required>
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="urgent">Urgent safety issue</option>
+            </select>
+          </div>
+
+          <div class="ticket-form-group full-width">
+            <label for="ticketSubject">Subject</label>
+
+            <input
+              type="text"
+              id="ticketSubject"
+              maxlength="100"
+              placeholder="Briefly describe the issue"
+              required
+            >
+          </div>
+
+          <div class="ticket-form-group full-width">
+            <label for="ticketDescription">Description</label>
+
+            <textarea
+              id="ticketDescription"
+              rows="6"
+              maxlength="1200"
+              placeholder="Explain what happened and what you need help with..."
+              required
+            ></textarea>
+
+            <span class="character-counter" id="ticketCharacterCounter">
+              0 / 1200
+            </span>
+          </div>
+
+          <div class="ticket-form-group full-width">
+
+            <label for="ticketAttachment">
+              Attachment
+              <span>Optional</span>
+            </label>
+
+            <label class="ticket-upload-area" for="ticketAttachment">
+
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+
+              <span>
+                <strong id="ticketUploadLabel">Upload screenshot or document</strong>
+                PNG, JPG or PDF · Maximum 5 MB
+              </span>
+
+            </label>
+
+            <input
+              type="file"
+              id="ticketAttachment"
+              accept=".png,.jpg,.jpeg,.pdf"
+              hidden
+            >
+
+          </div>
+
+        </div>
+
+        <div class="ticket-form-message" id="ticketFormMessage" aria-live="polite">
+        </div>
+
+        <div class="ticket-modal-actions">
+
+          <button type="button" class="ticket-cancel-btn" data-support-close>
+            Cancel
+          </button>
+
+          <button type="submit" class="ticket-submit-btn" id="ticketSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Submit Request
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- ================= REQUEST DETAILS MODAL ================= -->
+
+  <div
+    class="support-modal"
+    id="requestDetailsModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="requestDetailsTitle"
+    hidden
+  >
+
+    <div class="support-modal-backdrop" data-request-close></div>
+
+    <div class="support-modal-card request-modal-card">
+
+      <button
+        type="button"
+        class="support-modal-close"
+        data-request-close
+        aria-label="Close request details"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="section-kicker">SUPPORT REQUEST</span>
+
+      <h2 id="requestDetailsTitle">
+        Request Details
+      </h2>
+
+      <div id="requestDetailsContent"></div>
+
+    </div>
+
+  </div>
+
+  <script src="js/player-dashboard.js"></script>
+  <script src="js/player-help-support.js"></script>
+
+</body>
+</html>

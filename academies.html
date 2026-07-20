@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Discover football academies across India supporting player development, professional coaching and competitive pathways." name="description"/>
+<meta content="football academies India, FIFA Mission India, youth football academy, football training India" name="keywords"/>
+<meta content="FIFA Mission India" name="author"/>
+<meta content="#071426" name="theme-color"/>
+<title>
+    Football Academies | FIFA Mission India
+  </title>
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+/>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+/>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+/>
+
+<link
+    rel="stylesheet"
+    href="css/academies.css"
+/>
+
+<script
+    src="js/academies.js"
+    defer
+></script>
+</head>
+<body>
+<!-- =====================================================
+       ACCESSIBILITY
+  ====================================================== -->
+<a class="skip-link" href="#mainContent">
+    Skip to main content
+  </a>
+<!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+<div aria-hidden="true" class="page-loader" id="pageLoader">
+<div class="loader-ball"></div>
+<p>
+      Loading academies...
+    </p>
+</div>
+<!-- =====================================================
+       MOBILE MENU OVERLAY
+  ====================================================== -->
+<div aria-hidden="true" class="mobile-menu-overlay" id="academyMobileMenuBackdrop"></div>
+<!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+<header class="site-header" id="siteHeader">
+<nav aria-label="Primary navigation" class="navbar">
+<div class="navbar-container">
+<a aria-label="FIFA Mission India home" class="brand" href="index.html">
+<div aria-hidden="true" class="brand-mark">
+            ⚽
+          </div>
+<div class="brand-text">
+<strong>
+              FIFA MISSION INDIA
+            </strong>
+<span>
+              Mission 2034
+            </span>
+</div>
+</a>
+<div class="desktop-navigation" id="desktopNavigation">
+<a href="index.html">
+            Home
+          </a>
+<a href="players.html">
+            Players
+          </a>
+<a aria-current="page" class="active" href="academies.html">
+            Academies
+          </a>
+<a href="trials.html">
+            Trials
+          </a>
+<a href="news.html">
+            News
+          </a>
+<a href="about.html">
+            About
+          </a>
+</div>
+<div class="navbar-actions">
+<button aria-label="Open academy search" class="navbar-search-button" id="navbarSearchButton" type="button">
+<span aria-hidden="true">⌕</span>
+</button>
+<a class="login-link" href="login.html">
+            Login
+          </a>
+<a class="join-button" href="register.html">
+            Join the Mission
+          </a>
+<button aria-controls="mobileNavigation" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-button" id="mobileMenuButton" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</div>
+<!-- =================================================
+           MOBILE NAVIGATION
+      ================================================== -->
+<div aria-hidden="true" class="mobile-navigation" id="mobileNavigation">
+<div class="mobile-navigation-header">
+<div>
+<strong>
+              Explore
+            </strong>
+<p>
+              FIFA Mission India
+            </p>
+</div>
+<button aria-label="Close navigation menu" class="mobile-menu-close" id="mobileMenuClose" type="button">
+            ×
+          </button>
+</div>
+<div class="mobile-navigation-links">
+<a href="index.html">
+            Home
+          </a>
+<a href="players.html">
+            Players
+          </a>
+<a aria-current="page" class="active" href="academies.html">
+            Academies
+          </a>
+<a href="trials.html">
+            Trials
+          </a>
+<a href="news.html">
+            News
+          </a>
+<a href="about.html">
+            About
+          </a>
+<a href="contact.html">
+            Contact
+          </a>
+</div>
+<div class="mobile-navigation-actions">
+<a class="mobile-login-button" href="login.html">
+            Login
+          </a>
+<a class="mobile-join-button" href="register.html">
+            Join the Mission
+          </a>
+</div>
+</div>
+</nav>
+</header>
+<!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+<main id="mainContent" tabindex="-1">
+<!-- ===================================================
+         HERO SECTION
+    ==================================================== -->
+<section aria-labelledby="academiesHeroTitle" class="academies-hero">
+<div aria-hidden="true" class="academies-hero-background">
+<div class="hero-grid-pattern"></div>
+<div class="hero-glow hero-glow-one"></div>
+<div class="hero-glow hero-glow-two"></div>
+</div>
+<div class="academies-page-container">
+<div class="academies-hero-content">
+<div class="academies-hero-copy">
+<span class="hero-eyebrow">
+              BUILDING INDIA'S FOOTBALL FUTURE
+            </span>
+<h1 id="academiesHeroTitle">
+              Discover Football
+              <span>Academies Across India</span>
+</h1>
+<p>
+              Explore academies committed to developing young footballers
+              through professional coaching, structured training, competitive
+              opportunities and long-term player pathways.
+            </p>
+<div class="hero-actions">
+<a class="primary-hero-button" data-scroll-to-academies="" href="#academyDirectory">
+                Explore Academies
+                <span aria-hidden="true">↓</span>
+</a>
+<a class="secondary-hero-button" data-academy-register="" href="academy-register.html">
+                Register Your Academy
+                <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+<div aria-label="Academy platform statistics" class="academies-hero-stats">
+<article class="hero-stat-card">
+<span aria-hidden="true" class="hero-stat-icon">
+                🏟
+              </span>
+<strong class="hero-stat-number" data-target="0" id="heroTotalAcademiesCount">
+                0
+              </strong>
+<p>
+                Registered Academies
+              </p>
+</article>
+<article class="hero-stat-card">
+<span aria-hidden="true" class="hero-stat-icon">
+                ✓
+              </span>
+<strong class="hero-stat-number" data-target="0" id="verifiedAcademiesCount">
+                0
+              </strong>
+<p>
+                Verified Academies
+              </p>
+</article>
+<article class="hero-stat-card">
+<span aria-hidden="true" class="hero-stat-icon">
+                📍
+              </span>
+<strong class="hero-stat-number" data-target="0" id="statesCoveredCount">
+                0
+              </strong>
+<p>
+                States Covered
+              </p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- ===================================================
+         FEATURED ACADEMY SPOTLIGHT
+    ==================================================== -->
+<section aria-labelledby="academySpotlightTitle" class="academy-spotlight-section">
+<div class="academies-page-container">
+<article class="academy-spotlight-card reveal" data-academy-id="minerva-academy">
+<div class="academy-spotlight-image">
+<img alt="Young football players competing at Minerva Academy" height="620" loading="eager" src="images/minerva-academy.jpeg" width="900"/>
+<div class="academy-spotlight-overlay"></div>
+<span class="academy-spotlight-badge">
+              Featured Academy
+            </span>
+</div>
+<div class="academy-spotlight-content">
+<span class="academy-spotlight-label">
+              ACADEMY SPOTLIGHT
+            </span>
+<h2 id="academySpotlightTitle">
+              Minerva Academy
+            </h2>
+<p class="academy-spotlight-location">
+<span aria-hidden="true">📍</span>
+              Punjab, India
+            </p>
+<p class="academy-spotlight-description">
+              Supporting the development of young footballers through
+              structured coaching, competitive exposure and a strong
+              player-development pathway.
+            </p>
+<div class="academy-spotlight-meta">
+<div>
+<strong>
+                  Verified
+                </strong>
+<span>
+                  Academy status
+                </span>
+</div>
+<div>
+<strong>
+                  Youth
+                </strong>
+<span>
+                  Development focus
+                </span>
+</div>
+<div>
+<strong>
+                  Punjab
+                </strong>
+<span>
+                  Primary location
+                </span>
+</div>
+</div>
+<a class="academy-spotlight-button" href="academy-profile.html?id=minerva-academy">
+              View Academy Profile
+              <span aria-hidden="true">↗</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- ===================================================
+         ACADEMY DIRECTORY
+    ==================================================== -->
+<section aria-labelledby="academyDirectoryTitle" class="academy-directory-section" id="academyDirectory">
+<div class="academies-page-container">
+<div class="directory-heading reveal">
+<div>
+<span class="section-eyebrow">
+              NATIONAL ACADEMY DIRECTORY
+            </span>
+<h2 id="academyDirectoryTitle">
+              Find the Right Football Academy
+            </h2>
+<p>
+              Search and filter academy profiles by location, academy type,
+              verification status and development focus.
+            </p>
+</div>
+<a class="register-academy-link" data-academy-register="" href="academy-register.html">
+            Add Your Academy
+            <span aria-hidden="true">+</span>
+</a>
+</div>
+<!-- ===============================================
+             SEARCH AND FILTER PANEL
+        ================================================ -->
+<div class="academy-filter-panel reveal" id="academyFilterPanel">
+<div class="academy-search-field">
+<label class="visually-hidden" for="academySearchInput">
+              Search football academies
+            </label>
+<span aria-hidden="true" class="academy-search-icon">
+              ⌕
+            </span>
+<input autocomplete="off" id="academySearchInput" name="academySearch" placeholder="Search by academy name, city or state..." type="search"/>
+<button aria-label="Clear academy search" class="clear-search-button" hidden="" id="clearSearchButton" type="button">
+              ×
+            </button>
+</div>
+<div class="academy-filter-controls">
+<div class="filter-field">
+<label for="stateFilter">
+                State
+              </label>
+<select id="stateFilter" name="state">
+<option value="all">
+                  All States
+                </option>
+<option value="assam">
+                  Assam
+                </option>
+<option value="delhi">
+                  Delhi
+                </option>
+<option value="goa">
+                  Goa
+                </option>
+<option value="karnataka">
+                  Karnataka
+                </option>
+<option value="kerala">
+                  Kerala
+                </option>
+<option value="maharashtra">
+                  Maharashtra
+                </option>
+<option value="manipur">
+                  Manipur
+                </option>
+<option value="meghalaya">
+                  Meghalaya
+                </option>
+<option value="mizoram">
+                  Mizoram
+                </option>
+<option value="nagaland">
+                  Nagaland
+                </option>
+<option value="odisha">
+                  Odisha
+                </option>
+<option value="punjab">
+                  Punjab
+                </option>
+<option value="west-bengal">
+                  West Bengal
+                </option>
+</select>
+</div>
+<div class="filter-field">
+<label for="academyTypeFilter">
+                Academy Type
+              </label>
+<select id="academyTypeFilter" name="academyType">
+<option value="all">
+                  All Types
+                </option>
+<option value="grassroots">
+                  Grassroots
+                </option>
+<option value="residential">
+                  Residential
+                </option>
+<option value="professional">
+                  Professional Club Academy
+                </option>
+<option value="school">
+                  School Academy
+                </option>
+<option value="community">
+                  Community Academy
+                </option>
+<option value="elite">
+                  Elite Development
+                </option>
+</select>
+</div>
+<div class="filter-field">
+<label for="ageGroupFilter">
+                Age Group
+              </label>
+<select id="ageGroupFilter" name="ageGroup">
+<option value="all">
+                  All Age Groups
+                </option>
+<option value="u8">
+                  Under 8
+                </option>
+<option value="u10">
+                  Under 10
+                </option>
+<option value="u12">
+                  Under 12
+                </option>
+<option value="u14">
+                  Under 14
+                </option>
+<option value="u16">
+                  Under 16
+                </option>
+<option value="u18">
+                  Under 18
+                </option>
+<option value="senior">
+                  Senior
+                </option>
+</select>
+</div>
+<div class="filter-field">
+<label for="academySortFilter">
+                Sort By
+              </label>
+<select id="academySortFilter" name="sort">
+<option value="featured">
+                  Featured
+                </option>
+<option value="name-asc">
+                  Name: A–Z
+                </option>
+<option value="name-desc">
+                  Name: Z–A
+                </option>
+<option value="newest">
+                  Newest
+                </option>
+<option value="popular">
+                  Most Popular
+                </option>
+</select>
+</div>
+</div>
+<div class="academy-filter-options">
+<label class="filter-checkbox">
+<input id="verifiedOnlyFilter" type="checkbox"/>
+<span class="custom-checkbox"></span>
+<span>
+                Verified academies only
+              </span>
+</label>
+<label class="filter-checkbox">
+<input id="trialsOpenFilter" type="checkbox"/>
+<span class="custom-checkbox"></span>
+<span>
+                Trials currently open
+              </span>
+</label>
+<button class="reset-filters-button" id="resetFiltersButton" type="button">
+              Reset Filters
+            </button>
+</div>
+</div>
+<!-- ===============================================
+             DIRECTORY TOOLBAR
+        ================================================ -->
+<div class="academy-directory-toolbar">
+<p aria-live="polite" class="academy-results-count" id="academyResultsCount">
+            Showing 0 academies
+          </p>
+<button aria-controls="academyFilterDrawer" aria-expanded="false" class="academy-mobile-filter-button" id="academyMobileFilterButton" type="button">
+        Filters
+        <span aria-hidden="true" class="academy-mobile-filter-count">0</span>
+</button><div class="directory-view-controls">
+<button aria-label="Show academy grid view" aria-pressed="true" class="view-control-button active" id="gridViewButton" type="button">
+<span aria-hidden="true">▦</span>
+</button>
+<button aria-label="Show academy list view" aria-pressed="false" class="view-control-button" id="listViewButton" type="button">
+<span aria-hidden="true">☰</span>
+</button>
+</div>
+</div>
+<!-- =====================================================
+     ACADEMY DIRECTORY RESULTS
+====================================================== -->
+<section aria-labelledby="academiesDirectoryTitle" class="academies-directory-section" id="academiesDirectory">
+<div class="academies-container">
+<!-- =================================================
+         DIRECTORY STATUS
+    ================================================== -->
+<div class="directory-status-bar">
+<div class="directory-results-summary">
+<h2 class="visually-hidden" id="academiesDirectoryTitle">
+          Football Academy Directory
+        </h2>
+<p aria-live="polite" class="directory-results-count" id="directoryResultsCount">
+          Showing
+          <strong id="visibleAcademiesCount">0</strong>
+          of
+          <strong id="totalAcademiesCount">0</strong>
+          academies
+        </p>
+<p class="directory-active-location" hidden="" id="directoryActiveLocation"></p>
+</div>
+<div aria-label="Active academy filters" class="directory-active-filters" hidden="" id="directoryActiveFilters">
+<span class="active-filters-label">
+          Active filters:
+        </span>
+<div class="active-filter-list" id="activeFilterList"></div>
+<button class="clear-all-filters-button" id="clearAllFiltersButton" type="button">
+          Clear all
+        </button>
+</div>
+</div>
+<!-- =================================================
+         LOADING STATE
+    ================================================== -->
+<div aria-live="polite" class="academy-loading-state" hidden="" id="academyLoadingState">
+<div aria-hidden="true" class="academy-loading-spinner"></div>
+<div>
+<h3>
+          Loading academies
+        </h3>
+<p>
+          Please wait while we prepare the academy directory.
+        </p>
+</div>
+</div>
+<!-- =================================================
+         ERROR STATE
+    ================================================== -->
+<div class="academy-directory-message academy-error-state" hidden="" id="academyErrorState" role="alert">
+<div aria-hidden="true" class="directory-message-icon">
+        !
+      </div>
+<div>
+<h3>
+          Unable to load academies
+        </h3>
+<p id="academyErrorMessage">
+          Something went wrong while loading the academy directory.
+        </p>
+<button class="directory-retry-button" id="retryAcademiesButton" type="button">
+          Try Again
+        </button>
+</div>
+</div>
+<!-- =================================================
+         ACADEMY CARDS GRID
+
+         BACKEND INTEGRATION FOR HARSH:
+         Replace frontend sample data with:
+
+         GET /api/v1/academies
+
+         Suggested query parameters:
+         ?search=
+         &state=
+         &city=
+         &ageGroup=
+         &program=
+         &verification=
+         &sort=
+         &page=
+         &limit=
+    ================================================== -->
+<div aria-busy="false" aria-live="polite" class="academies-directory-grid" id="academiesDirectoryGrid"></div>
+<!-- =================================================
+         EMPTY STATE
+    ================================================== -->
+<div class="academy-directory-message academy-empty-state" hidden="" id="academyEmptyState">
+<div aria-hidden="true" class="directory-message-icon">
+        ⚽
+      </div>
+<div>
+<h3>
+          No academies found
+        </h3>
+<p>
+          Try changing your search term, location or filters to discover
+          more football academies.
+        </p>
+<button class="directory-reset-button" id="resetDirectoryButton" type="button">
+          Reset Directory
+        </button>
+</div>
+</div>
+<!-- =================================================
+         DIRECTORY PAGINATION
+    ================================================== -->
+<nav aria-label="Academy directory pagination" class="academies-pagination" hidden="" id="academiesPagination">
+<button aria-label="Go to previous academy directory page" class="pagination-navigation-button" disabled="" id="previousAcademiesPageButton" type="button">
+<span aria-hidden="true">
+          ←
+        </span>
+
+        Previous
+      </button>
+<div aria-label="Academy directory pages" class="pagination-page-list" id="academiesPaginationPages"></div>
+<button aria-label="Go to next academy directory page" class="pagination-navigation-button" id="nextAcademiesPageButton" type="button">
+        Next
+
+        <span aria-hidden="true">
+          →
+        </span>
+</button>
+</nav>
+<!-- =================================================
+         MOBILE LOAD MORE
+    ================================================== -->
+<div class="academies-load-more-wrapper" hidden="" id="academiesLoadMoreWrapper">
+<button class="academies-load-more-button" id="academiesLoadMoreButton" type="button">
+        Load More Academies
+      </button>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     ACADEMY CARD TEMPLATE
+====================================================== -->
+<template id="academyDirectoryCardTemplate">
+<article class="academy-directory-card" data-academy-card="">
+<div class="academy-card-media">
+<a aria-label="View academy profile" class="academy-card-image-link" data-academy-profile-link="" href="#">
+<img alt="" class="academy-card-cover-image" data-academy-cover="" decoding="async" loading="lazy" src="">
+</img></a>
+<div class="academy-card-media-overlay"></div>
+<div class="academy-card-badges">
+<span class="academy-verification-badge" data-academy-verification="" hidden="">
+<span aria-hidden="true">
+            ✓
+          </span>
+
+          Verified
+        </span>
+<span class="academy-featured-badge" data-academy-featured="" hidden="">
+          Featured
+        </span>
+</div>
+<button aria-label="Save academy" aria-pressed="false" class="academy-save-button" data-academy-save="" type="button">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M6 3.75A1.75 1.75 0 0 1 7.75 2h8.5A1.75 1.75 0 0 1 18 3.75V22l-6-3.75L6 22V3.75Z"></path>
+</svg>
+</button>
+<div class="academy-card-location">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M12 21s7-6.13 7-12a7 7 0 1 0-14 0c0 5.87 7 12 7 12Z"></path>
+<circle cx="12" cy="9" r="2.5"></circle>
+</svg>
+<span data-academy-location="">
+          Location
+        </span>
+</div>
+</div>
+<div class="academy-card-content">
+<div class="academy-card-heading">
+<div aria-hidden="true" class="academy-card-logo-wrapper">
+<img alt="" class="academy-card-logo" data-academy-logo="" decoding="async" loading="lazy" src=""/>
+</div>
+<div class="academy-card-title-group">
+<a class="academy-card-title-link" data-academy-profile-link="" href="#">
+<h3 class="academy-card-title" data-academy-name="">
+              Academy Name
+            </h3>
+</a>
+<p class="academy-card-subtitle" data-academy-type="">
+            Football Academy
+          </p>
+</div>
+</div>
+<p class="academy-card-description" data-academy-description="">
+        Academy description will appear here.
+      </p>
+<div aria-label="Academy programmes" class="academy-card-programs" data-academy-programs=""></div>
+<dl class="academy-card-details">
+<div class="academy-card-detail">
+<dt>Coaches</dt>
+<dd data-academy-coaches="">—</dd>
+</div>
+<div class="academy-card-detail">
+<dt>
+            Players
+          </dt>
+<dd data-academy-players="">
+            —
+          </dd>
+</div>
+<div class="academy-card-detail">
+<dt>
+            Established
+          </dt>
+<dd data-academy-established="">
+            —
+          </dd>
+</div>
+</dl>
+<div class="academy-card-footer">
+<div aria-label="Academy rating" class="academy-card-rating" data-academy-rating-wrapper="" hidden="">
+<span aria-hidden="true" class="academy-rating-star">
+            ★
+          </span>
+<strong data-academy-rating="">
+            0.0
+          </strong>
+<span data-academy-reviews="">
+            (0 reviews)
+          </span>
+</div>
+<a class="academy-profile-button" data-academy-profile-link="" href="#">
+          Explore Academy
+
+          <span aria-hidden="true">
+            →
+          </span>
+</a>
+</div>
+</div>
+</article>
+</template>
+<!-- =====================================================
+     ACADEMY DIRECTORY MAP SECTION
+====================================================== -->
+<section aria-labelledby="academyMapTitle" class="academy-map-section" id="academyMapSection">
+<div class="academies-container">
+<div class="academy-map-layout">
+<!-- ===============================================
+           MAP CONTENT
+      ================================================ -->
+<div class="academy-map-content">
+<span class="section-eyebrow">
+          DISCOVER ACROSS INDIA
+        </span>
+<h2 id="academyMapTitle">
+          Find Football Academies Near You
+        </h2>
+<p>
+          Explore verified football academies, training centres and youth
+          development programmes available across different states and cities
+          in India.
+        </p>
+<div class="academy-map-search-card">
+<form class="academy-map-search-form" id="academyMapSearchForm" novalidate="">
+<div class="academy-map-search-field">
+<label for="mapStateSelect">
+                Select State
+              </label>
+<div class="academy-map-select-wrapper">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M12 21s7-6.13 7-12a7 7 0 1 0-14 0c0 5.87 7 12 7 12Z"></path>
+<circle cx="12" cy="9" r="2.5"></circle>
+</svg>
+<select id="mapStateSelect" name="state">
+<option value="">
+                    All States
+                  </option>
+<!--
+                    BACKEND INTEGRATION FOR HARSH:
+
+                    Populate states using:
+
+                    GET /api/v1/locations/states
+                  -->
+<option value="assam">Assam</option>
+<option value="delhi">Delhi</option>
+<option value="goa">Goa</option>
+<option value="karnataka">Karnataka</option>
+<option value="kerala">Kerala</option>
+<option value="maharashtra">Maharashtra</option>
+<option value="manipur">Manipur</option>
+<option value="meghalaya">Meghalaya</option>
+<option value="mizoram">Mizoram</option>
+<option value="nagaland">Nagaland</option>
+<option value="odisha">Odisha</option>
+<option value="punjab">Punjab</option>
+<option value="tamil-nadu">Tamil Nadu</option>
+<option value="telangana">Telangana</option>
+<option value="west-bengal">West Bengal</option>
+</select>
+</div>
+</div>
+<div class="academy-map-search-field">
+<label for="mapCityInput">
+                City or District
+              </label>
+<div class="academy-map-input-wrapper">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m20 20-4-4"></path>
+</svg>
+<input autocomplete="address-level2" id="mapCityInput" name="city" placeholder="Enter city or district" type="search">
+</input></div>
+</div>
+<button class="academy-map-search-button" type="submit">
+              Search Academies
+
+              <span aria-hidden="true">
+                →
+              </span>
+</button>
+</form>
+<button class="academy-use-location-button" id="useCurrentLocationButton" type="button">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="7"></circle>
+<circle cx="12" cy="12" r="2"></circle>
+<path d="M12 2v3"></path>
+<path d="M12 19v3"></path>
+<path d="M2 12h3"></path>
+<path d="M19 12h3"></path>
+</svg>
+
+            Use My Current Location
+          </button>
+<p aria-live="polite" class="academy-location-status" id="academyLocationStatus"></p>
+</div>
+<div class="academy-map-statistics">
+<div class="academy-map-statistic">
+<strong data-count="150" id="mapAcademyCount">
+              150+
+            </strong>
+<span>
+              Listed Academies
+            </span>
+</div>
+<div class="academy-map-statistic">
+<strong data-count="25" id="mapStateCount">
+              25+
+            </strong>
+<span>
+              States Covered
+            </span>
+</div>
+<div class="academy-map-statistic">
+<strong data-count="80" id="mapVerifiedCount">
+              80+
+            </strong>
+<span>
+              Verified Academies
+            </span>
+</div>
+</div>
+</div>
+<!-- ===============================================
+           INTERACTIVE MAP
+      ================================================ -->
+<div class="academy-map-visual">
+<div aria-label="Interactive map showing football academies across India" class="academy-india-map" id="academyIndiaMap" role="img">
+<div aria-hidden="true" class="academy-map-background"></div>
+<img alt="Map of India highlighting football academy locations" class="academy-india-map-image" decoding="async" loading="lazy" src="assets/images/india-football-map.webp"/>
+<!--
+            FRONTEND MAP MARKERS
+
+            BACKEND INTEGRATION FOR HARSH:
+
+            Replace static markers using:
+
+            GET /api/v1/academies/map
+
+            Suggested response:
+
+            {
+              "academies": [
+                {
+                  "id": "academy-id",
+                  "name": "Academy Name",
+                  "city": "City",
+                  "state": "State",
+                  "latitude": 25.90,
+                  "longitude": 93.73,
+                  "profileUrl": "academy-profile.html?id=academy-id"
+                }
+              ]
+            }
+          -->
+<button aria-label="View Minerva Academy location" class="academy-map-marker" data-academy-id="minerva-academy" data-academy-map-marker="" style="--marker-x: 29%; --marker-y: 44%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Minerva Academy
+              </strong>
+<small>
+                Punjab
+              </small>
+</span>
+</button>
+<button aria-label="View Northeast Football Academy location" class="academy-map-marker" data-academy-id="northeast-football-academy" data-academy-map-marker="" style="--marker-x: 81%; --marker-y: 43%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Northeast Football Academy
+              </strong>
+<small>
+                Nagaland
+              </small>
+</span>
+</button>
+<button aria-label="View Bengal Football Centre location" class="academy-map-marker" data-academy-id="bengal-football-centre" data-academy-map-marker="" style="--marker-x: 68%; --marker-y: 60%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Bengal Football Centre
+              </strong>
+<small>
+                West Bengal
+              </small>
+</span>
+</button>
+<button aria-label="View Goa Youth Academy location" class="academy-map-marker" data-academy-id="goa-youth-academy" data-academy-map-marker="" style="--marker-x: 34%; --marker-y: 72%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Goa Youth Academy
+              </strong>
+<small>
+                Goa
+              </small>
+</span>
+</button>
+<button aria-label="View Kerala Football School location" class="academy-map-marker" data-academy-id="kerala-football-school" data-academy-map-marker="" style="--marker-x: 43%; --marker-y: 91%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Kerala Football School
+              </strong>
+<small>
+                Kerala
+              </small>
+</span>
+</button>
+<button aria-label="View Mumbai Player Development Centre location" class="academy-map-marker" data-academy-id="mumbai-player-development" data-academy-map-marker="" style="--marker-x: 28%; --marker-y: 65%;" type="button">
+<span class="academy-map-marker-dot"></span>
+<span class="academy-map-marker-pulse"></span>
+<span class="academy-map-tooltip">
+<strong>
+                Mumbai Player Development
+              </strong>
+<small>
+                Maharashtra
+              </small>
+</span>
+</button>
+<div aria-label="Academy map legend" class="academy-map-legend">
+<div>
+<span aria-hidden="true" class="academy-map-legend-dot verified"></span>
+
+              Verified Academy
+
+            </div>
+<div>
+<span aria-hidden="true" class="academy-map-legend-dot listed"></span>
+
+              Listed Academy
+
+            </div>
+</div>
+</div>
+<div aria-hidden="true" class="academy-map-selected-card" hidden="" id="academyMapSelectedCard">
+<button aria-label="Close academy map details" class="academy-map-card-close" id="academyMapCardCloseButton" type="button">
+        ×
+      </button>
+<img alt="" class="academy-map-card-image" decoding="async" loading="lazy" src=""/>
+<div class="academy-map-card-main">
+<img alt="" class="academy-map-card-logo" decoding="async" id="academyMapCardLogo" loading="lazy" src=""/>
+<div class="academy-map-card-content">
+<span class="academy-map-card-status academy-map-verified" hidden="" id="academyMapCardStatus">
+            Verified Academy
+          </span>
+<h3 class="academy-map-card-name" id="academyMapCardName">
+            Academy Name
+          </h3>
+<p class="academy-map-card-location" id="academyMapCardLocation">
+            City, State
+          </p>
+<p class="academy-map-card-description">
+            Academy details will appear here.
+          </p>
+<div class="academy-map-card-rating">
+<strong data-map-academy-rating="">0.0</strong>
+<span data-map-academy-reviews="">0 reviews</span>
+</div>
+<a class="academy-map-card-link academy-map-profile-link" href="#" id="academyMapCardLink">
+            View Academy
+            <span aria-hidden="true">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     WHY CHOOSE A VERIFIED ACADEMY
+====================================================== -->
+<section aria-labelledby="academyTrustTitle" class="academy-trust-section" id="academyTrust">
+<div class="academies-container">
+<div class="academy-trust-heading">
+<span class="section-eyebrow">
+        TRAIN WITH CONFIDENCE
+      </span>
+<h2 id="academyTrustTitle">
+        Why Choose a Verified Academy?
+      </h2>
+<p>
+        Verified academies provide clearer information, trusted development
+        programmes and safer pathways for players and families.
+      </p>
+</div>
+<div class="academy-trust-grid">
+<article class="academy-trust-card">
+<div aria-hidden="true" class="academy-trust-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M12 3 5 6v5c0 4.6 2.9 8.8 7 10 4.1-1.2 7-5.4 7-10V6l-7-3Z"></path>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+</div>
+<h3>
+          Verified Information
+        </h3>
+<p>
+          Academy identity, location, programmes and contact information are
+          reviewed before verification is displayed.
+        </p>
+</article>
+<article class="academy-trust-card">
+<div aria-hidden="true" class="academy-trust-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 21c.7-5 3.4-7 8-7s7.3 2 8 7"></path>
+<path d="m17 7 1.5 1.5L21 6"></path>
+</svg>
+</div>
+<h3>
+          Qualified Coaching
+        </h3>
+<p>
+          Discover academies that clearly present their coaching staff,
+          certifications and player-development experience.
+        </p>
+</article>
+<article class="academy-trust-card">
+<div aria-hidden="true" class="academy-trust-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M4 19V9l8-5 8 5v10"></path>
+<path d="M2 19h20"></path>
+<path d="M8 19v-5h8v5"></path>
+</svg>
+</div>
+<h3>
+          Training Facilities
+        </h3>
+<p>
+          Compare available pitches, fitness areas, accommodation, classrooms
+          and other player-development facilities.
+        </p>
+</article>
+<article class="academy-trust-card">
+<div aria-hidden="true" class="academy-trust-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M7 3h10v4a5 5 0 0 1-10 0V3Z"></path>
+<path d="M9 12v3"></path>
+<path d="M15 12v3"></path>
+<path d="M7 21h10"></path>
+<path d="M12 15v6"></path>
+<path d="M7 5H4v2a4 4 0 0 0 4 4"></path>
+<path d="M17 5h3v2a4 4 0 0 1-4 4"></path>
+</svg>
+</div>
+<h3>
+          Player Pathways
+        </h3>
+<p>
+          Learn about trials, competitions, scholarships, professional
+          exposure and progression opportunities.
+        </p>
+</article>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     FEATURED DEVELOPMENT PROGRAMMES
+====================================================== -->
+<section aria-labelledby="academyProgrammesTitle" class="academy-programmes-section" id="academyProgrammes">
+<div class="academies-container">
+<div class="academy-programmes-heading">
+<div>
+<span class="section-eyebrow">
+          DEVELOPMENT PATHWAYS
+        </span>
+<h2 id="academyProgrammesTitle">
+          Find the Right Programme
+        </h2>
+<p>
+          Explore academy programmes designed for different ages, goals and
+          stages of player development.
+        </p>
+</div>
+<a class="academy-programmes-view-all" data-scroll-to-academies="" href="#academiesDirectory">
+        Browse All Academies
+
+        <span aria-hidden="true">
+          →
+        </span>
+</a>
+</div>
+<div class="academy-programmes-grid">
+<article class="academy-programme-card">
+<div class="academy-programme-number">
+          01
+        </div>
+<div class="academy-programme-content">
+<span class="academy-programme-label">
+            AGES 5–10
+          </span>
+<h3>
+            Grassroots Football
+          </h3>
+<p>
+            Fun, movement-based sessions focused on coordination, confidence,
+            teamwork and basic football skills.
+          </p>
+<button class="academy-programme-filter-button" data-programme-filter="grassroots" type="button">
+            Explore Grassroots Academies
+
+            <span aria-hidden="true">
+              →
+            </span>
+</button>
+</div>
+</article>
+<article class="academy-programme-card">
+<div class="academy-programme-number">
+          02
+        </div>
+<div class="academy-programme-content">
+<span class="academy-programme-label">
+            AGES 11–15
+          </span>
+<h3>
+            Youth Development
+          </h3>
+<p>
+            Structured technical, physical and tactical training for young
+            players building competitive foundations.
+          </p>
+<button class="academy-programme-filter-button" data-programme-filter="youth-development" type="button">
+            Explore Youth Academies
+
+            <span aria-hidden="true">
+              →
+            </span>
+</button>
+</div>
+</article>
+<article class="academy-programme-card">
+<div class="academy-programme-number">
+          03
+        </div>
+<div class="academy-programme-content">
+<span class="academy-programme-label">
+            AGES 16–21
+          </span>
+<h3>
+            Elite Performance
+          </h3>
+<p>
+            Advanced programmes for competitive players seeking professional
+            trials, scholarships and higher-level competition.
+          </p>
+<button class="academy-programme-filter-button" data-programme-filter="elite" type="button">
+            Explore Elite Academies
+
+            <span aria-hidden="true">
+              →
+            </span>
+</button>
+</div>
+</article>
+<article class="academy-programme-card">
+<div class="academy-programme-number">
+          04
+        </div>
+<div class="academy-programme-content">
+<span class="academy-programme-label">
+            FULL-TIME
+          </span>
+<h3>
+            Residential Academy
+          </h3>
+<p>
+            Integrated football, education, accommodation, nutrition and
+            personal-development programmes.
+          </p>
+<button class="academy-programme-filter-button" data-programme-filter="residential" type="button">
+            Explore Residential Academies
+
+            <span aria-hidden="true">
+              →
+            </span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     REGISTER YOUR ACADEMY CTA
+====================================================== -->
+<section aria-labelledby="registerAcademyTitle" class="academy-registration-cta" id="registerAcademy">
+<div class="academies-container">
+<div class="academy-registration-card">
+<div aria-hidden="true" class="academy-registration-background"></div>
+<div class="academy-registration-content">
+<span class="academy-registration-eyebrow">
+          FOR ACADEMY OWNERS
+        </span>
+<h2 id="registerAcademyTitle">
+          Put Your Academy on India’s Football Map
+        </h2>
+<p>
+          Create an academy profile, showcase your programmes, publish trials
+          and connect with talented players across India.
+        </p>
+<div class="academy-registration-actions">
+<a class="academy-registration-primary-button" data-academy-register="" href="academy-register.html">
+            Register Your Academy
+
+            <span aria-hidden="true">
+              →
+            </span>
+</a>
+<a class="academy-registration-secondary-button" href="academy-login.html">
+            Academy Login
+          </a>
+</div>
+<ul class="academy-registration-benefits">
+<li>
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m8 12 2.5 2.5L16 9"></path>
+</svg>
+
+            Create a professional academy profile
+
+          </li>
+<li>
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m8 12 2.5 2.5L16 9"></path>
+</svg>
+
+            Publish trials and development programmes
+
+          </li>
+<li>
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m8 12 2.5 2.5L16 9"></path>
+</svg>
+
+            Receive player enquiries securely
+
+          </li>
+</ul>
+</div>
+<div class="academy-registration-visual">
+<div class="academy-registration-profile-card">
+<div class="academy-registration-profile-header">
+<div class="academy-registration-profile-logo">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M12 2 3 6.5V17l9 5 9-5V6.5L12 2Z"></path>
+<circle cx="12" cy="11" r="4"></circle>
+<path d="m10.5 11 1 1 2-2"></path>
+</svg>
+</div>
+<div>
+<span>
+                Academy Profile
+              </span>
+<strong>
+                Ready to be discovered
+              </strong>
+</div>
+</div>
+<div class="academy-registration-profile-progress">
+<div>
+<span>
+                Profile completion
+              </span>
+<strong>
+                85%
+              </strong>
+</div>
+<div class="academy-registration-progress-track">
+<span style="width: 85%;"></span>
+</div>
+</div>
+<div class="academy-registration-profile-features">
+<div>
+<span aria-hidden="true">
+                ✓
+              </span>
+
+              Academy information
+
+            </div>
+<div>
+<span aria-hidden="true">
+                ✓
+              </span>
+
+              Programme listings
+
+            </div>
+<div>
+<span aria-hidden="true">
+                ✓
+              </span>
+
+              Trial announcements
+
+            </div>
+<div>
+<span aria-hidden="true">
+                ✓
+              </span>
+
+              Player enquiries
+
+            </div>
+</div>
+</div>
+</div>
+<!--
+        BACKEND INTEGRATION FOR HARSH:
+
+        Academy registration:
+        POST /api/v1/academies/register
+
+        Academy authentication:
+        POST /api/v1/auth/academy/login
+
+        Academy profile:
+        GET    /api/v1/academies/:academyId
+        PATCH  /api/v1/academies/:academyId
+      -->
+</div>
+</div>
+</section>
+<!-- =====================================================
+     ACADEMY DIRECTORY FAQ
+====================================================== -->
+<section aria-labelledby="academyFaqTitle" class="academy-faq-section" id="academyFaq">
+<div class="academies-container">
+<div class="academy-faq-layout">
+<div class="academy-faq-intro">
+<span class="section-eyebrow">
+          NEED HELP?
+        </span>
+<h2 id="academyFaqTitle">
+          Frequently Asked Questions
+        </h2>
+<p>
+          Find answers about academy listings, verification, trials,
+          registration and player enquiries.
+        </p>
+<a class="academy-faq-support-link" href="help.html">
+          Visit Help &amp; Support
+
+          <span aria-hidden="true">
+            →
+          </span>
+</a>
+</div>
+<div class="academy-faq-list" id="academyFaqList">
+<article class="academy-faq-item">
+<h3>
+<button aria-controls="academyFaqAnswer1" aria-expanded="false" class="academy-faq-question" id="academyFaqQuestion1" type="button">
+<span>
+                How are academies verified?
+              </span>
+<span aria-hidden="true" class="academy-faq-icon">
+                +
+              </span>
+</button>
+</h3>
+<div aria-labelledby="academyFaqQuestion1" class="academy-faq-answer" hidden="" id="academyFaqAnswer1" role="region">
+<p>
+              Academy information may be reviewed using submitted documents,
+              official contact details, programme information and other
+              verification checks before a verified badge is displayed.
+            </p>
+</div>
+</article>
+<article class="academy-faq-item">
+<h3>
+<button aria-controls="academyFaqAnswer2" aria-expanded="false" class="academy-faq-question" id="academyFaqQuestion2" type="button">
+<span>
+                Can players contact an academy directly?
+              </span>
+<span aria-hidden="true" class="academy-faq-icon">
+                +
+              </span>
+</button>
+</h3>
+<div aria-labelledby="academyFaqQuestion2" class="academy-faq-answer" hidden="" id="academyFaqAnswer2" role="region">
+<p>
+              Yes. Players can use the contact or enquiry options available on
+              an academy profile. Some enquiries may require a registered
+              player account.
+            </p>
+</div>
+</article>
+<article class="academy-faq-item">
+<h3>
+<button aria-controls="academyFaqAnswer3" aria-expanded="false" class="academy-faq-question" id="academyFaqQuestion3" type="button">
+<span>
+                Are academy trials guaranteed?
+              </span>
+<span aria-hidden="true" class="academy-faq-icon">
+                +
+              </span>
+</button>
+</h3>
+<div aria-labelledby="academyFaqQuestion3" class="academy-faq-answer" hidden="" id="academyFaqAnswer3" role="region">
+<p>
+              No. Trial availability, selection criteria and final decisions
+              are controlled by each academy. Players should carefully review
+              official trial details before applying.
+            </p>
+</div>
+</article>
+<article class="academy-faq-item">
+<h3>
+<button aria-controls="academyFaqAnswer4" aria-expanded="false" class="academy-faq-question" id="academyFaqQuestion4" type="button">
+<span>
+                How can an academy update its profile?
+              </span>
+<span aria-hidden="true" class="academy-faq-icon">
+                +
+              </span>
+</button>
+</h3>
+<div aria-labelledby="academyFaqQuestion4" class="academy-faq-answer" hidden="" id="academyFaqAnswer4" role="region">
+<p>
+              Registered academy administrators can sign in to their academy
+              dashboard and update programmes, facilities, media, contact
+              information and trial announcements.
+            </p>
+</div>
+</article>
+<article class="academy-faq-item">
+<h3>
+<button aria-controls="academyFaqAnswer5" aria-expanded="false" class="academy-faq-question" id="academyFaqQuestion5" type="button">
+<span>
+                Is academy registration free?
+              </span>
+<span aria-hidden="true" class="academy-faq-icon">
+                +
+              </span>
+</button>
+</h3>
+<div aria-labelledby="academyFaqQuestion5" class="academy-faq-answer" hidden="" id="academyFaqAnswer5" role="region">
+<p>
+              Registration options and any future premium services will be
+              shown clearly during academy onboarding. No payment should be
+              made outside official platform channels.
+            </p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     DIRECTORY NEWSLETTER
+====================================================== -->
+<section aria-labelledby="academyNewsletterTitle" class="academy-newsletter-section" id="academyNewsletter">
+<div class="academies-container">
+<div class="academy-newsletter-card">
+<div class="academy-newsletter-content">
+<span class="academy-newsletter-eyebrow">
+          STAY UPDATED
+        </span>
+<h2 id="academyNewsletterTitle">
+          Get Academy and Trial Updates
+        </h2>
+<p>
+          Receive selected academy announcements, trial opportunities and
+          football development news.
+        </p>
+</div>
+<form class="academy-newsletter-form" id="academyNewsletterForm" novalidate="">
+<div class="academy-newsletter-field">
+<label class="visually-hidden" for="academyNewsletterEmail">
+            Email address
+          </label>
+<input aria-describedby="academyNewsletterMessage" autocomplete="email" id="academyNewsletterEmail" inputmode="email" name="email" placeholder="Enter your email address" required="" type="email">
+<button id="academyNewsletterSubmitButton" type="submit">
+            Subscribe
+
+            <span aria-hidden="true">
+              →
+            </span>
+</button>
+</input></div>
+<p aria-live="polite" class="academy-newsletter-message" id="academyNewsletterMessage"></p>
+<label class="academy-newsletter-consent">
+<input id="academyNewsletterConsent" name="consent" required="" type="checkbox">
+<span>
+            I agree to receive football academy updates and understand that I
+            can unsubscribe at any time.
+          </span>
+</input></label>
+</form>
+<!--
+        BACKEND INTEGRATION FOR HARSH:
+
+        POST /api/v1/newsletter/subscribe
+
+        Suggested payload:
+
+        {
+          "email": "player@example.com",
+          "source": "academy-directory",
+          "consent": true
+        }
+      -->
+</div>
+</div>
+</section>
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="site-footer academy-page-footer" id="siteFooter">
+<div class="academies-container">
+<div class="site-footer-main">
+<div class="site-footer-brand">
+<a aria-label="FIFA Mission India home" class="site-footer-logo" href="index.html">
+<span aria-hidden="true" class="site-footer-logo-mark">
+            ⚽
+          </span>
+<span>
+<strong>
+              FIFA MISSION INDIA
+            </strong>
+<small>
+              Mission FIFA 2034
+            </small>
+</span>
+</a>
+<p>
+          Building a connected football ecosystem for players, coaches,
+          academies, scouts and supporters across India.
+        </p>
+<div aria-label="Social media links" class="site-footer-socials">
+<a aria-label="Instagram" href="#" rel="noopener noreferrer">
+            Instagram
+          </a>
+<a aria-label="YouTube" href="#" rel="noopener noreferrer">
+            YouTube
+          </a>
+<a aria-label="Facebook" href="#" rel="noopener noreferrer">
+            Facebook
+          </a>
+<a aria-label="X" href="#" rel="noopener noreferrer">
+            X
+          </a>
+</div>
+</div>
+<div class="site-footer-links-column">
+<h2>
+          Explore
+        </h2>
+<ul>
+<li>
+<a href="players.html">
+              Players
+            </a>
+</li>
+<li>
+<a href="academies.html">
+              Academies
+            </a>
+</li>
+<li>
+<a href="coaches.html">
+              Coaches
+            </a>
+</li>
+<li>
+<a href="scouts.html">
+              Scouts
+            </a>
+</li>
+<li>
+<a href="trials.html">
+              Trials
+            </a>
+</li>
+</ul>
+</div>
+<div class="site-footer-links-column">
+<h2>
+          Platform
+        </h2>
+<ul>
+<li>
+<a href="about.html">
+              About the Mission
+            </a>
+</li>
+<li>
+<a href="news.html">
+              News
+            </a>
+</li>
+<li>
+<a href="events.html">
+              Events
+            </a>
+</li>
+<li>
+<a href="partners.html">
+              Partners
+            </a>
+</li>
+<li>
+<a href="contact.html">
+              Contact
+            </a>
+</li>
+</ul>
+</div>
+<div class="site-footer-links-column">
+<h2>
+          Academy Access
+        </h2>
+<ul>
+<li>
+<a data-academy-register="" href="academy-register.html">
+              Register Academy
+            </a>
+</li>
+<li>
+<a href="academy-login.html">
+              Academy Login
+            </a>
+</li>
+<li>
+<a href="academy-dashboard.html">
+              Academy Dashboard
+            </a>
+</li>
+<li>
+<a href="academy-help.html">
+              Academy Support
+            </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="site-footer-bottom">
+<p>
+        © <span data-current-year="" id="currentYear">2026</span> FIFA Mission India.
+        All rights reserved.
+      </p>
+<div class="site-footer-legal-links">
+<a href="privacy.html">
+          Privacy Policy
+        </a>
+<a href="terms.html">
+          Terms of Use
+        </a>
+<a href="accessibility.html">
+          Accessibility
+        </a>
+</div>
+</div>
+</div>
+</footer>
+<!-- =====================================================
+     MOBILE FILTER DRAWER
+====================================================== -->
+<div aria-hidden="true" class="academy-filter-drawer" id="academyFilterDrawer">
+<button aria-label="Close academy filters" class="academy-filter-drawer-backdrop" id="academyFilterDrawerBackdrop" tabindex="-1" type="button"></button>
+<aside aria-labelledby="academyFilterDrawerTitle" aria-modal="true" class="academy-filter-drawer-panel" role="dialog">
+<div class="academy-filter-drawer-header">
+<div>
+<span>
+          DIRECTORY FILTERS
+        </span>
+<h2 id="academyFilterDrawerTitle">
+          Filter Academies
+        </h2>
+</div>
+<button aria-label="Close academy filters" class="academy-filter-drawer-close" id="academyFilterDrawerCloseButton" type="button">
+        ×
+      </button>
+</div>
+<div class="academy-filter-drawer-content" id="academyFilterDrawerContent">
+<!--
+        JavaScript will clone or move the desktop filter controls here
+        on smaller screens.
+      -->
+</div>
+<div class="academy-filter-drawer-actions">
+<button class="academy-filter-drawer-reset" id="academyFilterDrawerResetButton" type="button">
+        Reset Filters
+      </button>
+<button class="academy-filter-drawer-apply" id="academyFilterDrawerApplyButton" type="button">
+        Show Academies
+      </button>
+</div>
+</aside>
+</div>
+<!-- =====================================================
+     SAVE ACADEMY AUTH MODAL
+====================================================== -->
+<div aria-hidden="true" class="academy-auth-modal" id="academyAuthModal">
+<button aria-label="Close sign-in prompt" class="academy-auth-modal-backdrop" id="academyAuthModalBackdrop" tabindex="-1" type="button"></button>
+<div aria-describedby="academyAuthModalDescription" aria-labelledby="academyAuthModalTitle" aria-modal="true" class="academy-auth-modal-dialog" role="dialog">
+<button aria-label="Close sign-in prompt" class="academy-auth-modal-close" id="academyAuthModalCloseButton" type="button">
+      ×
+    </button>
+<div aria-hidden="true" class="academy-auth-modal-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M6 3.75A1.75 1.75 0 0 1 7.75 2h8.5A1.75 1.75 0 0 1 18 3.75V22l-6-3.75L6 22V3.75Z"></path>
+</svg>
+</div>
+<h2 id="academyAuthModalTitle">
+      Save Academies to Your Profile
+    </h2>
+<p id="academyAuthModalDescription">
+      Sign in or create a player account to save academies and access them
+      later.
+    </p>
+<div class="academy-auth-modal-actions">
+<a class="academy-auth-modal-primary" href="login.html?redirect=academies.html">
+        Sign In
+      </a>
+<a class="academy-auth-modal-secondary" href="register.html?role=player">
+        Create Account
+      </a>
+</div>
+</div>
+</div>
+<!-- =====================================================
+     GLOBAL NOTIFICATION
+====================================================== -->
+<div aria-atomic="true" aria-live="polite" class="academy-toast-container" id="academyToastContainer"></div>
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+<button aria-label="Back to top" class="academy-back-to-top" hidden="" id="academyBackToTopButton" type="button">
+<span aria-hidden="true">
+    ↑
+  </span>
+</button>
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+</div></section></main></body></html>

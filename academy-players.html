@@ -1,0 +1,993 @@
+<!-- ==========================================================
+     ACADEMY REGISTERED PLAYERS
+     Frontend: Issac Belho
+     Backend : Mr. Harsh
+     Security: Samarth
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Registered Players | FIFA Mission India</title>
+
+<link rel="stylesheet" href="academy-players.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar">
+
+<div class="academy-sidebar-top">
+
+<div class="academy-brand">
+
+<div class="academy-brand-logo">
+
+⚽
+
+</div>
+
+<div>
+
+<h2>Mission India</h2>
+
+<p>Academy Portal</p>
+
+</div>
+
+</div>
+
+<button
+id="academySidebarClose"
+class="academy-sidebar-close">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+
+<nav class="academy-sidebar-nav">
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+<span>Academy Profile</span>
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-file-circle-plus"></i>
+
+<span>Applications</span>
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+<span>Trials</span>
+
+</a>
+
+<a
+href="academy-players.html"
+class="active">
+
+<i class="fa-solid fa-users"></i>
+
+<span>Registered Players</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<span>Coaches</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>Messages</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Notifications</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<span>Documents</span>
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+class="academy-sidebar-overlay"
+id="academySidebarOverlay"
+hidden></div>
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<div class="academy-main">
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="academy-topbar">
+
+<div class="academy-topbar-left">
+
+<button
+id="academyMenuButton"
+class="academy-menu-button">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
+
+<h1>Registered Players</h1>
+
+<p>
+
+Manage academy footballers
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-topbar-right">
+
+<div
+class="academy-profile-dropdown-wrapper">
+
+<button
+id="academyProfileTrigger"
+class="academy-profile-trigger"
+aria-expanded="false">
+
+<img
+src="images/avatar.jpg"
+alt="Academy">
+
+<span>
+
+Green Valley Academy
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div
+id="academyProfileDropdown"
+class="academy-profile-dropdown"
+hidden>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+<button
+id="academyLogoutButton">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="academy-page-hero">
+
+<div>
+
+<p class="academy-breadcrumb">
+
+Academy /
+Registered Players
+
+</p>
+
+<h2>
+
+Registered Academy Players
+
+</h2>
+
+<p>
+
+Manage every player,
+attendance,
+fitness,
+performance,
+and trial history from one place.
+
+</p>
+
+</div>
+
+<button
+id="academyAddPlayerButton"
+class="academy-primary-button">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Player
+
+</button>
+
+</section>
+
+<!-- ======================================================
+     STATISTICS
+====================================================== -->
+
+<section class="academy-stats-grid">
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Total Players</p>
+
+<h3
+data-stat="total">
+
+248
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Active</p>
+
+<h3
+data-stat="active">
+
+231
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Selected</p>
+
+<h3
+data-stat="selected">
+
+42
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-star"></i>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Injured</p>
+
+<h3
+data-stat="injured">
+
+6
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-kit-medical"></i>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Average Attendance</p>
+
+<h3>
+
+94%
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<div>
+
+<p>Average Age</p>
+
+<h3>
+
+16.8
+
+</h3>
+
+</div>
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+</section>
+
+<!-- ======================================================
+     TOOLBAR
+====================================================== -->
+
+<section
+class="academy-toolbar">
+
+<input
+
+type="search"
+
+id="academyPlayerSearch"
+
+placeholder="Search players...">
+
+<select
+id="academyPositionFilter">
+
+<option>
+
+All Positions
+
+</option>
+
+<option>
+
+Goalkeeper
+
+</option>
+
+<option>
+
+Defender
+
+</option>
+
+<option>
+
+Midfielder
+
+</option>
+
+<option>
+
+Forward
+
+</option>
+
+</select>
+
+<select
+id="academyAgeFilter">
+
+<option>
+
+All Age Groups
+
+</option>
+
+<option>
+
+U13
+
+</option>
+
+<option>
+
+U15
+
+</option>
+
+<option>
+
+U17
+
+</option>
+
+<option>
+
+Senior
+
+</option>
+
+</select>
+
+<select
+id="academyStatusFilter">
+
+<option>
+
+All Status
+
+</option>
+
+<option>
+
+Active
+
+</option>
+
+<option>
+
+Injured
+
+</option>
+
+<option>
+
+Suspended
+
+</option>
+
+</select>
+
+<div
+class="academy-toolbar-actions">
+
+<button
+id="academyTableView"
+class="academy-secondary-button">
+
+<i class="fa-solid fa-table"></i>
+
+</button>
+
+<button
+id="academyCardView"
+class="academy-secondary-button">
+
+<i class="fa-solid fa-grip"></i>
+
+</button>
+
+<button
+id="academyExportPlayers"
+class="academy-primary-button">
+
+<i class="fa-solid fa-download"></i>
+
+Export
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ======================================================
+     PLAYERS TABLE
+====================================================== -->
+
+<section class="academy-table-wrapper">
+
+<table
+class="academy-table">
+
+<thead>
+
+<tr>
+
+<th>
+
+<input
+type="checkbox">
+
+</th>
+
+<th>Player</th>
+
+<th>ID</th>
+
+<th>Age</th>
+
+<th>Position</th>
+
+<th>Team</th>
+
+<th>Attendance</th>
+
+<th>Status</th>
+
+<th>Joined</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="academyPlayersTableBody">
+
+<!-- ==============================================
+Backend Placeholder
+
+Mr. Harsh
+
+GET
+
+/api/academy/players
+
+Render player rows here.
+
+============================================== -->
+
+<!-- ==============================================
+Backend Placeholder
+
+Mr. Harsh
+
+GET
+
+/api/academy/players
+
+Render player rows here.
+
+============================================== -->
+
+<!-- ======================================================
+     ADD PLAYER MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyAddPlayerModal"
+hidden>
+
+<div class="academy-modal-content academy-large-modal">
+
+<div class="academy-modal-header">
+
+<h2>
+
+Register New Player
+
+</h2>
+
+<button data-close-add-player>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<form id="academyAddPlayerForm">
+
+<div class="academy-form-grid">
+
+<div>
+
+<label>Full Name</label>
+
+<input
+type="text"
+required>
+
+</div>
+
+<div>
+
+<label>Player ID</label>
+
+<input
+type="text"
+required>
+
+</div>
+
+<div>
+
+<label>Age</label>
+
+<input
+type="number"
+required>
+
+</div>
+
+<div>
+
+<label>Position</label>
+
+<select>
+
+<option>Goalkeeper</option>
+<option>Defender</option>
+<option>Midfielder</option>
+<option>Forward</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Team</label>
+
+<select>
+
+<option>U13</option>
+<option>U15</option>
+<option>U17</option>
+<option>Senior</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Phone</label>
+
+<input type="tel">
+
+</div>
+
+</div>
+
+<div class="academy-modal-footer">
+
+<button
+type="button"
+data-close-add-player
+class="academy-secondary-button">
+
+Cancel
+
+</button>
+
+<button
+type="submit"
+class="academy-primary-button">
+
+Register Player
+
+</button>
+
+</div>
+
+<!--
+====================================================
+
+Backend Placeholder
+
+Mr. Harsh
+
+POST
+
+/api/academy/players
+
+====================================================
+-->
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     EDIT PLAYER MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyEditPlayerModal"
+hidden>
+
+<div class="academy-modal-content">
+
+<div class="academy-modal-header">
+
+<h2>
+
+Edit Player
+
+</h2>
+
+<button
+data-close-edit-player>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<form id="academyEditPlayerForm">
+
+<p>
+
+Frontend placeholder.
+
+Player information will be loaded dynamically.
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+type="button"
+data-close-edit-player
+class="academy-secondary-button">
+
+Cancel
+
+</button>
+
+<button
+type="submit"
+class="academy-primary-button">
+
+Save Changes
+
+</button>
+
+</div>
+
+<!--
+
+PATCH
+
+/api/academy/players/:id
+
+-->
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     DELETE PLAYER MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyDeletePlayerModal"
+hidden>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Remove Player?
+
+</h2>
+
+<p>
+
+This action cannot be undone.
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+data-close-delete-player
+class="academy-secondary-button">
+
+Cancel
+
+</button>
+
+<button
+id="academyConfirmDeletePlayer"
+class="academy-danger-button">
+
+Delete
+
+</button>
+
+</div>
+
+<!--
+
+DELETE
+
+/api/academy/players/:id
+
+-->
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Logout
+
+</h2>
+
+<p>
+
+Are you sure you want to logout?
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+data-close-logout
+class="academy-secondary-button">
+
+Cancel
+
+</button>
+
+<button
+id="academyConfirmLogout"
+class="academy-danger-button">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     TOAST CONTAINER
+====================================================== -->
+
+<div
+id="academyToastContainer"
+class="academy-toast-container">
+
+</div>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+src="academy-players.js">
+
+</script>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,3188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Manage assigned football players, monitor development, review performance and maintain coaching notes."
+  >
+
+  <title>
+    My Players | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="coach-players.css"
+  >
+</head>
+
+<body>
+
+  <!-- ======================================================
+       SKIP LINK
+  ======================================================= -->
+
+  <a
+    href="#mainContent"
+    class="skip-link"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- ======================================================
+       PORTAL LAYOUT
+  ======================================================= -->
+
+  <div class="coach-portal-layout">
+
+
+    <!-- ====================================================
+         SIDEBAR
+    ===================================================== -->
+
+    <aside
+      class="coach-sidebar"
+      id="coachSidebar"
+      aria-label="Coach portal navigation"
+    >
+
+      <div class="sidebar-header">
+
+        <a
+          href="index.html"
+          class="portal-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <span class="portal-brand-icon">
+            <i class="fa-solid fa-futbol"></i>
+          </span>
+
+          <span class="portal-brand-text">
+            <strong>FIFA Mission</strong>
+            <small>Coach Portal</small>
+          </span>
+
+        </a>
+
+        <button
+          type="button"
+          class="sidebar-close-button"
+          id="sidebarCloseButton"
+          aria-label="Close navigation menu"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <!-- Coach summary -->
+
+      <div class="sidebar-coach-summary">
+
+        <div class="sidebar-coach-avatar">
+
+          <img
+            src="images/coach-avatar.jpg"
+            alt="Coach Arjun Sharma"
+            data-coach-avatar
+          >
+
+          <span
+            class="online-status"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+        <div class="sidebar-coach-info">
+          <strong data-coach-name>
+            Arjun Sharma
+          </strong>
+
+          <span>
+            Head Development Coach
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- Main navigation -->
+
+      <nav class="coach-sidebar-nav">
+
+        <p class="sidebar-nav-label">
+          Main
+        </p>
+
+        <a href="coach-dashboard.html">
+          <i class="fa-solid fa-grid-2"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="coach-profile.html">
+          <i class="fa-regular fa-user"></i>
+          <span>My Profile</span>
+        </a>
+
+        <a
+          href="coach-players.html"
+          class="active"
+          aria-current="page"
+        >
+          <i class="fa-solid fa-users"></i>
+          <span>My Players</span>
+
+          <span
+            class="sidebar-count"
+            id="sidebarPlayerCount"
+          >
+            24
+          </span>
+        </a>
+
+        <a href="coach-training.html">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>Training Plans</span>
+        </a>
+
+        <a href="coach-schedule.html">
+          <i class="fa-regular fa-calendar-days"></i>
+          <span>Schedule</span>
+        </a>
+
+        <a href="coach-performance.html">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Performance</span>
+        </a>
+
+        <a href="coach-messages.html">
+          <i class="fa-regular fa-message"></i>
+          <span>Messages</span>
+
+          <span class="sidebar-badge">
+            5
+          </span>
+        </a>
+
+
+        <p class="sidebar-nav-label sidebar-nav-label-secondary">
+          Account
+        </p>
+
+        <a href="coach-settings.html">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+
+        <a href="coach-help.html">
+          <i class="fa-regular fa-circle-question"></i>
+          <span>Help & Support</span>
+        </a>
+
+      </nav>
+
+
+      <!-- Sidebar footer -->
+
+      <div class="sidebar-footer">
+
+        <div class="sidebar-support-card">
+
+          <span class="support-card-icon">
+            <i class="fa-solid fa-headset"></i>
+          </span>
+
+          <div>
+            <strong>Need assistance?</strong>
+
+            <p>
+              Contact the Mission India support team.
+            </p>
+
+            <a href="coach-help.html">
+              Get support
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="sidebar-logout-button"
+          data-action="logout"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- Sidebar overlay -->
+
+    <button
+      type="button"
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      aria-label="Close sidebar"
+      hidden
+    ></button>
+
+
+    <!-- ====================================================
+         MAIN PORTAL AREA
+    ===================================================== -->
+
+    <div class="coach-portal-main">
+
+
+      <!-- ==================================================
+           TOPBAR
+      =================================================== -->
+
+      <header class="coach-topbar">
+
+        <div class="topbar-left">
+
+          <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation menu"
+            aria-controls="coachSidebar"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="topbar-page-title">
+            <span>Coach Portal</span>
+            <strong>My Players</strong>
+          </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+          <!-- Search toggle -->
+
+          <button
+            type="button"
+            class="topbar-icon-button"
+            id="playerSearchToggle"
+            aria-label="Open player search"
+            aria-controls="playerSearchPanel"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+
+          <!-- Notifications -->
+
+          <button
+            type="button"
+            class="topbar-icon-button notification-button"
+            id="notificationButton"
+            aria-label="Open notifications"
+            aria-controls="notificationPanel"
+            aria-expanded="false"
+          >
+            <i class="fa-regular fa-bell"></i>
+
+            <span
+              class="notification-badge"
+              id="notificationBadge"
+            >
+              3
+            </span>
+          </button>
+
+
+          <!-- Account -->
+
+          <div class="topbar-account">
+
+            <button
+              type="button"
+              class="coach-account-button"
+              id="coachAccountButton"
+              aria-label="Open account menu"
+              aria-controls="coachAccountDropdown"
+              aria-expanded="false"
+            >
+
+              <img
+                src="images/coach-avatar.jpg"
+                alt=""
+                data-coach-avatar
+              >
+
+              <span class="coach-account-details">
+                <strong data-coach-name>
+                  Arjun Sharma
+                </strong>
+
+                <small>
+                  Development Coach
+                </small>
+              </span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="coach-account-dropdown"
+              id="coachAccountDropdown"
+              aria-hidden="true"
+              hidden
+            >
+
+              <div class="account-dropdown-header">
+                <strong data-coach-name>
+                  Arjun Sharma
+                </strong>
+
+                <span>
+                  arjun.sharma@example.com
+                </span>
+              </div>
+
+              <a href="coach-profile.html">
+                <i class="fa-regular fa-user"></i>
+                My Profile
+              </a>
+
+              <a href="coach-settings.html">
+                <i class="fa-solid fa-gear"></i>
+                Account Settings
+              </a>
+
+              <button
+                type="button"
+                data-action="logout"
+              >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- ==================================================
+           SEARCH PANEL
+      =================================================== -->
+
+      <section
+        class="player-search-panel"
+        id="playerSearchPanel"
+        aria-label="Search players"
+        aria-hidden="true"
+        hidden
+      >
+
+        <form
+          class="player-search-form"
+          id="playerSearchForm"
+          role="search"
+        >
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <label
+            for="playerSearchInput"
+            class="visually-hidden"
+          >
+            Search players
+          </label>
+
+          <input
+            type="search"
+            id="playerSearchInput"
+            name="playerSearch"
+            placeholder="Search by player name, position or academy..."
+            autocomplete="off"
+          >
+
+          <button
+            type="button"
+            id="playerSearchClose"
+            aria-label="Close player search"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+        </form>
+
+      </section>
+
+
+      <!-- ==================================================
+           MAIN CONTENT
+      =================================================== -->
+
+      <main
+        class="coach-players-main"
+        id="mainContent"
+      >
+
+
+        <!-- ================================================
+             PAGE HERO
+        ================================================= -->
+
+        <section class="players-page-hero">
+
+          <div class="players-hero-content">
+
+            <span class="section-eyebrow">
+              PLAYER MANAGEMENT
+            </span>
+
+            <h1>
+              Develop every player with purpose.
+            </h1>
+
+            <p>
+              Review assigned players, monitor their progress,
+              maintain coaching notes and identify development
+              priorities from one organised workspace.
+            </p>
+
+          </div>
+
+
+          <div class="players-hero-actions">
+
+            <button
+              type="button"
+              class="secondary-action-button"
+              id="exportPlayersButton"
+            >
+              <i class="fa-solid fa-file-export"></i>
+              Export List
+            </button>
+
+            <button
+              type="button"
+              class="primary-action-button"
+              id="addPlayerButton"
+              data-modal-open="addPlayerModal"
+            >
+              <i class="fa-solid fa-user-plus"></i>
+              Add Player
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- ================================================
+             OVERVIEW STATISTICS
+        ================================================= -->
+
+        <section
+          class="players-overview-grid"
+          aria-label="Player overview"
+        >
+
+
+          <!-- Total players -->
+
+          <article class="player-overview-card">
+
+            <div class="overview-card-top">
+
+              <span class="overview-card-icon">
+                <i class="fa-solid fa-users"></i>
+              </span>
+
+              <span class="overview-card-trend positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                +3 this month
+              </span>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>Total Players</span>
+
+              <strong
+                id="totalPlayersCount"
+                data-player-statistic
+                data-value="24"
+              >
+                24
+              </strong>
+
+              <p>
+                Players currently assigned to you
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- Active players -->
+
+          <article class="player-overview-card">
+
+            <div class="overview-card-top">
+
+              <span class="overview-card-icon success">
+                <i class="fa-solid fa-circle-check"></i>
+              </span>
+
+              <span class="overview-card-label">
+                83% of squad
+              </span>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>Active Players</span>
+
+              <strong
+                id="activePlayersCount"
+                data-player-statistic
+                data-value="20"
+              >
+                20
+              </strong>
+
+              <p>
+                Available for full training
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- Injured players -->
+
+          <article class="player-overview-card">
+
+            <div class="overview-card-top">
+
+              <span class="overview-card-icon danger">
+                <i class="fa-solid fa-kit-medical"></i>
+              </span>
+
+              <span class="overview-card-label">
+                Requires monitoring
+              </span>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>Injured Players</span>
+
+              <strong
+                id="injuredPlayersCount"
+                data-player-statistic
+                data-value="2"
+              >
+                2
+              </strong>
+
+              <p>
+                Currently on recovery plans
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- Trial players -->
+
+          <article class="player-overview-card">
+
+            <div class="overview-card-top">
+
+              <span class="overview-card-icon warning">
+                <i class="fa-solid fa-stopwatch"></i>
+              </span>
+
+              <span class="overview-card-label">
+                2 evaluations due
+              </span>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>Trial Players</span>
+
+              <strong
+                id="trialPlayersCount"
+                data-player-statistic
+                data-value="2"
+              >
+                2
+              </strong>
+
+              <p>
+                Under active assessment
+              </p>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <!-- ================================================
+             PLAYER LIST SECTION
+        ================================================= -->
+
+        <section class="players-management-section">
+
+
+          <!-- Section heading -->
+
+          <div class="players-section-heading">
+
+            <div>
+
+              <span class="section-eyebrow">
+                ASSIGNED SQUAD
+              </span>
+
+              <h2>
+                Player Directory
+              </h2>
+
+              <p>
+                Search, filter and review every player currently
+                assigned to your coaching programme.
+              </p>
+
+            </div>
+
+            <div
+              class="players-result-summary"
+              aria-live="polite"
+            >
+              Showing
+              <strong id="visiblePlayerCount">
+                6
+              </strong>
+              of
+              <strong id="allPlayerCount">
+                24
+              </strong>
+              players
+            </div>
+
+          </div>
+
+
+          <!-- Filter toolbar -->
+
+          <div class="players-filter-toolbar">
+
+            <div class="player-list-search">
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <label
+                for="playerListSearchInput"
+                class="visually-hidden"
+              >
+                Search player directory
+              </label>
+
+              <input
+                type="search"
+                id="playerListSearchInput"
+                placeholder="Search players..."
+                autocomplete="off"
+              >
+
+            </div>
+
+
+            <div class="player-filter-group">
+
+              <!-- Position filter -->
+
+              <div class="filter-field">
+
+                <label for="positionFilter">
+                  Position
+                </label>
+
+                <select id="positionFilter">
+                  <option value="all">
+                    All Positions
+                  </option>
+
+                  <option value="goalkeeper">
+                    Goalkeeper
+                  </option>
+
+                  <option value="defender">
+                    Defender
+                  </option>
+
+                  <option value="midfielder">
+                    Midfielder
+                  </option>
+
+                  <option value="forward">
+                    Forward
+                  </option>
+                </select>
+
+              </div>
+
+
+              <!-- Age group filter -->
+
+              <div class="filter-field">
+
+                <label for="ageGroupFilter">
+                  Age Group
+                </label>
+
+                <select id="ageGroupFilter">
+                  <option value="all">
+                    All Ages
+                  </option>
+
+                  <option value="under-13">
+                    Under 13
+                  </option>
+
+                  <option value="under-15">
+                    Under 15
+                  </option>
+
+                  <option value="under-17">
+                    Under 17
+                  </option>
+
+                  <option value="under-19">
+                    Under 19
+                  </option>
+
+                  <option value="senior">
+                    Senior
+                  </option>
+                </select>
+
+              </div>
+
+
+              <!-- Status filter -->
+
+              <div class="filter-field">
+
+                <label for="statusFilter">
+                  Status
+                </label>
+
+                <select id="statusFilter">
+                  <option value="all">
+                    All Statuses
+                  </option>
+
+                  <option value="active">
+                    Active
+                  </option>
+
+                  <option value="injured">
+                    Injured
+                  </option>
+
+                  <option value="trial">
+                    Trial
+                  </option>
+
+                  <option value="inactive">
+                    Inactive
+                  </option>
+                </select>
+
+              </div>
+
+
+              <!-- Academy filter -->
+
+              <div class="filter-field">
+
+                <label for="academyFilter">
+                  Academy
+                </label>
+
+                <select id="academyFilter">
+                  <option value="all">
+                    All Academies
+                  </option>
+
+                  <option value="mission-india">
+                    Mission India Academy
+                  </option>
+
+                  <option value="national-youth">
+                    National Youth Centre
+                  </option>
+
+                  <option value="elite-football">
+                    Elite Football Academy
+                  </option>
+                </select>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="clear-filters-button"
+                id="clearPlayerFiltersButton"
+              >
+                <i class="fa-solid fa-rotate-left"></i>
+                Clear
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Active filters -->
+
+          <div
+            class="active-filter-list"
+            id="activeFilterList"
+            aria-live="polite"
+            hidden
+          ></div>
+
+
+          <!-- Player grid -->
+
+          <div
+            class="players-grid"
+            id="playersGrid"
+            aria-live="polite"
+          >
+
+
+            <!-- ============================================
+                 PLAYER CARD 1
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-001"
+              data-player-name="Rohan Mehta"
+              data-position="midfielder"
+              data-age-group="under-17"
+              data-status="active"
+              data-academy="mission-india"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-rohan.jpg"
+                  alt="Rohan Mehta"
+                >
+
+                <span class="player-status-badge active">
+                  Active
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button active"
+                  aria-label="Remove Rohan Mehta from favourites"
+                  aria-pressed="true"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-solid fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Central Midfielder
+                    </span>
+
+                    <h3>
+                      Rohan Mehta
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      Mission India Academy
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 8"
+                  >
+                    08
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    16 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Delhi
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Performance rating</span>
+
+                    <strong>
+                      8.7
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div
+                    class="rating-indicator excellent"
+                    aria-label="Excellent performance"
+                  >
+                    Excellent
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Development progress</span>
+                    <strong>82%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="82"
+                    aria-label="Rohan Mehta development progress"
+                  >
+                    <span style="width: 82%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>94%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>38</strong>
+                  </div>
+
+                  <div>
+                    <span>Goals</span>
+                    <strong>7</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-last-session">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  <span>
+                    Last training:
+                    <strong>16 July 2026</strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-001"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Rohan Mehta"
+                  data-action="open-notes"
+                  data-player-id="player-001"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Rohan Mehta"
+                  data-action="view-performance"
+                  data-player-id="player-001"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Rohan Mehta"
+                  data-action="player-options"
+                  data-player-id="player-001"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- ============================================
+                 PLAYER CARD 2
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-002"
+              data-player-name="Ayaan Khan"
+              data-position="forward"
+              data-age-group="under-17"
+              data-status="active"
+              data-academy="national-youth"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-ayaan.jpg"
+                  alt="Ayaan Khan"
+                >
+
+                <span class="player-status-badge active">
+                  Active
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button"
+                  aria-label="Add Ayaan Khan to favourites"
+                  aria-pressed="false"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-regular fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Centre Forward
+                    </span>
+
+                    <h3>
+                      Ayaan Khan
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      National Youth Centre
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 9"
+                  >
+                    09
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    17 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Mumbai
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Performance rating</span>
+
+                    <strong>
+                      8.4
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div class="rating-indicator excellent">
+                    Excellent
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Development progress</span>
+                    <strong>78%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="78"
+                    aria-label="Ayaan Khan development progress"
+                  >
+                    <span style="width: 78%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>91%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>35</strong>
+                  </div>
+
+                  <div>
+                    <span>Goals</span>
+                    <strong>15</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-last-session">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  <span>
+                    Last training:
+                    <strong>16 July 2026</strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-002"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Ayaan Khan"
+                  data-action="open-notes"
+                  data-player-id="player-002"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Ayaan Khan"
+                  data-action="view-performance"
+                  data-player-id="player-002"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Ayaan Khan"
+                  data-action="player-options"
+                  data-player-id="player-002"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- ============================================
+                 PLAYER CARD 3
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-003"
+              data-player-name="Neeraj Thapa"
+              data-position="defender"
+              data-age-group="under-19"
+              data-status="injured"
+              data-academy="mission-india"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-neeraj.jpg"
+                  alt="Neeraj Thapa"
+                >
+
+                <span class="player-status-badge injured">
+                  Injured
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button"
+                  aria-label="Add Neeraj Thapa to favourites"
+                  aria-pressed="false"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-regular fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Centre Back
+                    </span>
+
+                    <h3>
+                      Neeraj Thapa
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      Mission India Academy
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 4"
+                  >
+                    04
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    18 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Gangtok
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Performance rating</span>
+
+                    <strong>
+                      7.8
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div class="rating-indicator good">
+                    Good
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Development progress</span>
+                    <strong>71%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="71"
+                    aria-label="Neeraj Thapa development progress"
+                  >
+                    <span style="width: 71%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>88%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>31</strong>
+                  </div>
+
+                  <div>
+                    <span>Clearances</span>
+                    <strong>42</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-injury-note">
+
+                  <i class="fa-solid fa-kit-medical"></i>
+
+                  <span>
+                    Hamstring recovery — review in 5 days
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-003"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Neeraj Thapa"
+                  data-action="open-notes"
+                  data-player-id="player-003"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Neeraj Thapa"
+                  data-action="view-performance"
+                  data-player-id="player-003"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Neeraj Thapa"
+                  data-action="player-options"
+                  data-player-id="player-003"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- ============================================
+                 PLAYER CARD 4
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-004"
+              data-player-name="Kabir Singh"
+              data-position="goalkeeper"
+              data-age-group="under-15"
+              data-status="active"
+              data-academy="elite-football"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-kabir.jpg"
+                  alt="Kabir Singh"
+                >
+
+                <span class="player-status-badge active">
+                  Active
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button active"
+                  aria-label="Remove Kabir Singh from favourites"
+                  aria-pressed="true"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-solid fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Goalkeeper
+                    </span>
+
+                    <h3>
+                      Kabir Singh
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      Elite Football Academy
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 1"
+                  >
+                    01
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    15 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chandigarh
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Performance rating</span>
+
+                    <strong>
+                      8.1
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div class="rating-indicator excellent">
+                    Excellent
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Development progress</span>
+                    <strong>76%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="76"
+                    aria-label="Kabir Singh development progress"
+                  >
+                    <span style="width: 76%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>96%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>36</strong>
+                  </div>
+
+                  <div>
+                    <span>Saves</span>
+                    <strong>67</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-last-session">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  <span>
+                    Last training:
+                    <strong>15 July 2026</strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-004"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Kabir Singh"
+                  data-action="open-notes"
+                  data-player-id="player-004"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Kabir Singh"
+                  data-action="view-performance"
+                  data-player-id="player-004"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Kabir Singh"
+                  data-action="player-options"
+                  data-player-id="player-004"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- ============================================
+                 PLAYER CARD 5
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-005"
+              data-player-name="Lalremruata"
+              data-position="forward"
+              data-age-group="under-19"
+              data-status="trial"
+              data-academy="mission-india"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-lalremruata.jpg"
+                  alt="Lalremruata"
+                >
+
+                <span class="player-status-badge trial">
+                  Trial
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button"
+                  aria-label="Add Lalremruata to favourites"
+                  aria-pressed="false"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-regular fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Left Winger
+                    </span>
+
+                    <h3>
+                      Lalremruata
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      Mission India Academy
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 11"
+                  >
+                    11
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    18 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Aizawl
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Trial rating</span>
+
+                    <strong>
+                      7.6
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div class="rating-indicator good">
+                    Promising
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Trial evaluation</span>
+                    <strong>60%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="60"
+                    aria-label="Lalremruata trial evaluation"
+                  >
+                    <span style="width: 60%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>100%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>6</strong>
+                  </div>
+
+                  <div>
+                    <span>Goals</span>
+                    <strong>3</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-trial-note">
+
+                  <i class="fa-solid fa-clipboard-check"></i>
+
+                  <span>
+                    Final assessment due 21 July 2026
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-005"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Lalremruata"
+                  data-action="open-notes"
+                  data-player-id="player-005"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Lalremruata"
+                  data-action="view-performance"
+                  data-player-id="player-005"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Lalremruata"
+                  data-action="player-options"
+                  data-player-id="player-005"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- ============================================
+                 PLAYER CARD 6
+            ============================================= -->
+
+            <article
+              class="player-card"
+              data-player-id="player-006"
+              data-player-name="Tenzin Dorjee"
+              data-position="defender"
+              data-age-group="under-17"
+              data-status="active"
+              data-academy="elite-football"
+            >
+
+              <div class="player-card-media">
+
+                <img
+                  src="images/player-tenzin.jpg"
+                  alt="Tenzin Dorjee"
+                >
+
+                <span class="player-status-badge active">
+                  Active
+                </span>
+
+                <button
+                  type="button"
+                  class="player-favourite-button"
+                  aria-label="Add Tenzin Dorjee to favourites"
+                  aria-pressed="false"
+                  data-action="toggle-favourite"
+                >
+                  <i class="fa-regular fa-star"></i>
+                </button>
+
+              </div>
+
+
+              <div class="player-card-body">
+
+                <div class="player-card-identity">
+
+                  <div>
+
+                    <span class="player-card-position">
+                      Right Back
+                    </span>
+
+                    <h3>
+                      Tenzin Dorjee
+                    </h3>
+
+                    <p>
+                      <i class="fa-solid fa-shield-halved"></i>
+                      Elite Football Academy
+                    </p>
+
+                  </div>
+
+                  <span
+                    class="player-shirt-number"
+                    aria-label="Shirt number 2"
+                  >
+                    02
+                  </span>
+
+                </div>
+
+
+                <div class="player-meta-row">
+
+                  <span>
+                    <i class="fa-regular fa-calendar"></i>
+                    17 years
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Dharamshala
+                  </span>
+
+                </div>
+
+
+                <div class="player-rating-row">
+
+                  <div>
+                    <span>Performance rating</span>
+
+                    <strong>
+                      7.9
+                      <small>/10</small>
+                    </strong>
+                  </div>
+
+                  <div class="rating-indicator good">
+                    Good
+                  </div>
+
+                </div>
+
+
+                <div class="player-progress-block">
+
+                  <div class="progress-heading">
+                    <span>Development progress</span>
+                    <strong>74%</strong>
+                  </div>
+
+                  <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="74"
+                    aria-label="Tenzin Dorjee development progress"
+                  >
+                    <span style="width: 74%;"></span>
+                  </div>
+
+                </div>
+
+
+                <div class="player-card-statistics">
+
+                  <div>
+                    <span>Attendance</span>
+                    <strong>92%</strong>
+                  </div>
+
+                  <div>
+                    <span>Sessions</span>
+                    <strong>34</strong>
+                  </div>
+
+                  <div>
+                    <span>Assists</span>
+                    <strong>5</strong>
+                  </div>
+
+                </div>
+
+
+                <div class="player-last-session">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  <span>
+                    Last training:
+                    <strong>15 July 2026</strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="player-card-actions">
+
+                <button
+                  type="button"
+                  class="player-primary-card-action"
+                  data-action="view-player"
+                  data-player-id="player-006"
+                >
+                  View Profile
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open notes for Tenzin Dorjee"
+                  data-action="open-notes"
+                  data-player-id="player-006"
+                >
+                  <i class="fa-regular fa-note-sticky"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="View performance for Tenzin Dorjee"
+                  data-action="view-performance"
+                  data-player-id="player-006"
+                >
+                  <i class="fa-solid fa-chart-line"></i>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Open more actions for Tenzin Dorjee"
+                  data-action="player-options"
+                  data-player-id="player-006"
+                >
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- Empty state -->
+
+          <div
+            class="players-empty-state"
+            id="playersEmptyState"
+            hidden
+          >
+
+            <span class="empty-state-icon">
+              <i class="fa-solid fa-user-slash"></i>
+            </span>
+
+            <h3>
+              No players found
+            </h3>
+
+            <p>
+              No assigned players match your current search
+              and filter selection.
+            </p>
+
+            <button
+              type="button"
+              id="emptyStateClearButton"
+            >
+              Clear all filters
+            </button>
+
+          </div>
+
+
+          <!-- Load more -->
+
+          <div class="players-load-more">
+
+            <button
+              type="button"
+              id="loadMorePlayersButton"
+            >
+              Load More Players
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- ================================================
+             DEVELOPMENT INSIGHTS
+        ================================================= -->
+
+        <section class="development-insights-section">
+
+          <div class="players-section-heading">
+
+            <div>
+
+              <span class="section-eyebrow">
+                COACHING INSIGHTS
+              </span>
+
+              <h2>
+                Development Priorities
+              </h2>
+
+              <p>
+                Focus areas identified from recent training
+                sessions and performance reviews.
+              </p>
+
+            </div>
+
+            <a href="coach-performance.html">
+              View full analytics
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+
+          <div class="development-insights-grid">
+
+
+            <!-- Insight 1 -->
+
+            <article class="development-insight-card priority-high">
+
+              <div class="insight-card-header">
+
+                <span class="insight-card-icon">
+                  <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span class="insight-priority-badge">
+                  High Priority
+                </span>
+
+              </div>
+
+              <h3>
+                Improve attacking transitions
+              </h3>
+
+              <p>
+                Four midfield and forward players require
+                focused transition training during the next
+                development cycle.
+              </p>
+
+              <div class="insight-player-stack">
+
+                <img
+                  src="images/player-rohan.jpg"
+                  alt="Rohan Mehta"
+                >
+
+                <img
+                  src="images/player-ayaan.jpg"
+                  alt="Ayaan Khan"
+                >
+
+                <img
+                  src="images/player-lalremruata.jpg"
+                  alt="Lalremruata"
+                >
+
+                <span>
+                  +1
+                </span>
+
+              </div>
+
+              <button
+                type="button"
+                data-action="create-training-plan"
+              >
+                Create Training Plan
+              </button>
+
+            </article>
+
+
+            <!-- Insight 2 -->
+
+            <article class="development-insight-card priority-medium">
+
+              <div class="insight-card-header">
+
+                <span class="insight-card-icon">
+                  <i class="fa-solid fa-person-running"></i>
+                </span>
+
+                <span class="insight-priority-badge">
+                  Medium Priority
+                </span>
+
+              </div>
+
+              <h3>
+                Physical endurance development
+              </h3>
+
+              <p>
+                Three players recorded declining output during
+                the final 20 minutes of recent match simulations.
+              </p>
+
+              <div class="insight-player-stack">
+
+                <img
+                  src="images/player-neeraj.jpg"
+                  alt="Neeraj Thapa"
+                >
+
+                <img
+                  src="images/player-tenzin.jpg"
+                  alt="Tenzin Dorjee"
+                >
+
+                <img
+                  src="images/player-kabir.jpg"
+                  alt="Kabir Singh"
+                >
+
+              </div>
+
+              <button
+                type="button"
+                data-action="review-insight"
+              >
+                Review Players
+              </button>
+
+            </article>
+
+
+            <!-- Insight 3 -->
+
+            <article class="development-insight-card priority-low">
+
+              <div class="insight-card-header">
+
+                <span class="insight-card-icon">
+                  <i class="fa-solid fa-brain"></i>
+                </span>
+
+                <span class="insight-priority-badge">
+                  Development
+                </span>
+
+              </div>
+
+              <h3>
+                Decision-making under pressure
+              </h3>
+
+              <p>
+                Introduce small-sided games to improve scanning,
+                awareness and faster decision-making.
+              </p>
+
+              <div class="insight-progress">
+
+                <div>
+                  <span>Squad focus level</span>
+                  <strong>68%</strong>
+                </div>
+
+                <div class="progress-track">
+                  <span style="width: 68%;"></span>
+                </div>
+
+              </div>
+
+              <button
+                type="button"
+                data-action="review-insight"
+              >
+                View Recommendation
+              </button>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- ================================================
+             PAGE FOOTER
+        ================================================= -->
+
+        <footer class="coach-portal-footer">
+
+          <p>
+            © 2026 FIFA Mission India. Building the future
+            of Indian football.
+          </p>
+
+          <div>
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+            <a href="coach-help.html">
+              Support
+            </a>
+          </div>
+
+        </footer>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================
+       NOTIFICATION PANEL
+  ======================================================= -->
+
+  <aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-label="Notifications"
+    aria-hidden="true"
+    hidden
+  >
+
+    <div class="notification-panel-header">
+
+      <div>
+        <span>Updates</span>
+        <h2>Notifications</h2>
+      </div>
+
+      <button
+        type="button"
+        id="notificationCloseButton"
+        aria-label="Close notifications"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <div class="notification-panel-toolbar">
+
+      <button
+        type="button"
+        id="markAllNotificationsButton"
+      >
+        Mark all as read
+      </button>
+
+    </div>
+
+
+    <div
+      class="notification-list"
+      id="notificationList"
+    >
+
+      <article class="notification-item unread">
+
+        <span class="notification-item-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </span>
+
+        <div>
+          <strong>New player assigned</strong>
+
+          <p>
+            Lalremruata has been assigned to your trial squad.
+          </p>
+
+          <time datetime="2026-07-18T10:30">
+            2 hours ago
+          </time>
+        </div>
+
+      </article>
+
+
+      <article class="notification-item unread">
+
+        <span class="notification-item-icon warning">
+          <i class="fa-solid fa-kit-medical"></i>
+        </span>
+
+        <div>
+          <strong>Injury update</strong>
+
+          <p>
+            Neeraj Thapa's recovery assessment has been updated.
+          </p>
+
+          <time datetime="2026-07-18T08:00">
+            5 hours ago
+          </time>
+        </div>
+
+      </article>
+
+
+      <article class="notification-item unread">
+
+        <span class="notification-item-icon success">
+          <i class="fa-solid fa-chart-line"></i>
+        </span>
+
+        <div>
+          <strong>Performance report ready</strong>
+
+          <p>
+            The weekly squad development report is available.
+          </p>
+
+          <time datetime="2026-07-17T18:00">
+            Yesterday
+          </time>
+        </div>
+
+      </article>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ======================================================
+       ADD PLAYER MODAL
+  ======================================================= -->
+
+  <section
+    class="portal-modal"
+    id="addPlayerModal"
+    aria-labelledby="addPlayerModalTitle"
+    aria-hidden="true"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-modal-close="addPlayerModal"
+    ></div>
+
+
+    <div class="portal-modal-dialog">
+
+      <div class="portal-modal-header">
+
+        <div>
+          <span class="modal-eyebrow">
+            SQUAD MANAGEMENT
+          </span>
+
+          <h2 id="addPlayerModalTitle">
+            Add Player
+          </h2>
+
+          <p>
+            Add an existing platform player to your
+            coaching roster.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-button"
+          data-modal-close="addPlayerModal"
+          aria-label="Close add player modal"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <form
+        class="portal-modal-form"
+        id="addPlayerForm"
+      >
+
+        <div class="form-field full-width">
+
+          <label for="addPlayerSearch">
+            Search registered player
+          </label>
+
+          <div class="modal-search-field">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="addPlayerSearch"
+              name="playerSearch"
+              placeholder="Search by player name or registration ID"
+              autocomplete="off"
+              required
+            >
+
+          </div>
+
+          <small>
+            Only registered and eligible players will appear.
+          </small>
+
+        </div>
+
+
+        <div
+          class="player-search-results"
+          id="addPlayerSearchResults"
+          aria-live="polite"
+        >
+
+          <button
+            type="button"
+            class="add-player-result"
+            data-select-player="player-007"
+          >
+
+            <img
+              src="images/player-placeholder.jpg"
+              alt=""
+            >
+
+            <span>
+              <strong>Aditya Verma</strong>
+              <small>Forward · Under 17 · Delhi</small>
+            </span>
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label for="assignPlayerGroup">
+              Training Group
+            </label>
+
+            <select
+              id="assignPlayerGroup"
+              name="trainingGroup"
+              required
+            >
+              <option value="">
+                Select group
+              </option>
+
+              <option value="under-15">
+                Under 15 Development
+              </option>
+
+              <option value="under-17">
+                Under 17 Elite
+              </option>
+
+              <option value="under-19">
+                Under 19 Performance
+              </option>
+
+              <option value="senior">
+                Senior Squad
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="assignPlayerStatus">
+              Initial Status
+            </label>
+
+            <select
+              id="assignPlayerStatus"
+              name="status"
+              required
+            >
+              <option value="active">
+                Active
+              </option>
+
+              <option value="trial">
+                Trial
+              </option>
+
+              <option value="inactive">
+                Inactive
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="form-field full-width">
+
+            <label for="assignPlayerNote">
+              Initial Coaching Note
+            </label>
+
+            <textarea
+              id="assignPlayerNote"
+              name="note"
+              rows="4"
+              maxlength="500"
+              placeholder="Add an optional coaching note..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <div class="portal-modal-actions">
+
+          <button
+            type="button"
+            class="modal-secondary-button"
+            data-modal-close="addPlayerModal"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="modal-primary-button"
+            id="confirmAddPlayerButton"
+          >
+            <i class="fa-solid fa-user-plus"></i>
+            Add to Roster
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       PLAYER NOTES MODAL
+  ======================================================= -->
+
+  <section
+    class="portal-modal"
+    id="playerNotesModal"
+    aria-labelledby="playerNotesModalTitle"
+    aria-hidden="true"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-modal-close="playerNotesModal"
+    ></div>
+
+
+    <div class="portal-modal-dialog notes-modal-dialog">
+
+      <div class="portal-modal-header">
+
+        <div>
+          <span class="modal-eyebrow">
+            PRIVATE COACHING NOTES
+          </span>
+
+          <h2 id="playerNotesModalTitle">
+            Player Notes
+          </h2>
+
+          <p id="playerNotesSubtitle">
+            Record observations and development priorities.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-button"
+          data-modal-close="playerNotesModal"
+          aria-label="Close player notes modal"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div class="notes-player-summary">
+
+        <img
+          src="images/player-placeholder.jpg"
+          alt=""
+          id="notesPlayerImage"
+        >
+
+        <div>
+          <strong id="notesPlayerName">
+            Player Name
+          </strong>
+
+          <span id="notesPlayerDetails">
+            Position · Academy
+          </span>
+        </div>
+
+      </div>
+
+
+      <form
+        class="portal-modal-form"
+        id="playerNotesForm"
+      >
+
+        <input
+          type="hidden"
+          id="notesPlayerId"
+          name="playerId"
+        >
+
+        <div class="form-field full-width">
+
+          <label for="playerNoteCategory">
+            Note Category
+          </label>
+
+          <select
+            id="playerNoteCategory"
+            name="category"
+            required
+          >
+            <option value="technical">
+              Technical Development
+            </option>
+
+            <option value="physical">
+              Physical Development
+            </option>
+
+            <option value="tactical">
+              Tactical Awareness
+            </option>
+
+            <option value="mental">
+              Mental Development
+            </option>
+
+            <option value="medical">
+              Injury / Recovery
+            </option>
+
+            <option value="general">
+              General Observation
+            </option>
+          </select>
+
+        </div>
+
+
+        <div class="form-field full-width">
+
+          <label for="playerNoteText">
+            Coaching Note
+          </label>
+
+          <textarea
+            id="playerNoteText"
+            name="note"
+            rows="7"
+            maxlength="1000"
+            placeholder="Write your observation, feedback or development recommendation..."
+            required
+          ></textarea>
+
+          <small>
+            <span id="playerNoteCharacterCount">
+              0
+            </span>
+            / 1000 characters
+          </small>
+
+        </div>
+
+
+        <label class="form-checkbox">
+
+          <input
+            type="checkbox"
+            id="markNotePriority"
+            name="priority"
+          >
+
+          <span>
+            Mark this as a priority development note
+          </span>
+
+        </label>
+
+
+        <div class="portal-modal-actions">
+
+          <button
+            type="button"
+            class="modal-secondary-button"
+            data-modal-close="playerNotesModal"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="modal-primary-button"
+          >
+            <i class="fa-regular fa-floppy-disk"></i>
+            Save Note
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       PLAYER PREVIEW MODAL
+  ======================================================= -->
+
+  <section
+    class="portal-modal"
+    id="playerPreviewModal"
+    aria-labelledby="playerPreviewModalTitle"
+    aria-hidden="true"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-modal-close="playerPreviewModal"
+    ></div>
+
+
+    <div class="portal-modal-dialog player-preview-dialog">
+
+      <div class="portal-modal-header preview-modal-header">
+
+        <div>
+          <span class="modal-eyebrow">
+            PLAYER OVERVIEW
+          </span>
+
+          <h2 id="playerPreviewModalTitle">
+            Player Profile
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-button"
+          data-modal-close="playerPreviewModal"
+          aria-label="Close player preview"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div class="player-preview-hero">
+
+        <img
+          src="images/player-placeholder.jpg"
+          alt=""
+          id="previewPlayerImage"
+        >
+
+        <div>
+
+          <span
+            class="player-status-badge active"
+            id="previewPlayerStatus"
+          >
+            Active
+          </span>
+
+          <h3 id="previewPlayerName">
+            Player Name
+          </h3>
+
+          <p id="previewPlayerPosition">
+            Position
+          </p>
+
+          <span id="previewPlayerAcademy">
+            Academy
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="player-preview-stat-grid">
+
+        <div>
+          <span>Rating</span>
+          <strong id="previewPlayerRating">
+            0.0
+          </strong>
+        </div>
+
+        <div>
+          <span>Attendance</span>
+          <strong id="previewPlayerAttendance">
+            0%
+          </strong>
+        </div>
+
+        <div>
+          <span>Sessions</span>
+          <strong id="previewPlayerSessions">
+            0
+          </strong>
+        </div>
+
+        <div>
+          <span>Progress</span>
+          <strong id="previewPlayerProgress">
+            0%
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div class="player-preview-development">
+
+        <div class="progress-heading">
+          <span>Development progress</span>
+          <strong id="previewDevelopmentValue">
+            0%
+          </strong>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          id="previewDevelopmentBar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span style="width: 0%;"></span>
+        </div>
+
+      </div>
+
+
+      <div class="portal-modal-actions">
+
+        <button
+          type="button"
+          class="modal-secondary-button"
+          data-modal-close="playerPreviewModal"
+        >
+          Close
+        </button>
+
+        <a
+          href="player-profile.html"
+          class="modal-primary-button"
+          id="openFullPlayerProfileLink"
+        >
+          Open Full Profile
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       LOGOUT MODAL
+  ======================================================= -->
+
+  <section
+    class="portal-modal"
+    id="logoutModal"
+    aria-labelledby="logoutModalTitle"
+    aria-hidden="true"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-modal-close="logoutModal"
+    ></div>
+
+
+    <div class="portal-modal-dialog confirmation-dialog">
+
+      <span class="confirmation-modal-icon">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </span>
+
+      <h2 id="logoutModalTitle">
+        Logout from your account?
+      </h2>
+
+      <p>
+        You will need to sign in again to access your
+        coach dashboard.
+      </p>
+
+      <div class="portal-modal-actions">
+
+        <button
+          type="button"
+          class="modal-secondary-button"
+          id="logoutCancelButton"
+          data-modal-close="logoutModal"
+        >
+          Stay Logged In
+        </button>
+
+        <button
+          type="button"
+          class="modal-danger-button"
+          id="logoutConfirmButton"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       TOAST
+  ======================================================= -->
+
+  <div
+    class="portal-toast"
+    id="playersToast"
+    aria-hidden="true"
+    hidden
+  >
+
+    <span class="toast-icon">
+      <i class="fa-solid fa-circle-check"></i>
+    </span>
+
+    <p id="playersToastMessage">
+      Action completed successfully.
+    </p>
+
+    <button
+      type="button"
+      id="playersToastClose"
+      aria-label="Close notification"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+
+  <!-- ======================================================
+       JAVASCRIPT
+  ======================================================= -->
+
+  <script src="coach-players.js"></script>
+
+</body>
+</html>

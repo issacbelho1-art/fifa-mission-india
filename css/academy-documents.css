@@ -1,0 +1,1317 @@
+/* ==========================================================
+   FIFA Mission India
+   Academy Documents
+
+   Frontend : Issac Belho
+   Backend  : Mr. Harsh
+   Security : Samarth
+========================================================== */
+
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --primary:#003B95;
+
+    --primary-dark:#00296B;
+
+    --secondary:#EAF4FF;
+
+    --success:#16A34A;
+
+    --warning:#F59E0B;
+
+    --danger:#DC2626;
+
+    --text:#1F2937;
+
+    --text-light:#6B7280;
+
+    --border:#E5E7EB;
+
+    --surface:#FFFFFF;
+
+    --background:#F5F7FB;
+
+    --shadow:0 12px 32px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    font:inherit;
+
+    border:none;
+
+}
+
+input,
+
+select,
+
+textarea{
+
+    font:inherit;
+
+    outline:none;
+
+}
+
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.academy-main{
+
+    margin-left:270px;
+
+    padding:30px;
+
+    min-height:100vh;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.academy-sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:270px;
+
+    height:100vh;
+
+    background:#fff;
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+    z-index:100;
+
+}
+
+.academy-sidebar-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px;
+
+}
+
+.academy-logo{
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+
+}
+
+.academy-logo img{
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:contain;
+
+}
+
+.academy-sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:12px;
+
+}
+
+.academy-sidebar nav a{
+
+    padding:15px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    transition:.25s;
+
+}
+
+.academy-sidebar nav a:hover,
+
+.academy-sidebar nav a.active{
+
+    background:var(--secondary);
+
+    color:var(--primary);
+
+    border-right:4px solid var(--primary);
+
+}
+
+
+/* ==========================================================
+   TOPBAR
+========================================================== */
+
+.academy-topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.academy-topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.academy-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+.academy-profile img{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.academy-dropdown{
+
+    position:absolute;
+
+    top:60px;
+
+    right:0;
+
+    width:220px;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    z-index:1000;
+
+}
+
+.academy-dropdown a,
+
+.academy-dropdown button{
+
+    display:block;
+
+    width:100%;
+
+    padding:14px 18px;
+
+    background:none;
+
+    text-align:left;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+}
+
+.academy-dropdown a:hover,
+
+.academy-dropdown button:hover{
+
+    background:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.academy-page-hero{
+
+    background:linear-gradient(135deg,var(--primary),#0A6CF1);
+
+    color:#fff;
+
+    border-radius:22px;
+
+    padding:45px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.academy-eyebrow{
+
+    display:inline-block;
+
+    letter-spacing:2px;
+
+    font-size:12px;
+
+    margin-bottom:10px;
+
+    opacity:.85;
+
+}
+
+.academy-page-hero h2{
+
+    font-size:36px;
+
+    margin-bottom:12px;
+
+}
+
+.academy-page-hero p{
+
+    max-width:600px;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   STATISTICS
+========================================================== */
+
+.academy-stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+
+.academy-stat-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.academy-stat-icon{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+}
+
+.blue{
+
+    background:#E6F0FF;
+
+    color:#2563EB;
+
+}
+
+.orange{
+
+    background:#FFF3D8;
+
+    color:#D97706;
+
+}
+
+.green{
+
+    background:#E9FAEF;
+
+    color:#16A34A;
+
+}
+
+.red{
+
+    background:#FEECEC;
+
+    color:#DC2626;
+
+}
+
+.academy-stat-card h3{
+
+    font-size:30px;
+
+    margin-bottom:5px;
+
+}
+
+.academy-stat-card p{
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   TOOLBAR
+========================================================== */
+
+.academy-toolbar{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+.academy-toolbar input,
+
+.academy-toolbar select{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:13px 16px;
+
+    min-width:220px;
+
+    transition:.25s;
+
+}
+
+.academy-toolbar input:focus,
+
+.academy-toolbar select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(0,59,149,.08);
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.academy-primary-button,
+
+.academy-secondary-button,
+
+.academy-success-button,
+
+.academy-danger-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.academy-primary-button{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.academy-primary-button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.academy-secondary-button{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+}
+
+.academy-secondary-button:hover{
+
+    background:var(--secondary);
+
+}
+
+.academy-success-button{
+
+    background:var(--success);
+
+    color:#fff;
+
+}
+
+.academy-success-button:hover{
+
+    filter:brightness(.95);
+
+}
+
+.academy-danger-button{
+
+    background:var(--danger);
+
+    color:#fff;
+
+}
+
+.academy-danger-button:hover{
+
+    filter:brightness(.95);
+
+}
+
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.academy-table-wrapper{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:35px;
+
+    overflow-x:auto;
+
+}
+
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.academy-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:1050px;
+
+}
+
+.academy-table thead{
+
+    background:#F8FAFC;
+
+}
+
+.academy-table th{
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.academy-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #EEF2F7;
+
+    vertical-align:middle;
+
+}
+
+.academy-table tbody tr{
+
+    transition:.25s;
+
+}
+
+.academy-table tbody tr:hover{
+
+    background:#F8FBFF;
+
+}
+
+
+/* ==========================================================
+   PLAYER CELL
+========================================================== */
+
+.academy-player{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.academy-player img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid #fff;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.academy-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.academy-badge.verified{
+
+    background:#EAF8EE;
+
+    color:var(--success);
+
+}
+
+.academy-badge.pending{
+
+    background:#FFF7E6;
+
+    color:var(--warning);
+
+}
+
+.academy-badge.rejected{
+
+    background:#FDECEC;
+
+    color:var(--danger);
+
+}
+
+
+/* ==========================================================
+   ICON BUTTONS
+========================================================== */
+
+.academy-icon-button{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#F3F6FB;
+
+    color:var(--text);
+
+    transition:.25s;
+
+}
+
+.academy-icon-button:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.academy-table td:last-child{
+
+    white-space:nowrap;
+
+}
+
+.academy-table td:last-child .academy-icon-button{
+
+    margin-right:8px;
+
+}
+
+.academy-table td:last-child .academy-icon-button:last-child{
+
+    margin-right:0;
+
+}
+
+/* ==========================================================
+   DOCUMENT PREVIEW DRAWER
+========================================================== */
+
+.academy-document-drawer{
+
+    position:fixed;
+
+    top:0;
+
+    right:-430px;
+
+    width:420px;
+
+    height:100vh;
+
+    background:#fff;
+
+    box-shadow:-10px 0 35px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+    z-index:1000;
+
+}
+
+.academy-document-drawer.open{
+
+    right:0;
+
+}
+
+.academy-drawer-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:24px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.academy-drawer-scroll{
+
+    padding:24px;
+
+    overflow-y:auto;
+
+    height:calc(100vh - 88px);
+
+}
+
+
+/* ==========================================================
+   DOCUMENT PREVIEW
+========================================================== */
+
+.academy-document-preview{
+
+    margin-bottom:30px;
+
+}
+
+.academy-preview-placeholder{
+
+    background:#F8FAFC;
+
+    border:2px dashed var(--border);
+
+    border-radius:16px;
+
+    min-height:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+}
+
+.academy-preview-placeholder i{
+
+    font-size:64px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   INFORMATION GRID
+========================================================== */
+
+.academy-info-grid{
+
+    display:grid;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+.academy-info-grid label{
+
+    display:block;
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+    margin-bottom:5px;
+
+}
+
+.academy-info-grid strong{
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+   VERIFICATION NOTES
+========================================================== */
+
+.academy-document-notes{
+
+    background:#F8FAFC;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    margin-bottom:28px;
+
+}
+
+.academy-document-notes h3{
+
+    margin-bottom:12px;
+
+}
+
+.academy-document-notes p{
+
+    line-height:1.7;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   DOCUMENT ACTIONS
+========================================================== */
+
+.academy-document-actions{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+.academy-document-actions button{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   MODALS
+========================================================== */
+
+.academy-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.55);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1200;
+
+}
+
+.academy-modal-content{
+
+    background:#fff;
+
+    width:min(92%,560px);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.academy-small-modal{
+
+    max-width:440px;
+
+}
+
+.academy-modal h2{
+
+    margin-bottom:20px;
+
+}
+
+.academy-modal form{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.academy-modal label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    font-weight:500;
+
+}
+
+.academy-modal input,
+
+.academy-modal select,
+
+.academy-modal textarea{
+
+    padding:13px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    resize:vertical;
+
+}
+
+.academy-modal input:focus,
+
+.academy-modal select:focus,
+
+.academy-modal textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(0,59,149,.08);
+
+}
+
+.academy-modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:14px;
+
+    margin-top:26px;
+
+}
+
+
+/* ==========================================================
+   TOASTS
+========================================================== */
+
+.academy-toast-container{
+
+    position:fixed;
+
+    right:24px;
+
+    bottom:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    z-index:1300;
+
+}
+
+.academy-toast{
+
+    background:#111827;
+
+    color:#fff;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    min-width:260px;
+
+    box-shadow:var(--shadow);
+
+    animation:academyToastIn .35s ease;
+
+}
+
+@keyframes academyToastIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1200px){
+
+    .academy-stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .academy-main{
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .academy-sidebar{
+
+        left:-270px;
+
+        transition:.3s;
+
+    }
+
+    .academy-sidebar.open{
+
+        left:0;
+
+    }
+
+    .academy-page-hero{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .academy-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .academy-stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .academy-document-drawer{
+
+        width:100%;
+
+    }
+
+    .academy-modal-content{
+
+        width:95%;
+
+    }
+
+    .academy-toolbar input,
+
+    .academy-toolbar select,
+
+    .academy-toolbar button{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .academy-page-hero{
+
+        padding:30px;
+
+    }
+
+    .academy-page-hero h2{
+
+        font-size:30px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .academy-sidebar,
+
+    .academy-topbar,
+
+    .academy-toolbar,
+
+    .academy-document-actions{
+
+        display:none;
+
+    }
+
+    .academy-main{
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    .academy-table-wrapper{
+
+        box-shadow:none;
+
+    }
+
+}

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore football trials, coaching workshops, tournaments, academy programs and Mission FIFA 2034 events happening across India."
+  >
+
+  <title>Football Events | FIFA Mission India</title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/events.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="events-page-loader"
+    id="eventsPageLoader"
+    aria-label="Loading football events"
+  >
+
+    <div class="events-page-loader-spinner"></div>
+
+    <p>
+      Loading football events...
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="events-navbar"
+    id="eventsNavbar"
+  >
+
+    <div class="events-navbar-container">
+
+
+      <a
+        href="index.html"
+        class="events-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="events-brand-icon">
+
+          <i class="fa-solid fa-futbol"></i>
+
+        </span>
+
+
+        <span class="events-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="events-desktop-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="player.html">
+          Players
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+        <a
+          href="events.html"
+          class="active"
+        >
+          Events
+        </a>
+
+      </nav>
+
+
+      <div class="events-navbar-actions">
+
+        <a
+          href="index.html#join-mission"
+          class="events-join-button"
+        >
+
+          Join the Mission
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <button
+          class="events-menu-toggle"
+          id="eventsMenuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="eventsMobileMenu"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE OVERLAY
+  ====================================================== -->
+
+  <div
+    class="events-mobile-overlay"
+    id="eventsMobileOverlay"
+    hidden
+  ></div>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <aside
+    class="events-mobile-menu"
+    id="eventsMobileMenu"
+    aria-label="Mobile navigation"
+    hidden
+  >
+
+    <div class="events-mobile-menu-header">
+
+      <strong>
+        Navigation
+      </strong>
+
+      <button
+        id="eventsMobileMenuClose"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <nav>
+
+      <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+      </a>
+
+
+      <a href="player.html">
+
+        <i class="fa-solid fa-person-running"></i>
+
+        Players
+
+      </a>
+
+
+      <a href="academies.html">
+
+        <i class="fa-solid fa-building"></i>
+
+        Academies
+
+      </a>
+
+
+      <a href="news.html">
+
+        <i class="fa-regular fa-newspaper"></i>
+
+        News
+
+      </a>
+
+
+      <a href="events.html">
+
+        <i class="fa-regular fa-calendar"></i>
+
+        Events
+
+      </a>
+
+
+      <a href="index.html#join-mission">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        Join the Mission
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
+  <main
+    class="events-main"
+    id="eventsMain"
+  >
+
+
+    <!-- ===================================================
+         HERO SECTION
+    ==================================================== -->
+
+    <section class="events-hero">
+
+      <div class="events-hero-background"></div>
+
+      <div class="events-hero-glow events-hero-glow-one"></div>
+
+      <div class="events-hero-glow events-hero-glow-two"></div>
+
+
+      <div class="events-hero-container">
+
+        <div class="events-hero-content">
+
+          <span class="events-hero-eyebrow">
+
+            <i class="fa-regular fa-calendar-check"></i>
+
+            Join the Action
+
+          </span>
+
+
+          <h1>
+
+            Football Events
+
+            <span>
+              Across India
+            </span>
+
+          </h1>
+
+
+          <p>
+            Discover football trials, academy programs, tournaments, coaching
+            workshops and Mission FIFA 2034 community events happening across
+            the country.
+          </p>
+
+
+          <div class="events-hero-actions">
+
+            <a
+              href="#exploreEvents"
+              class="events-primary-button"
+            >
+
+              Explore Events
+
+              <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a
+              href="host-event.html"
+              class="events-secondary-button"
+            >
+
+              Host an Event
+
+              <i class="fa-solid fa-plus"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="events-hero-statistics">
+
+          <div class="events-hero-stat">
+
+            <strong id="eventsTotalCount">
+              0
+            </strong>
+
+            <span>
+              Total Events
+            </span>
+
+          </div>
+
+
+          <div class="events-hero-stat">
+
+            <strong id="eventsOpenCount">
+              0
+            </strong>
+
+            <span>
+              Open Registration
+            </span>
+
+          </div>
+
+
+          <div class="events-hero-stat">
+
+            <strong id="eventsCityCount">
+              0
+            </strong>
+
+            <span>
+              Cities
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FEATURED EVENT
+    ==================================================== -->
+
+    <section class="events-featured-section">
+
+      <div class="events-page-container">
+
+        <div class="events-section-heading">
+
+          <div>
+
+            <span class="events-section-eyebrow">
+              Featured Event
+            </span>
+
+            <h2>
+              Don't Miss the Next Big Opportunity
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <article
+          class="events-featured-card"
+          id="eventsFeaturedCard"
+        >
+
+          <!-- Rendered by events.js -->
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EXPLORE EVENTS
+    ==================================================== -->
+
+    <section
+      class="events-explore-section"
+      id="exploreEvents"
+    >
+
+      <div class="events-page-container">
+
+
+        <div class="events-explore-header">
+
+          <div class="events-section-heading">
+
+            <span class="events-section-eyebrow">
+              Discover Opportunities
+            </span>
+
+            <h2>
+              Explore Football Events
+            </h2>
+
+            <p>
+              Find trials, coaching workshops, tournaments, academy activities
+              and community events based on your interests and location.
+            </p>
+
+          </div>
+
+
+          <div class="events-search-wrapper">
+
+            <label
+              class="sr-only"
+              for="eventsSearchInput"
+            >
+              Search football events
+            </label>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              id="eventsSearchInput"
+              type="search"
+              placeholder="Search events, cities or categories..."
+              autocomplete="off"
+            >
+
+            <button
+              id="eventsClearSearch"
+              type="button"
+              aria-label="Clear event search"
+              hidden
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTER TOOLBAR
+        ================================================== -->
+
+        <div class="events-filter-toolbar">
+
+
+          <div
+            class="events-category-filters"
+            id="eventsCategoryFilters"
+            aria-label="Filter events by category"
+          >
+
+            <button
+              class="events-filter-button active"
+              type="button"
+              data-category="all"
+            >
+              All Events
+            </button>
+
+
+            <button
+              class="events-filter-button"
+              type="button"
+              data-category="Football Trial"
+            >
+              Football Trials
+            </button>
+
+
+            <button
+              class="events-filter-button"
+              type="button"
+              data-category="Coaching Workshop"
+            >
+              Coaching
+            </button>
+
+
+            <button
+              class="events-filter-button"
+              type="button"
+              data-category="Tournament"
+            >
+              Tournaments
+            </button>
+
+
+            <button
+              class="events-filter-button"
+              type="button"
+              data-category="Academy Event"
+            >
+              Academy Events
+            </button>
+
+
+            <button
+              class="events-filter-button"
+              type="button"
+              data-category="Community Event"
+            >
+              Community
+            </button>
+
+          </div>
+
+
+          <div class="events-filter-selects">
+
+
+            <label>
+
+              <span class="sr-only">
+                Filter by city
+              </span>
+
+              <select id="eventsCityFilter">
+
+                <option value="all">
+                  All Cities
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+
+              <span class="sr-only">
+                Sort events
+              </span>
+
+              <select id="eventsSortSelect">
+
+                <option value="soonest">
+                  Soonest First
+                </option>
+
+                <option value="latest">
+                  Latest First
+                </option>
+
+                <option value="title">
+                  Title A–Z
+                </option>
+
+              </select>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULTS ROW
+        ================================================== -->
+
+        <div class="events-results-row">
+
+          <p id="eventsResultsText">
+            Showing all football events
+          </p>
+
+
+          <button
+            class="events-reset-button"
+            id="eventsResetButton"
+            type="button"
+            hidden
+          >
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            Reset Filters
+
+          </button>
+
+        </div>
+
+
+        <!-- =================================================
+             EVENTS GRID
+        ================================================== -->
+
+        <div
+          class="events-directory-grid"
+          id="eventsDirectoryGrid"
+          aria-live="polite"
+        >
+
+          <!-- Rendered by events.js -->
+
+        </div>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+
+        <div
+          class="events-empty-state"
+          id="eventsEmptyState"
+          hidden
+        >
+
+          <div class="events-empty-icon">
+
+            <i class="fa-regular fa-calendar-xmark"></i>
+
+          </div>
+
+
+          <h3>
+            No Events Found
+          </h3>
+
+
+          <p>
+            Try changing the selected category, city or search keyword.
+          </p>
+
+
+          <button
+            id="eventsEmptyResetButton"
+            type="button"
+          >
+
+            Reset Filters
+
+          </button>
+
+        </div>
+
+
+        <!-- =================================================
+             LOAD MORE
+        ================================================== -->
+
+        <div
+          class="events-load-more-wrapper"
+          id="eventsLoadMoreWrapper"
+        >
+
+          <button
+            class="events-load-more-button"
+            id="eventsLoadMoreButton"
+            type="button"
+          >
+
+            Load More Events
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EVENT CATEGORIES
+    ==================================================== -->
+
+    <section class="events-categories-section">
+
+      <div class="events-page-container">
+
+        <div class="events-section-heading events-heading-centered">
+
+          <span class="events-section-eyebrow">
+            Find Your Opportunity
+          </span>
+
+          <h2>
+            Explore Event Categories
+          </h2>
+
+          <p>
+            Choose the type of football opportunity that matches your role,
+            ambition and development journey.
+          </p>
+
+        </div>
+
+
+        <div class="events-category-grid">
+
+
+          <button
+            class="events-category-card"
+            type="button"
+            data-category-target="Football Trial"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-person-running"></i>
+
+            </span>
+
+
+            <h3>
+              Football Trials
+            </h3>
+
+
+            <p>
+              Selection camps and trial opportunities for talented players.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Explore Trials
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </button>
+
+
+          <button
+            class="events-category-card"
+            type="button"
+            data-category-target="Coaching Workshop"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-chalkboard-user"></i>
+
+            </span>
+
+
+            <h3>
+              Coaching Workshops
+            </h3>
+
+
+            <p>
+              Coaching education, certifications and development programs.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Explore Workshops
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </button>
+
+
+          <button
+            class="events-category-card"
+            type="button"
+            data-category-target="Tournament"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-trophy"></i>
+
+            </span>
+
+
+            <h3>
+              Tournaments
+            </h3>
+
+
+            <p>
+              Competitive football tournaments and national competitions.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Explore Tournaments
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </button>
+
+
+          <button
+            class="events-category-card"
+            type="button"
+            data-category-target="Academy Event"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-building"></i>
+
+            </span>
+
+
+            <h3>
+              Academy Events
+            </h3>
+
+
+            <p>
+              Open days, camps and development programs hosted by academies.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Explore Academy Events
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </button>
+
+
+          <button
+            class="events-category-card"
+            type="button"
+            data-category-target="Community Event"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-people-group"></i>
+
+            </span>
+
+
+            <h3>
+              Community Events
+            </h3>
+
+
+            <p>
+              Football supporter meetups, campaigns and volunteer activities.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Explore Community Events
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </button>
+
+
+          <a
+            href="host-event.html"
+            class="events-category-card events-host-category-card"
+          >
+
+            <span class="events-category-icon">
+
+              <i class="fa-solid fa-calendar-plus"></i>
+
+            </span>
+
+
+            <h3>
+              Host an Event
+            </h3>
+
+
+            <p>
+              Submit a football event for review and reach communities across India.
+            </p>
+
+
+            <span class="events-category-link">
+
+              Submit Event
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         HOST EVENT CTA
+    ==================================================== -->
+
+    <section class="events-host-section">
+
+      <div class="events-host-container">
+
+        <div class="events-host-icon">
+
+          <i class="fa-solid fa-calendar-plus"></i>
+
+        </div>
+
+
+        <div class="events-host-content">
+
+          <span>
+            Organize Football Opportunities
+          </span>
+
+
+          <h2>
+            Hosting a Football Event?
+          </h2>
+
+
+          <p>
+            Academies, clubs, coaches and football organizations can submit
+            events for review and reach players, supporters and communities
+            across India.
+          </p>
+
+        </div>
+
+
+        <div class="events-host-actions">
+
+          <a
+            href="host-event.html"
+            class="events-host-primary"
+          >
+
+            Submit Your Event
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+
+          <a
+            href="contact.html"
+            class="events-host-secondary"
+          >
+
+            Contact the Team
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section class="events-newsletter-section">
+
+      <div class="events-newsletter-container">
+
+        <div class="events-newsletter-content">
+
+          <span>
+            Never Miss an Opportunity
+          </span>
+
+
+          <h2>
+            Get Football Event Updates
+          </h2>
+
+
+          <p>
+            Receive updates about football trials, tournaments, coaching
+            workshops, academy camps and community activities.
+          </p>
+
+        </div>
+
+
+        <form
+          class="events-newsletter-form"
+          id="eventsNewsletterForm"
+          novalidate
+        >
+
+          <label
+            class="sr-only"
+            for="eventsNewsletterEmail"
+          >
+            Email address
+          </label>
+
+
+          <div class="events-newsletter-field">
+
+            <i class="fa-regular fa-envelope"></i>
+
+
+            <input
+              id="eventsNewsletterEmail"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <button type="submit">
+
+            Get Event Updates
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="events-footer">
+
+    <div class="events-footer-container">
+
+      <div class="events-footer-top">
+
+
+        <div class="events-footer-brand">
+
+          <span>
+
+            <i class="fa-solid fa-futbol"></i>
+
+          </span>
+
+
+          <div>
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+
+            <p>
+              Building India's football future together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="events-footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="player.html">
+            Players
+          </a>
+
+          <a href="academies.html">
+            Academies
+          </a>
+
+          <a href="news.html">
+            News
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="events-footer-bottom">
+
+        <p>
+          © 2026 FIFA Mission India. All rights reserved.
+        </p>
+
+
+        <div>
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="events-toast"
+    id="eventsToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <i
+      id="eventsToastIcon"
+      class="fa-solid fa-circle-check"
+    ></i>
+
+
+    <span id="eventsToastMessage">
+      Action completed successfully.
+    </span>
+
+  </div>
+
+
+  <!-- PAGE JAVASCRIPT -->
+
+  <script src="js/events.js"></script>
+
+</body>
+
+</html>

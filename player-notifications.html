@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Player notification centre for FIFA Mission India."
+  >
+
+  <title>
+    Notifications | FIFA Mission India
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/player-notifications.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =========================================
+       PLAYER NOTIFICATIONS PAGE
+       Frontend only
+       Backend integration: Mr. Harsh
+  ========================================== -->
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="portal-header">
+
+    <a
+      href="index.html"
+      class="portal-brand"
+      aria-label="FIFA Mission India home"
+    >
+
+      <span class="brand-icon">
+        ⚽
+      </span>
+
+      <span class="brand-content">
+
+        <strong>
+          FIFA MISSION INDIA
+        </strong>
+
+        <small>
+          Player Portal
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <div class="header-actions">
+
+      <a
+        href="player-dashboard.html"
+        class="dashboard-link"
+      >
+        ← Back to Dashboard
+      </a>
+
+
+      <button
+        type="button"
+        class="profile-button"
+        aria-label="Open player account menu"
+      >
+
+        <span class="profile-avatar">
+          IB
+        </span>
+
+        <span class="profile-information">
+
+          <strong>
+            Issac Belho
+          </strong>
+
+          <small>
+            Player
+          </small>
+
+        </span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="notifications-page">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="notifications-hero">
+
+      <div class="hero-content">
+
+        <span class="section-eyebrow">
+          PLAYER NOTIFICATION CENTRE
+        </span>
+
+        <h1>
+          Stay Updated on Every Opportunity
+        </h1>
+
+        <p>
+          Track trial announcements, application updates,
+          performance reports, achievements and important
+          account notifications from one place.
+        </p>
+
+      </div>
+
+
+      <div class="hero-summary">
+
+        <div class="hero-summary-card">
+
+          <span class="summary-icon">
+            🔔
+          </span>
+
+          <div>
+
+            <strong id="heroUnreadCount">
+              0
+            </strong>
+
+            <span>
+              Unread Notifications
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TOOLBAR ================= -->
+
+    <section class="notifications-toolbar">
+
+      <div class="toolbar-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            RECENT ACTIVITY
+          </span>
+
+          <h2>
+            Your Notifications
+          </h2>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="mark-all-button"
+          id="markAllReadButton"
+        >
+          Mark All as Read
+        </button>
+
+      </div>
+
+
+      <div class="notification-controls">
+
+
+        <!-- SEARCH -->
+
+        <div class="notification-search">
+
+          <label
+            for="notificationSearchInput"
+            class="sr-only"
+          >
+            Search notifications
+          </label>
+
+          <span class="search-icon">
+            🔎
+          </span>
+
+          <input
+            type="search"
+            id="notificationSearchInput"
+            placeholder="Search notifications..."
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="notification-filter">
+
+          <label
+            for="notificationFilter"
+            class="sr-only"
+          >
+            Filter notifications
+          </label>
+
+          <select id="notificationFilter">
+
+            <option value="all">
+              All Notifications
+            </option>
+
+            <option value="unread">
+              Unread
+            </option>
+
+            <option value="trials">
+              Trials
+            </option>
+
+            <option value="performance">
+              Performance
+            </option>
+
+            <option value="documents">
+              Documents
+            </option>
+
+            <option value="achievements">
+              Achievements
+            </option>
+
+            <option value="account">
+              Account
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SUMMARY ================= -->
+
+    <section class="notification-summary-grid">
+
+      <article class="notification-summary-card">
+
+        <span class="summary-card-icon">
+          📬
+        </span>
+
+        <div>
+
+          <span>
+            Total Notifications
+          </span>
+
+          <strong id="totalNotificationCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-summary-card">
+
+        <span class="summary-card-icon">
+          🔔
+        </span>
+
+        <div>
+
+          <span>
+            Unread
+          </span>
+
+          <strong id="unreadNotificationCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-summary-card">
+
+        <span class="summary-card-icon">
+          ⚽
+        </span>
+
+        <div>
+
+          <span>
+            Trial Updates
+          </span>
+
+          <strong id="trialNotificationCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="notification-summary-card">
+
+        <span class="summary-card-icon">
+          🏆
+        </span>
+
+        <div>
+
+          <span>
+            Achievements
+          </span>
+
+          <strong id="achievementNotificationCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ================= NOTIFICATION LIST ================= -->
+
+    <section
+      class="notifications-section"
+      aria-labelledby="notificationListHeading"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            NOTIFICATION FEED
+          </span>
+
+          <h2 id="notificationListHeading">
+            Latest Updates
+          </h2>
+
+          <p id="notificationResultCount">
+            0 notifications
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!--
+        Notifications will be rendered by:
+        js/player-notifications.js
+
+        Backend integration placeholder:
+
+        GET /api/v1/player/notifications
+      -->
+
+      <div
+        class="notifications-list"
+        id="notificationsList"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- ================= EMPTY STATE ================= -->
+
+      <div
+        class="notifications-empty-state"
+        id="notificationsEmptyState"
+        hidden
+      >
+
+        <div class="empty-state-icon">
+          🔕
+        </div>
+
+        <h3>
+          No notifications found
+        </h3>
+
+        <p>
+          There are no notifications matching your
+          current search or filter.
+        </p>
+
+        <button
+          type="button"
+          class="clear-filter-button"
+          id="clearNotificationFilterButton"
+        >
+          Clear Filters
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PREFERENCES CTA ================= -->
+
+    <section class="notification-preferences-card">
+
+      <div class="preferences-icon">
+        ⚙️
+      </div>
+
+      <div class="preferences-content">
+
+        <span class="section-eyebrow">
+          NOTIFICATION PREFERENCES
+        </span>
+
+        <h2>
+          Choose the Updates You Receive
+        </h2>
+
+        <p>
+          Manage email, SMS and in-platform notification
+          preferences from your account settings.
+        </p>
+
+      </div>
+
+      <a
+        href="player-settings.html"
+        class="preferences-link"
+      >
+        Manage Preferences →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= NOTIFICATION MODAL ================= -->
+
+  <div
+    class="notification-modal"
+    id="notificationModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="notificationModalTitle"
+    hidden
+  >
+
+    <div class="notification-modal-dialog">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="notificationModalCloseButton"
+        aria-label="Close notification"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-notification-icon" id="modalNotificationIcon">
+        🔔
+      </div>
+
+
+      <span
+        class="modal-notification-category"
+        id="modalNotificationCategory"
+      >
+        Notification
+      </span>
+
+
+      <h2 id="notificationModalTitle">
+        Notification Title
+      </h2>
+
+
+      <p
+        class="modal-notification-time"
+        id="modalNotificationTime"
+      >
+        Just now
+      </p>
+
+
+      <div
+        class="modal-notification-message"
+        id="modalNotificationMessage"
+      ></div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="modal-secondary-button"
+          id="notificationModalDismissButton"
+        >
+          Close
+        </button>
+
+        <a
+          href="#"
+          class="modal-primary-button"
+          id="notificationActionLink"
+        >
+          View Details
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div
+    class="notification-toast"
+    id="notificationToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+    Notification updated successfully.
+  </div>
+
+
+  <!-- ================= SCRIPT ================= -->
+
+  <script src="js/player-notifications.js"></script>
+
+</body>
+
+</html>

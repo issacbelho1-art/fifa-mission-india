@@ -1,0 +1,1209 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+    --role-primary:#0A6CF1;
+    --role-primary-dark:#084DB3;
+    --role-secondary:#14C7D8;
+    --role-accent:#33D69F;
+
+    --role-heading:#081B33;
+    --role-text:#5C6A7B;
+    --role-muted:#8D98A8;
+
+    --role-white:#FFFFFF;
+
+    --role-background:#F4F8FC;
+
+    --role-border:#DCE6F0;
+
+    --role-shadow-small:
+        0 12px 28px rgba(8,32,65,.08);
+
+    --role-shadow-medium:
+        0 22px 55px rgba(8,32,65,.12);
+
+    --role-shadow-large:
+        0 35px 90px rgba(8,32,65,.16);
+
+    --role-radius:24px;
+
+    --role-container:1220px;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--role-background);
+
+    color:var(--role-text);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button,
+input{
+
+    font:inherit;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.role-page-background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+    background:
+        linear-gradient(
+            180deg,
+            #F8FBFF,
+            #EDF4FA
+        );
+
+}
+
+.role-background-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.45;
+
+    background-image:
+
+        linear-gradient(
+            rgba(10,108,241,.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(10,108,241,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:54px 54px;
+
+}
+
+.role-background-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(50px);
+
+}
+
+.role-glow-one{
+
+    width:520px;
+    height:520px;
+
+    left:-180px;
+    top:-150px;
+
+    background:
+        rgba(10,108,241,.12);
+
+}
+
+.role-glow-two{
+
+    width:620px;
+    height:620px;
+
+    right:-220px;
+    bottom:-220px;
+
+    background:
+        rgba(20,199,216,.12);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.role-header{
+
+    padding:24px 0;
+
+}
+
+.role-header-container{
+
+    width:min(
+        var(--role-container),
+        calc(100% - 40px)
+    );
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.role-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.role-brand-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:16px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--role-primary),
+            var(--role-secondary)
+        );
+
+    color:white;
+
+    font-size:1.2rem;
+
+    box-shadow:var(--role-shadow-small);
+
+}
+
+.role-brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.role-brand-text strong{
+
+    font-family:"Montserrat",sans-serif;
+
+    color:var(--role-heading);
+
+    font-size:1rem;
+
+    letter-spacing:.04em;
+
+}
+
+.role-brand-text small{
+
+    color:var(--role-muted);
+
+    font-size:.72rem;
+
+    text-transform:uppercase;
+
+    margin-top:2px;
+
+}
+
+.role-home-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--role-primary);
+
+    font-size:.84rem;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.role-main{
+
+    width:min(
+        var(--role-container),
+        calc(100% - 40px)
+    );
+
+    margin:auto;
+
+}
+
+.role-hero{
+
+    text-align:center;
+
+    padding:35px 0 80px;
+
+}
+
+.role-hero-content{
+
+    max-width:860px;
+
+    margin:auto;
+
+}
+
+.role-hero-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+        rgba(10,108,241,.08);
+
+    color:var(--role-primary);
+
+    font-size:.75rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+}
+
+.role-hero h1{
+
+    margin-top:28px;
+
+    font-family:"Montserrat",sans-serif;
+
+    color:var(--role-heading);
+
+    font-size:clamp(
+        3rem,
+        6vw,
+        5.5rem
+    );
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.05em;
+
+}
+
+.role-hero h1 span{
+
+    display:block;
+
+    margin-top:12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--role-primary),
+            var(--role-secondary)
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.role-hero p{
+
+    max-width:720px;
+
+    margin:30px auto 0;
+
+    font-size:1.05rem;
+
+    color:var(--role-text);
+
+}
+
+.role-hero-features{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:40px;
+
+}
+
+.role-hero-features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    background:white;
+
+    box-shadow:var(--role-shadow-small);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+}
+
+.role-hero-features i{
+
+    color:var(--role-primary);
+
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.role-selection-section{
+
+    padding-bottom:100px;
+
+}
+
+.role-section-heading{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:0 auto 55px;
+
+}
+
+.role-section-heading span{
+
+    color:var(--role-primary);
+
+    font-size:.74rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+}
+
+.role-section-heading h2{
+
+    margin:16px 0;
+
+    color:var(--role-heading);
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:clamp(
+        2.2rem,
+        4vw,
+        3.6rem
+    );
+
+    font-weight:900;
+
+    line-height:1.1;
+
+}
+
+.role-section-heading p{
+
+    color:var(--role-text);
+
+    font-size:1rem;
+
+}
+/* =====================================================
+   ROLE CARDS GRID
+===================================================== */
+
+.role-cards-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+.role-card {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 470px;
+
+  padding: 30px;
+
+  border: 1px solid var(--role-border);
+
+  border-radius: var(--role-radius);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow: var(--role-shadow-small);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.role-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--card-primary, var(--role-primary)),
+      var(--card-secondary, var(--role-secondary))
+    );
+}
+
+
+.role-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -80px;
+  bottom: -100px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    var(--card-glow, rgba(10, 108, 241, 0.08));
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.role-card:hover {
+  transform: translateY(-10px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--card-primary, var(--role-primary)) 35%,
+      var(--role-border)
+    );
+
+  box-shadow: var(--role-shadow-large);
+}
+
+
+.role-card:hover::after {
+  transform: scale(1.18);
+
+  opacity: 0.9;
+}
+
+
+.role-card-player {
+  --card-primary: #0a6cf1;
+  --card-secondary: #16b8e8;
+  --card-glow: rgba(10, 108, 241, 0.1);
+}
+
+
+.role-card-coach {
+  --card-primary: #7c3aed;
+  --card-secondary: #a855f7;
+  --card-glow: rgba(124, 58, 237, 0.1);
+}
+
+
+.role-card-academy {
+  --card-primary: #0b9c67;
+  --card-secondary: #33d69f;
+  --card-glow: rgba(11, 156, 103, 0.1);
+}
+
+
+.role-card-scout {
+  --card-primary: #e67e22;
+  --card-secondary: #f5b041;
+  --card-glow: rgba(230, 126, 34, 0.1);
+}
+
+
+.role-card-supporter {
+  --card-primary: #d92d5b;
+  --card-secondary: #f06292;
+  --card-glow: rgba(217, 45, 91, 0.1);
+}
+
+
+.role-card-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.role-card-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--card-primary),
+      var(--card-secondary)
+    );
+
+  color: var(--role-white);
+
+  font-size: 1.4rem;
+
+  box-shadow:
+    0 16px 30px
+    color-mix(
+      in srgb,
+      var(--card-primary) 24%,
+      transparent
+    );
+}
+
+
+.role-card-number {
+  color:
+    color-mix(
+      in srgb,
+      var(--card-primary) 24%,
+      var(--role-muted)
+    );
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1.1rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.role-card-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  margin-top: 28px;
+}
+
+
+.role-card-label {
+  color: var(--card-primary);
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.role-card-content h3 {
+  margin: 12px 0 14px;
+
+  color: var(--role-heading);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1.35rem;
+
+  line-height: 1.3;
+}
+
+
+.role-card-content > p {
+  margin: 0;
+
+  color: var(--role-text);
+
+  font-size: 0.84rem;
+
+  line-height: 1.75;
+}
+
+
+.role-card-content ul {
+  display: grid;
+
+  gap: 11px;
+
+  margin-top: 24px;
+
+  list-style: none;
+}
+
+
+.role-card-content li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color: var(--role-text);
+
+  font-size: 0.78rem;
+}
+
+
+.role-card-content li i {
+  margin-top: 5px;
+
+  color: var(--card-primary);
+
+  font-size: 0.7rem;
+}
+
+
+.role-card-button {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  min-height: 52px;
+
+  margin-top: 28px;
+
+  padding: 0 18px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--card-primary),
+      var(--card-secondary)
+    );
+
+  color: var(--role-white);
+
+  font-size: 0.8rem;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 14px 30px
+    color-mix(
+      in srgb,
+      var(--card-primary) 20%,
+      transparent
+    );
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.role-card-button i {
+  transition: transform 0.25s ease;
+}
+
+
+.role-card-button:hover {
+  transform: translateY(-2px);
+}
+
+
+.role-card-button:hover i {
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   FEATURED CARD PLACEMENT
+===================================================== */
+
+.role-card-supporter {
+  grid-column: 2 / 3;
+}
+
+
+.role-card-supporter::before {
+  height: 6px;
+}
+
+
+/* =====================================================
+   PLATFORM NOTICE
+===================================================== */
+
+.role-platform-note {
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  max-width: 900px;
+
+  margin: 50px auto 0;
+
+  padding: 25px;
+
+  border: 1px solid rgba(10, 108, 241, 0.16);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 108, 241, 0.06),
+      rgba(20, 199, 216, 0.06)
+    );
+}
+
+
+.role-platform-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--role-primary),
+      var(--role-secondary)
+    );
+
+  color: var(--role-white);
+
+  font-size: 1.2rem;
+}
+
+
+.role-platform-note h3 {
+  margin: 0;
+
+  color: var(--role-heading);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1rem;
+}
+
+
+.role-platform-note p {
+  margin: 7px 0 0;
+
+  color: var(--role-text);
+
+  font-size: 0.8rem;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.role-footer {
+  padding: 44px 0;
+
+  background: #06162b;
+
+  color: var(--role-white);
+}
+
+
+.role-footer-container {
+  width:
+    min(
+      var(--role-container),
+      calc(100% - 40px)
+    );
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+.role-footer strong {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1rem;
+}
+
+
+.role-footer p {
+  margin: 7px 0 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 0.74rem;
+}
+
+
+.role-footer-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 22px;
+}
+
+
+.role-footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.74rem;
+
+  font-weight: 700;
+
+  transition: color 0.25s ease;
+}
+
+
+.role-footer-links a:hover {
+  color: var(--role-white);
+}
+
+
+.role-footer-copyright {
+  grid-column: 1 / -1;
+
+  margin-top: 8px !important;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.role-reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+
+.role-reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .role-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .role-card-supporter {
+    grid-column: auto;
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 720px) {
+
+  .role-header-container,
+  .role-main,
+  .role-footer-container {
+    width: min(100% - 28px, var(--role-container));
+  }
+
+
+  .role-header {
+    padding: 18px 0;
+  }
+
+
+  .role-brand-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+
+  .role-brand-text strong {
+    font-size: 0.75rem;
+  }
+
+
+  .role-brand-text small {
+    font-size: 0.58rem;
+  }
+
+
+  .role-home-link {
+    font-size: 0.72rem;
+  }
+
+
+  .role-home-link span {
+    display: none;
+  }
+
+
+  .role-hero {
+    padding: 45px 0 65px;
+  }
+
+
+  .role-hero-eyebrow {
+    max-width: 100%;
+
+    justify-content: center;
+
+    font-size: 0.64rem;
+
+    text-align: center;
+  }
+
+
+  .role-hero h1 {
+    font-size: clamp(2.6rem, 14vw, 4.2rem);
+  }
+
+
+  .role-hero p {
+    font-size: 0.92rem;
+  }
+
+
+  .role-hero-features {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .role-hero-features div {
+    justify-content: center;
+  }
+
+
+  .role-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .role-card {
+    min-height: auto;
+
+    padding: 24px;
+  }
+
+
+  .role-platform-note {
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
+
+
+  .role-footer-container {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+
+  .role-footer-links {
+    justify-content: center;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}

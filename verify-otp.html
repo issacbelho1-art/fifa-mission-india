@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Verify your FIFA Mission India account using OTP."
+  >
+
+  <title>Verify OTP | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/verify-otp.css">
+
+</head>
+
+<body>
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <div class="otp-background" aria-hidden="true">
+
+    <span class="otp-orb otp-orb-one"></span>
+
+    <span class="otp-orb otp-orb-two"></span>
+
+    <span class="otp-grid"></span>
+
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="otp-header">
+
+    <a
+      href="index.html"
+      class="otp-brand"
+      aria-label="FIFA Mission India homepage"
+    >
+
+      <div class="otp-brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="otp-brand-copy">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Road to 2034</span>
+
+      </div>
+
+    </a>
+
+
+    <a href="login.html" class="otp-back-link">
+
+      <span aria-hidden="true">←</span>
+
+      Back to login
+
+    </a>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="otp-main">
+
+    <section class="otp-card">
+
+      <div class="otp-visual">
+
+        <div class="otp-shield">
+
+          <span aria-hidden="true">✓</span>
+
+        </div>
+
+        <span class="otp-eyebrow">
+          SECURE VERIFICATION
+        </span>
+
+        <h1>
+          Verify your identity
+        </h1>
+
+        <p>
+
+          We have sent a six-digit verification code to your registered
+          mobile number.
+
+        </p>
+
+      </div>
+
+
+      <form
+        id="otpVerificationForm"
+        class="otp-form"
+        novalidate
+      >
+
+        <!--
+          BACKEND INTEGRATION POINT
+
+          Suggested endpoints:
+
+          POST /api/v1/auth/verify-otp
+          POST /api/v1/auth/resend-otp
+
+          Backend Lead: Mr. Harsh
+          Security Review: Samarth
+        -->
+
+
+        <div class="otp-destination">
+
+          <span>Code sent to</span>
+
+          <strong id="maskedDestination">
+            +91 •••••• 4821
+          </strong>
+
+          <button
+            type="button"
+            class="change-number-button"
+            id="changeNumberButton"
+          >
+            Change
+          </button>
+
+        </div>
+
+
+        <div class="otp-field-section">
+
+          <label>
+            Enter verification code
+          </label>
+
+          <div
+            class="otp-input-group"
+            id="otpInputGroup"
+            aria-label="Six-digit OTP"
+          >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              maxlength="1"
+              aria-label="OTP digit 1"
+              required
+            >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="OTP digit 2"
+              required
+            >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="OTP digit 3"
+              required
+            >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="OTP digit 4"
+              required
+            >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="OTP digit 5"
+              required
+            >
+
+            <input
+              type="text"
+              class="otp-input"
+              inputmode="numeric"
+              maxlength="1"
+              aria-label="OTP digit 6"
+              required
+            >
+
+          </div>
+
+          <small
+            class="otp-error-message"
+            id="otpErrorMessage"
+            role="alert"
+          ></small>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="verify-button"
+          id="verifyButton"
+        >
+
+          <span class="verify-button-label">
+            Verify & Continue
+          </span>
+
+          <span
+            class="verify-button-loader"
+            aria-hidden="true"
+          ></span>
+
+        </button>
+
+
+        <div class="resend-section">
+
+          <p id="resendMessage">
+
+            Resend code in
+
+            <strong id="countdownTimer">
+              00:30
+            </strong>
+
+          </p>
+
+          <button
+            type="button"
+            class="resend-button"
+            id="resendButton"
+            disabled
+          >
+            Resend OTP
+          </button>
+
+        </div>
+
+
+        <div class="otp-security-note">
+
+          <span aria-hidden="true">🔒</span>
+
+          <p>
+
+            Never share your verification code with anyone. Mission FIFA India
+            representatives will never ask for your OTP.
+
+          </p>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= SUCCESS MODAL ================= -->
+
+  <div
+    class="verification-modal"
+    id="verificationModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="verificationModalTitle"
+    hidden
+  >
+
+    <div class="verification-modal-backdrop"></div>
+
+    <div class="verification-modal-card">
+
+      <div class="verification-success-icon" aria-hidden="true">
+        ✓
+      </div>
+
+      <span class="verification-modal-eyebrow">
+        VERIFICATION SUCCESSFUL
+      </span>
+
+      <h2 id="verificationModalTitle">
+        Your account is verified.
+      </h2>
+
+      <p>
+
+        Your registration has been successfully verified in this frontend
+        demonstration.
+
+      </p>
+
+      <a
+  href="player-dashboard.html"
+  class="verification-modal-button"
+>
+  Continue to Dashboard
+</a>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/verify-otp.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,7893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Manage fixtures, match preparation, squads, results and performance reports from the FIFA Mission India Coach Portal."
+  />
+
+  <title>
+    Matches | Coach Portal | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="coach-matches.css"
+  />
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="coach-sidebar-overlay"
+    id="coachSidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH SIDEBAR
+  ====================================================== -->
+
+  <aside
+    class="coach-sidebar"
+    id="coachSidebar"
+    aria-label="Coach portal navigation"
+  >
+
+    <div class="coach-sidebar-header">
+
+      <a
+        href="index.html"
+        class="coach-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="coach-brand-icon">
+          <i class="fa-solid fa-futbol"></i>
+        </span>
+
+        <span class="coach-brand-content">
+
+          <strong>
+            FIFA Mission India
+          </strong>
+
+          <small>
+            Coach Portal
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <button
+        type="button"
+        class="coach-sidebar-close"
+        id="coachSidebarClose"
+        aria-label="Close navigation"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <nav class="coach-sidebar-nav">
+
+      <span class="coach-nav-label">
+        Overview
+      </span>
+
+
+      <a
+        href="coach-dashboard.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-chart-pie"></i>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-profile.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-regular fa-user"></i>
+
+        <span>
+          My Profile
+        </span>
+
+      </a>
+
+
+      <span class="coach-nav-label">
+        Team Management
+      </span>
+
+
+      <a
+        href="coach-players.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-users"></i>
+
+        <span>
+          Players
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-training.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-dumbbell"></i>
+
+        <span>
+          Training
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-matches.html"
+        class="coach-nav-link active"
+        aria-current="page"
+      >
+
+        <i class="fa-solid fa-trophy"></i>
+
+        <span>
+          Matches
+        </span>
+
+        <span
+          class="coach-nav-badge"
+          data-match-count="upcoming"
+        >
+          4
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-performance.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <span>
+          Performance
+        </span>
+
+      </a>
+
+
+      <span class="coach-nav-label">
+        Communication
+      </span>
+
+
+      <a
+        href="coach-messages.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-regular fa-message"></i>
+
+        <span>
+          Messages
+        </span>
+
+        <span class="coach-nav-badge">
+          6
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-announcements.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-bullhorn"></i>
+
+        <span>
+          Announcements
+        </span>
+
+      </a>
+
+
+      <span class="coach-nav-label">
+        Account
+      </span>
+
+
+      <a
+        href="coach-settings.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-solid fa-gear"></i>
+
+        <span>
+          Settings
+        </span>
+
+      </a>
+
+
+      <a
+        href="coach-help.html"
+        class="coach-nav-link"
+      >
+
+        <i class="fa-regular fa-circle-question"></i>
+
+        <span>
+          Help & Support
+        </span>
+
+      </a>
+
+    </nav>
+
+
+    <div class="coach-sidebar-footer">
+
+      <div class="coach-sidebar-profile">
+
+        <div class="coach-sidebar-avatar">
+
+          <img
+            src="images/coach-avatar.jpg"
+            alt="Coach Arjun Sharma"
+          />
+
+        </div>
+
+
+        <div class="coach-sidebar-profile-info">
+
+          <strong>
+            Arjun Sharma
+          </strong>
+
+          <span>
+            Head Coach
+          </span>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="coach-sidebar-profile-menu"
+          aria-label="Open account menu"
+        >
+
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN LAYOUT
+  ====================================================== -->
+
+  <div class="coach-layout">
+
+
+    <!-- ===================================================
+         TOPBAR
+    ==================================================== -->
+
+    <header class="coach-topbar">
+
+      <div class="coach-topbar-left">
+
+        <button
+          type="button"
+          class="coach-menu-toggle"
+          id="coachMenuToggle"
+          aria-label="Open navigation"
+          aria-controls="coachSidebar"
+          aria-expanded="false"
+        >
+
+          <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="coach-page-heading">
+
+          <span class="coach-page-eyebrow">
+            Team Management
+          </span>
+
+          <h1>
+            Matches
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="coach-topbar-right">
+
+        <div class="coach-topbar-search">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="search"
+            id="globalCoachSearch"
+            placeholder="Search players, matches..."
+            aria-label="Search coach portal"
+          />
+
+          <kbd>
+            /
+          </kbd>
+
+        </div>
+
+
+        <div class="coach-dropdown">
+
+          <button
+            type="button"
+            class="coach-topbar-icon-button"
+            data-dropdown-trigger
+            aria-label="Notifications"
+            aria-expanded="false"
+          >
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="coach-notification-dot"></span>
+
+          </button>
+
+
+          <div class="coach-dropdown-menu coach-notification-menu">
+
+            <div class="coach-dropdown-header">
+
+              <div>
+
+                <strong>
+                  Notifications
+                </strong>
+
+                <span>
+                  3 unread updates
+                </span>
+
+              </div>
+
+              <button type="button">
+                Mark all read
+              </button>
+
+            </div>
+
+
+            <div class="coach-notification-list">
+
+              <a
+                href="#"
+                class="coach-notification-item unread"
+              >
+
+                <span class="coach-notification-icon match">
+
+                  <i class="fa-solid fa-trophy"></i>
+
+                </span>
+
+                <span class="coach-notification-content">
+
+                  <strong>
+                    Match reminder
+                  </strong>
+
+                  <small>
+                    Your match against Rising Stars Academy starts tomorrow.
+                  </small>
+
+                  <time>
+                    12 minutes ago
+                  </time>
+
+                </span>
+
+              </a>
+
+
+              <a
+                href="#"
+                class="coach-notification-item unread"
+              >
+
+                <span class="coach-notification-icon player">
+
+                  <i class="fa-solid fa-user-check"></i>
+
+                </span>
+
+                <span class="coach-notification-content">
+
+                  <strong>
+                    Squad confirmation pending
+                  </strong>
+
+                  <small>
+                    Three selected players have not confirmed availability.
+                  </small>
+
+                  <time>
+                    1 hour ago
+                  </time>
+
+                </span>
+
+              </a>
+
+
+              <a
+                href="#"
+                class="coach-notification-item"
+              >
+
+                <span class="coach-notification-icon report">
+
+                  <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span class="coach-notification-content">
+
+                  <strong>
+                    Match report available
+                  </strong>
+
+                  <small>
+                    The performance report for Saturday's fixture is ready.
+                  </small>
+
+                  <time>
+                    Yesterday
+                  </time>
+
+                </span>
+
+              </a>
+
+            </div>
+
+
+            <a
+              href="coach-notifications.html"
+              class="coach-dropdown-footer"
+            >
+              View all notifications
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-dropdown">
+
+          <button
+            type="button"
+            class="coach-topbar-profile"
+            data-dropdown-trigger
+            aria-label="Open profile menu"
+            aria-expanded="false"
+          >
+
+            <img
+              src="images/coach-avatar.jpg"
+              alt="Coach Arjun Sharma"
+            />
+
+            <span>
+
+              <strong>
+                Arjun Sharma
+              </strong>
+
+              <small>
+                Head Coach
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+
+          <div class="coach-dropdown-menu coach-profile-menu">
+
+            <a href="coach-profile.html">
+
+              <i class="fa-regular fa-user"></i>
+
+              My Profile
+
+            </a>
+
+
+            <a href="coach-settings.html">
+
+              <i class="fa-solid fa-gear"></i>
+
+              Account Settings
+
+            </a>
+
+
+            <a href="coach-help.html">
+
+              <i class="fa-regular fa-circle-question"></i>
+
+              Help & Support
+
+            </a>
+
+
+            <div class="coach-dropdown-divider"></div>
+
+
+            <button
+              type="button"
+              data-open-logout-modal
+            >
+
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+              Sign Out
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MAIN CONTENT
+    ==================================================== -->
+
+    <main class="coach-main">
+
+      <div class="coach-content">
+
+
+        <!-- =================================================
+             MATCH HERO
+        ================================================== -->
+
+        <section class="matches-hero">
+
+          <div class="matches-hero-content">
+
+            <span class="matches-hero-eyebrow">
+              Match Centre
+            </span>
+
+            <h2>
+              Plan, prepare and review every match
+            </h2>
+
+            <p>
+              Manage upcoming fixtures, squad selections, tactical plans,
+              match-day responsibilities and post-match reports from one
+              professional workspace.
+            </p>
+
+
+            <div class="matches-hero-actions">
+
+              <button
+                type="button"
+                class="match-primary-button"
+                data-open-match-modal="matchCreateModal"
+              >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Schedule Match
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-secondary-button"
+                data-match-quick-action="calendar"
+              >
+
+                <i class="fa-regular fa-calendar"></i>
+
+                Open Calendar
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="matches-hero-visual">
+
+            <div class="matches-next-fixture-card">
+
+              <div class="matches-next-fixture-header">
+
+                <span>
+                  Next Fixture
+                </span>
+
+                <span class="match-status-badge upcoming">
+                  Tomorrow
+                </span>
+
+              </div>
+
+
+              <div class="matches-next-fixture-body">
+
+                <div class="matches-team">
+
+                  <div class="matches-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy"
+                    />
+
+                  </div>
+
+                  <strong>
+                    Mission India
+                  </strong>
+
+                </div>
+
+
+                <div class="matches-versus">
+
+                  <span>
+                    U-17 League
+                  </span>
+
+                  <strong>
+                    VS
+                  </strong>
+
+                  <time datetime="2026-07-19T16:00">
+                    4:00 PM
+                  </time>
+
+                </div>
+
+
+                <div class="matches-team">
+
+                  <div class="matches-team-logo">
+
+                    <img
+                      src="images/rising-stars-logo.png"
+                      alt="Rising Stars Academy"
+                    />
+
+                  </div>
+
+                  <strong>
+                    Rising Stars
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="matches-next-fixture-footer">
+
+                <span>
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  National Football Ground
+
+                </span>
+
+
+                <button
+                  type="button"
+                  data-match-action="prepare"
+                  data-match-id="match-001"
+                >
+                  Prepare Match
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MATCH OVERVIEW CARDS
+        ================================================== -->
+
+        <section
+          class="match-overview-grid"
+          aria-label="Match statistics"
+        >
+
+          <article class="match-overview-card">
+
+            <div class="match-overview-icon upcoming">
+
+              <i class="fa-regular fa-calendar-check"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Upcoming Matches
+              </span>
+
+              <strong data-match-count="upcoming">
+                4
+              </strong>
+
+              <small>
+                Next match tomorrow
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="match-overview-card">
+
+            <div class="match-overview-icon completed">
+
+              <i class="fa-solid fa-flag-checkered"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Matches Played
+              </span>
+
+              <strong data-match-count="completed">
+                18
+              </strong>
+
+              <small>
+                Current season
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="match-overview-card">
+
+            <div class="match-overview-icon wins">
+
+              <i class="fa-solid fa-trophy"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Wins
+              </span>
+
+              <strong>
+                12
+              </strong>
+
+              <small>
+                66.7% win rate
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="match-overview-card">
+
+            <div class="match-overview-icon goals">
+
+              <i class="fa-solid fa-futbol"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Goals Scored
+              </span>
+
+              <strong>
+                39
+              </strong>
+
+              <small>
+                2.2 per match
+              </small>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <!-- =================================================
+             MATCH TABS AND TOOLBAR
+        ================================================== -->
+
+        <section
+          class="matches-section"
+          id="matchesSection"
+        >
+
+          <div class="matches-section-header">
+
+            <div>
+
+              <span class="matches-section-eyebrow">
+                Fixtures & Results
+              </span>
+
+              <h2>
+                Match Management
+              </h2>
+
+              <p>
+                Review upcoming, completed and draft fixtures.
+              </p>
+
+            </div>
+
+
+            <div class="matches-view-controls">
+
+              <button
+                type="button"
+                class="matches-view-button active"
+                data-match-view="grid"
+                aria-label="Grid view"
+                aria-pressed="true"
+              >
+
+                <i class="fa-solid fa-grip"></i>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="matches-view-button"
+                data-match-view="list"
+                aria-label="List view"
+                aria-pressed="false"
+              >
+
+                <i class="fa-solid fa-list"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="matches-tabs">
+
+            <button
+              type="button"
+              class="matches-tab active"
+              data-match-filter="all"
+              data-filter-group="match-status"
+              aria-pressed="true"
+            >
+
+              All Matches
+
+              <span data-match-count="all">
+                22
+              </span>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="matches-tab"
+              data-match-filter="upcoming"
+              data-filter-group="match-status"
+              aria-pressed="false"
+            >
+
+              Upcoming
+
+              <span data-match-count="upcoming">
+                4
+              </span>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="matches-tab"
+              data-match-filter="completed"
+              data-filter-group="match-status"
+              aria-pressed="false"
+            >
+
+              Completed
+
+              <span data-match-count="completed">
+                18
+              </span>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="matches-tab"
+              data-match-filter="draft"
+              data-filter-group="match-status"
+              aria-pressed="false"
+            >
+
+              Drafts
+
+              <span data-match-count="draft">
+                2
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <div class="matches-toolbar">
+
+            <div class="matches-search-box">
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="search"
+                id="matchSearch"
+                placeholder="Search opponent, competition or venue..."
+                aria-label="Search matches"
+              />
+
+            </div>
+
+
+            <div class="matches-filter-group">
+
+              <label
+                for="matchCompetitionFilter"
+                class="training-visually-hidden"
+              >
+                Filter by competition
+              </label>
+
+              <select id="matchCompetitionFilter">
+
+                <option value="all">
+                  All Competitions
+                </option>
+
+                <option value="u17-league">
+                  U-17 League
+                </option>
+
+                <option value="academy-cup">
+                  Academy Cup
+                </option>
+
+                <option value="friendly">
+                  Friendly
+                </option>
+
+                <option value="district-championship">
+                  District Championship
+                </option>
+
+              </select>
+
+
+              <label
+                for="matchLocationFilter"
+                class="training-visually-hidden"
+              >
+                Filter by location
+              </label>
+
+              <select id="matchLocationFilter">
+
+                <option value="all">
+                  All Locations
+                </option>
+
+                <option value="home">
+                  Home
+                </option>
+
+                <option value="away">
+                  Away
+                </option>
+
+                <option value="neutral">
+                  Neutral
+                </option>
+
+              </select>
+
+
+              <label
+                for="matchDateFilter"
+                class="training-visually-hidden"
+              >
+                Filter by date
+              </label>
+
+              <select id="matchDateFilter">
+
+                <option value="all">
+                  Any Date
+                </option>
+
+                <option value="today">
+                  Today
+                </option>
+
+                <option value="week">
+                  This Week
+                </option>
+
+                <option value="month">
+                  This Month
+                </option>
+
+                <option value="past">
+                  Past Matches
+                </option>
+
+              </select>
+
+
+              <button
+                type="button"
+                class="matches-reset-button"
+                id="resetMatchFilters"
+              >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="matches-results-row">
+
+            <span id="matchResultCount">
+              22 matches
+            </span>
+
+            <button
+              type="button"
+              class="match-secondary-button compact"
+              data-match-quick-action="export"
+            >
+
+              <i class="fa-solid fa-file-export"></i>
+
+              Export Fixtures
+
+            </button>
+
+          </div>
+
+
+          <!-- =================================================
+               MATCH CARDS GRID
+          ================================================== -->
+
+          <div
+            class="matches-grid"
+            id="matchesGrid"
+            aria-live="polite"
+          >
+
+            <!-- Match cards continue in the next part -->
+
+          </div>
+
+        </section>
+
+      </div>
+
+                <!-- =================================================
+                 UPCOMING MATCH 01
+            ================================================== -->
+
+            <article
+              class="match-card"
+              data-match-id="match-001"
+              data-status="upcoming"
+              data-competition="u17-league"
+              data-location="home"
+              data-date="2026-07-19"
+              data-opponent="Rising Stars Academy"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      U-17 League
+                    </span>
+
+                    <strong>
+                      Matchday 7
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge upcoming">
+                    Upcoming
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="view"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-regular fa-eye"></i>
+
+                      View Details
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="prepare"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-solid fa-clipboard-list"></i>
+
+                      Match Preparation
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="squad"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-solid fa-users"></i>
+
+                      Manage Squad
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="edit"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Edit Fixture
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="duplicate"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-regular fa-copy"></i>
+
+                      Duplicate
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="danger"
+                      data-match-action="cancel"
+                      data-match-id="match-001"
+                    >
+
+                      <i class="fa-solid fa-ban"></i>
+
+                      Cancel Match
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Sunday, 19 July 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  4:00 PM
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams">
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Home
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+
+                <div class="match-card-versus">
+
+                  <span>
+                    VS
+                  </span>
+
+                  <small>
+                    1 day
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/rising-stars-logo.png"
+                      alt="Rising Stars Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Away
+                  </span>
+
+                  <strong>
+                    Rising Stars Academy
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-information">
+
+                <div>
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>
+
+                    <small>
+                      Venue
+                    </small>
+
+                    <strong>
+                      National Football Ground
+                    </strong>
+
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <i class="fa-solid fa-shirt"></i>
+
+                  <span>
+
+                    <small>
+                      Squad
+                    </small>
+
+                    <strong>
+                      18 of 20 selected
+                    </strong>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-preparation-progress">
+
+                <div class="match-progress-header">
+
+                  <span>
+                    Match preparation
+                  </span>
+
+                  <strong>
+                    75%
+                  </strong>
+
+                </div>
+
+
+                <div class="match-progress-track">
+
+                  <span style="width: 75%;"></span>
+
+                </div>
+
+
+                <div class="match-preparation-checklist">
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Squad
+
+                  </span>
+
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Formation
+
+                  </span>
+
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Tactics
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Player Roles
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <div class="match-player-avatars">
+
+                  <img
+                    src="images/player-1.jpg"
+                    alt="Selected player"
+                  />
+
+                  <img
+                    src="images/player-2.jpg"
+                    alt="Selected player"
+                  />
+
+                  <img
+                    src="images/player-3.jpg"
+                    alt="Selected player"
+                  />
+
+                  <span>
+                    +15
+                  </span>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="prepare"
+                  data-match-id="match-001"
+                >
+
+                  Prepare Match
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 UPCOMING MATCH 02
+            ================================================== -->
+
+            <article
+              class="match-card"
+              data-match-id="match-002"
+              data-status="upcoming"
+              data-competition="academy-cup"
+              data-location="away"
+              data-date="2026-07-25"
+              data-opponent="North East Football Centre"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon cup">
+
+                    <i class="fa-solid fa-medal"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      Academy Cup
+                    </span>
+
+                    <strong>
+                      Quarter Final
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge upcoming">
+                    Upcoming
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="view"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-regular fa-eye"></i>
+
+                      View Details
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="prepare"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-solid fa-clipboard-list"></i>
+
+                      Match Preparation
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="squad"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-solid fa-users"></i>
+
+                      Manage Squad
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="edit"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Edit Fixture
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="duplicate"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-regular fa-copy"></i>
+
+                      Duplicate
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="danger"
+                      data-match-action="cancel"
+                      data-match-id="match-002"
+                    >
+
+                      <i class="fa-solid fa-ban"></i>
+
+                      Cancel Match
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Saturday, 25 July 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  3:30 PM
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams">
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/north-east-football-logo.png"
+                      alt="North East Football Centre logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Home
+                  </span>
+
+                  <strong>
+                    North East Football Centre
+                  </strong>
+
+                </div>
+
+
+                <div class="match-card-versus">
+
+                  <span>
+                    VS
+                  </span>
+
+                  <small>
+                    7 days
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Away
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-information">
+
+                <div>
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>
+
+                    <small>
+                      Venue
+                    </small>
+
+                    <strong>
+                      Regional Sports Complex
+                    </strong>
+
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <i class="fa-solid fa-shirt"></i>
+
+                  <span>
+
+                    <small>
+                      Squad
+                    </small>
+
+                    <strong>
+                      12 of 20 selected
+                    </strong>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-preparation-progress">
+
+                <div class="match-progress-header">
+
+                  <span>
+                    Match preparation
+                  </span>
+
+                  <strong>
+                    45%
+                  </strong>
+
+                </div>
+
+
+                <div class="match-progress-track">
+
+                  <span style="width: 45%;"></span>
+
+                </div>
+
+
+                <div class="match-preparation-checklist">
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Opponent Analysis
+
+                  </span>
+
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Formation
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Squad
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Tactics
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <div class="match-player-avatars">
+
+                  <img
+                    src="images/player-4.jpg"
+                    alt="Selected player"
+                  />
+
+                  <img
+                    src="images/player-5.jpg"
+                    alt="Selected player"
+                  />
+
+                  <img
+                    src="images/player-6.jpg"
+                    alt="Selected player"
+                  />
+
+                  <span>
+                    +9
+                  </span>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="prepare"
+                  data-match-id="match-002"
+                >
+
+                  Continue Preparation
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 UPCOMING MATCH 03
+            ================================================== -->
+
+            <article
+              class="match-card"
+              data-match-id="match-003"
+              data-status="upcoming"
+              data-competition="friendly"
+              data-location="neutral"
+              data-date="2026-08-01"
+              data-opponent="Elite Youth Football Club"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon friendly">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      Friendly Match
+                    </span>
+
+                    <strong>
+                      Pre-Season Fixture
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge upcoming">
+                    Upcoming
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="view"
+                      data-match-id="match-003"
+                    >
+
+                      <i class="fa-regular fa-eye"></i>
+
+                      View Details
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="prepare"
+                      data-match-id="match-003"
+                    >
+
+                      <i class="fa-solid fa-clipboard-list"></i>
+
+                      Match Preparation
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="squad"
+                      data-match-id="match-003"
+                    >
+
+                      <i class="fa-solid fa-users"></i>
+
+                      Manage Squad
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="edit"
+                      data-match-id="match-003"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Edit Fixture
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="danger"
+                      data-match-action="cancel"
+                      data-match-id="match-003"
+                    >
+
+                      <i class="fa-solid fa-ban"></i>
+
+                      Cancel Match
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Saturday, 1 August 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  5:00 PM
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams">
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Team A
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+
+                <div class="match-card-versus">
+
+                  <span>
+                    VS
+                  </span>
+
+                  <small>
+                    14 days
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/elite-youth-logo.png"
+                      alt="Elite Youth Football Club logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Team B
+                  </span>
+
+                  <strong>
+                    Elite Youth Football Club
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-information">
+
+                <div>
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>
+
+                    <small>
+                      Venue
+                    </small>
+
+                    <strong>
+                      City Sports Arena
+                    </strong>
+
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <i class="fa-solid fa-shirt"></i>
+
+                  <span>
+
+                    <small>
+                      Squad
+                    </small>
+
+                    <strong>
+                      Not selected
+                    </strong>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-preparation-progress">
+
+                <div class="match-progress-header">
+
+                  <span>
+                    Match preparation
+                  </span>
+
+                  <strong>
+                    15%
+                  </strong>
+
+                </div>
+
+
+                <div class="match-progress-track">
+
+                  <span style="width: 15%;"></span>
+
+                </div>
+
+
+                <div class="match-preparation-checklist">
+
+                  <span class="completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Fixture Added
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Squad
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Formation
+
+                  </span>
+
+
+                  <span>
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Tactics
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <div class="match-player-avatars empty">
+
+                  <span>
+
+                    <i class="fa-solid fa-users"></i>
+
+                  </span>
+
+                  <small>
+                    Squad pending
+                  </small>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="squad"
+                  data-match-id="match-003"
+                >
+
+                  Select Squad
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 DRAFT MATCH
+            ================================================== -->
+
+            <article
+              class="match-card"
+              data-match-id="match-004"
+              data-status="draft"
+              data-competition="district-championship"
+              data-location="away"
+              data-date="2026-08-08"
+              data-opponent="District Sports Academy"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon draft">
+
+                    <i class="fa-regular fa-file-lines"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      District Championship
+                    </span>
+
+                    <strong>
+                      Fixture Pending
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge draft">
+                    Draft
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="edit"
+                      data-match-id="match-004"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Continue Editing
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="duplicate"
+                      data-match-id="match-004"
+                    >
+
+                      <i class="fa-regular fa-copy"></i>
+
+                      Duplicate
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="danger"
+                      data-match-action="delete"
+                      data-match-id="match-004"
+                    >
+
+                      <i class="fa-regular fa-trash-can"></i>
+
+                      Delete Draft
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Saturday, 8 August 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  Time pending
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams">
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/district-sports-logo.png"
+                      alt="District Sports Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Home
+                  </span>
+
+                  <strong>
+                    District Sports Academy
+                  </strong>
+
+                </div>
+
+
+                <div class="match-card-versus draft">
+
+                  <span>
+                    VS
+                  </span>
+
+                  <small>
+                    Draft
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Away
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-information">
+
+                <div>
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>
+
+                    <small>
+                      Venue
+                    </small>
+
+                    <strong>
+                      To be confirmed
+                    </strong>
+
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <i class="fa-solid fa-circle-info"></i>
+
+                  <span>
+
+                    <small>
+                      Missing details
+                    </small>
+
+                    <strong>
+                      Time and venue
+                    </strong>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-draft-message">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <p>
+                  Complete the fixture information before publishing this
+                  match to your team.
+                </p>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <span class="match-draft-saved">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  Saved 2 hours ago
+
+                </span>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="edit"
+                  data-match-id="match-004"
+                >
+
+                  Complete Fixture
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 COMPLETED MATCH 01
+            ================================================== -->
+
+            <article
+              class="match-card completed"
+              data-match-id="match-005"
+              data-status="completed"
+              data-competition="u17-league"
+              data-location="away"
+              data-date="2026-07-12"
+              data-opponent="Young Warriors FC"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      U-17 League
+                    </span>
+
+                    <strong>
+                      Matchday 6
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge completed">
+                    Full Time
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="view"
+                      data-match-id="match-005"
+                    >
+
+                      <i class="fa-regular fa-eye"></i>
+
+                      View Details
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="report"
+                      data-match-id="match-005"
+                    >
+
+                      <i class="fa-solid fa-chart-column"></i>
+
+                      Match Report
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="statistics"
+                      data-match-id="match-005"
+                    >
+
+                      <i class="fa-solid fa-chart-line"></i>
+
+                      View Statistics
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="edit-result"
+                      data-match-id="match-005"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Edit Result
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="duplicate"
+                      data-match-id="match-005"
+                    >
+
+                      <i class="fa-regular fa-copy"></i>
+
+                      Duplicate Fixture
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Sunday, 12 July 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  Full Time
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams completed">
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/young-warriors-logo.png"
+                      alt="Young Warriors FC logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Home
+                  </span>
+
+                  <strong>
+                    Young Warriors FC
+                  </strong>
+
+                </div>
+
+
+                <div class="match-score">
+
+                  <strong>
+                    1
+                  </strong>
+
+                  <span>
+                    -
+                  </span>
+
+                  <strong class="winner">
+                    3
+                  </strong>
+
+                  <small>
+                    FT
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team winner">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Away
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-result-summary">
+
+                <span class="match-result-badge win">
+
+                  <i class="fa-solid fa-trophy"></i>
+
+                  Victory
+
+                </span>
+
+
+                <span>
+                  Goals: Aman Singh 2, Rohit Das 1
+                </span>
+
+              </div>
+
+
+              <div class="match-statistics-preview">
+
+                <div>
+
+                  <span>
+                    Possession
+                  </span>
+
+                  <strong>
+                    58%
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Shots
+                  </span>
+
+                  <strong>
+                    14
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Shots on Target
+                  </span>
+
+                  <strong>
+                    8
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Pass Accuracy
+                  </span>
+
+                  <strong>
+                    84%
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <span class="match-report-status completed">
+
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Report completed
+
+                </span>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="report"
+                  data-match-id="match-005"
+                >
+
+                  View Match Report
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 COMPLETED MATCH 02
+            ================================================== -->
+
+            <article
+              class="match-card completed"
+              data-match-id="match-006"
+              data-status="completed"
+              data-competition="friendly"
+              data-location="home"
+              data-date="2026-07-05"
+              data-opponent="City Football Academy"
+            >
+
+              <div class="match-card-topbar">
+
+                <div class="match-card-competition">
+
+                  <span class="match-card-competition-icon friendly">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                  </span>
+
+                  <div>
+
+                    <span>
+                      Friendly Match
+                    </span>
+
+                    <strong>
+                      Development Fixture
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-card-actions">
+
+                  <span class="match-status-badge completed">
+                    Full Time
+                  </span>
+
+
+                  <button
+                    type="button"
+                    class="match-card-menu-button"
+                    data-match-menu-trigger
+                    aria-label="Open match actions"
+                    aria-expanded="false"
+                  >
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                  </button>
+
+
+                  <div class="match-card-dropdown">
+
+                    <button
+                      type="button"
+                      data-match-action="view"
+                      data-match-id="match-006"
+                    >
+
+                      <i class="fa-regular fa-eye"></i>
+
+                      View Details
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="report"
+                      data-match-id="match-006"
+                    >
+
+                      <i class="fa-solid fa-chart-column"></i>
+
+                      Match Report
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="statistics"
+                      data-match-id="match-006"
+                    >
+
+                      <i class="fa-solid fa-chart-line"></i>
+
+                      View Statistics
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-match-action="edit-result"
+                      data-match-id="match-006"
+                    >
+
+                      <i class="fa-regular fa-pen-to-square"></i>
+
+                      Edit Result
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-date-row">
+
+                <span>
+
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Sunday, 5 July 2026
+
+                </span>
+
+
+                <span>
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  Full Time
+
+                </span>
+
+              </div>
+
+
+              <div class="match-card-teams completed">
+
+                <div class="match-card-team winner">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/minerva-academy-logo.png"
+                      alt="Mission India Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Home
+                  </span>
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+                </div>
+
+
+                <div class="match-score">
+
+                  <strong>
+                    2
+                  </strong>
+
+                  <span>
+                    -
+                  </span>
+
+                  <strong>
+                    2
+                  </strong>
+
+                  <small>
+                    FT
+                  </small>
+
+                </div>
+
+
+                <div class="match-card-team">
+
+                  <div class="match-team-logo">
+
+                    <img
+                      src="images/city-football-academy-logo.png"
+                      alt="City Football Academy logo"
+                    />
+
+                  </div>
+
+                  <span>
+                    Away
+                  </span>
+
+                  <strong>
+                    City Football Academy
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-result-summary">
+
+                <span class="match-result-badge draw">
+
+                  <i class="fa-solid fa-equals"></i>
+
+                  Draw
+
+                </span>
+
+
+                <span>
+                  Goals: Aman Singh 1, Kabir Ali 1
+                </span>
+
+              </div>
+
+
+              <div class="match-statistics-preview">
+
+                <div>
+
+                  <span>
+                    Possession
+                  </span>
+
+                  <strong>
+                    52%
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Shots
+                  </span>
+
+                  <strong>
+                    11
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Shots on Target
+                  </span>
+
+                  <strong>
+                    6
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Pass Accuracy
+                  </span>
+
+                  <strong>
+                    81%
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-card-footer">
+
+                <span class="match-report-status pending">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                  Report pending
+                </span>
+
+
+                <button
+                  type="button"
+                  class="match-card-primary-action"
+                  data-match-action="report"
+                  data-match-id="match-006"
+                >
+
+                  Complete Report
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+              class="matches-empty-state"
+              id="matchesEmptyState"
+              hidden
+            >
+
+              <div class="matches-empty-state-icon">
+
+                <i class="fa-regular fa-calendar-xmark"></i>
+
+              </div>
+
+              <h3>
+                No matches found
+              </h3>
+
+              <p>
+                No fixtures match your current search or selected filters.
+              </p>
+
+              <button
+                type="button"
+                class="match-secondary-button"
+                id="clearEmptyMatchFilters"
+              >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Clear Filters
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               LOAD MORE
+          ================================================== -->
+
+          <div class="matches-load-more">
+
+            <button
+              type="button"
+              class="match-load-more-button"
+              id="loadMoreMatches"
+            >
+
+              <i class="fa-solid fa-rotate"></i>
+
+              Load More Matches
+
+            </button>
+
+          </div>
+
+        </section>
+
+                <!-- =================================================
+             MATCH CALENDAR & SCHEDULE
+        ================================================== -->
+
+        <section
+          class="match-calendar-section"
+          id="matchCalendarSection"
+        >
+
+          <div class="match-calendar-card">
+
+            <div class="match-calendar-header">
+
+              <div>
+
+                <span class="matches-section-eyebrow">
+                  Match Calendar
+                </span>
+
+                <h2>
+                  July 2026
+                </h2>
+
+                <p>
+                  Review all scheduled fixtures and match-day activities.
+                </p>
+
+              </div>
+
+
+              <div class="match-calendar-actions">
+
+                <button
+                  type="button"
+                  class="match-calendar-nav-button"
+                  id="previousMatchMonth"
+                  aria-label="Previous month"
+                >
+
+                  <i class="fa-solid fa-chevron-left"></i>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  class="match-calendar-today-button"
+                  id="matchCalendarToday"
+                >
+                  Today
+                </button>
+
+
+                <button
+                  type="button"
+                  class="match-calendar-nav-button"
+                  id="nextMatchMonth"
+                  aria-label="Next month"
+                >
+
+                  <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div class="match-calendar-weekdays">
+
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+
+            </div>
+
+
+            <div
+              class="match-calendar-grid"
+              id="matchCalendarGrid"
+            >
+
+              <button
+                type="button"
+                class="match-calendar-day outside-month"
+                data-date="2026-06-28"
+              >
+                <span>28</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day outside-month"
+                data-date="2026-06-29"
+              >
+                <span>29</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day outside-month"
+                data-date="2026-06-30"
+              >
+                <span>30</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-01"
+              >
+                <span>1</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-02"
+              >
+                <span>2</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-03"
+              >
+                <span>3</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-04"
+              >
+                <span>4</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day has-match completed"
+                data-date="2026-07-05"
+                data-match-id="match-006"
+              >
+
+                <span>5</span>
+
+                <small>
+                  vs City FA
+                </small>
+
+                <i class="fa-solid fa-circle"></i>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-06"
+              >
+                <span>6</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-07"
+              >
+                <span>7</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-08"
+              >
+                <span>8</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-09"
+              >
+                <span>9</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-10"
+              >
+                <span>10</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-11"
+              >
+                <span>11</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day has-match completed"
+                data-date="2026-07-12"
+                data-match-id="match-005"
+              >
+
+                <span>12</span>
+
+                <small>
+                  vs Warriors
+                </small>
+
+                <i class="fa-solid fa-circle"></i>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-13"
+              >
+                <span>13</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-14"
+              >
+                <span>14</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-15"
+              >
+                <span>15</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-16"
+              >
+                <span>16</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-17"
+              >
+                <span>17</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day current-day"
+                data-date="2026-07-18"
+              >
+
+                <span>18</span>
+
+                <small>
+                  Today
+                </small>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day has-match upcoming"
+                data-date="2026-07-19"
+                data-match-id="match-001"
+              >
+
+                <span>19</span>
+
+                <small>
+                  vs Rising Stars
+                </small>
+
+                <i class="fa-solid fa-circle"></i>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-20"
+              >
+                <span>20</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-21"
+              >
+                <span>21</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-22"
+              >
+                <span>22</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-23"
+              >
+                <span>23</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-24"
+              >
+                <span>24</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day has-match upcoming"
+                data-date="2026-07-25"
+                data-match-id="match-002"
+              >
+
+                <span>25</span>
+
+                <small>
+                  Academy Cup
+                </small>
+
+                <i class="fa-solid fa-circle"></i>
+
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-26"
+              >
+                <span>26</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-27"
+              >
+                <span>27</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-28"
+              >
+                <span>28</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-29"
+              >
+                <span>29</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-30"
+              >
+                <span>30</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day"
+                data-date="2026-07-31"
+              >
+                <span>31</span>
+              </button>
+
+
+              <button
+                type="button"
+                class="match-calendar-day outside-month has-match upcoming"
+                data-date="2026-08-01"
+                data-match-id="match-003"
+              >
+
+                <span>1</span>
+
+                <small>
+                  Friendly
+                </small>
+
+                <i class="fa-solid fa-circle"></i>
+
+              </button>
+
+            </div>
+
+
+            <div class="match-calendar-legend">
+
+              <span>
+
+                <i class="upcoming"></i>
+
+                Upcoming Match
+
+              </span>
+
+
+              <span>
+
+                <i class="completed"></i>
+
+                Completed Match
+
+              </span>
+
+
+              <span>
+
+                <i class="draft"></i>
+
+                Draft Fixture
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               UPCOMING SCHEDULE
+          ================================================== -->
+
+          <aside class="match-schedule-card">
+
+            <div class="match-schedule-header">
+
+              <div>
+
+                <span class="matches-section-eyebrow">
+                  Schedule
+                </span>
+
+                <h3>
+                  Upcoming Fixtures
+                </h3>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-schedule-add-button"
+                data-open-match-modal="matchCreateModal"
+                aria-label="Add fixture"
+              >
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+            </div>
+
+
+            <div class="match-schedule-list">
+
+              <article
+                class="match-schedule-item next"
+                data-match-id="match-001"
+              >
+
+                <div class="match-schedule-date">
+
+                  <strong>
+                    19
+                  </strong>
+
+                  <span>
+                    Jul
+                  </span>
+
+                </div>
+
+
+                <div class="match-schedule-content">
+
+                  <span>
+                    U-17 League
+                  </span>
+
+                  <strong>
+                    Rising Stars Academy
+                  </strong>
+
+                  <small>
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    4:00 PM
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Home
+
+                  </small>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  data-match-action="prepare"
+                  data-match-id="match-001"
+                  aria-label="Prepare match against Rising Stars Academy"
+                >
+
+                  <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+              </article>
+
+
+              <article
+                class="match-schedule-item"
+                data-match-id="match-002"
+              >
+
+                <div class="match-schedule-date">
+
+                  <strong>
+                    25
+                  </strong>
+
+                  <span>
+                    Jul
+                  </span>
+
+                </div>
+
+
+                <div class="match-schedule-content">
+
+                  <span>
+                    Academy Cup
+                  </span>
+
+                  <strong>
+                    North East Football Centre
+                  </strong>
+
+                  <small>
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    3:30 PM
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Away
+
+                  </small>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  data-match-action="prepare"
+                  data-match-id="match-002"
+                  aria-label="Prepare match against North East Football Centre"
+                >
+
+                  <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+              </article>
+
+
+              <article
+                class="match-schedule-item"
+                data-match-id="match-003"
+              >
+
+                <div class="match-schedule-date">
+
+                  <strong>
+                    01
+                  </strong>
+
+                  <span>
+                    Aug
+                  </span>
+
+                </div>
+
+
+                <div class="match-schedule-content">
+
+                  <span>
+                    Friendly
+                  </span>
+
+                  <strong>
+                    Elite Youth Football Club
+                  </strong>
+
+                  <small>
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    5:00 PM
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Neutral
+
+                  </small>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  data-match-action="prepare"
+                  data-match-id="match-003"
+                  aria-label="Prepare match against Elite Youth Football Club"
+                >
+
+                  <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+              </article>
+
+
+              <article
+                class="match-schedule-item draft"
+                data-match-id="match-004"
+              >
+
+                <div class="match-schedule-date">
+
+                  <strong>
+                    08
+                  </strong>
+
+                  <span>
+                    Aug
+                  </span>
+
+                </div>
+
+
+                <div class="match-schedule-content">
+
+                  <span>
+                    Draft Fixture
+                  </span>
+
+                  <strong>
+                    District Sports Academy
+                  </strong>
+
+                  <small>
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    Time pending
+
+                  </small>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  data-match-action="edit"
+                  data-match-id="match-004"
+                  aria-label="Edit draft match"
+                >
+
+                  <i class="fa-solid fa-pen"></i>
+
+                </button>
+
+              </article>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="match-schedule-view-all"
+              data-match-filter-trigger="upcoming"
+            >
+
+              View All Fixtures
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+          </aside>
+
+        </section>
+
+
+        <!-- =================================================
+             SEASON PERFORMANCE
+        ================================================== -->
+
+        <section class="match-performance-section">
+
+          <div class="match-performance-header">
+
+            <div>
+
+              <span class="matches-section-eyebrow">
+                Season Overview
+              </span>
+
+              <h2>
+                Match Performance
+              </h2>
+
+              <p>
+                Current team results and competitive performance.
+              </p>
+
+            </div>
+
+
+            <select
+              id="matchSeasonSelector"
+              aria-label="Select season"
+            >
+
+              <option value="2026">
+                2026 Season
+              </option>
+
+              <option value="2025">
+                2025 Season
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="match-performance-grid">
+
+            <article class="match-performance-chart-card">
+
+              <div class="match-performance-card-header">
+
+                <div>
+
+                  <h3>
+                    Results Breakdown
+                  </h3>
+
+                  <span>
+                    18 matches played
+                  </span>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  aria-label="Download results report"
+                  data-match-quick-action="download-results"
+                >
+
+                  <i class="fa-solid fa-download"></i>
+
+                </button>
+
+              </div>
+
+
+              <div class="match-donut-chart">
+
+                <div
+                  class="match-donut-visual"
+                  aria-label="12 wins, 4 draws and 2 losses"
+                >
+
+                  <div class="match-donut-center">
+
+                    <strong>
+                      66.7%
+                    </strong>
+
+                    <span>
+                      Win Rate
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-donut-legend">
+
+                  <div>
+
+                    <span class="win"></span>
+
+                    <p>
+
+                      <strong>
+                        12
+                      </strong>
+
+                      Wins
+
+                    </p>
+
+                  </div>
+
+
+                  <div>
+
+                    <span class="draw"></span>
+
+                    <p>
+
+                      <strong>
+                        4
+                      </strong>
+
+                      Draws
+
+                    </p>
+
+                  </div>
+
+
+                  <div>
+
+                    <span class="loss"></span>
+
+                    <p>
+
+                      <strong>
+                        2
+                      </strong>
+
+                      Losses
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <article class="match-form-card">
+
+              <div class="match-performance-card-header">
+
+                <div>
+
+                  <h3>
+                    Recent Form
+                  </h3>
+
+                  <span>
+                    Last 6 matches
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-row">
+
+                <span class="win">
+                  W
+                </span>
+
+                <span class="win">
+                  W
+                </span>
+
+                <span class="draw">
+                  D
+                </span>
+
+                <span class="win">
+                  W
+                </span>
+
+                <span class="loss">
+                  L
+                </span>
+
+                <span class="win">
+                  W
+                </span>
+
+              </div>
+
+
+              <div class="match-form-summary">
+
+                <div>
+
+                  <span>
+                    Points
+                  </span>
+
+                  <strong>
+                    13 / 18
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Goals
+                  </span>
+
+                  <strong>
+                    14 - 7
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Clean Sheets
+                  </span>
+
+                  <strong>
+                    3
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-progress">
+
+                <div>
+
+                  <span>
+                    Attack Performance
+                  </span>
+
+                  <strong>
+                    82%
+                  </strong>
+
+                </div>
+
+                <div class="match-form-progress-track">
+
+                  <span style="width: 82%;"></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-progress">
+
+                <div>
+
+                  <span>
+                    Defensive Performance
+                  </span>
+
+                  <strong>
+                    74%
+                  </strong>
+
+                </div>
+
+                <div class="match-form-progress-track">
+
+                  <span style="width: 74%;"></span>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <article class="match-top-performers-card">
+
+              <div class="match-performance-card-header">
+
+                <div>
+
+                  <h3>
+                    Top Match Performers
+                  </h3>
+
+                  <span>
+                    Current season
+                  </span>
+
+                </div>
+
+
+                <a href="coach-performance.html">
+                  View All
+                </a>
+
+              </div>
+
+
+              <div class="match-performer-list">
+
+                <div class="match-performer-item">
+
+                  <span class="match-performer-rank">
+                    1
+                  </span>
+
+
+                  <img
+                    src="images/player-1.jpg"
+                    alt="Aman Singh"
+                  />
+
+
+                  <div>
+
+                    <strong>
+                      Aman Singh
+                    </strong>
+
+                    <span>
+                      Forward
+                    </span>
+
+                  </div>
+
+
+                  <p>
+
+                    <strong>
+                      8
+                    </strong>
+
+                    Goals
+
+                  </p>
+
+                </div>
+
+
+                <div class="match-performer-item">
+
+                  <span class="match-performer-rank">
+                    2
+                  </span>
+
+
+                  <img
+                    src="images/player-2.jpg"
+                    alt="Rohit Das"
+                  />
+
+
+                  <div>
+
+                    <strong>
+                      Rohit Das
+                    </strong>
+
+                    <span>
+                      Midfielder
+                    </span>
+
+                  </div>
+
+
+                  <p>
+
+                    <strong>
+                      6
+                    </strong>
+
+                    Assists
+
+                  </p>
+
+                </div>
+
+
+                <div class="match-performer-item">
+
+                  <span class="match-performer-rank">
+                    3
+                  </span>
+
+
+                  <img
+                    src="images/player-3.jpg"
+                    alt="Kabir Ali"
+                  />
+
+
+                  <div>
+
+                    <strong>
+                      Kabir Ali
+                    </strong>
+
+                    <span>
+                      Goalkeeper
+                    </span>
+
+                  </div>
+
+
+                  <p>
+
+                    <strong>
+                      5
+                    </strong>
+
+                    Clean Sheets
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MATCH DAY CHECKLIST
+        ================================================== -->
+
+        <section class="match-day-section">
+
+          <div class="match-day-header">
+
+            <div>
+
+              <span class="matches-section-eyebrow">
+                Match-Day Readiness
+              </span>
+
+              <h2>
+                Next Match Checklist
+              </h2>
+
+              <p>
+                Rising Stars Academy · Sunday, 19 July 2026
+              </p>
+
+            </div>
+
+
+            <span class="match-readiness-badge">
+              75% Ready
+            </span>
+
+          </div>
+
+
+          <div class="match-day-grid">
+
+            <article
+              class="match-day-task completed"
+              data-match-task="squad"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle squad task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Finalize Match Squad
+                </strong>
+
+                <span>
+                  18 players selected
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="squad"
+                data-match-id="match-001"
+              >
+                Review
+              </button>
+
+            </article>
+
+
+            <article
+              class="match-day-task completed"
+              data-match-task="formation"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle formation task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Select Starting Formation
+                </strong>
+
+                <span>
+                  4-3-3 attacking selected
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="prepare"
+                data-match-id="match-001"
+              >
+                Review
+              </button>
+
+            </article>
+
+
+            <article
+              class="match-day-task completed"
+              data-match-task="tactics"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle tactics task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Complete Tactical Plan
+                </strong>
+
+                <span>
+                  Attacking and defensive phases added
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="prepare"
+                data-match-id="match-001"
+              >
+                Review
+              </button>
+
+            </article>
+
+
+            <article
+              class="match-day-task"
+              data-match-task="roles"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle player roles task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Assign Player Roles
+                </strong>
+
+                <span>
+                  Captain, set pieces and penalties pending
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="prepare"
+                data-match-id="match-001"
+              >
+                Assign
+              </button>
+
+            </article>
+
+
+            <article
+              class="match-day-task"
+              data-match-task="availability"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle player availability task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Confirm Player Availability
+                </strong>
+
+                <span>
+                  3 responses pending
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="availability"
+                data-match-id="match-001"
+              >
+                Check
+              </button>
+
+            </article>
+
+
+            <article
+              class="match-day-task"
+              data-match-task="briefing"
+            >
+
+              <button
+                type="button"
+                class="match-task-check"
+                aria-label="Toggle team briefing task"
+              >
+
+                <i class="fa-solid fa-check"></i>
+
+              </button>
+
+
+              <div>
+
+                <strong>
+                  Schedule Team Briefing
+                </strong>
+
+                <span>
+                  Briefing time not confirmed
+                </span>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-task-action"
+                data-match-action="briefing"
+                data-match-id="match-001"
+              >
+                Schedule
+              </button>
+
+            </article>
+
+          </div>
+
+        </section>
+
+                <!-- =================================================
+             CREATE / EDIT MATCH MODAL
+        ================================================== -->
+
+        <div
+          class="match-modal-backdrop"
+          id="matchCreateModal"
+          aria-hidden="true"
+        >
+
+          <div
+            class="match-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="matchCreateModalTitle"
+            tabindex="-1"
+          >
+
+            <div class="match-modal-header">
+
+              <div class="match-modal-heading">
+
+                <span>
+                  New Fixture
+                </span>
+
+                <h2 id="matchCreateModalTitle">
+                  Schedule a Match
+                </h2>
+
+                <p>
+                  Add fixture details, competition information and match-day
+                  arrangements.
+                </p>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-modal-close"
+                data-close-match-modal
+                aria-label="Close match form"
+              >
+
+                <i class="fa-solid fa-xmark"></i>
+
+              </button>
+
+            </div>
+
+
+            <form
+              class="match-form"
+              id="matchCreateForm"
+              data-mode="create"
+              novalidate
+            >
+
+              <!-- Backend integration:
+                   POST /api/coach/matches
+                   PUT /api/coach/matches/:matchId
+              -->
+
+
+              <div class="match-form-section">
+
+                <div class="match-form-section-heading">
+
+                  <span class="match-form-section-number">
+                    01
+                  </span>
+
+                  <div>
+
+                    <h3>
+                      Fixture Information
+                    </h3>
+
+                    <p>
+                      Enter the basic match and competition details.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-form-grid">
+
+                  <label class="match-form-field match-form-field-full">
+
+                    <span>
+                      Match Title
+                    </span>
+
+                    <input
+                      type="text"
+                      id="matchTitle"
+                      name="matchTitle"
+                      placeholder="Example: U-17 League Matchday 8"
+                      maxlength="100"
+                      required
+                    />
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Competition
+                    </span>
+
+                    <select
+                      id="matchCompetition"
+                      name="competition"
+                      required
+                    >
+
+                      <option value="">
+                        Select competition
+                      </option>
+
+                      <option value="u17-league">
+                        U-17 League
+                      </option>
+
+                      <option value="academy-cup">
+                        Academy Cup
+                      </option>
+
+                      <option value="friendly">
+                        Friendly Match
+                      </option>
+
+                      <option value="district-championship">
+                        District Championship
+                      </option>
+
+                      <option value="tournament">
+                        Tournament
+                      </option>
+
+                      <option value="other">
+                        Other
+                      </option>
+
+                    </select>
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Competition Stage
+                    </span>
+
+                    <input
+                      type="text"
+                      id="matchStage"
+                      name="stage"
+                      placeholder="Example: Quarter Final"
+                      maxlength="60"
+                    />
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Age Category
+                    </span>
+
+                    <select
+                      id="matchAgeCategory"
+                      name="ageCategory"
+                    >
+
+                      <option value="">
+                        Select category
+                      </option>
+
+                      <option value="u13">
+                        Under 13
+                      </option>
+
+                      <option value="u15">
+                        Under 15
+                      </option>
+
+                      <option value="u17">
+                        Under 17
+                      </option>
+
+                      <option value="u19">
+                        Under 19
+                      </option>
+
+                      <option value="senior">
+                        Senior
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Match Type
+                    </span>
+
+                    <select
+                      id="matchType"
+                      name="matchType"
+                      required
+                    >
+
+                      <option value="">
+                        Select match type
+                      </option>
+
+                      <option value="competitive">
+                        Competitive
+                      </option>
+
+                      <option value="friendly">
+                        Friendly
+                      </option>
+
+                      <option value="trial">
+                        Trial Match
+                      </option>
+
+                      <option value="training">
+                        Training Match
+                      </option>
+
+                    </select>
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-section">
+
+                <div class="match-form-section-heading">
+
+                  <span class="match-form-section-number">
+                    02
+                  </span>
+
+                  <div>
+
+                    <h3>
+                      Teams
+                    </h3>
+
+                    <p>
+                      Select home, away and opponent information.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-form-grid">
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Match Location
+                    </span>
+
+                    <select
+                      id="matchLocationType"
+                      name="locationType"
+                      required
+                    >
+
+                      <option value="">
+                        Select location type
+                      </option>
+
+                      <option value="home">
+                        Home
+                      </option>
+
+                      <option value="away">
+                        Away
+                      </option>
+
+                      <option value="neutral">
+                        Neutral
+                      </option>
+
+                    </select>
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Opponent Team
+                    </span>
+
+                    <input
+                      type="text"
+                      id="matchOpponent"
+                      name="opponent"
+                      placeholder="Enter opponent name"
+                      maxlength="100"
+                      required
+                    />
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field match-form-field-full">
+
+                    <span>
+                      Opponent Logo
+                    </span>
+
+                    <div class="match-file-upload">
+
+                      <input
+                        type="file"
+                        id="matchOpponentLogo"
+                        name="opponentLogo"
+                        accept="image/jpeg,image/png,image/webp"
+                      />
+
+                      <label for="matchOpponentLogo">
+
+                        <i class="fa-regular fa-image"></i>
+
+                        <span>
+
+                          <strong>
+                            Upload opponent logo
+                          </strong>
+
+                          <small>
+                            PNG, JPG or WebP · Maximum 2 MB
+                          </small>
+
+                        </span>
+
+                      </label>
+
+                      <div
+                        class="match-file-preview"
+                        id="matchOpponentLogoPreview"
+                        hidden
+                      ></div>
+
+                    </div>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-section">
+
+                <div class="match-form-section-heading">
+
+                  <span class="match-form-section-number">
+                    03
+                  </span>
+
+                  <div>
+
+                    <h3>
+                      Date & Venue
+                    </h3>
+
+                    <p>
+                      Set the fixture schedule and match venue.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-form-grid">
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Match Date
+                    </span>
+
+                    <input
+                      type="date"
+                      id="matchDate"
+                      name="matchDate"
+                      required
+                    />
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Kick-Off Time
+                    </span>
+
+                    <input
+                      type="time"
+                      id="matchKickoffTime"
+                      name="kickoffTime"
+                      required
+                    />
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field match-form-field-full">
+
+                    <span>
+                      Venue Name
+                    </span>
+
+                    <input
+                      type="text"
+                      id="matchVenue"
+                      name="venue"
+                      placeholder="Example: National Football Ground"
+                      maxlength="120"
+                      required
+                    />
+
+                    <small class="match-field-error"></small>
+
+                  </label>
+
+
+                  <label class="match-form-field match-form-field-full">
+
+                    <span>
+                      Venue Address
+                    </span>
+
+                    <input
+                      type="text"
+                      id="matchVenueAddress"
+                      name="venueAddress"
+                      placeholder="Enter full venue address"
+                      maxlength="180"
+                    />
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Arrival Time
+                    </span>
+
+                    <input
+                      type="time"
+                      id="matchArrivalTime"
+                      name="arrivalTime"
+                    />
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Reporting Time
+                    </span>
+
+                    <input
+                      type="time"
+                      id="matchReportingTime"
+                      name="reportingTime"
+                    />
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-form-section">
+
+                <div class="match-form-section-heading">
+
+                  <span class="match-form-section-number">
+                    04
+                  </span>
+
+                  <div>
+
+                    <h3>
+                      Match Settings
+                    </h3>
+
+                    <p>
+                      Add match duration, status and communication preferences.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-form-grid">
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Match Duration
+                    </span>
+
+                    <select
+                      id="matchDuration"
+                      name="duration"
+                    >
+
+                      <option value="60">
+                        60 minutes
+                      </option>
+
+                      <option value="70">
+                        70 minutes
+                      </option>
+
+                      <option value="80">
+                        80 minutes
+                      </option>
+
+                      <option value="90" selected>
+                        90 minutes
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label class="match-form-field">
+
+                    <span>
+                      Fixture Status
+                    </span>
+
+                    <select
+                      id="matchStatus"
+                      name="status"
+                    >
+
+                      <option value="upcoming">
+                        Publish as Upcoming
+                      </option>
+
+                      <option value="draft">
+                        Save as Draft
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label class="match-form-field match-form-field-full">
+
+                    <span>
+                      Match Notes
+                    </span>
+
+                    <textarea
+                      id="matchNotes"
+                      name="notes"
+                      rows="5"
+                      maxlength="700"
+                      placeholder="Add travel instructions, kit requirements, match rules or other important notes..."
+                    ></textarea>
+
+                    <div class="match-character-row">
+
+                      <small>
+                        Visible to selected players and staff.
+                      </small>
+
+                      <span>
+                        <strong id="matchNotesCount">0</strong>/700
+                      </span>
+
+                    </div>
+
+                  </label>
+
+
+                  <label class="match-switch-field match-form-field-full">
+
+                    <input
+                      type="checkbox"
+                      id="notifyMatchPlayers"
+                      name="notifyPlayers"
+                      checked
+                    />
+
+                    <span class="match-switch-control"></span>
+
+                    <span>
+
+                      <strong>
+                        Notify selected players
+                      </strong>
+
+                      <small>
+                        Send a frontend notification when this fixture is published.
+                      </small>
+
+                    </span>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="match-modal-footer">
+
+                <button
+                  type="button"
+                  class="match-modal-cancel-button"
+                  data-close-match-modal
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="button"
+                  class="match-modal-draft-button"
+                  id="saveMatchDraft"
+                >
+
+                  <i class="fa-regular fa-floppy-disk"></i>
+
+                  Save Draft
+
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="match-modal-submit-button"
+                >
+
+                  <i class="fa-solid fa-calendar-plus"></i>
+
+                  Schedule Match
+
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SQUAD SELECTION MODAL
+        ================================================== -->
+
+        <div
+          class="match-modal-backdrop"
+          id="matchSquadModal"
+          aria-hidden="true"
+        >
+
+          <div
+            class="match-modal match-modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="matchSquadModalTitle"
+            tabindex="-1"
+          >
+
+            <div class="match-modal-header">
+
+              <div class="match-modal-heading">
+
+                <span>
+                  Squad Management
+                </span>
+
+                <h2 id="matchSquadModalTitle">
+                  Select Match Squad
+                </h2>
+
+                <p id="matchSquadSubtitle">
+                  Choose players for the selected fixture.
+                </p>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-modal-close"
+                data-close-match-modal
+                aria-label="Close squad selection"
+              >
+
+                <i class="fa-solid fa-xmark"></i>
+
+              </button>
+
+            </div>
+
+
+            <div class="match-squad-layout">
+
+              <div class="match-squad-player-panel">
+
+                <div class="match-squad-toolbar">
+
+                  <div class="match-squad-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                      type="search"
+                      id="matchSquadSearch"
+                      placeholder="Search players..."
+                      aria-label="Search available players"
+                    />
+
+                  </div>
+
+
+                  <select
+                    id="matchSquadPositionFilter"
+                    aria-label="Filter players by position"
+                  >
+
+                    <option value="all">
+                      All Positions
+                    </option>
+
+                    <option value="goalkeeper">
+                      Goalkeepers
+                    </option>
+
+                    <option value="defender">
+                      Defenders
+                    </option>
+
+                    <option value="midfielder">
+                      Midfielders
+                    </option>
+
+                    <option value="forward">
+                      Forwards
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="match-squad-selection-header">
+
+                  <div>
+
+                    <strong>
+                      Available Players
+                    </strong>
+
+                    <span>
+                      Select up to 20 players
+                    </span>
+
+                  </div>
+
+
+                  <button
+                    type="button"
+                    id="selectRecommendedSquad"
+                  >
+                    Select Recommended
+                  </button>
+
+                </div>
+
+
+                <div
+                  class="match-squad-player-list"
+                  id="matchSquadPlayerList"
+                >
+
+                  <label
+                    class="match-squad-player"
+                    data-player-name="Aman Singh"
+                    data-position="forward"
+                    data-player-id="player-001"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-001"
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-1.jpg"
+                      alt="Aman Singh"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Aman Singh
+                      </strong>
+
+                      <small>
+                        Forward · No. 9
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability available">
+                      Available
+                    </span>
+
+                  </label>
+
+
+                  <label
+                    class="match-squad-player"
+                    data-player-name="Rohit Das"
+                    data-position="midfielder"
+                    data-player-id="player-002"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-002"
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-2.jpg"
+                      alt="Rohit Das"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Rohit Das
+                      </strong>
+
+                      <small>
+                        Midfielder · No. 8
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability available">
+                      Available
+                    </span>
+
+                  </label>
+
+
+                  <label
+                    class="match-squad-player"
+                    data-player-name="Kabir Ali"
+                    data-position="goalkeeper"
+                    data-player-id="player-003"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-003"
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-3.jpg"
+                      alt="Kabir Ali"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Kabir Ali
+                      </strong>
+
+                      <small>
+                        Goalkeeper · No. 1
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability available">
+                      Available
+                    </span>
+
+                  </label>
+
+
+                  <label
+                    class="match-squad-player"
+                    data-player-name="Aditya Kumar"
+                    data-position="defender"
+                    data-player-id="player-004"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-004"
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-4.jpg"
+                      alt="Aditya Kumar"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Aditya Kumar
+                      </strong>
+
+                      <small>
+                        Centre Back · No. 4
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability available">
+                      Available
+                    </span>
+
+                  </label>
+
+
+                  <label
+                    class="match-squad-player"
+                    data-player-name="Nikhil Rai"
+                    data-position="defender"
+                    data-player-id="player-005"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-005"
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-5.jpg"
+                      alt="Nikhil Rai"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Nikhil Rai
+                      </strong>
+
+                      <small>
+                        Right Back · No. 2
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability doubtful">
+                      Doubtful
+                    </span>
+
+                  </label>
+
+
+                  <label
+                    class="match-squad-player disabled"
+                    data-player-name="Sahil Mehta"
+                    data-position="midfielder"
+                    data-player-id="player-006"
+                  >
+
+                    <input
+                      type="checkbox"
+                      name="matchSquadPlayers"
+                      value="player-006"
+                      disabled
+                    />
+
+                    <span class="match-squad-check">
+
+                      <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+
+                    <img
+                      src="images/player-6.jpg"
+                      alt="Sahil Mehta"
+                    />
+
+
+                    <span class="match-squad-player-info">
+
+                      <strong>
+                        Sahil Mehta
+                      </strong>
+
+                      <small>
+                        Midfielder · No. 10
+                      </small>
+
+                    </span>
+
+
+                    <span class="match-player-availability unavailable">
+                      Injured
+                    </span>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <aside class="match-selected-squad-panel">
+
+                <div class="match-selected-squad-header">
+
+                  <div>
+
+                    <strong>
+                      Selected Squad
+                    </strong>
+
+                    <span>
+                      <b id="selectedSquadCount">0</b> / 20 players
+                    </span>
+
+                  </div>
+
+
+                  <button
+                    type="button"
+                    id="clearSelectedSquad"
+                  >
+                    Clear
+                  </button>
+
+                </div>
+
+
+                <div
+                  class="match-selected-squad-list"
+                  id="matchSelectedSquadList"
+                >
+
+                  <div class="match-selected-squad-empty">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <strong>
+                      No players selected
+                    </strong>
+
+                    <span>
+                      Choose players from the available squad.
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-squad-requirements">
+
+                  <strong>
+                    Squad Requirements
+                  </strong>
+
+                  <span data-squad-requirement="goalkeeper">
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    At least 1 goalkeeper
+
+                  </span>
+
+                  <span data-squad-requirement="minimum">
+
+                    <i class="fa-regular fa-circle"></i>
+
+                    Minimum 11 players
+
+                  </span>
+
+                  <span data-squad-requirement="maximum">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Maximum 20 players
+
+                  </span>
+
+                </div>
+
+              </aside>
+
+            </div>
+
+
+            <div class="match-modal-footer">
+
+              <button
+                type="button"
+                class="match-modal-cancel-button"
+                data-close-match-modal
+              >
+                Cancel
+              </button>
+
+
+              <button
+                type="button"
+                class="match-modal-submit-button"
+                id="saveMatchSquad"
+              >
+
+                <i class="fa-solid fa-users"></i>
+
+                Save Squad
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MATCH PREPARATION DRAWER
+        ================================================== -->
+
+        <div
+          class="match-drawer-overlay"
+          id="matchDrawerOverlay"
+          aria-hidden="true"
+        ></div>
+
+
+        <aside
+          class="match-preparation-drawer"
+          id="matchPreparationDrawer"
+          aria-labelledby="matchPreparationDrawerTitle"
+          aria-hidden="true"
+          tabindex="-1"
+        >
+
+          <div class="match-drawer-header">
+
+            <div>
+
+              <span>
+                Match Preparation
+              </span>
+
+              <h2 id="matchPreparationDrawerTitle">
+                Rising Stars Academy
+              </h2>
+
+              <p id="matchPreparationDrawerMeta">
+                U-17 League · 19 July 2026 · 4:00 PM
+              </p>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="match-drawer-close"
+              id="closeMatchPreparationDrawer"
+              aria-label="Close match preparation"
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+          </div>
+
+
+          <div class="match-drawer-progress">
+
+            <div>
+
+              <span>
+                Preparation progress
+              </span>
+
+              <strong id="matchDrawerProgressValue">
+                75%
+              </strong>
+
+            </div>
+
+
+            <div class="match-progress-track">
+
+              <span
+                id="matchDrawerProgressBar"
+                style="width: 75%;"
+              ></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="match-drawer-tabs">
+
+            <button
+              type="button"
+              class="active"
+              data-match-drawer-tab="overview"
+              aria-pressed="true"
+            >
+              Overview
+            </button>
+
+
+            <button
+              type="button"
+              data-match-drawer-tab="formation"
+              aria-pressed="false"
+            >
+              Formation
+            </button>
+
+
+            <button
+              type="button"
+              data-match-drawer-tab="tactics"
+              aria-pressed="false"
+            >
+              Tactics
+            </button>
+
+
+            <button
+              type="button"
+              data-match-drawer-tab="roles"
+              aria-pressed="false"
+            >
+              Roles
+            </button>
+
+          </div>
+
+
+          <div class="match-drawer-body">
+
+            <section
+              class="match-drawer-panel active"
+              data-match-drawer-panel="overview"
+            >
+
+              <div class="match-preparation-summary">
+
+                <article>
+
+                  <i class="fa-solid fa-users"></i>
+
+                  <span>
+
+                    <small>
+                      Selected Squad
+                    </small>
+
+                    <strong>
+                      18 Players
+                    </strong>
+
+                  </span>
+
+                </article>
+
+
+                <article>
+
+                  <i class="fa-solid fa-table-cells-large"></i>
+
+                  <span>
+
+                    <small>
+                      Formation
+                    </small>
+
+                    <strong>
+                      4-3-3
+                    </strong>
+
+                  </span>
+
+                </article>
+
+
+                <article>
+
+                  <i class="fa-solid fa-shield-halved"></i>
+
+                  <span>
+
+                    <small>
+                      Game Plan
+                    </small>
+
+                    <strong>
+                      High Press
+                    </strong>
+
+                  </span>
+
+                </article>
+
+              </div>
+
+
+              <div class="match-preparation-block">
+
+                <div class="match-preparation-block-header">
+
+                  <div>
+
+                    <h3>
+                      Preparation Checklist
+                    </h3>
+
+                    <span>
+                      Complete every item before match day.
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <label class="match-preparation-checkbox completed">
+
+                  <input
+                    type="checkbox"
+                    checked
+                    data-preparation-item="squad"
+                  />
+
+                  <span class="match-preparation-check-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                  </span>
+
+
+                  <span>
+
+                    <strong>
+                      Select Match Squad
+                    </strong>
+
+                    <small>
+                      18 players currently selected.
+                    </small>
+
+                  </span>
+
+
+                  <button
+                    type="button"
+                    data-match-action="squad"
+                    data-match-id="match-001"
+                  >
+                    Review
+                  </button>
+
+                </label>
+
+
+                <label class="match-preparation-checkbox completed">
+
+                  <input
+                    type="checkbox"
+                    checked
+                    data-preparation-item="formation"
+                  />
+
+                  <span class="match-preparation-check-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                  </span>
+
+
+                  <span>
+
+                    <strong>
+                      Choose Formation
+                    </strong>
+
+                    <small>
+                      4-3-3 attacking formation selected.
+                    </small>
+
+                  </span>
+
+                </label>
+
+
+                <label class="match-preparation-checkbox completed">
+
+                  <input
+                    type="checkbox"
+                    checked
+                    data-preparation-item="tactics"
+                  />
+
+                  <span class="match-preparation-check-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                  </span>
+
+
+                  <span>
+
+                    <strong>
+                      Add Tactical Plan
+                    </strong>
+
+                    <small>
+                      Attacking and defensive instructions added.
+                    </small>
+
+                  </span>
+
+                </label>
+
+
+                <label class="match-preparation-checkbox">
+
+                  <input
+                    type="checkbox"
+                    data-preparation-item="roles"
+                  />
+
+                  <span class="match-preparation-check-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                  </span>
+
+
+                  <span>
+
+                    <strong>
+                      Assign Player Roles
+                    </strong>
+
+                    <small>
+                      Captain and set-piece roles are still pending.
+                    </small>
+
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="match-preparation-block">
+
+                <div class="match-preparation-block-header">
+
+                  <div>
+
+                    <h3>
+                      Coach Notes
+                    </h3>
+
+                    <span>
+                      Private preparation notes for the coaching team.
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <textarea
+                  id="matchPreparationNotes"
+                  rows="6"
+                  maxlength="1000"
+                  placeholder="Add opponent observations, player instructions and match-day reminders..."
+                ></textarea>
+
+
+                <div class="match-character-row">
+
+                  <small>
+                    Saved locally until backend integration.
+                  </small>
+
+                  <span>
+                    <strong id="matchPreparationNotesCount">0</strong>/1000
+                  </span>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <section
+              class="match-drawer-panel"
+              data-match-drawer-panel="formation"
+              hidden
+            >
+
+              <div class="match-preparation-block">
+
+                <div class="match-preparation-block-header">
+
+                  <div>
+
+                    <h3>
+                      Starting Formation
+                    </h3>
+
+                    <span>
+                      Choose the primary formation for the fixture.
+                    </span>
+
+                  </div>
+
+
+                  <select
+                    id="matchFormationSelector"
+                    aria-label="Select match formation"
+                  >
+
+                    <option value="4-3-3">
+                      4-3-3
+                    </option>
+
+                    <option value="4-2-3-1">
+                      4-2-3-1
+                    </option>
+
+                    <option value="4-4-2">
+                      4-4-2
+                    </option>
+
+                    <option value="3-5-2">
+                      3-5-2
+                    </option>
+
+                    <option value="3-4-3">
+                      3-4-3
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="match-formation-pitch">
+
+                  <div class="match-pitch-line centre-line"></div>
+                  <div class="match-pitch-circle"></div>
+                  <div class="match-pitch-box top-box"></div>
+                  <div class="match-pitch-box bottom-box"></div>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player goalkeeper"
+                    style="left: 50%; bottom: 4%;"
+                  >
+
+                    <span>
+                      KA
+                    </span>
+
+                    <small>
+                      Kabir
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 14%; bottom: 25%;"
+                  >
+
+                    <span>
+                      NR
+                    </span>
+
+                    <small>
+                      Nikhil
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 38%; bottom: 22%;"
+                  >
+
+                    <span>
+                      AK
+                    </span>
+
+                    <small>
+                      Aditya
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 62%; bottom: 22%;"
+                  >
+
+                    <span>
+                      VM
+                    </span>
+
+                    <small>
+                      Vikram
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 86%; bottom: 25%;"
+                  >
+
+                    <span>
+                      RS
+                    </span>
+
+                    <small>
+                      Rahul
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 28%; bottom: 51%;"
+                  >
+
+                    <span>
+                      RD
+                    </span>
+
+                    <small>
+                      Rohit
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player captain"
+                    style="left: 50%; bottom: 48%;"
+                  >
+
+                    <span>
+                      SM
+                    </span>
+
+                    <small>
+                      Sameer
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 72%; bottom: 51%;"
+                  >
+
+                    <span>
+                      PA
+                    </span>
+
+                    <small>
+                      Pranav
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 16%; bottom: 77%;"
+                  >
+
+                    <span>
+                      RA
+                    </span>
+
+                    <small>
+                      Ritesh
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 50%; bottom: 82%;"
+                  >
+
+                    <span>
+                      AS
+                    </span>
+
+                    <small>
+                      Aman
+                    </small>
+
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="match-formation-player"
+                    style="left: 84%; bottom: 77%;"
+                  >
+
+                    <span>
+                      DK
+                    </span>
+
+                    <small>
+                      Deepak
+                    </small>
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <section
+              class="match-drawer-panel"
+              data-match-drawer-panel="tactics"
+              hidden
+            >
+
+              <div class="match-preparation-block">
+
+                <div class="match-preparation-block-header">
+
+                  <div>
+
+                    <h3>
+                      Tactical Approach
+                    </h3>
+
+                    <span>
+                      Define the team's match strategy.
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-tactical-grid">
+
+                  <label>
+
+                    <span>
+                      Attacking Style
+                    </span>
+
+                    <select id="matchAttackingStyle">
+
+                      <option value="possession">
+                        Possession
+                      </option>
+
+                      <option value="direct">
+                        Direct Play
+                      </option>
+
+                      <option value="counter">
+                        Counter Attack
+                      </option>
+
+                      <option value="wide">
+                        Wide Play
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+                      Defensive Approach
+                    </span>
+
+                    <select id="matchDefensiveApproach">
+
+                      <option value="high-press">
+                        High Press
+                      </option>
+
+                      <option value="mid-block">
+                        Mid Block
+                      </option>
+
+                      <option value="low-block">
+                        Low Block
+                      </option>
+
+                      <option value="man-marking">
+                        Man Marking
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+                      Tempo
+                    </span>
+
+                    <select id="matchTempo">
+
+                      <option value="high">
+                        High
+                      </option>
+
+                      <option value="balanced">
+                        Balanced
+                      </option>
+
+                      <option value="controlled">
+                        Controlled
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+                      Defensive Line
+                    </span>
+
+                    <select id="matchDefensiveLine">
+
+                      <option value="high">
+                        High
+                      </option>
+
+                      <option value="normal">
+                        Normal
+                      </option>
+
+                      <option value="deep">
+                        Deep
+                      </option>
+
+                    </select>
+
+                  </label>
+
+                </div>
+
+
+                <label class="match-tactical-notes">
+
+                  <span>
+                    Tactical Instructions
+                  </span>
+
+                  <textarea
+                    id="matchTacticalInstructions"
+                    rows="8"
+                    placeholder="Describe pressing triggers, build-up patterns, transition responsibilities and defensive instructions..."
+                  ></textarea>
+
+                </label>
+
+              </div>
+
+            </section>
+
+
+            <section
+              class="match-drawer-panel"
+              data-match-drawer-panel="roles"
+              hidden
+            >
+
+              <div class="match-preparation-block">
+
+                <div class="match-preparation-block-header">
+
+                  <div>
+
+                    <h3>
+                      Player Responsibilities
+                    </h3>
+
+                    <span>
+                      Assign leadership and set-piece duties.
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="match-role-list">
+
+                  <label>
+
+                    <span>
+
+                      <i class="fa-solid fa-c"></i>
+
+                      Captain
+
+                    </span>
+
+                    <select id="matchCaptain">
+
+                      <option value="">
+                        Select captain
+                      </option>
+
+                      <option value="sameer">
+                        Sameer Mehta
+                      </option>
+
+                      <option value="rohit">
+                        Rohit Das
+                      </option>
+
+                      <option value="aman">
+                        Aman Singh
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+
+                      <i class="fa-solid fa-flag"></i>
+
+                      Left Corners
+
+                    </span>
+
+                    <select id="matchLeftCorners">
+
+                      <option value="">
+                        Select player
+                      </option>
+
+                      <option value="rohit">
+                        Rohit Das
+                      </option>
+
+                      <option value="pranav">
+                        Pranav Arora
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+
+                      <i class="fa-solid fa-flag"></i>
+
+                      Right Corners
+
+                    </span>
+
+                    <select id="matchRightCorners">
+
+                      <option value="">
+                        Select player
+                      </option>
+
+                      <option value="rohit">
+                        Rohit Das
+                      </option>
+
+                      <option value="deepak">
+                        Deepak Kumar
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+
+                      <i class="fa-solid fa-bullseye"></i>
+
+                      Penalties
+
+                    </span>
+
+                    <select id="matchPenalties">
+
+                      <option value="">
+                        Select player
+                      </option>
+
+                      <option value="aman">
+                        Aman Singh
+                      </option>
+
+                      <option value="sameer">
+                        Sameer Mehta
+                      </option>
+
+                    </select>
+
+                  </label>
+
+
+                  <label>
+
+                    <span>
+
+                      <i class="fa-solid fa-location-crosshairs"></i>
+
+                      Free Kicks
+
+                    </span>
+
+                    <select id="matchFreeKicks">
+
+                      <option value="">
+                        Select player
+                      </option>
+
+                      <option value="rohit">
+                        Rohit Das
+                      </option>
+
+                      <option value="aman">
+                        Aman Singh
+                      </option>
+
+                    </select>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
+
+
+          <div class="match-drawer-footer">
+
+            <button
+              type="button"
+              class="match-modal-cancel-button"
+              id="closePreparationDrawerFooter"
+            >
+              Close
+            </button>
+
+
+            <button
+              type="button"
+              class="match-modal-submit-button"
+              id="saveMatchPreparation"
+            >
+
+              <i class="fa-regular fa-floppy-disk"></i>
+
+              Save Preparation
+
+            </button>
+
+          </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MATCH REPORT MODAL
+        ================================================== -->
+
+        <div
+          class="match-modal-backdrop"
+          id="matchReportModal"
+          aria-hidden="true"
+        >
+
+          <div
+            class="match-modal match-modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="matchReportModalTitle"
+            tabindex="-1"
+          >
+
+            <div class="match-modal-header">
+
+              <div class="match-modal-heading">
+
+                <span>
+                  Post-Match Analysis
+                </span>
+
+                <h2 id="matchReportModalTitle">
+                  Match Report
+                </h2>
+
+                <p id="matchReportSubtitle">
+                  Complete the final result and performance review.
+                </p>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="match-modal-close"
+                data-close-match-modal
+                aria-label="Close match report"
+              >
+
+                <i class="fa-solid fa-xmark"></i>
+
+              </button>
+
+            </div>
+
+
+            <form
+              class="match-report-form"
+              id="matchReportForm"
+              novalidate
+            >
+
+              <!-- Backend integration:
+                   POST /api/coach/matches/:matchId/report
+              -->
+
+
+              <div class="match-report-score-card">
+
+                <div class="match-report-team">
+
+                  <img
+                    src="images/minerva-academy-logo.png"
+                    alt="Mission India Academy"
+                  />
+
+                  <strong>
+                    Mission India Academy
+                  </strong>
+
+
+                  <input
+                    type="number"
+                    id="homeTeamScore"
+                    name="homeScore"
+                    min="0"
+                    max="99"
+                    value="3"
+                    aria-label="Mission India Academy score"
+                  />
+
+                </div>
+
+
+                <div class="match-report-score-centre">
+
+                  <span>
+                    Full Time
+                  </span>
+
+                  <strong>
+                    -
+                  </strong>
+
+                </div>
+
+
+                <div class="match-report-team">
+
+                  <img
+                    src="images/young-warriors-logo.png"
+                    alt="Young Warriors FC"
+                  />
+
+                  <strong>
+                    Young Warriors FC
+                  </strong>
+
+
+                  <input
+                    type="number"
+                    id="awayTeamScore"
+                    name="awayScore"
+                    min="0"
+                    max="99"
+                    value="1"
+                    aria-label="Young Warriors FC score"
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div class="match-report-grid">
+
+                <section class="match-report-section">
+
+                  <div class="match-report-section-header">
+
+                    <div>
+
+                      <h3>
+                        Match Statistics
+                      </h3>
+
+                      <span>
+                        Enter key team performance data.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="match-stat-input-grid">
+
+                    <label>
+
+                      <span>
+                        Possession %
+                      </span>
+
+                      <input
+                        type="number"
+                        name="possession"
+                        min="0"
+                        max="100"
+                        value="58"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Total Shots
+                      </span>
+
+                      <input
+                        type="number"
+                        name="shots"
+                        min="0"
+                        value="14"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Shots on Target
+                      </span>
+
+                      <input
+                        type="number"
+                        name="shotsOnTarget"
+                        min="0"
+                        value="8"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Pass Accuracy %
+                      </span>
+
+                      <input
+                        type="number"
+                        name="passAccuracy"
+                        min="0"
+                        max="100"
+                        value="84"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Corners
+                      </span>
+
+                      <input
+                        type="number"
+                        name="corners"
+                        min="0"
+                        value="6"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Fouls
+                      </span>
+
+                      <input
+                        type="number"
+                        name="fouls"
+                        min="0"
+                        value="9"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Yellow Cards
+                      </span>
+
+                      <input
+                        type="number"
+                        name="yellowCards"
+                        min="0"
+                        value="2"
+                      />
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Red Cards
+                      </span>
+
+                      <input
+                        type="number"
+                        name="redCards"
+                        min="0"
+                        value="0"
+                      />
+
+                    </label>
+
+                  </div>
+
+                </section>
+
+
+                <section class="match-report-section">
+
+                  <div class="match-report-section-header">
+
+                    <div>
+
+                      <h3>
+                        Goal Scorers
+                      </h3>
+
+                      <span>
+                        Record goals and match minutes.
+                      </span>
+
+                    </div>
+
+
+                    <button
+                      type="button"
+                      id="addGoalScorer"
+                    >
+
+                      <i class="fa-solid fa-plus"></i>
+
+                      Add Goal
+
+                    </button>
+
+                  </div>
+
+
+                  <div
+                    class="match-event-list"
+                    id="matchGoalScorerList"
+                  >
+
+                    <div class="match-event-row">
+
+                      <select name="goalPlayer[]">
+
+                        <option value="aman">
+                          Aman Singh
+                        </option>
+
+                        <option value="rohit">
+                          Rohit Das
+                        </option>
+
+                        <option value="kabir">
+                          Kabir Ali
+                        </option>
+
+                      </select>
+
+
+                      <input
+                        type="number"
+                        name="goalMinute[]"
+                        min="1"
+                        max="120"
+                        value="24"
+                        aria-label="Goal minute"
+                      />
+
+
+                      <select name="goalType[]">
+
+                        <option value="open-play">
+                          Open Play
+                        </option>
+
+                        <option value="penalty">
+                          Penalty
+                        </option>
+
+                        <option value="free-kick">
+                          Free Kick
+                        </option>
+
+                        <option value="header">
+                          Header
+                        </option>
+
+                      </select>
+
+
+                      <button
+                        type="button"
+                        data-remove-match-event
+                        aria-label="Remove goal"
+                      >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                      </button>
+
+                    </div>
+
+
+                    <div class="match-event-row">
+
+                      <select name="goalPlayer[]">
+
+                        <option value="aman">
+                          Aman Singh
+                        </option>
+
+                        <option value="rohit" selected>
+                          Rohit Das
+                        </option>
+
+                        <option value="kabir">
+                          Kabir Ali
+                        </option>
+
+                      </select>
+
+
+                      <input
+                        type="number"
+                        name="goalMinute[]"
+                        min="1"
+                        max="120"
+                        value="61"
+                        aria-label="Goal minute"
+                      />
+
+
+                      <select name="goalType[]">
+
+                        <option value="open-play">
+                          Open Play
+                        </option>
+
+                        <option value="penalty">
+                          Penalty
+                        </option>
+
+                        <option value="free-kick">
+                          Free Kick
+                        </option>
+
+                        <option value="header">
+                          Header
+                        </option>
+
+                      </select>
+
+
+                      <button
+                        type="button"
+                        data-remove-match-event
+                        aria-label="Remove goal"
+                      >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                      </button>
+
+                    </div>
+
+                  </div>
+
+                </section>
+
+
+                <section class="match-report-section match-report-section-full">
+
+                  <div class="match-report-section-header">
+
+                    <div>
+
+                      <h3>
+                        Performance Review
+                      </h3>
+
+                      <span>
+                        Evaluate the team's overall match performance.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="match-rating-grid">
+
+                    <label>
+
+                      <span>
+                        Attacking Performance
+                      </span>
+
+                      <input
+                        type="range"
+                        name="attackRating"
+                        min="1"
+                        max="10"
+                        value="8"
+                        data-rating-output="attackRatingOutput"
+                      />
+
+                      <output id="attackRatingOutput">
+                        8/10
+                      </output>
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Defensive Performance
+                      </span>
+
+                      <input
+                        type="range"
+                        name="defenceRating"
+                        min="1"
+                        max="10"
+                        value="7"
+                        data-rating-output="defenceRatingOutput"
+                      />
+
+                      <output id="defenceRatingOutput">
+                        7/10
+                      </output>
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Midfield Control
+                      </span>
+
+                      <input
+                        type="range"
+                        name="midfieldRating"
+                        min="1"
+                        max="10"
+                        value="8"
+                        data-rating-output="midfieldRatingOutput"
+                      />
+
+                      <output id="midfieldRatingOutput">
+                        8/10
+                      </output>
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Team Discipline
+                      </span>
+
+                      <input
+                        type="range"
+                        name="disciplineRating"
+                        min="1"
+                        max="10"
+                        value="7"
+                        data-rating-output="disciplineRatingOutput"
+                      />
+
+                      <output id="disciplineRatingOutput">
+                        7/10
+                      </output>
+
+                    </label>
+
+                  </div>
+
+
+                  <div class="match-report-text-grid">
+
+                    <label>
+
+                      <span>
+                        What Worked Well
+                      </span>
+
+                      <textarea
+                        name="strengths"
+                        rows="5"
+                        placeholder="Describe strong tactical, technical or physical aspects..."
+                      ></textarea>
+
+                    </label>
+
+
+                    <label>
+
+                      <span>
+                        Areas to Improve
+                      </span>
+
+                      <textarea
+                        name="improvements"
+                        rows="5"
+                        placeholder="Identify areas requiring attention in upcoming training..."
+                      ></textarea>
+
+                    </label>
+
+
+                    <label class="match-report-field-full">
+
+                      <span>
+                        Coach Summary
+                      </span>
+
+                      <textarea
+                        name="coachSummary"
+                        rows="6"
+                        maxlength="1500"
+                        placeholder="Write a complete post-match assessment..."
+                      ></textarea>
+
+                    </label>
+
+                  </div>
+
+                </section>
+
+              </div>
+
+
+              <div class="match-modal-footer">
+
+                <button
+                  type="button"
+                  class="match-modal-cancel-button"
+                  data-close-match-modal
+                >
+                  Cancel
+                </button>
+
+
+                <button
+                  type="button"
+                  class="match-modal-draft-button"
+                  id="saveMatchReportDraft"
+                >
+
+                  <i class="fa-regular fa-floppy-disk"></i>
+
+                  Save Draft
+
+                </button>
+
+
+                <button
+                  type="submit"
+                  class="match-modal-submit-button"
+                >
+
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Publish Report
+
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DELETE / CANCEL CONFIRMATION MODAL
+        ================================================== -->
+
+        <div
+          class="match-modal-backdrop"
+          id="matchDeleteModal"
+          aria-hidden="true"
+        >
+
+          <div
+            class="match-modal match-confirmation-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="matchDeleteModalTitle"
+            tabindex="-1"
+          >
+
+            <div class="match-confirmation-icon danger">
+
+              <i class="fa-regular fa-trash-can"></i>
+
+            </div>
+
+
+            <h2 id="matchDeleteModalTitle">
+              Delete this fixture?
+            </h2>
+
+
+            <p id="matchDeleteModalMessage">
+              This fixture will be removed from the frontend match list.
+              This action cannot be undone.
+            </p>
+
+
+            <div class="match-confirmation-actions">
+
+              <button
+                type="button"
+                class="match-modal-cancel-button"
+                data-close-match-modal
+              >
+                Keep Fixture
+              </button>
+
+
+              <button
+                type="button"
+                class="match-danger-button"
+                id="confirmMatchDelete"
+              >
+
+                <i class="fa-regular fa-trash-can"></i>
+
+                Delete Fixture
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LOGOUT MODAL
+        ================================================== -->
+
+        <div
+          class="match-modal-backdrop"
+          id="coachLogoutModal"
+          aria-hidden="true"
+        >
+
+          <div
+            class="match-modal match-confirmation-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="coachLogoutModalTitle"
+            tabindex="-1"
+          >
+
+            <div class="match-confirmation-icon logout">
+
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+            </div>
+
+
+            <h2 id="coachLogoutModalTitle">
+              Sign out of Coach Portal?
+            </h2>
+
+
+            <p>
+              You will need to sign in again to access your coaching dashboard.
+            </p>
+
+
+            <div class="match-confirmation-actions">
+
+              <button
+                type="button"
+                class="match-modal-cancel-button"
+                data-close-match-modal
+              >
+                Stay Signed In
+              </button>
+
+
+              <button
+                type="button"
+                class="match-danger-button"
+                id="confirmCoachLogout"
+              >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                Sign Out
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST NOTIFICATIONS
+        ================================================== -->
+
+        <div
+          class="match-toast-container"
+          id="matchToastContainer"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+
+        <!-- =================================================
+             FRONTEND / BACKEND INTEGRATION NOTES
+        ================================================== -->
+
+        <!--
+          BACKEND INTEGRATION POINTS FOR MR. HARSH
+
+          1. GET /api/coach/matches
+             Populate fixture cards, statistics, calendar and schedule.
+
+          2. POST /api/coach/matches
+             Create and publish a new fixture.
+
+          3. PUT /api/coach/matches/:matchId
+             Update fixture details.
+
+          4. DELETE /api/coach/matches/:matchId
+             Delete a fixture or draft.
+
+          5. PATCH /api/coach/matches/:matchId/status
+             Cancel, publish or complete a fixture.
+
+          6. GET /api/coach/matches/:matchId/squad
+             Load selected and available players.
+
+          7. PUT /api/coach/matches/:matchId/squad
+             Save the selected match squad.
+
+          8. GET /api/coach/matches/:matchId/preparation
+             Load formation, tactics, roles and coach notes.
+
+          9. PUT /api/coach/matches/:matchId/preparation
+             Save match-preparation data.
+
+          10. GET /api/coach/matches/:matchId/report
+              Load post-match data.
+
+          11. POST /api/coach/matches/:matchId/report
+              Create or publish the match report.
+
+          12. GET /api/coach/matches/statistics
+              Populate season results and performance metrics.
+
+          13. Authentication and authorization must be handled
+              on the backend before returning coach/team data.
+        -->
+
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <script src="coach-matches.js"></script>
+
+</body>
+
+</html>

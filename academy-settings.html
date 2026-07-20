@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+/>
+
+<title>
+
+Academy Settings |
+FIFA Mission India
+
+</title>
+
+<link
+rel="stylesheet"
+href="academy-settings.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar"
+>
+
+<div class="academy-sidebar-top">
+
+<div class="academy-logo">
+
+<img
+src="images/logo.png"
+alt="FIFA Mission India Logo"
+/>
+
+<div>
+
+<h3>FIFA Mission India</h3>
+
+<p>Academy Portal</p>
+
+</div>
+
+</div>
+
+<button
+id="academySidebarClose"
+class="academy-icon-button"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches
+
+</a>
+
+<a href="academy-messages.html">
+
+<i class="fa-solid fa-comments"></i>
+
+Messages
+
+</a>
+
+<a href="academy-notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+<a href="academy-documents.html">
+
+<i class="fa-solid fa-folder-open"></i>
+
+Documents
+
+</a>
+
+<a
+class="active"
+href="academy-settings.html"
+>
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+<a href="academy-help.html">
+
+<i class="fa-solid fa-circle-question"></i>
+
+Help & Support
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+id="academySidebarOverlay"
+hidden
+></div>
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<div class="academy-main">
+
+<!-- =====================================================
+     TOPBAR
+====================================================== -->
+
+<header class="academy-topbar">
+
+<button
+  id="academySidebarToggle"
+  class="academy-icon-button"
+  type="button"
+  aria-label="Open sidebar"
+  aria-expanded="false"
+>
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="academy-topbar-right">
+
+<button
+class="academy-icon-button"
+>
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<div
+class="academy-profile"
+id="academyProfileTrigger"
+>
+
+<img
+src="images/admin.jpg"
+alt="Academy Administrator"
+/>
+
+<span>
+
+Green Valley Football Academy
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div
+id="academyProfileDropdown"
+class="academy-dropdown"
+hidden
+>
+
+<a href="academy-profile.html">
+
+Profile
+
+</a>
+
+<a href="academy-settings.html">
+
+Settings
+
+</a>
+
+<button
+id="academyLogoutButton"
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="academy-page-hero">
+
+<div>
+
+<span class="academy-eyebrow">
+
+SYSTEM SETTINGS
+
+</span>
+
+<h2>
+
+Academy Settings
+
+</h2>
+
+<p>
+
+Manage your academy profile, branding, security,
+notifications and platform preferences from one place.
+
+</p>
+
+</div>
+
+<button
+  id="academySaveAllChanges"
+  class="academy-primary-button"
+  type="button"
+>
+  <i class="fa-solid fa-floppy-disk"></i>
+  Save All Changes
+</button>
+
+</section>
+
+<!-- =====================================================
+     SETTINGS NAVIGATION
+====================================================== -->
+
+<nav class="academy-settings-nav">
+
+<button
+class="academy-settings-tab active"
+data-tab="profile"
+>
+
+<i class="fa-solid fa-building"></i>
+
+Profile
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="account"
+>
+
+<i class="fa-solid fa-user"></i>
+
+Account
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="notifications"
+>
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="branding"
+>
+
+<i class="fa-solid fa-palette"></i>
+
+Branding
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="security"
+>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Security
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="preferences"
+>
+
+<i class="fa-solid fa-sliders"></i>
+
+Preferences
+
+</button>
+
+<button
+class="academy-settings-tab"
+data-tab="data"
+>
+
+<i class="fa-solid fa-database"></i>
+
+Data
+
+</button>
+
+<button
+class="academy-settings-tab danger"
+data-tab="danger"
+>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Danger Zone
+
+</button>
+
+</nav>
+
+<!-- =====================================================
+     PROFILE SETTINGS
+====================================================== -->
+
+<section
+class="academy-settings-section active"
+id="profile"
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+Academy Profile
+
+</h3>
+
+<div class="academy-form-grid">
+
+<label>
+
+Academy Name
+
+<input
+  id="academyName"
+  name="academyName"
+  type="text"
+  value="Green Valley Football Academy"
+/>
+
+<input
+  id="academyEmail"
+  name="academyEmail"
+  type="email"
+  value="academy@example.com"
+/>
+
+<input
+  id="academyPhone"
+  name="academyPhone"
+  type="tel"
+  value="+91 9876543210"
+/>
+
+<input
+  id="academyWebsite"
+  name="academyWebsite"
+  type="url"
+  value="https://academy.com"
+/>
+
+<input
+  id="academyAddress"
+  name="academyAddress"
+  type="text"
+  value="Dimapur, Nagaland, India"
+/>
+
+<textarea
+  id="academyAbout"
+  name="academyAbout"
+  rows="5"
+>Developing football talent through professional coaching, discipline and competitive opportunities.</textarea>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     ACCOUNT SETTINGS
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="account"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+Account Settings
+
+</h3>
+
+<div class="academy-form-grid">
+
+<label>
+
+Registered Email
+
+<input
+id="academyRegisteredEmail"
+name="registeredEmail"
+type="email"
+value="academy@example.com"
+autocomplete="email"
+/>
+
+</label>
+
+<label>
+
+New Password
+
+<input
+id="academyAccountNewPassword"
+name="accountNewPassword"
+type="password"
+placeholder="Enter new password"
+autocomplete="new-password"
+/>
+
+</label>
+
+<label>
+
+Confirm Password
+
+<input
+id="academyAccountConfirmPassword"
+name="accountConfirmPassword"
+type="password"
+placeholder="Confirm new password"
+autocomplete="new-password"
+/>
+
+</label>
+
+<label>
+
+Two-Factor Authentication
+
+<select
+id="academyTwoFactorAuthentication"
+name="twoFactorAuthentication"
+>
+
+<option selected>Disabled</option>
+
+<option>Enabled</option>
+
+</select>
+
+</label>
+
+</div>
+
+</div>
+
+
+<div class="academy-settings-card">
+
+<h3>
+
+Active Sessions
+
+</h3>
+
+<table class="academy-simple-table">
+
+<thead>
+
+<tr>
+
+<th>Device</th>
+
+<th>Location</th>
+
+<th>Last Active</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Chrome - Windows</td>
+
+<td>Dimapur</td>
+
+<td>2 minutes ago</td>
+
+<td>
+
+<span class="academy-badge verified">
+
+Current
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Android App</td>
+
+<td>Kohima</td>
+
+<td>Yesterday</td>
+
+<td>
+
+<button
+type="button"
+class="academy-danger-button"
+>
+
+Logout
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTIFICATION SETTINGS
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="notifications"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+Notification Preferences
+
+</h3>
+
+<div class="academy-toggle-list">
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+New Player Applications
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+New Messages
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+Trial Reminders
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+Player Registrations
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+Document Verification
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+>
+
+SMS Notifications
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+Email Notifications
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+checked
+>
+
+Push Notifications
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     BRANDING
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="branding"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>Branding</h3>
+
+<div class="academy-form-grid">
+
+<label>
+  Academy Logo
+
+  <input
+    id="academyLogoUpload"
+    name="academyLogo"
+    type="file"
+    accept="image/jpeg,image/png,image/webp"
+  />
+</label>
+
+<label>
+  Cover Image
+
+  <input
+    id="academyCoverUpload"
+    name="academyCover"
+    type="file"
+    accept="image/jpeg,image/png,image/webp"
+  />
+</label>
+
+<label>
+  Primary Color
+
+  <input
+    id="academyPrimaryColor"
+    name="primaryColor"
+    type="color"
+    value="#003B95"
+  />
+</label>
+
+<label>
+  Secondary Color
+
+  <input
+    id="academySecondaryColor"
+    name="secondaryColor"
+    type="color"
+    value="#0A6CF1"
+  />
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECURITY
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="security"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+Security
+
+</h3>
+
+<div class="academy-form-grid">
+
+<label>
+  Current Password
+
+  <input
+    id="academyCurrentPassword"
+    name="currentPassword"
+    type="password"
+    autocomplete="current-password"
+  />
+</label>
+
+<label>
+  New Password
+
+  <input
+    id="academySecurityNewPassword"
+    name="securityNewPassword"
+    type="password"
+    autocomplete="new-password"
+  />
+</label>
+
+<label>
+  Confirm Password
+
+  <input
+    id="academySecurityConfirmPassword"
+    name="securityConfirmPassword"
+    type="password"
+    autocomplete="new-password"
+  />
+</label>
+
+<label>
+  Password Strength
+
+  <progress
+    id="academyPasswordStrength"
+    value="0"
+    max="100"
+  ></progress>
+</label>
+
+</div>
+
+<div
+style="margin-top:25px;"
+>
+
+<button
+type="button"
+class="academy-danger-button"
+>
+
+Logout Other Devices
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM PREFERENCES
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="preferences"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+System Preferences
+
+</h3>
+
+<div class="academy-form-grid">
+
+<label>
+
+Language
+
+<select
+id="academyLanguage"
+name="language"
+>
+
+<option selected>English</option>
+
+<option>Hindi</option>
+
+</select>
+
+</label>
+
+<label>
+
+Time Zone
+
+<select
+id="academyTimeZone"
+name="timeZone"
+>
+
+<option selected>Asia/Kolkata</option>
+
+</select>
+
+</label>
+
+<label>
+
+Date Format
+
+<select
+id="academyDateFormat"
+name="dateFormat"
+>
+
+<option selected>DD/MM/YYYY</option>
+
+<option>MM/DD/YYYY</option>
+
+</select>
+
+</label>
+
+<label>
+
+Default View
+
+<select
+id="academyDefaultView"
+name="defaultView"
+>
+
+<option selected>Table</option>
+
+<option>Cards</option>
+
+</select>
+
+</label>
+
+<label>
+
+<input
+id="academyDarkMode"
+name="darkMode"
+type="checkbox"
+>
+
+Enable Dark Mode
+
+</label>
+
+<label>
+
+<input
+id="academyCompactLayout"
+name="compactLayout"
+type="checkbox"
+checked
+>
+
+Compact Layout
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DATA MANAGEMENT
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="data"
+hidden
+>
+
+<div class="academy-settings-card">
+
+<h3>
+
+Data Management
+
+</h3>
+
+<div class="academy-button-grid">
+
+<button class="academy-secondary-button">
+
+<i class="fa-solid fa-users"></i>
+
+Export Players
+
+</button>
+
+<button class="academy-secondary-button">
+
+<i class="fa-solid fa-folder-open"></i>
+
+Export Documents
+
+</button>
+
+<button class="academy-secondary-button">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Export Applications
+
+</button>
+
+<button class="academy-secondary-button">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Download Reports
+
+</button>
+
+<button class="academy-primary-button">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+Backup Data
+
+</button>
+
+<button class="academy-primary-button">
+
+<i class="fa-solid fa-cloud-arrow-down"></i>
+
+Restore Backup
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DANGER ZONE
+====================================================== -->
+
+<section
+class="academy-settings-section"
+id="danger"
+hidden
+>
+
+<div class="academy-settings-card academy-danger-card">
+
+<h3>
+
+Danger Zone
+
+</h3>
+
+<p>
+
+These actions are permanent and should be used carefully.
+
+</p>
+
+<div class="academy-button-grid">
+
+<button
+class="academy-danger-button"
+id="academyResetSettings"
+>
+
+Reset Settings
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyClearCache"
+>
+
+Clear Cache
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyDeleteAcademy"
+>
+
+Delete Academy Account
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden
+>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Logout?
+
+</h2>
+
+<p>
+
+Are you sure you want to logout?
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+
+class="academy-secondary-button"
+
+data-close-logout
+
+>
+
+Cancel
+
+</button>
+
+<button
+
+id="academyConfirmLogout"
+
+class="academy-danger-button"
+
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST CONTAINER
+====================================================== -->
+
+<div
+id="academyToastContainer"
+class="academy-toast-container"
+></div>
+
+
+<!-- =====================================================
+     BACKEND PLACEHOLDERS
+====================================================== -->
+
+<!--
+
+Mr. Harsh
+
+GET    /api/settings
+
+PUT    /api/settings/profile
+
+PUT    /api/settings/account
+
+PUT    /api/settings/security
+
+PUT    /api/settings/preferences
+
+POST   /api/settings/logo
+
+POST   /api/settings/cover
+
+GET    /api/settings/export
+
+POST   /api/settings/backup
+
+POST   /api/settings/restore
+
+DELETE /api/settings/account
+
+Future Enhancements
+
+- Theme Builder
+- Multi Academy Support
+- Audit Logs
+- API Tokens
+- Webhooks
+- AI Configuration
+- White Label Branding
+
+-->
+
+</div>
+
+<script src="academy-settings.js"></script>
+
+</body>
+
+</html>

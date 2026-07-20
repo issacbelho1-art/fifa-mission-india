@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Discover football trials and scouting events through FIFA Mission India."
+  >
+
+  <title>Trials & Events | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/player-trials.css">
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="trials-header">
+
+    <a
+      href="player-dashboard.html"
+      class="trials-brand"
+      aria-label="Return to player dashboard"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-copy">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Player Portal</span>
+
+      </div>
+
+    </a>
+
+
+    <nav class="header-navigation">
+
+      <a href="player-dashboard.html">
+        Dashboard
+      </a>
+
+      <a
+        href="player-trials.html"
+        class="active"
+        aria-current="page"
+      >
+        Trials
+      </a>
+
+      <a href="player-profile-edit.html">
+        Profile
+      </a>
+
+    </nav>
+
+
+    <a
+      href="player-dashboard.html"
+      class="dashboard-button"
+    >
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="trials-hero">
+
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">
+        FOOTBALL OPPORTUNITIES
+      </span>
+
+      <h1>
+        Find your next football trial
+      </h1>
+
+      <p>
+        Discover verified trials, scouting camps and development
+        opportunities available to registered FIFA Mission India players.
+      </p>
+
+    </div>
+
+
+    <div class="hero-statistics">
+
+      <div>
+
+        <strong id="openTrialCount">
+          0
+        </strong>
+
+        <span>
+          Open Trials
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <strong id="registeredTrialCount">
+          0
+        </strong>
+
+        <span>
+          Registered
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          8
+        </strong>
+
+        <span>
+          States Covered
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="trials-main">
+
+
+    <!-- ================= FILTER SECTION ================= -->
+
+    <section class="filter-section">
+
+      <div class="search-field">
+
+        <span aria-hidden="true">
+          ⌕
+        </span>
+
+        <input
+          type="search"
+          id="trialSearchInput"
+          placeholder="Search trials, cities or venues"
+          aria-label="Search football trials"
+        >
+
+      </div>
+
+
+      <div class="filter-grid">
+
+        <div class="filter-group">
+
+          <label for="stateFilter">
+            State
+          </label>
+
+          <select id="stateFilter">
+
+            <option value="all">
+              All states
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+          <label for="trialTypeFilter">
+            Trial type
+          </label>
+
+          <select id="trialTypeFilter">
+
+            <option value="all">
+              All types
+            </option>
+
+            <option value="Open Trial">
+              Open Trial
+            </option>
+
+            <option value="Scouting Camp">
+              Scouting Camp
+            </option>
+
+            <option value="Academy Selection">
+              Academy Selection
+            </option>
+
+            <option value="Development Camp">
+              Development Camp
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+          <label for="ageFilter">
+            Age category
+          </label>
+
+          <select id="ageFilter">
+
+            <option value="all">
+              All age groups
+            </option>
+
+            <option value="U-15">
+              U-15
+            </option>
+
+            <option value="U-17">
+              U-17
+            </option>
+
+            <option value="U-19">
+              U-19
+            </option>
+
+            <option value="U-21">
+              U-21
+            </option>
+
+            <option value="Open Age">
+              Open Age
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+          <label for="statusFilter">
+            Status
+          </label>
+
+          <select id="statusFilter">
+
+            <option value="all">
+              All statuses
+            </option>
+
+            <option value="Open">
+              Registration Open
+            </option>
+
+            <option value="Closing Soon">
+              Closing Soon
+            </option>
+
+            <option value="Invite Only">
+              Invite Only
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="clear-filter-button"
+        id="clearFilterButton"
+      >
+        Clear Filters
+      </button>
+
+    </section>
+
+
+    <!-- ================= RESULTS HEADER ================= -->
+
+    <section class="results-header">
+
+      <div>
+
+        <span class="section-eyebrow">
+          AVAILABLE OPPORTUNITIES
+        </span>
+
+        <h2>
+          Upcoming trials and camps
+        </h2>
+
+      </div>
+
+
+      <p id="resultCount">
+        0 opportunities found
+      </p>
+
+    </section>
+
+
+    <!-- ================= TRIAL CARDS ================= -->
+
+    <section
+      class="trials-grid"
+      id="trialsGrid"
+      aria-live="polite"
+    ></section>
+
+
+    <!-- ================= EMPTY STATE ================= -->
+
+    <section
+      class="empty-state"
+      id="emptyState"
+      hidden
+    >
+
+      <div class="empty-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <h3>
+        No matching trials found
+      </h3>
+
+      <p>
+        Try changing your filters or searching for another location.
+      </p>
+
+      <button
+        type="button"
+        id="emptyClearButton"
+      >
+        Show All Trials
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= DETAILS MODAL ================= -->
+
+  <div
+    class="modal-backdrop"
+    id="trialModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTrialTitle"
+    hidden
+  >
+
+    <div class="trial-modal">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="modalCloseButton"
+        aria-label="Close trial details"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-banner">
+
+        <span id="modalTrialType">
+          OPEN TRIAL
+        </span>
+
+        <h2 id="modalTrialTitle">
+          Football Trial
+        </h2>
+
+        <p id="modalTrialLocation">
+          Venue
+        </p>
+
+      </div>
+
+
+      <div class="modal-content">
+
+        <div class="modal-information-grid">
+
+          <div>
+
+            <span>Date</span>
+
+            <strong id="modalTrialDate">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>Age Category</span>
+
+            <strong id="modalTrialAge">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>Registration Deadline</span>
+
+            <strong id="modalTrialDeadline">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>Entry Fee</span>
+
+            <strong id="modalTrialFee">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <section class="modal-section">
+
+          <h3>
+            About this opportunity
+          </h3>
+
+          <p id="modalTrialDescription">
+            —
+          </p>
+
+        </section>
+
+
+        <section class="modal-section">
+
+          <h3>
+            Eligibility
+          </h3>
+
+          <ul id="modalEligibilityList"></ul>
+
+        </section>
+
+
+        <section class="modal-section">
+
+          <h3>
+            What to bring
+          </h3>
+
+          <ul id="modalRequirementsList"></ul>
+
+        </section>
+
+
+        <div
+          class="modal-message"
+          id="modalMessage"
+          hidden
+        ></div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="secondary-modal-button"
+            id="modalCancelButton"
+          >
+            Close
+          </button>
+
+          <button
+            type="button"
+            class="primary-modal-button"
+            id="registerTrialButton"
+          >
+
+            <span class="button-label">
+              Register for Trial
+            </span>
+
+            <span
+              class="button-loader"
+              aria-hidden="true"
+            ></span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/player-trials.js"></script>
+
+</body>
+
+</html>

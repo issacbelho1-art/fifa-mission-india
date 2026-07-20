@@ -1,0 +1,4325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Register for football events, trials, workshops and development programmes through FIFA Mission India."
+  >
+
+  <title>
+    Event Registration | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/event-registration.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="event-registration-loader"
+    id="eventRegistrationLoader"
+    aria-hidden="false"
+  >
+
+    <div class="event-registration-loader-content">
+
+      <div class="event-registration-loader-icon">
+
+        <i class="fa-solid fa-futbol"></i>
+
+      </div>
+
+      <p>
+        Preparing registration form...
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="event-registration-navbar"
+    id="eventRegistrationNavbar"
+  >
+
+    <div class="event-registration-navbar-container">
+
+
+      <a
+        href="index.html"
+        class="event-registration-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="event-registration-brand-icon">
+
+          <i class="fa-solid fa-futbol"></i>
+
+        </span>
+
+        <span class="event-registration-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="event-registration-desktop-nav"
+        aria-label="Primary navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="vision.html">
+          Vision
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a
+          href="events.html"
+          class="active"
+          aria-current="page"
+        >
+          Events
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+      </nav>
+
+
+      <div class="event-registration-navbar-actions">
+
+        <a
+          href="login.html"
+          class="event-registration-login-link"
+        >
+          Login
+        </a>
+
+        <a
+          href="register.html"
+          class="event-registration-join-button"
+        >
+          Join the Mission
+        </a>
+
+        <button
+          type="button"
+          class="event-registration-menu-button"
+          id="eventRegistrationMenuButton"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="eventRegistrationMobileMenu"
+        >
+
+          <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE NAVIGATION OVERLAY
+  ====================================================== -->
+
+  <div
+    class="event-registration-mobile-overlay"
+    id="eventRegistrationMobileOverlay"
+    hidden
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       MOBILE NAVIGATION
+  ====================================================== -->
+
+  <aside
+    class="event-registration-mobile-menu"
+    id="eventRegistrationMobileMenu"
+    hidden
+    aria-hidden="true"
+    aria-label="Mobile navigation"
+  >
+
+    <div class="event-registration-mobile-menu-header">
+
+      <a
+        href="index.html"
+        class="event-registration-mobile-brand"
+      >
+
+        <span>
+
+          <i class="fa-solid fa-futbol"></i>
+
+        </span>
+
+        <div>
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </div>
+
+      </a>
+
+      <button
+        type="button"
+        class="event-registration-menu-close"
+        id="eventRegistrationMenuCloseButton"
+        aria-label="Close navigation menu"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <nav class="event-registration-mobile-nav">
+
+      <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+      </a>
+
+      <a href="vision.html">
+
+        <i class="fa-solid fa-bullseye"></i>
+
+        Vision
+
+      </a>
+
+      <a href="players.html">
+
+        <i class="fa-solid fa-users"></i>
+
+        Players
+
+      </a>
+
+      <a href="academies.html">
+
+        <i class="fa-solid fa-building"></i>
+
+        Academies
+
+      </a>
+
+      <a
+        href="events.html"
+        class="active"
+      >
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        Events
+
+      </a>
+
+      <a href="news.html">
+
+        <i class="fa-solid fa-newspaper"></i>
+
+        News
+
+      </a>
+
+      <a href="login.html">
+
+        <i class="fa-solid fa-right-to-bracket"></i>
+
+        Login
+
+      </a>
+
+      <a href="register.html">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        Join the Mission
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
+  <main
+    class="event-registration-page"
+    id="eventRegistrationPage"
+  >
+
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
+
+    <section class="event-registration-breadcrumb-section">
+
+      <div class="event-registration-container">
+
+        <nav
+          class="event-registration-breadcrumb"
+          aria-label="Breadcrumb"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <a
+            href="event-details.html"
+            id="eventRegistrationBreadcrumbEventLink"
+          >
+            Event Details
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <span aria-current="page">
+            Registration
+          </span>
+
+        </nav>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="event-registration-hero">
+
+      <div class="event-registration-hero-pattern"></div>
+
+      <div class="event-registration-container">
+
+        <div class="event-registration-hero-content">
+
+          <span class="event-registration-section-tag">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            EVENT REGISTRATION
+
+          </span>
+
+          <h1>
+            Complete Your Registration
+          </h1>
+
+          <p>
+
+            Submit your details carefully to apply for this
+            football event, trial, workshop or development programme.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REGISTRATION WORKSPACE
+    ====================================================== -->
+
+    <section class="event-registration-workspace">
+
+      <div class="event-registration-container">
+
+        <div class="event-registration-layout">
+
+
+          <!-- =====================================================
+               FORM COLUMN
+          ====================================================== -->
+
+          <div class="event-registration-form-column">
+
+
+            <!-- =====================================================
+                 PROGRESS HEADER
+            ====================================================== -->
+
+            <div class="event-registration-progress-card">
+
+              <div class="event-registration-progress-heading">
+
+                <div>
+
+                  <span>
+                    Registration Progress
+                  </span>
+
+                  <h2 id="eventRegistrationStepTitle">
+                    Participant Details
+                  </h2>
+
+                </div>
+
+                <strong id="eventRegistrationProgressText">
+                  Step 1 of 6
+                </strong>
+
+              </div>
+
+
+              <div
+                class="event-registration-progress-track"
+                role="progressbar"
+                aria-valuemin="1"
+                aria-valuemax="6"
+                aria-valuenow="1"
+                aria-label="Registration form progress"
+              >
+
+                <span
+                  id="eventRegistrationProgressBar"
+                  style="width: 16.6667%;"
+                ></span>
+
+              </div>
+
+
+              <div
+                class="event-registration-step-navigation"
+                id="eventRegistrationStepNavigation"
+                aria-label="Registration steps"
+              >
+
+                <button
+                  type="button"
+                  class="event-registration-step-button active"
+                  data-registration-step-button="1"
+                  aria-current="step"
+                >
+
+                  <span>
+                    1
+                  </span>
+
+                  <small>
+                    Participant
+                  </small>
+
+                </button>
+
+                <button
+                  type="button"
+                  class="event-registration-step-button"
+                  data-registration-step-button="2"
+                >
+
+                  <span>
+                    2
+                  </span>
+
+                  <small>
+                    Guardian
+                  </small>
+
+                </button>
+
+                <button
+                  type="button"
+                  class="event-registration-step-button"
+                  data-registration-step-button="3"
+                >
+
+                  <span>
+                    3
+                  </span>
+
+                  <small>
+                    Football
+                  </small>
+
+                </button>
+
+                <button
+                  type="button"
+                  class="event-registration-step-button"
+                  data-registration-step-button="4"
+                >
+
+                  <span>
+                    4
+                  </span>
+
+                  <small>
+                    Documents
+                  </small>
+
+                </button>
+
+                <button
+                  type="button"
+                  class="event-registration-step-button"
+                  data-registration-step-button="5"
+                >
+
+                  <span>
+                    5
+                  </span>
+
+                  <small>
+                    Consent
+                  </small>
+
+                </button>
+
+                <button
+                  type="button"
+                  class="event-registration-step-button"
+                  data-registration-step-button="6"
+                >
+
+                  <span>
+                    6
+                  </span>
+
+                  <small>
+                    Review
+                  </small>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 REGISTRATION FORM
+            ====================================================== -->
+
+            <form
+              class="event-registration-form"
+              id="eventRegistrationForm"
+              novalidate
+            >
+
+
+              <!-- =====================================================
+                   STEP 1
+                   PARTICIPANT DETAILS
+              ====================================================== -->
+
+              <section
+                class="event-registration-form-step active"
+                data-registration-step="1"
+                aria-labelledby="participantDetailsHeading"
+              >
+
+                <div class="event-registration-form-card">
+
+                  <div class="event-registration-card-heading">
+
+                    <span class="event-registration-card-icon">
+
+                      <i class="fa-solid fa-user"></i>
+
+                    </span>
+
+                    <div>
+
+                      <span>
+                        STEP 01
+                      </span>
+
+                      <h2 id="participantDetailsHeading">
+                        Participant Details
+                      </h2>
+
+                      <p>
+
+                        Enter the personal information of the person
+                        participating in the event.
+
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="event-registration-form-grid">
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantFirstName">
+
+                        First Name
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                          type="text"
+                          id="participantFirstName"
+                          name="participantFirstName"
+                          autocomplete="given-name"
+                          placeholder="Enter first name"
+                          required
+                          maxlength="60"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantFirstName"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantLastName">
+
+                        Last Name
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                          type="text"
+                          id="participantLastName"
+                          name="participantLastName"
+                          autocomplete="family-name"
+                          placeholder="Enter last name"
+                          required
+                          maxlength="60"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantLastName"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantDateOfBirth">
+
+                        Date of Birth
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <input
+                          type="date"
+                          id="participantDateOfBirth"
+                          name="participantDateOfBirth"
+                          autocomplete="bday"
+                          required
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantDateOfBirth"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantGender">
+
+                        Gender
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-venus-mars"></i>
+
+                        <select
+                          id="participantGender"
+                          name="participantGender"
+                          required
+                        >
+
+                          <option value="">
+                            Select gender
+                          </option>
+
+                          <option value="male">
+                            Male
+                          </option>
+
+                          <option value="female">
+                            Female
+                          </option>
+
+                          <option value="other">
+                            Other
+                          </option>
+
+                          <option value="prefer-not-to-say">
+                            Prefer not to say
+                          </option>
+
+                        </select>
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantGender"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantEmail">
+
+                        Email Address
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                          type="email"
+                          id="participantEmail"
+                          name="participantEmail"
+                          autocomplete="email"
+                          placeholder="name@example.com"
+                          required
+                          maxlength="120"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantEmail"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantPhone">
+
+                        Mobile Number
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-phone-field">
+
+                        <span class="event-registration-phone-code">
+                          +91
+                        </span>
+
+                        <input
+                          type="tel"
+                          id="participantPhone"
+                          name="participantPhone"
+                          autocomplete="tel"
+                          inputmode="numeric"
+                          placeholder="10-digit mobile number"
+                          required
+                          maxlength="10"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantPhone"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantNationality">
+
+                        Nationality
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-flag"></i>
+
+                        <input
+                          type="text"
+                          id="participantNationality"
+                          name="participantNationality"
+                          value="Indian"
+                          placeholder="Enter nationality"
+                          required
+                          maxlength="60"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantNationality"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantState">
+
+                        State or Union Territory
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-map"></i>
+
+                        <select
+                          id="participantState"
+                          name="participantState"
+                          required
+                        >
+
+                          <option value="">
+                            Select state
+                          </option>
+
+                          <option value="Andaman and Nicobar Islands">
+                            Andaman and Nicobar Islands
+                          </option>
+
+                          <option value="Andhra Pradesh">
+                            Andhra Pradesh
+                          </option>
+
+                          <option value="Arunachal Pradesh">
+                            Arunachal Pradesh
+                          </option>
+
+                          <option value="Assam">
+                            Assam
+                          </option>
+
+                          <option value="Bihar">
+                            Bihar
+                          </option>
+
+                          <option value="Chandigarh">
+                            Chandigarh
+                          </option>
+
+                          <option value="Chhattisgarh">
+                            Chhattisgarh
+                          </option>
+
+                          <option value="Dadra and Nagar Haveli and Daman and Diu">
+                            Dadra and Nagar Haveli and Daman and Diu
+                          </option>
+
+                          <option value="Delhi">
+                            Delhi
+                          </option>
+
+                          <option value="Goa">
+                            Goa
+                          </option>
+
+                          <option value="Gujarat">
+                            Gujarat
+                          </option>
+
+                          <option value="Haryana">
+                            Haryana
+                          </option>
+
+                          <option value="Himachal Pradesh">
+                            Himachal Pradesh
+                          </option>
+
+                          <option value="Jammu and Kashmir">
+                            Jammu and Kashmir
+                          </option>
+
+                          <option value="Jharkhand">
+                            Jharkhand
+                          </option>
+
+                          <option value="Karnataka">
+                            Karnataka
+                          </option>
+
+                          <option value="Kerala">
+                            Kerala
+                          </option>
+
+                          <option value="Ladakh">
+                            Ladakh
+                          </option>
+
+                          <option value="Lakshadweep">
+                            Lakshadweep
+                          </option>
+
+                          <option value="Madhya Pradesh">
+                            Madhya Pradesh
+                          </option>
+
+                          <option value="Maharashtra">
+                            Maharashtra
+                          </option>
+
+                          <option value="Manipur">
+                            Manipur
+                          </option>
+
+                          <option value="Meghalaya">
+                            Meghalaya
+                          </option>
+
+                          <option value="Mizoram">
+                            Mizoram
+                          </option>
+
+                          <option value="Nagaland">
+                            Nagaland
+                          </option>
+
+                          <option value="Odisha">
+                            Odisha
+                          </option>
+
+                          <option value="Puducherry">
+                            Puducherry
+                          </option>
+
+                          <option value="Punjab">
+                            Punjab
+                          </option>
+
+                          <option value="Rajasthan">
+                            Rajasthan
+                          </option>
+
+                          <option value="Sikkim">
+                            Sikkim
+                          </option>
+
+                          <option value="Tamil Nadu">
+                            Tamil Nadu
+                          </option>
+
+                          <option value="Telangana">
+                            Telangana
+                          </option>
+
+                          <option value="Tripura">
+                            Tripura
+                          </option>
+
+                          <option value="Uttar Pradesh">
+                            Uttar Pradesh
+                          </option>
+
+                          <option value="Uttarakhand">
+                            Uttarakhand
+                          </option>
+
+                          <option value="West Bengal">
+                            West Bengal
+                          </option>
+
+                        </select>
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantState"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantCity">
+
+                        City or District
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-city"></i>
+
+                        <input
+                          type="text"
+                          id="participantCity"
+                          name="participantCity"
+                          autocomplete="address-level2"
+                          placeholder="Enter city or district"
+                          required
+                          maxlength="80"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantCity"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field full-width">
+
+                      <label for="participantAddress">
+
+                        Residential Address
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-textarea-wrapper">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                          id="participantAddress"
+                          name="participantAddress"
+                          autocomplete="street-address"
+                          placeholder="Enter complete residential address"
+                          required
+                          rows="4"
+                          maxlength="300"
+                        ></textarea>
+
+                      </div>
+
+                      <div class="event-registration-field-footer">
+
+                        <small
+                          class="event-registration-field-error"
+                          data-error-for="participantAddress"
+                        ></small>
+
+                        <small
+                          class="event-registration-character-count"
+                          data-character-count-for="participantAddress"
+                        >
+                          0 / 300
+                        </small>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantPostalCode">
+
+                        Postal Code
+
+                        <span aria-hidden="true">
+                          *
+                        </span>
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-location-crosshairs"></i>
+
+                        <input
+                          type="text"
+                          id="participantPostalCode"
+                          name="participantPostalCode"
+                          autocomplete="postal-code"
+                          inputmode="numeric"
+                          placeholder="6-digit PIN code"
+                          required
+                          maxlength="6"
+                        >
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantPostalCode"
+                      ></small>
+
+                    </div>
+
+
+                    <div class="event-registration-field">
+
+                      <label for="participantBloodGroup">
+
+                        Blood Group
+
+                      </label>
+
+                      <div class="event-registration-input-wrapper">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                        <select
+                          id="participantBloodGroup"
+                          name="participantBloodGroup"
+                        >
+
+                          <option value="">
+                            Select blood group
+                          </option>
+
+                          <option value="A+">
+                            A+
+                          </option>
+
+                          <option value="A-">
+                            A-
+                          </option>
+
+                          <option value="B+">
+                            B+
+                          </option>
+
+                          <option value="B-">
+                            B-
+                          </option>
+
+                          <option value="AB+">
+                            AB+
+                          </option>
+
+                          <option value="AB-">
+                            AB-
+                          </option>
+
+                          <option value="O+">
+                            O+
+                          </option>
+
+                          <option value="O-">
+                            O-
+                          </option>
+
+                          <option value="unknown">
+                            Not known
+                          </option>
+
+                        </select>
+
+                      </div>
+
+                      <small
+                        class="event-registration-field-error"
+                        data-error-for="participantBloodGroup"
+                      ></small>
+
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <!-- =====================================================
+                   FORM NAVIGATION
+              ====================================================== -->
+
+              <div class="event-registration-form-navigation">
+
+                <button
+                  type="button"
+                  class="event-registration-secondary-button"
+                  id="eventRegistrationPreviousButton"
+                  disabled
+                >
+
+                  <i class="fa-solid fa-arrow-left"></i>
+
+                  Previous
+
+                </button>
+
+                <div class="event-registration-navigation-status">
+
+                  <i class="fa-solid fa-circle-info"></i>
+
+                  <span id="eventRegistrationNavigationMessage">
+
+                    Fields marked with * are required.
+
+                  </span>
+
+                </div>
+
+                <button
+                  type="button"
+                  class="event-registration-primary-button"
+                  id="eventRegistrationNextButton"
+                >
+
+                  Continue
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+              </div>
+
+
+            </form>
+
+
+          </div>
+
+
+          <!-- =====================================================
+               SIDEBAR
+          ====================================================== -->
+
+          <aside class="event-registration-sidebar">
+
+
+            <!-- =====================================================
+                 EVENT SUMMARY
+            ====================================================== -->
+
+            <article
+              class="event-registration-summary-card"
+              id="eventRegistrationSummaryCard"
+            >
+
+              <div class="event-registration-summary-image">
+
+                <img
+                  src="images/events/default-event.jpg"
+                  alt="Selected football event"
+                  id="eventRegistrationEventImage"
+                >
+
+                <span
+                  class="event-registration-summary-category"
+                  id="eventRegistrationEventCategory"
+                >
+                  Football Event
+                </span>
+
+              </div>
+
+              <div class="event-registration-summary-content">
+
+                <span>
+                  You are registering for
+                </span>
+
+                <h2 id="eventRegistrationEventTitle">
+                  Loading event details...
+                </h2>
+
+                <div class="event-registration-summary-meta">
+
+                  <div>
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span id="eventRegistrationEventDate">
+                      Date to be announced
+                    </span>
+
+                  </div>
+
+                  <div>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <span id="eventRegistrationEventTime">
+                      Time to be announced
+                    </span>
+
+                  </div>
+
+                  <div>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span id="eventRegistrationEventLocation">
+                      Venue to be announced
+                    </span>
+
+                  </div>
+
+                  <div>
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <span id="eventRegistrationEventOrganizer">
+                      FIFA Mission India
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <a
+                  href="event-details.html"
+                  id="eventRegistrationViewEventLink"
+                  class="event-registration-view-event-link"
+                >
+
+                  View event details
+
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+              </div>
+
+            </article>
+
+
+            <!-- =====================================================
+                 FEE SUMMARY
+            ====================================================== -->
+
+            <article class="event-registration-fee-card">
+
+              <div class="event-registration-sidebar-heading">
+
+                <span>
+
+                  <i class="fa-solid fa-receipt"></i>
+
+                </span>
+
+                <div>
+
+                  <small>
+                    Registration
+                  </small>
+
+                  <h3>
+                    Fee Summary
+                  </h3>
+
+                </div>
+
+              </div>
+
+              <div class="event-registration-fee-list">
+
+                <div>
+
+                  <span>
+                    Event Fee
+                  </span>
+
+                  <strong id="eventRegistrationBaseFee">
+                    ₹0
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>
+                    Platform Fee
+                  </span>
+
+                  <strong id="eventRegistrationPlatformFee">
+                    ₹0
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>
+                    Taxes
+                  </span>
+
+                  <strong id="eventRegistrationTaxAmount">
+                    ₹0
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="event-registration-fee-total">
+
+                <span>
+                  Total Amount
+                </span>
+
+                <strong id="eventRegistrationTotalFee">
+                  ₹0
+                </strong>
+
+              </div>
+
+              <p>
+
+                Payment integration will be connected by the backend team.
+                No amount is charged through this frontend form.
+
+              </p>
+
+            </article>
+
+
+            <!-- =====================================================
+                 SECURITY NOTE
+            ====================================================== -->
+
+            <article class="event-registration-security-card">
+
+              <span>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+              </span>
+
+              <div>
+
+                <h3>
+                  Secure Registration
+                </h3>
+
+                <p>
+
+                  Your information will be submitted securely after
+                  API and database integration.
+
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- =====================================================
+                 SUPPORT CARD
+            ====================================================== -->
+
+            <article class="event-registration-support-card">
+
+              <span class="event-registration-support-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+              </span>
+
+              <div>
+
+                <small>
+                  Need Assistance?
+                </small>
+
+                <h3>
+                  Registration Support
+                </h3>
+
+                <p>
+
+                  Contact the event organizer if you need help
+                  completing this registration.
+
+                </p>
+
+                <a href="contact.html">
+
+                  Contact Support
+
+                  <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+              </div>
+
+            </article>
+
+
+          </aside>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       EVENT NOT FOUND STATE
+  ====================================================== -->
+
+  <section
+    class="event-registration-not-found"
+    id="eventRegistrationNotFound"
+    hidden
+  >
+
+    <div class="event-registration-not-found-content">
+
+      <span>
+
+        <i class="fa-solid fa-calendar-xmark"></i>
+
+      </span>
+
+      <h1>
+        Event Not Found
+      </h1>
+
+      <p>
+
+        The event you are trying to register for could not be found
+        or is no longer accepting registrations.
+
+      </p>
+
+      <a href="events.html">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Browse Events
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="event-registration-toast"
+    id="eventRegistrationToast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    hidden
+  ></div>
+
+  <!-- =====================================================
+     STEP 2
+     PARENT / GUARDIAN DETAILS
+====================================================== -->
+
+<section
+  class="event-registration-form-step"
+  data-registration-step="2"
+  aria-labelledby="guardianDetailsHeading"
+  hidden
+>
+
+  <div class="event-registration-form-card">
+
+    <div class="event-registration-card-heading">
+
+      <span class="event-registration-card-icon">
+
+        <i class="fa-solid fa-people-roof"></i>
+
+      </span>
+
+      <div>
+
+        <span>
+          STEP 02
+        </span>
+
+        <h2 id="guardianDetailsHeading">
+          Parent or Guardian Details
+        </h2>
+
+        <p>
+          Provide the details of a parent or legal guardian,
+          especially when the participant is below 18 years of age.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="event-registration-information-box"
+      id="eventRegistrationGuardianNotice"
+    >
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      <p>
+        Guardian information is compulsory for participants
+        below 18 years of age.
+      </p>
+
+    </div>
+
+
+    <div class="event-registration-form-grid">
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianFullName">
+
+          Parent or Guardian Name
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-user-shield"></i>
+
+          <input
+            type="text"
+            id="guardianFullName"
+            name="guardianFullName"
+            autocomplete="name"
+            placeholder="Enter full name"
+            required
+            maxlength="120"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianFullName"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianRelationship">
+
+          Relationship to Participant
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-people-arrows"></i>
+
+          <select
+            id="guardianRelationship"
+            name="guardianRelationship"
+            required
+          >
+
+            <option value="">
+              Select relationship
+            </option>
+
+            <option value="father">
+              Father
+            </option>
+
+            <option value="mother">
+              Mother
+            </option>
+
+            <option value="legal-guardian">
+              Legal Guardian
+            </option>
+
+            <option value="brother">
+              Brother
+            </option>
+
+            <option value="sister">
+              Sister
+            </option>
+
+            <option value="uncle">
+              Uncle
+            </option>
+
+            <option value="aunt">
+              Aunt
+            </option>
+
+            <option value="grandparent">
+              Grandparent
+            </option>
+
+            <option value="other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianRelationship"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianEmail">
+
+          Guardian Email Address
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <input
+            type="email"
+            id="guardianEmail"
+            name="guardianEmail"
+            autocomplete="email"
+            placeholder="guardian@example.com"
+            required
+            maxlength="120"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianEmail"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianPhone">
+
+          Guardian Mobile Number
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-phone-field">
+
+          <span class="event-registration-phone-code">
+            +91
+          </span>
+
+          <input
+            type="tel"
+            id="guardianPhone"
+            name="guardianPhone"
+            autocomplete="tel"
+            inputmode="numeric"
+            placeholder="10-digit mobile number"
+            required
+            maxlength="10"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianPhone"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianOccupation">
+          Occupation
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-briefcase"></i>
+
+          <input
+            type="text"
+            id="guardianOccupation"
+            name="guardianOccupation"
+            placeholder="Enter occupation"
+            maxlength="100"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianOccupation"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianAlternatePhone">
+          Alternate Contact Number
+        </label>
+
+        <div class="event-registration-phone-field">
+
+          <span class="event-registration-phone-code">
+            +91
+          </span>
+
+          <input
+            type="tel"
+            id="guardianAlternatePhone"
+            name="guardianAlternatePhone"
+            inputmode="numeric"
+            placeholder="Optional number"
+            maxlength="10"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianAlternatePhone"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field full-width">
+
+        <label class="event-registration-checkbox-card">
+
+          <input
+            type="checkbox"
+            id="guardianSameAddress"
+            name="guardianSameAddress"
+            value="yes"
+          >
+
+          <span class="event-registration-custom-checkbox">
+
+            <i class="fa-solid fa-check"></i>
+
+          </span>
+
+          <span>
+
+            <strong>
+              Use participant's residential address
+            </strong>
+
+            <small>
+              Select this when the guardian lives at the same address.
+            </small>
+
+          </span>
+
+        </label>
+
+      </div>
+
+
+      <div
+        class="event-registration-field full-width"
+        id="guardianAddressField"
+      >
+
+        <label for="guardianAddress">
+
+          Guardian Address
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-textarea-wrapper">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <textarea
+            id="guardianAddress"
+            name="guardianAddress"
+            autocomplete="street-address"
+            placeholder="Enter the guardian's complete address"
+            required
+            rows="4"
+            maxlength="300"
+          ></textarea>
+
+        </div>
+
+        <div class="event-registration-field-footer">
+
+          <small
+            class="event-registration-field-error"
+            data-error-for="guardianAddress"
+          ></small>
+
+          <small
+            class="event-registration-character-count"
+            data-character-count-for="guardianAddress"
+          >
+            0 / 300
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianCity">
+
+          City or District
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-city"></i>
+
+          <input
+            type="text"
+            id="guardianCity"
+            name="guardianCity"
+            autocomplete="address-level2"
+            placeholder="Enter city or district"
+            required
+            maxlength="80"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianCity"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="guardianPostalCode">
+
+          Postal Code
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-location-crosshairs"></i>
+
+          <input
+            type="text"
+            id="guardianPostalCode"
+            name="guardianPostalCode"
+            autocomplete="postal-code"
+            inputmode="numeric"
+            placeholder="6-digit PIN code"
+            required
+            maxlength="6"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="guardianPostalCode"
+        ></small>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     STEP 3
+     FOOTBALL INFORMATION
+====================================================== -->
+
+<section
+  class="event-registration-form-step"
+  data-registration-step="3"
+  aria-labelledby="footballInformationHeading"
+  hidden
+>
+
+  <div class="event-registration-form-card">
+
+    <div class="event-registration-card-heading">
+
+      <span class="event-registration-card-icon">
+
+        <i class="fa-solid fa-futbol"></i>
+
+      </span>
+
+      <div>
+
+        <span>
+          STEP 03
+        </span>
+
+        <h2 id="footballInformationHeading">
+          Football Information
+        </h2>
+
+        <p>
+          Tell us about the participant's playing position,
+          experience, academy and football background.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-form-grid">
+
+
+      <div class="event-registration-field">
+
+        <label for="footballPrimaryPosition">
+
+          Primary Playing Position
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-shirt"></i>
+
+          <select
+            id="footballPrimaryPosition"
+            name="footballPrimaryPosition"
+            required
+          >
+
+            <option value="">
+              Select primary position
+            </option>
+
+            <option value="goalkeeper">
+              Goalkeeper
+            </option>
+
+            <option value="centre-back">
+              Centre Back
+            </option>
+
+            <option value="right-back">
+              Right Back
+            </option>
+
+            <option value="left-back">
+              Left Back
+            </option>
+
+            <option value="defensive-midfielder">
+              Defensive Midfielder
+            </option>
+
+            <option value="central-midfielder">
+              Central Midfielder
+            </option>
+
+            <option value="attacking-midfielder">
+              Attacking Midfielder
+            </option>
+
+            <option value="right-winger">
+              Right Winger
+            </option>
+
+            <option value="left-winger">
+              Left Winger
+            </option>
+
+            <option value="centre-forward">
+              Centre Forward
+            </option>
+
+            <option value="striker">
+              Striker
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballPrimaryPosition"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballSecondaryPosition">
+          Secondary Playing Position
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-arrows-left-right"></i>
+
+          <select
+            id="footballSecondaryPosition"
+            name="footballSecondaryPosition"
+          >
+
+            <option value="">
+              Select secondary position
+            </option>
+
+            <option value="goalkeeper">
+              Goalkeeper
+            </option>
+
+            <option value="centre-back">
+              Centre Back
+            </option>
+
+            <option value="right-back">
+              Right Back
+            </option>
+
+            <option value="left-back">
+              Left Back
+            </option>
+
+            <option value="defensive-midfielder">
+              Defensive Midfielder
+            </option>
+
+            <option value="central-midfielder">
+              Central Midfielder
+            </option>
+
+            <option value="attacking-midfielder">
+              Attacking Midfielder
+            </option>
+
+            <option value="right-winger">
+              Right Winger
+            </option>
+
+            <option value="left-winger">
+              Left Winger
+            </option>
+
+            <option value="centre-forward">
+              Centre Forward
+            </option>
+
+            <option value="striker">
+              Striker
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballSecondaryPosition"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballPreferredFoot">
+
+          Preferred Foot
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-shoe-prints"></i>
+
+          <select
+            id="footballPreferredFoot"
+            name="footballPreferredFoot"
+            required
+          >
+
+            <option value="">
+              Select preferred foot
+            </option>
+
+            <option value="right">
+              Right Foot
+            </option>
+
+            <option value="left">
+              Left Foot
+            </option>
+
+            <option value="both">
+              Both Feet
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballPreferredFoot"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballExperienceYears">
+
+          Playing Experience
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-stopwatch"></i>
+
+          <select
+            id="footballExperienceYears"
+            name="footballExperienceYears"
+            required
+          >
+
+            <option value="">
+              Select experience
+            </option>
+
+            <option value="less-than-1">
+              Less than 1 year
+            </option>
+
+            <option value="1-2">
+              1–2 years
+            </option>
+
+            <option value="3-4">
+              3–4 years
+            </option>
+
+            <option value="5-7">
+              5–7 years
+            </option>
+
+            <option value="8-plus">
+              8 years or more
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballExperienceYears"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballHeight">
+          Height in Centimetres
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-ruler-vertical"></i>
+
+          <input
+            type="number"
+            id="footballHeight"
+            name="footballHeight"
+            inputmode="numeric"
+            placeholder="Example: 170"
+            min="80"
+            max="230"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballHeight"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballWeight">
+          Weight in Kilograms
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-weight-scale"></i>
+
+          <input
+            type="number"
+            id="footballWeight"
+            name="footballWeight"
+            inputmode="decimal"
+            placeholder="Example: 60"
+            min="20"
+            max="200"
+            step="0.1"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballWeight"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballCurrentAcademy">
+          Current Academy or Club
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-building"></i>
+
+          <input
+            type="text"
+            id="footballCurrentAcademy"
+            name="footballCurrentAcademy"
+            placeholder="Enter academy or club name"
+            maxlength="150"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballCurrentAcademy"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballCurrentTeam">
+          Current Team or School
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-people-group"></i>
+
+          <input
+            type="text"
+            id="footballCurrentTeam"
+            name="footballCurrentTeam"
+            placeholder="Enter team or school name"
+            maxlength="150"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballCurrentTeam"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballCoachName">
+          Current Coach Name
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-person-chalkboard"></i>
+
+          <input
+            type="text"
+            id="footballCoachName"
+            name="footballCoachName"
+            placeholder="Enter coach name"
+            maxlength="120"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballCoachName"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="footballCoachPhone">
+          Coach Contact Number
+        </label>
+
+        <div class="event-registration-phone-field">
+
+          <span class="event-registration-phone-code">
+            +91
+          </span>
+
+          <input
+            type="tel"
+            id="footballCoachPhone"
+            name="footballCoachPhone"
+            inputmode="numeric"
+            placeholder="Optional number"
+            maxlength="10"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="footballCoachPhone"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field full-width">
+
+        <label for="footballAchievements">
+          Football Achievements
+        </label>
+
+        <div class="event-registration-textarea-wrapper">
+
+          <i class="fa-solid fa-trophy"></i>
+
+          <textarea
+            id="footballAchievements"
+            name="footballAchievements"
+            placeholder="Mention tournaments, awards, selections, certificates or notable achievements"
+            rows="5"
+            maxlength="600"
+          ></textarea>
+
+        </div>
+
+        <div class="event-registration-field-footer">
+
+          <small
+            class="event-registration-field-error"
+            data-error-for="footballAchievements"
+          ></small>
+
+          <small
+            class="event-registration-character-count"
+            data-character-count-for="footballAchievements"
+          >
+            0 / 600
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="event-registration-field full-width">
+
+        <label for="footballMotivation">
+
+          Why Do You Want to Participate?
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-textarea-wrapper">
+
+          <i class="fa-solid fa-bullseye"></i>
+
+          <textarea
+            id="footballMotivation"
+            name="footballMotivation"
+            placeholder="Describe your football goals and why this opportunity matters to you"
+            rows="5"
+            required
+            minlength="30"
+            maxlength="800"
+          ></textarea>
+
+        </div>
+
+        <div class="event-registration-field-footer">
+
+          <small
+            class="event-registration-field-error"
+            data-error-for="footballMotivation"
+          ></small>
+
+          <small
+            class="event-registration-character-count"
+            data-character-count-for="footballMotivation"
+          >
+            0 / 800
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="event-registration-field full-width">
+
+        <label for="footballMedicalInformation">
+          Medical Conditions or Injuries
+        </label>
+
+        <div class="event-registration-textarea-wrapper">
+
+          <i class="fa-solid fa-notes-medical"></i>
+
+          <textarea
+            id="footballMedicalInformation"
+            name="footballMedicalInformation"
+            placeholder="Mention any medical condition, allergy, injury or medication the organizer should know about"
+            rows="4"
+            maxlength="500"
+          ></textarea>
+
+        </div>
+
+        <div class="event-registration-field-footer">
+
+          <small
+            class="event-registration-field-error"
+            data-error-for="footballMedicalInformation"
+          ></small>
+
+          <small
+            class="event-registration-character-count"
+            data-character-count-for="footballMedicalInformation"
+          >
+            0 / 500
+          </small>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 4
+     DOCUMENT UPLOAD
+====================================================== -->
+
+<section
+  class="event-registration-form-step"
+  data-registration-step="4"
+  aria-labelledby="documentUploadHeading"
+  hidden
+>
+
+  <div class="event-registration-form-card">
+
+    <div class="event-registration-card-heading">
+
+      <span class="event-registration-card-icon">
+
+        <i class="fa-solid fa-folder-open"></i>
+
+      </span>
+
+      <div>
+
+        <span>
+          STEP 04
+        </span>
+
+        <h2 id="documentUploadHeading">
+          Document Upload
+        </h2>
+
+        <p>
+          Upload clear and valid documents required by the event organizer.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-information-box">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      <p>
+        Accepted formats: JPG, JPEG, PNG and PDF. Each file must not
+        exceed 5 MB.
+      </p>
+
+    </div>
+
+
+    <div class="event-registration-upload-grid">
+
+
+      <!-- =====================================================
+           PARTICIPANT PHOTO
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-camera"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Participant Photograph
+            </h3>
+
+            <p>
+              Upload a recent passport-size photograph.
+            </p>
+
+          </div>
+
+          <small class="required">
+            Required
+          </small>
+
+        </div>
+
+
+        <label
+          class="event-registration-upload-zone"
+          for="participantPhoto"
+          data-upload-zone="participantPhoto"
+        >
+
+          <input
+            type="file"
+            id="participantPhoto"
+            name="participantPhoto"
+            accept="image/jpeg,image/png,image/webp"
+            required
+            hidden
+          >
+
+          <span class="event-registration-upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          </span>
+
+          <strong>
+            Choose participant photo
+          </strong>
+
+          <small>
+            JPG, PNG or WEBP · Maximum 5 MB
+          </small>
+
+        </label>
+
+
+        <div
+          class="event-registration-file-preview"
+          data-file-preview-for="participantPhoto"
+          hidden
+        >
+
+          <span>
+
+            <i class="fa-solid fa-image"></i>
+
+          </span>
+
+          <div>
+
+            <strong data-file-name>
+              No file selected
+            </strong>
+
+            <small data-file-size>
+              0 KB
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-remove-file="participantPhoto"
+            aria-label="Remove participant photograph"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="participantPhoto"
+        ></small>
+
+      </div>
+
+
+      <!-- =====================================================
+           AGE PROOF
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-id-card"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Age Proof
+            </h3>
+
+            <p>
+              Birth certificate, Aadhaar card or school certificate.
+            </p>
+
+          </div>
+
+          <small class="required">
+            Required
+          </small>
+
+        </div>
+
+
+        <label
+          class="event-registration-upload-zone"
+          for="participantAgeProof"
+          data-upload-zone="participantAgeProof"
+        >
+
+          <input
+            type="file"
+            id="participantAgeProof"
+            name="participantAgeProof"
+            accept=".pdf,image/jpeg,image/png,image/webp"
+            required
+            hidden
+          >
+
+          <span class="event-registration-upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          </span>
+
+          <strong>
+            Choose age proof
+          </strong>
+
+          <small>
+            PDF, JPG, PNG or WEBP · Maximum 5 MB
+          </small>
+
+        </label>
+
+
+        <div
+          class="event-registration-file-preview"
+          data-file-preview-for="participantAgeProof"
+          hidden
+        >
+
+          <span>
+
+            <i class="fa-solid fa-file-lines"></i>
+
+          </span>
+
+          <div>
+
+            <strong data-file-name>
+              No file selected
+            </strong>
+
+            <small data-file-size>
+              0 KB
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-remove-file="participantAgeProof"
+            aria-label="Remove age proof"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="participantAgeProof"
+        ></small>
+
+      </div>
+
+
+      <!-- =====================================================
+           IDENTITY PROOF
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-address-card"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Identity Proof
+            </h3>
+
+            <p>
+              Aadhaar card, passport or another valid identity document.
+            </p>
+
+          </div>
+
+          <small class="required">
+            Required
+          </small>
+
+        </div>
+
+
+        <label
+          class="event-registration-upload-zone"
+          for="participantIdentityProof"
+          data-upload-zone="participantIdentityProof"
+        >
+
+          <input
+            type="file"
+            id="participantIdentityProof"
+            name="participantIdentityProof"
+            accept=".pdf,image/jpeg,image/png,image/webp"
+            required
+            hidden
+          >
+
+          <span class="event-registration-upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          </span>
+
+          <strong>
+            Choose identity proof
+          </strong>
+
+          <small>
+            PDF, JPG, PNG or WEBP · Maximum 5 MB
+          </small>
+
+        </label>
+
+
+        <div
+          class="event-registration-file-preview"
+          data-file-preview-for="participantIdentityProof"
+          hidden
+        >
+
+          <span>
+
+            <i class="fa-solid fa-file-shield"></i>
+
+          </span>
+
+          <div>
+
+            <strong data-file-name>
+              No file selected
+            </strong>
+
+            <small data-file-size>
+              0 KB
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-remove-file="participantIdentityProof"
+            aria-label="Remove identity proof"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="participantIdentityProof"
+        ></small>
+
+      </div>
+
+
+      <!-- =====================================================
+           MEDICAL CERTIFICATE
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-file-medical"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Medical Fitness Certificate
+            </h3>
+
+            <p>
+              Upload a recent fitness certificate issued by a doctor.
+            </p>
+
+          </div>
+
+          <small class="optional">
+            Optional
+          </small>
+
+        </div>
+
+
+        <label
+          class="event-registration-upload-zone"
+          for="participantMedicalCertificate"
+          data-upload-zone="participantMedicalCertificate"
+        >
+
+          <input
+            type="file"
+            id="participantMedicalCertificate"
+            name="participantMedicalCertificate"
+            accept=".pdf,image/jpeg,image/png,image/webp"
+            hidden
+          >
+
+          <span class="event-registration-upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          </span>
+
+          <strong>
+            Choose medical certificate
+          </strong>
+
+          <small>
+            PDF, JPG, PNG or WEBP · Maximum 5 MB
+          </small>
+
+        </label>
+
+
+        <div
+          class="event-registration-file-preview"
+          data-file-preview-for="participantMedicalCertificate"
+          hidden
+        >
+
+          <span>
+
+            <i class="fa-solid fa-file-medical"></i>
+
+          </span>
+
+          <div>
+
+            <strong data-file-name>
+              No file selected
+            </strong>
+
+            <small data-file-size>
+              0 KB
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-remove-file="participantMedicalCertificate"
+            aria-label="Remove medical certificate"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="participantMedicalCertificate"
+        ></small>
+
+      </div>
+
+
+      <!-- =====================================================
+           FOOTBALL CERTIFICATE
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-medal"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Football Certificate
+            </h3>
+
+            <p>
+              Upload certificates from tournaments, academies or trials.
+            </p>
+
+          </div>
+
+          <small class="optional">
+            Optional
+          </small>
+
+        </div>
+
+
+        <label
+          class="event-registration-upload-zone"
+          for="participantFootballCertificate"
+          data-upload-zone="participantFootballCertificate"
+        >
+
+          <input
+            type="file"
+            id="participantFootballCertificate"
+            name="participantFootballCertificate"
+            accept=".pdf,image/jpeg,image/png,image/webp"
+            hidden
+          >
+
+          <span class="event-registration-upload-icon">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          </span>
+
+          <strong>
+            Choose football certificate
+          </strong>
+
+          <small>
+            PDF, JPG, PNG or WEBP · Maximum 5 MB
+          </small>
+
+        </label>
+
+
+        <div
+          class="event-registration-file-preview"
+          data-file-preview-for="participantFootballCertificate"
+          hidden
+        >
+
+          <span>
+
+            <i class="fa-solid fa-certificate"></i>
+
+          </span>
+
+          <div>
+
+            <strong data-file-name>
+              No file selected
+            </strong>
+
+            <small data-file-size>
+              0 KB
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-remove-file="participantFootballCertificate"
+            aria-label="Remove football certificate"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="participantFootballCertificate"
+        ></small>
+
+      </div>
+
+
+      <!-- =====================================================
+           HIGHLIGHT VIDEO LINK
+      ====================================================== -->
+
+      <div class="event-registration-upload-card">
+
+        <div class="event-registration-upload-heading">
+
+          <span>
+
+            <i class="fa-solid fa-video"></i>
+
+          </span>
+
+          <div>
+
+            <h3>
+              Football Highlight Video
+            </h3>
+
+            <p>
+              Add a public YouTube, Google Drive or Vimeo link.
+            </p>
+
+          </div>
+
+          <small class="optional">
+            Optional
+          </small>
+
+        </div>
+
+
+        <div class="event-registration-field">
+
+          <label for="participantHighlightVideo">
+            Video Link
+          </label>
+
+          <div class="event-registration-input-wrapper">
+
+            <i class="fa-solid fa-link"></i>
+
+            <input
+              type="url"
+              id="participantHighlightVideo"
+              name="participantHighlightVideo"
+              inputmode="url"
+              placeholder="https://youtube.com/..."
+              maxlength="300"
+            >
+
+          </div>
+
+          <small
+            class="event-registration-field-error"
+            data-error-for="participantHighlightVideo"
+          ></small>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     STEP 5
+     EMERGENCY CONTACT AND CONSENT
+====================================================== -->
+
+<section
+  class="event-registration-form-step"
+  data-registration-step="5"
+  aria-labelledby="consentDetailsHeading"
+  hidden
+>
+
+  <div class="event-registration-form-card">
+
+    <div class="event-registration-card-heading">
+
+      <span class="event-registration-card-icon">
+
+        <i class="fa-solid fa-shield-heart"></i>
+
+      </span>
+
+      <div>
+
+        <span>
+          STEP 05
+        </span>
+
+        <h2 id="consentDetailsHeading">
+          Emergency Contact and Consent
+        </h2>
+
+        <p>
+          Provide an emergency contact and review the required declarations.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-subsection-heading">
+
+      <span>
+
+        <i class="fa-solid fa-phone-volume"></i>
+
+      </span>
+
+      <div>
+
+        <h3>
+          Emergency Contact
+        </h3>
+
+        <p>
+          This person should be available during the event.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-form-grid">
+
+
+      <div class="event-registration-field">
+
+        <label for="emergencyContactName">
+
+          Contact Person Name
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-user"></i>
+
+          <input
+            type="text"
+            id="emergencyContactName"
+            name="emergencyContactName"
+            placeholder="Enter full name"
+            required
+            maxlength="120"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="emergencyContactName"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="emergencyContactRelationship">
+
+          Relationship
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-input-wrapper">
+
+          <i class="fa-solid fa-people-arrows"></i>
+
+          <select
+            id="emergencyContactRelationship"
+            name="emergencyContactRelationship"
+            required
+          >
+
+            <option value="">
+              Select relationship
+            </option>
+
+            <option value="father">
+              Father
+            </option>
+
+            <option value="mother">
+              Mother
+            </option>
+
+            <option value="guardian">
+              Guardian
+            </option>
+
+            <option value="brother">
+              Brother
+            </option>
+
+            <option value="sister">
+              Sister
+            </option>
+
+            <option value="relative">
+              Relative
+            </option>
+
+            <option value="coach">
+              Coach
+            </option>
+
+            <option value="other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="emergencyContactRelationship"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="emergencyContactPhone">
+
+          Mobile Number
+
+          <span aria-hidden="true">
+            *
+          </span>
+
+        </label>
+
+        <div class="event-registration-phone-field">
+
+          <span class="event-registration-phone-code">
+            +91
+          </span>
+
+          <input
+            type="tel"
+            id="emergencyContactPhone"
+            name="emergencyContactPhone"
+            inputmode="numeric"
+            placeholder="10-digit mobile number"
+            required
+            maxlength="10"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="emergencyContactPhone"
+        ></small>
+
+      </div>
+
+
+      <div class="event-registration-field">
+
+        <label for="emergencyContactAlternatePhone">
+          Alternate Number
+        </label>
+
+        <div class="event-registration-phone-field">
+
+          <span class="event-registration-phone-code">
+            +91
+          </span>
+
+          <input
+            type="tel"
+            id="emergencyContactAlternatePhone"
+            name="emergencyContactAlternatePhone"
+            inputmode="numeric"
+            placeholder="Optional number"
+            maxlength="10"
+          >
+
+        </div>
+
+        <small
+          class="event-registration-field-error"
+          data-error-for="emergencyContactAlternatePhone"
+        ></small>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="event-registration-section-divider"></div>
+
+
+    <div class="event-registration-subsection-heading">
+
+      <span>
+
+        <i class="fa-solid fa-file-signature"></i>
+
+      </span>
+
+      <div>
+
+        <h3>
+          Declarations and Consent
+        </h3>
+
+        <p>
+          Read each declaration carefully before continuing.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-consent-list">
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentInformationAccuracy"
+          name="consentInformationAccuracy"
+          value="accepted"
+          required
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Information Accuracy
+          </strong>
+
+          <small>
+            I confirm that all information and documents provided in
+            this registration are complete, accurate and genuine.
+          </small>
+
+        </span>
+
+      </label>
+
+      <small
+        class="event-registration-field-error"
+        data-error-for="consentInformationAccuracy"
+      ></small>
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentMedicalParticipation"
+          name="consentMedicalParticipation"
+          value="accepted"
+          required
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Medical and Physical Participation
+          </strong>
+
+          <small>
+            I confirm that the participant is physically fit to take part
+            and that all known medical conditions have been disclosed.
+          </small>
+
+        </span>
+
+      </label>
+
+      <small
+        class="event-registration-field-error"
+        data-error-for="consentMedicalParticipation"
+      ></small>
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentEventRules"
+          name="consentEventRules"
+          value="accepted"
+          required
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Event Rules and Code of Conduct
+          </strong>
+
+          <small>
+            I agree to follow the organizer's rules, safety instructions,
+            eligibility requirements and code of conduct.
+          </small>
+
+        </span>
+
+      </label>
+
+      <small
+        class="event-registration-field-error"
+        data-error-for="consentEventRules"
+      ></small>
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentDataProcessing"
+          name="consentDataProcessing"
+          value="accepted"
+          required
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Data Processing Consent
+          </strong>
+
+          <small>
+            I consent to the secure processing of the submitted information
+            for registration, verification and event communication.
+          </small>
+
+        </span>
+
+      </label>
+
+      <small
+        class="event-registration-field-error"
+        data-error-for="consentDataProcessing"
+      ></small>
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentMediaPermission"
+          name="consentMediaPermission"
+          value="accepted"
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Photography and Media Permission
+          </strong>
+
+          <small>
+            I permit the organizer to use event photographs or videos
+            for football development, reporting and promotional purposes.
+          </small>
+
+        </span>
+
+      </label>
+
+
+      <label class="event-registration-consent-card">
+
+        <input
+          type="checkbox"
+          id="consentFutureUpdates"
+          name="consentFutureUpdates"
+          value="accepted"
+        >
+
+        <span class="event-registration-custom-checkbox">
+
+          <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>
+
+          <strong>
+            Future Football Opportunities
+          </strong>
+
+          <small>
+            Send me updates about suitable trials, camps, workshops and
+            football development programmes.
+          </small>
+
+        </span>
+
+      </label>
+
+
+    </div>
+
+  </div>
+
+</section>
+<!-- =====================================================
+     STEP 6
+     REVIEW & SUBMIT
+====================================================== -->
+
+<section
+  class="event-registration-form-step"
+  data-registration-step="6"
+  aria-labelledby="reviewSubmissionHeading"
+  hidden
+>
+
+  <div class="event-registration-form-card">
+
+    <div class="event-registration-card-heading">
+
+      <span class="event-registration-card-icon">
+
+        <i class="fa-solid fa-clipboard-check"></i>
+
+      </span>
+
+      <div>
+
+        <span>
+          STEP 06
+        </span>
+
+        <h2 id="reviewSubmissionHeading">
+          Review & Submit Registration
+        </h2>
+
+        <p>
+          Review all information before submitting your registration.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         REVIEW SUMMARY
+    ====================================================== -->
+
+    <div
+      class="event-registration-review-summary"
+      id="eventRegistrationReviewSummary"
+    >
+
+      <!-- JavaScript will populate this section -->
+
+    </div>
+
+
+    <!-- =====================================================
+         REGISTRATION CHECKLIST
+    ====================================================== -->
+
+    <div class="event-registration-review-card">
+
+      <div class="event-registration-review-heading">
+
+        <span>
+
+          <i class="fa-solid fa-list-check"></i>
+
+        </span>
+
+        <div>
+
+          <h3>
+            Final Checklist
+          </h3>
+
+          <p>
+            Ensure everything is complete before submitting.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="event-registration-review-checklist">
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Participant details completed.
+          </span>
+
+        </div>
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Parent or guardian information verified.
+          </span>
+
+        </div>
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Football profile completed.
+          </span>
+
+        </div>
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Required documents uploaded.
+          </span>
+
+        </div>
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Emergency contact added.
+          </span>
+
+        </div>
+
+        <div class="event-registration-check-item">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <span>
+            Required declarations accepted.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BACKEND NOTICE
+    ====================================================== -->
+
+    <div class="event-registration-information-box success">
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+      <p>
+
+        This page is frontend-ready. Final submission,
+        document storage, payment processing,
+        email confirmation and database integration
+        will be connected by the backend team.
+
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         SUBMIT ACTIONS
+    ====================================================== -->
+
+    <div class="event-registration-submit-actions">
+
+      <button
+        type="button"
+        class="event-registration-secondary-button"
+        id="eventRegistrationDownloadButton"
+      >
+
+        <i class="fa-solid fa-file-arrow-down"></i>
+
+        Download Summary
+
+      </button>
+
+
+      <button
+        type="submit"
+        class="event-registration-primary-button"
+        id="eventRegistrationSubmitButton"
+      >
+
+        <i class="fa-solid fa-paper-plane"></i>
+
+        Submit Registration
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+====================================================== -->
+
+<section
+  class="event-registration-success-modal"
+  id="eventRegistrationSuccessModal"
+  hidden
+>
+
+  <div class="event-registration-success-card">
+
+    <div class="event-registration-success-icon">
+
+      <i class="fa-solid fa-circle-check"></i>
+
+    </div>
+
+    <h2>
+      Registration Submitted Successfully!
+    </h2>
+
+    <p>
+
+      Thank you for registering.
+
+      Your application has been received successfully.
+
+      After backend integration, you will receive
+      confirmation through email and SMS.
+
+    </p>
+
+
+    <div class="event-registration-success-details">
+
+      <div>
+
+        <span>
+          Registration ID
+        </span>
+
+        <strong id="eventRegistrationSuccessId">
+          REG-000001
+        </strong>
+
+      </div>
+
+      <div>
+
+        <span>
+          Event
+        </span>
+
+        <strong id="eventRegistrationSuccessEvent">
+          Loading...
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-registration-success-actions">
+
+      <a
+        href="events.html"
+        class="event-registration-secondary-button"
+      >
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        Browse Events
+
+      </a>
+
+      <a
+        href="player-dashboard.html"
+        class="event-registration-primary-button"
+      >
+
+        <i class="fa-solid fa-gauge-high"></i>
+
+        Go to Dashboard
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="event-registration-footer">
+
+  <div class="event-registration-container">
+
+    <div class="event-registration-footer-content">
+
+      <div>
+
+        <h3>
+          FIFA MISSION INDIA
+        </h3>
+
+        <p>
+
+          Building the future of Indian football by
+          connecting players, coaches, academies,
+          scouts and supporters.
+
+        </p>
+
+      </div>
+
+
+      <nav
+        class="event-registration-footer-links"
+        aria-label="Footer Navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a href="events.html">
+          Events
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+
+    <div class="event-registration-footer-bottom">
+
+      <p>
+
+        © 2026 FIFA Mission India.
+        All Rights Reserved.
+
+      </p>
+
+      <p>
+
+        Frontend developed by Issac Belho.
+        Backend integration by Mr. Harsh.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="js/event-registration.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="FIFA Mission India player dashboard."
+  >
+
+  <title>Player Dashboard | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/player-dashboard.css">
+
+</head>
+
+<body>
+
+  <!-- ================= MOBILE OVERLAY ================= -->
+
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+  ></div>
+
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside
+    class="dashboard-sidebar"
+    id="dashboardSidebar"
+  >
+
+    <div class="sidebar-header">
+
+      <a
+        href="index.html"
+        class="dashboard-brand"
+        aria-label="FIFA Mission India homepage"
+      >
+
+        <div class="brand-icon" aria-hidden="true">
+          ⚽
+        </div>
+
+        <div class="brand-copy">
+
+          <strong>FIFA MISSION INDIA</strong>
+
+          <span>Road to 2034</span>
+
+        </div>
+
+      </a>
+
+
+      <button
+        type="button"
+        class="sidebar-close-button"
+        id="sidebarCloseButton"
+        aria-label="Close navigation"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <nav
+      class="sidebar-navigation"
+      aria-label="Player dashboard navigation"
+    >
+
+      <a
+        href="#overview"
+        class="sidebar-link active"
+        data-section-link="overview"
+      >
+
+        <span class="sidebar-link-icon" aria-hidden="true">
+          ◫
+        </span>
+
+        <span>Overview</span>
+
+      </a>
+
+
+      <a
+        href="#profile"
+        class="sidebar-link"
+        data-section-link="profile"
+      >
+
+        <span class="sidebar-link-icon" aria-hidden="true">
+          ◉
+        </span>
+
+        <span>My Profile</span>
+
+      </a>
+
+
+      <a
+        href="#trials"
+        class="sidebar-link"
+        data-section-link="trials"
+      >
+
+        <span class="sidebar-link-icon" aria-hidden="true">
+          ⚽
+        </span>
+
+        <span>Trials & Events</span>
+
+        <span class="sidebar-badge">2</span>
+
+      </a>
+
+
+      <a
+  href="player-performance.html"
+  class="sidebar-link"
+>
+
+        <span class="sidebar-link-icon" aria-hidden="true">
+          ↗
+        </span>
+
+        <span>Performance</span>
+
+      </a>
+
+      <a
+  href="player-achievements.html"
+  class="sidebar-link"
+>
+
+  <span
+    class="sidebar-link-icon"
+    aria-hidden="true"
+  >
+    🏆
+  </span>
+
+  <span>
+    Achievements
+  </span>
+
+</a>
+
+
+      <a
+  href="player-documents.html"
+  class="sidebar-link"
+>
+
+        <span class="sidebar-link-icon" aria-hidden="true">
+          ▤
+        </span>
+
+        <span>Documents</span>
+
+      </a>
+
+
+      <a
+  href="player-notifications.html"
+  class="sidebar-link"
+>
+  <span class="sidebar-link-icon">
+    🔔
+  </span>
+
+  <span>
+    Notifications
+  </span>
+
+  <span
+    class="sidebar-notification-badge"
+    id="sidebarNotificationBadge"
+  >
+    3
+  </span>
+</a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+      <div class="mission-progress-card">
+
+        <span>MISSION PROGRESS</span>
+
+        <strong>Road to FIFA 2034</strong>
+
+        <div class="mission-progress-track">
+
+          <span></span>
+
+        </div>
+
+        <small>
+          Building India’s football future together.
+        </small>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="logout-button"
+        id="logoutButton"
+      >
+
+        <span aria-hidden="true">↪</span>
+
+        Log Out
+
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN LAYOUT ================= -->
+
+  <div class="dashboard-layout">
+
+
+    <!-- ================= TOP HEADER ================= -->
+
+    <header class="dashboard-header">
+
+      <div class="header-left">
+
+        <button
+          type="button"
+          class="menu-button"
+          id="menuButton"
+          aria-label="Open navigation"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+
+        <div>
+
+          <span class="header-eyebrow">
+            PLAYER PORTAL
+          </span>
+
+          <h1>
+            Welcome back, <span id="headerPlayerName">Player</span>
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="header-actions">
+
+        <button
+          type="button"
+          class="notification-button"
+          aria-label="View notifications"
+        >
+
+          <span aria-hidden="true">◔</span>
+
+          <b>3</b>
+
+        </button>
+
+
+        <button
+          type="button"
+          class="header-profile"
+          id="headerProfileButton"
+        >
+
+          <div class="header-avatar">
+
+            <img
+              id="headerAvatarImage"
+              alt="Player profile"
+              hidden
+            >
+
+            <span id="headerAvatarInitials">
+              PL
+            </span>
+
+          </div>
+
+          <div class="header-profile-copy">
+
+            <strong id="headerProfileName">
+              Player Name
+            </strong>
+
+            <span>Registered Player</span>
+
+          </div>
+
+          <span class="profile-chevron" aria-hidden="true">
+            ▾
+          </span>
+
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-main">
+
+
+      <!-- ================= WELCOME BANNER ================= -->
+
+      <section
+        class="welcome-banner"
+        id="overview"
+      >
+
+        <div class="welcome-content">
+
+          <span class="welcome-eyebrow">
+            ONE NATION. ONE DREAM.
+          </span>
+
+          <h2>
+            Your journey to represent India starts here.
+          </h2>
+
+          <p>
+
+            Complete your profile, discover upcoming trials and continue
+            building your football career through FIFA Mission India.
+
+          </p>
+
+
+          <div class="welcome-actions">
+
+            <a
+              href="#profile"
+              class="primary-dashboard-button"
+            >
+              Complete Profile
+            </a>
+
+            <a
+  href="player-trials.html"
+  class="secondary-dashboard-button"
+>
+  Explore Trials
+</a>
+
+          </div>
+
+        </div>
+
+
+        <div class="welcome-visual" aria-hidden="true">
+
+          <div class="football-circle">
+
+            <span>⚽</span>
+
+          </div>
+
+          <div class="visual-line visual-line-one"></div>
+
+          <div class="visual-line visual-line-two"></div>
+
+          <span class="visual-year">
+            2034
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= SUMMARY CARDS ================= -->
+
+      <section class="summary-grid">
+
+
+        <article class="summary-card">
+
+          <div class="summary-icon">
+            ✓
+          </div>
+
+          <div class="summary-copy">
+
+            <span>Application Status</span>
+
+            <strong>Under Review</strong>
+
+            <small>
+              Submitted successfully
+            </small>
+
+          </div>
+
+          <span class="status-pill status-pending">
+            Pending
+          </span>
+
+        </article>
+
+
+        <article class="summary-card">
+
+          <div class="summary-icon">
+            %
+          </div>
+
+          <div class="summary-copy">
+
+            <span>Profile Completion</span>
+
+            <strong id="profileCompletionText">
+              72%
+            </strong>
+
+            <div class="summary-progress">
+
+              <span id="profileCompletionBar"></span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="summary-card">
+
+          <div class="summary-icon">
+            ⚽
+          </div>
+
+          <div class="summary-copy">
+
+            <span>Upcoming Trials</span>
+
+            <strong>2 Events</strong>
+
+            <small>
+              Next trial in 12 days
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="summary-card">
+
+          <div class="summary-icon">
+            ↗
+          </div>
+
+          <div class="summary-copy">
+
+            <span>Performance Score</span>
+
+            <strong>78 / 100</strong>
+
+            <small class="positive-text">
+              +6 points this month
+            </small>
+
+          </div>
+
+        </article>
+
+        <article class="summary-card">
+
+  <div class="summary-icon">
+    🏆
+  </div>
+
+  <div class="summary-copy">
+
+    <span>Achievements</span>
+
+    <strong>4 Badges</strong>
+
+    <small>
+      620 achievement points
+    </small>
+
+  </div>
+
+  <a
+    href="player-achievements.html"
+    class="summary-card-link"
+    aria-label="View player achievements"
+  >
+    →
+  </a>
+
+</article>
+
+      </section>
+
+
+      <!-- ================= MAIN DASHBOARD GRID ================= -->
+
+      <section class="dashboard-content-grid">
+
+
+        <!-- ================= PROFILE CARD ================= -->
+
+        <article
+          class="dashboard-card profile-card"
+          id="profile"
+        >
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                PLAYER PROFILE
+              </span>
+
+              <h3>
+                Profile overview
+              </h3>
+
+            </div>
+
+            <button
+              type="button"
+              class="text-button"
+              id="editProfileButton"
+            >
+              Edit Profile
+            </button>
+
+          </div>
+
+
+          <div class="profile-card-body">
+
+            <div class="large-profile-avatar">
+
+              <img
+                id="playerProfileImage"
+                alt="Player profile"
+                hidden
+              >
+
+              <span id="playerProfileInitials">
+                PL
+              </span>
+
+            </div>
+
+
+            <div class="profile-main-details">
+
+              <h4 id="playerProfileName">
+                Player Name
+              </h4>
+
+              <p id="playerProfileLocation">
+                City, State
+              </p>
+
+
+              <div class="player-tags">
+
+                <span id="playerPositionTag">
+                  Midfielder
+                </span>
+
+                <span id="playerFootTag">
+                  Right Foot
+                </span>
+
+                <span id="playerExperienceTag">
+                  Academy Level
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="profile-stat">
+
+              <span>Player ID</span>
+
+              <strong id="playerId">
+                FMI-PLAYER-482193
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-details-grid">
+
+
+            <div class="profile-detail">
+
+              <span>Email</span>
+
+              <strong id="playerEmail">
+                player@example.com
+              </strong>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+              <span>Mobile</span>
+
+              <strong id="playerPhone">
+                +91 98765 44821
+              </strong>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+              <span>Date of Birth</span>
+
+              <strong id="playerDateOfBirth">
+                15 August 2005
+              </strong>
+
+            </div>
+
+
+            <div class="profile-detail">
+
+              <span>Current Club</span>
+
+              <strong id="playerClub">
+                Not provided
+              </strong>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ================= COMPLETION CARD ================= -->
+
+        <article class="dashboard-card completion-card">
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                PROFILE STRENGTH
+              </span>
+
+              <h3>
+                Complete your profile
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="completion-circle">
+
+            <svg viewBox="0 0 120 120">
+
+              <circle
+                class="completion-track"
+                cx="60"
+                cy="60"
+                r="50"
+              ></circle>
+
+              <circle
+                class="completion-value"
+                cx="60"
+                cy="60"
+                r="50"
+              ></circle>
+
+            </svg>
+
+            <div>
+
+              <strong>72%</strong>
+
+              <span>Complete</span>
+
+            </div>
+
+          </div>
+
+
+          <ul class="completion-list">
+
+            <li class="completed-item">
+              <span>✓</span>
+              Personal information
+            </li>
+
+            <li class="completed-item">
+              <span>✓</span>
+              Football profile
+            </li>
+
+            <li>
+              <span>!</span>
+              Upload identity document
+            </li>
+
+            <li>
+              <span>!</span>
+              Add highlight video
+            </li>
+
+          </ul>
+
+
+          <a
+  href="player-profile-edit.html"
+  class="full-width-button"
+>
+  Continue Profile
+</a>
+
+        </article>
+
+
+        <!-- ================= UPCOMING TRIALS ================= -->
+
+        <article
+          class="dashboard-card trials-card"
+          id="trials"
+        >
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                OPPORTUNITIES
+              </span>
+
+              <h3>
+                Upcoming trials
+              </h3>
+
+            </div>
+
+            <a
+  href="player-trials.html"
+  class="text-button"
+>
+  View All
+</a>
+          </div>
+
+
+          <div class="trial-list">
+
+
+            <article class="trial-item">
+
+              <div class="trial-date">
+
+                <span>18</span>
+
+                <strong>AUG</strong>
+
+              </div>
+
+
+              <div class="trial-details">
+
+                <span class="trial-type">
+                  OPEN FOOTBALL TRIAL
+                </span>
+
+                <h4>
+                  Northeast Regional Talent Trial
+                </h4>
+
+                <p>
+                  Dimapur Sports Complex, Nagaland
+                </p>
+
+              </div>
+
+
+              <div class="trial-action">
+
+                <span class="trial-status">
+                  Registration Open
+                </span>
+
+                <a href="player-trials.html">
+  View Details
+</a>
+
+              </div>
+
+            </article>
+
+
+            <article class="trial-item">
+
+              <div class="trial-date">
+
+                <span>02</span>
+
+                <strong>SEP</strong>
+
+              </div>
+
+
+              <div class="trial-details">
+
+                <span class="trial-type">
+                  NATIONAL SCOUTING CAMP
+                </span>
+
+                <h4>
+                  U-21 National Development Camp
+                </h4>
+
+                <p>
+                  Guwahati Football Arena, Assam
+                </p>
+
+              </div>
+
+
+              <div class="trial-action">
+
+                <span class="trial-status">
+                  Invitation Required
+                </span>
+
+                <button type="button">
+                  View Details
+                </button>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </article>
+
+
+        <!-- ================= PERFORMANCE ================= -->
+
+        <article
+          class="dashboard-card performance-card"
+          id="performance"
+        >
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                PLAYER DEVELOPMENT
+              </span>
+
+              <h3>
+                Performance overview
+              </h3>
+
+            </div>
+
+            <div class="performance-header-actions">
+
+  <select
+    id="performancePeriod"
+    aria-label="Select performance period"
+  >
+    <option value="month">
+      This Month
+    </option>
+
+    <option value="quarter">
+      Last 3 Months
+    </option>
+
+    <option value="year">
+      This Year
+    </option>
+  </select>
+
+  <a
+    href="player-performance.html"
+    class="view-report-button"
+  >
+    View Full Report →
+  </a>
+
+</div>
+
+          </div>
+
+
+          <div class="performance-score">
+
+            <div class="performance-score-main">
+
+              <strong id="performanceScore">
+                78
+              </strong>
+
+              <span>/100</span>
+
+            </div>
+
+            <p>
+              Overall development score
+            </p>
+
+          </div>
+
+
+          <div class="performance-bars">
+
+
+            <div class="performance-row">
+
+              <div>
+
+                <span>Technical Ability</span>
+
+                <strong>82%</strong>
+
+              </div>
+
+              <div class="performance-track">
+
+                <span style="width: 82%"></span>
+
+              </div>
+
+            </div>
+
+
+            <div class="performance-row">
+
+              <div>
+
+                <span>Physical Fitness</span>
+
+                <strong>74%</strong>
+
+              </div>
+
+              <div class="performance-track">
+
+                <span style="width: 74%"></span>
+
+              </div>
+
+            </div>
+
+
+            <div class="performance-row">
+
+              <div>
+
+                <span>Tactical Awareness</span>
+
+                <strong>76%</strong>
+
+              </div>
+
+              <div class="performance-track">
+
+                <span style="width: 76%"></span>
+
+              </div>
+
+            </div>
+
+
+            <div class="performance-row">
+
+              <div>
+
+                <span>Discipline</span>
+
+                <strong>88%</strong>
+
+              </div>
+
+              <div class="performance-track">
+
+                <span style="width: 88%"></span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ================= DOCUMENTS ================= -->
+
+        <article
+          class="dashboard-card documents-card"
+          id="documents"
+        >
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                VERIFICATION
+              </span>
+
+              <h3>
+                Documents
+              </h3>
+
+            </div>
+
+            <button type="button" class="text-button">
+              Upload Document
+            </button>
+
+          </div>
+
+
+          <div class="document-list">
+
+
+            <div class="document-item">
+
+              <div class="document-icon">
+                PDF
+              </div>
+
+              <div>
+
+                <strong>
+                  Identity Document
+                </strong>
+
+                <span>
+                  identity-document.pdf
+                </span>
+
+              </div>
+
+              <span class="document-status verified">
+                Verified
+              </span>
+
+            </div>
+
+
+            <div class="document-item">
+
+              <div class="document-icon">
+                VID
+              </div>
+
+              <div>
+
+                <strong>
+                  Highlight Video
+                </strong>
+
+                <span>
+                  No video uploaded
+                </span>
+
+              </div>
+
+              <span class="document-status missing">
+                Missing
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ================= NOTIFICATIONS ================= -->
+
+        <article
+          class="dashboard-card notifications-card"
+          id="notifications"
+        >
+
+          <div class="card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                RECENT ACTIVITY
+              </span>
+
+              <h3>
+                Notifications
+              </h3>
+
+            </div>
+
+            <button
+              type="button"
+              class="text-button"
+              id="markAllReadButton"
+            >
+              Mark All Read
+            </button>
+
+          </div>
+
+
+          <div
+            class="notification-list"
+            id="notificationList"
+          >
+
+
+            <article class="notification-item unread">
+
+              <div class="notification-indicator"></div>
+
+              <div class="notification-icon">
+                ⚽
+              </div>
+
+              <div class="notification-copy">
+
+                <strong>
+                  New football trial available
+                </strong>
+
+                <p>
+                  Registration is now open for the Northeast Regional Talent Trial.
+                </p>
+
+                <span>
+                  2 hours ago
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="notification-item unread">
+
+              <div class="notification-indicator"></div>
+
+              <div class="notification-icon">
+                ✓
+              </div>
+
+              <div class="notification-copy">
+
+                <strong>
+                  Identity document verified
+                </strong>
+
+                <p>
+                  Your uploaded identity document has been successfully verified.
+                </p>
+
+                <span>
+                  Yesterday
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="notification-item unread">
+
+              <div class="notification-indicator"></div>
+
+              <div class="notification-icon">
+                %
+              </div>
+
+              <div class="notification-copy">
+
+                <strong>
+                  Profile completion reminder
+                </strong>
+
+                <p>
+                  Upload your highlight video to improve your profile strength.
+                </p>
+
+                <span>
+                  2 days ago
+                </span>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </article>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/player-dashboard.js"></script>
+
+</body>
+
+</html>

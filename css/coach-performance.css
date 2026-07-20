@@ -1,0 +1,5632 @@
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   File: coach-performance.css
+
+   PART 1A
+   - Design variables
+   - Reset and base styles
+   - Application shell
+   - Sidebar structure
+   - Sidebar branding
+   - Coach summary
+   - Sidebar navigation
+   - Support card
+   - Logout button
+========================================================= */
+
+
+/* =========================================================
+   DESIGN VARIABLES
+========================================================= */
+
+:root {
+  --coach-primary: #0a6cf1;
+  --coach-primary-dark: #064da9;
+  --coach-primary-deep: #003b95;
+  --coach-primary-light: #eaf3ff;
+
+  --coach-secondary: #17a673;
+  --coach-secondary-light: #e9f8f2;
+
+  --coach-warning: #f59e0b;
+  --coach-warning-light: #fff7e6;
+
+  --coach-danger: #e5484d;
+  --coach-danger-dark: #c83238;
+  --coach-danger-light: #fff0f1;
+
+  --coach-purple: #7c4dff;
+  --coach-purple-light: #f1edff;
+
+  --coach-orange: #f97316;
+  --coach-orange-light: #fff1e8;
+
+  --coach-success: #16a36a;
+  --coach-success-light: #e9f8f1;
+
+  --coach-dark: #101828;
+  --coach-heading: #182230;
+  --coach-text: #475467;
+  --coach-muted: #667085;
+  --coach-soft-text: #98a2b3;
+
+  --coach-border: #e4e7ec;
+  --coach-border-light: #eef1f5;
+
+  --coach-background: #f4f7fb;
+  --coach-surface: #ffffff;
+  --coach-surface-soft: #f8fafc;
+
+  --coach-sidebar-width: 282px;
+  --coach-topbar-height: 86px;
+
+  --coach-radius-xs: 8px;
+  --coach-radius-sm: 12px;
+  --coach-radius-md: 16px;
+  --coach-radius-lg: 22px;
+  --coach-radius-xl: 28px;
+  --coach-radius-pill: 999px;
+
+  --coach-shadow-xs:
+    0 1px 2px rgba(16, 24, 40, 0.04);
+
+  --coach-shadow-sm:
+    0 4px 14px rgba(16, 24, 40, 0.06);
+
+  --coach-shadow-md:
+    0 12px 30px rgba(16, 24, 40, 0.08);
+
+  --coach-shadow-lg:
+    0 24px 60px rgba(16, 24, 40, 0.12);
+
+  --coach-transition:
+    180ms ease;
+
+  --coach-transition-slow:
+    280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  color: var(--coach-text);
+  background: var(--coach-background);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.performance-modal-open,
+body.coach-sidebar-open {
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(10, 108, 241, 0.2);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: var(--coach-radius-pill);
+  background: #cbd5e1;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  background-clip: padding-box;
+}
+
+
+/* =========================================================
+   APPLICATION SHELL
+========================================================= */
+
+.coach-app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--coach-background);
+}
+
+.coach-main-area {
+  width: calc(100% - var(--coach-sidebar-width));
+  min-width: 0;
+  margin-left: var(--coach-sidebar-width);
+  transition:
+    width var(--coach-transition-slow),
+    margin-left var(--coach-transition-slow);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.coach-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  width: var(--coach-sidebar-width);
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(65, 144, 255, 0.24),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #06347a 0%,
+      #052963 44%,
+      #031d48 100%
+    );
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    14px 0 36px rgba(1, 24, 58, 0.12);
+}
+
+.coach-sidebar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 42%
+    );
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.coach-sidebar-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 92px;
+  padding: 20px 20px 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.coach-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.coach-brand-icon {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+
+  width: 46px;
+  height: 46px;
+
+  color: #ffffff;
+  font-size: 21px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.coach-brand-icon::after {
+  content: "";
+
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+
+  width: 12px;
+  height: 12px;
+
+  border: 3px solid #06347a;
+  border-radius: 50%;
+
+  background: #3ddd9e;
+}
+
+.coach-brand-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coach-brand-content strong {
+  overflow: hidden;
+
+  color: #ffffff;
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-brand-content small {
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.coach-sidebar-close {
+  display: none;
+  place-items: center;
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-sidebar-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   SIDEBAR COACH PROFILE
+========================================================= */
+
+.coach-sidebar-profile {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin: 20px 16px 10px;
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.055)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.coach-sidebar-avatar {
+  position: relative;
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+}
+
+.coach-sidebar-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.coach-online-indicator {
+  position: absolute;
+  right: -2px;
+  bottom: -1px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 3px solid #052963;
+  border-radius: 50%;
+
+  background: #35d999;
+
+  box-shadow:
+    0 0 0 2px rgba(53, 217, 153, 0.14);
+}
+
+.coach-sidebar-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coach-sidebar-profile strong {
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-sidebar-profile span {
+  overflow: hidden;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.coach-sidebar-navigation {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+
+  padding: 12px 14px 20px;
+}
+
+.coach-navigation-label {
+  display: block;
+
+  margin: 16px 11px 7px;
+
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+.coach-navigation-label:first-child {
+  margin-top: 4px;
+}
+
+.coach-navigation-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-height: 47px;
+  padding: 0 14px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid transparent;
+  border-radius: 13px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition),
+    border-color var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-navigation-link i {
+  display: grid;
+  place-items: center;
+
+  width: 20px;
+
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 15px;
+
+  transition:
+    color var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-navigation-link:hover {
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateX(2px);
+}
+
+.coach-navigation-link:hover i {
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.coach-navigation-link.active {
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(52, 134, 255, 0.98),
+      rgba(10, 108, 241, 0.72)
+    );
+
+  box-shadow:
+    0 12px 25px rgba(0, 68, 164, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.coach-navigation-link.active::before {
+  content: "";
+
+  position: absolute;
+  left: -14px;
+  top: 50%;
+
+  width: 4px;
+  height: 25px;
+
+  border-radius: 0 6px 6px 0;
+
+  background: #ffffff;
+
+  transform: translateY(-50%);
+}
+
+.coach-navigation-link.active i {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.coach-sidebar-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 14px 16px 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   SIDEBAR SUPPORT CARD
+========================================================= */
+
+.coach-sidebar-support {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 31px;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.045)
+    );
+}
+
+.coach-sidebar-support > span {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: #ffffff;
+  font-size: 16px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.coach-sidebar-support > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coach-sidebar-support strong {
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-sidebar-support small {
+  overflow: hidden;
+
+  margin-top: 2px;
+
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-sidebar-support a {
+  display: grid;
+  place-items: center;
+
+  width: 31px;
+  height: 31px;
+
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-sidebar-support a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.17);
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.coach-logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 45px;
+  padding: 0 14px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition),
+    border-color var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-logout-button i {
+  font-size: 14px;
+}
+
+.coach-logout-button:hover {
+  color: #ffffff;
+
+  border-color: rgba(255, 118, 118, 0.28);
+
+  background: rgba(229, 72, 77, 0.18);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.coach-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background: rgba(5, 20, 44, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition:
+    opacity var(--coach-transition-slow),
+    visibility var(--coach-transition-slow);
+}
+
+.coach-sidebar-overlay:not([hidden]) {
+  display: block;
+}
+
+.coach-sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   TABLET SIDEBAR
+========================================================= */
+
+@media (max-width: 1180px) {
+  :root {
+    --coach-sidebar-width: 260px;
+  }
+
+  .coach-sidebar-header {
+    padding-inline: 17px;
+  }
+
+  .coach-sidebar-profile {
+    margin-inline: 13px;
+  }
+
+  .coach-sidebar-navigation {
+    padding-inline: 12px;
+  }
+
+  .coach-navigation-link.active::before {
+    left: -12px;
+  }
+
+  .coach-sidebar-footer {
+    padding-inline: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 900px) {
+  .coach-main-area {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .coach-sidebar {
+    width: min(86vw, 300px);
+
+    visibility: hidden;
+
+    box-shadow:
+      24px 0 55px rgba(0, 18, 48, 0.28);
+
+    transform: translateX(-105%);
+
+    transition:
+      transform var(--coach-transition-slow),
+      visibility var(--coach-transition-slow);
+  }
+
+  .coach-sidebar.active {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .coach-sidebar-close {
+    display: grid;
+  }
+
+  .coach-sidebar-header {
+    min-height: 84px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .coach-sidebar {
+    width: min(90vw, 290px);
+  }
+
+  .coach-sidebar-header {
+    padding: 17px 15px;
+  }
+
+  .coach-brand-icon {
+    flex-basis: 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+  }
+
+  .coach-brand-content strong {
+    font-size: 13px;
+  }
+
+  .coach-sidebar-profile {
+    margin: 16px 12px 8px;
+    padding: 13px;
+  }
+
+  .coach-sidebar-navigation {
+    padding: 10px 11px 18px;
+  }
+
+  .coach-sidebar-footer {
+    padding: 13px 12px 18px;
+  }
+}
+
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   PART 1B
+
+   - Topbar
+   - Search
+   - Topbar action buttons
+   - Profile button
+   - Main content container
+   - Performance hero
+   - Filter bar
+========================================================= */
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.coach-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  min-height: var(--coach-topbar-height);
+  padding: 0 30px;
+
+  border-bottom: 1px solid rgba(228, 231, 236, 0.9);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 1px 0 rgba(16, 24, 40, 0.02);
+}
+
+.coach-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  min-width: 0;
+}
+
+.coach-menu-button {
+  display: none;
+  place-items: center;
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--coach-heading);
+  font-size: 18px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 13px;
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-xs);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.coach-menu-button:hover {
+  color: var(--coach-primary);
+
+  border-color: rgba(10, 108, 241, 0.24);
+
+  background: var(--coach-primary-light);
+
+  box-shadow: var(--coach-shadow-sm);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.coach-page-heading {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coach-page-heading > span {
+  margin-bottom: 3px;
+
+  color: var(--coach-primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.05px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.coach-page-heading h1 {
+  overflow: hidden;
+
+  color: var(--coach-heading);
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TOPBAR ACTIONS
+========================================================= */
+
+.coach-topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+.coach-global-search {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: clamp(230px, 26vw, 340px);
+  height: 44px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 13px;
+
+  background: var(--coach-surface-soft);
+
+  transition:
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.coach-global-search:focus-within {
+  border-color: rgba(10, 108, 241, 0.48);
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    0 0 0 4px rgba(10, 108, 241, 0.09);
+}
+
+.coach-global-search > i {
+  position: absolute;
+  left: 14px;
+
+  color: var(--coach-soft-text);
+  font-size: 14px;
+}
+
+.coach-global-search input {
+  width: 100%;
+  height: 100%;
+  padding: 0 65px 0 40px;
+
+  color: var(--coach-heading);
+
+  border: 0;
+  border-radius: inherit;
+
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.coach-global-search input::placeholder {
+  color: var(--coach-soft-text);
+}
+
+.coach-global-search > span {
+  position: absolute;
+  right: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 45px;
+  height: 27px;
+  padding: 0 7px;
+
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 8px;
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-xs);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   TOPBAR ICON BUTTONS
+========================================================= */
+
+.coach-topbar-icon-button {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--coach-muted);
+  font-size: 17px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 13px;
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-xs);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.coach-topbar-icon-button:hover {
+  color: var(--coach-primary);
+
+  border-color: rgba(10, 108, 241, 0.22);
+
+  background: var(--coach-primary-light);
+
+  box-shadow: var(--coach-shadow-sm);
+
+  transform: translateY(-1px);
+}
+
+.coach-notification-dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+
+  width: 7px;
+  height: 7px;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background: var(--coach-danger);
+}
+
+.coach-notification-count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  display: grid;
+  place-items: center;
+
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+
+  color: #ffffff;
+
+  border: 2px solid #ffffff;
+  border-radius: var(--coach-radius-pill);
+
+  background: var(--coach-danger);
+
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TOPBAR PROFILE
+========================================================= */
+
+.coach-topbar-profile {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 14px;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 178px;
+  height: 48px;
+  padding: 4px 11px 4px 5px;
+
+  text-align: left;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 14px;
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-xs);
+
+  transition:
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.coach-topbar-profile:hover {
+  border-color: rgba(10, 108, 241, 0.22);
+
+  background: var(--coach-surface-soft);
+
+  box-shadow: var(--coach-shadow-sm);
+
+  transform: translateY(-1px);
+}
+
+.coach-topbar-profile img {
+  width: 38px;
+  height: 38px;
+
+  object-fit: cover;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background: var(--coach-surface-soft);
+}
+
+.coach-topbar-profile > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.coach-topbar-profile strong {
+  overflow: hidden;
+
+  color: var(--coach-heading);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-topbar-profile small {
+  overflow: hidden;
+
+  margin-top: 2px;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coach-topbar-profile > i {
+  color: var(--coach-soft-text);
+  font-size: 10px;
+
+  transition: transform var(--coach-transition);
+}
+
+.coach-topbar-profile[aria-expanded="true"] > i {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.coach-performance-main {
+  width: 100%;
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 28px 30px 60px;
+}
+
+
+/* =========================================================
+   PERFORMANCE HERO
+========================================================= */
+
+.performance-hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  min-height: 270px;
+  padding: 38px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--coach-radius-xl);
+
+  background:
+    radial-gradient(
+      circle at 82% 15%,
+      rgba(67, 156, 255, 0.46),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 68% 120%,
+      rgba(30, 210, 166, 0.25),
+      transparent 32%
+    ),
+    linear-gradient(
+      120deg,
+      #03255f 0%,
+      #06479f 50%,
+      #0a6cf1 100%
+    );
+
+  box-shadow:
+    0 24px 55px rgba(3, 53, 122, 0.18);
+}
+
+.performance-hero::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+  top: -95px;
+  right: -60px;
+
+  width: 290px;
+  height: 290px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+.performance-hero::after {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+  right: 120px;
+  bottom: -150px;
+
+  width: 290px;
+  height: 290px;
+
+  border: 55px solid rgba(255, 255, 255, 0.045);
+  border-radius: 50%;
+}
+
+.performance-hero-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 780px;
+}
+
+.performance-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+  padding: 0 13px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--coach-radius-pill);
+
+  background: rgba(255, 255, 255, 0.1);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.performance-hero h2 {
+  max-width: 720px;
+  margin-top: 18px;
+
+  color: #ffffff;
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.7px;
+  line-height: 1.1;
+}
+
+.performance-hero-content > p {
+  max-width: 700px;
+  margin-top: 16px;
+
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.performance-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+
+  margin-top: 26px;
+}
+
+.performance-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.performance-hero-meta i {
+  color: #7fc0ff;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.performance-hero-actions {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+
+  flex: 0 0 auto;
+}
+
+.performance-primary-button,
+.performance-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 46px;
+  padding: 0 17px;
+
+  border-radius: 13px;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.performance-primary-button {
+  color: var(--coach-primary-deep);
+
+  border: 1px solid #ffffff;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 24px rgba(0, 25, 67, 0.18);
+}
+
+.performance-primary-button:hover {
+  color: var(--coach-primary);
+
+  background: #f5f9ff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 30px rgba(0, 25, 67, 0.24);
+}
+
+.performance-secondary-button {
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.performance-secondary-button:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FILTER BAR
+========================================================= */
+
+.performance-filter-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-top: 22px;
+  padding: 18px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: var(--coach-radius-lg);
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-sm);
+}
+
+.performance-filter-group {
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 1.35fr)
+    minmax(155px, 1fr)
+    minmax(180px, 1.15fr);
+  gap: 12px;
+
+  width: min(100%, 820px);
+}
+
+.performance-filter-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.performance-filter-group label > span {
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
+
+.performance-filter-group select,
+.performance-card-header select {
+  width: 100%;
+  height: 43px;
+  padding: 0 38px 0 12px;
+
+  color: var(--coach-heading);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background:
+    var(--coach-surface)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23667085' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  transition:
+    border-color var(--coach-transition),
+    box-shadow var(--coach-transition),
+    background-color var(--coach-transition);
+}
+
+.performance-filter-group select:hover,
+.performance-card-header select:hover {
+  border-color: #c9d2df;
+}
+
+.performance-filter-group select:focus,
+.performance-card-header select:focus {
+  border-color: rgba(10, 108, 241, 0.5);
+
+  box-shadow:
+    0 0 0 4px rgba(10, 108, 241, 0.08);
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.performance-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex: 0 0 auto;
+
+  min-width: 132px;
+  min-height: 43px;
+  padding: 0 15px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.18);
+  border-radius: 11px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 10px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.performance-refresh-button:hover {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+
+  box-shadow:
+    0 10px 20px rgba(10, 108, 241, 0.2);
+
+  transform: translateY(-1px);
+}
+
+.performance-refresh-button:hover i {
+  transform: rotate(45deg);
+}
+
+.performance-refresh-button i {
+  transition: transform var(--coach-transition-slow);
+}
+
+.performance-refresh-button.loading i {
+  animation: performance-spin 800ms linear infinite;
+}
+
+@keyframes performance-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE TOPBAR AND HERO
+========================================================= */
+
+@media (max-width: 1180px) {
+  .coach-topbar {
+    padding-inline: 22px;
+  }
+
+  .coach-performance-main {
+    padding-inline: 22px;
+  }
+
+  .coach-global-search {
+    width: 230px;
+  }
+
+  .performance-hero {
+    padding: 32px;
+  }
+
+  .performance-filter-group {
+    grid-template-columns:
+      minmax(175px, 1.3fr)
+      minmax(145px, 1fr)
+      minmax(165px, 1.1fr);
+  }
+}
+
+@media (max-width: 1020px) {
+  .coach-global-search {
+    width: 205px;
+  }
+
+  .coach-global-search > span {
+    display: none;
+  }
+
+  .coach-global-search input {
+    padding-right: 14px;
+  }
+
+  .coach-topbar-profile {
+    min-width: 48px;
+    grid-template-columns: 38px;
+    padding-right: 5px;
+  }
+
+  .coach-topbar-profile > span,
+  .coach-topbar-profile > i {
+    display: none;
+  }
+
+  .performance-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .performance-hero-actions {
+    justify-content: flex-start;
+  }
+
+  .performance-filter-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .performance-refresh-button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  .coach-topbar {
+    min-height: 78px;
+  }
+
+  .coach-menu-button {
+    display: grid;
+  }
+
+  .coach-performance-main {
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .coach-topbar {
+    padding-inline: 16px;
+  }
+
+  .coach-performance-main {
+    padding: 18px 16px 45px;
+  }
+
+  .coach-global-search {
+    display: none;
+  }
+
+  .performance-hero {
+    min-height: auto;
+    padding: 27px 23px;
+
+    border-radius: 23px;
+  }
+
+  .performance-hero h2 {
+    font-size: clamp(27px, 8vw, 37px);
+  }
+
+  .performance-hero-meta {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .performance-filter-group {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-refresh-button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 560px) {
+  .coach-topbar-actions {
+    gap: 7px;
+  }
+
+  .coach-topbar-icon-button {
+    flex-basis: 40px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 11px;
+  }
+
+  .coach-topbar-profile {
+    min-width: 40px;
+    height: 40px;
+    grid-template-columns: 32px;
+    padding: 3px;
+  }
+
+  .coach-topbar-profile img {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+  }
+
+  .coach-menu-button {
+    flex-basis: 40px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 11px;
+  }
+
+  .coach-page-heading > span {
+    font-size: 8px;
+  }
+
+  .coach-page-heading h1 {
+    max-width: 150px;
+    font-size: 18px;
+  }
+
+  .performance-hero {
+    padding: 24px 19px;
+  }
+
+  .performance-hero-actions {
+    width: 100%;
+  }
+
+  .performance-primary-button,
+  .performance-secondary-button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .performance-filter-bar {
+    padding: 15px;
+  }
+}
+
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   PART 1C
+
+   - KPI cards
+   - Shared card headers
+   - Primary analytics grid
+   - Performance line chart
+   - Chart legend
+   - Season summary
+========================================================= */
+
+
+/* =========================================================
+   KPI GRID
+========================================================= */
+
+.performance-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+.performance-kpi-card {
+  position: relative;
+
+  min-width: 0;
+  padding: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--coach-border);
+  border-radius: var(--coach-radius-lg);
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-sm);
+
+  transition:
+    border-color var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-kpi-card::after {
+  content: "";
+
+  position: absolute;
+  top: -45px;
+  right: -45px;
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  background: rgba(10, 108, 241, 0.035);
+
+  pointer-events: none;
+}
+
+.performance-kpi-card:hover {
+  border-color: rgba(10, 108, 241, 0.18);
+
+  box-shadow: var(--coach-shadow-md);
+
+  transform: translateY(-3px);
+}
+
+.performance-kpi-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.performance-kpi-icon {
+  display: grid;
+  place-items: center;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 14px;
+
+  font-size: 17px;
+}
+
+.performance-kpi-icon.blue {
+  color: var(--coach-primary);
+  background: var(--coach-primary-light);
+}
+
+.performance-kpi-icon.green {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-kpi-icon.orange {
+  color: var(--coach-orange);
+  background: var(--coach-orange-light);
+}
+
+.performance-kpi-icon.purple {
+  color: var(--coach-purple);
+  background: var(--coach-purple-light);
+}
+
+.performance-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  min-height: 27px;
+  padding: 0 9px;
+
+  border-radius: var(--coach-radius-pill);
+
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.performance-trend.positive {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-trend.negative {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+.performance-trend i {
+  font-size: 8px;
+}
+
+.performance-kpi-label {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  color: var(--coach-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+}
+
+.performance-kpi-card > strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  margin-top: 9px;
+
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+  line-height: 1.1;
+}
+
+.performance-kpi-card > p {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 9px;
+
+  color: var(--coach-soft-text);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SHARED CARD STYLES
+========================================================= */
+
+.performance-chart-card,
+.performance-season-card,
+.performance-ranking-card,
+.performance-availability-card,
+.performance-match-analysis-section,
+.performance-development-section,
+.performance-insights-section {
+  border: 1px solid var(--coach-border);
+  border-radius: var(--coach-radius-lg);
+
+  background: var(--coach-surface);
+
+  box-shadow: var(--coach-shadow-sm);
+}
+
+.performance-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.performance-card-header > div:first-child {
+  min-width: 0;
+}
+
+.performance-card-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--coach-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.95px;
+  text-transform: uppercase;
+}
+
+.performance-card-header h3 {
+  color: var(--coach-heading);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.45px;
+  line-height: 1.25;
+}
+
+.performance-card-header p {
+  margin-top: 5px;
+
+  color: var(--coach-muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.performance-card-menu-button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 37px;
+
+  width: 37px;
+  height: 37px;
+
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background: var(--coach-surface-soft);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-card-menu-button:hover {
+  color: var(--coach-primary);
+
+  border-color: rgba(10, 108, 241, 0.22);
+
+  background: var(--coach-primary-light);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRIMARY ANALYTICS GRID
+========================================================= */
+
+.performance-primary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(290px, 0.7fr);
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+.performance-chart-card,
+.performance-season-card {
+  min-width: 0;
+  padding: 22px;
+}
+
+
+/* =========================================================
+   CHART CONTROLS
+========================================================= */
+
+.performance-chart-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-chart-toggle {
+  min-height: 30px;
+  padding: 0 11px;
+
+  color: var(--coach-muted);
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.performance-chart-toggle:hover {
+  color: var(--coach-heading);
+}
+
+.performance-chart-toggle.active {
+  color: var(--coach-primary);
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    0 2px 7px rgba(16, 24, 40, 0.08);
+}
+
+
+/* =========================================================
+   PERFORMANCE LINE CHART
+========================================================= */
+
+.performance-line-chart {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 11px;
+
+  height: 315px;
+  margin-top: 28px;
+}
+
+.performance-chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 25px;
+
+  color: var(--coach-soft-text);
+  font-size: 8px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.performance-chart-area {
+  position: relative;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.performance-chart-grid-lines {
+  position: absolute;
+  inset: 0 0 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.performance-chart-grid-lines span {
+  width: 100%;
+  height: 1px;
+
+  background: var(--coach-border-light);
+}
+
+.performance-chart-svg {
+  position: absolute;
+  inset: 0 0 25px;
+
+  width: 100%;
+  height: calc(100% - 25px);
+
+  overflow: visible;
+}
+
+.performance-chart-area-path {
+  opacity: 1;
+}
+
+.performance-chart-line {
+  fill: none;
+  stroke: var(--coach-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+
+  filter:
+    drop-shadow(0 4px 5px rgba(10, 108, 241, 0.16));
+}
+
+.performance-chart-points circle {
+  fill: var(--coach-surface);
+  stroke: var(--coach-primary);
+  stroke-width: 3;
+
+  vector-effect: non-scaling-stroke;
+
+  transition:
+    r var(--coach-transition),
+    fill var(--coach-transition);
+}
+
+.performance-chart-points circle:hover {
+  r: 7;
+  fill: var(--coach-primary-light);
+}
+
+.performance-chart-x-axis {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  height: 20px;
+
+  color: var(--coach-soft-text);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CHART LEGEND
+========================================================= */
+
+.performance-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 22px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--coach-border-light);
+}
+
+.performance-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.performance-chart-legend i {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+}
+
+.performance-chart-legend i.team-score {
+  background: var(--coach-primary);
+}
+
+.performance-chart-legend i.match-score {
+  background: var(--coach-success);
+}
+
+.performance-chart-legend i.training-score {
+  background: var(--coach-orange);
+}
+
+
+/* =========================================================
+   SEASON SUMMARY
+========================================================= */
+
+.performance-season-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.performance-season-record {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+
+  margin-top: 24px;
+}
+
+.performance-season-record > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  padding: 12px 6px;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 12px;
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-season-record strong {
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.performance-season-record strong.wins {
+  color: var(--coach-success);
+}
+
+.performance-season-record strong.draws {
+  color: var(--coach-warning);
+}
+
+.performance-season-record strong.losses {
+  color: var(--coach-danger);
+}
+
+.performance-season-record span {
+  margin-top: 6px;
+
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   WIN RATE CIRCLE
+========================================================= */
+
+.performance-win-rate {
+  display: flex;
+  justify-content: center;
+
+  margin: 28px 0;
+}
+
+.performance-win-rate-circle {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  width: 152px;
+  height: 152px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      var(--coach-primary) 0deg 225deg,
+      var(--coach-primary-light) 225deg 360deg
+    );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(10, 108, 241, 0.05);
+}
+
+.performance-win-rate-circle::before {
+  content: "";
+
+  position: absolute;
+  inset: 13px;
+
+  border-radius: 50%;
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    inset 0 0 0 1px var(--coach-border-light);
+}
+
+.performance-win-rate-circle span {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.performance-win-rate-circle strong {
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1;
+}
+
+.performance-win-rate-circle small {
+  margin-top: 7px;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SEASON STATISTICS
+========================================================= */
+
+.performance-season-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: auto;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 15px;
+
+  overflow: hidden;
+}
+
+.performance-season-stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  min-height: 52px;
+  padding: 0 13px;
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-season-stats > div:nth-child(odd) {
+  border-right: 1px solid var(--coach-border-light);
+}
+
+.performance-season-stats > div:nth-child(-n + 2) {
+  border-bottom: 1px solid var(--coach-border-light);
+}
+
+.performance-season-stats span {
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.performance-season-stats strong {
+  color: var(--coach-heading);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.performance-season-stats strong.positive {
+  color: var(--coach-success);
+}
+
+
+/* =========================================================
+   RESPONSIVE KPI AND ANALYTICS
+========================================================= */
+
+@media (max-width: 1280px) {
+  .performance-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .performance-primary-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(285px, 0.75fr);
+  }
+}
+
+@media (max-width: 1080px) {
+  .performance-primary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-season-card {
+    min-height: auto;
+  }
+
+  .performance-season-record {
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+  }
+
+  .performance-season-stats {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .performance-kpi-grid {
+    gap: 13px;
+  }
+
+  .performance-kpi-card {
+    padding: 18px;
+  }
+
+  .performance-chart-card,
+  .performance-season-card {
+    padding: 18px;
+  }
+
+  .performance-line-chart {
+    height: 280px;
+  }
+}
+
+@media (max-width: 620px) {
+  .performance-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .performance-chart-controls {
+    align-self: flex-start;
+  }
+
+  .performance-card-menu-button {
+    position: absolute;
+    align-self: flex-end;
+  }
+
+  .performance-line-chart {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 8px;
+
+    height: 250px;
+  }
+
+  .performance-chart-x-axis span:nth-child(even) {
+    display: none;
+  }
+
+  .performance-chart-legend {
+    gap: 10px 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  .performance-season-record {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .performance-win-rate-circle {
+    width: 138px;
+    height: 138px;
+  }
+
+  .performance-season-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-season-stats > div:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .performance-season-stats > div:nth-child(-n + 3) {
+    border-bottom: 1px solid var(--coach-border-light);
+  }
+
+  .performance-season-stats > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   PART 1D
+
+   - Development section
+   - Development cards
+   - Secondary analytics grid
+   - Player rankings
+   - Availability section
+   - Injury list
+========================================================= */
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.performance-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.performance-section-heading > div {
+  min-width: 0;
+}
+
+.performance-section-heading h2 {
+  color: var(--coach-heading);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.65px;
+  line-height: 1.2;
+}
+
+.performance-section-heading p {
+  margin-top: 6px;
+
+  color: var(--coach-muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.performance-section-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+
+  min-height: 39px;
+  padding: 0 13px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.17);
+  border-radius: 11px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 9px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition),
+    box-shadow var(--coach-transition);
+}
+
+.performance-section-heading > a:hover {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+
+  box-shadow:
+    0 9px 20px rgba(10, 108, 241, 0.18);
+
+  transform: translateY(-1px);
+}
+
+.performance-section-heading > a i {
+  font-size: 9px;
+
+  transition: transform var(--coach-transition);
+}
+
+.performance-section-heading > a:hover i {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   DEVELOPMENT SECTION
+========================================================= */
+
+.performance-development-section {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.performance-development-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   DEVELOPMENT CARDS
+========================================================= */
+
+.performance-development-card {
+  position: relative;
+
+  min-width: 0;
+  padding: 19px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfcfe 100%
+    );
+
+  transition:
+    border-color var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-development-card::after {
+  content: "";
+
+  position: absolute;
+  top: -40px;
+  right: -40px;
+
+  width: 95px;
+  height: 95px;
+
+  border-radius: 50%;
+
+  background: rgba(10, 108, 241, 0.035);
+
+  pointer-events: none;
+}
+
+.performance-development-card:hover {
+  border-color: rgba(10, 108, 241, 0.18);
+
+  box-shadow:
+    0 12px 25px rgba(16, 24, 40, 0.07);
+
+  transform: translateY(-3px);
+}
+
+.performance-development-icon {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--coach-primary);
+  font-size: 16px;
+
+  border-radius: 13px;
+
+  background: var(--coach-primary-light);
+}
+
+.performance-development-card:nth-child(2)
+.performance-development-icon {
+  color: var(--coach-purple);
+  background: var(--coach-purple-light);
+}
+
+.performance-development-card:nth-child(3)
+.performance-development-icon {
+  color: var(--coach-orange);
+  background: var(--coach-orange-light);
+}
+
+.performance-development-card:nth-child(4)
+.performance-development-icon {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-development-title {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.performance-development-title > div {
+  min-width: 0;
+}
+
+.performance-development-title span {
+  display: block;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.performance-development-title strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  line-height: 1;
+}
+
+.performance-development-title small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 25px;
+  padding: 0 8px;
+
+  border-radius: var(--coach-radius-pill);
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.performance-development-title small.positive {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-development-title small.negative {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+
+/* =========================================================
+   DEVELOPMENT PROGRESS
+========================================================= */
+
+.performance-progress-track {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 7px;
+  margin-top: 16px;
+
+  overflow: hidden;
+
+  border-radius: var(--coach-radius-pill);
+
+  background: #edf1f6;
+}
+
+.performance-progress-track span {
+  display: block;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--coach-primary),
+      #42a5ff
+    );
+
+  box-shadow:
+    0 2px 6px rgba(10, 108, 241, 0.2);
+}
+
+.performance-development-card:nth-child(2)
+.performance-progress-track span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--coach-purple),
+      #a184ff
+    );
+}
+
+.performance-development-card:nth-child(3)
+.performance-progress-track span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--coach-orange),
+      #fca15f
+    );
+}
+
+.performance-development-card:nth-child(4)
+.performance-progress-track span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--coach-success),
+      #45cc97
+    );
+}
+
+
+/* =========================================================
+   DEVELOPMENT METRIC LIST
+========================================================= */
+
+.performance-development-card ul {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  margin-top: 17px;
+
+  border-top: 1px solid var(--coach-border-light);
+}
+
+.performance-development-card li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  min-height: 38px;
+
+  border-bottom: 1px solid var(--coach-border-light);
+}
+
+.performance-development-card li:last-child {
+  border-bottom: 0;
+}
+
+.performance-development-card li span {
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.performance-development-card li strong {
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SECONDARY ANALYTICS GRID
+========================================================= */
+
+.performance-secondary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+.performance-ranking-card,
+.performance-availability-card {
+  min-width: 0;
+  padding: 22px;
+}
+
+.performance-ranking-card
+.performance-card-header select {
+  width: 145px;
+  flex: 0 0 145px;
+}
+
+
+/* =========================================================
+   PLAYER RANKING LIST
+========================================================= */
+
+.performance-ranking-list {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 15px;
+
+  overflow: hidden;
+}
+
+.performance-ranking-player {
+  display: grid;
+  grid-template-columns:
+    31px
+    43px
+    minmax(120px, 1fr)
+    minmax(125px, 0.8fr)
+    47px
+    34px;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 72px;
+  padding: 10px 13px;
+
+  background: var(--coach-surface);
+
+  border-bottom: 1px solid var(--coach-border-light);
+
+  transition:
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-ranking-player:last-child {
+  border-bottom: 0;
+}
+
+.performance-ranking-player:hover {
+  background: var(--coach-surface-soft);
+}
+
+.performance-ranking-position {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--coach-muted);
+
+  border-radius: 9px;
+
+  background: var(--coach-surface-soft);
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.performance-ranking-position.first {
+  color: #8a6200;
+  background: #fff4ca;
+}
+
+.performance-ranking-position.second {
+  color: #657080;
+  background: #edf1f5;
+}
+
+.performance-ranking-position.third {
+  color: #965219;
+  background: #fff0e2;
+}
+
+.performance-ranking-player > img {
+  width: 43px;
+  height: 43px;
+
+  object-fit: cover;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 12px;
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-ranking-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.performance-ranking-info strong {
+  overflow: hidden;
+
+  color: var(--coach-heading);
+  font-size: 10px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.performance-ranking-info span {
+  overflow: hidden;
+
+  margin-top: 4px;
+
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.performance-ranking-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.performance-ranking-metrics span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+  padding: 0 7px;
+
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 8px;
+
+  background: var(--coach-surface-soft);
+
+  font-size: 7px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.performance-player-rating {
+  color: var(--coach-primary);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.performance-ranking-player > button {
+  display: grid;
+  place-items: center;
+
+  width: 31px;
+  height: 31px;
+
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 9px;
+
+  background: var(--coach-surface);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-ranking-player > button:hover {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   VIEW ALL PLAYER BUTTON
+========================================================= */
+
+.performance-view-all-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  min-height: 42px;
+  margin-top: 14px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.16);
+  border-radius: 11px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 9px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-view-all-button:hover {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+
+  transform: translateY(-1px);
+}
+
+.performance-view-all-button i {
+  transition: transform var(--coach-transition);
+}
+
+.performance-view-all-button:hover i {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   AVAILABILITY OVERVIEW
+========================================================= */
+
+.performance-availability-chart {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  align-items: center;
+  gap: 22px;
+
+  margin-top: 24px;
+}
+
+.performance-availability-ring {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  width: 142px;
+  height: 142px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      var(--coach-success) 0deg 315deg,
+      var(--coach-warning) 315deg 345deg,
+      var(--coach-danger) 345deg 360deg
+    );
+}
+
+.performance-availability-ring::before {
+  content: "";
+
+  position: absolute;
+  inset: 13px;
+
+  border-radius: 50%;
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    inset 0 0 0 1px var(--coach-border-light);
+}
+
+.performance-availability-ring span {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.performance-availability-ring strong {
+  color: var(--coach-heading);
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.performance-availability-ring small {
+  margin-top: 6px;
+
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.performance-availability-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.performance-availability-legend > div {
+  display: grid;
+  grid-template-columns: 9px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+}
+
+.performance-availability-legend i {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+}
+
+.performance-availability-legend i.available {
+  background: var(--coach-success);
+}
+
+.performance-availability-legend i.doubtful {
+  background: var(--coach-warning);
+}
+
+.performance-availability-legend i.unavailable {
+  background: var(--coach-danger);
+}
+
+.performance-availability-legend span {
+  color: var(--coach-muted);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.performance-availability-legend strong {
+  color: var(--coach-heading);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   INJURY LIST
+========================================================= */
+
+.performance-injury-list {
+  margin-top: 25px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--coach-border-light);
+}
+
+.performance-injury-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.performance-injury-heading strong {
+  color: var(--coach-heading);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.performance-injury-heading span {
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.performance-injury-list article {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 61px;
+  padding: 9px 0;
+
+  border-bottom: 1px solid var(--coach-border-light);
+}
+
+.performance-injury-list article:last-child {
+  border-bottom: 0;
+}
+
+.performance-injury-list article img {
+  width: 40px;
+  height: 40px;
+
+  object-fit: cover;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-injury-list article > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.performance-injury-list article strong {
+  overflow: hidden;
+
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.performance-injury-list article span {
+  overflow: hidden;
+
+  margin-top: 3px;
+
+  color: var(--coach-muted);
+  font-size: 7px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.performance-injury-list article > small {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+  padding: 0 8px;
+
+  border-radius: var(--coach-radius-pill);
+
+  font-size: 7px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.performance-injury-list article > small.doubtful {
+  color: #a66300;
+  background: var(--coach-warning-light);
+}
+
+.performance-injury-list article > small.unavailable {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+
+/* =========================================================
+   RESPONSIVE DEVELOPMENT AND SECONDARY GRID
+========================================================= */
+
+@media (max-width: 1280px) {
+  .performance-development-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .performance-secondary-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.8fr);
+  }
+}
+
+@media (max-width: 1080px) {
+  .performance-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-availability-chart {
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .performance-development-section,
+  .performance-ranking-card,
+  .performance-availability-card {
+    padding: 18px;
+  }
+
+  .performance-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .performance-section-heading > a {
+    align-self: flex-start;
+  }
+
+  .performance-ranking-player {
+    grid-template-columns:
+      28px
+      41px
+      minmax(110px, 1fr)
+      44px
+      32px;
+  }
+
+  .performance-ranking-metrics {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .performance-development-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-ranking-card
+  .performance-card-header select {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .performance-availability-chart {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .performance-availability-legend {
+    width: min(100%, 240px);
+  }
+}
+
+@media (max-width: 470px) {
+  .performance-ranking-player {
+    grid-template-columns:
+      25px
+      39px
+      minmax(0, 1fr)
+      39px
+      29px;
+    gap: 8px;
+
+    padding-inline: 9px;
+  }
+
+  .performance-ranking-position {
+    width: 24px;
+    height: 24px;
+  }
+
+  .performance-ranking-player > img {
+    width: 39px;
+    height: 39px;
+  }
+
+  .performance-player-rating {
+    font-size: 13px;
+  }
+
+  .performance-ranking-player > button {
+    width: 29px;
+    height: 29px;
+  }
+
+  .performance-injury-list article {
+    grid-template-columns: 37px minmax(0, 1fr);
+  }
+
+  .performance-injury-list article img {
+    width: 37px;
+    height: 37px;
+  }
+
+  .performance-injury-list article > small {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   PART 1E
+
+   - Match analysis section
+   - Match table
+   - Result badges
+   - Performance score
+   - Coaching insights
+   - Insight cards
+========================================================= */
+
+
+/* =========================================================
+   MATCH ANALYSIS SECTION
+========================================================= */
+
+.performance-match-analysis-section {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.performance-match-table-wrapper {
+  width: 100%;
+  margin-top: 22px;
+
+  overflow-x: auto;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 16px;
+
+  background: var(--coach-surface);
+}
+
+
+/* =========================================================
+   MATCH TABLE
+========================================================= */
+
+.performance-match-table {
+  width: 100%;
+  min-width: 880px;
+
+  border-collapse: collapse;
+}
+
+.performance-match-table thead {
+  background: var(--coach-surface-soft);
+}
+
+.performance-match-table th {
+  padding: 14px 15px;
+
+  color: var(--coach-muted);
+
+  border-bottom: 1px solid var(--coach-border-light);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.performance-match-table td {
+  padding: 14px 15px;
+
+  color: var(--coach-heading);
+
+  border-bottom: 1px solid var(--coach-border-light);
+
+  font-size: 9px;
+  font-weight: 650;
+  vertical-align: middle;
+}
+
+.performance-match-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.performance-match-table tbody tr {
+  transition:
+    background var(--coach-transition);
+}
+
+.performance-match-table tbody tr:hover {
+  background: #fbfcfe;
+}
+
+
+/* =========================================================
+   MATCH OPPONENT
+========================================================= */
+
+.performance-match-opponent {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 190px;
+}
+
+.performance-opponent-logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 41px;
+
+  width: 41px;
+  height: 41px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.15);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eef6ff,
+      #e5f0ff
+    );
+
+  font-family:
+    "Manrope",
+    "Inter",
+    sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.performance-match-opponent > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.performance-match-opponent strong {
+  overflow: hidden;
+
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.performance-match-opponent span {
+  overflow: hidden;
+
+  margin-top: 4px;
+
+  color: var(--coach-muted);
+  font-size: 7px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESULT BADGES
+========================================================= */
+
+.performance-result-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 73px;
+  min-height: 27px;
+  padding: 0 9px;
+
+  border-radius: var(--coach-radius-pill);
+
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.performance-result-badge.win {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-result-badge.draw {
+  color: #a66300;
+  background: var(--coach-warning-light);
+}
+
+.performance-result-badge.loss {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+
+/* =========================================================
+   TABLE PERFORMANCE SCORE
+========================================================= */
+
+.performance-table-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.performance-table-score strong {
+  display: grid;
+  place-items: center;
+
+  min-width: 35px;
+  height: 29px;
+  padding: 0 7px;
+
+  color: var(--coach-primary);
+
+  border-radius: 9px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.performance-table-score span {
+  color: var(--coach-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MATCH REPORT BUTTON
+========================================================= */
+
+.performance-match-table td > button {
+  display: grid;
+  place-items: center;
+
+  width: 33px;
+  height: 33px;
+
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 10px;
+
+  background: var(--coach-surface);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-match-table td > button:hover {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+
+  box-shadow:
+    0 8px 18px rgba(10, 108, 241, 0.18);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   COACHING INSIGHTS SECTION
+========================================================= */
+
+.performance-insights-section {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.performance-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   INSIGHT CARD
+========================================================= */
+
+.performance-insight-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 15px;
+
+  min-width: 0;
+  padding: 20px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfcfe
+    );
+
+  transition:
+    border-color var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-insight-card::after {
+  content: "";
+
+  position: absolute;
+  top: -50px;
+  right: -50px;
+
+  width: 125px;
+  height: 125px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.performance-insight-card:hover {
+  box-shadow:
+    0 14px 28px rgba(16, 24, 40, 0.08);
+
+  transform: translateY(-3px);
+}
+
+.performance-insight-card.priority:hover {
+  border-color: rgba(229, 72, 77, 0.2);
+}
+
+.performance-insight-card.opportunity:hover {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.performance-insight-card.positive:hover {
+  border-color: rgba(22, 163, 106, 0.22);
+}
+
+.performance-insight-card.priority::after {
+  background: rgba(229, 72, 77, 0.045);
+}
+
+.performance-insight-card.opportunity::after {
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.performance-insight-card.positive::after {
+  background: rgba(22, 163, 106, 0.045);
+}
+
+
+/* =========================================================
+   INSIGHT ICON
+========================================================= */
+
+.performance-insight-icon {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  font-size: 17px;
+}
+
+.performance-insight-card.priority
+.performance-insight-icon {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+.performance-insight-card.opportunity
+.performance-insight-icon {
+  color: var(--coach-warning);
+  background: var(--coach-warning-light);
+}
+
+.performance-insight-card.positive
+.performance-insight-icon {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+
+/* =========================================================
+   INSIGHT CONTENT
+========================================================= */
+
+.performance-insight-card > div {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+}
+
+.performance-insight-label {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+  padding: 0 8px;
+
+  border-radius: var(--coach-radius-pill);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+.performance-insight-card.priority
+.performance-insight-label {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+.performance-insight-card.opportunity
+.performance-insight-label {
+  color: #a66300;
+  background: var(--coach-warning-light);
+}
+
+.performance-insight-card.positive
+.performance-insight-label {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-insight-card h3 {
+  margin-top: 12px;
+
+  color: var(--coach-heading);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.25px;
+  line-height: 1.35;
+}
+
+.performance-insight-card p {
+  margin-top: 9px;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.performance-insight-card button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 16px;
+  padding: 0;
+
+  color: var(--coach-primary);
+
+  background: transparent;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-insight-card.priority button {
+  color: var(--coach-danger);
+}
+
+.performance-insight-card.opportunity button {
+  color: #b06c00;
+}
+
+.performance-insight-card.positive button {
+  color: var(--coach-success);
+}
+
+.performance-insight-card button:hover {
+  transform: translateX(2px);
+}
+
+.performance-insight-card button i {
+  font-size: 8px;
+
+  transition: transform var(--coach-transition);
+}
+
+.performance-insight-card button:hover i {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   RESPONSIVE MATCH TABLE AND INSIGHTS
+========================================================= */
+
+@media (max-width: 1180px) {
+  .performance-insights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .performance-insight-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .performance-match-analysis-section,
+  .performance-insights-section {
+    padding: 18px;
+  }
+
+  .performance-match-table-wrapper {
+    margin-top: 18px;
+  }
+
+  .performance-match-table th,
+  .performance-match-table td {
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .performance-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-insight-card:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-insight-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 17px;
+  }
+
+  .performance-insight-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+  }
+
+  .performance-insight-card h3 {
+    font-size: 13px;
+  }
+}
+/* =========================================================
+   COACH PERFORMANCE PAGE
+   PART 1F
+
+   - Modal backdrop
+   - Assessment modal
+   - Form sections
+   - Fields
+   - Rating sliders
+   - Export modal
+   - Confirmation modal
+   - Toast notifications
+   - Final responsive rules
+========================================================= */
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+.performance-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  background: rgba(5, 20, 44, 0.72);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    opacity var(--coach-transition-slow),
+    visibility var(--coach-transition-slow);
+}
+
+.performance-modal-backdrop.active,
+.performance-modal-backdrop[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   MAIN MODAL
+========================================================= */
+
+.performance-modal {
+  width: min(100%, 820px);
+  max-height: calc(100vh - 48px);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    0 32px 90px rgba(0, 18, 48, 0.28);
+
+  opacity: 0;
+
+  transform:
+    translateY(24px)
+    scale(0.97);
+
+  transition:
+    opacity var(--coach-transition-slow),
+    transform var(--coach-transition-slow);
+}
+
+.performance-modal-backdrop.active .performance-modal,
+.performance-modal-backdrop[aria-hidden="false"] .performance-modal {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.performance-modal form {
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(100vh - 48px);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.performance-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  flex: 0 0 auto;
+
+  padding: 24px 26px 21px;
+
+  border-bottom: 1px solid var(--coach-border-light);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfcfe
+    );
+}
+
+.performance-modal-header > div {
+  min-width: 0;
+}
+
+.performance-modal-header > div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--coach-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.performance-modal-header h2 {
+  color: var(--coach-heading);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.65px;
+  line-height: 1.2;
+}
+
+.performance-modal-header p {
+  max-width: 570px;
+  margin-top: 7px;
+
+  color: var(--coach-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.performance-modal-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  color: var(--coach-muted);
+  font-size: 16px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 12px;
+
+  background: var(--coach-surface-soft);
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-modal-close:hover {
+  color: var(--coach-danger);
+
+  border-color: rgba(229, 72, 77, 0.2);
+
+  background: var(--coach-danger-light);
+
+  transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.performance-modal-body {
+  flex: 1;
+  min-height: 0;
+
+  padding: 24px 26px;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.performance-form-section {
+  padding: 21px;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fbfcfe
+    );
+}
+
+.performance-form-section + .performance-form-section {
+  margin-top: 18px;
+}
+
+.performance-form-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.performance-form-section-heading > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 35px;
+
+  width: 35px;
+  height: 35px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.16);
+  border-radius: 11px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.performance-form-section-heading > div {
+  min-width: 0;
+}
+
+.performance-form-section-heading h3 {
+  color: var(--coach-heading);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.25px;
+}
+
+.performance-form-section-heading p {
+  margin-top: 4px;
+
+  color: var(--coach-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.performance-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.performance-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.performance-form-field-full {
+  grid-column: 1 / -1;
+}
+
+.performance-form-field > span {
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.performance-form-field input,
+.performance-form-field select,
+.performance-form-field textarea {
+  width: 100%;
+
+  color: var(--coach-heading);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 11px;
+
+  background: var(--coach-surface);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  transition:
+    border-color var(--coach-transition),
+    box-shadow var(--coach-transition),
+    background var(--coach-transition);
+}
+
+.performance-form-field input,
+.performance-form-field select {
+  height: 43px;
+  padding: 0 12px;
+}
+
+.performance-form-field select {
+  padding-right: 38px;
+
+  background:
+    var(--coach-surface)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23667085' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.performance-form-field textarea {
+  min-height: 120px;
+  padding: 12px;
+
+  line-height: 1.6;
+}
+
+.performance-form-field input::placeholder,
+.performance-form-field textarea::placeholder {
+  color: var(--coach-soft-text);
+}
+
+.performance-form-field input:hover,
+.performance-form-field select:hover,
+.performance-form-field textarea:hover {
+  border-color: #c9d2df;
+}
+
+.performance-form-field input:focus,
+.performance-form-field select:focus,
+.performance-form-field textarea:focus {
+  border-color: rgba(10, 108, 241, 0.5);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(10, 108, 241, 0.08);
+}
+
+.performance-form-field.has-error input,
+.performance-form-field.has-error select,
+.performance-form-field.has-error textarea {
+  border-color: rgba(229, 72, 77, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(229, 72, 77, 0.08);
+}
+
+.performance-field-error {
+  min-height: 13px;
+
+  color: var(--coach-danger);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   RATING SLIDERS
+========================================================= */
+
+.performance-assessment-rating-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.performance-assessment-rating-grid label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 45px;
+  align-items: center;
+  gap: 10px;
+
+  padding: 15px;
+
+  border: 1px solid var(--coach-border-light);
+  border-radius: 14px;
+
+  background: var(--coach-surface);
+}
+
+.performance-assessment-rating-grid label > span {
+  grid-column: 1 / -1;
+
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.performance-assessment-rating-grid input[type="range"] {
+  width: 100%;
+  height: 6px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: var(--coach-radius-pill);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--coach-primary) 0%,
+      var(--coach-primary) 66%,
+      #e8edf3 66%,
+      #e8edf3 100%
+    );
+
+  cursor: pointer;
+}
+
+.performance-assessment-rating-grid
+input[type="range"]::-webkit-slider-thumb {
+  width: 17px;
+  height: 17px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+
+  background: var(--coach-primary);
+
+  box-shadow:
+    0 2px 8px rgba(10, 108, 241, 0.3);
+}
+
+.performance-assessment-rating-grid
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+
+  background: var(--coach-primary);
+
+  box-shadow:
+    0 2px 8px rgba(10, 108, 241, 0.3);
+}
+
+.performance-assessment-rating-grid output {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 34px;
+
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.15);
+  border-radius: 10px;
+
+  background: var(--coach-primary-light);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.performance-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  flex: 0 0 auto;
+
+  padding: 17px 26px;
+
+  border-top: 1px solid var(--coach-border-light);
+
+  background: var(--coach-surface-soft);
+}
+
+.performance-modal-cancel-button,
+.performance-modal-draft-button,
+.performance-modal-submit-button,
+.performance-logout-confirm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 0 15px;
+
+  border-radius: 11px;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-modal-cancel-button {
+  color: var(--coach-muted);
+
+  border: 1px solid var(--coach-border);
+
+  background: var(--coach-surface);
+}
+
+.performance-modal-cancel-button:hover {
+  color: var(--coach-heading);
+
+  border-color: #c8d0dc;
+
+  background: #f4f6f9;
+}
+
+.performance-modal-draft-button {
+  color: var(--coach-primary);
+
+  border: 1px solid rgba(10, 108, 241, 0.18);
+
+  background: var(--coach-primary-light);
+}
+
+.performance-modal-draft-button:hover {
+  border-color: rgba(10, 108, 241, 0.32);
+
+  background: #deecff;
+
+  transform: translateY(-1px);
+}
+
+.performance-modal-submit-button {
+  color: #ffffff;
+
+  border: 1px solid var(--coach-primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--coach-primary),
+      #0756c5
+    );
+
+  box-shadow:
+    0 9px 20px rgba(10, 108, 241, 0.2);
+}
+
+.performance-modal-submit-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #1679fa,
+      var(--coach-primary-dark)
+    );
+
+  box-shadow:
+    0 12px 24px rgba(10, 108, 241, 0.27);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EXPORT MODAL
+========================================================= */
+
+.performance-export-modal {
+  width: min(100%, 680px);
+}
+
+.performance-export-options {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.performance-export-option {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 24px 43px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+
+  min-height: 82px;
+  padding: 14px 15px;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 15px;
+
+  background: var(--coach-surface);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--coach-transition),
+    background var(--coach-transition),
+    box-shadow var(--coach-transition),
+    transform var(--coach-transition);
+}
+
+.performance-export-option:hover {
+  border-color: rgba(10, 108, 241, 0.24);
+
+  background: #fbfdff;
+
+  transform: translateY(-1px);
+}
+
+.performance-export-option:has(input:checked) {
+  border-color: rgba(10, 108, 241, 0.4);
+
+  background: var(--coach-primary-light);
+
+  box-shadow:
+    0 0 0 3px rgba(10, 108, 241, 0.07);
+}
+
+.performance-export-option > input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.performance-export-check {
+  display: grid;
+  place-items: center;
+
+  width: 22px;
+  height: 22px;
+
+  color: transparent;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 50%;
+
+  background: var(--coach-surface);
+
+  font-size: 8px;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition);
+}
+
+.performance-export-option
+input:checked + .performance-export-check {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+}
+
+.performance-export-icon {
+  display: grid;
+  place-items: center;
+
+  width: 43px;
+  height: 43px;
+
+  color: var(--coach-primary);
+  font-size: 15px;
+
+  border-radius: 12px;
+
+  background: var(--coach-primary-light);
+}
+
+.performance-export-option > span:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.performance-export-option strong {
+  color: var(--coach-heading);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.performance-export-option small {
+  margin-top: 4px;
+
+  color: var(--coach-muted);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.performance-export-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   EXPORT CHECKBOX
+========================================================= */
+
+.performance-export-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 18px;
+
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.performance-export-checkbox input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.performance-export-checkbox > span {
+  display: grid;
+  place-items: center;
+
+  width: 20px;
+  height: 20px;
+
+  color: transparent;
+
+  border: 1px solid var(--coach-border);
+  border-radius: 6px;
+
+  background: var(--coach-surface);
+
+  font-size: 8px;
+
+  transition:
+    color var(--coach-transition),
+    border-color var(--coach-transition),
+    background var(--coach-transition);
+}
+
+.performance-export-checkbox
+input:checked + span {
+  color: #ffffff;
+
+  border-color: var(--coach-primary);
+
+  background: var(--coach-primary);
+}
+
+
+/* =========================================================
+   CONFIRMATION MODAL
+========================================================= */
+
+.performance-confirmation-modal {
+  width: min(100%, 430px);
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 23px;
+
+  background: var(--coach-surface);
+
+  box-shadow:
+    0 30px 80px rgba(0, 18, 48, 0.28);
+
+  opacity: 0;
+
+  transform:
+    translateY(22px)
+    scale(0.97);
+
+  transition:
+    opacity var(--coach-transition-slow),
+    transform var(--coach-transition-slow);
+}
+
+.performance-modal-backdrop.active
+.performance-confirmation-modal,
+.performance-modal-backdrop[aria-hidden="false"]
+.performance-confirmation-modal {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.performance-confirmation-icon {
+  display: grid;
+  place-items: center;
+
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 19px;
+
+  color: var(--coach-danger);
+  font-size: 23px;
+
+  border-radius: 19px;
+
+  background: var(--coach-danger-light);
+}
+
+.performance-confirmation-modal h2 {
+  color: var(--coach-heading);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.55px;
+}
+
+.performance-confirmation-modal p {
+  max-width: 340px;
+  margin: 10px auto 0;
+
+  color: var(--coach-muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.performance-confirmation-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.performance-logout-confirm-button {
+  color: #ffffff;
+
+  border: 1px solid var(--coach-danger);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--coach-danger),
+      var(--coach-danger-dark)
+    );
+
+  box-shadow:
+    0 9px 20px rgba(229, 72, 77, 0.2);
+}
+
+.performance-logout-confirm-button:hover {
+  box-shadow:
+    0 12px 24px rgba(229, 72, 77, 0.28);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TOAST CONTAINER
+========================================================= */
+
+.performance-toast-container {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 3000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+  width: min(360px, calc(100vw - 32px));
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.performance-toast {
+  display: grid;
+  grid-template-columns: 37px minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  min-height: 66px;
+  padding: 11px 12px;
+
+  color: var(--coach-heading);
+
+  border: 1px solid var(--coach-border);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 16px 38px rgba(16, 24, 40, 0.16);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  pointer-events: auto;
+
+  animation:
+    performance-toast-in
+    320ms cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.performance-toast.removing {
+  animation:
+    performance-toast-out
+    260ms ease
+    both;
+}
+
+.performance-toast-icon {
+  display: grid;
+  place-items: center;
+
+  width: 37px;
+  height: 37px;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+}
+
+.performance-toast.success
+.performance-toast-icon {
+  color: var(--coach-success);
+  background: var(--coach-success-light);
+}
+
+.performance-toast.error
+.performance-toast-icon {
+  color: var(--coach-danger);
+  background: var(--coach-danger-light);
+}
+
+.performance-toast.warning
+.performance-toast-icon {
+  color: #a66300;
+  background: var(--coach-warning-light);
+}
+
+.performance-toast.info
+.performance-toast-icon {
+  color: var(--coach-primary);
+  background: var(--coach-primary-light);
+}
+
+.performance-toast-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.performance-toast-content strong {
+  color: var(--coach-heading);
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.performance-toast-content span,
+.performance-toast-content p {
+  margin-top: 3px;
+
+  color: var(--coach-muted);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.performance-toast-close {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--coach-soft-text);
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  transition:
+    color var(--coach-transition),
+    background var(--coach-transition);
+}
+
+.performance-toast-close:hover {
+  color: var(--coach-heading);
+  background: var(--coach-surface-soft);
+}
+
+@keyframes performance-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(35px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes performance-toast-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+}
+
+
+/* =========================================================
+   DISABLED AND LOADING STATES
+========================================================= */
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.performance-modal-submit-button.loading,
+.performance-modal-draft-button.loading,
+.performance-primary-button.loading,
+.performance-secondary-button.loading {
+  pointer-events: none;
+}
+
+.performance-modal-submit-button.loading i,
+.performance-modal-draft-button.loading i,
+.performance-primary-button.loading i,
+.performance-secondary-button.loading i {
+  animation: performance-spin 800ms linear infinite;
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE MODAL RULES
+========================================================= */
+
+@media (max-width: 760px) {
+  .performance-modal-backdrop {
+    align-items: flex-end;
+
+    padding: 14px;
+  }
+
+  .performance-modal {
+    width: 100%;
+    max-height: calc(100vh - 28px);
+
+    border-radius: 22px 22px 16px 16px;
+  }
+
+  .performance-modal form {
+    max-height: calc(100vh - 28px);
+  }
+
+  .performance-modal-header {
+    padding: 21px 20px 18px;
+  }
+
+  .performance-modal-body {
+    padding: 19px 20px;
+  }
+
+  .performance-modal-footer {
+    padding: 15px 20px;
+  }
+
+  .performance-form-grid,
+  .performance-assessment-rating-grid,
+  .performance-export-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-form-field-full {
+    grid-column: auto;
+  }
+
+  .performance-confirmation-modal {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .performance-modal-backdrop {
+    padding: 0;
+  }
+
+  .performance-modal {
+    max-height: 100vh;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+  .performance-modal form {
+    max-height: 100vh;
+  }
+
+  .performance-modal-header h2 {
+    font-size: 19px;
+  }
+
+  .performance-form-section {
+    padding: 17px;
+  }
+
+  .performance-modal-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .performance-modal-cancel-button,
+  .performance-modal-draft-button,
+  .performance-modal-submit-button {
+    width: 100%;
+  }
+
+  .performance-export-option {
+    grid-template-columns: 22px 39px minmax(0, 1fr);
+
+    padding-inline: 12px;
+  }
+
+  .performance-export-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .performance-confirmation-modal {
+    width: calc(100% - 28px);
+  }
+
+  .performance-confirmation-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-toast-container {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+
+    width: auto;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   PRINT STYLES
+========================================================= */
+
+@media print {
+  body {
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .coach-sidebar,
+  .coach-topbar,
+  .performance-hero-actions,
+  .performance-filter-bar,
+  .performance-card-menu-button,
+  .performance-chart-controls,
+  .performance-view-all-button,
+  .performance-section-heading > a,
+  .performance-match-table button,
+  .performance-insight-card button,
+  .performance-modal-backdrop,
+  .performance-toast-container {
+    display: none !important;
+  }
+
+  .coach-main-area {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .coach-performance-main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .performance-hero {
+    min-height: auto;
+
+    color: #000000;
+
+    border: 1px solid #dddddd;
+
+    background: #ffffff;
+
+    box-shadow: none;
+  }
+
+  .performance-hero h2,
+  .performance-hero-content > p,
+  .performance-hero-meta span {
+    color: #000000;
+  }
+
+  .performance-kpi-card,
+  .performance-chart-card,
+  .performance-season-card,
+  .performance-development-section,
+  .performance-ranking-card,
+  .performance-availability-card,
+  .performance-match-analysis-section,
+  .performance-insights-section {
+    break-inside: avoid;
+
+    box-shadow: none;
+  }
+}
+

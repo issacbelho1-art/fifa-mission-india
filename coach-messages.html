@@ -1,0 +1,4002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="FIFA Mission India Coach Portal messaging centre for team communication, player conversations and coaching announcements."
+  />
+
+  <title>
+    Messages | FIFA Mission India Coach Portal
+  </title>
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- =====================================================
+       PAGE STYLESHEET
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="coach-messages.css"
+  />
+
+</head>
+
+<body class="coach-messages-page performance-page-loading">
+
+  <!-- =====================================================
+       SKIP LINK
+  ====================================================== -->
+
+  <a
+    href="#coachMessagesMain"
+    class="coach-skip-link"
+  >
+    Skip to messages
+  </a>
+
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="coach-sidebar-overlay"
+    id="coachSidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH PORTAL LAYOUT
+  ====================================================== -->
+
+  <div class="coach-portal-layout">
+
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside
+      class="coach-sidebar"
+      id="coachSidebar"
+      aria-label="Coach portal navigation"
+    >
+
+      <!-- ===============================================
+           SIDEBAR HEADER
+      ================================================ -->
+
+      <div class="coach-sidebar-header">
+
+        <a
+          href="coach-dashboard.html"
+          class="coach-brand"
+          aria-label="FIFA Mission India Coach Portal home"
+        >
+
+          <span
+            class="coach-brand-icon"
+            aria-hidden="true"
+          >
+            <i class="fa-solid fa-futbol"></i>
+          </span>
+
+          <span class="coach-brand-copy">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Coach Portal
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <button
+          class="coach-sidebar-close"
+          id="coachSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+
+          <i
+            class="fa-solid fa-xmark"
+            aria-hidden="true"
+          ></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- ===============================================
+           COACH SUMMARY
+      ================================================ -->
+
+      <section
+        class="coach-sidebar-profile"
+        aria-label="Coach account summary"
+      >
+
+        <div class="coach-sidebar-avatar">
+
+          <img
+            src="images/coach-profile.jpg"
+            alt="Coach Arjun Sharma"
+            data-fallback="images/default-coach.png"
+          />
+
+          <span
+            class="coach-online-indicator"
+            title="Online"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="coach-sidebar-profile-copy">
+
+          <span>
+            Head Coach
+          </span>
+
+          <h2>
+            Arjun Sharma
+          </h2>
+
+          <p>
+            Elite Development Squad
+          </p>
+
+        </div>
+
+
+        <a
+          href="coach-profile.html"
+          class="coach-profile-view-button"
+          aria-label="View coach profile"
+        >
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            aria-hidden="true"
+          ></i>
+
+        </a>
+
+      </section>
+
+
+      <!-- ===============================================
+           PRIMARY NAVIGATION
+      ================================================ -->
+
+      <nav class="coach-sidebar-navigation">
+
+        <span class="coach-navigation-label">
+          Main Menu
+        </span>
+
+
+        <a
+          href="coach-dashboard.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-grid-2"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Dashboard
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-profile.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-user-tie"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            My Profile
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-players.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-users"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Players
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-training.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-person-running"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Training
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-matches.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-trophy"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Matches
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-performance.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-chart-line"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Performance
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-messages.html"
+          class="coach-navigation-link active"
+          aria-current="page"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-comments"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Messages
+          </strong>
+
+          <small
+            class="coach-navigation-count"
+            id="sidebarUnreadMessageCount"
+          >
+            4
+          </small>
+
+        </a>
+
+
+        <span class="coach-navigation-label coach-navigation-label-secondary">
+          Account
+        </span>
+
+
+        <a
+          href="coach-settings.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-gear"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Settings
+          </strong>
+
+        </a>
+
+
+        <a
+          href="coach-help.html"
+          class="coach-navigation-link"
+        >
+
+          <span>
+            <i
+              class="fa-solid fa-circle-question"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <strong>
+            Help & Support
+          </strong>
+
+        </a>
+
+      </nav>
+
+
+      <!-- ===============================================
+           SUPPORT CARD
+      ================================================ -->
+
+      <section class="coach-sidebar-support-card">
+
+        <span
+          class="coach-support-icon"
+          aria-hidden="true"
+        >
+          <i class="fa-solid fa-headset"></i>
+        </span>
+
+        <div>
+
+          <strong>
+            Need Assistance?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team.
+          </p>
+
+        </div>
+
+        <a href="coach-help.html">
+          Get Support
+        </a>
+
+      </section>
+
+
+      <!-- ===============================================
+           LOGOUT
+      ================================================ -->
+
+      <button
+        class="coach-sidebar-logout"
+        id="coachLogoutButton"
+        type="button"
+      >
+
+        <i
+          class="fa-solid fa-arrow-right-from-bracket"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          Log Out
+        </span>
+
+      </button>
+
+    </aside>
+
+
+    <!-- ===================================================
+         MAIN AREA
+    ==================================================== -->
+
+    <div class="coach-main-area">
+
+
+      <!-- =================================================
+           TOPBAR
+      ================================================== -->
+
+      <header class="coach-topbar">
+
+        <div class="coach-topbar-left">
+
+          <button
+            class="coach-mobile-menu-button"
+            id="coachMobileMenuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="coachSidebar"
+            aria-expanded="false"
+          >
+
+            <i
+              class="fa-solid fa-bars"
+              aria-hidden="true"
+            ></i>
+
+          </button>
+
+
+          <div class="coach-topbar-title">
+
+            <span>
+              Communication Centre
+            </span>
+
+            <h1>
+              Messages
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-topbar-actions">
+
+
+          <!-- =============================================
+               GLOBAL SEARCH
+          ============================================== -->
+
+          <div class="coach-global-search">
+
+            <i
+              class="fa-solid fa-magnifying-glass"
+              aria-hidden="true"
+            ></i>
+
+            <label
+              class="coach-sr-only"
+              for="coachGlobalSearch"
+            >
+              Search the coach portal
+            </label>
+
+            <input
+              id="coachGlobalSearch"
+              type="search"
+              placeholder="Search portal..."
+              autocomplete="off"
+            />
+
+            <kbd>/</kbd>
+
+            <div
+              class="coach-search-results"
+              id="coachSearchResults"
+              aria-hidden="true"
+            ></div>
+
+          </div>
+
+
+          <!-- =============================================
+               NOTIFICATIONS
+          ============================================== -->
+
+          <div class="coach-topbar-dropdown-wrapper">
+
+            <button
+              class="coach-topbar-icon-button coach-notification-button"
+              id="coachNotificationButton"
+              type="button"
+              aria-label="View notifications"
+              aria-expanded="false"
+              aria-controls="coachNotificationDropdown"
+            >
+
+              <i
+                class="fa-regular fa-bell"
+                aria-hidden="true"
+              ></i>
+
+              <span class="coach-notification-badge">
+                3
+              </span>
+
+            </button>
+
+
+            <div
+              class="coach-notification-dropdown"
+              id="coachNotificationDropdown"
+              aria-hidden="true"
+            >
+
+              <header>
+
+                <div>
+
+                  <span>
+                    Updates
+                  </span>
+
+                  <h2>
+                    Notifications
+                  </h2>
+
+                </div>
+
+                <button
+                  id="markAllNotificationsRead"
+                  type="button"
+                >
+                  Mark all read
+                </button>
+
+              </header>
+
+
+              <div class="coach-notification-list">
+
+                <button
+                  class="coach-notification-item unread"
+                  type="button"
+                  data-read="false"
+                >
+
+                  <span class="notification-icon match">
+
+                    <i
+                      class="fa-solid fa-trophy"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Match squad deadline
+                    </strong>
+
+                    <small>
+                      Submit the final squad before 6:00 PM.
+                    </small>
+
+                    <time datetime="2026-07-18T15:30">
+                      25 minutes ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+
+                <button
+                  class="coach-notification-item unread"
+                  type="button"
+                  data-read="false"
+                >
+
+                  <span class="notification-icon player">
+
+                    <i
+                      class="fa-solid fa-user-plus"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Player assessment submitted
+                    </strong>
+
+                    <small>
+                      The medical team added an update for Aman Verma.
+                    </small>
+
+                    <time datetime="2026-07-18T14:10">
+                      1 hour ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+
+                <button
+                  class="coach-notification-item unread"
+                  type="button"
+                  data-read="false"
+                >
+
+                  <span class="notification-icon training">
+
+                    <i
+                      class="fa-solid fa-person-running"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Training schedule changed
+                    </strong>
+
+                    <small>
+                      Tomorrow's recovery session now begins at 8:30 AM.
+                    </small>
+
+                    <time datetime="2026-07-18T11:45">
+                      4 hours ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+              </div>
+
+
+              <a
+                href="coach-dashboard.html"
+                class="coach-notification-footer"
+              >
+                View all updates
+
+                <i
+                  class="fa-solid fa-arrow-right"
+                  aria-hidden="true"
+                ></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               PROFILE DROPDOWN
+          ============================================== -->
+
+          <div class="coach-topbar-dropdown-wrapper">
+
+            <button
+              class="coach-topbar-profile-button"
+              id="coachProfileButton"
+              type="button"
+              aria-label="Open coach account menu"
+              aria-expanded="false"
+              aria-controls="coachProfileDropdown"
+            >
+
+              <img
+                src="images/coach-profile.jpg"
+                alt=""
+                data-fallback="images/default-coach.png"
+              />
+
+              <span>
+
+                <strong>
+                  Arjun Sharma
+                </strong>
+
+                <small>
+                  Head Coach
+                </small>
+
+              </span>
+
+              <i
+                class="fa-solid fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+
+            </button>
+
+
+            <div
+              class="coach-profile-dropdown"
+              id="coachProfileDropdown"
+              aria-hidden="true"
+            >
+
+              <div class="coach-profile-dropdown-summary">
+
+                <img
+                  src="images/coach-profile.jpg"
+                  alt="Coach Arjun Sharma"
+                  data-fallback="images/default-coach.png"
+                />
+
+                <div>
+
+                  <strong>
+                    Arjun Sharma
+                  </strong>
+
+                  <small>
+                    arjun.sharma@example.com
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <div class="coach-profile-dropdown-links">
+
+                <a
+                  href="coach-profile.html"
+                  data-profile-action="profile"
+                >
+
+                  <i
+                    class="fa-regular fa-user"
+                    aria-hidden="true"
+                  ></i>
+
+                  My Profile
+
+                </a>
+
+
+                <a
+                  href="coach-settings.html"
+                  data-profile-action="settings"
+                >
+
+                  <i
+                    class="fa-solid fa-sliders"
+                    aria-hidden="true"
+                  ></i>
+
+                  Account Settings
+
+                </a>
+
+
+                <button
+                  type="button"
+                  data-profile-action="logout"
+                >
+
+                  <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                  ></i>
+
+                  Log Out
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =================================================
+           MAIN CONTENT
+      ================================================== -->
+
+      <main
+        class="coach-messages-main"
+        id="coachMessagesMain"
+      >
+
+
+        <!-- ===============================================
+             PAGE HERO
+        ================================================ -->
+
+        <section class="coach-messages-hero">
+
+          <div class="coach-messages-hero-content">
+
+            <span class="coach-page-eyebrow">
+
+              <i
+                class="fa-solid fa-comments"
+                aria-hidden="true"
+              ></i>
+
+              Team Communication
+
+            </span>
+
+
+            <h2>
+              Keep every player and staff member connected.
+            </h2>
+
+
+            <p>
+              Manage individual conversations, team groups,
+              announcements and important coaching communication
+              from one secure workspace.
+            </p>
+
+
+            <div class="coach-messages-hero-actions">
+
+              <button
+                class="coach-primary-button"
+                id="newMessageButton"
+                type="button"
+              >
+
+                <i
+                  class="fa-solid fa-pen-to-square"
+                  aria-hidden="true"
+                ></i>
+
+                New Message
+
+              </button>
+
+
+              <button
+                class="coach-secondary-button"
+                id="newAnnouncementButton"
+                type="button"
+              >
+
+                <i
+                  class="fa-solid fa-bullhorn"
+                  aria-hidden="true"
+                ></i>
+
+                Create Announcement
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="coach-messages-hero-summary">
+
+            <article>
+
+              <span>
+
+                <i
+                  class="fa-regular fa-message"
+                  aria-hidden="true"
+                ></i>
+
+              </span>
+
+              <div>
+
+                <strong
+                  id="heroUnreadCount"
+                  data-animate-counter="4"
+                >
+                  4
+                </strong>
+
+                <small>
+                  Unread Messages
+                </small>
+
+              </div>
+
+            </article>
+
+
+            <article>
+
+              <span>
+
+                <i
+                  class="fa-solid fa-users"
+                  aria-hidden="true"
+                ></i>
+
+              </span>
+
+              <div>
+
+                <strong
+                  data-animate-counter="6"
+                >
+                  6
+                </strong>
+
+                <small>
+                  Active Groups
+                </small>
+
+              </div>
+
+            </article>
+
+
+            <article>
+
+              <span>
+
+                <i
+                  class="fa-solid fa-bullhorn"
+                  aria-hidden="true"
+                ></i>
+
+              </span>
+
+              <div>
+
+                <strong
+                  data-animate-counter="3"
+                >
+                  3
+                </strong>
+
+                <small>
+                  Announcements
+                </small>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             MESSAGING WORKSPACE
+        ================================================ -->
+
+        <section class="coach-messaging-workspace">
+
+
+          <!-- =============================================
+               CONVERSATION SIDEBAR
+          ============================================== -->
+
+          <aside
+            class="coach-conversations-panel"
+            id="coachConversationsPanel"
+            aria-label="Conversations"
+          >
+
+            <header class="coach-conversations-header">
+
+              <div>
+
+                <span>
+                  Inbox
+                </span>
+
+                <h2>
+                  Conversations
+                </h2>
+
+              </div>
+
+
+              <button
+                class="coach-icon-action-button"
+                id="conversationComposeButton"
+                type="button"
+                aria-label="Compose new message"
+              >
+
+                <i
+                  class="fa-solid fa-pen"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </header>
+
+
+            <!-- ===========================================
+                 CONVERSATION SEARCH
+            ============================================ -->
+
+            <div class="coach-conversation-search">
+
+              <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+              ></i>
+
+              <label
+                class="coach-sr-only"
+                for="conversationSearchInput"
+              >
+                Search conversations
+              </label>
+
+              <input
+                id="conversationSearchInput"
+                type="search"
+                placeholder="Search conversations..."
+                autocomplete="off"
+              />
+
+              <button
+                id="clearConversationSearch"
+                type="button"
+                aria-label="Clear conversation search"
+                hidden
+              >
+
+                <i
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </div>
+
+
+            <!-- ===========================================
+                 CONVERSATION FILTERS
+            ============================================ -->
+
+            <div
+              class="coach-conversation-filters"
+              role="tablist"
+              aria-label="Filter conversations"
+            >
+
+              <button
+                class="active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-conversation-filter="all"
+              >
+                All
+              </button>
+
+
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-conversation-filter="unread"
+              >
+                Unread
+
+                <span>
+                  4
+                </span>
+              </button>
+
+
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-conversation-filter="groups"
+              >
+                Groups
+              </button>
+
+
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-conversation-filter="archived"
+              >
+                Archived
+              </button>
+
+            </div>
+
+
+            <!-- ===========================================
+                 CONVERSATION LIST
+            ============================================ -->
+
+            <div
+              class="coach-conversation-list"
+              id="coachConversationList"
+              aria-live="polite"
+            >
+
+
+              <!-- =========================================
+                   CONVERSATION 1
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item active unread"
+                type="button"
+                data-conversation-id="aman-verma"
+                data-conversation-type="player"
+                data-conversation-status="unread"
+                data-conversation-name="Aman Verma"
+                aria-current="true"
+              >
+
+                <span class="coach-conversation-avatar">
+
+                  <img
+                    src="images/player-aman.jpg"
+                    alt=""
+                    data-fallback="images/default-player.png"
+                  />
+
+                  <small
+                    class="online"
+                    aria-label="Online"
+                  ></small>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Aman Verma
+                    </strong>
+
+                    <time datetime="2026-07-18T17:42">
+                      5:42 PM
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Coach, I have completed the recovery session.
+                    </span>
+
+                    <small>
+                      2
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 2
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item unread"
+                type="button"
+                data-conversation-id="elite-squad"
+                data-conversation-type="group"
+                data-conversation-status="unread"
+                data-conversation-name="Elite Squad"
+              >
+
+                <span class="coach-conversation-avatar group">
+
+                  <i
+                    class="fa-solid fa-users"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Elite Squad
+                    </strong>
+
+                    <time datetime="2026-07-18T16:28">
+                      4:28 PM
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Rahul: Are we wearing the blue training kit?
+                    </span>
+
+                    <small>
+                      1
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 3
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item unread"
+                type="button"
+                data-conversation-id="medical-team"
+                data-conversation-type="group"
+                data-conversation-status="unread"
+                data-conversation-name="Medical Team"
+              >
+
+                <span class="coach-conversation-avatar medical">
+
+                  <i
+                    class="fa-solid fa-kit-medical"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Medical Team
+                    </strong>
+
+                    <time datetime="2026-07-18T15:15">
+                      3:15 PM
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Dr. Mehta: Updated availability report attached.
+                    </span>
+
+                    <small>
+                      1
+                    </small>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 4
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item"
+                type="button"
+                data-conversation-id="assistant-coaches"
+                data-conversation-type="group"
+                data-conversation-status="read"
+                data-conversation-name="Assistant Coaches"
+              >
+
+                <span class="coach-conversation-avatar staff">
+
+                  <i
+                    class="fa-solid fa-clipboard-user"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Assistant Coaches
+                    </strong>
+
+                    <time datetime="2026-07-18T11:05">
+                      11:05 AM
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      You: Final tactical plan has been uploaded.
+                    </span>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 5
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item"
+                type="button"
+                data-conversation-id="rohit-singh"
+                data-conversation-type="player"
+                data-conversation-status="read"
+                data-conversation-name="Rohit Singh"
+              >
+
+                <span class="coach-conversation-avatar">
+
+                  <img
+                    src="images/player-rohit.jpg"
+                    alt=""
+                    data-fallback="images/default-player.png"
+                  />
+
+                  <small
+                    class="away"
+                    aria-label="Away"
+                  ></small>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Rohit Singh
+                    </strong>
+
+                    <time datetime="2026-07-17T20:30">
+                      Yesterday
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Thank you, Coach. I will work on my positioning.
+                    </span>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 6
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item"
+                type="button"
+                data-conversation-id="academy-management"
+                data-conversation-type="group"
+                data-conversation-status="read"
+                data-conversation-name="Academy Management"
+              >
+
+                <span class="coach-conversation-avatar management">
+
+                  <i
+                    class="fa-solid fa-building-shield"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Academy Management
+                    </strong>
+
+                    <time datetime="2026-07-16T13:10">
+                      Wednesday
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Monthly performance review confirmed.
+                    </span>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- =========================================
+                   CONVERSATION 7
+              ========================================== -->
+
+              <button
+                class="coach-conversation-item"
+                type="button"
+                data-conversation-id="kabir-khan"
+                data-conversation-type="player"
+                data-conversation-status="archived"
+                data-conversation-name="Kabir Khan"
+                hidden
+              >
+
+                <span class="coach-conversation-avatar">
+
+                  <img
+                    src="images/player-kabir.jpg"
+                    alt=""
+                    data-fallback="images/default-player.png"
+                  />
+
+                </span>
+
+
+                <span class="coach-conversation-content">
+
+                  <span class="coach-conversation-heading">
+
+                    <strong>
+                      Kabir Khan
+                    </strong>
+
+                    <time datetime="2026-07-12T12:20">
+                      12 Jul
+                    </time>
+
+                  </span>
+
+
+                  <span class="coach-conversation-preview">
+
+                    <span>
+                      Previous assessment conversation archived.
+                    </span>
+
+                  </span>
+
+                </span>
+
+              </button>
+
+            </div>
+
+
+            <!-- ===========================================
+                 EMPTY CONVERSATION STATE
+            ============================================ -->
+
+            <div
+              class="coach-conversation-empty"
+              id="coachConversationEmpty"
+              hidden
+            >
+
+              <i
+                class="fa-regular fa-message"
+                aria-hidden="true"
+              ></i>
+
+              <strong>
+                No conversations found
+              </strong>
+
+              <p>
+                Try another search or conversation filter.
+              </p>
+
+            </div>
+
+          </aside>
+
+
+          <!-- =============================================
+               ACTIVE CHAT PANEL
+          ============================================== -->
+
+          <section
+            class="coach-chat-panel"
+            id="coachChatPanel"
+            aria-label="Active conversation"
+          >
+
+
+            <!-- ===========================================
+                 CHAT HEADER
+            ============================================ -->
+
+            <header class="coach-chat-header">
+
+              <div class="coach-chat-contact">
+
+                <button
+                  class="coach-chat-back-button"
+                  id="coachChatBackButton"
+                  type="button"
+                  aria-label="Return to conversations"
+                >
+
+                  <i
+                    class="fa-solid fa-arrow-left"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <span class="coach-chat-contact-avatar">
+
+                  <img
+                    id="activeConversationAvatar"
+                    src="images/player-aman.jpg"
+                    alt=""
+                    data-fallback="images/default-player.png"
+                  />
+
+                  <small
+                    id="activeConversationStatusIndicator"
+                    class="online"
+                    aria-hidden="true"
+                  ></small>
+
+                </span>
+
+
+                <div>
+
+                  <h2 id="activeConversationName">
+                    Aman Verma
+                  </h2>
+
+                  <p id="activeConversationStatus">
+                    Online · Forward
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="coach-chat-header-actions">
+
+                <button
+                  type="button"
+                  aria-label="Start audio call"
+                  data-chat-action="audio-call"
+                >
+
+                  <i
+                    class="fa-solid fa-phone"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  aria-label="Start video call"
+                  data-chat-action="video-call"
+                >
+
+                  <i
+                    class="fa-solid fa-video"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  aria-label="Search this conversation"
+                  data-chat-action="search"
+                >
+
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <div class="coach-chat-menu-wrapper">
+
+                  <button
+                    id="coachChatMenuButton"
+                    type="button"
+                    aria-label="Open conversation menu"
+                    aria-expanded="false"
+                    aria-controls="coachChatMenu"
+                  >
+
+                    <i
+                      class="fa-solid fa-ellipsis-vertical"
+                      aria-hidden="true"
+                    ></i>
+
+                  </button>
+
+
+                  <div
+                    class="coach-chat-menu"
+                    id="coachChatMenu"
+                    aria-hidden="true"
+                  >
+
+                    <button
+                      type="button"
+                      data-conversation-action="view-profile"
+                    >
+
+                      <i
+                        class="fa-regular fa-user"
+                        aria-hidden="true"
+                      ></i>
+
+                      View Profile
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-conversation-action="mute"
+                    >
+
+                      <i
+                        class="fa-regular fa-bell-slash"
+                        aria-hidden="true"
+                      ></i>
+
+                      Mute Conversation
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-conversation-action="archive"
+                    >
+
+                      <i
+                        class="fa-solid fa-box-archive"
+                        aria-hidden="true"
+                      ></i>
+
+                      Archive Conversation
+
+                    </button>
+
+
+                    <button
+                      class="danger"
+                      type="button"
+                      data-conversation-action="clear"
+                    >
+
+                      <i
+                        class="fa-regular fa-trash-can"
+                        aria-hidden="true"
+                      ></i>
+
+                      Clear Messages
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </header>
+
+
+            <!-- ===========================================
+                 CHAT SEARCH PANEL
+            ============================================ -->
+
+            <div
+              class="coach-chat-search-panel"
+              id="coachChatSearchPanel"
+              hidden
+            >
+
+              <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+              ></i>
+
+              <label
+                class="coach-sr-only"
+                for="coachChatSearchInput"
+              >
+                Search current conversation
+              </label>
+
+              <input
+                id="coachChatSearchInput"
+                type="search"
+                placeholder="Search messages..."
+                autocomplete="off"
+              />
+
+              <span id="coachChatSearchResultCount">
+                0 results
+              </span>
+
+              <button
+                id="closeCoachChatSearch"
+                type="button"
+                aria-label="Close conversation search"
+              >
+
+                <i
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </div>
+
+
+            <!-- ===========================================
+                 PINNED MESSAGE
+            ============================================ -->
+
+            <div
+              class="coach-pinned-message"
+              id="coachPinnedMessage"
+            >
+
+              <span>
+
+                <i
+                  class="fa-solid fa-thumbtack"
+                  aria-hidden="true"
+                ></i>
+
+              </span>
+
+              <div>
+
+                <small>
+                  Pinned Message
+                </small>
+
+                <strong>
+                  Recovery session at 8:30 AM tomorrow.
+                </strong>
+
+              </div>
+
+              <button
+                id="dismissPinnedMessage"
+                type="button"
+                aria-label="Dismiss pinned message"
+              >
+
+                <i
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </div>
+
+
+            <!-- ===========================================
+                 MESSAGE AREA
+            ============================================ -->
+
+            <div
+              class="coach-chat-messages"
+              id="coachChatMessages"
+              aria-live="polite"
+              aria-label="Messages with Aman Verma"
+            >
+
+
+              <!-- =========================================
+                   DATE DIVIDER
+              ========================================== -->
+
+              <div class="coach-message-date-divider">
+
+                <span>
+                  Today
+                </span>
+
+              </div>
+
+
+              <!-- =========================================
+                   RECEIVED MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message received"
+                data-message-id="message-1"
+                data-message-text="Good afternoon Coach. I completed the individual ball control exercises."
+              >
+
+                <img
+                  src="images/player-aman.jpg"
+                  alt=""
+                  data-fallback="images/default-player.png"
+                />
+
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      Good afternoon, Coach. I completed the
+                      individual ball-control exercises.
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T14:06">
+                      2:06 PM
+                    </time>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   SENT MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message sent"
+                data-message-id="message-2"
+                data-message-text="Good work Aman. How did your ankle feel during the session?"
+              >
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      Good work, Aman. How did your ankle feel
+                      during the session?
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T14:09">
+                      2:09 PM
+                    </time>
+
+                    <span
+                      class="message-read-status"
+                      aria-label="Message read"
+                    >
+
+                      <i
+                        class="fa-solid fa-check-double"
+                        aria-hidden="true"
+                      ></i>
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   RECEIVED MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message received"
+                data-message-id="message-3"
+                data-message-text="There was no pain Coach. Only slight stiffness in the beginning."
+              >
+
+                <img
+                  src="images/player-aman.jpg"
+                  alt=""
+                  data-fallback="images/default-player.png"
+                />
+
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      There was no pain, Coach. Only slight
+                      stiffness in the beginning.
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T14:11">
+                      2:11 PM
+                    </time>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   SENT MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message sent"
+                data-message-id="message-4"
+                data-message-text="That is encouraging. Continue the mobility routine and avoid full-intensity sprinting today."
+              >
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      That is encouraging. Continue the mobility
+                      routine and avoid full-intensity sprinting
+                      today.
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T14:14">
+                      2:14 PM
+                    </time>
+
+                    <span
+                      class="message-read-status"
+                      aria-label="Message read"
+                    >
+
+                      <i
+                        class="fa-solid fa-check-double"
+                        aria-hidden="true"
+                      ></i>
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   ATTACHMENT MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message received"
+                data-message-id="message-5"
+                data-message-text="Recovery session report attached."
+              >
+
+                <img
+                  src="images/player-aman.jpg"
+                  alt=""
+                  data-fallback="images/default-player.png"
+                />
+
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble attachment">
+
+                    <div class="coach-message-file">
+
+                      <span>
+
+                        <i
+                          class="fa-regular fa-file-pdf"
+                          aria-hidden="true"
+                        ></i>
+
+                      </span>
+
+                      <div>
+
+                        <strong>
+                          Recovery-Session-Report.pdf
+                        </strong>
+
+                        <small>
+                          PDF · 1.8 MB
+                        </small>
+
+                      </div>
+
+                      <button
+                        type="button"
+                        aria-label="Download Recovery Session Report"
+                        data-download-attachment="Recovery-Session-Report.pdf"
+                      >
+
+                        <i
+                          class="fa-solid fa-download"
+                          aria-hidden="true"
+                        ></i>
+
+                      </button>
+
+                    </div>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T14:18">
+                      2:18 PM
+                    </time>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   SENT MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message sent"
+                data-message-id="message-6"
+                data-message-text="I have reviewed it. Join the recovery group tomorrow morning."
+              >
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      I have reviewed it. Join the recovery group
+                      tomorrow morning.
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T15:02">
+                      3:02 PM
+                    </time>
+
+                    <span
+                      class="message-read-status"
+                      aria-label="Message read"
+                    >
+
+                      <i
+                        class="fa-solid fa-check-double"
+                        aria-hidden="true"
+                      ></i>
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   RECEIVED MESSAGE
+              ========================================== -->
+
+              <article
+                class="coach-message received"
+                data-message-id="message-7"
+                data-message-text="Coach, I have completed the recovery session."
+              >
+
+                <img
+                  src="images/player-aman.jpg"
+                  alt=""
+                  data-fallback="images/default-player.png"
+                />
+
+
+                <div class="coach-message-content">
+
+                  <div class="coach-message-bubble">
+
+                    <p>
+                      Coach, I have completed the recovery session.
+                    </p>
+
+                  </div>
+
+                  <div class="coach-message-meta">
+
+                    <time datetime="2026-07-18T17:42">
+                      5:42 PM
+                    </time>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <!-- =========================================
+                   TYPING INDICATOR
+              ========================================== -->
+
+              <div
+                class="coach-typing-indicator"
+                id="coachTypingIndicator"
+                hidden
+              >
+
+                <img
+                  src="images/player-aman.jpg"
+                  alt=""
+                  data-fallback="images/default-player.png"
+                />
+
+                <span>
+
+                  <i></i>
+                  <i></i>
+                  <i></i>
+
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- ===========================================
+                 MESSAGE COMPOSER
+            ============================================ -->
+
+            <footer class="coach-message-composer">
+
+              <!-- =========================================
+                   ATTACHMENT PREVIEW
+              ========================================== -->
+
+              <div
+                class="coach-composer-attachment-preview"
+                id="composerAttachmentPreview"
+                hidden
+              >
+
+                <span>
+
+                  <i
+                    class="fa-regular fa-file"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+                <div>
+
+                  <strong id="composerAttachmentName">
+                    Selected file
+                  </strong>
+
+                  <small id="composerAttachmentSize">
+                    0 KB
+                  </small>
+
+                </div>
+
+                <button
+                  id="removeComposerAttachment"
+                  type="button"
+                  aria-label="Remove selected attachment"
+                >
+
+                  <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+              </div>
+
+
+              <!-- =========================================
+                   REPLY PREVIEW
+              ========================================== -->
+
+              <div
+                class="coach-reply-preview"
+                id="coachReplyPreview"
+                hidden
+              >
+
+                <span>
+
+                  <i
+                    class="fa-solid fa-reply"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+                <div>
+
+                  <small>
+                    Replying to
+                  </small>
+
+                  <strong id="coachReplyText">
+                    Message preview
+                  </strong>
+
+                </div>
+
+                <button
+                  id="cancelCoachReply"
+                  type="button"
+                  aria-label="Cancel reply"
+                >
+
+                  <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+              </div>
+
+
+              <form
+                class="coach-message-form"
+                id="coachMessageForm"
+              >
+
+                <div class="coach-composer-action-wrapper">
+
+                  <button
+                    class="coach-composer-add-button"
+                    id="coachComposerAddButton"
+                    type="button"
+                    aria-label="Add attachment or media"
+                    aria-expanded="false"
+                    aria-controls="coachComposerMenu"
+                  >
+
+                    <i
+                      class="fa-solid fa-plus"
+                      aria-hidden="true"
+                    ></i>
+
+                  </button>
+
+
+                  <div
+                    class="coach-composer-menu"
+                    id="coachComposerMenu"
+                    aria-hidden="true"
+                  >
+
+                    <button
+                      type="button"
+                      data-composer-action="document"
+                    >
+
+                      <i
+                        class="fa-regular fa-file-lines"
+                        aria-hidden="true"
+                      ></i>
+
+                      Document
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-composer-action="image"
+                    >
+
+                      <i
+                        class="fa-regular fa-image"
+                        aria-hidden="true"
+                      ></i>
+
+                      Image
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-composer-action="training-plan"
+                    >
+
+                      <i
+                        class="fa-solid fa-clipboard-list"
+                        aria-hidden="true"
+                      ></i>
+
+                      Training Plan
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      data-composer-action="player-report"
+                    >
+
+                      <i
+                        class="fa-solid fa-chart-simple"
+                        aria-hidden="true"
+                      ></i>
+
+                      Player Report
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <input
+                  id="coachMessageAttachmentInput"
+                  type="file"
+                  accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.webp"
+                  hidden
+                />
+
+
+                <div class="coach-message-input-wrapper">
+
+                  <label
+                    class="coach-sr-only"
+                    for="coachMessageInput"
+                  >
+                    Type a message
+                  </label>
+
+                  <textarea
+                    id="coachMessageInput"
+                    name="message"
+                    rows="1"
+                    maxlength="1500"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                  ></textarea>
+
+
+                  <button
+                    class="coach-emoji-button"
+                    id="coachEmojiButton"
+                    type="button"
+                    aria-label="Add emoji"
+                    aria-expanded="false"
+                    aria-controls="coachEmojiPicker"
+                  >
+
+                    <i
+                      class="fa-regular fa-face-smile"
+                      aria-hidden="true"
+                    ></i>
+
+                  </button>
+
+
+                  <div
+                    class="coach-emoji-picker"
+                    id="coachEmojiPicker"
+                    aria-hidden="true"
+                  >
+
+                    <button type="button" data-emoji="⚽">
+                      ⚽
+                    </button>
+
+                    <button type="button" data-emoji="👏">
+                      👏
+                    </button>
+
+                    <button type="button" data-emoji="💪">
+                      💪
+                    </button>
+
+                    <button type="button" data-emoji="🔥">
+                      🔥
+                    </button>
+
+                    <button type="button" data-emoji="✅">
+                      ✅
+                    </button>
+
+                    <button type="button" data-emoji="👍">
+                      👍
+                    </button>
+
+                    <button type="button" data-emoji="🏆">
+                      🏆
+                    </button>
+
+                    <button type="button" data-emoji="🎯">
+                      🎯
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <button
+                  class="coach-message-send-button"
+                  id="coachMessageSendButton"
+                  type="submit"
+                  aria-label="Send message"
+                  disabled
+                >
+
+                  <i
+                    class="fa-solid fa-paper-plane"
+                    aria-hidden="true"
+                  ></i>
+
+                  <span>
+                    Send
+                  </span>
+
+                </button>
+
+              </form>
+
+
+              <div class="coach-composer-footer">
+
+                <span>
+                  Press Enter to send · Shift + Enter for a new line
+                </span>
+
+                <small id="coachMessageCharacterCount">
+                  0 / 1500
+                </small>
+
+              </div>
+
+            </footer>
+
+          </section>
+
+
+          <!-- =============================================
+               CONTACT DETAILS PANEL
+          ============================================== -->
+
+          <aside
+            class="coach-contact-details-panel"
+            id="coachContactDetailsPanel"
+            aria-label="Conversation details"
+          >
+
+            <header>
+
+              <h2>
+                Details
+              </h2>
+
+              <button
+                id="closeContactDetailsPanel"
+                type="button"
+                aria-label="Close conversation details"
+              >
+
+                <i
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+            </header>
+
+
+            <section class="coach-contact-profile">
+
+              <div class="coach-contact-avatar">
+
+                <img
+                  id="contactDetailsAvatar"
+                  src="images/player-aman.jpg"
+                  alt="Aman Verma"
+                  data-fallback="images/default-player.png"
+                />
+
+                <span
+                  class="online"
+                  aria-label="Online"
+                ></span>
+
+              </div>
+
+              <h3 id="contactDetailsName">
+                Aman Verma
+              </h3>
+
+              <p id="contactDetailsRole">
+                Forward · Elite Development Squad
+              </p>
+
+
+              <div class="coach-contact-actions">
+
+                <button
+                  type="button"
+                  data-contact-action="profile"
+                >
+
+                  <i
+                    class="fa-regular fa-user"
+                    aria-hidden="true"
+                  ></i>
+
+                  <span>
+                    Profile
+                  </span>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  data-contact-action="call"
+                >
+
+                  <i
+                    class="fa-solid fa-phone"
+                    aria-hidden="true"
+                  ></i>
+
+                  <span>
+                    Call
+                  </span>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  data-contact-action="assessment"
+                >
+
+                  <i
+                    class="fa-solid fa-clipboard-check"
+                    aria-hidden="true"
+                  ></i>
+
+                  <span>
+                    Assess
+                  </span>
+
+                </button>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 PLAYER INFORMATION
+            ============================================ -->
+
+            <section class="coach-contact-information">
+
+              <button
+                class="coach-details-section-toggle active"
+                type="button"
+                aria-expanded="true"
+                aria-controls="contactInformationContent"
+              >
+
+                <span>
+                  Player Information
+                </span>
+
+                <i
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+
+              <div
+                class="coach-details-section-content"
+                id="contactInformationContent"
+              >
+
+                <dl>
+
+                  <div>
+
+                    <dt>
+                      Squad Number
+                    </dt>
+
+                    <dd>
+                      #9
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Position
+                    </dt>
+
+                    <dd>
+                      Forward
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Age Group
+                    </dt>
+
+                    <dd>
+                      Under-18
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Availability
+                    </dt>
+
+                    <dd class="available">
+                      Available
+                    </dd>
+
+                  </div>
+
+                </dl>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 SHARED FILES
+            ============================================ -->
+
+            <section class="coach-contact-shared-files">
+
+              <button
+                class="coach-details-section-toggle active"
+                type="button"
+                aria-expanded="true"
+                aria-controls="contactSharedFilesContent"
+              >
+
+                <span>
+                  Shared Files
+                </span>
+
+                <small>
+                  3
+                </small>
+
+                <i
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+
+              <div
+                class="coach-details-section-content"
+                id="contactSharedFilesContent"
+              >
+
+                <button
+                  class="coach-shared-file"
+                  type="button"
+                  data-download-attachment="Recovery-Session-Report.pdf"
+                >
+
+                  <span class="pdf">
+
+                    <i
+                      class="fa-regular fa-file-pdf"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Recovery Report
+                    </strong>
+
+                    <small>
+                      PDF · 1.8 MB
+                    </small>
+
+                  </span>
+
+                  <i
+                    class="fa-solid fa-download"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <button
+                  class="coach-shared-file"
+                  type="button"
+                  data-download-attachment="Mobility-Plan.pdf"
+                >
+
+                  <span class="document">
+
+                    <i
+                      class="fa-regular fa-file-lines"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Mobility Plan
+                    </strong>
+
+                    <small>
+                      PDF · 780 KB
+                    </small>
+
+                  </span>
+
+                  <i
+                    class="fa-solid fa-download"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+
+                <button
+                  class="coach-shared-file"
+                  type="button"
+                  data-download-attachment="Training-Photo.jpg"
+                >
+
+                  <span class="image">
+
+                    <i
+                      class="fa-regular fa-image"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Training Photo
+                    </strong>
+
+                    <small>
+                      JPG · 2.1 MB
+                    </small>
+
+                  </span>
+
+                  <i
+                    class="fa-solid fa-download"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 CONVERSATION SETTINGS
+            ============================================ -->
+
+            <section class="coach-contact-settings">
+
+              <button
+                class="coach-details-section-toggle active"
+                type="button"
+                aria-expanded="true"
+                aria-controls="contactSettingsContent"
+              >
+
+                <span>
+                  Conversation Settings
+                </span>
+
+                <i
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+
+              </button>
+
+
+              <div
+                class="coach-details-section-content"
+                id="contactSettingsContent"
+              >
+
+                <button
+                  type="button"
+                  data-contact-setting="notifications"
+                >
+
+                  <span>
+
+                    <i
+                      class="fa-regular fa-bell"
+                      aria-hidden="true"
+                    ></i>
+
+                    Message Notifications
+
+                  </span>
+
+                  <small class="enabled">
+                    On
+                  </small>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  data-contact-setting="pin"
+                >
+
+                  <span>
+
+                    <i
+                      class="fa-solid fa-thumbtack"
+                      aria-hidden="true"
+                    ></i>
+
+                    Pinned Conversation
+
+                  </span>
+
+                  <small>
+                    Off
+                  </small>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  data-contact-setting="archive"
+                >
+
+                  <span>
+
+                    <i
+                      class="fa-solid fa-box-archive"
+                      aria-hidden="true"
+                    ></i>
+
+                    Archive Conversation
+
+                  </span>
+
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i>
+
+                </button>
+
+              </div>
+
+            </section>
+
+          </aside>
+
+        </section>
+
+
+        <!-- ===============================================
+             ANNOUNCEMENTS
+        ================================================ -->
+
+        <section class="coach-announcements-section">
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span>
+                Team Updates
+              </span>
+
+              <h2>
+                Recent Announcements
+              </h2>
+
+              <p>
+                Review important notices shared with players and staff.
+              </p>
+
+            </div>
+
+
+            <button
+              class="coach-text-button"
+              id="viewAllAnnouncementsButton"
+              type="button"
+            >
+
+              View All
+
+              <i
+                class="fa-solid fa-arrow-right"
+                aria-hidden="true"
+              ></i>
+
+            </button>
+
+          </div>
+
+
+          <div
+            class="coach-announcements-grid"
+            id="coachAnnouncementsGrid"
+          >
+
+
+            <article class="coach-announcement-card priority">
+
+              <header>
+
+                <span class="coach-announcement-icon">
+
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+                <span class="coach-announcement-status">
+                  Important
+                </span>
+
+              </header>
+
+
+              <div>
+
+                <time datetime="2026-07-18">
+                  18 July 2026
+                </time>
+
+                <h3>
+                  Matchday Reporting Time
+                </h3>
+
+                <p>
+                  All selected players must report at the academy
+                  by 7:00 AM on matchday.
+                </p>
+
+              </div>
+
+
+              <footer>
+
+                <span>
+                  Shared with Elite Squad
+                </span>
+
+                <button
+                  type="button"
+                  data-announcement-action="edit"
+                  data-announcement-id="announcement-1"
+                >
+
+                  <i
+                    class="fa-regular fa-pen-to-square"
+                    aria-hidden="true"
+                  ></i>
+
+                  Edit
+
+                </button>
+
+              </footer>
+
+            </article>
+
+
+            <article class="coach-announcement-card training">
+
+              <header>
+
+                <span class="coach-announcement-icon">
+
+                  <i
+                    class="fa-solid fa-person-running"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+                <span class="coach-announcement-status">
+                  Training
+                </span>
+
+              </header>
+
+
+              <div>
+
+                <time datetime="2026-07-17">
+                  17 July 2026
+                </time>
+
+                <h3>
+                  Recovery Session Update
+                </h3>
+
+                <p>
+                  Recovery group training has been moved to
+                  8:30 AM tomorrow.
+                </p>
+
+              </div>
+
+
+              <footer>
+
+                <span>
+                  Shared with Recovery Group
+                </span>
+
+                <button
+                  type="button"
+                  data-announcement-action="edit"
+                  data-announcement-id="announcement-2"
+                >
+
+                  <i
+                    class="fa-regular fa-pen-to-square"
+                    aria-hidden="true"
+                  ></i>
+
+                  Edit
+
+                </button>
+
+              </footer>
+
+            </article>
+
+
+            <article class="coach-announcement-card general">
+
+              <header>
+
+                <span class="coach-announcement-icon">
+
+                  <i
+                    class="fa-solid fa-calendar-check"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+                <span class="coach-announcement-status">
+                  General
+                </span>
+
+              </header>
+
+
+              <div>
+
+                <time datetime="2026-07-15">
+                  15 July 2026
+                </time>
+
+                <h3>
+                  Monthly Team Review
+                </h3>
+
+                <p>
+                  The monthly squad performance review will be
+                  held on Monday at 4:00 PM.
+                </p>
+
+              </div>
+
+
+              <footer>
+
+                <span>
+                  Shared with Players & Staff
+                </span>
+
+                <button
+                  type="button"
+                  data-announcement-action="edit"
+                  data-announcement-id="announcement-3"
+                >
+
+                  <i
+                    class="fa-regular fa-pen-to-square"
+                    aria-hidden="true"
+                  ></i>
+
+                  Edit
+
+                </button>
+
+              </footer>
+
+            </article>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NEW MESSAGE MODAL
+  ====================================================== -->
+
+  <div
+    class="coach-modal-backdrop"
+    id="newMessageModalBackdrop"
+    aria-hidden="true"
+  >
+
+    <section
+      class="coach-modal coach-message-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="newMessageModalTitle"
+    >
+
+      <header class="coach-modal-header">
+
+        <div>
+
+          <span>
+            Start Conversation
+          </span>
+
+          <h2 id="newMessageModalTitle">
+            New Message
+          </h2>
+
+          <p>
+            Send a direct message or start a group conversation.
+          </p>
+
+        </div>
+
+
+        <button
+          class="coach-modal-close"
+          id="closeNewMessageModal"
+          type="button"
+          aria-label="Close new message modal"
+        >
+
+          <i
+            class="fa-solid fa-xmark"
+            aria-hidden="true"
+          ></i>
+
+        </button>
+
+      </header>
+
+
+      <form
+        class="coach-modal-form"
+        id="newMessageForm"
+      >
+
+        <div class="coach-form-field">
+
+          <label for="newMessageRecipient">
+            Recipient
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <div class="coach-select-wrapper">
+
+            <i
+              class="fa-regular fa-user"
+              aria-hidden="true"
+            ></i>
+
+            <select
+              id="newMessageRecipient"
+              name="recipient"
+              required
+            >
+
+              <option value="">
+                Select a player or group
+              </option>
+
+              <optgroup label="Players">
+
+                <option value="aman-verma">
+                  Aman Verma
+                </option>
+
+                <option value="rohit-singh">
+                  Rohit Singh
+                </option>
+
+                <option value="kabir-khan">
+                  Kabir Khan
+                </option>
+
+                <option value="rahul-das">
+                  Rahul Das
+                </option>
+
+              </optgroup>
+
+              <optgroup label="Groups">
+
+                <option value="elite-squad">
+                  Elite Squad
+                </option>
+
+                <option value="assistant-coaches">
+                  Assistant Coaches
+                </option>
+
+                <option value="medical-team">
+                  Medical Team
+                </option>
+
+                <option value="academy-management">
+                  Academy Management
+                </option>
+
+              </optgroup>
+
+            </select>
+
+            <i
+              class="fa-solid fa-chevron-down"
+              aria-hidden="true"
+            ></i>
+
+          </div>
+
+          <span class="coach-field-error"></span>
+
+        </div>
+
+
+        <div class="coach-form-field">
+
+          <label for="newMessageSubject">
+            Subject
+          </label>
+
+          <input
+            id="newMessageSubject"
+            name="subject"
+            type="text"
+            maxlength="100"
+            placeholder="Optional conversation subject"
+          />
+
+        </div>
+
+
+        <div class="coach-form-field">
+
+          <label for="newMessageContent">
+            Message
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <textarea
+            id="newMessageContent"
+            name="message"
+            rows="6"
+            maxlength="1500"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+
+          <div class="coach-field-footer">
+
+            <span class="coach-field-error"></span>
+
+            <small id="newMessageCharacterCount">
+              0 / 1500
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-modal-actions">
+
+          <button
+            class="coach-modal-secondary-button"
+            id="cancelNewMessage"
+            type="button"
+          >
+            Cancel
+          </button>
+
+
+          <button
+            class="coach-modal-primary-button"
+            id="submitNewMessage"
+            type="submit"
+          >
+
+            <i
+              class="fa-solid fa-paper-plane"
+              aria-hidden="true"
+            ></i>
+
+            Send Message
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================
+       ANNOUNCEMENT MODAL
+  ====================================================== -->
+
+  <div
+    class="coach-modal-backdrop"
+    id="announcementModalBackdrop"
+    aria-hidden="true"
+  >
+
+    <section
+      class="coach-modal coach-announcement-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="announcementModalTitle"
+    >
+
+      <header class="coach-modal-header">
+
+        <div>
+
+          <span>
+            Team Communication
+          </span>
+
+          <h2 id="announcementModalTitle">
+            Create Announcement
+          </h2>
+
+          <p>
+            Share an important update with players or staff.
+          </p>
+
+        </div>
+
+
+        <button
+          class="coach-modal-close"
+          id="closeAnnouncementModal"
+          type="button"
+          aria-label="Close announcement modal"
+        >
+
+          <i
+            class="fa-solid fa-xmark"
+            aria-hidden="true"
+          ></i>
+
+        </button>
+
+      </header>
+
+
+      <form
+        class="coach-modal-form"
+        id="announcementForm"
+      >
+
+        <div class="coach-form-grid">
+
+
+          <div class="coach-form-field">
+
+            <label for="announcementAudience">
+              Audience
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="announcementAudience"
+              name="audience"
+              required
+            >
+
+              <option value="">
+                Select audience
+              </option>
+
+              <option value="all">
+                All Players & Staff
+              </option>
+
+              <option value="elite-squad">
+                Elite Squad
+              </option>
+
+              <option value="recovery-group">
+                Recovery Group
+              </option>
+
+              <option value="assistant-coaches">
+                Assistant Coaches
+              </option>
+
+              <option value="medical-team">
+                Medical Team
+              </option>
+
+            </select>
+
+            <span class="coach-field-error"></span>
+
+          </div>
+
+
+          <div class="coach-form-field">
+
+            <label for="announcementCategory">
+              Category
+              <span aria-hidden="true">*</span>
+            </label>
+
+            <select
+              id="announcementCategory"
+              name="category"
+              required
+            >
+
+              <option value="">
+                Select category
+              </option>
+
+              <option value="general">
+                General
+              </option>
+
+              <option value="important">
+                Important
+              </option>
+
+              <option value="training">
+                Training
+              </option>
+
+              <option value="match">
+                Match
+              </option>
+
+              <option value="medical">
+                Medical
+              </option>
+
+            </select>
+
+            <span class="coach-field-error"></span>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-form-field">
+
+          <label for="announcementTitle">
+            Announcement Title
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <input
+            id="announcementTitle"
+            name="title"
+            type="text"
+            maxlength="120"
+            placeholder="Enter announcement title"
+            required
+          />
+
+          <span class="coach-field-error"></span>
+
+        </div>
+
+
+        <div class="coach-form-field">
+
+          <label for="announcementContent">
+            Announcement
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <textarea
+            id="announcementContent"
+            name="content"
+            rows="6"
+            maxlength="1000"
+            placeholder="Write the announcement..."
+            required
+          ></textarea>
+
+          <div class="coach-field-footer">
+
+            <span class="coach-field-error"></span>
+
+            <small id="announcementCharacterCount">
+              0 / 1000
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <label class="coach-checkbox-field">
+
+          <input
+            id="announcementPin"
+            name="pinAnnouncement"
+            type="checkbox"
+          />
+
+          <span class="coach-custom-checkbox">
+
+            <i
+              class="fa-solid fa-check"
+              aria-hidden="true"
+            ></i>
+
+          </span>
+
+          <span>
+
+            <strong>
+              Pin this announcement
+            </strong>
+
+            <small>
+              Keep this update visible at the top of the announcement list.
+            </small>
+
+          </span>
+
+        </label>
+
+
+        <div class="coach-modal-actions">
+
+          <button
+            class="coach-modal-secondary-button"
+            id="cancelAnnouncement"
+            type="button"
+          >
+            Cancel
+          </button>
+
+
+          <button
+            class="coach-modal-primary-button"
+            id="submitAnnouncement"
+            type="submit"
+          >
+
+            <i
+              class="fa-solid fa-bullhorn"
+              aria-hidden="true"
+            ></i>
+
+            Publish Announcement
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================
+       CLEAR CONVERSATION CONFIRMATION MODAL
+  ====================================================== -->
+
+  <div
+    class="coach-modal-backdrop"
+    id="clearConversationModalBackdrop"
+    aria-hidden="true"
+  >
+
+    <section
+      class="coach-modal coach-confirmation-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="clearConversationModalTitle"
+    >
+
+      <span
+        class="coach-confirmation-icon danger"
+        aria-hidden="true"
+      >
+
+        <i class="fa-regular fa-trash-can"></i>
+
+      </span>
+
+
+      <h2 id="clearConversationModalTitle">
+        Clear Conversation?
+      </h2>
+
+
+      <p>
+        This will remove the visible message history from this
+        frontend demonstration. This action cannot be undone.
+      </p>
+
+
+      <div class="coach-confirmation-actions">
+
+        <button
+          class="coach-modal-secondary-button"
+          id="cancelClearConversation"
+          type="button"
+        >
+          Cancel
+        </button>
+
+
+        <button
+          class="coach-danger-button"
+          id="confirmClearConversation"
+          type="button"
+        >
+          Clear Messages
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================
+       LOGOUT MODAL
+  ====================================================== -->
+
+  <div
+    class="coach-modal-backdrop"
+    id="coachLogoutModalBackdrop"
+    aria-hidden="true"
+  >
+
+    <section
+      class="coach-modal coach-confirmation-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="coachLogoutModalTitle"
+    >
+
+      <span
+        class="coach-confirmation-icon"
+        aria-hidden="true"
+      >
+
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+      </span>
+
+
+      <h2 id="coachLogoutModalTitle">
+        Log Out?
+      </h2>
+
+
+      <p>
+        Are you sure you want to leave the FIFA Mission India
+        Coach Portal?
+      </p>
+
+
+      <div class="coach-confirmation-actions">
+
+        <button
+          class="coach-modal-secondary-button"
+          id="cancelCoachLogout"
+          type="button"
+        >
+          Stay Logged In
+        </button>
+
+
+        <button
+          class="coach-danger-button"
+          id="confirmCoachLogout"
+          type="button"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================
+       TOAST CONTAINER
+  ====================================================== -->
+
+  <div
+    class="coach-toast-container"
+    id="coachToastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <!-- =====================================================
+       ACCESSIBLE STATUS REGION
+  ====================================================== -->
+
+  <div
+    class="coach-sr-only"
+    id="coachMessagesStatusRegion"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <!-- =====================================================
+       BACKEND INTEGRATION NOTES
+
+       Suggested API endpoints for Mr. Harsh:
+
+       GET    /api/v1/coach/conversations
+       GET    /api/v1/coach/conversations/{conversationId}
+       POST   /api/v1/coach/conversations
+       POST   /api/v1/coach/conversations/{conversationId}/messages
+       PATCH  /api/v1/coach/conversations/{conversationId}/read
+       PATCH  /api/v1/coach/conversations/{conversationId}/mute
+       PATCH  /api/v1/coach/conversations/{conversationId}/archive
+       DELETE /api/v1/coach/conversations/{conversationId}/messages
+
+       GET    /api/v1/coach/message-recipients
+       POST   /api/v1/coach/message-attachments
+
+       GET    /api/v1/coach/announcements
+       POST   /api/v1/coach/announcements
+       PATCH  /api/v1/coach/announcements/{announcementId}
+       DELETE /api/v1/coach/announcements/{announcementId}
+
+       WebSocket suggestion:
+
+       /ws/coach/messages
+
+       Possible WebSocket events:
+
+       message.created
+       message.read
+       message.typing
+       conversation.updated
+       announcement.created
+  ====================================================== -->
+
+
+  <!-- =====================================================
+       PAGE SCRIPT
+  ====================================================== -->
+
+  <script src="coach-messages.js"></script>
+
+</body>
+
+</html>

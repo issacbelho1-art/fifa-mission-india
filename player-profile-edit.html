@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Update your FIFA Mission India player profile."
+  >
+
+  <title>Edit Player Profile | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/player-profile-edit.css">
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="profile-header">
+
+    <a
+      href="player-dashboard.html"
+      class="profile-brand"
+      aria-label="Return to player dashboard"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-copy">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Player Portal</span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="player-dashboard.html"
+      class="dashboard-return-link"
+    >
+
+      <span aria-hidden="true">←</span>
+
+      Back to Dashboard
+
+    </a>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="profile-main">
+
+    <section class="profile-page-heading">
+
+      <div>
+
+        <span class="page-eyebrow">
+          PLAYER PROFILE
+        </span>
+
+        <h1>
+          Edit your profile
+        </h1>
+
+        <p>
+          Keep your details accurate so clubs, academies and scouts can
+          understand your football journey.
+        </p>
+
+      </div>
+
+
+      <div class="profile-completion">
+
+        <span>Profile completion</span>
+
+        <div class="completion-row">
+
+          <div class="completion-track">
+
+            <span id="completionBar"></span>
+
+          </div>
+
+          <strong id="completionPercentage">
+            72%
+          </strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <form
+      id="playerProfileForm"
+      class="profile-form"
+      novalidate
+    >
+
+      <!--
+        BACKEND INTEGRATION PLACEHOLDER
+
+        Suggested endpoint:
+        PATCH /api/v1/players/me
+
+        Backend Lead: Mr. Harsh
+      -->
+
+
+      <!-- ================= PROFILE PHOTO ================= -->
+
+      <section class="profile-card">
+
+        <div class="card-heading">
+
+          <div>
+
+            <span class="card-eyebrow">
+              PROFILE PHOTO
+            </span>
+
+            <h2>
+              Player identity
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="photo-upload-layout">
+
+          <div class="profile-photo-preview">
+
+            <img
+              id="profilePreviewImage"
+              alt="Player profile preview"
+              hidden
+            >
+
+            <span id="profileInitials">
+              PL
+            </span>
+
+          </div>
+
+
+          <div class="photo-upload-copy">
+
+            <h3>
+              Upload a recent photograph
+            </h3>
+
+            <p>
+              Use a clear front-facing image with good lighting.
+            </p>
+
+            <div class="photo-actions">
+
+              <label
+                for="profilePhoto"
+                class="upload-button"
+              >
+                Choose Photo
+              </label>
+
+              <button
+                type="button"
+                class="remove-photo-button"
+                id="removePhotoButton"
+              >
+                Remove
+              </button>
+
+            </div>
+
+            <input
+              type="file"
+              id="profilePhoto"
+              name="profilePhoto"
+              accept="image/jpeg,image/png,image/webp"
+              hidden
+            >
+
+            <small>
+              JPG, PNG or WEBP. Maximum size 5 MB.
+            </small>
+
+            <small
+              class="error-message"
+              id="profilePhotoError"
+            ></small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= PERSONAL DETAILS ================= -->
+
+      <section class="profile-card">
+
+        <div class="card-heading">
+
+          <div>
+
+            <span class="card-eyebrow">
+              PERSONAL INFORMATION
+            </span>
+
+            <h2>
+              Basic details
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="firstName">
+              First name
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              autocomplete="given-name"
+              required
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="lastName">
+              Last name
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              autocomplete="family-name"
+              required
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="dateOfBirth">
+              Date of birth
+              <span>*</span>
+            </label>
+
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              required
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="gender">
+              Gender
+            </label>
+
+            <select id="gender" name="gender">
+
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="prefer-not-to-say">
+                Prefer not to say
+              </option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              Email address
+              <span>*</span>
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Mobile number
+              <span>*</span>
+            </label>
+
+            <div class="phone-field">
+
+              <span>+91</span>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                inputmode="numeric"
+                maxlength="10"
+                required
+              >
+
+            </div>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="state">
+              State
+              <span>*</span>
+            </label>
+
+            <select id="state" name="state" required>
+
+              <option value="">Select state</option>
+              <option value="Assam">Assam</option>
+              <option value="Arunachal Pradesh">
+                Arunachal Pradesh
+              </option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tripura">Tripura</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Goa">Goa</option>
+              <option value="Other">Other</option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="city">
+              City or district
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="city"
+              name="city"
+              required
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= FOOTBALL PROFILE ================= -->
+
+      <section class="profile-card">
+
+        <div class="card-heading">
+
+          <div>
+
+            <span class="card-eyebrow">
+              FOOTBALL PROFILE
+            </span>
+
+            <h2>
+              Playing information
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="primaryPosition">
+              Primary position
+              <span>*</span>
+            </label>
+
+            <select
+              id="primaryPosition"
+              name="primaryPosition"
+              required
+            >
+
+              <option value="">Select position</option>
+              <option value="Goalkeeper">Goalkeeper</option>
+              <option value="Centre Back">Centre Back</option>
+              <option value="Left Back">Left Back</option>
+              <option value="Right Back">Right Back</option>
+              <option value="Defensive Midfielder">
+                Defensive Midfielder
+              </option>
+              <option value="Central Midfielder">
+                Central Midfielder
+              </option>
+              <option value="Attacking Midfielder">
+                Attacking Midfielder
+              </option>
+              <option value="Left Winger">Left Winger</option>
+              <option value="Right Winger">Right Winger</option>
+              <option value="Striker">Striker</option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="secondaryPosition">
+              Secondary position
+            </label>
+
+            <select
+              id="secondaryPosition"
+              name="secondaryPosition"
+            >
+
+              <option value="">Select position</option>
+              <option value="Goalkeeper">Goalkeeper</option>
+              <option value="Centre Back">Centre Back</option>
+              <option value="Left Back">Left Back</option>
+              <option value="Right Back">Right Back</option>
+              <option value="Defensive Midfielder">
+                Defensive Midfielder
+              </option>
+              <option value="Central Midfielder">
+                Central Midfielder
+              </option>
+              <option value="Attacking Midfielder">
+                Attacking Midfielder
+              </option>
+              <option value="Left Winger">Left Winger</option>
+              <option value="Right Winger">Right Winger</option>
+              <option value="Striker">Striker</option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="preferredFoot">
+              Preferred foot
+              <span>*</span>
+            </label>
+
+            <select
+              id="preferredFoot"
+              name="preferredFoot"
+              required
+            >
+
+              <option value="">Select preferred foot</option>
+              <option value="Right Foot">Right Foot</option>
+              <option value="Left Foot">Left Foot</option>
+              <option value="Both Feet">Both Feet</option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="experienceLevel">
+              Experience level
+              <span>*</span>
+            </label>
+
+            <select
+              id="experienceLevel"
+              name="experienceLevel"
+              required
+            >
+
+              <option value="">Select level</option>
+              <option value="Beginner">Beginner</option>
+              <option value="School Level">School Level</option>
+              <option value="Academy Level">Academy Level</option>
+              <option value="District Level">District Level</option>
+              <option value="State Level">State Level</option>
+              <option value="National Level">National Level</option>
+              <option value="Professional">Professional</option>
+
+            </select>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="height">
+              Height
+              <span>*</span>
+            </label>
+
+            <div class="unit-field">
+
+              <input
+                type="number"
+                id="height"
+                name="height"
+                min="100"
+                max="230"
+                required
+              >
+
+              <span>cm</span>
+
+            </div>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="weight">
+              Weight
+              <span>*</span>
+            </label>
+
+            <div class="unit-field">
+
+              <input
+                type="number"
+                id="weight"
+                name="weight"
+                min="25"
+                max="200"
+                required
+              >
+
+              <span>kg</span>
+
+            </div>
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="currentClub">
+              Current club or academy
+            </label>
+
+            <input
+              type="text"
+              id="currentClub"
+              name="currentClub"
+              placeholder="Enter club or academy name"
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="highlightUrl">
+              Highlight video URL
+            </label>
+
+            <input
+              type="url"
+              id="highlightUrl"
+              name="highlightUrl"
+              placeholder="https://youtube.com/..."
+            >
+
+            <small class="error-message"></small>
+
+          </div>
+
+
+          <div class="form-group form-group-full">
+
+            <label for="playerBio">
+              Football biography
+              <span>*</span>
+            </label>
+
+            <textarea
+              id="playerBio"
+              name="playerBio"
+              rows="6"
+              maxlength="800"
+              required
+            ></textarea>
+
+            <div class="textarea-footer">
+
+              <small class="error-message"></small>
+
+              <span>
+                <b id="bioCharacterCount">0</b>/800
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= ACTIONS ================= -->
+
+      <div class="form-actions">
+
+        <a
+          href="player-dashboard.html"
+          class="cancel-button"
+        >
+          Cancel
+        </a>
+
+        <button
+          type="submit"
+          class="save-button"
+          id="saveProfileButton"
+        >
+
+          <span class="button-label">
+            Save Changes
+          </span>
+
+          <span
+            class="button-loader"
+            aria-hidden="true"
+          ></span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </main>
+
+
+  <!-- ================= SUCCESS MESSAGE ================= -->
+
+  <div
+    class="success-toast"
+    id="successToast"
+    role="status"
+    hidden
+  >
+
+    <span aria-hidden="true">✓</span>
+
+    <div>
+
+      <strong>Profile updated</strong>
+
+      <p>
+        Your player information has been saved successfully.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/player-profile-edit.js"></script>
+
+</body>
+
+</html>

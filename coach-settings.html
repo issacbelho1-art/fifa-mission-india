@@ -1,0 +1,4523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Manage coach account, notification, privacy, security and platform preferences for FIFA Mission India."
+  />
+
+  <meta
+    name="theme-color"
+    content="#071b33"
+  />
+
+  <title>
+    Coach Settings | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="coach-settings.css"
+  />
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       ACCESSIBILITY SKIP LINK
+  ====================================================== -->
+
+  <a
+    class="skip-link"
+    href="#mainContent"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="coach-sidebar-overlay"
+    id="coachSidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH PORTAL APP
+  ====================================================== -->
+
+  <div class="coach-portal-app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+      class="coach-sidebar"
+      id="coachSidebar"
+      aria-label="Coach portal navigation"
+    >
+
+
+      <!-- SIDEBAR HEADER -->
+
+      <div class="coach-sidebar-header">
+
+        <a
+          class="coach-brand"
+          href="coach-dashboard.html"
+          aria-label="FIFA Mission India Coach Portal"
+        >
+
+          <span class="coach-brand-icon">
+            <i
+              class="fa-solid fa-futbol"
+              aria-hidden="true"
+            ></i>
+          </span>
+
+          <span class="coach-brand-text">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Coach Portal
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <button
+          class="coach-sidebar-close"
+          id="coachSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          <i
+            class="fa-solid fa-xmark"
+            aria-hidden="true"
+          ></i>
+        </button>
+
+      </div>
+
+
+      <!-- COACH SUMMARY -->
+
+      <div class="coach-sidebar-profile">
+
+        <div class="coach-sidebar-avatar-wrapper">
+
+          <img
+            class="coach-sidebar-avatar"
+            id="coachSidebarAvatar"
+            src="images/coach-avatar-placeholder.jpg"
+            alt="Coach profile"
+          />
+
+          <span
+            class="coach-online-indicator"
+            title="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="coach-sidebar-profile-info">
+
+          <span class="coach-profile-label">
+            Welcome back
+          </span>
+
+          <strong id="coachSidebarName">
+            Coach Arjun Sharma
+          </strong>
+
+          <span id="coachSidebarRole">
+            Head Coach
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROFILE COMPLETION -->
+
+      <div class="coach-profile-completion">
+
+        <div class="coach-profile-completion-header">
+
+          <span>
+            Profile completion
+          </span>
+
+          <strong id="profileCompletionValue">
+            82%
+          </strong>
+
+        </div>
+
+
+        <div
+          class="coach-profile-progress"
+          role="progressbar"
+          aria-label="Profile completion"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="82"
+        >
+
+          <span
+            id="profileCompletionBar"
+            style="width: 82%;"
+          ></span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRIMARY NAVIGATION -->
+
+      <nav class="coach-sidebar-navigation">
+
+        <span class="coach-nav-heading">
+          Main menu
+        </span>
+
+
+        <ul class="coach-nav-list">
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-dashboard.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-table-columns"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Dashboard
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-profile.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-user-tie"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                My Profile
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-players.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-users"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Players
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-training.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-dumbbell"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Training
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-matches.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-trophy"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Matches
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-performance.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-chart-line"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Performance
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-messages.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-comments"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Messages
+              </span>
+
+              <span
+                class="coach-nav-badge"
+                aria-label="3 unread messages"
+              >
+                3
+              </span>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+
+        <span class="coach-nav-heading">
+          Account
+        </span>
+
+
+        <ul class="coach-nav-list">
+
+          <li>
+
+            <a
+              class="coach-nav-link active"
+              href="coach-settings.html"
+              aria-current="page"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-gear"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Settings
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              class="coach-nav-link"
+              href="coach-help.html"
+            >
+
+              <span class="coach-nav-icon">
+                <i
+                  class="fa-solid fa-circle-question"
+                  aria-hidden="true"
+                ></i>
+              </span>
+
+              <span>
+                Help &amp; Support
+              </span>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- SIDEBAR SUPPORT CARD -->
+
+      <div class="coach-sidebar-support-card">
+
+        <span class="coach-support-card-icon">
+
+          <i
+            class="fa-solid fa-headset"
+            aria-hidden="true"
+          ></i>
+
+        </span>
+
+
+        <div>
+
+          <strong>
+            Need assistance?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team.
+          </p>
+
+        </div>
+
+
+        <a
+          class="coach-support-card-link"
+          href="coach-help.html"
+        >
+          Get support
+          <i
+            class="fa-solid fa-arrow-right"
+            aria-hidden="true"
+          ></i>
+        </a>
+
+      </div>
+
+
+      <!-- LOGOUT BUTTON -->
+
+      <button
+        class="coach-sidebar-logout"
+        id="coachLogoutButton"
+        type="button"
+      >
+
+        <i
+          class="fa-solid fa-arrow-right-from-bracket"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          Log out
+        </span>
+
+      </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN PORTAL AREA
+    ====================================================== -->
+
+    <div class="coach-main-area">
+
+
+      <!-- =====================================================
+           TOP HEADER
+      ====================================================== -->
+
+      <header class="coach-topbar">
+
+
+        <div class="coach-topbar-left">
+
+          <button
+            class="coach-menu-toggle"
+            id="coachMenuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="coachSidebar"
+            aria-expanded="false"
+          >
+
+            <i
+              class="fa-solid fa-bars"
+              aria-hidden="true"
+            ></i>
+
+          </button>
+
+
+          <div class="coach-topbar-heading">
+
+            <span class="coach-page-eyebrow">
+              Coach Portal
+            </span>
+
+            <h1>
+              Settings
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-topbar-actions">
+
+
+          <!-- SEARCH -->
+
+          <form
+            class="coach-topbar-search"
+            id="coachTopbarSearch"
+            role="search"
+          >
+
+            <label
+              class="sr-only"
+              for="coachSearchInput"
+            >
+              Search coach portal
+            </label>
+
+            <i
+              class="fa-solid fa-magnifying-glass"
+              aria-hidden="true"
+            ></i>
+
+            <input
+              id="coachSearchInput"
+              name="search"
+              type="search"
+              placeholder="Search portal"
+              autocomplete="off"
+            />
+
+          </form>
+
+
+          <!-- NOTIFICATIONS -->
+
+          <div class="coach-notification-wrapper">
+
+            <button
+              class="coach-topbar-icon-button"
+              id="coachNotificationButton"
+              type="button"
+              aria-label="Open notifications"
+              aria-expanded="false"
+              aria-controls="coachNotificationPanel"
+            >
+
+              <i
+                class="fa-regular fa-bell"
+                aria-hidden="true"
+              ></i>
+
+              <span
+                class="coach-notification-dot"
+                aria-hidden="true"
+              ></span>
+
+            </button>
+
+
+            <div
+              class="coach-notification-panel"
+              id="coachNotificationPanel"
+              hidden
+            >
+
+              <div class="coach-notification-panel-header">
+
+                <div>
+
+                  <strong>
+                    Notifications
+                  </strong>
+
+                  <span>
+                    3 unread updates
+                  </span>
+
+                </div>
+
+
+                <button
+                  id="markNotificationsRead"
+                  type="button"
+                >
+                  Mark all read
+                </button>
+
+              </div>
+
+
+              <div class="coach-notification-list">
+
+                <a
+                  class="coach-notification-item unread"
+                  href="coach-training.html"
+                >
+
+                  <span class="coach-notification-icon">
+
+                    <i
+                      class="fa-solid fa-calendar-check"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+
+                  <span class="coach-notification-content">
+
+                    <strong>
+                      Training session updated
+                    </strong>
+
+                    <span>
+                      Tomorrow's tactical session starts at 7:00 AM.
+                    </span>
+
+                    <small>
+                      10 minutes ago
+                    </small>
+
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="coach-notification-item unread"
+                  href="coach-players.html"
+                >
+
+                  <span class="coach-notification-icon">
+
+                    <i
+                      class="fa-solid fa-user-plus"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+
+                  <span class="coach-notification-content">
+
+                    <strong>
+                      New player assigned
+                    </strong>
+
+                    <span>
+                      A new midfielder has been added to your squad.
+                    </span>
+
+                    <small>
+                      1 hour ago
+                    </small>
+
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="coach-notification-item unread"
+                  href="coach-messages.html"
+                >
+
+                  <span class="coach-notification-icon">
+
+                    <i
+                      class="fa-solid fa-message"
+                      aria-hidden="true"
+                    ></i>
+
+                  </span>
+
+
+                  <span class="coach-notification-content">
+
+                    <strong>
+                      New academy message
+                    </strong>
+
+                    <span>
+                      The academy administrator sent you an update.
+                    </span>
+
+                    <small>
+                      3 hours ago
+                    </small>
+
+                  </span>
+
+                </a>
+
+              </div>
+
+
+              <a
+                class="coach-notification-view-all"
+                href="coach-notifications.html"
+              >
+                View all notifications
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROFILE MENU -->
+
+          <div class="coach-topbar-profile-wrapper">
+
+            <button
+              class="coach-topbar-profile"
+              id="coachProfileMenuButton"
+              type="button"
+              aria-label="Open account menu"
+              aria-expanded="false"
+              aria-controls="coachProfileMenu"
+            >
+
+              <img
+                src="images/coach-avatar-placeholder.jpg"
+                alt=""
+                id="coachTopbarAvatar"
+              />
+
+              <span class="coach-topbar-profile-text">
+
+                <strong id="coachTopbarName">
+                  Arjun Sharma
+                </strong>
+
+                <small>
+                  Head Coach
+                </small>
+
+              </span>
+
+              <i
+                class="fa-solid fa-chevron-down"
+                aria-hidden="true"
+              ></i>
+
+            </button>
+
+
+            <div
+              class="coach-profile-dropdown"
+              id="coachProfileMenu"
+              hidden
+            >
+
+              <a href="coach-profile.html">
+
+                <i
+                  class="fa-regular fa-user"
+                  aria-hidden="true"
+                ></i>
+
+                My profile
+
+              </a>
+
+
+              <a href="coach-settings.html">
+
+                <i
+                  class="fa-solid fa-gear"
+                  aria-hidden="true"
+                ></i>
+
+                Account settings
+
+              </a>
+
+
+              <a href="coach-help.html">
+
+                <i
+                  class="fa-regular fa-circle-question"
+                  aria-hidden="true"
+                ></i>
+
+                Help centre
+
+              </a>
+
+
+              <hr />
+
+
+              <button
+                id="coachTopbarLogoutButton"
+                type="button"
+              >
+
+                <i
+                  class="fa-solid fa-arrow-right-from-bracket"
+                  aria-hidden="true"
+                ></i>
+
+                Log out
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           MAIN CONTENT
+      ====================================================== -->
+
+      <main
+        class="coach-settings-main"
+        id="mainContent"
+      >
+
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="coach-settings-hero">
+
+          <div class="coach-settings-hero-content">
+
+            <span class="coach-settings-eyebrow">
+              Account preferences
+            </span>
+
+            <h2>
+              Manage your coach portal settings
+            </h2>
+
+            <p>
+              Update your personal information, security preferences,
+              notifications, privacy controls and portal appearance.
+            </p>
+
+          </div>
+
+
+          <div class="coach-settings-hero-status">
+
+            <span class="coach-settings-status-icon">
+
+              <i
+                class="fa-solid fa-shield-halved"
+                aria-hidden="true"
+              ></i>
+
+            </span>
+
+
+            <div>
+
+              <span>
+                Account status
+              </span>
+
+              <strong>
+                Secure and verified
+              </strong>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- SETTINGS LAYOUT -->
+
+        <div class="coach-settings-layout">
+
+
+          <!-- SETTINGS SECTION NAVIGATION -->
+
+          <aside
+            class="coach-settings-navigation"
+            aria-label="Settings sections"
+          >
+
+            <div class="coach-settings-navigation-header">
+
+              <span>
+                Settings
+              </span>
+
+              <p>
+                Select a category to manage your preferences.
+              </p>
+
+            </div>
+
+
+            <nav>
+
+              <button
+                class="coach-settings-nav-button active"
+                type="button"
+                data-settings-target="profileSettings"
+                aria-controls="profileSettings"
+                aria-selected="true"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-regular fa-user"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Profile
+                  </strong>
+
+                  <small>
+                    Personal information
+                  </small>
+
+                </span>
+
+              </button>
+
+
+              <button
+                class="coach-settings-nav-button"
+                type="button"
+                data-settings-target="accountSettings"
+                aria-controls="accountSettings"
+                aria-selected="false"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-solid fa-user-gear"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Account
+                  </strong>
+
+                  <small>
+                    Email and language
+                  </small>
+
+                </span>
+
+              </button>
+
+
+              <button
+                class="coach-settings-nav-button"
+                type="button"
+                data-settings-target="securitySettings"
+                aria-controls="securitySettings"
+                aria-selected="false"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-solid fa-lock"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Security
+                  </strong>
+
+                  <small>
+                    Password and sessions
+                  </small>
+
+                </span>
+
+              </button>
+
+
+              <button
+                class="coach-settings-nav-button"
+                type="button"
+                data-settings-target="notificationSettings"
+                aria-controls="notificationSettings"
+                aria-selected="false"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-regular fa-bell"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Notifications
+                  </strong>
+
+                  <small>
+                    Alerts and updates
+                  </small>
+
+                </span>
+
+              </button>
+
+
+              <button
+                class="coach-settings-nav-button"
+                type="button"
+                data-settings-target="privacySettings"
+                aria-controls="privacySettings"
+                aria-selected="false"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-solid fa-shield-halved"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Privacy
+                  </strong>
+
+                  <small>
+                    Visibility and data
+                  </small>
+
+                </span>
+
+              </button>
+
+
+              <button
+                class="coach-settings-nav-button"
+                type="button"
+                data-settings-target="appearanceSettings"
+                aria-controls="appearanceSettings"
+                aria-selected="false"
+              >
+
+                <span class="coach-settings-nav-icon">
+
+                  <i
+                    class="fa-solid fa-palette"
+                    aria-hidden="true"
+                  ></i>
+
+                </span>
+
+
+                <span class="coach-settings-nav-text">
+
+                  <strong>
+                    Appearance
+                  </strong>
+
+                  <small>
+                    Theme and display
+                  </small>
+
+                </span>
+
+              </button>
+
+            </nav>
+
+          </aside>
+
+
+          <!-- SETTINGS CONTENT -->
+
+          <div class="coach-settings-content">
+
+
+            <!-- =====================================================
+                 PROFILE SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section active"
+              id="profileSettings"
+              data-settings-section
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Personal information
+                  </span>
+
+                  <h3>
+                    Profile settings
+                  </h3>
+
+                  <p>
+                    Keep your coach identity and professional information
+                    accurate and up to date.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachProfileSettingsForm"
+                novalidate
+              >
+                              <!-- PROFILE PHOTO -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Profile photo
+                      </h4>
+
+                      <p>
+                        Upload a clear professional photo for your coach profile.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-profile-photo-settings">
+
+                    <div class="coach-profile-photo-preview">
+
+                      <img
+                        id="coachProfilePhotoPreview"
+                        src="images/coach-avatar-placeholder.jpg"
+                        alt="Coach profile preview"
+                      />
+
+                      <span
+                        class="coach-profile-photo-status"
+                        aria-label="Verified coach profile"
+                      >
+
+                        <i
+                          class="fa-solid fa-check"
+                          aria-hidden="true"
+                        ></i>
+
+                      </span>
+
+                    </div>
+
+
+                    <div class="coach-profile-photo-controls">
+
+                      <div>
+
+                        <strong>
+                          Upload a new profile photo
+                        </strong>
+
+                        <p>
+                          JPG, PNG or WebP. Maximum file size: 5 MB.
+                        </p>
+
+                      </div>
+
+
+                      <div class="coach-profile-photo-actions">
+
+                        <label
+                          class="coach-primary-button"
+                          for="coachProfilePhotoInput"
+                        >
+
+                          <i
+                            class="fa-solid fa-upload"
+                            aria-hidden="true"
+                          ></i>
+
+                          Upload photo
+
+                        </label>
+
+
+                        <input
+                          id="coachProfilePhotoInput"
+                          name="profilePhoto"
+                          type="file"
+                          accept="image/jpeg,image/png,image/webp"
+                          hidden
+                        />
+
+
+                        <button
+                          class="coach-secondary-button"
+                          id="removeCoachProfilePhoto"
+                          type="button"
+                        >
+
+                          <i
+                            class="fa-regular fa-trash-can"
+                            aria-hidden="true"
+                          ></i>
+
+                          Remove
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- BASIC INFORMATION -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Basic information
+                      </h4>
+
+                      <p>
+                        These details will appear on your public coach profile.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-grid coach-form-grid-two">
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachFirstName">
+                        First name
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-regular fa-user"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachFirstName"
+                          name="firstName"
+                          type="text"
+                          value="Arjun"
+                          placeholder="Enter first name"
+                          autocomplete="given-name"
+                          required
+                        />
+
+                      </div>
+
+                      <small class="coach-field-error"></small>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachLastName">
+                        Last name
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-regular fa-user"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachLastName"
+                          name="lastName"
+                          type="text"
+                          value="Sharma"
+                          placeholder="Enter last name"
+                          autocomplete="family-name"
+                          required
+                        />
+
+                      </div>
+
+                      <small class="coach-field-error"></small>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachDisplayName">
+                        Display name
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-id-badge"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachDisplayName"
+                          name="displayName"
+                          type="text"
+                          value="Coach Arjun Sharma"
+                          placeholder="Enter display name"
+                          required
+                        />
+
+                      </div>
+
+                      <small class="coach-field-help">
+                        This name will be visible across the coach portal.
+                      </small>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachDateOfBirth">
+                        Date of birth
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-regular fa-calendar"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachDateOfBirth"
+                          name="dateOfBirth"
+                          type="date"
+                          value="1986-08-14"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachGender">
+                        Gender
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-venus-mars"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachGender"
+                          name="gender"
+                        >
+
+                          <option value="">
+                            Select gender
+                          </option>
+
+                          <option
+                            value="male"
+                            selected
+                          >
+                            Male
+                          </option>
+
+                          <option value="female">
+                            Female
+                          </option>
+
+                          <option value="other">
+                            Other
+                          </option>
+
+                          <option value="prefer-not-to-say">
+                            Prefer not to say
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachNationality">
+                        Nationality
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-earth-asia"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachNationality"
+                          name="nationality"
+                          type="text"
+                          value="Indian"
+                          placeholder="Enter nationality"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachPhoneNumber">
+                        Phone number
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-phone"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachPhoneNumber"
+                          name="phoneNumber"
+                          type="tel"
+                          value="+91 98765 43210"
+                          placeholder="+91 00000 00000"
+                          autocomplete="tel"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachCity">
+                        City
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachCity"
+                          name="city"
+                          type="text"
+                          value="New Delhi"
+                          placeholder="Enter city"
+                          autocomplete="address-level2"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachState">
+                        State
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-map"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachState"
+                          name="state"
+                        >
+
+                          <option value="">
+                            Select state
+                          </option>
+
+                          <option value="andhra-pradesh">
+                            Andhra Pradesh
+                          </option>
+
+                          <option value="assam">
+                            Assam
+                          </option>
+
+                          <option value="delhi" selected>
+                            Delhi
+                          </option>
+
+                          <option value="goa">
+                            Goa
+                          </option>
+
+                          <option value="karnataka">
+                            Karnataka
+                          </option>
+
+                          <option value="kerala">
+                            Kerala
+                          </option>
+
+                          <option value="maharashtra">
+                            Maharashtra
+                          </option>
+
+                          <option value="manipur">
+                            Manipur
+                          </option>
+
+                          <option value="meghalaya">
+                            Meghalaya
+                          </option>
+
+                          <option value="mizoram">
+                            Mizoram
+                          </option>
+
+                          <option value="nagaland">
+                            Nagaland
+                          </option>
+
+                          <option value="odisha">
+                            Odisha
+                          </option>
+
+                          <option value="punjab">
+                            Punjab
+                          </option>
+
+                          <option value="rajasthan">
+                            Rajasthan
+                          </option>
+
+                          <option value="tamil-nadu">
+                            Tamil Nadu
+                          </option>
+
+                          <option value="telangana">
+                            Telangana
+                          </option>
+
+                          <option value="uttar-pradesh">
+                            Uttar Pradesh
+                          </option>
+
+                          <option value="west-bengal">
+                            West Bengal
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachPostalCode">
+                        Postal code
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-location-crosshairs"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachPostalCode"
+                          name="postalCode"
+                          type="text"
+                          value="110001"
+                          placeholder="Enter postal code"
+                          autocomplete="postal-code"
+                        />
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PROFESSIONAL INFORMATION -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Professional information
+                      </h4>
+
+                      <p>
+                        Share your coaching role, experience and qualifications.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-grid coach-form-grid-two">
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachRole">
+                        Coaching role
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-whistle"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachRole"
+                          name="coachRole"
+                          required
+                        >
+
+                          <option value="">
+                            Select coaching role
+                          </option>
+
+                          <option
+                            value="head-coach"
+                            selected
+                          >
+                            Head Coach
+                          </option>
+
+                          <option value="assistant-coach">
+                            Assistant Coach
+                          </option>
+
+                          <option value="goalkeeping-coach">
+                            Goalkeeping Coach
+                          </option>
+
+                          <option value="fitness-coach">
+                            Fitness Coach
+                          </option>
+
+                          <option value="technical-coach">
+                            Technical Coach
+                          </option>
+
+                          <option value="youth-coach">
+                            Youth Development Coach
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachExperience">
+                        Years of experience
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-briefcase"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachExperience"
+                          name="experienceYears"
+                          type="number"
+                          value="12"
+                          min="0"
+                          max="60"
+                          placeholder="Enter years"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachLicense">
+                        Highest coaching licence
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-certificate"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachLicense"
+                          name="coachingLicense"
+                        >
+
+                          <option value="">
+                            Select licence
+                          </option>
+
+                          <option value="afc-pro">
+                            AFC Pro Licence
+                          </option>
+
+                          <option
+                            value="afc-a"
+                            selected
+                          >
+                            AFC A Licence
+                          </option>
+
+                          <option value="afc-b">
+                            AFC B Licence
+                          </option>
+
+                          <option value="afc-c">
+                            AFC C Licence
+                          </option>
+
+                          <option value="aiff-d">
+                            AIFF D Licence
+                          </option>
+
+                          <option value="grassroots">
+                            Grassroots Certification
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachSpecialisation">
+                        Specialisation
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-bullseye"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachSpecialisation"
+                          name="specialisation"
+                        >
+
+                          <option value="">
+                            Select specialisation
+                          </option>
+
+                          <option value="player-development">
+                            Player Development
+                          </option>
+
+                          <option
+                            value="tactical-development"
+                            selected
+                          >
+                            Tactical Development
+                          </option>
+
+                          <option value="technical-development">
+                            Technical Development
+                          </option>
+
+                          <option value="strength-conditioning">
+                            Strength &amp; Conditioning
+                          </option>
+
+                          <option value="goalkeeping">
+                            Goalkeeping
+                          </option>
+
+                          <option value="youth-football">
+                            Youth Football
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachCurrentAcademy">
+                        Current academy or club
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-solid fa-building"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachCurrentAcademy"
+                          name="currentAcademy"
+                          type="text"
+                          value="FIFA Mission India Development Academy"
+                          placeholder="Enter academy or club"
+                        />
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachAgeGroup">
+                        Primary age group
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-people-group"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachAgeGroup"
+                          name="primaryAgeGroup"
+                        >
+
+                          <option value="">
+                            Select age group
+                          </option>
+
+                          <option value="u-9">
+                            Under 9
+                          </option>
+
+                          <option value="u-11">
+                            Under 11
+                          </option>
+
+                          <option value="u-13">
+                            Under 13
+                          </option>
+
+                          <option
+                            value="u-15"
+                            selected
+                          >
+                            Under 15
+                          </option>
+
+                          <option value="u-17">
+                            Under 17
+                          </option>
+
+                          <option value="u-19">
+                            Under 19
+                          </option>
+
+                          <option value="senior">
+                            Senior
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group coach-form-group-full">
+
+                      <label for="coachBiography">
+                        Professional biography
+                      </label>
+
+                      <textarea
+                        id="coachBiography"
+                        name="biography"
+                        rows="6"
+                        maxlength="600"
+                        placeholder="Write a short professional biography"
+                      >Experienced youth football coach focused on tactical intelligence, player development and building disciplined, confident teams.</textarea>
+
+                      <div class="coach-textarea-footer">
+
+                        <small>
+                          Briefly describe your coaching philosophy and experience.
+                        </small>
+
+                        <span id="coachBiographyCount">
+                          129 / 600
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PROFILE FORM ACTIONS -->
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    id="resetProfileSettingsButton"
+                    type="reset"
+                  >
+                    Reset changes
+                  </button>
+
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-regular fa-floppy-disk"
+                      aria-hidden="true"
+                    ></i>
+
+                    Save profile
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+
+
+            <!-- =====================================================
+                 ACCOUNT SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section"
+              id="accountSettings"
+              data-settings-section
+              hidden
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Account preferences
+                  </span>
+
+                  <h3>
+                    Account settings
+                  </h3>
+
+                  <p>
+                    Manage your login email, language, timezone and account preferences.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachAccountSettingsForm"
+                novalidate
+              >
+                 <!-- LOGIN EMAIL -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Login email
+                      </h4>
+
+                      <p>
+                        This email is used to sign in and receive important account updates.
+                      </p>
+
+                    </div>
+
+                    <span class="coach-settings-verified-badge">
+
+                      <i
+                        class="fa-solid fa-circle-check"
+                        aria-hidden="true"
+                      ></i>
+
+                      Verified
+
+                    </span>
+
+                  </div>
+
+
+                  <div class="coach-form-grid coach-form-grid-two">
+
+                    <div class="coach-form-group coach-form-group-full">
+
+                      <label for="coachAccountEmail">
+                        Email address
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-regular fa-envelope"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachAccountEmail"
+                          name="email"
+                          type="email"
+                          value="arjun.sharma@example.com"
+                          placeholder="Enter email address"
+                          autocomplete="email"
+                          required
+                        />
+
+                      </div>
+
+                      <small class="coach-field-help">
+                        Changing this email may require verification.
+                      </small>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- LANGUAGE AND REGION -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Language and region
+                      </h4>
+
+                      <p>
+                        Choose how dates, times and portal content are displayed.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-grid coach-form-grid-two">
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachLanguage">
+                        Preferred language
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-language"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachLanguage"
+                          name="language"
+                        >
+
+                          <option
+                            value="en"
+                            selected
+                          >
+                            English
+                          </option>
+
+                          <option value="hi">
+                            Hindi
+                          </option>
+
+                          <option value="bn">
+                            Bengali
+                          </option>
+
+                          <option value="as">
+                            Assamese
+                          </option>
+
+                          <option value="ml">
+                            Malayalam
+                          </option>
+
+                          <option value="ta">
+                            Tamil
+                          </option>
+
+                          <option value="te">
+                            Telugu
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachTimezone">
+                        Timezone
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-regular fa-clock"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachTimezone"
+                          name="timezone"
+                        >
+
+                          <option
+                            value="Asia/Kolkata"
+                            selected
+                          >
+                            India Standard Time (UTC+05:30)
+                          </option>
+
+                          <option value="Asia/Dhaka">
+                            Bangladesh Standard Time (UTC+06:00)
+                          </option>
+
+                          <option value="Asia/Kathmandu">
+                            Nepal Time (UTC+05:45)
+                          </option>
+
+                          <option value="Asia/Dubai">
+                            Gulf Standard Time (UTC+04:00)
+                          </option>
+
+                          <option value="Europe/London">
+                            London Time
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachDateFormat">
+                        Date format
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-regular fa-calendar-days"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachDateFormat"
+                          name="dateFormat"
+                        >
+
+                          <option
+                            value="dd-mm-yyyy"
+                            selected
+                          >
+                            DD/MM/YYYY
+                          </option>
+
+                          <option value="mm-dd-yyyy">
+                            MM/DD/YYYY
+                          </option>
+
+                          <option value="yyyy-mm-dd">
+                            YYYY/MM/DD
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachTimeFormat">
+                        Time format
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-stopwatch"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="coachTimeFormat"
+                          name="timeFormat"
+                        >
+
+                          <option
+                            value="12-hour"
+                            selected
+                          >
+                            12-hour
+                          </option>
+
+                          <option value="24-hour">
+                            24-hour
+                          </option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PORTAL PREFERENCES -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Portal preferences
+                      </h4>
+
+                      <p>
+                        Control your default coach portal behaviour.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-house"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Open dashboard after login
+                          </strong>
+
+                          <small>
+                            Go directly to the coach dashboard when you sign in.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+
+                      <span class="coach-switch">
+
+                        <input
+                          id="openDashboardAfterLogin"
+                          name="openDashboardAfterLogin"
+                          type="checkbox"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-rotate"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Remember last opened section
+                          </strong>
+
+                          <small>
+                            Reopen the last coach portal section you visited.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+
+                      <span class="coach-switch">
+
+                        <input
+                          id="rememberLastSection"
+                          name="rememberLastSection"
+                          type="checkbox"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-wand-magic-sparkles"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Show coaching tips
+                          </strong>
+
+                          <small>
+                            Display platform guidance and coaching recommendations.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+
+                      <span class="coach-switch">
+
+                        <input
+                          id="showCoachingTips"
+                          name="showCoachingTips"
+                          type="checkbox"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- ACCOUNT FORM ACTIONS -->
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    type="reset"
+                  >
+                    Reset changes
+                  </button>
+
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-regular fa-floppy-disk"
+                      aria-hidden="true"
+                    ></i>
+
+                    Save account settings
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECURITY SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section"
+              id="securitySettings"
+              data-settings-section
+              hidden
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Account protection
+                  </span>
+
+                  <h3>
+                    Security settings
+                  </h3>
+
+                  <p>
+                    Protect your coach account with a strong password and secure login options.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachSecuritySettingsForm"
+                novalidate
+              >
+
+
+                <!-- CHANGE PASSWORD -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Change password
+                      </h4>
+
+                      <p>
+                        Use a strong password that you do not use on other platforms.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-grid">
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachCurrentPassword">
+                        Current password
+                      </label>
+
+                      <div class="coach-input-wrapper coach-password-wrapper">
+
+                        <i
+                          class="fa-solid fa-lock"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachCurrentPassword"
+                          name="currentPassword"
+                          type="password"
+                          placeholder="Enter current password"
+                          autocomplete="current-password"
+                        />
+
+                        <button
+                          class="coach-password-toggle"
+                          type="button"
+                          data-password-target="coachCurrentPassword"
+                          aria-label="Show current password"
+                        >
+
+                          <i
+                            class="fa-regular fa-eye"
+                            aria-hidden="true"
+                          ></i>
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachNewPassword">
+                        New password
+                      </label>
+
+                      <div class="coach-input-wrapper coach-password-wrapper">
+
+                        <i
+                          class="fa-solid fa-key"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachNewPassword"
+                          name="newPassword"
+                          type="password"
+                          placeholder="Enter new password"
+                          autocomplete="new-password"
+                          minlength="8"
+                        />
+
+                        <button
+                          class="coach-password-toggle"
+                          type="button"
+                          data-password-target="coachNewPassword"
+                          aria-label="Show new password"
+                        >
+
+                          <i
+                            class="fa-regular fa-eye"
+                            aria-hidden="true"
+                          ></i>
+
+                        </button>
+
+                      </div>
+
+                      <div class="coach-password-strength">
+
+                        <div class="coach-password-strength-bars">
+
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+
+                        </div>
+
+                        <small id="coachPasswordStrengthText">
+                          Use at least 8 characters with letters, numbers and symbols.
+                        </small>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="coachConfirmPassword">
+                        Confirm new password
+                      </label>
+
+                      <div class="coach-input-wrapper coach-password-wrapper">
+
+                        <i
+                          class="fa-solid fa-shield"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="coachConfirmPassword"
+                          name="confirmPassword"
+                          type="password"
+                          placeholder="Confirm new password"
+                          autocomplete="new-password"
+                          minlength="8"
+                        />
+
+                        <button
+                          class="coach-password-toggle"
+                          type="button"
+                          data-password-target="coachConfirmPassword"
+                          aria-label="Show confirmed password"
+                        >
+
+                          <i
+                            class="fa-regular fa-eye"
+                            aria-hidden="true"
+                          ></i>
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- TWO-FACTOR AUTHENTICATION -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Two-factor authentication
+                      </h4>
+
+                      <p>
+                        Add another layer of protection to your coach account.
+                      </p>
+
+                    </div>
+
+                    <span class="coach-settings-status-badge inactive">
+                      Not enabled
+                    </span>
+
+                  </div>
+
+
+                  <div class="coach-security-feature">
+
+                    <span class="coach-security-feature-icon">
+
+                      <i
+                        class="fa-solid fa-mobile-screen-button"
+                        aria-hidden="true"
+                      ></i>
+
+                    </span>
+
+
+                    <div class="coach-security-feature-content">
+
+                      <strong>
+                        Authenticator app
+                      </strong>
+
+                      <p>
+                        Use an authenticator app to generate secure login codes.
+                      </p>
+
+                    </div>
+
+
+                    <button
+                      class="coach-secondary-button"
+                      id="enableTwoFactorButton"
+                      type="button"
+                    >
+                      Enable
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <!-- ACTIVE SESSIONS -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Active sessions
+                      </h4>
+
+                      <p>
+                        Review the devices currently signed in to your account.
+                      </p>
+
+                    </div>
+
+                    <button
+                      class="coach-text-button coach-danger-text-button"
+                      id="logoutAllSessionsButton"
+                      type="button"
+                    >
+                      Log out all devices
+                    </button>
+
+                  </div>
+
+
+                  <div class="coach-session-list">
+
+
+                    <article class="coach-session-item">
+
+                      <span class="coach-session-icon">
+
+                        <i
+                          class="fa-solid fa-desktop"
+                          aria-hidden="true"
+                        ></i>
+
+                      </span>
+
+
+                      <div class="coach-session-information">
+
+                        <div>
+
+                          <strong>
+                            Windows Desktop
+                          </strong>
+
+                          <span class="coach-current-session-badge">
+                            Current session
+                          </span>
+
+                        </div>
+
+                        <p>
+                          Chrome · New Delhi, India
+                        </p>
+
+                        <small>
+                          Active now
+                        </small>
+
+                      </div>
+
+                    </article>
+
+
+                    <article class="coach-session-item">
+
+                      <span class="coach-session-icon">
+
+                        <i
+                          class="fa-solid fa-mobile-screen"
+                          aria-hidden="true"
+                        ></i>
+
+                      </span>
+
+
+                      <div class="coach-session-information">
+
+                        <div>
+
+                          <strong>
+                            Android Phone
+                          </strong>
+
+                        </div>
+
+                        <p>
+                          Chrome Mobile · New Delhi, India
+                        </p>
+
+                        <small>
+                          Last active 2 hours ago
+                        </small>
+
+                      </div>
+
+
+                      <button
+                        class="coach-session-remove"
+                        type="button"
+                        aria-label="Log out Android phone session"
+                      >
+
+                        <i
+                          class="fa-solid fa-arrow-right-from-bracket"
+                          aria-hidden="true"
+                        ></i>
+
+                      </button>
+
+                    </article>
+
+                  </div>
+
+                </div>
+
+
+                <!-- SECURITY FORM ACTIONS -->
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    type="reset"
+                  >
+                    Clear fields
+                  </button>
+
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-solid fa-shield-halved"
+                      aria-hidden="true"
+                    ></i>
+
+                    Update security
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+            
+                        <!-- =====================================================
+                 NOTIFICATION SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section"
+              id="notificationSettings"
+              data-settings-section
+              hidden
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Alerts & Updates
+                  </span>
+
+                  <h3>
+                    Notification settings
+                  </h3>
+
+                  <p>
+                    Choose which notifications you receive across the FIFA Mission India Coach Portal.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachNotificationSettingsForm"
+                novalidate
+              >
+
+
+                <!-- EMAIL NOTIFICATIONS -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Email notifications
+                      </h4>
+
+                      <p>
+                        Receive important updates directly in your inbox.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-envelope"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Match updates
+                          </strong>
+
+                          <small>
+                            Fixtures, score reports and schedule changes.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="emailMatchUpdates"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-users"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Player activity
+                          </strong>
+
+                          <small>
+                            New registrations, player reports and attendance.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="emailPlayerUpdates"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-newspaper"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Platform announcements
+                          </strong>
+
+                          <small>
+                            Major FIFA Mission India news and announcements.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="emailAnnouncements"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PUSH NOTIFICATIONS -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Push notifications
+                      </h4>
+
+                      <p>
+                        Receive real-time alerts on supported devices.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-bell"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Instant alerts
+                          </strong>
+
+                          <small>
+                            Notify me immediately for urgent updates.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="pushInstantAlerts"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Training reminders
+                          </strong>
+
+                          <small>
+                            Remind me before every scheduled training session.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="trainingReminders"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-comments"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            New messages
+                          </strong>
+
+                          <small>
+                            Notify me when I receive a new message.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="messageNotifications"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- WEEKLY REPORTS -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Weekly summary
+                      </h4>
+
+                      <p>
+                        Receive a coaching performance summary every week.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-grid coach-form-grid-two">
+
+
+                    <div class="coach-form-group">
+
+                      <label for="weeklySummaryDay">
+                        Delivery day
+                      </label>
+
+                      <div class="coach-select-wrapper">
+
+                        <i
+                          class="fa-solid fa-calendar-days"
+                          aria-hidden="true"
+                        ></i>
+
+                        <select
+                          id="weeklySummaryDay"
+                          name="weeklySummaryDay"
+                        >
+
+                          <option>Monday</option>
+                          <option>Tuesday</option>
+                          <option>Wednesday</option>
+                          <option>Thursday</option>
+                          <option selected>Friday</option>
+                          <option>Saturday</option>
+                          <option>Sunday</option>
+
+                        </select>
+
+                        <i
+                          class="fa-solid fa-chevron-down coach-select-arrow"
+                          aria-hidden="true"
+                        ></i>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="coach-form-group">
+
+                      <label for="weeklySummaryTime">
+                        Delivery time
+                      </label>
+
+                      <div class="coach-input-wrapper">
+
+                        <i
+                          class="fa-regular fa-clock"
+                          aria-hidden="true"
+                        ></i>
+
+                        <input
+                          id="weeklySummaryTime"
+                          name="weeklySummaryTime"
+                          type="time"
+                          value="18:00"
+                        />
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    type="reset"
+                  >
+                    Reset
+                  </button>
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-regular fa-floppy-disk"
+                      aria-hidden="true"
+                    ></i>
+
+                    Save notification settings
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+
+
+            <!-- =====================================================
+                 PRIVACY SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section"
+              id="privacySettings"
+              data-settings-section
+              hidden
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Privacy
+                  </span>
+
+                  <h3>
+                    Privacy settings
+                  </h3>
+
+                  <p>
+                    Control how your information is shared across the platform.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachPrivacySettingsForm"
+                novalidate
+              >
+
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Profile visibility
+                      </h4>
+
+                      <p>
+                        Decide who can view your coach profile.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-form-group">
+
+                    <label for="coachProfileVisibility">
+                      Visibility
+                    </label>
+
+                    <div class="coach-select-wrapper">
+
+                      <i
+                        class="fa-solid fa-eye"
+                        aria-hidden="true"
+                      ></i>
+
+                      <select
+                        id="coachProfileVisibility"
+                        name="profileVisibility"
+                      >
+
+                        <option value="public" selected>
+                          Public
+                        </option>
+
+                        <option value="registered">
+                          Registered users only
+                        </option>
+
+                        <option value="academy">
+                          Academy members only
+                        </option>
+
+                        <option value="private">
+                          Private
+                        </option>
+
+                      </select>
+
+                      <i
+                        class="fa-solid fa-chevron-down coach-select-arrow"
+                        aria-hidden="true"
+                      ></i>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Display email address
+                        </strong>
+
+                        <small>
+                          Show your email on your public coach profile.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="displayEmail"
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Display phone number
+                        </strong>
+
+                        <small>
+                          Allow verified users to see your phone number.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="displayPhone"
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Allow direct messages
+                        </strong>
+
+                        <small>
+                          Let players and academies contact you directly.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="allowDirectMessages"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+                                <!-- DATA & PRIVACY -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Data &amp; privacy
+                      </h4>
+
+                      <p>
+                        Control how your information is used across the platform.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-chart-simple"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Share anonymous analytics
+                          </strong>
+
+                          <small>
+                            Help improve FIFA Mission India by sharing anonymous usage data.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="anonymousAnalytics"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-user-shield"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Personalised recommendations
+                          </strong>
+
+                          <small>
+                            Receive customised coaching suggestions and insights.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="personalisedRecommendations"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <span class="coach-settings-option-icon">
+
+                          <i
+                            class="fa-solid fa-file-circle-check"
+                            aria-hidden="true"
+                          ></i>
+
+                        </span>
+
+                        <span>
+
+                          <strong>
+                            Consent to research programmes
+                          </strong>
+
+                          <small>
+                            Allow anonymised data to be used for football development research.
+                          </small>
+
+                        </span>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="researchConsent"
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- DOWNLOAD & DELETE -->
+
+                <div class="coach-settings-card coach-danger-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Account data
+                      </h4>
+
+                      <p>
+                        Download your information or permanently remove your account.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-danger-actions">
+
+                    <div class="coach-danger-action">
+
+                      <div>
+
+                        <strong>
+                          Download my data
+                        </strong>
+
+                        <p>
+                          Export your profile, coaching history and account information.
+                        </p>
+
+                      </div>
+
+                      <button
+                        class="coach-secondary-button"
+                        id="downloadCoachDataButton"
+                        type="button"
+                      >
+
+                        <i
+                          class="fa-solid fa-download"
+                          aria-hidden="true"
+                        ></i>
+
+                        Download
+
+                      </button>
+
+                    </div>
+
+
+                    <div class="coach-danger-action">
+
+                      <div>
+
+                        <strong>
+                          Delete account
+                        </strong>
+
+                        <p>
+                          Permanently remove your coach account and all associated data.
+                        </p>
+
+                      </div>
+
+                      <button
+                        class="coach-danger-button"
+                        id="deleteCoachAccountButton"
+                        type="button"
+                      >
+
+                        <i
+                          class="fa-solid fa-trash"
+                          aria-hidden="true"
+                        ></i>
+
+                        Delete account
+
+                      </button>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PRIVACY ACTIONS -->
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    type="reset"
+                  >
+                    Reset
+                  </button>
+
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-regular fa-floppy-disk"
+                      aria-hidden="true"
+                    ></i>
+
+                    Save privacy settings
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+
+
+            <!-- =====================================================
+                 APPEARANCE SETTINGS
+            ====================================================== -->
+
+            <section
+              class="coach-settings-section"
+              id="appearanceSettings"
+              data-settings-section
+              hidden
+            >
+
+              <div class="coach-settings-section-header">
+
+                <div>
+
+                  <span class="coach-settings-section-eyebrow">
+                    Appearance
+                  </span>
+
+                  <h3>
+                    Appearance settings
+                  </h3>
+
+                  <p>
+                    Personalise how your FIFA Mission India Coach Portal looks.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form
+                class="coach-settings-form"
+                id="coachAppearanceSettingsForm"
+                novalidate
+              >
+
+
+                <!-- THEME -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Theme
+                      </h4>
+
+                      <p>
+                        Select your preferred interface appearance.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-theme-grid">
+
+
+                    <label class="coach-theme-card">
+
+                      <input
+                        type="radio"
+                        name="portalTheme"
+                        value="light"
+                        checked
+                      />
+
+                      <span class="coach-theme-preview coach-theme-light"></span>
+
+                      <strong>
+                        Light
+                      </strong>
+
+                    </label>
+
+
+                    <label class="coach-theme-card">
+
+                      <input
+                        type="radio"
+                        name="portalTheme"
+                        value="dark"
+                      />
+
+                      <span class="coach-theme-preview coach-theme-dark"></span>
+
+                      <strong>
+                        Dark
+                      </strong>
+
+                    </label>
+
+
+                    <label class="coach-theme-card">
+
+                      <input
+                        type="radio"
+                        name="portalTheme"
+                        value="system"
+                      />
+
+                      <span class="coach-theme-preview coach-theme-system"></span>
+
+                      <strong>
+                        System
+                      </strong>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- DISPLAY OPTIONS -->
+
+                <div class="coach-settings-card">
+
+                  <div class="coach-settings-card-header">
+
+                    <div>
+
+                      <h4>
+                        Display preferences
+                      </h4>
+
+                      <p>
+                        Configure how the interface behaves.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="coach-settings-option-list">
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Compact layout
+                        </strong>
+
+                        <small>
+                          Reduce spacing to display more information.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="compactLayout"
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Reduce animations
+                        </strong>
+
+                        <small>
+                          Minimise interface animations for better accessibility.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="reduceAnimations"
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+
+                    <label class="coach-settings-option">
+
+                      <span class="coach-settings-option-content">
+
+                        <strong>
+                          Sticky sidebar
+                        </strong>
+
+                        <small>
+                          Keep the navigation sidebar fixed while scrolling.
+                        </small>
+
+                      </span>
+
+                      <span class="coach-switch">
+
+                        <input
+                          type="checkbox"
+                          name="stickySidebar"
+                          checked
+                        />
+
+                        <span class="coach-switch-slider"></span>
+
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+
+                <!-- APPEARANCE ACTIONS -->
+
+                <div class="coach-settings-form-actions">
+
+                  <button
+                    class="coach-secondary-button"
+                    type="reset"
+                  >
+                    Reset
+                  </button>
+
+
+                  <button
+                    class="coach-primary-button"
+                    type="submit"
+                  >
+
+                    <i
+                      class="fa-regular fa-floppy-disk"
+                      aria-hidden="true"
+                    ></i>
+
+                    Save appearance
+
+                  </button>
+
+                </div>
+
+              </form>
+
+            </section>
+
+                      </div>
+
+        </div>
+
+      </main>
+
+
+      <!-- =====================================================
+           STICKY SAVE BAR
+      ====================================================== -->
+
+      <footer
+        class="coach-settings-savebar"
+        id="coachSettingsSaveBar"
+        hidden
+      >
+
+        <div class="coach-settings-savebar-content">
+
+          <div class="coach-settings-savebar-text">
+
+            <strong>
+              Unsaved changes
+            </strong>
+
+            <p>
+              You have unsaved changes. Save them before leaving this page.
+            </p>
+
+          </div>
+
+
+          <div class="coach-settings-savebar-actions">
+
+            <button
+              class="coach-secondary-button"
+              id="resetAllSettingsButton"
+              type="button"
+            >
+              Reset
+            </button>
+
+
+            <button
+              class="coach-primary-button"
+              id="saveAllSettingsButton"
+              type="button"
+            >
+
+              <i
+                class="fa-regular fa-floppy-disk"
+                aria-hidden="true"
+              ></i>
+
+              Save all changes
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       LOGOUT MODAL
+  ====================================================== -->
+
+  <dialog
+    class="coach-modal"
+    id="coachLogoutModal"
+  >
+
+    <form
+      class="coach-modal-card"
+      method="dialog"
+    >
+
+      <div class="coach-modal-icon">
+
+        <i
+          class="fa-solid fa-arrow-right-from-bracket"
+          aria-hidden="true"
+        ></i>
+
+      </div>
+
+
+      <h3>
+        Log out?
+      </h3>
+
+      <p>
+        Are you sure you want to log out of your FIFA Mission India Coach Portal account?
+      </p>
+
+
+      <div class="coach-modal-actions">
+
+        <button
+          class="coach-secondary-button"
+          value="cancel"
+        >
+          Cancel
+        </button>
+
+
+        <button
+          class="coach-danger-button"
+          id="confirmCoachLogoutButton"
+          value="confirm"
+        >
+          Log out
+        </button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       DELETE ACCOUNT MODAL
+  ====================================================== -->
+
+  <dialog
+    class="coach-modal"
+    id="deleteCoachAccountModal"
+  >
+
+    <form
+      class="coach-modal-card"
+      method="dialog"
+    >
+
+      <div class="coach-modal-icon danger">
+
+        <i
+          class="fa-solid fa-triangle-exclamation"
+          aria-hidden="true"
+        ></i>
+
+      </div>
+
+
+      <h3>
+        Delete account?
+      </h3>
+
+      <p>
+        This action is permanent and cannot be undone. All associated coach data will be removed once confirmed.
+      </p>
+
+
+      <div class="coach-modal-actions">
+
+        <button
+          class="coach-secondary-button"
+          value="cancel"
+        >
+          Cancel
+        </button>
+
+
+        <button
+          class="coach-danger-button"
+          id="confirmDeleteCoachAccountButton"
+          value="confirm"
+        >
+          Delete account
+        </button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       SUCCESS TOAST
+  ====================================================== -->
+
+  <div
+    class="coach-toast"
+    id="coachToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <span class="coach-toast-icon">
+
+      <i
+        class="fa-solid fa-circle-check"
+        aria-hidden="true"
+      ></i>
+
+    </span>
+
+    <div class="coach-toast-content">
+
+      <strong id="coachToastTitle">
+        Success
+      </strong>
+
+      <p id="coachToastMessage">
+        Your settings have been updated successfully.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       PAGE SCRIPT
+  ====================================================== -->
+
+  <script
+    src="coach-settings.js"
+    defer
+  ></script>
+
+</body>
+
+</html>

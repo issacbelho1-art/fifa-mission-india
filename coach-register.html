@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Register as a football coach with FIFA Mission India."
+  >
+
+  <title>Coach Registration | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Reusing the registration page styling -->
+  <link rel="stylesheet" href="css/player-register.css">
+
+</head>
+
+<body>
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <div class="page-background" aria-hidden="true">
+
+    <span class="background-orb orb-one"></span>
+
+    <span class="background-orb orb-two"></span>
+
+    <span class="background-grid"></span>
+
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="registration-header">
+
+    <a href="index.html" class="brand">
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-text">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Road to 2034</span>
+
+      </div>
+
+    </a>
+
+
+    <a href="role-selection.html" class="back-link">
+
+      <span aria-hidden="true">←</span>
+
+      Back to roles
+
+    </a>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="registration-main">
+
+    <section class="registration-layout">
+
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="registration-sidebar">
+
+        <div class="sidebar-content">
+
+          <span class="eyebrow">
+            COACH ONBOARDING
+          </span>
+
+          <h1>
+
+            Shape the players who will
+
+            <span>represent India.</span>
+
+          </h1>
+
+          <p class="sidebar-description">
+
+            Create your professional coaching profile, share your experience
+            and become part of India’s football development network.
+
+          </p>
+
+
+          <!-- Progress Navigation -->
+
+          <nav
+            class="progress-navigation"
+            aria-label="Coach registration progress"
+          >
+
+            <button
+              class="progress-step active"
+              type="button"
+              data-progress-step="1"
+              aria-current="step"
+            >
+
+              <span class="step-number">01</span>
+
+              <span class="step-copy">
+
+                <strong>Personal Details</strong>
+
+                <small>Basic information</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="2"
+            >
+
+              <span class="step-number">02</span>
+
+              <span class="step-copy">
+
+                <strong>Coaching Profile</strong>
+
+                <small>Experience and qualifications</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="3"
+            >
+
+              <span class="step-number">03</span>
+
+              <span class="step-copy">
+
+                <strong>Documents</strong>
+
+                <small>Photo and certificates</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="4"
+            >
+
+              <span class="step-number">04</span>
+
+              <span class="step-copy">
+
+                <strong>Review & Submit</strong>
+
+                <small>Confirm your information</small>
+
+              </span>
+
+            </button>
+
+          </nav>
+
+
+          <div class="opportunity-card">
+
+            <div class="opportunity-icon" aria-hidden="true">
+              ★
+            </div>
+
+            <div>
+
+              <strong>Develop India’s football talent</strong>
+
+              <p>
+
+                Connect with players, academies and development programmes
+                across the country.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+          <span>MISSION 2034</span>
+
+          <span>•</span>
+
+          <span>DEVELOP. INSPIRE. LEAD.</span>
+
+        </div>
+
+      </aside>
+
+
+      <!-- ================= FORM PANEL ================= -->
+
+      <section class="form-panel">
+
+        <div class="mobile-progress">
+
+          <div class="mobile-progress-header">
+
+            <span id="mobileStepLabel">
+              Step 1 of 4
+            </span>
+
+            <strong id="mobileStepTitle">
+              Personal Details
+            </strong>
+
+          </div>
+
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="4"
+            aria-valuenow="1"
+          >
+
+            <span id="progressBarFill"></span>
+
+          </div>
+
+        </div>
+
+
+        <form
+          id="coachRegistrationForm"
+          class="player-registration-form"
+          novalidate
+        >
+
+          <!--
+            Backend integration point:
+
+            Suggested endpoint:
+            POST /api/v1/coaches/register
+
+            Backend Lead: Mr. Harsh
+            Security review: Samarth
+          -->
+
+
+          <!-- ================= STEP 1 ================= -->
+
+          <fieldset
+            class="form-step active"
+            data-form-step="1"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 01
+              </span>
+
+              <h2>
+                Tell us about yourself
+              </h2>
+
+              <p>
+
+                Enter your personal information exactly as it appears on your
+                official documents.
+
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+              <div class="form-group">
+
+                <label for="firstName">
+
+                  First name
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter first name"
+                  autocomplete="given-name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="lastName">
+
+                  Last name
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter last name"
+                  autocomplete="family-name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="dateOfBirth">
+
+                  Date of birth
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="gender">
+
+                  Gender
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="gender"
+                    name="gender"
+                    required
+                  >
+
+                    <option value="">
+                      Select gender
+                    </option>
+
+                    <option value="male">
+                      Male
+                    </option>
+
+                    <option value="female">
+                      Female
+                    </option>
+
+                    <option value="other">
+                      Other
+                    </option>
+
+                    <option value="prefer-not-to-say">
+                      Prefer not to say
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+
+                  Email address
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="coach@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+
+                  Mobile number
+                  <span>*</span>
+
+                </label>
+
+                <div class="phone-input">
+
+                  <span class="country-code">
+                    +91
+                  </span>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="10-digit mobile number"
+                    inputmode="numeric"
+                    maxlength="10"
+                    required
+                  >
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="state">
+
+                  State / Union Territory
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="state"
+                    name="state"
+                    required
+                  >
+
+                    <option value="">
+                      Select state
+                    </option>
+
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                    <option value="assam">Assam</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="chhattisgarh">Chhattisgarh</option>
+                    <option value="goa">Goa</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="manipur">Manipur</option>
+                    <option value="meghalaya">Meghalaya</option>
+                    <option value="mizoram">Mizoram</option>
+                    <option value="nagaland">Nagaland</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="rajasthan">Rajasthan</option>
+                    <option value="sikkim">Sikkim</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="tripura">Tripura</option>
+                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                    <option value="uttarakhand">Uttarakhand</option>
+                    <option value="west-bengal">West Bengal</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="jammu-kashmir">Jammu and Kashmir</option>
+                    <option value="ladakh">Ladakh</option>
+                    <option value="puducherry">Puducherry</option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="city">
+
+                  City / District
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Enter city or district"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 2 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="2"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 02
+              </span>
+
+              <h2>
+                Build your coaching profile
+              </h2>
+
+              <p>
+
+                Share your coaching qualifications, experience and areas of
+                expertise.
+
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+              <div class="form-group">
+
+                <label for="coachType">
+
+                  Coaching role
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="coachType"
+                    name="coachType"
+                    required
+                  >
+
+                    <option value="">
+                      Select coaching role
+                    </option>
+
+                    <option value="head-coach">
+                      Head Coach
+                    </option>
+
+                    <option value="assistant-coach">
+                      Assistant Coach
+                    </option>
+
+                    <option value="youth-coach">
+                      Youth Coach
+                    </option>
+
+                    <option value="goalkeeping-coach">
+                      Goalkeeping Coach
+                    </option>
+
+                    <option value="fitness-coach">
+                      Fitness Coach
+                    </option>
+
+                    <option value="technical-coach">
+                      Technical Coach
+                    </option>
+
+                    <option value="volunteer-coach">
+                      Volunteer Coach
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="experienceYears">
+
+                  Coaching experience
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="experienceYears"
+                    name="experienceYears"
+                    required
+                  >
+
+                    <option value="">
+                      Select experience
+                    </option>
+
+                    <option value="less-than-one">
+                      Less than 1 year
+                    </option>
+
+                    <option value="1-3">
+                      1–3 years
+                    </option>
+
+                    <option value="4-6">
+                      4–6 years
+                    </option>
+
+                    <option value="7-10">
+                      7–10 years
+                    </option>
+
+                    <option value="more-than-ten">
+                      More than 10 years
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="highestLicence">
+
+                  Highest coaching licence
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="highestLicence"
+                    name="highestLicence"
+                    required
+                  >
+
+                    <option value="">
+                      Select qualification
+                    </option>
+
+                    <option value="none">
+                      No formal licence
+                    </option>
+
+                    <option value="grassroots">
+                      Grassroots Certificate
+                    </option>
+
+                    <option value="afc-c">
+                      AFC C Licence
+                    </option>
+
+                    <option value="afc-b">
+                      AFC B Licence
+                    </option>
+
+                    <option value="afc-a">
+                      AFC A Licence
+                    </option>
+
+                    <option value="afc-pro">
+                      AFC Pro Licence
+                    </option>
+
+                    <option value="other">
+                      Other Qualification
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="specialisation">
+
+                  Coaching specialisation
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="specialisation"
+                    name="specialisation"
+                    required
+                  >
+
+                    <option value="">
+                      Select specialisation
+                    </option>
+
+                    <option value="grassroots">
+                      Grassroots Football
+                    </option>
+
+                    <option value="youth-development">
+                      Youth Development
+                    </option>
+
+                    <option value="senior-football">
+                      Senior Football
+                    </option>
+
+                    <option value="goalkeeping">
+                      Goalkeeping
+                    </option>
+
+                    <option value="fitness-conditioning">
+                      Fitness and Conditioning
+                    </option>
+
+                    <option value="technical-development">
+                      Technical Development
+                    </option>
+
+                    <option value="tactical-development">
+                      Tactical Development
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="currentOrganisation">
+                  Current club, academy or organisation
+                </label>
+
+                <input
+                  type="text"
+                  id="currentOrganisation"
+                  name="currentOrganisation"
+                  placeholder="Enter organisation name"
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="coachingAchievements">
+                  Major coaching achievements
+                </label>
+
+                <textarea
+                  id="coachingAchievements"
+                  name="coachingAchievements"
+                  maxlength="500"
+                  rows="4"
+                  placeholder="Mention competitions, player development achievements or important coaching milestones."
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="achievementCharacterCount">0</b>/500
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="coachBio">
+
+                  Coaching philosophy
+                  <span>*</span>
+
+                </label>
+
+                <textarea
+                  id="coachBio"
+                  name="coachBio"
+                  maxlength="700"
+                  rows="5"
+                  placeholder="Describe your coaching philosophy, experience and approach to player development."
+                  required
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="bioCharacterCount">0</b>/700
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 3 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="3"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 03
+              </span>
+
+              <h2>
+                Add your documents
+              </h2>
+
+              <p>
+
+                Upload a professional photograph and supporting coaching
+                documents.
+
+              </p>
+
+            </div>
+
+
+            <div class="upload-section">
+
+
+              <div class="profile-upload-container">
+
+                <div
+                  class="profile-preview"
+                  id="profilePreview"
+                >
+
+                  <span id="profileInitials">
+                    CO
+                  </span>
+
+                  <img
+                    id="profilePreviewImage"
+                    alt="Coach profile preview"
+                    hidden
+                  >
+
+                </div>
+
+
+                <div class="profile-upload-copy">
+
+                  <h3>
+                    Coach profile photo
+                  </h3>
+
+                  <p>
+                    Upload a recent professional photograph.
+                  </p>
+
+                  <label
+                    class="upload-button"
+                    for="profilePhoto"
+                  >
+                    Choose photo
+                  </label>
+
+                  <input
+                    type="file"
+                    id="profilePhoto"
+                    name="profilePhoto"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                    required
+                  >
+
+                  <small>
+                    JPG, PNG or WEBP. Maximum 5 MB.
+                  </small>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="upload-grid">
+
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    ID
+                  </div>
+
+                  <div>
+
+                    <h3>
+                      Identity document
+                    </h3>
+
+                    <p>
+                      Aadhaar card, voter ID, driving licence or passport.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="identityDocument"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="identityDocument"
+                    name="identityDocument"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                    required
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="identityDocumentName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    CERT
+                  </div>
+
+                  <div>
+
+                    <h3>
+                      Coaching certificate
+                    </h3>
+
+                    <p>
+                      Upload your coaching licence or qualification.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="coachingCertificate"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="coachingCertificate"
+                    name="coachingCertificate"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="coachingCertificateName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="portfolioUrl">
+                  Coaching portfolio or professional profile
+                </label>
+
+                <input
+                  type="url"
+                  id="portfolioUrl"
+                  name="portfolioUrl"
+                  placeholder="https://..."
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 4 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="4"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 04
+              </span>
+
+              <h2>
+                Review your application
+              </h2>
+
+              <p>
+                Confirm your coaching information before submission.
+              </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+              <div class="review-header">
+
+                <div class="review-avatar">
+
+                  <img
+                    id="reviewProfileImage"
+                    alt="Coach profile"
+                    hidden
+                  >
+
+                  <span id="reviewInitials">
+                    CO
+                  </span>
+
+                </div>
+
+                <div>
+
+                  <span>
+                    COACH APPLICATION
+                  </span>
+
+                  <h3 id="reviewCoachName">
+                    Your Name
+                  </h3>
+
+                  <p id="reviewCoachLocation">
+                    Location not entered
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="review-grid">
+
+                <div class="review-item">
+
+                  <span>Email</span>
+
+                  <strong id="reviewEmail">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Mobile</span>
+
+                  <strong id="reviewPhone">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Coaching role</span>
+
+                  <strong id="reviewCoachType">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Experience</span>
+
+                  <strong id="reviewExperience">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Highest licence</span>
+
+                  <strong id="reviewLicence">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Specialisation</span>
+
+                  <strong id="reviewSpecialisation">—</strong>
+
+                </div>
+
+
+                <div class="review-item review-item-full">
+
+                  <span>Current organisation</span>
+
+                  <strong id="reviewOrganisation">
+                    Not provided
+                  </strong>
+
+                </div>
+
+
+                <div class="review-item review-item-full">
+
+                  <span>Coaching philosophy</span>
+
+                  <strong id="reviewBio">—</strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="consent-section">
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="informationConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+
+                  I confirm that the information and documents provided are
+                  accurate.
+
+                </span>
+
+              </label>
+
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="termsConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+
+                  I agree to the
+
+                  <a href="#">
+                    Terms and Conditions
+                  </a>
+
+                  and
+
+                  <a href="#">
+                    Privacy Policy
+                  </a>.
+
+                </span>
+
+              </label>
+
+              <small
+                class="error-message consent-error"
+                id="consentError"
+              ></small>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= ACTIONS ================= -->
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="secondary-button"
+              id="previousButton"
+              hidden
+            >
+
+              <span>←</span>
+
+              Previous
+
+            </button>
+
+            <div class="action-spacer"></div>
+
+            <button
+              type="button"
+              class="primary-button"
+              id="nextButton"
+            >
+
+              Continue
+
+              <span>→</span>
+
+            </button>
+
+            <button
+              type="submit"
+              class="primary-button submit-button"
+              id="submitButton"
+              hidden
+            >
+
+              <span class="button-label">
+                Submit Application
+              </span>
+
+              <span class="button-loader"></span>
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= SUCCESS MODAL ================= -->
+
+  <div
+    class="success-modal"
+    id="successModal"
+    role="dialog"
+    aria-modal="true"
+    hidden
+  >
+
+    <div class="success-modal-backdrop"></div>
+
+    <div class="success-modal-card">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <span class="success-eyebrow">
+        APPLICATION RECEIVED
+      </span>
+
+      <h2>
+        Welcome, Coach.
+      </h2>
+
+      <p>
+
+        Your coach registration has been prepared successfully in this
+        frontend demonstration.
+
+      </p>
+
+      <div class="application-reference">
+
+        <span>Application reference</span>
+
+        <strong id="applicationReference">
+          FMI-COACH-000000
+        </strong>
+
+      </div>
+
+      <a href="index.html" class="modal-button">
+        Return to Homepage
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/coach-register.js"></script>
+
+</body>
+
+</html>

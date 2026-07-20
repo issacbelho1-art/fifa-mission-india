@@ -1,0 +1,1087 @@
+<!-- ==========================================================
+     ACADEMY NOTIFICATIONS
+     Frontend : Issac Belho
+     Backend  : Mr. Harsh
+     Security : Samarth
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Academy Notifications</title>
+
+<link
+rel="stylesheet"
+href="academy-notifications.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar">
+
+<div
+class="academy-sidebar-header">
+
+<h2>Mission India</h2>
+
+<button
+id="academySidebarClose">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches & Staff
+
+</a>
+
+<a href="academy-messages.html">
+
+<i class="fa-solid fa-comments"></i>
+
+Messages
+
+</a>
+
+<a
+class="active"
+href="academy-notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+class="academy-sidebar-overlay"
+id="academySidebarOverlay"
+hidden></div>
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main
+class="academy-main">
+
+<header
+class="academy-topbar">
+
+<button
+id="academyMenuButton">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h1>
+
+Notifications
+
+</h1>
+
+<div
+class="academy-profile-dropdown-wrapper">
+
+<button
+id="academyProfileTrigger">
+
+<img
+src="images/admin.jpg"
+alt="Administrator">
+
+</button>
+
+<div
+class="academy-profile-dropdown"
+id="academyProfileDropdown"
+hidden>
+
+<a href="#">My Profile</a>
+
+<a href="#">Settings</a>
+
+<button
+id="academyLogoutButton">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section
+class="academy-page-hero">
+
+<div>
+
+<span>
+
+Notification Centre
+
+</span>
+
+<h2>
+
+Stay Updated Across Your Academy
+
+</h2>
+
+<p>
+
+Monitor player activities, applications,
+messages, trials, approvals and important
+system announcements from one place.
+
+</p>
+
+</div>
+
+<button
+class="academy-primary-button"
+id="academyMarkAllRead">
+
+<i class="fa-solid fa-check-double"></i>
+
+Mark All Read
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     STATISTICS
+========================================================== -->
+
+<section
+class="academy-stats-grid">
+
+<article class="academy-stat-card">
+
+<i class="fa-solid fa-bell"></i>
+
+<h3 id="totalNotifications">
+
+248
+
+</h3>
+
+<p>
+
+Total Notifications
+
+</p>
+
+</article>
+
+<article class="academy-stat-card">
+
+<i class="fa-solid fa-envelope-open"></i>
+
+<h3 id="unreadNotifications">
+
+24
+
+</h3>
+
+<p>
+
+Unread
+
+</p>
+
+</article>
+
+<article class="academy-stat-card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h3 id="highPriorityNotifications">
+
+5
+
+</h3>
+
+<p>
+
+High Priority
+
+</p>
+
+</article>
+
+<article class="academy-stat-card">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+<h3 id="systemAnnouncements">
+
+12
+
+</h3>
+
+<p>
+
+Announcements
+
+</p>
+
+</article>
+
+</section>
+
+<!-- ==========================================================
+     FILTER TOOLBAR
+========================================================== -->
+
+<section
+class="academy-toolbar">
+
+<input
+type="text"
+id="academyNotificationSearch"
+placeholder="Search notifications...">
+
+<select
+id="academyNotificationFilter">
+
+<option value="all">
+
+All Notifications
+
+</option>
+
+<option value="unread">
+
+Unread
+
+</option>
+
+<option value="read">
+
+Read
+
+</option>
+
+<option value="applications">
+
+Applications
+
+</option>
+
+<option value="messages">
+
+Messages
+
+</option>
+
+<option value="trials">
+
+Trials
+
+</option>
+
+<option value="documents">
+
+Documents
+
+</option>
+
+<option value="system">
+
+System
+
+</option>
+
+</select>
+
+<button
+class="academy-secondary-button"
+id="academyClearNotifications">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear All
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     NOTIFICATION TIMELINE
+========================================================== -->
+
+<section
+class="academy-notification-list"
+id="academyNotificationList">
+
+<!-- ================= NOTIFICATION ================= -->
+
+<article
+class="academy-notification-card unread high">
+
+<input
+type="checkbox"
+class="academy-notification-check">
+
+<div
+class="academy-notification-icon">
+
+<i class="fa-solid fa-user-plus"></i>
+
+</div>
+
+<div
+class="academy-notification-content">
+
+<div
+class="academy-notification-header">
+
+<h3>
+
+New Player Application
+
+</h3>
+
+<span
+class="academy-priority high">
+
+High
+
+</span>
+
+</div>
+
+<p>
+
+Rahul Sharma submitted a new academy
+application awaiting review.
+
+</p>
+
+<div
+class="academy-notification-meta">
+
+<span>
+
+2 minutes ago
+
+</span>
+
+<span>
+
+Applications
+
+</span>
+
+</div>
+
+</div>
+
+<div
+class="academy-notification-actions">
+
+<button
+class="academy-icon-button"
+title="View">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button"
+title="Mark Read">
+
+<i class="fa-solid fa-check"></i>
+
+</button>
+
+<button
+class="academy-icon-button"
+data-open-delete-notification
+title="Delete">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- ================= NOTIFICATION ================= -->
+
+<article
+class="academy-notification-card medium">
+
+<input
+type="checkbox"
+class="academy-notification-check">
+
+<div
+class="academy-notification-icon">
+
+<i class="fa-solid fa-comments"></i>
+
+</div>
+
+<div
+class="academy-notification-content">
+
+<div
+class="academy-notification-header">
+
+<h3>
+
+New Message Received
+
+</h3>
+
+<span
+class="academy-priority medium">
+
+Medium
+
+</span>
+
+</div>
+
+<p>
+
+Coach David sent you a message regarding
+tomorrow's training schedule.
+
+</p>
+
+<div
+class="academy-notification-meta">
+
+<span>
+
+18 minutes ago
+
+</span>
+
+<span>
+
+Messages
+
+</span>
+
+</div>
+
+</div>
+
+<div
+class="academy-notification-actions">
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-check"></i>
+
+</button>
+
+<button
+class="academy-icon-button"
+data-open-delete-notification>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- ================= NOTIFICATION ================= -->
+
+<article
+class="academy-notification-card success">
+
+<input
+type="checkbox"
+class="academy-notification-check">
+
+<div
+class="academy-notification-icon">
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+</div>
+
+<div
+class="academy-notification-content">
+
+<div
+class="academy-notification-header">
+
+<h3>
+
+Medical Documents Verified
+
+</h3>
+
+<span
+class="academy-priority success">
+
+Success
+
+</span>
+
+</div>
+
+<p>
+
+Medical records for Aman Singh have
+been successfully verified.
+
+</p>
+
+<div
+class="academy-notification-meta">
+
+<span>
+
+Today
+
+</span>
+
+<span>
+
+Documents
+
+</span>
+
+</div>
+
+</div>
+
+<div
+class="academy-notification-actions">
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-check"></i>
+
+</button>
+
+<button
+class="academy-icon-button"
+data-open-delete-notification>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</article>
+
+<!-- ================= NOTIFICATION ================= -->
+
+<article
+class="academy-notification-card low">
+
+<input
+type="checkbox"
+class="academy-notification-check">
+
+<div
+class="academy-notification-icon">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+</div>
+
+<div
+class="academy-notification-content">
+
+<div
+class="academy-notification-header">
+
+<h3>
+
+System Announcement
+
+</h3>
+
+<span
+class="academy-priority low">
+
+Low
+
+</span>
+
+</div>
+
+<p>
+
+Platform maintenance is scheduled for
+Sunday from 1:00 AM to 3:00 AM.
+
+</p>
+
+<div
+class="academy-notification-meta">
+
+<span>
+
+Yesterday
+
+</span>
+
+<span>
+
+System
+
+</span>
+
+</div>
+
+</div>
+
+<div
+class="academy-notification-actions">
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-check"></i>
+
+</button>
+
+<button
+class="academy-icon-button"
+data-open-delete-notification>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</article>
+
+</section>
+
+<!-- ==========================================================
+     NOTIFICATION DETAILS DRAWER
+========================================================== -->
+
+<aside
+class="academy-notification-drawer"
+id="academyNotificationDrawer">
+
+<div
+class="academy-drawer-header">
+
+<h2>
+
+Notification Details
+
+</h2>
+
+<button
+data-close-notification-drawer>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div
+class="academy-drawer-scroll">
+
+<div
+class="academy-notification-detail-icon">
+
+<i class="fa-solid fa-user-plus"></i>
+
+</div>
+
+<h3>
+
+New Player Application
+
+</h3>
+
+<p>
+
+Rahul Sharma has successfully submitted
+his academy application and is awaiting
+your review.
+
+</p>
+
+<section
+class="academy-info-grid">
+
+<div>
+
+<label>
+
+Player
+
+</label>
+
+<strong>
+
+Rahul Sharma
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Category
+
+</label>
+
+<strong>
+
+Applications
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Priority
+
+</label>
+
+<strong>
+
+High
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Received
+
+</label>
+
+<strong>
+
+Today • 09:45 AM
+
+</strong>
+
+</div>
+
+</section>
+
+<section
+class="academy-documents">
+
+<h3>
+
+Related Files
+
+</h3>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Application Form.pdf
+
+</button>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-file-medical"></i>
+
+Medical Certificate.pdf
+
+</button>
+
+</section>
+
+<section
+class="academy-documents">
+
+<h3>
+
+Quick Actions
+
+</h3>
+
+<button
+class="academy-primary-button">
+
+Open Application
+
+</button>
+
+<button
+class="academy-secondary-button">
+
+Assign Coach
+
+</button>
+
+</section>
+
+</div>
+
+</aside>
+
+<!-- ==========================================================
+     DELETE NOTIFICATION MODAL
+========================================================== -->
+
+<div
+class="academy-modal"
+id="academyDeleteNotificationModal"
+hidden>
+
+<div
+class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Delete Notification?
+
+</h2>
+
+<p>
+
+This notification will be permanently removed.
+
+</p>
+
+<div
+class="academy-modal-footer">
+
+<button
+class="academy-secondary-button"
+data-close-delete-notification>
+
+Cancel
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyConfirmDeleteNotification">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden>
+
+<div
+class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Logout?
+
+</h2>
+
+<p>
+
+Are you sure you want to logout?
+
+</p>
+
+<div
+class="academy-modal-footer">
+
+<button
+class="academy-secondary-button"
+data-close-logout>
+
+Cancel
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyConfirmLogout">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     TOAST CONTAINER
+========================================================== -->
+
+<div
+class="academy-toast-container"
+id="academyToastContainer"></div>
+
+</main>
+
+<!-- ==========================================================
+     BACKEND PLACEHOLDERS
+========================================================== -->
+
+<!--
+
+============================================================
+
+Backend Integration
+Mr. Harsh
+
+GET     /api/notifications
+GET     /api/notifications/:id
+PATCH   /api/notifications/read
+PATCH   /api/notifications/read-all
+DELETE  /api/notifications/:id
+DELETE  /api/notifications/clear
+
+Future:
+WebSocket / Socket.IO
+Push Notifications
+Email Notifications
+
+============================================================
+
+-->
+
+<script src="academy-notifications.js"></script>
+
+</body>
+
+</html>

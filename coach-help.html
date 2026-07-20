@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="FIFA Mission India Coach Help and Support Portal"
+  >
+
+  <title>
+    Help & Support | FIFA Mission India Coach Portal
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="coach-help.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       ACCESSIBILITY
+  ====================================================== -->
+
+  <a
+    href="#coachHelpMain"
+    class="coach-skip-link"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="coach-sidebar-overlay"
+    id="coachSidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH PORTAL LAYOUT
+  ====================================================== -->
+
+  <div class="coach-portal-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+      class="coach-sidebar"
+      id="coachSidebar"
+      aria-label="Coach portal navigation"
+    >
+
+      <div class="coach-sidebar-header">
+
+        <a
+          href="index.html"
+          class="coach-sidebar-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <span class="coach-brand-icon">
+
+            <i class="fa-solid fa-futbol"></i>
+
+          </span>
+
+          <span class="coach-brand-text">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Coach Portal
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <button
+          class="coach-sidebar-close"
+          id="coachSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- =====================================================
+           COACH SUMMARY
+      ====================================================== -->
+
+      <section
+        class="coach-sidebar-profile"
+        aria-label="Coach account summary"
+      >
+
+        <div class="coach-sidebar-profile-image">
+
+          <img
+            src="images/coach-profile.jpg"
+            alt="Coach Arjun Sharma"
+          >
+
+          <span
+            class="coach-online-status"
+            title="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="coach-sidebar-profile-content">
+
+          <span class="coach-profile-label">
+            Head Coach
+          </span>
+
+          <h2>
+            Arjun Sharma
+          </h2>
+
+          <p>
+            AIFF Licensed Coach
+          </p>
+
+        </div>
+
+
+        <a
+          href="coach-profile.html"
+          class="coach-profile-link"
+        >
+
+          View Profile
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <div class="coach-profile-progress">
+
+          <div class="coach-profile-progress-heading">
+
+            <span>
+              Profile Completion
+            </span>
+
+            <strong>
+              86%
+            </strong>
+
+          </div>
+
+          <div
+            class="coach-profile-progress-track"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="86"
+          >
+
+            <span style="width: 86%;"></span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           SIDEBAR NAVIGATION
+      ====================================================== -->
+
+      <nav class="coach-sidebar-navigation">
+
+        <span class="coach-nav-heading">
+          Main Menu
+        </span>
+
+        <ul class="coach-nav-list">
+
+          <li>
+
+            <a
+              href="coach-dashboard.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+              </span>
+
+              <span>
+                Dashboard
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-profile.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+              </span>
+
+              <span>
+                My Profile
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-players.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+              </span>
+
+              <span>
+                Players
+              </span>
+
+              <span class="coach-nav-badge">
+                24
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-matches.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-trophy"></i>
+
+              </span>
+
+              <span>
+                Matches
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-training.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+              </span>
+
+              <span>
+                Training
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-messages.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-comments"></i>
+
+              </span>
+
+              <span>
+                Messages
+              </span>
+
+              <span class="coach-nav-badge">
+                5
+              </span>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+
+        <span class="coach-nav-heading">
+          Account
+        </span>
+
+        <ul class="coach-nav-list">
+
+          <li>
+
+            <a
+              href="coach-settings.html"
+              class="coach-nav-link"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-gear"></i>
+
+              </span>
+
+              <span>
+                Settings
+              </span>
+
+            </a>
+
+          </li>
+
+
+          <li>
+
+            <a
+              href="coach-help.html"
+              class="coach-nav-link active"
+              aria-current="page"
+            >
+
+              <span class="coach-nav-icon">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+              </span>
+
+              <span>
+                Help & Support
+              </span>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- =====================================================
+           SUPPORT CARD
+      ====================================================== -->
+
+      <section class="coach-sidebar-support-card">
+
+        <span class="coach-support-card-icon">
+
+          <i class="fa-solid fa-headset"></i>
+
+        </span>
+
+        <strong>
+          Need urgent help?
+        </strong>
+
+        <p>
+          Contact our support team for assistance with your coach account.
+        </p>
+
+        <a
+          href="#contact-support"
+          class="coach-support-card-link"
+        >
+
+          Contact Support
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </section>
+
+
+      <!-- =====================================================
+           LOGOUT
+      ====================================================== -->
+
+      <button
+        class="coach-sidebar-logout"
+        id="coachLogoutButton"
+        type="button"
+      >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>
+          Log Out
+        </span>
+
+      </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <div class="coach-main-area">
+
+
+      <!-- =====================================================
+           TOPBAR
+      ====================================================== -->
+
+      <header class="coach-topbar">
+
+        <div class="coach-topbar-left">
+
+          <button
+            class="coach-menu-toggle"
+            id="coachMenuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="coachSidebar"
+          >
+
+            <i class="fa-solid fa-bars"></i>
+
+          </button>
+
+
+          <div class="coach-topbar-heading">
+
+            <span class="coach-page-eyebrow">
+              Coach Portal
+            </span>
+
+            <h1>
+              Help & Support
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="coach-topbar-actions">
+
+
+          <!-- =====================================================
+               SEARCH
+          ====================================================== -->
+
+          <div class="coach-topbar-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              id="coachGlobalSearch"
+              type="search"
+              placeholder="Search portal..."
+              aria-label="Search coach portal"
+            >
+
+          </div>
+
+
+          <!-- =====================================================
+               NOTIFICATIONS
+          ====================================================== -->
+
+          <div class="coach-notification-wrapper">
+
+            <button
+              class="coach-topbar-icon-button"
+              id="coachNotificationButton"
+              type="button"
+              aria-label="Open notifications"
+              aria-expanded="false"
+              aria-controls="coachNotificationPanel"
+            >
+
+              <i class="fa-regular fa-bell"></i>
+
+              <span class="coach-notification-dot"></span>
+
+            </button>
+
+
+            <section
+              class="coach-notification-panel"
+              id="coachNotificationPanel"
+              hidden
+            >
+
+              <div class="coach-notification-panel-header">
+
+                <div>
+
+                  <strong>
+                    Notifications
+                  </strong>
+
+                  <span>
+                    3 unread updates
+                  </span>
+
+                </div>
+
+                <button
+                  id="markAllNotificationsButton"
+                  type="button"
+                >
+                  Mark all as read
+                </button>
+
+              </div>
+
+
+              <div class="coach-notification-list">
+
+                <article class="coach-notification-item unread">
+
+                  <span class="coach-notification-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                  </span>
+
+                  <div class="coach-notification-content">
+
+                    <strong>
+                      Training reminder
+                    </strong>
+
+                    <span>
+                      Evening training begins at 4:30 PM.
+                    </span>
+
+                    <small>
+                      20 minutes ago
+                    </small>
+
+                  </div>
+
+                </article>
+
+
+                <article class="coach-notification-item unread">
+
+                  <span class="coach-notification-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                  </span>
+
+                  <div class="coach-notification-content">
+
+                    <strong>
+                      New player request
+                    </strong>
+
+                    <span>
+                      A player has requested to join your squad.
+                    </span>
+
+                    <small>
+                      1 hour ago
+                    </small>
+
+                  </div>
+
+                </article>
+
+
+                <article class="coach-notification-item unread">
+
+                  <span class="coach-notification-icon">
+
+                    <i class="fa-solid fa-message"></i>
+
+                  </span>
+
+                  <div class="coach-notification-content">
+
+                    <strong>
+                      New message
+                    </strong>
+
+                    <span>
+                      You received a message from Academy Administration.
+                    </span>
+
+                    <small>
+                      3 hours ago
+                    </small>
+
+                  </div>
+
+                </article>
+
+              </div>
+
+
+              <a
+                href="coach-notifications.html"
+                class="coach-notification-view-all"
+              >
+                View all notifications
+              </a>
+
+            </section>
+
+          </div>
+
+
+          <!-- =====================================================
+               PROFILE MENU
+          ====================================================== -->
+
+          <div class="coach-topbar-profile-wrapper">
+
+            <button
+              class="coach-topbar-profile"
+              id="coachProfileButton"
+              type="button"
+              aria-label="Open profile menu"
+              aria-expanded="false"
+              aria-controls="coachProfileDropdown"
+            >
+
+              <img
+                src="images/coach-profile.jpg"
+                alt=""
+              >
+
+              <span class="coach-topbar-profile-text">
+
+                <strong>
+                  Arjun Sharma
+                </strong>
+
+                <small>
+                  Head Coach
+                </small>
+
+              </span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="coach-profile-dropdown"
+              id="coachProfileDropdown"
+              hidden
+            >
+
+              <a href="coach-profile.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                My Profile
+
+              </a>
+
+              <a href="coach-settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Account Settings
+
+              </a>
+
+              <a href="coach-help.html">
+
+                <i class="fa-regular fa-circle-question"></i>
+
+                Help & Support
+
+              </a>
+
+              <hr>
+
+              <button
+                id="coachProfileLogoutButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Log Out
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           MAIN CONTENT START
+      ====================================================== -->
+
+      <main
+        class="coach-help-main"
+        id="coachHelpMain"
+      >
+
+              <!-- =====================================================
+             HELP HERO
+        ====================================================== -->
+
+        <section class="coach-help-hero">
+
+          <div class="coach-help-hero-content">
+
+            <span class="coach-help-eyebrow">
+              Support Centre
+            </span>
+
+            <h2>
+              How can we help you today?
+            </h2>
+
+            <p>
+              Search guides, explore common questions or contact the FIFA
+              Mission India support team for assistance.
+            </p>
+
+
+            <form
+              class="coach-help-search"
+              id="coachHelpSearchForm"
+              role="search"
+            >
+
+              <label
+                class="coach-visually-hidden"
+                for="coachHelpSearchInput"
+              >
+                Search help articles
+              </label>
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                id="coachHelpSearchInput"
+                name="helpSearch"
+                type="search"
+                placeholder="Search for account, players, training, matches..."
+                autocomplete="off"
+              >
+
+              <button
+                type="submit"
+                class="coach-help-search-button"
+              >
+                Search
+              </button>
+
+            </form>
+
+
+            <div
+              class="coach-help-popular-searches"
+              aria-label="Popular help searches"
+            >
+
+              <span>
+                Popular:
+              </span>
+
+              <button
+                type="button"
+                data-help-search="add players"
+              >
+                Add players
+              </button>
+
+              <button
+                type="button"
+                data-help-search="training schedule"
+              >
+                Training schedule
+              </button>
+
+              <button
+                type="button"
+                data-help-search="change password"
+              >
+                Change password
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="coach-help-hero-visual"
+            aria-hidden="true"
+          >
+
+            <div class="coach-help-visual-circle">
+
+              <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <span class="coach-help-visual-icon coach-help-visual-icon-one">
+
+              <i class="fa-solid fa-circle-question"></i>
+
+            </span>
+
+            <span class="coach-help-visual-icon coach-help-visual-icon-two">
+
+              <i class="fa-solid fa-book-open"></i>
+
+            </span>
+
+            <span class="coach-help-visual-icon coach-help-visual-icon-three">
+
+              <i class="fa-solid fa-comments"></i>
+
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEARCH RESULTS
+        ====================================================== -->
+
+        <section
+          class="coach-help-search-results"
+          id="coachHelpSearchResults"
+          aria-live="polite"
+          hidden
+        >
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Search Results
+              </span>
+
+              <h2>
+                Help articles
+              </h2>
+
+            </div>
+
+            <button
+              class="coach-clear-search-button"
+              id="coachClearHelpSearch"
+              type="button"
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+              Clear Search
+
+            </button>
+
+          </div>
+
+
+          <div
+            class="coach-help-results-grid"
+            id="coachHelpResultsGrid"
+          ></div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUICK SUPPORT OPTIONS
+        ====================================================== -->
+
+        <section class="coach-help-quick-support">
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Quick Assistance
+              </span>
+
+              <h2>
+                Choose how you need help
+              </h2>
+
+              <p>
+                Find answers instantly or connect directly with our support team.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="coach-quick-support-grid">
+
+            <article class="coach-quick-support-card">
+
+              <span class="coach-quick-support-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+              </span>
+
+              <div>
+
+                <h3>
+                  Help Guides
+                </h3>
+
+                <p>
+                  Browse step-by-step instructions for managing your coach
+                  account and portal tools.
+                </p>
+
+              </div>
+
+              <a href="#help-categories">
+
+                Browse Guides
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </article>
+
+
+            <article class="coach-quick-support-card">
+
+              <span class="coach-quick-support-icon">
+
+                <i class="fa-solid fa-comments"></i>
+
+              </span>
+
+              <div>
+
+                <h3>
+                  Live Chat
+                </h3>
+
+                <p>
+                  Chat with a support representative for quick assistance with
+                  common portal issues.
+                </p>
+
+              </div>
+
+              <button
+                id="openCoachLiveChatButton"
+                type="button"
+              >
+
+                Start Live Chat
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </button>
+
+            </article>
+
+
+            <article class="coach-quick-support-card">
+
+              <span class="coach-quick-support-icon">
+
+                <i class="fa-solid fa-envelope"></i>
+
+              </span>
+
+              <div>
+
+                <h3>
+                  Email Support
+                </h3>
+
+                <p>
+                  Send a detailed support request and receive a response from
+                  our assistance team.
+                </p>
+
+              </div>
+
+              <a href="#contact-support">
+
+                Send Request
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </article>
+
+
+            <article class="coach-quick-support-card">
+
+              <span class="coach-quick-support-icon">
+
+                <i class="fa-solid fa-phone"></i>
+
+              </span>
+
+              <div>
+
+                <h3>
+                  Request a Call
+                </h3>
+
+                <p>
+                  Schedule a callback for account, academy or technical support.
+                </p>
+
+              </div>
+
+              <button
+                id="requestCoachCallbackButton"
+                type="button"
+              >
+
+                Request Callback
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </button>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HELP CATEGORIES
+        ====================================================== -->
+
+        <section
+          class="coach-help-categories"
+          id="help-categories"
+        >
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Help Library
+              </span>
+
+              <h2>
+                Browse by category
+              </h2>
+
+              <p>
+                Select a category to find guides and answers related to your
+                coach portal.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="coach-help-category-grid">
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="account"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Account & Profile
+                </strong>
+
+                <small>
+                  Profile details, password, privacy and security.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                8 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="players"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Player Management
+                </strong>
+
+                <small>
+                  Add players, update records and manage squads.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                12 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="training"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Training Management
+                </strong>
+
+                <small>
+                  Sessions, attendance, drills and development plans.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                10 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="matches"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-trophy"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Matches & Fixtures
+                </strong>
+
+                <small>
+                  Fixtures, line-ups, match reports and results.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                9 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="messages"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-message"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Messages & Alerts
+                </strong>
+
+                <small>
+                  Communication, notifications and announcements.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                6 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <button
+              class="coach-help-category-card"
+              type="button"
+              data-help-category="technical"
+            >
+
+              <span class="coach-help-category-icon">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+              </span>
+
+              <span class="coach-help-category-content">
+
+                <strong>
+                  Technical Support
+                </strong>
+
+                <small>
+                  Browser, login, upload and connectivity issues.
+                </small>
+
+              </span>
+
+              <span class="coach-help-category-count">
+                11 articles
+              </span>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+          </div>
+
+        </section>
+
+                <!-- =====================================================
+             FREQUENTLY ASKED QUESTIONS
+        ====================================================== -->
+
+        <section class="coach-help-faq">
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Frequently Asked Questions
+              </span>
+
+              <h2>
+                Popular questions from coaches
+              </h2>
+
+              <p>
+                Find quick answers to the questions coaches ask most often.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="coach-faq-list"
+            id="coachFaqList"
+          >
+
+            <article class="coach-faq-item">
+
+              <button
+                class="coach-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+
+                <span>
+                  How do I add a new player to my squad?
+                </span>
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+              <div class="coach-faq-answer" hidden>
+
+                <p>
+                  Navigate to <strong>Players</strong>, select
+                  <strong>Add Player</strong>, complete the player's
+                  information and submit the form. Once backend integration
+                  is complete, the player will automatically appear in your
+                  squad list.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="coach-faq-item">
+
+              <button
+                class="coach-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+
+                <span>
+                  How can I reset my account password?
+                </span>
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+              <div class="coach-faq-answer" hidden>
+
+                <p>
+                  Open <strong>Settings → Security</strong>, enter your
+                  current password and choose a new secure password.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="coach-faq-item">
+
+              <button
+                class="coach-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+
+                <span>
+                  Why can't I upload training documents?
+                </span>
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+              <div class="coach-faq-answer" hidden>
+
+                <p>
+                  Ensure the file size and format are supported. Backend file
+                  validation will be handled after API integration by the
+                  development team.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="coach-faq-item">
+
+              <button
+                class="coach-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+
+                <span>
+                  How do I update my coaching licence?
+                </span>
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+              <div class="coach-faq-answer" hidden>
+
+                <p>
+                  Visit your coach profile, edit your qualifications and upload
+                  the latest coaching certification documents when available.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="coach-faq-item">
+
+              <button
+                class="coach-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+
+                <span>
+                  Can I contact support outside working hours?
+                </span>
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+              <div class="coach-faq-answer" hidden>
+
+                <p>
+                  Yes. You may submit a support request anytime. Our support
+                  team will respond during the next available support window.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT SUPPORT
+        ====================================================== -->
+
+        <section
+          class="coach-contact-support"
+          id="contact-support"
+        >
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Contact Support
+              </span>
+
+              <h2>
+                Send a support request
+              </h2>
+
+              <p>
+                Describe your issue and our team will get back to you as soon
+                as possible.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="coach-contact-support-layout">
+
+            <!-- ================= LEFT ================= -->
+
+            <div class="coach-contact-information">
+
+              <article class="coach-contact-card">
+
+                <span class="coach-contact-icon">
+
+                  <i class="fa-solid fa-headset"></i>
+
+                </span>
+
+                <div>
+
+                  <h3>
+                    Live Support
+                  </h3>
+
+                  <p>
+                    Monday – Saturday
+                  </p>
+
+                  <strong>
+                    9:00 AM – 6:00 PM
+                  </strong>
+
+                </div>
+
+              </article>
+
+
+              <article class="coach-contact-card">
+
+                <span class="coach-contact-icon">
+
+                  <i class="fa-solid fa-envelope"></i>
+
+                </span>
+
+                <div>
+
+                  <h3>
+                    Email
+                  </h3>
+
+                  <p>
+                    support@fifamissionindia.com
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <article class="coach-contact-card">
+
+                <span class="coach-contact-icon">
+
+                  <i class="fa-solid fa-phone"></i>
+
+                </span>
+
+                <div>
+
+                  <h3>
+                    Phone
+                  </h3>
+
+                  <p>
+                    +91 XXXXX XXXXX
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <article class="coach-contact-card">
+
+                <span class="coach-contact-icon">
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+
+                <div>
+
+                  <h3>
+                    Office
+                  </h3>
+
+                  <p>
+                    FIFA Mission India
+                  </p>
+
+                  <small>
+                    National Operations Centre
+                  </small>
+
+                </div>
+
+              </article>
+
+            </div>
+
+
+            <!-- ================= RIGHT ================= -->
+
+            <form
+              class="coach-support-form"
+              id="coachSupportForm"
+            >
+
+              <div class="coach-form-grid coach-form-grid-two">
+
+                <div class="coach-form-group">
+
+                  <label for="supportName">
+                    Full Name
+                  </label>
+
+                  <input
+                    id="supportName"
+                    name="name"
+                    type="text"
+                    placeholder="Your full name"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="coach-form-group">
+
+                  <label for="supportEmail">
+                    Email Address
+                  </label>
+
+                  <input
+                    id="supportEmail"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="coach-form-group">
+
+                  <label for="supportCategory">
+                    Category
+                  </label>
+
+                  <select
+                    id="supportCategory"
+                    name="category"
+                    required
+                  >
+
+                    <option value="">
+                      Select category
+                    </option>
+
+                    <option>
+                      Account
+                    </option>
+
+                    <option>
+                      Players
+                    </option>
+
+                    <option>
+                      Training
+                    </option>
+
+                    <option>
+                      Matches
+                    </option>
+
+                    <option>
+                      Technical Issue
+                    </option>
+
+                    <option>
+                      Other
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="coach-form-group">
+
+                  <label for="supportPriority">
+                    Priority
+                  </label>
+
+                  <select
+                    id="supportPriority"
+                    name="priority"
+                  >
+
+                    <option>
+                      Low
+                    </option>
+
+                    <option>
+                      Medium
+                    </option>
+
+                    <option>
+                      High
+                    </option>
+
+                    <option>
+                      Urgent
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+
+              <div class="coach-form-group">
+
+                <label for="supportSubject">
+                  Subject
+                </label>
+
+                <input
+                  id="supportSubject"
+                  name="subject"
+                  type="text"
+                  placeholder="Briefly describe your issue"
+                  required
+                >
+
+              </div>
+
+
+              <div class="coach-form-group">
+
+                <label for="supportMessage">
+                  Message
+                </label>
+
+                <textarea
+                  id="supportMessage"
+                  name="message"
+                  rows="7"
+                  placeholder="Provide as much detail as possible..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <div class="coach-form-group">
+
+                <label for="supportAttachment">
+                  Attachment (Optional)
+                </label>
+
+                <input
+                  id="supportAttachment"
+                  name="attachment"
+                  type="file"
+                >
+
+              </div>
+
+
+              <div class="coach-support-actions">
+
+                <button
+                  class="coach-secondary-button"
+                  type="reset"
+                >
+                  Reset
+                </button>
+
+                <button
+                  class="coach-primary-button"
+                  id="submitSupportRequestButton"
+                  type="submit"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+
+                  Submit Request
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </section>
+
+                <!-- =====================================================
+             SUPPORT STATUS
+        ====================================================== -->
+
+        <section class="coach-support-status">
+
+          <div class="coach-section-heading">
+
+            <div>
+
+              <span class="coach-section-eyebrow">
+                Support Performance
+              </span>
+
+              <h2>
+                We're here to help
+              </h2>
+
+              <p>
+                Our support team works to resolve coach requests as quickly as
+                possible.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="coach-support-status-grid">
+
+            <article class="coach-support-status-card">
+
+              <span class="coach-support-status-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+              </span>
+
+              <strong>
+                &lt; 24 Hours
+              </strong>
+
+              <p>
+                Average response time
+              </p>
+
+            </article>
+
+
+            <article class="coach-support-status-card">
+
+              <span class="coach-support-status-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+              </span>
+
+              <strong>
+                98%
+              </strong>
+
+              <p>
+                Requests resolved
+              </p>
+
+            </article>
+
+
+            <article class="coach-support-status-card">
+
+              <span class="coach-support-status-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+              </span>
+
+              <strong>
+                24/7
+              </strong>
+
+              <p>
+                Ticket submission
+              </p>
+
+            </article>
+
+
+            <article class="coach-support-status-card">
+
+              <span class="coach-support-status-icon">
+
+                <i class="fa-solid fa-face-smile"></i>
+
+              </span>
+
+              <strong>
+                4.9 / 5
+              </strong>
+
+              <p>
+                Coach satisfaction
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SUCCESS MODAL
+  ====================================================== -->
+
+  <dialog
+    class="coach-modal"
+    id="coachSupportSuccessModal"
+  >
+
+    <div class="coach-modal-card">
+
+      <div class="coach-modal-icon">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+      </div>
+
+      <h3>
+        Support Request Submitted
+      </h3>
+
+      <p>
+        Thank you for contacting FIFA Mission India Support.
+        Your request has been received and our support team
+        will respond as soon as possible.
+      </p>
+
+      <div class="coach-modal-actions">
+
+        <button
+          class="coach-primary-button"
+          id="closeSupportSuccessModal"
+          type="button"
+        >
+          Done
+        </button>
+
+      </div>
+
+    </div>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="coach-toast"
+    id="coachToast"
+    hidden
+  >
+
+    <span class="coach-toast-icon">
+
+      <i class="fa-solid fa-circle-check"></i>
+
+    </span>
+
+    <div class="coach-toast-content">
+
+      <strong>
+        Success
+      </strong>
+
+      <p>
+        Action completed successfully.
+      </p>
+
+    </div>
+
+    <button
+      id="closeCoachToastButton"
+      class="coach-toast-close"
+      type="button"
+      aria-label="Close notification"
+    >
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="coach-help.js"></script>
+
+</body>
+
+</html>

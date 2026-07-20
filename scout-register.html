@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Register as a football scout with FIFA Mission India."
+  >
+
+  <title>Scout Registration | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/player-register.css">
+
+</head>
+
+<body>
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <div class="page-background" aria-hidden="true">
+
+    <span class="background-orb orb-one"></span>
+    <span class="background-orb orb-two"></span>
+    <span class="background-grid"></span>
+
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="registration-header">
+
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="FIFA Mission India homepage"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-text">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Road to 2034</span>
+
+      </div>
+
+    </a>
+
+
+    <a href="role-selection.html" class="back-link">
+
+      <span aria-hidden="true">←</span>
+
+      Back to roles
+
+    </a>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="registration-main">
+
+    <section class="registration-layout">
+
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="registration-sidebar">
+
+        <div class="sidebar-content">
+
+          <span class="eyebrow">
+            SCOUT ONBOARDING
+          </span>
+
+          <h1>
+
+            Discover the talent that can
+
+            <span>transform Indian football.</span>
+
+          </h1>
+
+          <p class="sidebar-description">
+
+            Build your scouting profile, share your experience and connect
+            promising players with the right clubs, academies and development
+            opportunities.
+
+          </p>
+
+
+          <nav
+            class="progress-navigation"
+            aria-label="Scout registration progress"
+          >
+
+            <button
+              class="progress-step active"
+              type="button"
+              data-progress-step="1"
+              aria-current="step"
+            >
+
+              <span class="step-number">01</span>
+
+              <span class="step-copy">
+
+                <strong>Personal Details</strong>
+
+                <small>Basic information</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="2"
+            >
+
+              <span class="step-number">02</span>
+
+              <span class="step-copy">
+
+                <strong>Scouting Profile</strong>
+
+                <small>Experience and expertise</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="3"
+            >
+
+              <span class="step-number">03</span>
+
+              <span class="step-copy">
+
+                <strong>Documents</strong>
+
+                <small>Photo and verification</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="4"
+            >
+
+              <span class="step-number">04</span>
+
+              <span class="step-copy">
+
+                <strong>Review & Submit</strong>
+
+                <small>Confirm your information</small>
+
+              </span>
+
+            </button>
+
+          </nav>
+
+
+          <div class="opportunity-card">
+
+            <div class="opportunity-icon" aria-hidden="true">
+              ★
+            </div>
+
+            <div>
+
+              <strong>Help talent find opportunity</strong>
+
+              <p>
+                Discover emerging players and contribute to a stronger
+                national football pathway.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+          <span>MISSION 2034</span>
+
+          <span>•</span>
+
+          <span>DISCOVER. EVALUATE. CONNECT.</span>
+
+        </div>
+
+      </aside>
+
+
+      <!-- ================= FORM PANEL ================= -->
+
+      <section class="form-panel">
+
+        <div class="mobile-progress">
+
+          <div class="mobile-progress-header">
+
+            <span id="mobileStepLabel">
+              Step 1 of 4
+            </span>
+
+            <strong id="mobileStepTitle">
+              Personal Details
+            </strong>
+
+          </div>
+
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="4"
+            aria-valuenow="1"
+          >
+
+            <span id="progressBarFill"></span>
+
+          </div>
+
+        </div>
+
+
+        <form
+          id="scoutRegistrationForm"
+          class="player-registration-form"
+          novalidate
+        >
+
+          <!--
+            BACKEND INTEGRATION POINT
+
+            Suggested endpoint:
+            POST /api/v1/scouts/register
+
+            Backend Lead: Mr. Harsh
+            Security Review: Samarth
+          -->
+
+
+          <!-- ================= STEP 1 ================= -->
+
+          <fieldset
+            class="form-step active"
+            data-form-step="1"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 01
+              </span>
+
+              <h2>
+                Tell us about yourself
+              </h2>
+
+              <p>
+                Enter your personal information exactly as it appears on your
+                official documents.
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label for="firstName">
+                  First name
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter first name"
+                  autocomplete="given-name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="lastName">
+                  Last name
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter last name"
+                  autocomplete="family-name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="dateOfBirth">
+                  Date of birth
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="date"
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="gender">
+                  Gender
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select id="gender" name="gender" required>
+
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">
+                      Prefer not to say
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email address
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="scout@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Mobile number
+                  <span>*</span>
+                </label>
+
+                <div class="phone-input">
+
+                  <span class="country-code">+91</span>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="10-digit mobile number"
+                    inputmode="numeric"
+                    maxlength="10"
+                    required
+                  >
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="state">
+                  State / Union Territory
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select id="state" name="state" required>
+
+                    <option value="">Select state</option>
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                    <option value="assam">Assam</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="chhattisgarh">Chhattisgarh</option>
+                    <option value="goa">Goa</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="manipur">Manipur</option>
+                    <option value="meghalaya">Meghalaya</option>
+                    <option value="mizoram">Mizoram</option>
+                    <option value="nagaland">Nagaland</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="rajasthan">Rajasthan</option>
+                    <option value="sikkim">Sikkim</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="tripura">Tripura</option>
+                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                    <option value="uttarakhand">Uttarakhand</option>
+                    <option value="west-bengal">West Bengal</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="jammu-kashmir">Jammu and Kashmir</option>
+                    <option value="ladakh">Ladakh</option>
+                    <option value="puducherry">Puducherry</option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="city">
+                  City / District
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Enter city or district"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 2 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="2"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 02
+              </span>
+
+              <h2>
+                Build your scouting profile
+              </h2>
+
+              <p>
+                Share your scouting experience, coverage area and talent
+                identification expertise.
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label for="scoutType">
+                  Scouting role
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select id="scoutType" name="scoutType" required>
+
+                    <option value="">Select scouting role</option>
+                    <option value="independent">
+                      Independent Scout
+                    </option>
+                    <option value="club">
+                      Club Scout
+                    </option>
+                    <option value="academy">
+                      Academy Scout
+                    </option>
+                    <option value="school">
+                      School or College Scout
+                    </option>
+                    <option value="agency">
+                      Player Agency Scout
+                    </option>
+                    <option value="volunteer">
+                      Volunteer Talent Observer
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="experienceYears">
+                  Scouting experience
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="experienceYears"
+                    name="experienceYears"
+                    required
+                  >
+
+                    <option value="">Select experience</option>
+                    <option value="less-than-one">
+                      Less than 1 year
+                    </option>
+                    <option value="1-3">1–3 years</option>
+                    <option value="4-6">4–6 years</option>
+                    <option value="7-10">7–10 years</option>
+                    <option value="more-than-ten">
+                      More than 10 years
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="specialisation">
+                  Scouting specialisation
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="specialisation"
+                    name="specialisation"
+                    required
+                  >
+
+                    <option value="">Select specialisation</option>
+                    <option value="grassroots">
+                      Grassroots Talent
+                    </option>
+                    <option value="youth">
+                      Youth Players
+                    </option>
+                    <option value="senior">
+                      Senior Players
+                    </option>
+                    <option value="goalkeepers">
+                      Goalkeepers
+                    </option>
+                    <option value="women-football">
+                      Women’s Football
+                    </option>
+                    <option value="data-video">
+                      Data and Video Scouting
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="preferredAgeGroup">
+                  Preferred age group
+                  <span>*</span>
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="preferredAgeGroup"
+                    name="preferredAgeGroup"
+                    required
+                  >
+
+                    <option value="">Select age group</option>
+                    <option value="under-10">Under 10</option>
+                    <option value="under-13">Under 13</option>
+                    <option value="under-15">Under 15</option>
+                    <option value="under-18">Under 18</option>
+                    <option value="under-21">Under 21</option>
+                    <option value="senior">Senior</option>
+                    <option value="all">All Age Groups</option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="coverageArea">
+                  Primary scouting region
+                  <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="coverageArea"
+                  name="coverageArea"
+                  placeholder="Example: Northeast India"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="currentOrganisation">
+                  Current club or organisation
+                </label>
+
+                <input
+                  type="text"
+                  id="currentOrganisation"
+                  name="currentOrganisation"
+                  placeholder="Enter organisation name"
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="notableDiscoveries">
+                  Notable players or achievements
+                </label>
+
+                <textarea
+                  id="notableDiscoveries"
+                  name="notableDiscoveries"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="Mention players discovered, tournaments covered or scouting achievements."
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="discoveriesCharacterCount">0</b>/500
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="scoutingBio">
+                  Scouting philosophy
+                  <span>*</span>
+                </label>
+
+                <textarea
+                  id="scoutingBio"
+                  name="scoutingBio"
+                  rows="5"
+                  maxlength="700"
+                  placeholder="Describe how you evaluate talent, player potential and development readiness."
+                  required
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="bioCharacterCount">0</b>/700
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 3 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="3"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 03
+              </span>
+
+              <h2>
+                Add your documents
+              </h2>
+
+              <p>
+                Upload a professional photograph and documents supporting
+                your identity or scouting experience.
+              </p>
+
+            </div>
+
+
+            <div class="upload-section">
+
+              <div class="profile-upload-container">
+
+                <div
+                  class="profile-preview"
+                  id="profilePreview"
+                >
+
+                  <span id="profileInitials">
+                    SC
+                  </span>
+
+                  <img
+                    id="profilePreviewImage"
+                    alt="Scout profile preview"
+                    hidden
+                  >
+
+                </div>
+
+
+                <div class="profile-upload-copy">
+
+                  <h3>Scout profile photo</h3>
+
+                  <p>
+                    Upload a recent professional photograph.
+                  </p>
+
+                  <label
+                    class="upload-button"
+                    for="profilePhoto"
+                  >
+                    Choose photo
+                  </label>
+
+                  <input
+                    type="file"
+                    id="profilePhoto"
+                    name="profilePhoto"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                    required
+                  >
+
+                  <small>
+                    JPG, PNG or WEBP. Maximum 5 MB.
+                  </small>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="upload-grid">
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    ID
+                  </div>
+
+                  <div>
+
+                    <h3>Identity document</h3>
+
+                    <p>
+                      Aadhaar card, voter ID, driving licence or passport.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="identityDocument"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="identityDocument"
+                    name="identityDocument"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                    required
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="identityDocumentName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    EXP
+                  </div>
+
+                  <div>
+
+                    <h3>Experience document</h3>
+
+                    <p>
+                      Upload an appointment letter, certificate or reference.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="experienceDocument"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="experienceDocument"
+                    name="experienceDocument"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="experienceDocumentName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="portfolioUrl">
+                  Scouting portfolio or professional profile
+                </label>
+
+                <input
+                  type="url"
+                  id="portfolioUrl"
+                  name="portfolioUrl"
+                  placeholder="https://..."
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 4 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="4"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 04
+              </span>
+
+              <h2>
+                Review your application
+              </h2>
+
+              <p>
+                Confirm your scouting information before submission.
+              </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+              <div class="review-header">
+
+                <div class="review-avatar">
+
+                  <img
+                    id="reviewProfileImage"
+                    alt="Scout profile"
+                    hidden
+                  >
+
+                  <span id="reviewInitials">
+                    SC
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    SCOUT APPLICATION
+                  </span>
+
+                  <h3 id="reviewScoutName">
+                    Your Name
+                  </h3>
+
+                  <p id="reviewScoutLocation">
+                    Location not entered
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="review-grid">
+
+                <div class="review-item">
+
+                  <span>Email</span>
+
+                  <strong id="reviewEmail">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Mobile</span>
+
+                  <strong id="reviewPhone">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Scouting role</span>
+
+                  <strong id="reviewScoutType">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Experience</span>
+
+                  <strong id="reviewExperience">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Specialisation</span>
+
+                  <strong id="reviewSpecialisation">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Preferred age group</span>
+
+                  <strong id="reviewAgeGroup">—</strong>
+
+                </div>
+
+
+                <div class="review-item review-item-full">
+
+                  <span>Primary scouting region</span>
+
+                  <strong id="reviewCoverageArea">—</strong>
+
+                </div>
+
+
+                <div class="review-item review-item-full">
+
+                  <span>Scouting philosophy</span>
+
+                  <strong id="reviewBio">—</strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="consent-section">
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="informationConsent"
+                  name="informationConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+                  I confirm that the information and documents provided are
+                  accurate.
+                </span>
+
+              </label>
+
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="termsConsent"
+                  name="termsConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+
+                  I agree to the
+
+                  <a href="#">
+                    Terms and Conditions
+                  </a>
+
+                  and
+
+                  <a href="#">
+                    Privacy Policy
+                  </a>.
+
+                </span>
+
+              </label>
+
+              <small
+                class="error-message consent-error"
+                id="consentError"
+              ></small>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= ACTIONS ================= -->
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="secondary-button"
+              id="previousButton"
+              hidden
+            >
+
+              <span aria-hidden="true">←</span>
+
+              Previous
+
+            </button>
+
+            <div class="action-spacer"></div>
+
+            <button
+              type="button"
+              class="primary-button"
+              id="nextButton"
+            >
+
+              Continue
+
+              <span aria-hidden="true">→</span>
+
+            </button>
+
+            <button
+              type="submit"
+              class="primary-button submit-button"
+              id="submitButton"
+              hidden
+            >
+
+              <span class="button-label">
+                Submit Application
+              </span>
+
+              <span
+                class="button-loader"
+                aria-hidden="true"
+              ></span>
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= SUCCESS MODAL ================= -->
+
+  <div
+    class="success-modal"
+    id="successModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successModalTitle"
+    hidden
+  >
+
+    <div class="success-modal-backdrop"></div>
+
+    <div class="success-modal-card">
+
+      <div class="success-icon" aria-hidden="true">
+        ✓
+      </div>
+
+      <span class="success-eyebrow">
+        APPLICATION RECEIVED
+      </span>
+
+      <h2 id="successModalTitle">
+        Welcome, Scout.
+      </h2>
+
+      <p>
+        Your scout registration has been prepared successfully in this
+        frontend demonstration.
+      </p>
+
+      <div class="application-reference">
+
+        <span>Application reference</span>
+
+        <strong id="applicationReference">
+          FMI-SCOUT-000000
+        </strong>
+
+      </div>
+
+      <a href="index.html" class="modal-button">
+        Return to Homepage
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/scout-register.js"></script>
+
+</body>
+
+</html>

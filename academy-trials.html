@@ -1,0 +1,1101 @@
+<!-- ==========================================================
+     ACADEMY TRIALS MANAGEMENT
+     FIFA Mission India
+     Frontend by: Issac Belho
+
+     Backend Integration:
+     Mr. Harsh
+
+     Security:
+     Samarth
+=========================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Academy Trials | FIFA Mission India
+</title>
+
+<link
+rel="stylesheet"
+href="academy-dashboard.css">
+
+<link
+rel="stylesheet"
+href="academy-trials.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body class="academy-trials-page">
+
+<!-- ==========================================================
+     MOBILE SIDEBAR OVERLAY
+=========================================================== -->
+
+<div
+id="academySidebarOverlay"
+class="academy-sidebar-overlay"
+hidden>
+</div>
+
+<!-- ==========================================================
+     SIDEBAR
+=========================================================== -->
+
+<aside
+id="academySidebar"
+class="academy-sidebar">
+
+<div class="academy-sidebar-header">
+
+<h2>⚽ Academy</h2>
+
+<button
+id="academySidebarClose"
+class="academy-sidebar-close">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav class="academy-sidebar-nav">
+
+<a href="academy-dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="academy-profile.html">
+<i class="fa-solid fa-building"></i>
+Academy Profile
+</a>
+
+<a href="academy-applications.html">
+<i class="fa-solid fa-user-plus"></i>
+Applications
+</a>
+
+<a
+href="academy-trials.html"
+class="active">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Trials Management
+
+</a>
+
+<a href="#">
+<i class="fa-solid fa-users"></i>
+Registered Players
+</a>
+
+<a href="#">
+<i class="fa-solid fa-user-tie"></i>
+Coaches & Staff
+</a>
+
+<a href="#">
+<i class="fa-solid fa-comments"></i>
+Messages
+</a>
+
+<a href="#">
+<i class="fa-solid fa-bell"></i>
+Notifications
+</a>
+
+<a href="#">
+<i class="fa-solid fa-folder-open"></i>
+Documents
+</a>
+
+<a href="#">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<a href="#">
+<i class="fa-solid fa-circle-question"></i>
+Help & Support
+</a>
+
+</nav>
+
+</aside>
+
+<!-- ==========================================================
+     MAIN
+=========================================================== -->
+
+<div class="academy-main">
+
+<!-- ==========================================================
+     TOPBAR
+=========================================================== -->
+
+<header class="academy-topbar">
+
+<div class="academy-topbar-left">
+
+<button
+id="academyMenuButton"
+class="academy-menu-button">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h1>
+
+Trials Management
+
+</h1>
+
+</div>
+
+<div class="academy-topbar-right">
+
+<button
+id="academyCreateTrialButton"
+class="academy-primary-button">
+
+<i class="fa-solid fa-plus"></i>
+
+Create Trial
+
+</button>
+
+<div
+class="academy-profile-dropdown-wrapper">
+
+<button
+id="academyProfileTrigger"
+class="academy-profile-button"
+aria-expanded="false">
+
+<img
+src="images/academy-admin.jpg"
+alt="Admin">
+
+<span>
+
+Green Valley Football Academy
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+<div
+id="academyProfileDropdown"
+class="academy-profile-dropdown"
+hidden>
+
+<a href="#">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+
+<a href="#">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<hr>
+
+<button
+id="academyLogoutButton">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+     HERO
+=========================================================== -->
+
+<section class="academy-page-header">
+
+<div>
+
+<h2>
+
+Trials Management
+
+</h2>
+
+<p>
+
+Manage football trials, attendance, evaluations,
+player selection and trial reports from one
+central dashboard.
+
+</p>
+
+</div>
+
+<button
+id="academyExportTrials"
+class="academy-secondary-button">
+
+<i class="fa-solid fa-file-export"></i>
+
+Export
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     STATISTICS
+=========================================================== -->
+
+<section
+class="academy-trial-statistics">
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-calendar-days"></i>
+</span>
+
+<div>
+
+<h3 data-stat="total">
+
+18
+
+</h3>
+
+<p>Total Trials</p>
+
+</div>
+
+</article>
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-clock"></i>
+</span>
+
+<div>
+
+<h3 data-stat="upcoming">
+
+6
+
+</h3>
+
+<p>Upcoming</p>
+
+</div>
+
+</article>
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-users"></i>
+</span>
+
+<div>
+
+<h3 data-stat="invited">
+
+284
+
+</h3>
+
+<p>Players Invited</p>
+
+</div>
+
+</article>
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-user-check"></i>
+</span>
+
+<div>
+
+<h3 data-stat="checkedin">
+
+189
+
+</h3>
+
+<p>Checked In</p>
+
+</div>
+
+</article>
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-star"></i>
+</span>
+
+<div>
+
+<h3 data-stat="selected">
+
+41
+
+</h3>
+
+<p>Selected</p>
+
+</div>
+
+</article>
+
+<article class="academy-stat-card">
+
+<span>
+<i class="fa-solid fa-clipboard-check"></i>
+</span>
+
+<div>
+
+<h3 data-stat="pending">
+
+32
+
+</h3>
+
+<p>Pending Evaluation</p>
+
+</div>
+
+</article>
+
+</section>
+
+<!-- ==========================================================
+     TOOLBAR
+=========================================================== -->
+
+<section
+class="academy-trial-toolbar">
+
+<div
+class="academy-toolbar-search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="search"
+id="academyTrialSearch"
+placeholder="Search trial, coach or venue...">
+
+</div>
+
+<select
+id="academyTrialStatus">
+
+<option value="all">
+
+All Status
+
+</option>
+
+<option value="upcoming">
+
+Upcoming
+
+</option>
+
+<option value="live">
+
+Live
+
+</option>
+
+<option value="completed">
+
+Completed
+
+</option>
+
+<option value="cancelled">
+
+Cancelled
+
+</option>
+
+</select>
+
+<select
+id="academyAgeFilter">
+
+<option value="all">
+
+All Age Groups
+
+</option>
+
+<option>U13</option>
+
+<option>U15</option>
+
+<option>U17</option>
+
+<option>U19</option>
+
+<option>Senior</option>
+
+</select>
+
+<button
+id="academyResetFilters"
+class="academy-secondary-button">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Reset
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     CALENDAR HEADER
+=========================================================== -->
+
+<section
+class="academy-calendar-panel">
+
+<header
+class="academy-calendar-header">
+
+<div>
+
+<h3>
+
+Trial Calendar
+
+</h3>
+
+<p>
+
+View all scheduled football trials.
+
+</p>
+
+</div>
+
+<div
+class="academy-calendar-actions">
+
+<button
+id="academyPreviousMonth">
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+<button
+id="academyTodayButton">
+
+Today
+
+</button>
+
+<button
+id="academyNextMonth">
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</button>
+
+<select
+id="academyCalendarView">
+
+<option>
+
+Month
+
+</option>
+
+<option>
+
+Week
+
+</option>
+
+<option>
+
+Day
+
+</option>
+
+</select>
+
+</div>
+
+</header>
+
+<!-- Calendar grid will be rendered
+     by academy-trials.js
+
+     Backend:
+     Mr. Harsh will later connect live
+     trial schedules.
+-->
+
+<div
+id="academyCalendarGrid"
+class="academy-calendar-grid">
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     MAIN CONTENT GRID
+=========================================================== -->
+
+<section class="academy-trials-layout">
+
+    <!-- ======================================================
+         LEFT COLUMN
+    ======================================================= -->
+
+    <div class="academy-trials-left">
+
+        <!-- ==============================================
+             UPCOMING TRIALS
+        =============================================== -->
+
+        <section class="academy-panel">
+
+            <div class="academy-panel-header">
+
+                <div>
+
+                    <h3>Upcoming Trials</h3>
+
+                    <p>
+                        Scheduled football trials across all age groups.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="academy-trial-card-grid">
+
+                <!-- Trial Card -->
+
+                <article class="academy-trial-card">
+
+                    <div class="academy-trial-card-top">
+
+                        <span class="academy-live-badge upcoming">
+                            Upcoming
+                        </span>
+
+                        <button class="academy-icon-button">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <h4>Elite U17 Selection Trial</h4>
+
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-calendar"></i>
+                            25 July 2034
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            09:00 AM
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Main Training Ground
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-user-group"></i>
+                            42 Invited Players
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-user-tie"></i>
+                            Coach Daniel Thomas
+                        </li>
+
+                    </ul>
+
+                    <div class="academy-card-actions">
+
+                        <button class="academy-primary-button">
+                            View
+                        </button>
+
+                        <button class="academy-secondary-button">
+                            Edit
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- Duplicate more cards as demo -->
+
+                <article class="academy-trial-card">
+
+                    <div class="academy-trial-card-top">
+
+                        <span class="academy-live-badge live">
+                            Live
+                        </span>
+
+                    </div>
+
+                    <h4>Senior Team Open Trials</h4>
+
+                    <ul>
+
+                        <li><i class="fa-solid fa-calendar"></i> Today</li>
+
+                        <li><i class="fa-solid fa-clock"></i> 2:00 PM</li>
+
+                        <li><i class="fa-solid fa-location-dot"></i> Stadium Ground</li>
+
+                        <li><i class="fa-solid fa-user-group"></i> 68 Players</li>
+
+                        <li><i class="fa-solid fa-user-tie"></i> Coach Rahul Singh</li>
+
+                    </ul>
+
+                    <div class="academy-card-actions">
+
+                        <button class="academy-primary-button">
+
+                            Open
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ==============================================
+             PARTICIPANTS TABLE
+        =============================================== -->
+
+        <section class="academy-panel">
+
+            <div class="academy-panel-header">
+
+                <div>
+
+                    <h3>Trial Participants</h3>
+
+                    <p>
+                        Attendance and evaluation overview.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="academy-table-wrapper">
+
+                <table class="academy-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                <input type="checkbox">
+                            </th>
+
+                            <th>Player</th>
+
+                            <th>Position</th>
+
+                            <th>Rating</th>
+
+                            <th>Attendance</th>
+
+                            <th>Evaluation</th>
+
+                            <th>Result</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="academyTrialParticipantsBody">
+
+                        <tr>
+
+                            <td>
+                                <input type="checkbox">
+                            </td>
+
+                            <td>
+
+                                <div class="academy-player">
+
+                                    <img
+                                        src="images/player-avatar-placeholder.png"
+                                        alt="Player">
+
+                                    <div>
+
+                                        <strong>
+                                            Aarav Sharma
+                                        </strong>
+
+                                        <small>
+                                            U17
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>Midfielder</td>
+
+                            <td>8.9</td>
+
+                            <td>
+
+                                <span class="academy-status success">
+
+                                    Checked In
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="academy-secondary-button">
+
+                                    Evaluate
+
+                                </button>
+
+                            </td>
+
+                            <td>
+
+                                <span class="academy-status pending">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="academy-icon-button">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ======================================================
+         RIGHT COLUMN
+    ======================================================= -->
+
+    <aside class="academy-trials-right">
+
+        <!-- Timeline -->
+
+        <section class="academy-panel">
+
+            <div class="academy-panel-header">
+
+                <h3>Trial Timeline</h3>
+
+            </div>
+
+            <div class="academy-timeline">
+
+                <article>
+
+                    <strong>08:30 AM</strong>
+
+                    <p>Player checked in</p>
+
+                </article>
+
+                <article>
+
+                    <strong>09:15 AM</strong>
+
+                    <p>Coach evaluation submitted</p>
+
+                </article>
+
+                <article>
+
+                    <strong>10:40 AM</strong>
+
+                    <p>Player shortlisted</p>
+
+                </article>
+
+                <article>
+
+                    <strong>11:30 AM</strong>
+
+                    <p>Email notification sent</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Documents -->
+
+        <section class="academy-panel">
+
+            <div class="academy-panel-header">
+
+                <h3>Documents</h3>
+
+            </div>
+
+            <div class="academy-document-list">
+
+                <button class="academy-upload-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    Trial Sheet
+
+                </button>
+
+                <button class="academy-upload-card">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                    Attendance Sheet
+
+                </button>
+
+                <button class="academy-upload-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    Medical Clearance
+
+                </button>
+
+                <button class="academy-upload-card">
+
+                    <i class="fa-solid fa-file-signature"></i>
+
+                    Consent Forms
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </aside>
+
+</section>
+
+<!-- ==========================================================
+     CREATE TRIAL MODAL
+=========================================================== -->
+
+<div
+id="academyCreateTrialModal"
+class="academy-modal"
+hidden>
+
+    <div class="academy-modal-card">
+
+        <h2>Create Trial</h2>
+
+        <p>
+            Frontend demo form.
+            Backend integration will be handled by Mr. Harsh.
+        </p>
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Trial Name">
+
+            <input
+                type="date">
+
+            <input
+                type="time">
+
+            <input
+                type="text"
+                placeholder="Venue">
+
+            <textarea
+                placeholder="Instructions"></textarea>
+
+            <div class="academy-modal-actions">
+
+                <button
+                    type="button"
+                    class="academy-secondary-button"
+                    data-close-modal>
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="academy-primary-button">
+
+                    Create Trial
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     LOGOUT MODAL
+=========================================================== -->
+
+<div
+id="academyLogoutModal"
+class="academy-modal"
+hidden>
+
+    <div class="academy-modal-card">
+
+        <h2>Logout</h2>
+
+        <p>
+
+            Are you sure you want to logout?
+
+        </p>
+
+        <div class="academy-modal-actions">
+
+            <button
+                class="academy-secondary-button"
+                data-close-logout>
+
+                Cancel
+
+            </button>
+
+            <button
+                id="academyConfirmLogout"
+                class="academy-primary-button">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     TOAST CONTAINER
+=========================================================== -->
+
+<div
+id="academyToastContainer"
+class="academy-toast-container">
+</div>
+
+<!-- ==========================================================
+     BACKEND NOTES
+
+     All trial scheduling, attendance, evaluations,
+     exports, notifications, and document uploads
+     will be connected by Mr. Harsh.
+
+=========================================================== -->
+
+<script src="academy-trials.js"></script>
+
+</div>
+
+</body>
+</html>

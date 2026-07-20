@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+name="description"
+content="Scout player discovery portal for FIFA Mission India."
+>
+
+<title>
+Scout Players | FIFA Mission India
+</title>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<link
+rel="stylesheet"
+href="scout-players.css"
+>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     SCOUT SIDEBAR
+====================================================== -->
+
+<aside
+class="scout-sidebar"
+id="scoutSidebar"
+>
+
+<div
+class="scout-sidebar-brand"
+>
+
+<a
+href="index.html"
+class="scout-logo"
+>
+
+<div
+class="scout-logo-icon"
+>
+
+<i
+class="fa-solid fa-binoculars"
+></i>
+
+</div>
+
+<div>
+
+<strong>
+FIFA Mission India
+</strong>
+
+<span>
+Scout Portal
+</span>
+
+</div>
+
+</a>
+
+<button
+class="scout-sidebar-close"
+id="scoutSidebarClose"
+type="button"
+aria-label="Close sidebar"
+>
+
+<i
+class="fa-solid fa-xmark"
+></i>
+
+</button>
+
+</div>
+
+
+
+<!-- =====================================================
+     SCOUT PROFILE SUMMARY
+====================================================== -->
+
+<div
+class="scout-profile-summary"
+>
+
+<img
+src="images/scout-profile.jpg"
+alt="Scout profile"
+/>
+
+<h3>
+Rahul Mehta
+</h3>
+
+<p>
+Regional Talent Scout
+</p>
+
+<div
+class="scout-profile-badges"
+>
+
+<span>
+AIFF Certified
+</span>
+
+<span>
+Northeast Region
+</span>
+
+</div>
+
+<div
+class="scout-profile-progress"
+>
+
+<div>
+
+<span>
+Profile Completion
+</span>
+
+<strong>
+86%
+</strong>
+
+</div>
+
+<div
+class="scout-progress-track"
+>
+
+<span
+style="width:86%;"
+></span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SCOUT NAVIGATION
+====================================================== -->
+
+<nav
+class="scout-sidebar-navigation"
+aria-label="Scout navigation"
+>
+
+<span
+class="scout-nav-heading"
+>
+SCOUT WORKSPACE
+</span>
+
+<ul
+class="scout-nav-list"
+>
+
+<li>
+
+<a
+href="scout-dashboard.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-house"
+></i>
+
+</span>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-players.html"
+class="scout-nav-link active"
+aria-current="page"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-users-viewfinder"
+></i>
+
+</span>
+
+Players
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-reports.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-file-lines"
+></i>
+
+</span>
+
+Reports
+
+<span
+class="scout-nav-badge"
+>
+28
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-matches.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-calendar-days"
+></i>
+
+</span>
+
+Matches
+
+<span
+class="scout-nav-badge"
+>
+6
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-observations.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+</span>
+
+Observations
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-shortlist.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+</span>
+
+Shortlist
+
+<span
+class="scout-nav-badge"
+>
+17
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-messages.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-message"
+></i>
+
+</span>
+
+Messages
+
+<span
+class="scout-nav-badge"
+>
+4
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a
+href="scout-settings.html"
+class="scout-nav-link"
+>
+
+<span
+class="scout-nav-icon"
+>
+
+<i
+class="fa-solid fa-gear"
+></i>
+
+</span>
+
+Settings
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<!-- =====================================================
+     SIDEBAR SUPPORT
+====================================================== -->
+
+<div
+class="scout-sidebar-support-card"
+>
+
+<div
+class="scout-sidebar-support-icon"
+>
+
+<i
+class="fa-solid fa-headset"
+></i>
+
+</div>
+
+<h3>
+Scout Support
+</h3>
+
+<p>
+Need assistance with player reports, match assignments or technical
+issues? Our support team is available to help.
+</p>
+
+<a
+href="scout-help.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-life-ring"
+></i>
+
+Get Support
+
+</a>
+
+</div>
+
+
+
+<!-- =====================================================
+     SIDEBAR FOOTER
+====================================================== -->
+
+<div
+class="scout-sidebar-footer"
+>
+
+<button
+class="scout-sidebar-logout"
+id="scoutLogoutButton"
+type="button"
+>
+
+<i
+class="fa-solid fa-right-from-bracket"
+></i>
+
+Logout
+
+</button>
+
+</div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MOBILE SIDEBAR OVERLAY
+====================================================== -->
+
+<div
+class="scout-sidebar-overlay"
+id="scoutSidebarOverlay"
+></div>
+
+
+
+<!-- =====================================================
+     PAGE LAYOUT
+====================================================== -->
+
+<div
+class="scout-page-layout"
+>
+
+<!-- =====================================================
+     TOPBAR
+====================================================== -->
+
+<header
+class="scout-topbar"
+>
+
+<div
+class="scout-topbar-left"
+>
+
+<button
+class="scout-menu-toggle"
+id="scoutMenuToggle"
+type="button"
+aria-label="Open navigation"
+>
+
+<i
+class="fa-solid fa-bars"
+></i>
+
+</button>
+
+<div
+class="scout-topbar-heading"
+>
+
+<span
+class="scout-page-eyebrow"
+>
+PLAYER DISCOVERY
+</span>
+
+<h1>
+Scout Players
+</h1>
+
+</div>
+
+</div>
+
+
+
+<label
+class="scout-topbar-search"
+>
+
+<i
+class="fa-solid fa-magnifying-glass"
+></i>
+
+<input
+id="scoutSearchInput"
+type="search"
+placeholder="Search player, academy, position..."
+autocomplete="off"
+/>
+
+</label>
+
+
+
+<div
+class="scout-topbar-actions"
+>
+
+<button
+class="scout-topbar-icon-button"
+id="scoutNotificationButton"
+type="button"
+aria-label="Notifications"
+>
+
+<i
+class="fa-regular fa-bell"
+></i>
+
+<span
+class="scout-notification-dot"
+></span>
+
+</button>
+
+
+
+<button
+class="scout-topbar-profile"
+id="scoutProfileButton"
+type="button"
+>
+
+<img
+src="images/scout-profile.jpg"
+alt="Scout profile"
+/>
+
+<div
+class="scout-topbar-profile-text"
+>
+
+<strong>
+Rahul Mehta
+</strong>
+
+<span>
+Regional Scout
+</span>
+
+</div>
+
+<i
+class="fa-solid fa-chevron-down"
+></i>
+
+</button>
+
+
+
+<!-- =====================================================
+     PROFILE DROPDOWN
+====================================================== -->
+
+<div
+class="scout-profile-dropdown"
+id="scoutProfileDropdown"
+>
+
+<div
+class="scout-profile-dropdown-header"
+>
+
+<img
+src="images/scout-profile.jpg"
+alt="Scout"
+/>
+
+<div>
+
+<strong>
+Rahul Mehta
+</strong>
+
+<span>
+AIFF Regional Scout
+</span>
+
+</div>
+
+</div>
+
+<div
+class="scout-profile-dropdown-menu"
+>
+
+<a
+href="scout-profile.html"
+class="scout-profile-dropdown-link"
+>
+
+<i
+class="fa-regular fa-user"
+></i>
+
+My Profile
+
+</a>
+
+<a
+href="scout-settings.html"
+class="scout-profile-dropdown-link"
+>
+
+<i
+class="fa-solid fa-gear"
+></i>
+
+Settings
+
+</a>
+
+<a
+href="scout-help.html"
+class="scout-profile-dropdown-link"
+>
+
+<i
+class="fa-regular fa-circle-question"
+></i>
+
+Help Center
+
+</a>
+
+<a
+href="#"
+class="scout-profile-dropdown-link logout"
+>
+
+<i
+class="fa-solid fa-right-from-bracket"
+></i>
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     NOTIFICATION PANEL
+====================================================== -->
+
+<div
+class="scout-notification-panel"
+id="scoutNotificationPanel"
+>
+
+<div
+class="scout-notification-panel-header"
+>
+
+<h3>
+Notifications
+</h3>
+
+<button
+id="scoutMarkNotificationsReadButton"
+type="button"
+>
+
+Mark all as read
+
+</button>
+
+</div>
+
+<div
+class="scout-notification-list"
+>
+
+<article
+class="scout-notification-item unread"
+>
+
+<div
+class="scout-notification-icon"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+</div>
+
+<div
+class="scout-notification-content"
+>
+
+<strong>
+Elite Prospect Identified
+</strong>
+
+<p>
+A player from Manipur has exceeded the elite rating threshold.
+</p>
+
+<span>
+15 minutes ago
+</span>
+
+</div>
+
+</article>
+
+<article
+class="scout-notification-item unread"
+>
+
+<div
+class="scout-notification-icon"
+>
+
+<i
+class="fa-solid fa-calendar-check"
+></i>
+
+</div>
+
+<div
+class="scout-notification-content"
+>
+
+<strong>
+New Match Assignment
+</strong>
+
+<p>
+You have been assigned to scout the Northeast Youth League Final.
+</p>
+
+<span>
+Today
+</span>
+
+</div>
+
+</article>
+
+<article
+class="scout-notification-item"
+>
+
+<div
+class="scout-notification-icon"
+>
+
+<i
+class="fa-solid fa-file-lines"
+></i>
+
+</div>
+
+<div
+class="scout-notification-content"
+>
+
+<strong>
+Report Approved
+</strong>
+
+<p>
+Your latest scouting report has been reviewed successfully.
+</p>
+
+<span>
+Yesterday
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+<div
+class="scout-notification-panel-footer"
+>
+
+<a
+href="scout-notifications.html"
+>
+
+View All Notifications
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main
+class="scout-players-main"
+>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section
+class="scout-players-hero"
+>
+
+<div
+class="scout-players-hero-content"
+>
+
+<span
+class="scout-hero-eyebrow"
+>
+
+<i
+class="fa-solid fa-binoculars"
+></i>
+
+PLAYER DISCOVERY
+
+</span>
+
+<h2>
+Discover India's Next Football Stars
+</h2>
+
+<p>
+Search, evaluate and compare talented footballers from academies,
+schools and clubs across India. Use advanced filters to identify
+players with the highest potential for the national pathway.
+</p>
+
+<div
+class="scout-hero-actions"
+>
+
+<a
+href="scout-shortlist.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+View Shortlist
+
+</a>
+
+<a
+href="scout-reports.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-lines"
+></i>
+
+My Reports
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-hero-visual"
+>
+
+<div
+class="scout-hero-floating-card"
+>
+
+<div
+class="scout-hero-floating-card-icon"
+>
+
+<i
+class="fa-solid fa-users"
+></i>
+
+</div>
+
+<span>
+Players Available</span>
+
+<strong>
+8,420
+</strong>
+
+</div>
+
+
+
+<div
+class="scout-hero-floating-card"
+>
+
+<div
+class="scout-hero-floating-card-icon"
+>
+
+<i
+class="fa-solid fa-ranking-star"
+></i>
+
+</div>
+
+<span>
+Elite Prospects</span>
+
+<strong>
+214
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FILTER BAR
+====================================================== -->
+
+<section
+class="scout-player-filters"
+>
+
+<div
+class="scout-filter-grid"
+>
+
+<label>
+
+<span>
+Position
+</span>
+
+<select
+id="filterPosition"
+>
+
+<option value="">
+All Positions
+</option>
+
+<option>
+Goalkeeper
+</option>
+
+<option>
+Centre Back
+</option>
+
+<option>
+Full Back
+</option>
+
+<option>
+Defensive Midfielder
+</option>
+
+<option>
+Central Midfielder
+</option>
+
+<option>
+Attacking Midfielder
+</option>
+
+<option>
+Winger
+</option>
+
+<option>
+Striker
+</option>
+
+</select>
+
+</label>
+
+
+
+<label>
+
+<span>
+Age Group
+</span>
+
+<select
+id="filterAge"
+>
+
+<option value="">
+All Ages
+</option>
+
+<option>
+Under 13
+</option>
+
+<option>
+Under 15
+</option>
+
+<option>
+Under 17
+</option>
+
+<option>
+Under 19
+</option>
+
+</select>
+
+</label>
+
+
+
+<label>
+
+<span>
+State
+</span>
+
+<select
+id="filterState"
+>
+
+<option value="">
+All States
+</option>
+
+<option>
+Nagaland
+</option>
+
+<option>
+Manipur
+</option>
+
+<option>
+Assam
+</option>
+
+<option>
+Mizoram
+</option>
+
+<option>
+Meghalaya
+</option>
+
+<option>
+Sikkim
+</option>
+
+<option>
+West Bengal
+</option>
+
+<option>
+Goa
+</option>
+
+<option>
+Kerala
+</option>
+
+</select>
+
+</label>
+
+
+
+<label>
+
+<span>
+Preferred Foot
+</span>
+
+<select
+id="filterFoot"
+>
+
+<option value="">
+Any
+</option>
+
+<option>
+Right
+</option>
+
+<option>
+Left
+</option>
+
+<option>
+Both
+</option>
+
+</select>
+
+</label>
+
+
+
+<button
+class="scout-primary-button"
+id="applyPlayerFilters"
+type="button"
+>
+
+<i
+class="fa-solid fa-filter"
+></i>
+
+Apply Filters
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTS HEADER
+====================================================== -->
+
+<section
+class="scout-results-header"
+>
+
+<div>
+
+<span
+class="scout-section-eyebrow"
+>
+PLAYER DATABASE
+</span>
+
+<h2>
+Available Players
+</h2>
+
+<p>
+Browse footballers available for scouting evaluation across India.
+</p>
+
+</div>
+
+<div
+class="scout-results-meta"
+>
+
+<strong>
+8,420 Players
+</strong>
+
+<span>
+Updated Today
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PLAYER GRID
+====================================================== -->
+
+<section
+class="scout-player-grid"
+id="scoutPlayersGrid"
+>
+
+<article
+class="scout-player-card"
+data-position="Central Midfielder"
+data-age="Under 17"
+data-state="Karnataka"
+data-foot="Right"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-arjun.jpg"
+alt="Arjun Sharma"
+>
+
+<span
+class="scout-player-rating"
+>
+8.7
+</span>
+
+<button
+class="scout-player-save active"
+type="button"
+aria-label="Add Arjun Sharma to shortlist"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Arjun Sharma
+</h3>
+
+<p>
+Central Midfielder
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+17 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Karnataka
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Right Foot
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Pace
+</span>
+
+<strong>
+84
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Passing
+</span>
+
+<strong>
+92
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Vision
+</span>
+
+<strong>
+91
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Stamina
+</span>
+
+<strong>
+88
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Playmaker
+</span>
+
+<span>
+Leadership
+</span>
+
+<span>
+Creative
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article
+class="scout-player-card"
+data-position="Right Winger"
+data-age="Under 17"
+data-state="Manipur"
+data-foot="Left"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-rohan.jpg"
+alt="Rohan Singh"
+>
+
+<span
+class="scout-player-rating"
+>
+8.4
+</span>
+
+<button
+class="scout-player-save active"
+type="button"
+aria-label="Add Rohan Singh to shortlist"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Rohan Singh
+</h3>
+
+<p>
+Right Winger
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+16 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Manipur
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Left Foot
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Pace
+</span>
+
+<strong>
+95
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Dribbling
+</span>
+
+<strong>
+93
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Crossing
+</span>
+
+<strong>
+87
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Finishing
+</span>
+
+<strong>
+84
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Fast
+</span>
+
+<span>
+Attacking
+</span>
+
+<span>
+Explosive
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article
+class="scout-player-card"
+data-position="Centre Back"
+data-age="Under 19"
+data-state="Jammu and Kashmir"
+data-foot="Right"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-zubair.jpg"
+alt="Zubair Khan"
+>
+
+<span
+class="scout-player-rating"
+>
+8.5
+</span>
+
+<button
+class="scout-player-save"
+type="button"
+aria-label="Add Zubair Khan to shortlist"
+>
+
+<i
+class="fa-regular fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Zubair Khan
+</h3>
+
+<p>
+Centre Back
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+18 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Jammu & Kashmir
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Right Foot
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Strength
+</span>
+
+<strong>
+92
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Marking
+</span>
+
+<strong>
+90
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Heading
+</span>
+
+<strong>
+91
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Positioning
+</span>
+
+<strong>
+89
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Leader
+</span>
+
+<span>
+Strong
+</span>
+
+<span>
+Defender
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+<article
+class="scout-player-card"
+data-position="Goalkeeper"
+data-age="Under 17"
+data-state="Kerala"
+data-foot="Right"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-vishal.jpg"
+alt="Vishal Nair"
+>
+
+<span
+class="scout-player-rating"
+>
+8.2
+</span>
+
+<button
+class="scout-player-save"
+type="button"
+aria-label="Add Vishal Nair to shortlist"
+>
+
+<i
+class="fa-regular fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Vishal Nair
+</h3>
+
+<p>
+Goalkeeper
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+17 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Kerala
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Right Foot
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Reflexes</span>
+
+<strong>
+93
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Handling</span>
+
+<strong>
+89
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Positioning</span>
+
+<strong>
+91
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Distribution</span>
+
+<strong>
+84
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Shot Stopper</span>
+
+<span>
+Leadership</span>
+
+<span>
+Quick Reflexes</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article
+class="scout-player-card"
+data-position="Striker"
+data-age="Under 19"
+data-state="Goa"
+data-foot="Both"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-neil.jpg"
+alt="Neil Fernandes"
+>
+
+<span
+class="scout-player-rating"
+>
+9.1
+</span>
+
+<button
+class="scout-player-save active"
+type="button"
+aria-label="Add Neil Fernandes to shortlist"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Neil Fernandes
+</h3>
+
+<p>
+Centre Forward
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+18 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Goa
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Both Feet
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Finishing</span>
+
+<strong>
+95
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Movement</span>
+
+<strong>
+92
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Heading</span>
+
+<strong>
+88
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Acceleration</span>
+
+<strong>
+91
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Clinical</span>
+
+<span>
+Poacher</span>
+
+<span>
+Captain</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<article
+class="scout-player-card"
+data-position="Attacking Midfielder"
+data-age="Under 15"
+data-state="Assam"
+data-foot="Left"
+>
+
+<div
+class="scout-player-image"
+>
+
+<img
+src="images/player-rahul.jpg"
+alt="Rahul Das"
+>
+
+<span
+class="scout-player-rating"
+>
+8.6
+</span>
+
+<button
+class="scout-player-save"
+type="button"
+aria-label="Add Rahul Das to shortlist"
+>
+
+<i
+class="fa-regular fa-star"
+></i>
+
+</button>
+
+</div>
+
+
+
+<div
+class="scout-player-content"
+>
+
+<div
+class="scout-player-header"
+>
+
+<div>
+
+<h3>
+Rahul Das
+</h3>
+
+<p>
+Attacking Midfielder
+</p>
+
+</div>
+
+<span
+class="scout-player-age"
+>
+15 Years
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-meta"
+>
+
+<span>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+Assam
+
+</span>
+
+<span>
+
+<i
+class="fa-solid fa-shoe-prints"
+></i>
+
+Left Foot
+
+</span>
+
+</div>
+
+
+
+<div
+class="scout-player-attributes"
+>
+
+<div>
+
+<span>
+Vision</span>
+
+<strong>
+92
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Passing</span>
+
+<strong>
+90
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Technique</span>
+
+<strong>
+89
+</strong>
+
+</div>
+
+<div>
+
+<span>
+Creativity</span>
+
+<strong>
+94
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-player-tags"
+>
+
+<span>
+Playmaker</span>
+
+<span>
+Creative</span>
+
+<span>
+Future Star</span>
+
+</div>
+
+
+
+<div
+class="scout-player-actions"
+>
+
+<a
+href="scout-player-profile.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-eye"
+></i>
+
+View Profile
+
+</a>
+
+<a
+href="scout-report-create.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Report
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOAD MORE
+====================================================== -->
+
+<section
+class="scout-load-more-section"
+>
+
+<button
+class="scout-primary-button"
+id="loadMorePlayersButton"
+type="button"
+>
+
+<i
+class="fa-solid fa-angles-down"
+></i>
+
+Load More Players
+
+</button>
+
+</section>
+<!-- =====================================================
+     SCOUT INSIGHTS
+====================================================== -->
+
+<section
+class="scout-insights-section"
+>
+
+<div
+class="scout-section-heading"
+>
+
+<div>
+
+<span
+class="scout-section-eyebrow"
+>
+AI INSIGHTS
+</span>
+
+<h2>
+Scouting Intelligence
+</h2>
+
+<p>
+Quick insights generated from the current player database to help
+prioritize your scouting decisions.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div
+class="scout-insights-grid"
+>
+
+<article
+class="scout-insight-card"
+>
+
+<div
+class="scout-insight-icon"
+>
+
+<i
+class="fa-solid fa-ranking-star"
+></i>
+
+</div>
+
+<h3>
+Highest Rated Position
+</h3>
+
+<strong>
+Central Midfielders
+</strong>
+
+<p>
+Current season evaluations show central midfielders leading overall
+technical and tactical ratings.
+</p>
+
+</article>
+
+
+
+<article
+class="scout-insight-card"
+>
+
+<div
+class="scout-insight-icon"
+>
+
+<i
+class="fa-solid fa-location-dot"
+></i>
+
+</div>
+
+<h3>
+Emerging Region
+</h3>
+
+<strong>
+Northeast India
+</strong>
+
+<p>
+Scouting reports indicate a rapid increase in elite youth prospects
+across multiple northeastern states.
+</p>
+
+</article>
+
+
+
+<article
+class="scout-insight-card"
+>
+
+<div
+class="scout-insight-icon"
+>
+
+<i
+class="fa-solid fa-chart-line"
+></i>
+
+</div>
+
+<h3>
+Performance Trend
+</h3>
+
+<strong>
++14%
+</strong>
+
+<p>
+Elite player identification has increased compared to the previous
+evaluation cycle.
+</p>
+
+</article>
+
+
+
+<article
+class="scout-insight-card"
+>
+
+<div
+class="scout-insight-icon"
+>
+
+<i
+class="fa-solid fa-bolt"
+></i>
+
+</div>
+
+<h3>
+Priority Action
+</h3>
+
+<strong>
+Schedule Live Assessments
+</strong>
+
+<p>
+Several high-potential players are awaiting match-day observation
+before final recommendation.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE FOOTER CTA
+====================================================== -->
+
+<section
+class="scout-bottom-cta"
+>
+
+<div
+class="scout-bottom-cta-content"
+>
+
+<h2>
+Build India's Future National Team
+</h2>
+
+<p>
+Every scouting report helps identify the next generation of football
+talent. Continue evaluating players and submit accurate reports.
+</p>
+
+<div
+class="scout-bottom-cta-actions"
+>
+
+<a
+href="scout-report-create.html"
+class="scout-primary-button"
+>
+
+<i
+class="fa-solid fa-file-circle-plus"
+></i>
+
+Create Report
+
+</a>
+
+<a
+href="scout-shortlist.html"
+class="scout-secondary-button"
+>
+
+<i
+class="fa-solid fa-star"
+></i>
+
+Open Shortlist
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+class="scout-toast"
+id="scoutToast"
+>
+
+<div
+class="scout-toast-icon"
+>
+
+<i
+class="fa-solid fa-circle-check"
+></i>
+
+</div>
+
+<div
+class="scout-toast-content"
+>
+
+<strong
+id="scoutToastTitle"
+>
+Success
+</strong>
+
+<p
+id="scoutToastMessage"
+>
+Action completed successfully.
+</p>
+
+</div>
+
+</div>
+
+
+
+<script
+src="scout-players.js"
+></script>
+
+</div>
+
+</body>
+
+</html>

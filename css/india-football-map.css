@@ -1,0 +1,707 @@
+/* =====================================================
+   INTERACTIVE INDIA FOOTBALL MAP
+===================================================== */
+
+.india-football-map-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 7%;
+  background:
+    linear-gradient(
+      145deg,
+      #03152d 0%,
+      #06264a 52%,
+      #031326 100%
+    );
+  color: #ffffff;
+}
+
+.india-map-container {
+  position: relative;
+  z-index: 2;
+  width: min(1400px, 100%);
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   DECORATIVE BACKGROUND
+===================================================== */
+
+.india-map-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.india-map-grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    );
+  background-size: 56px 56px;
+}
+
+.india-map-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.18;
+}
+
+.india-map-glow-one {
+  top: -170px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: #1599ff;
+}
+
+.india-map-glow-two {
+  bottom: -220px;
+  left: -150px;
+  width: 520px;
+  height: 520px;
+  background: #22c98b;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.india-map-heading {
+  display: grid;
+  margin-bottom: 65px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+  gap: 70px;
+  align-items: end;
+}
+
+.india-map-label {
+  display: inline-flex;
+  padding: 9px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(110, 198, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(30, 142, 233, 0.1);
+  color: #78caff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.india-map-heading h2 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 750;
+  line-height: 1.07;
+  letter-spacing: -2.5px;
+}
+
+.india-map-heading h2 span {
+  display: block;
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #65c7ff,
+      #52e0aa
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.india-map-heading > p {
+  margin: 0 0 5px;
+  color: rgba(222, 237, 255, 0.68);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   MAP LAYOUT
+===================================================== */
+
+.india-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.india-map-panel,
+.india-region-details {
+  border: 1px solid rgba(129, 194, 255, 0.16);
+  border-radius: 30px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.025)
+    );
+  box-shadow:
+    0 30px 85px rgba(0, 0, 0, 0.27),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+
+/* =====================================================
+   MAP PANEL
+===================================================== */
+
+.india-map-panel {
+  position: relative;
+  min-height: 700px;
+  padding: 34px;
+  overflow: hidden;
+}
+
+.india-map-panel::before {
+  position: absolute;
+  top: -160px;
+  right: -140px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(48, 164, 255, 0.16),
+      transparent 70%
+    );
+  content: "";
+}
+
+.india-map-panel-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  margin-bottom: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.india-map-panel-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #6fc5ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.india-map-panel-header h3 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.india-map-live-status {
+  display: inline-flex;
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid rgba(85, 224, 165, 0.2);
+  border-radius: 999px;
+  background: rgba(25, 171, 117, 0.08);
+  color: #74e2b3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  align-items: center;
+  gap: 9px;
+  text-transform: uppercase;
+}
+
+.india-map-live-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ee0a4;
+  box-shadow: 0 0 0 5px rgba(78, 224, 164, 0.1);
+}
+
+
+/* =====================================================
+   SVG MAP
+===================================================== */
+
+.india-map-visual {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-height: 570px;
+  place-items: center;
+}
+
+.india-map-svg {
+  width: min(100%, 540px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.25));
+}
+
+.india-map-region {
+  stroke: rgba(159, 209, 255, 0.32);
+  stroke-width: 2;
+  fill: rgba(54, 135, 205, 0.22);
+  cursor: pointer;
+  outline: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.india-map-region:hover,
+.india-map-region:focus-visible {
+  stroke: rgba(121, 215, 255, 0.8);
+  fill: rgba(37, 158, 238, 0.46);
+  filter: drop-shadow(0 9px 13px rgba(29, 145, 226, 0.28));
+  transform: translateY(-3px);
+}
+
+.india-map-region.is-active {
+  stroke: #78e3ba;
+  fill: rgba(47, 203, 145, 0.46);
+  filter: drop-shadow(0 12px 18px rgba(43, 200, 145, 0.24));
+}
+
+.india-map-marker {
+  fill: #ffffff;
+  stroke: rgba(63, 201, 151, 0.9);
+  stroke-width: 4;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: indiaMapMarkerPulse 2.4s infinite;
+}
+
+.india-map-marker-two {
+  animation-delay: 0.3s;
+}
+
+.india-map-marker-three {
+  animation-delay: 0.6s;
+}
+
+.india-map-marker-four {
+  animation-delay: 0.9s;
+}
+
+.india-map-marker-five {
+  animation-delay: 1.2s;
+}
+
+.india-map-marker-six {
+  animation-delay: 1.5s;
+}
+
+@keyframes indiaMapMarkerPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.45);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE SELECTOR
+===================================================== */
+
+.india-map-mobile-selector {
+  position: relative;
+  z-index: 3;
+  display: none;
+  margin-top: 22px;
+}
+
+.india-map-mobile-selector label {
+  display: block;
+  margin-bottom: 9px;
+  color: rgba(226, 238, 255, 0.7);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.india-map-mobile-selector select {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid rgba(124, 194, 255, 0.24);
+  border-radius: 14px;
+  background: #082341;
+  color: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+
+/* =====================================================
+   REGION DETAILS PANEL
+===================================================== */
+
+.india-region-details {
+  display: flex;
+  padding: 38px;
+  flex-direction: column;
+}
+
+.india-region-details-top {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.india-region-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #71c9ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.india-region-details h3 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+
+.india-region-badge {
+  display: grid;
+  min-width: 68px;
+  min-height: 68px;
+  padding: 10px;
+  border: 1px solid rgba(94, 224, 167, 0.24);
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(44, 204, 145, 0.24),
+      rgba(255, 255, 255, 0.05)
+    );
+  color: #78e3b7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  place-items: center;
+}
+
+.india-region-description {
+  margin: 0 0 28px;
+  color: rgba(220, 235, 252, 0.68);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* Statistics */
+
+.india-region-stat-grid {
+  display: grid;
+  margin-bottom: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.india-region-stat {
+  display: flex;
+  min-height: 96px;
+  padding: 17px;
+  border: 1px solid rgba(126, 193, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  align-items: center;
+  gap: 14px;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.india-region-stat:hover {
+  border-color: rgba(101, 198, 255, 0.28);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-3px);
+}
+
+.india-region-stat-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: rgba(39, 145, 226, 0.12);
+  font-size: 18px;
+  place-items: center;
+}
+
+.india-region-stat strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.india-region-stat div span {
+  color: rgba(218, 234, 251, 0.55);
+  font-size: 11px;
+}
+
+
+/* Highlight */
+
+.india-region-highlight {
+  padding: 22px;
+  margin-bottom: 27px;
+  border: 1px solid rgba(73, 218, 157, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(32, 181, 126, 0.13),
+      rgba(255, 255, 255, 0.03)
+    );
+}
+
+.india-region-highlight-label,
+.india-region-states-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #6ce0ad;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.india-region-highlight p {
+  margin: 0;
+  color: rgba(231, 241, 252, 0.77);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* State Tags */
+
+.india-region-states {
+  margin-bottom: 28px;
+}
+
+.india-region-state-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.india-region-state-list span {
+  display: inline-flex;
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid rgba(126, 193, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(225, 239, 255, 0.74);
+  font-size: 11px;
+  font-weight: 700;
+  align-items: center;
+}
+
+
+/* Action Button */
+
+.india-region-action {
+  display: flex;
+  width: 100%;
+  min-height: 58px;
+  padding: 0 22px;
+  margin-top: auto;
+  border: 0;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      90deg,
+      #087ce3,
+      #16a4f1
+    );
+  box-shadow: 0 16px 35px rgba(0, 119, 223, 0.25);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: space-between;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.india-region-action span {
+  font-size: 19px;
+  transition: transform 0.3s ease;
+}
+
+.india-region-action:hover {
+  box-shadow: 0 21px 45px rgba(0, 119, 223, 0.38);
+  transform: translateY(-3px);
+}
+
+.india-region-action:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .india-map-heading {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+
+  .india-map-heading > p {
+    max-width: 650px;
+  }
+
+  .india-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .india-map-panel {
+    min-height: auto;
+  }
+
+  .india-region-details {
+    min-height: 600px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .india-football-map-section {
+    padding: 90px 5%;
+  }
+
+  .india-map-heading {
+    margin-bottom: 45px;
+  }
+
+  .india-map-heading h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .india-map-panel,
+  .india-region-details {
+    padding: 25px 22px;
+    border-radius: 23px;
+  }
+
+  .india-map-panel-header {
+    align-items: flex-start;
+  }
+
+  .india-map-live-status {
+    display: none;
+  }
+
+  .india-map-visual {
+    min-height: 440px;
+  }
+
+  .india-map-mobile-selector {
+    display: block;
+  }
+
+  .india-region-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .india-region-stat {
+    min-height: 84px;
+  }
+
+}
+
+
+@media (max-width: 420px) {
+
+  .india-football-map-section {
+    padding: 75px 18px;
+  }
+
+  .india-map-heading h2 {
+    font-size: 36px;
+  }
+
+  .india-map-visual {
+    min-height: 385px;
+  }
+
+  .india-region-details-top {
+    flex-direction: column;
+  }
+
+  .india-region-badge {
+    min-width: 60px;
+    min-height: 46px;
+    border-radius: 14px;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .india-map-marker {
+    animation: none;
+  }
+
+  .india-map-region,
+  .india-region-stat,
+  .india-region-action {
+    transition: none;
+  }
+
+}

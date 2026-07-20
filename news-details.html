@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Read the latest Indian football development stories, mission updates and grassroots news from FIFA Mission India."
+  >
+
+  <title>Football News | FIFA Mission India</title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/news-details.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="news-details-loader"
+    id="newsDetailsLoader"
+    aria-label="Loading news article"
+  >
+
+    <div class="news-loader-spinner"></div>
+
+    <p>
+      Loading story...
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="news-details-navbar"
+    id="newsDetailsNavbar"
+  >
+
+    <div class="news-navbar-container">
+
+
+      <a
+        href="index.html"
+        class="news-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="news-brand-icon">
+          <i class="fa-solid fa-futbol"></i>
+        </span>
+
+        <span class="news-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="news-desktop-nav"
+        aria-label="News page navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#vision">
+          Vision
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a
+          href="news.html"
+          class="active"
+        >
+          News
+        </a>
+
+      </nav>
+
+
+      <div class="news-navbar-actions">
+
+        <button
+          class="news-share-navbar-button"
+          id="newsNavbarShareButton"
+          type="button"
+        >
+
+          <i class="fa-solid fa-share-nodes"></i>
+
+          <span>
+            Share
+          </span>
+
+        </button>
+
+
+        <button
+          class="news-menu-toggle"
+          id="newsMenuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="newsMobileMenu"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE OVERLAY
+  ====================================================== -->
+
+  <div
+    class="news-mobile-overlay"
+    id="newsMobileOverlay"
+    hidden
+  ></div>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <aside
+    class="news-mobile-menu"
+    id="newsMobileMenu"
+    aria-label="Mobile navigation"
+    hidden
+  >
+
+    <div class="news-mobile-menu-header">
+
+      <strong>
+        Navigation
+      </strong>
+
+      <button
+        id="newsMobileMenuClose"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <nav>
+
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home
+      </a>
+
+      <a href="index.html#vision">
+        <i class="fa-solid fa-bullseye"></i>
+        Vision 2034
+      </a>
+
+      <a href="academies.html">
+        <i class="fa-solid fa-building"></i>
+        Academies
+      </a>
+
+      <a href="players.html">
+        <i class="fa-solid fa-person-running"></i>
+        Players
+      </a>
+
+      <a href="news.html">
+        <i class="fa-regular fa-newspaper"></i>
+        Football News
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
+  <main
+    class="news-details-main"
+    id="newsDetailsMain"
+    hidden
+  >
+
+
+    <!-- ===================================================
+         ARTICLE HERO
+    ==================================================== -->
+
+    <section class="news-article-hero">
+
+      <div class="news-article-hero-background">
+
+        <img
+          id="newsArticleHeroImage"
+          src="images/news/news-community.jpg"
+          alt="Indian football development story"
+        >
+
+      </div>
+
+
+      <div class="news-article-hero-overlay"></div>
+
+
+      <div class="news-article-hero-container">
+
+        <a
+          href="news.html"
+          class="news-back-link"
+        >
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Back to Football News
+
+        </a>
+
+
+        <div class="news-article-heading">
+
+          <div class="news-article-badges">
+
+            <span
+              class="news-article-category"
+              id="newsArticleCategory"
+            >
+              Mission Update
+            </span>
+
+            <span
+              class="news-featured-badge"
+              id="newsFeaturedBadge"
+            >
+              Featured Story
+            </span>
+
+          </div>
+
+
+          <h1 id="newsArticleTitle">
+            Building a National Football Community for India's 2034 Dream
+          </h1>
+
+
+          <p
+            class="news-article-summary"
+            id="newsArticleSummary"
+          >
+            Mission FIFA 2034 aims to unite football players, academies,
+            coaches, scouts and supporters through one national development
+            platform.
+          </p>
+
+
+          <div class="news-article-meta">
+
+            <div class="news-author">
+
+              <div class="news-author-avatar">
+                <i class="fa-solid fa-futbol"></i>
+              </div>
+
+              <div>
+
+                <span>
+                  Published by
+                </span>
+
+                <strong id="newsArticleAuthor">
+                  FIFA Mission India
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="news-meta-item">
+
+              <i class="fa-regular fa-calendar"></i>
+
+              <span id="newsArticleDate">
+                15 July 2026
+              </span>
+
+            </div>
+
+
+            <div class="news-meta-item">
+
+              <i class="fa-regular fa-clock"></i>
+
+              <span id="newsArticleReadTime">
+                5 min read
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ARTICLE CONTENT
+    ==================================================== -->
+
+    <section class="news-article-section">
+
+      <div class="news-article-layout">
+
+
+        <!-- ARTICLE BODY -->
+
+        <article
+          class="news-article-content"
+          id="newsArticleContent"
+        >
+
+          <!-- Rendered by news-details.js -->
+
+        </article>
+
+
+        <!-- ARTICLE SIDEBAR -->
+
+        <aside class="news-article-sidebar">
+
+
+          <!-- SHARE CARD -->
+
+          <div class="news-sidebar-card">
+
+            <span class="news-sidebar-label">
+              Share This Story
+            </span>
+
+            <h2>
+              Help the Mission Reach More Football Supporters
+            </h2>
+
+            <p>
+              Share this article with players, coaches, academies and football
+              communities across India.
+            </p>
+
+
+            <div class="news-share-buttons">
+
+              <button
+                class="news-social-share-button"
+                id="newsCopyLinkButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-link"></i>
+
+                Copy Link
+
+              </button>
+
+
+              <a
+                class="news-social-share-button"
+                id="newsWhatsAppShare"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp
+
+              </a>
+
+
+              <a
+                class="news-social-share-button"
+                id="newsFacebookShare"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+                Facebook
+
+              </a>
+
+
+              <a
+                class="news-social-share-button"
+                id="newsTwitterShare"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+                X
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- MISSION CARD -->
+
+          <div class="news-sidebar-card news-mission-card">
+
+            <div class="news-mission-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <span class="news-sidebar-label">
+              Mission FIFA 2034
+            </span>
+
+            <h2>
+              Building the Future of Indian Football
+            </h2>
+
+            <p>
+              Join the national movement connecting players, coaches,
+              academies, scouts and supporters.
+            </p>
+
+            <a
+              href="register.html"
+              class="news-sidebar-cta"
+            >
+
+              Join the Mission
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+
+          <!-- ARTICLE INFORMATION -->
+
+          <div class="news-sidebar-card">
+
+            <span class="news-sidebar-label">
+              Article Information
+            </span>
+
+            <div class="news-information-list">
+
+              <div>
+
+                <span>
+                  Category
+                </span>
+
+                <strong id="newsSidebarCategory">
+                  Mission Update
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Published
+                </span>
+
+                <strong id="newsSidebarDate">
+                  15 July 2026
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Reading Time
+                </span>
+
+                <strong id="newsSidebarReadTime">
+                  5 minutes
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ARTICLE QUOTE
+    ==================================================== -->
+
+    <section class="news-article-highlight">
+
+      <div class="news-highlight-container">
+
+        <i class="fa-solid fa-quote-left"></i>
+
+        <blockquote id="newsArticleHighlight">
+          India’s football dream will become stronger when every player,
+          academy, coach and supporter becomes part of one shared national
+          mission.
+        </blockquote>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         RELATED STORIES
+    ==================================================== -->
+
+    <section class="news-related-section">
+
+      <div class="news-related-container">
+
+        <div class="news-related-heading">
+
+          <div>
+
+            <span>
+              Continue Reading
+            </span>
+
+            <h2>
+              Related Football Stories
+            </h2>
+
+          </div>
+
+
+          <a href="news.html">
+
+            View All News
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+
+        <div
+          class="news-related-grid"
+          id="newsRelatedGrid"
+        >
+
+          <!-- Related stories rendered by JavaScript -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEWSLETTER
+    ==================================================== -->
+
+    <section class="news-newsletter-section">
+
+      <div class="news-newsletter-container">
+
+        <div class="news-newsletter-content">
+
+          <span>
+            Stay Connected
+          </span>
+
+          <h2>
+            Get Indian Football Updates Directly in Your Inbox
+          </h2>
+
+          <p>
+            Receive academy stories, player development updates, trials,
+            football events and Mission FIFA 2034 announcements.
+          </p>
+
+        </div>
+
+
+        <form
+          class="news-newsletter-form"
+          id="newsNewsletterForm"
+          novalidate
+        >
+
+          <label
+            class="sr-only"
+            for="newsNewsletterEmail"
+          >
+            Email address
+          </label>
+
+          <div class="news-newsletter-field">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+              id="newsNewsletterEmail"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <button type="submit">
+
+            Subscribe
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       ARTICLE NOT FOUND
+  ====================================================== -->
+
+  <section
+    class="news-not-found"
+    id="newsArticleNotFound"
+    hidden
+  >
+
+    <div class="news-not-found-icon">
+
+      <i class="fa-regular fa-newspaper"></i>
+
+    </div>
+
+    <span>
+      Article Not Found
+    </span>
+
+    <h1>
+      This Football Story Is Unavailable
+    </h1>
+
+    <p>
+      The news article may have been removed, renamed or is not yet published.
+    </p>
+
+    <a href="news.html">
+
+      <i class="fa-solid fa-arrow-left"></i>
+
+      Return to Football News
+
+    </a>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="news-details-footer">
+
+    <div class="news-footer-container">
+
+      <div class="news-footer-brand">
+
+        <span>
+          <i class="fa-solid fa-futbol"></i>
+        </span>
+
+        <div>
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <p>
+            Building India's football future together.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="news-footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <p class="news-footer-copyright">
+        © 2026 FIFA Mission India. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="news-toast"
+    id="newsToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <i
+      id="newsToastIcon"
+      class="fa-solid fa-circle-check"
+    ></i>
+
+    <span id="newsToastMessage">
+      Action completed successfully.
+    </span>
+
+  </div>
+
+
+  <!-- PAGE JAVASCRIPT -->
+
+  <script src="js/news-details.js"></script>
+
+</body>
+
+</html>

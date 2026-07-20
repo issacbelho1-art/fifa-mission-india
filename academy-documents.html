@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+/>
+
+<title>
+
+Academy Documents |
+FIFA Mission India
+
+</title>
+
+<link
+rel="stylesheet"
+href="academy-documents.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar"
+>
+
+<div class="academy-sidebar-top">
+
+<div class="academy-logo">
+
+<img
+src="images/logo.png"
+alt="Logo"
+/>
+
+<div>
+
+<h3>FIFA Mission India</h3>
+
+<p>Academy Portal</p>
+
+</div>
+
+</div>
+
+<button
+id="academySidebarClose"
+class="academy-icon-button"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches
+
+</a>
+
+<a href="academy-messages.html">
+
+<i class="fa-solid fa-comments"></i>
+
+Messages
+
+</a>
+
+<a href="academy-notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+<a
+class="active"
+href="academy-documents.html"
+>
+
+<i class="fa-solid fa-folder-open"></i>
+
+Documents
+
+</a>
+
+<a href="academy-settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+<a href="academy-help.html">
+
+<i class="fa-solid fa-circle-question"></i>
+
+Help & Support
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+id="academySidebarOverlay"
+hidden
+></div>
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<div class="academy-main">
+
+<!-- =====================================================
+     TOPBAR
+====================================================== -->
+
+<header class="academy-topbar">
+
+<button
+id="academyMenuButton"
+class="academy-icon-button"
+>
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="academy-topbar-right">
+
+<button
+class="academy-icon-button"
+>
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<div
+class="academy-profile"
+id="academyProfileTrigger"
+>
+
+<img
+src="images/admin.jpg"
+alt="Profile"
+/>
+
+<span>
+
+Green Valley Football Academy
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div
+id="academyProfileDropdown"
+class="academy-dropdown"
+hidden
+>
+
+<a href="academy-profile.html">
+
+Profile
+
+</a>
+
+<a href="academy-settings.html">
+
+Settings
+
+</a>
+
+<button
+id="academyLogoutButton"
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="academy-page-hero">
+
+<div>
+
+<span
+class="academy-eyebrow"
+>
+
+DOCUMENT MANAGEMENT
+
+</span>
+
+<h2>
+
+Academy Documents
+
+</h2>
+
+<p>
+
+Manage player registrations, medical records,
+contracts and all academy documents securely.
+
+</p>
+
+</div>
+
+<button
+id="academyUploadDocument"
+class="academy-primary-button"
+>
+
+<i class="fa-solid fa-upload"></i>
+
+Upload Document
+
+</button>
+
+</section>
+
+<!-- =====================================================
+     STATISTICS
+====================================================== -->
+
+<section class="academy-stats-grid">
+
+    <article class="academy-stat-card">
+
+        <div class="academy-stat-icon blue">
+
+            <i class="fa-solid fa-folder"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalDocuments">245</h3>
+
+            <p>Total Documents</p>
+
+        </div>
+
+    </article>
+
+    <article class="academy-stat-card">
+
+        <div class="academy-stat-icon orange">
+
+            <i class="fa-solid fa-clock"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="pendingDocuments">18</h3>
+
+            <p>Pending Verification</p>
+
+        </div>
+
+    </article>
+
+    <article class="academy-stat-card">
+
+        <div class="academy-stat-icon green">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="verifiedDocuments">210</h3>
+
+            <p>Verified Documents</p>
+
+        </div>
+
+    </article>
+
+    <article class="academy-stat-card">
+
+        <div class="academy-stat-icon red">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="expiringDocuments">17</h3>
+
+            <p>Expiring Soon</p>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<!-- =====================================================
+     TOOLBAR
+====================================================== -->
+
+<section class="academy-toolbar">
+
+    <input
+
+        id="academyDocumentSearch"
+
+        type="search"
+
+        placeholder="Search player or document..."
+
+    />
+
+    <select id="academyCategoryFilter">
+
+        <option value="all">All Categories</option>
+
+        <option>Registration Form</option>
+
+        <option>Birth Certificate</option>
+
+        <option>Aadhaar / National ID</option>
+
+        <option>Passport</option>
+
+        <option>Medical Certificate</option>
+
+        <option>Fitness Certificate</option>
+
+        <option>Parent Consent</option>
+
+        <option>Academy Contract</option>
+
+        <option>Trial Report</option>
+
+        <option>Education Certificate</option>
+
+        <option>Passport Photo</option>
+
+        <option>Other</option>
+
+    </select>
+
+    <select id="academyStatusFilter">
+
+        <option value="all">All Status</option>
+
+        <option value="verified">Verified</option>
+
+        <option value="pending">Pending</option>
+
+        <option value="rejected">Rejected</option>
+
+    </select>
+
+    <button
+
+        id="academyBulkVerify"
+
+        class="academy-secondary-button"
+
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        Verify Selected
+
+    </button>
+
+    <button
+
+        id="academyBulkDelete"
+
+        class="academy-danger-button"
+
+    >
+
+        <i class="fa-solid fa-trash"></i>
+
+        Delete Selected
+
+    </button>
+
+    <button
+
+        id="academyViewToggle"
+
+        class="academy-secondary-button"
+
+    >
+
+        <i class="fa-solid fa-table"></i>
+
+        Table View
+
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     DOCUMENT TABLE
+====================================================== -->
+
+<section class="academy-table-wrapper">
+
+<table class="academy-table">
+
+<thead>
+
+<tr>
+
+<th>
+
+<input type="checkbox" id="academySelectAll"/>
+
+</th>
+
+<th>Player</th>
+
+<th>Document</th>
+
+<th>Category</th>
+
+<th>Uploaded</th>
+
+<th>Expiry</th>
+
+<th>Status</th>
+
+<th>Uploaded By</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="academyDocumentsTable">
+
+<tr class="academy-document-row pending">
+
+<td>
+
+<input type="checkbox"/>
+
+</td>
+
+<td>
+
+<div class="academy-player">
+
+<img
+
+src="images/player1.jpg"
+
+alt="Player"
+
+>
+
+<span>Rahul Sharma</span>
+
+</div>
+
+</td>
+
+<td>
+
+Medical Certificate
+
+</td>
+
+<td>
+
+Medical Certificate
+
+</td>
+
+<td>
+
+18 Jul 2026
+
+</td>
+
+<td>
+
+18 Jul 2027
+
+</td>
+
+<td>
+
+<span class="academy-badge pending">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+Academy Admin
+
+</td>
+
+<td>
+
+<button
+
+class="academy-icon-button"
+
+title="Preview"
+
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+
+class="academy-icon-button"
+
+title="Download"
+
+>
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button
+
+class="academy-icon-button"
+
+title="Delete"
+
+data-open-delete-document
+
+>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr class="academy-document-row verified">
+
+<td>
+
+<input type="checkbox"/>
+
+</td>
+
+<td>
+
+<div class="academy-player">
+
+<img
+
+src="images/player2.jpg"
+
+alt="Player"
+
+>
+
+<span>Aman Das</span>
+
+</div>
+
+</td>
+
+<td>
+
+Birth Certificate
+
+</td>
+
+<td>
+
+Birth Certificate
+
+</td>
+
+<td>
+
+11 Jul 2026
+
+</td>
+
+<td>
+
+—
+
+</td>
+
+<td>
+
+<span class="academy-badge verified">
+
+Verified
+
+</span>
+
+</td>
+
+<td>
+
+Academy Admin
+
+</td>
+
+<td>
+
+<button
+
+class="academy-icon-button"
+
+title="Preview"
+
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+
+class="academy-icon-button"
+
+title="Download"
+
+>
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button
+
+class="academy-icon-button"
+
+title="Delete"
+
+data-open-delete-document
+
+>
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- =====================================================
+     DOCUMENT PREVIEW DRAWER
+====================================================== -->
+
+<aside
+id="academyDocumentDrawer"
+class="academy-document-drawer"
+>
+
+<div class="academy-drawer-header">
+
+<h3>
+
+Document Preview
+
+</h3>
+
+<button
+
+class="academy-icon-button"
+
+data-close-document-drawer
+
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="academy-drawer-scroll">
+
+<div class="academy-document-preview">
+
+<div class="academy-preview-placeholder">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<p>
+
+PDF / Image Preview
+
+</p>
+
+</div>
+
+</div>
+
+<div class="academy-info-grid">
+
+<div>
+
+<label>Player</label>
+
+<strong>Rahul Sharma</strong>
+
+</div>
+
+<div>
+
+<label>Document</label>
+
+<strong>Medical Certificate</strong>
+
+</div>
+
+<div>
+
+<label>Category</label>
+
+<strong>Medical Certificate</strong>
+
+</div>
+
+<div>
+
+<label>Status</label>
+
+<strong class="academy-badge pending">
+
+Pending
+
+</strong>
+
+</div>
+
+<div>
+
+<label>Uploaded</label>
+
+<strong>18 Jul 2026</strong>
+
+</div>
+
+<div>
+
+<label>Expiry</label>
+
+<strong>18 Jul 2027</strong>
+
+</div>
+
+</div>
+
+<section class="academy-document-notes">
+
+<h3>
+
+Verification Notes
+
+</h3>
+
+<p>
+
+Awaiting review by academy administrator.
+
+</p>
+
+</section>
+
+<section class="academy-document-actions">
+
+<button class="academy-primary-button">
+
+<i class="fa-solid fa-download"></i>
+
+Download
+
+</button>
+
+<button class="academy-success-button">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Verify
+
+</button>
+
+<button class="academy-danger-button">
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+Reject
+
+</button>
+
+<button class="academy-secondary-button">
+
+<i class="fa-solid fa-repeat"></i>
+
+Replace Document
+
+</button>
+
+</section>
+
+</div>
+
+</aside>
+
+
+<!-- =====================================================
+     UPLOAD DOCUMENT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyUploadModal"
+hidden
+>
+
+<div class="academy-modal-content">
+
+<h2>
+
+Upload Document
+
+</h2>
+
+<form id="academyUploadForm">
+
+<label>
+
+Player
+
+<select required>
+
+<option>Select Player</option>
+
+</select>
+
+</label>
+
+<label>
+
+Category
+
+<select required>
+
+<option>Select Category</option>
+
+<option>Medical Certificate</option>
+
+<option>Birth Certificate</option>
+
+<option>Registration Form</option>
+
+<option>Parent Consent</option>
+
+<option>Passport</option>
+
+<option>Other</option>
+
+</select>
+
+</label>
+
+<label>
+
+Document Title
+
+<input
+type="text"
+required
+/>
+
+</label>
+
+<label>
+
+Upload File
+
+<input
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+required
+/>
+
+</label>
+
+<label>
+
+Expiry Date
+
+<input
+type="date"
+/>
+
+</label>
+
+<label>
+
+Description
+
+<textarea
+rows="4"
+></textarea>
+
+</label>
+
+<div class="academy-modal-footer">
+
+<button
+
+type="button"
+
+class="academy-secondary-button"
+
+data-close-upload-modal
+
+>
+
+Cancel
+
+</button>
+
+<button
+
+type="submit"
+
+class="academy-primary-button"
+
+>
+
+Upload
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     DELETE DOCUMENT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyDeleteDocumentModal"
+hidden
+>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Delete Document?
+
+</h2>
+
+<p>
+
+This action cannot be undone.
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+
+class="academy-secondary-button"
+
+data-close-delete-document
+
+>
+
+Cancel
+
+</button>
+
+<button
+
+id="academyConfirmDeleteDocument"
+
+class="academy-danger-button"
+
+>
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGOUT MODAL
+====================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden
+>
+
+<div class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Logout?
+
+</h2>
+
+<p>
+
+Are you sure you want to logout?
+
+</p>
+
+<div class="academy-modal-footer">
+
+<button
+
+class="academy-secondary-button"
+
+data-close-logout
+
+>
+
+Cancel
+
+</button>
+
+<button
+
+id="academyConfirmLogout"
+
+class="academy-danger-button"
+
+>
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TOASTS
+====================================================== -->
+
+<div
+id="academyToastContainer"
+class="academy-toast-container"
+></div>
+
+
+<!-- =====================================================
+     BACKEND PLACEHOLDERS
+====================================================== -->
+
+<!--
+
+Mr. Harsh
+
+GET    /api/documents
+
+GET    /api/documents/:id
+
+POST   /api/documents/upload
+
+PATCH  /api/documents/verify
+
+PATCH  /api/documents/reject
+
+PUT    /api/documents/:id
+
+DELETE /api/documents/:id
+
+GET    /api/documents/download/:id
+
+Future:
+- Version History
+- Audit Logs
+- Cloud Storage Integration
+- Digital Signatures
+- OCR Processing
+- AI Document Validation
+
+-->
+
+
+</div>
+
+<script src="academy-documents.js"></script>
+
+</body>
+
+</html>

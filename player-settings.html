@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Settings & Privacy | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="css/player-dashboard.css">
+  <link rel="stylesheet" href="css/player-settings.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <!-- =======================================================
+         USE THE SAME SIDEBAR FROM player-dashboard.html HERE
+         Ensure the Settings link has class="active".
+    ======================================================== -->
+
+    <main class="dashboard-main">
+
+      <header class="settings-page-header">
+
+        <div>
+          <span class="settings-eyebrow">PLAYER ACCOUNT</span>
+
+          <h1>Settings & Privacy</h1>
+
+          <p>
+            Manage your account preferences, security, notifications
+            and profile visibility.
+          </p>
+        </div>
+
+        <div class="settings-header-actions">
+          <span class="save-status" id="saveStatus" aria-live="polite"></span>
+
+          <button type="button" class="save-settings-btn" id="saveSettingsBtn">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Changes
+          </button>
+        </div>
+
+      </header>
+
+      <section class="settings-layout">
+
+        <!-- ================= SETTINGS NAVIGATION ================= -->
+
+        <aside class="settings-navigation" aria-label="Settings navigation">
+
+          <button
+            type="button"
+            class="settings-nav-item active"
+            data-settings-target="account"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-regular fa-user"></i>
+            </span>
+
+            <span>
+              <strong>Account</strong>
+              <small>Personal information</small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="settings-nav-item"
+            data-settings-target="security"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <span>
+              <strong>Security</strong>
+              <small>Password and login</small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="settings-nav-item"
+            data-settings-target="privacy"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+
+            <span>
+              <strong>Privacy</strong>
+              <small>Profile visibility</small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="settings-nav-item"
+            data-settings-target="notifications"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-regular fa-bell"></i>
+            </span>
+
+            <span>
+              <strong>Notifications</strong>
+              <small>Alerts and updates</small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="settings-nav-item"
+            data-settings-target="preferences"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-solid fa-sliders"></i>
+            </span>
+
+            <span>
+              <strong>Preferences</strong>
+              <small>Language and display</small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="settings-nav-item danger-link"
+            data-settings-target="account-actions"
+          >
+            <span class="settings-nav-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </span>
+
+            <span>
+              <strong>Account Actions</strong>
+              <small>Deactivate or delete</small>
+            </span>
+          </button>
+
+        </aside>
+
+        <!-- ================= SETTINGS CONTENT ================= -->
+
+        <div class="settings-content">
+
+          <!-- ================= ACCOUNT ================= -->
+
+          <section
+            class="settings-panel active"
+            id="account"
+            data-settings-panel
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">ACCOUNT</span>
+                <h2>Personal Information</h2>
+                <p>Update the basic information connected to your account.</p>
+              </div>
+
+              <span class="verified-account-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                Verified Player
+              </span>
+            </div>
+
+            <div class="profile-photo-setting">
+
+              <div class="settings-avatar">
+                <img
+                  src="images/player-avatar.jpg"
+                  alt="Player profile"
+                  id="settingsAvatarPreview"
+                >
+              </div>
+
+              <div class="profile-photo-copy">
+                <h3>Profile Photo</h3>
+                <p>
+                  Use a clear recent photograph. JPG, PNG or WebP,
+                  maximum 5 MB.
+                </p>
+
+                <div class="photo-actions">
+                  <label class="upload-photo-btn" for="settingsAvatarInput">
+                    <i class="fa-solid fa-camera"></i>
+                    Change Photo
+                  </label>
+
+                  <input
+                    type="file"
+                    id="settingsAvatarInput"
+                    accept="image/png,image/jpeg,image/webp"
+                    hidden
+                  >
+
+                  <button
+                    type="button"
+                    class="remove-photo-btn"
+                    id="removePhotoBtn"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="settings-form-grid">
+
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value="Arjun"
+                  autocomplete="given-name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value="Sharma"
+                  autocomplete="family-name"
+                >
+              </div>
+
+              <div class="form-group full-width">
+                <label for="displayName">Display Name</label>
+                <input
+                  type="text"
+                  id="displayName"
+                  name="displayName"
+                  value="Arjun Sharma"
+                >
+                <small>This name appears publicly on your player profile.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+
+                <div class="input-with-status">
+                  <input
+                    type="email"
+                    id="emailAddress"
+                    name="emailAddress"
+                    value="arjun@example.com"
+                    autocomplete="email"
+                  >
+
+                  <span class="input-status verified">
+                    Verified
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+
+                <div class="input-with-status">
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value="+91 98765 43210"
+                    autocomplete="tel"
+                  >
+
+                  <span class="input-status verified">
+                    Verified
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input
+                  type="date"
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  value="2008-04-17"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  value="Dimapur, Nagaland"
+                  autocomplete="address-level2"
+                >
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- ================= SECURITY ================= -->
+
+          <section
+            class="settings-panel"
+            id="security"
+            data-settings-panel
+            hidden
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">SECURITY</span>
+                <h2>Password & Login</h2>
+                <p>Protect your account and review recent login activity.</p>
+              </div>
+            </div>
+
+            <div class="settings-card">
+
+              <div class="settings-card-heading">
+                <div class="card-icon">
+                  <i class="fa-solid fa-key"></i>
+                </div>
+
+                <div>
+                  <h3>Change Password</h3>
+                  <p>Choose a strong password you do not use elsewhere.</p>
+                </div>
+              </div>
+
+              <div class="settings-form-grid">
+
+                <div class="form-group full-width">
+                  <label for="currentPassword">Current Password</label>
+
+                  <div class="password-field">
+                    <input
+                      type="password"
+                      id="currentPassword"
+                      autocomplete="current-password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-toggle="currentPassword"
+                      aria-label="Show current password"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="newPassword">New Password</label>
+
+                  <div class="password-field">
+                    <input
+                      type="password"
+                      id="newPassword"
+                      autocomplete="new-password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-toggle="newPassword"
+                      aria-label="Show new password"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmPassword">Confirm Password</label>
+
+                  <div class="password-field">
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      autocomplete="new-password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-toggle="confirmPassword"
+                      aria-label="Show confirmed password"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="button" class="secondary-action-btn" id="changePasswordBtn">
+                Update Password
+              </button>
+
+            </div>
+
+            <div class="settings-card horizontal-card">
+
+              <div class="settings-card-heading">
+                <div class="card-icon">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <div>
+                  <h3>Two-Factor Authentication</h3>
+                  <p>Add an extra verification step when signing in.</p>
+                </div>
+              </div>
+
+              <label class="switch-control">
+                <input type="checkbox" id="twoFactorToggle">
+                <span class="switch-slider"></span>
+                <span class="sr-only">Enable two-factor authentication</span>
+              </label>
+
+            </div>
+
+            <div class="settings-card">
+
+              <div class="settings-card-heading">
+                <div class="card-icon">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+
+                <div>
+                  <h3>Recent Login Activity</h3>
+                  <p>Devices currently or recently connected to your account.</p>
+                </div>
+              </div>
+
+              <div class="session-list">
+
+                <article class="session-item">
+                  <div class="session-device-icon">
+                    <i class="fa-solid fa-laptop"></i>
+                  </div>
+
+                  <div>
+                    <h4>
+                      Chrome on Windows
+                      <span class="current-session">Current session</span>
+                    </h4>
+
+                    <p>Dimapur, India · Active now</p>
+                  </div>
+                </article>
+
+                <article class="session-item">
+                  <div class="session-device-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </div>
+
+                  <div>
+                    <h4>Chrome on Android</h4>
+                    <p>Dimapur, India · 16 July 2026</p>
+                  </div>
+
+                  <button type="button" class="session-logout-btn">
+                    Log out
+                  </button>
+                </article>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- ================= PRIVACY ================= -->
+
+          <section
+            class="settings-panel"
+            id="privacy"
+            data-settings-panel
+            hidden
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">PRIVACY</span>
+                <h2>Profile Visibility</h2>
+                <p>Control who can view and contact you on the platform.</p>
+              </div>
+            </div>
+
+            <div class="privacy-options">
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Profile Visibility</h3>
+                  <p>Choose who can view your complete player profile.</p>
+                </div>
+
+                <select id="profileVisibility" aria-label="Profile visibility">
+                  <option value="public">Everyone</option>
+                  <option value="verified">Verified users only</option>
+                  <option value="connections">My connections</option>
+                  <option value="private">Only me</option>
+                </select>
+
+              </article>
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Allow Scout Discovery</h3>
+                  <p>Permit verified scouts to discover your profile.</p>
+                </div>
+
+                <label class="switch-control">
+                  <input type="checkbox" id="scoutDiscovery" checked>
+                  <span class="switch-slider"></span>
+                  <span class="sr-only">Allow scout discovery</span>
+                </label>
+
+              </article>
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Allow Academy Invitations</h3>
+                  <p>Receive trial and programme invitations from academies.</p>
+                </div>
+
+                <label class="switch-control">
+                  <input type="checkbox" id="academyInvitations" checked>
+                  <span class="switch-slider"></span>
+                  <span class="sr-only">Allow academy invitations</span>
+                </label>
+
+              </article>
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Show Contact Information</h3>
+                  <p>Display your email and phone to verified organisations.</p>
+                </div>
+
+                <label class="switch-control">
+                  <input type="checkbox" id="showContactInfo">
+                  <span class="switch-slider"></span>
+                  <span class="sr-only">Show contact information</span>
+                </label>
+
+              </article>
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Show Performance Statistics</h3>
+                  <p>Display analytics, scores and match statistics publicly.</p>
+                </div>
+
+                <label class="switch-control">
+                  <input type="checkbox" id="showPerformance" checked>
+                  <span class="switch-slider"></span>
+                  <span class="sr-only">Show performance statistics</span>
+                </label>
+
+              </article>
+
+              <article class="privacy-option">
+
+                <div>
+                  <h3>Online Status</h3>
+                  <p>Let people in messages see when you are online.</p>
+                </div>
+
+                <label class="switch-control">
+                  <input type="checkbox" id="onlineStatus" checked>
+                  <span class="switch-slider"></span>
+                  <span class="sr-only">Show online status</span>
+                </label>
+
+              </article>
+
+            </div>
+
+            <div class="privacy-note">
+              <i class="fa-solid fa-shield-halved"></i>
+
+              <div>
+                <h3>Your documents remain protected</h3>
+                <p>
+                  Identity and eligibility documents are never shown publicly.
+                  Access must be approved through the platform.
+                </p>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- ================= NOTIFICATIONS ================= -->
+
+          <section
+            class="settings-panel"
+            id="notifications"
+            data-settings-panel
+            hidden
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">NOTIFICATIONS</span>
+                <h2>Alerts & Updates</h2>
+                <p>Choose which notifications you want to receive.</p>
+              </div>
+            </div>
+
+            <div class="notification-table">
+
+              <div class="notification-table-header">
+                <span>Notification</span>
+                <span>Email</span>
+                <span>Push</span>
+              </div>
+
+              <div class="notification-row">
+                <div>
+                  <h3>Trial Invitations</h3>
+                  <p>New trial invitations and schedule changes.</p>
+                </div>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+              <div class="notification-row">
+                <div>
+                  <h3>Messages</h3>
+                  <p>New messages from academies, coaches and scouts.</p>
+                </div>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+              <div class="notification-row">
+                <div>
+                  <h3>Profile Activity</h3>
+                  <p>Profile views, shortlist activity and achievements.</p>
+                </div>
+
+                <label class="check-control">
+                  <input type="checkbox">
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+              <div class="notification-row">
+                <div>
+                  <h3>Platform Announcements</h3>
+                  <p>Important FIFA Mission India programme updates.</p>
+                </div>
+
+                <label class="check-control">
+                  <input type="checkbox" checked>
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="check-control">
+                  <input type="checkbox">
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+              <div class="notification-row">
+                <div>
+                  <h3>Tips & Recommendations</h3>
+                  <p>Training resources and profile improvement suggestions.</p>
+                </div>
+
+                <label class="check-control">
+                  <input type="checkbox">
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="check-control">
+                  <input type="checkbox">
+                  <span><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- ================= PREFERENCES ================= -->
+
+          <section
+            class="settings-panel"
+            id="preferences"
+            data-settings-panel
+            hidden
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">PREFERENCES</span>
+                <h2>Platform Preferences</h2>
+                <p>Adjust language, timezone and display settings.</p>
+              </div>
+            </div>
+
+            <div class="settings-form-grid">
+
+              <div class="form-group">
+                <label for="languagePreference">Language</label>
+
+                <select id="languagePreference">
+                  <option value="en">English</option>
+                  <option value="hi">Hindi</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="timezonePreference">Timezone</label>
+
+                <select id="timezonePreference">
+                  <option value="Asia/Kolkata">
+                    India Standard Time (IST)
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="measurementPreference">Measurement Units</label>
+
+                <select id="measurementPreference">
+                  <option value="metric">Metric — cm, kg, km</option>
+                  <option value="imperial">Imperial — ft, lb, mi</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="themePreference">Display Theme</label>
+
+                <select id="themePreference">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                  <option value="system">Use device setting</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="settings-card horizontal-card">
+
+              <div class="settings-card-heading">
+                <div class="card-icon">
+                  <i class="fa-solid fa-universal-access"></i>
+                </div>
+
+                <div>
+                  <h3>Reduce Motion</h3>
+                  <p>Limit non-essential animations across the dashboard.</p>
+                </div>
+              </div>
+
+              <label class="switch-control">
+                <input type="checkbox" id="reduceMotionToggle">
+                <span class="switch-slider"></span>
+                <span class="sr-only">Reduce motion</span>
+              </label>
+
+            </div>
+
+          </section>
+
+          <!-- ================= ACCOUNT ACTIONS ================= -->
+
+          <section
+            class="settings-panel"
+            id="account-actions"
+            data-settings-panel
+            hidden
+          >
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker danger-kicker">ACCOUNT ACTIONS</span>
+                <h2>Deactivate or Delete Account</h2>
+                <p>Manage long-term access to your FIFA Mission India account.</p>
+              </div>
+            </div>
+
+            <div class="danger-zone">
+
+              <article class="danger-action-card">
+
+                <div>
+                  <h3>Deactivate Account</h3>
+                  <p>
+                    Temporarily hide your account and profile. You can restore
+                    it by signing in again.
+                  </p>
+                </div>
+
+                <button type="button" class="deactivate-btn" id="deactivateAccountBtn">
+                  Deactivate
+                </button>
+
+              </article>
+
+              <article class="danger-action-card critical">
+
+                <div>
+                  <h3>Delete Account Permanently</h3>
+                  <p>
+                    Permanently remove your profile and account data. This
+                    action cannot be undone after confirmation.
+                  </p>
+                </div>
+
+                <button type="button" class="delete-account-btn" id="deleteAccountBtn">
+                  Delete Account
+                </button>
+
+              </article>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ================= CONFIRMATION MODAL ================= -->
+
+  <div
+    class="settings-modal"
+    id="settingsModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="settingsModalTitle"
+    hidden
+  >
+
+    <div class="settings-modal-backdrop" data-modal-close></div>
+
+    <div class="settings-modal-card">
+
+      <button
+        type="button"
+        class="modal-close-btn"
+        data-modal-close
+        aria-label="Close dialog"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-warning-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+
+      <h2 id="settingsModalTitle">Confirm action</h2>
+
+      <p id="settingsModalText">
+        Are you sure you want to continue?
+      </p>
+
+      <div class="modal-actions">
+        <button type="button" class="modal-cancel-btn" data-modal-close>
+          Cancel
+        </button>
+
+        <button type="button" class="modal-confirm-btn" id="modalConfirmBtn">
+          Confirm
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/player-dashboard.js"></script>
+  <script src="js/player-settings.js"></script>
+
+</body>
+</html>

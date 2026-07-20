@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Discover football academies, development centres and scouting opportunities through the FIFA Mission India Scout Portal."
+  />
+
+  <meta
+    name="theme-color"
+    content="#071a33"
+  />
+
+  <title>
+    Scout Academies | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="scout-academies.css"
+  />
+
+</head>
+
+
+<body>
+
+  <a
+    href="#scoutAcademiesMainContent"
+    class="scout-skip-link"
+  >
+    Skip to main content
+  </a>
+
+
+  <div
+    class="scout-app-shell"
+    id="scoutAppShell"
+  >
+
+
+    <div
+      class="scout-sidebar-overlay"
+      id="scoutSidebarOverlay"
+      aria-hidden="true"
+    ></div>
+
+
+    <aside
+      class="scout-sidebar"
+      id="scoutSidebar"
+      aria-label="Scout portal navigation"
+    >
+
+
+      <div class="scout-sidebar-header">
+
+        <a
+          href="index.html"
+          class="scout-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <div
+            class="scout-brand-mark"
+            aria-hidden="true"
+          >
+            ⚽
+          </div>
+
+          <div class="scout-brand-copy">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Scout Portal
+            </small>
+
+          </div>
+
+        </a>
+
+
+        <button
+          class="scout-sidebar-close"
+          id="scoutSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-profile-summary">
+
+        <div class="scout-profile-avatar">
+
+          <img
+            src="images/scout-avatar-placeholder.jpg"
+            alt="Scout profile"
+            data-scout-avatar
+          />
+
+          <span
+            class="scout-profile-status"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="scout-profile-summary-copy">
+
+          <strong data-scout-name>
+            Scout Name
+          </strong>
+
+          <span data-scout-designation>
+            Talent Scout
+          </span>
+
+          <small data-scout-organization>
+            FIFA Mission India
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <nav class="scout-navigation">
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Main
+          </span>
+
+
+          <a
+            href="scout-dashboard.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◫
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-players.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👥
+            </span>
+
+            <span>
+              Players
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-matches.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ⚽
+            </span>
+
+            <span>
+              Matches
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-academies.html"
+            class="scout-navigation-link is-active"
+            aria-current="page"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              🏟
+            </span>
+
+            <span>
+              Academies
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Scouting
+          </span>
+
+
+          <a
+            href="scout-report-create.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ✎
+            </span>
+
+            <span>
+              Create Report
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-reports.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ▤
+            </span>
+
+            <span>
+              My Reports
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Account
+          </span>
+
+
+          <a
+            href="scout-profile.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👤
+            </span>
+
+            <span>
+              My Profile
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-help.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ?
+            </span>
+
+            <span>
+              Help & Support
+            </span>
+
+          </a>
+
+        </div>
+
+      </nav>
+
+
+      <div class="scout-sidebar-support-card">
+
+        <div
+          class="scout-support-icon"
+          aria-hidden="true"
+        >
+          🎧
+        </div>
+
+        <div>
+
+          <strong>
+            Need Assistance?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team.
+          </p>
+
+          <a href="scout-help.html">
+            Visit Support
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="scout-sidebar-footer">
+
+        <button
+          class="scout-logout-button"
+          id="scoutLogoutButton"
+          type="button"
+        >
+
+          <span aria-hidden="true">
+            ↪
+          </span>
+
+          <span>
+            Log Out
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <div class="scout-main-area">
+
+
+      <header class="scout-topbar">
+
+        <div class="scout-topbar-left">
+
+          <button
+            class="scout-menu-button"
+            id="scoutMenuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="scoutSidebar"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+          <div class="scout-page-heading">
+
+            <span class="scout-page-eyebrow">
+              Development Network
+            </span>
+
+            <h1>
+              Academies
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-topbar-actions">
+
+          <a
+            href="scout-help.html"
+            class="scout-icon-button"
+            aria-label="Open help and support"
+          >
+            ?
+          </a>
+
+
+          <button
+            class="scout-icon-button"
+            id="scoutNotificationButton"
+            type="button"
+            aria-label="Open notifications"
+          >
+
+            <span aria-hidden="true">
+              🔔
+            </span>
+
+            <span
+              class="scout-notification-badge"
+              id="scoutNotificationBadge"
+            >
+              3
+            </span>
+
+          </button>
+
+
+          <div class="scout-topbar-profile">
+
+            <img
+              src="images/scout-avatar-placeholder.jpg"
+              alt="Scout profile"
+              data-scout-avatar
+            />
+
+            <div>
+
+              <strong data-scout-name>
+                Scout Name
+              </strong>
+
+              <span data-scout-designation>
+                Talent Scout
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <main
+        class="scout-main-content"
+        id="scoutAcademiesMainContent"
+      >
+
+
+        <section class="scout-academies-intro">
+
+          <div>
+
+            <nav
+              class="scout-breadcrumb"
+              aria-label="Breadcrumb"
+            >
+
+              <a href="scout-dashboard.html">
+                Dashboard
+              </a>
+
+              <span aria-hidden="true">
+                /
+              </span>
+
+              <span aria-current="page">
+                Academies
+              </span>
+
+            </nav>
+
+
+            <h2>
+              Discover Football Academies Across India
+            </h2>
+
+            <p>
+              Explore verified academies, review development programmes and identify institutions producing promising football talent.
+            </p>
+
+          </div>
+
+
+          <div class="scout-academies-intro-actions">
+
+            <button
+              class="scout-secondary-button"
+              id="openAcademyMapButton"
+              type="button"
+            >
+              Map View
+            </button>
+
+
+            <button
+              class="scout-primary-button"
+              id="recommendAcademyButton"
+              type="button"
+            >
+              + Recommend Academy
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <section class="scout-academy-statistics">
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              🏟
+            </div>
+
+            <div>
+
+              <span>
+                Total Academies
+              </span>
+
+              <strong id="totalAcademiesCount">
+                0
+              </strong>
+
+              <small>
+                Listed institutions
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <span>
+                Verified
+              </span>
+
+              <strong id="verifiedAcademiesCount">
+                0
+              </strong>
+
+              <small>
+                Approved academies
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              👥
+            </div>
+
+            <div>
+
+              <span>
+                Players Enrolled
+              </span>
+
+              <strong id="academyPlayersCount">
+                0
+              </strong>
+
+              <small>
+                Youth prospects
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              ★
+            </div>
+
+            <div>
+
+              <span>
+                Saved
+              </span>
+
+              <strong id="savedAcademiesCount">
+                0
+              </strong>
+
+              <small>
+                Academy watchlist
+              </small>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <section class="scout-academy-toolbar">
+
+          <div class="scout-academy-search">
+
+            <span aria-hidden="true">
+              ⌕
+            </span>
+
+            <input
+              type="search"
+              id="academySearchInput"
+              placeholder="Search academy, city, state or programme"
+              autocomplete="off"
+            />
+
+          </div>
+
+
+          <div class="scout-academy-toolbar-actions">
+
+            <button
+              class="scout-filter-toggle-button"
+              id="academyFilterToggleButton"
+              type="button"
+              aria-expanded="true"
+              aria-controls="academyFiltersPanel"
+            >
+              Filters
+            </button>
+
+
+            <select
+              id="academySortSelect"
+              aria-label="Sort academies"
+            >
+
+              <option value="recommended">
+                Recommended
+              </option>
+
+              <option value="rating-desc">
+                Highest Rated
+              </option>
+
+              <option value="players-desc">
+                Most Players
+              </option>
+
+              <option value="name-asc">
+                Name: A–Z
+              </option>
+
+              <option value="newest">
+                Newest Listed
+              </option>
+
+            </select>
+
+
+            <div
+              class="scout-view-switcher"
+              role="group"
+              aria-label="Academy display view"
+            >
+
+              <button
+                class="scout-view-button is-active"
+                id="academyGridViewButton"
+                type="button"
+                aria-label="Grid view"
+                aria-pressed="true"
+              >
+                ▦
+              </button>
+
+              <button
+                class="scout-view-button"
+                id="academyListViewButton"
+                type="button"
+                aria-label="List view"
+                aria-pressed="false"
+              >
+                ☰
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section
+          class="scout-academy-filters"
+          id="academyFiltersPanel"
+        >
+
+          <div class="scout-filter-grid">
+
+            <div class="scout-filter-group">
+
+              <label for="academyStateFilter">
+                State
+              </label>
+
+              <select id="academyStateFilter">
+
+                <option value="all">
+                  All states
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="academyTypeFilter">
+                Academy Type
+              </label>
+
+              <select id="academyTypeFilter">
+
+                <option value="all">
+                  All types
+                </option>
+
+                <option value="professional">
+                  Professional Club
+                </option>
+
+                <option value="residential">
+                  Residential Academy
+                </option>
+
+                <option value="grassroots">
+                  Grassroots Centre
+                </option>
+
+                <option value="school">
+                  School Academy
+                </option>
+
+                <option value="community">
+                  Community Academy
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="academyAgeGroupFilter">
+                Age Programme
+              </label>
+
+              <select id="academyAgeGroupFilter">
+
+                <option value="all">
+                  All age groups
+                </option>
+
+                <option value="u10">
+                  Under 10
+                </option>
+
+                <option value="u12">
+                  Under 12
+                </option>
+
+                <option value="u15">
+                  Under 15
+                </option>
+
+                <option value="u17">
+                  Under 17
+                </option>
+
+                <option value="u19">
+                  Under 19
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="academyVerificationFilter">
+                Verification
+              </label>
+
+              <select id="academyVerificationFilter">
+
+                <option value="all">
+                  All academies
+                </option>
+
+                <option value="verified">
+                  Verified only
+                </option>
+
+                <option value="unverified">
+                  Pending verification
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="academyResidentialFilter">
+                Boarding
+              </label>
+
+              <select id="academyResidentialFilter">
+
+                <option value="all">
+                  Any
+                </option>
+
+                <option value="available">
+                  Residential available
+                </option>
+
+                <option value="unavailable">
+                  Non-residential
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="academyRatingFilter">
+                Minimum Rating
+              </label>
+
+              <select id="academyRatingFilter">
+
+                <option value="all">
+                  Any rating
+                </option>
+
+                <option value="4">
+                  4.0 and above
+                </option>
+
+                <option value="4.5">
+                  4.5 and above
+                </option>
+
+                <option value="4.8">
+                  4.8 and above
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="scout-filter-footer">
+
+            <div
+              class="scout-active-filter-summary"
+              id="academyActiveFilterSummary"
+            >
+              No filters applied
+            </div>
+
+
+            <div class="scout-filter-actions">
+
+              <button
+                class="scout-secondary-button"
+                id="clearAcademyFiltersButton"
+                type="button"
+              >
+                Clear Filters
+              </button>
+
+              <button
+                class="scout-primary-button"
+                id="applyAcademyFiltersButton"
+                type="button"
+              >
+                Apply Filters
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section
+          class="scout-featured-academy-section"
+          id="featuredAcademySection"
+          hidden
+        >
+
+          <div class="scout-section-heading">
+
+            <div>
+
+              <span class="scout-section-eyebrow">
+                Featured Academy
+              </span>
+
+              <h3>
+                Leading Development Institution
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <article
+            class="scout-featured-academy-card"
+            id="featuredAcademyCard"
+          >
+
+            <div class="scout-featured-academy-cover">
+
+              <img
+                src="images/academy-cover-placeholder.jpg"
+                alt=""
+                id="featuredAcademyImage"
+              />
+
+              <div class="scout-featured-academy-overlay"></div>
+
+              <span
+                class="scout-featured-academy-badge"
+                id="featuredAcademyVerificationBadge"
+              >
+                Verified Academy
+              </span>
+
+            </div>
+
+
+            <div class="scout-featured-academy-content">
+
+              <div class="scout-featured-academy-header">
+
+                <div class="scout-featured-academy-logo">
+
+                  <img
+                    src="images/academy-logo-placeholder.png"
+                    alt=""
+                    id="featuredAcademyLogo"
+                  />
+
+                </div>
+
+
+                <div>
+
+                  <span id="featuredAcademyType">
+                    Residential Academy
+                  </span>
+
+                  <h3 id="featuredAcademyName">
+                    Academy Name
+                  </h3>
+
+                  <p id="featuredAcademyLocation">
+                    Location
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <p
+                class="scout-featured-academy-description"
+                id="featuredAcademyDescription"
+              >
+                Academy information will appear here.
+              </p>
+
+
+              <div class="scout-featured-academy-metrics">
+
+                <div>
+
+                  <span>
+                    Rating
+                  </span>
+
+                  <strong id="featuredAcademyRating">
+                    0.0
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Players
+                  </span>
+
+                  <strong id="featuredAcademyPlayers">
+                    0
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Coaches
+                  </span>
+
+                  <strong id="featuredAcademyCoaches">
+                    0
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Established
+                  </span>
+
+                  <strong id="featuredAcademyEstablished">
+                    —
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="scout-featured-academy-programmes"
+                id="featuredAcademyProgrammes"
+              ></div>
+
+
+              <div class="scout-featured-academy-actions">
+
+                <button
+                  class="scout-secondary-button"
+                  id="featuredSaveAcademyButton"
+                  type="button"
+                >
+                  Save Academy
+                </button>
+
+                <button
+                  class="scout-primary-button"
+                  id="featuredViewAcademyButton"
+                  type="button"
+                >
+                  View Academy
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <section class="scout-academy-results-section">
+
+          <div class="scout-academy-results-header">
+
+            <div>
+
+              <span class="scout-section-eyebrow">
+                Academy Directory
+              </span>
+
+              <h3>
+                Available Academies
+              </h3>
+
+            </div>
+
+
+            <span
+              class="scout-result-count"
+              id="academyResultCount"
+            >
+              0 academies
+            </span>
+
+          </div>
+
+
+          <div
+            class="scout-academy-loading-state"
+            id="academyLoadingState"
+            aria-live="polite"
+          >
+
+            <article class="scout-academy-skeleton-card"></article>
+            <article class="scout-academy-skeleton-card"></article>
+            <article class="scout-academy-skeleton-card"></article>
+
+          </div>
+
+
+          <div
+            class="scout-academy-error-state"
+            id="academyErrorState"
+            hidden
+          >
+
+            <div class="scout-academy-state-icon">
+              !
+            </div>
+
+            <h3>
+              Academies could not be loaded
+            </h3>
+
+            <p id="academyErrorMessage">
+              Please try again.
+            </p>
+
+            <button
+              class="scout-primary-button"
+              id="retryAcademiesButton"
+              type="button"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+
+          <div
+            class="scout-academy-empty-state"
+            id="academyEmptyState"
+            hidden
+          >
+
+            <div class="scout-academy-state-icon">
+              🏟
+            </div>
+
+            <h3>
+              No academies found
+            </h3>
+
+            <p>
+              Try changing the search text or clearing the selected filters.
+            </p>
+
+            <button
+              class="scout-secondary-button"
+              id="emptyStateClearAcademyFiltersButton"
+              type="button"
+            >
+              Clear Filters
+            </button>
+
+          </div>
+
+
+          <div
+            class="scout-academy-grid"
+            id="academyGrid"
+            aria-live="polite"
+          ></div>
+
+
+          <div
+            class="scout-pagination"
+            id="academyPagination"
+            hidden
+          >
+
+            <button
+              class="scout-pagination-button"
+              id="previousAcademiesPageButton"
+              type="button"
+              disabled
+            >
+              Previous
+            </button>
+
+            <div
+              class="scout-pagination-pages"
+              id="academyPaginationPages"
+            ></div>
+
+            <button
+              class="scout-pagination-button"
+              id="nextAcademiesPageButton"
+              type="button"
+            >
+              Next
+            </button>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="academyDetailsModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="academyDetailsModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-academy-details-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-academy-details-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-section-eyebrow">
+            Academy Details
+          </span>
+
+          <h2 id="academyDetailsModalTitle">
+            Academy Overview
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close academy details"
+          data-academy-details-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-academy-details-body">
+
+        <div class="scout-academy-details-cover">
+
+          <img
+            src="images/academy-cover-placeholder.jpg"
+            alt=""
+            id="modalAcademyCover"
+          />
+
+          <span id="modalAcademyVerification">
+            Verified Academy
+          </span>
+
+        </div>
+
+
+        <div class="scout-academy-details-profile">
+
+          <img
+            src="images/academy-logo-placeholder.png"
+            alt=""
+            id="modalAcademyLogo"
+          />
+
+
+          <div>
+
+            <span id="modalAcademyType">
+              Academy Type
+            </span>
+
+            <h3 id="modalAcademyName">
+              Academy Name
+            </h3>
+
+            <p id="modalAcademyLocation">
+              Location
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p
+          class="scout-academy-details-description"
+          id="modalAcademyDescription"
+        >
+          No academy description available.
+        </p>
+
+
+        <div class="scout-academy-details-info-grid">
+
+          <div>
+
+            <span>
+              Rating
+            </span>
+
+            <strong id="modalAcademyRating">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Players
+            </span>
+
+            <strong id="modalAcademyPlayers">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Coaches
+            </span>
+
+            <strong id="modalAcademyCoaches">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Established
+            </span>
+
+            <strong id="modalAcademyEstablished">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Residential
+            </span>
+
+            <strong id="modalAcademyResidential">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Training Surface
+            </span>
+
+            <strong id="modalAcademySurface">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-academy-details-section">
+
+          <h3>
+            Age Group Programmes
+          </h3>
+
+          <div
+            class="scout-academy-programme-list"
+            id="modalAcademyProgrammes"
+          ></div>
+
+        </div>
+
+
+        <div class="scout-academy-details-section">
+
+          <h3>
+            Facilities
+          </h3>
+
+          <div
+            class="scout-academy-facility-list"
+            id="modalAcademyFacilities"
+          ></div>
+
+        </div>
+
+
+        <div class="scout-academy-details-section">
+
+          <h3>
+            Contact Information
+          </h3>
+
+          <div class="scout-academy-contact-grid">
+
+            <div>
+
+              <span>
+                Email
+              </span>
+
+              <a
+                href="#"
+                id="modalAcademyEmail"
+              >
+                —
+              </a>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Phone
+              </span>
+
+              <a
+                href="#"
+                id="modalAcademyPhone"
+              >
+                —
+              </a>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Website
+              </span>
+
+              <a
+                href="#"
+                id="modalAcademyWebsite"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                —
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-modal-actions">
+
+          <button
+            class="scout-secondary-button"
+            id="modalSaveAcademyButton"
+            type="button"
+          >
+            Save Academy
+          </button>
+
+          <a
+            href="scout-players.html"
+            class="scout-primary-button"
+            id="modalViewAcademyPlayersLink"
+          >
+            View Players
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="recommendAcademyModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="recommendAcademyModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-recommend-academy-close
+    ></div>
+
+
+    <div class="scout-modal-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-section-eyebrow">
+            Academy Recommendation
+          </span>
+
+          <h2 id="recommendAcademyModalTitle">
+            Recommend an Academy
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close academy recommendation form"
+          data-recommend-academy-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form
+        class="scout-recommend-academy-form"
+        id="recommendAcademyForm"
+        novalidate
+      >
+
+        <div class="scout-form-grid">
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyName">
+              Academy Name
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="recommendedAcademyName"
+              name="academyName"
+              maxlength="140"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyName"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyType">
+              Academy Type
+              <span>*</span>
+            </label>
+
+            <select
+              id="recommendedAcademyType"
+              name="academyType"
+              required
+            >
+
+              <option value="">
+                Select academy type
+              </option>
+
+              <option value="professional">
+                Professional Club
+              </option>
+
+              <option value="residential">
+                Residential Academy
+              </option>
+
+              <option value="grassroots">
+                Grassroots Centre
+              </option>
+
+              <option value="school">
+                School Academy
+              </option>
+
+              <option value="community">
+                Community Academy
+              </option>
+
+            </select>
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyType"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyCity">
+              City
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="recommendedAcademyCity"
+              name="city"
+              maxlength="100"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyCity"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyState">
+              State
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="recommendedAcademyState"
+              name="state"
+              maxlength="100"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyState"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyContact">
+              Contact Person
+            </label>
+
+            <input
+              type="text"
+              id="recommendedAcademyContact"
+              name="contactPerson"
+              maxlength="120"
+            />
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyEmail">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="recommendedAcademyEmail"
+              name="email"
+              maxlength="160"
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyEmail"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyPhone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="recommendedAcademyPhone"
+              name="phone"
+              maxlength="20"
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyPhone"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="recommendedAcademyWebsite">
+              Website
+            </label>
+
+            <input
+              type="url"
+              id="recommendedAcademyWebsite"
+              name="website"
+              maxlength="240"
+              placeholder="https://"
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyWebsite"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group scout-form-group-full">
+
+            <label for="recommendedAcademyReason">
+              Why should this academy be listed?
+              <span>*</span>
+            </label>
+
+            <textarea
+              id="recommendedAcademyReason"
+              name="reason"
+              rows="5"
+              maxlength="900"
+              placeholder="Describe the academy, its programmes, facilities or notable players."
+              required
+            ></textarea>
+
+            <small
+              class="scout-field-error"
+              data-error-for="recommendedAcademyReason"
+            ></small>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-modal-actions">
+
+          <button
+            class="scout-secondary-button"
+            type="button"
+            data-recommend-academy-close
+          >
+            Cancel
+          </button>
+
+          <button
+            class="scout-primary-button"
+            id="submitAcademyRecommendationButton"
+            type="submit"
+          >
+            Submit Recommendation
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="academyMapModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="academyMapModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-academy-map-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-academy-map-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-section-eyebrow">
+            Academy Network
+          </span>
+
+          <h2 id="academyMapModalTitle">
+            Academy Map
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close academy map"
+          data-academy-map-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-academy-map-body">
+
+        <div
+          class="scout-academy-map-placeholder"
+          id="academyMapContainer"
+        >
+
+          <div aria-hidden="true">
+            🗺
+          </div>
+
+          <h3>
+            Interactive Academy Map
+          </h3>
+
+          <p>
+            Academy locations will be displayed here when the map service and backend data are connected.
+          </p>
+
+        </div>
+
+
+        <div
+          class="scout-academy-map-list"
+          id="academyMapList"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="scoutLogoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="scoutLogoutModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-logout-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-logout-dialog">
+
+      <div
+        class="scout-logout-icon"
+        aria-hidden="true"
+      >
+        ↪
+      </div>
+
+      <h2 id="scoutLogoutModalTitle">
+        Log out of Scout Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to access academy information and scouting tools.
+      </p>
+
+      <div class="scout-modal-actions">
+
+        <button
+          class="scout-secondary-button"
+          type="button"
+          data-logout-modal-close
+        >
+          Cancel
+        </button>
+
+        <button
+          class="scout-danger-button"
+          id="confirmScoutLogoutButton"
+          type="button"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-notification-region"
+    id="scoutNotificationRegion"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <script src="scout-academies.js"></script>
+
+</body>
+
+</html>

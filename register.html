@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Choose your role and join the FIFA Mission India football platform."
+  >
+
+  <title>Create Account | FIFA Mission India</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/register.css"
+  >
+
+</head>
+
+
+<body>
+
+  <main class="register-page">
+
+    <!-- =================================================
+         DECORATIVE BACKGROUND
+    ================================================== -->
+
+    <div class="register-background" aria-hidden="true">
+
+      <div class="register-grid-pattern"></div>
+
+      <div class="register-glow register-glow-one"></div>
+      <div class="register-glow register-glow-two"></div>
+
+      <div class="register-light register-light-one"></div>
+      <div class="register-light register-light-two"></div>
+
+      <span class="register-particle particle-one"></span>
+      <span class="register-particle particle-two"></span>
+      <span class="register-particle particle-three"></span>
+      <span class="register-particle particle-four"></span>
+
+    </div>
+
+
+    <!-- Back Link -->
+
+    <a
+      href="index.html"
+      class="register-back-link"
+    >
+      <span aria-hidden="true">←</span>
+      Back to Home
+    </a>
+
+
+    <div class="register-container">
+
+      <!-- =================================================
+           HEADER
+      ================================================== -->
+
+      <header class="register-header">
+
+        <a
+          href="index.html"
+          class="register-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <span class="register-brand-icon">
+            ⚽
+          </span>
+
+          <span class="register-brand-text">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Road to 2034
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <div class="register-login-link">
+
+          <span>
+            Already have an account?
+          </span>
+
+          <a href="login.html">
+            Sign In
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </header>
+
+
+      <!-- =================================================
+           INTRODUCTION
+      ================================================== -->
+
+      <section class="register-intro">
+
+        <span class="register-eyebrow">
+          Join the National Football Mission
+        </span>
+
+        <h1>
+          Choose How You Want to
+          <span>Shape Indian Football.</span>
+        </h1>
+
+        <p>
+          Select the account type that best represents your role.
+          Each account has a dedicated profile, dashboard and verification
+          process.
+        </p>
+
+      </section>
+
+
+      <!-- =================================================
+           PROGRESS
+      ================================================== -->
+
+      <div class="register-progress">
+
+        <div class="register-progress-step is-active">
+
+          <span>1</span>
+
+          <div>
+            <strong>Choose Role</strong>
+            <small>Select your account type</small>
+          </div>
+
+        </div>
+
+
+        <span class="register-progress-line"></span>
+
+
+        <div class="register-progress-step">
+
+          <span>2</span>
+
+          <div>
+            <strong>Create Account</strong>
+            <small>Enter your information</small>
+          </div>
+
+        </div>
+
+
+        <span class="register-progress-line"></span>
+
+
+        <div class="register-progress-step">
+
+          <span>3</span>
+
+          <div>
+            <strong>Build Profile</strong>
+            <small>Complete your football identity</small>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           ROLE SELECTION LAYOUT
+      ================================================== -->
+
+      <section class="register-role-layout">
+
+        <!-- Role Cards -->
+
+        <div class="register-role-content">
+
+          <div class="register-role-heading">
+
+            <div>
+
+              <span>
+                Account Types
+              </span>
+
+              <h2>
+                Select Your Role
+              </h2>
+
+            </div>
+
+            <p>
+              You can request additional organisation roles after account
+              verification.
+            </p>
+
+          </div>
+
+
+          <div
+            class="register-role-grid"
+            id="registerRoleGrid"
+            role="radiogroup"
+            aria-label="Choose your Mission FIFA India account type"
+          >
+
+            <!-- ===========================================
+                 PLAYER
+            ============================================ -->
+
+            <button
+              class="register-role-card is-selected"
+              type="button"
+              role="radio"
+              aria-checked="true"
+              data-register-role="player"
+              data-role-title="Player"
+              data-role-icon="⚽"
+              data-role-route="player-register.html"
+              data-role-endpoint="/api/register/player"
+            >
+
+              <span class="register-card-number">
+                01
+              </span>
+
+              <span
+                class="register-role-icon register-player-icon"
+                aria-hidden="true"
+              >
+                ⚽
+              </span>
+
+              <span class="register-role-card-content">
+
+                <strong>
+                  Player
+                </strong>
+
+                <small>
+                  Create your football profile, showcase your experience and
+                  discover opportunities.
+                </small>
+
+              </span>
+
+
+              <span class="register-role-benefits">
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Player profile
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Match videos
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Trial opportunities
+                </span>
+
+              </span>
+
+
+              <span
+                class="register-card-selection"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+            </button>
+
+
+            <!-- ===========================================
+                 COACH
+            ============================================ -->
+
+            <button
+              class="register-role-card"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              data-register-role="coach"
+              data-role-title="Coach"
+              data-role-icon="📋"
+              data-role-route="coach-register.html"
+              data-role-endpoint="/api/register/coach"
+            >
+
+              <span class="register-card-number">
+                02
+              </span>
+
+              <span
+                class="register-role-icon register-coach-icon"
+                aria-hidden="true"
+              >
+                📋
+              </span>
+
+              <span class="register-role-card-content">
+
+                <strong>
+                  Coach
+                </strong>
+
+                <small>
+                  Present your experience, qualifications and coaching
+                  philosophy.
+                </small>
+
+              </span>
+
+
+              <span class="register-role-benefits">
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Coaching profile
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Qualification records
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Academy connections
+                </span>
+
+              </span>
+
+
+              <span
+                class="register-card-selection"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+            </button>
+
+
+            <!-- ===========================================
+                 ACADEMY
+            ============================================ -->
+
+            <button
+              class="register-role-card"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              data-register-role="academy"
+              data-role-title="Academy"
+              data-role-icon="🏟️"
+              data-role-route="academy-register.html"
+              data-role-endpoint="/api/register/academy"
+            >
+
+              <span class="register-card-number">
+                03
+              </span>
+
+              <span
+                class="register-role-icon register-academy-icon"
+                aria-hidden="true"
+              >
+                🏟️
+              </span>
+
+              <span class="register-role-card-content">
+
+                <strong>
+                  Academy
+                </strong>
+
+                <small>
+                  Register your football organisation and present your
+                  programmes, facilities and opportunities.
+                </small>
+
+              </span>
+
+
+              <span class="register-role-benefits">
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Academy listing
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Programme management
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Trial announcements
+                </span>
+
+              </span>
+
+
+              <span
+                class="register-card-selection"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+            </button>
+
+
+            <!-- ===========================================
+                 SCOUT
+            ============================================ -->
+
+            <button
+              class="register-role-card"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              data-register-role="scout"
+              data-role-title="Scout"
+              data-role-icon="🔍"
+              data-role-route="scout-register.html"
+              data-role-endpoint="/api/register/scout"
+            >
+
+              <span class="register-card-number">
+                04
+              </span>
+
+              <span
+                class="register-role-icon register-scout-icon"
+                aria-hidden="true"
+              >
+                🔍
+              </span>
+
+              <span class="register-role-card-content">
+
+                <strong>
+                  Scout
+                </strong>
+
+                <small>
+                  Discover emerging talent and connect verified players with
+                  suitable opportunities.
+                </small>
+
+              </span>
+
+
+              <span class="register-role-benefits">
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Player discovery
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Advanced filters
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Talent watchlists
+                </span>
+
+              </span>
+
+
+              <span
+                class="register-card-selection"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+            </button>
+
+
+            <!-- ===========================================
+                 SUPPORTER
+            ============================================ -->
+
+            <button
+              class="register-role-card"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              data-register-role="supporter"
+              data-role-title="Supporter"
+              data-role-icon="♥"
+              data-role-route="supporter-register.html"
+              data-role-endpoint="/api/register/supporter"
+            >
+
+              <span class="register-card-number">
+                05
+              </span>
+
+              <span
+                class="register-role-icon register-supporter-icon"
+                aria-hidden="true"
+              >
+                ♥
+              </span>
+
+              <span class="register-role-card-content">
+
+                <strong>
+                  Supporter
+                </strong>
+
+                <small>
+                  Follow the mission, support community stories and receive
+                  football updates.
+                </small>
+
+              </span>
+
+
+              <span class="register-role-benefits">
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Community access
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Mission updates
+                </span>
+
+                <span>
+                  <b aria-hidden="true">✓</b>
+                  Event notifications
+                </span>
+
+              </span>
+
+
+              <span
+                class="register-card-selection"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SELECTED ROLE PANEL
+        ================================================== -->
+
+        <aside class="register-selection-panel">
+
+          <div class="register-selection-sticky">
+
+            <span class="register-selection-label">
+              Selected Account
+            </span>
+
+
+            <div class="register-selected-role">
+
+              <span
+                class="register-selected-icon"
+                id="selectedRoleIcon"
+                aria-hidden="true"
+              >
+                ⚽
+              </span>
+
+              <div>
+
+                <small>
+                  You selected
+                </small>
+
+                <h3 id="selectedRoleTitle">
+                  Player
+                </h3>
+
+              </div>
+
+            </div>
+
+
+            <p
+              class="register-selected-description"
+              id="selectedRoleDescription"
+            >
+              Create your football identity, showcase your skills and build
+              a profile that may be discovered by verified football
+              organisations.
+            </p>
+
+
+            <div class="register-verification-box">
+
+              <span aria-hidden="true">🛡️</span>
+
+              <div>
+
+                <strong>
+                  Verification Required
+                </strong>
+
+                <p id="selectedRoleVerification">
+                  Player information may require identity, age and guardian
+                  verification depending on the account holder’s age.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="register-selected-features">
+
+              <span class="register-feature-label">
+                Account Includes
+              </span>
+
+              <ul id="selectedRoleFeatures">
+
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  Personal football profile
+                </li>
+
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  Playing history and achievements
+                </li>
+
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  Approved football media
+                </li>
+
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  Opportunity notifications
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <button
+              class="register-continue-button"
+              id="registerContinueButton"
+              type="button"
+              data-selected-route="player-register.html"
+              data-selected-endpoint="/api/register/player"
+            >
+
+              Continue as Player
+
+              <span aria-hidden="true">
+                →
+              </span>
+
+            </button>
+
+
+            <p class="register-selection-note">
+              You are not submitting any information yet. The next page will
+              collect the required account details.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+
+      <!-- =================================================
+           SAFETY INFORMATION
+      ================================================== -->
+
+      <section class="register-safety-strip">
+
+        <div class="register-safety-heading">
+
+          <span aria-hidden="true">🛡️</span>
+
+          <div>
+
+            <small>
+              Safety First
+            </small>
+
+            <h2>
+              Built to Protect the Football Community
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="register-safety-items">
+
+          <div>
+
+            <strong>
+              Minor Protection
+            </strong>
+
+            <p>
+              Players below 18 should register through a parent or verified
+              guardian.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              Identity Checks
+            </strong>
+
+            <p>
+              Coaches, academies and scouts may require professional or
+              organisation verification.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <strong>
+              Controlled Visibility
+            </strong>
+
+            <p>
+              Sensitive contact and location information should not be
+              publicly exposed.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FOOTER
+      ================================================== -->
+
+      <footer class="register-footer">
+
+        <p>
+          © <span id="registerCurrentYear"></span>
+          Mission FIFA India.
+        </p>
+
+
+        <nav aria-label="Registration legal links">
+
+          <a href="privacy-policy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+          <a href="community-guidelines.html">
+            Community Guidelines
+          </a>
+
+          <a href="contact.html">
+            Support
+          </a>
+
+        </nav>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+
+  <script src="js/register.js"></script>
+
+</body>
+
+</html>

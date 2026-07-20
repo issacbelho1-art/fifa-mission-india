@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View complete football event details, eligibility, venue, schedule and registration information for FIFA Mission India events."
+  >
+
+  <title>Event Details | FIFA Mission India</title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/event-details.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="event-details-loader"
+    id="eventDetailsLoader"
+    aria-label="Loading event details"
+  >
+
+    <div class="event-details-loader-spinner"></div>
+
+    <p>
+      Loading event details...
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="event-details-navbar"
+    id="eventDetailsNavbar"
+  >
+
+    <div class="event-details-navbar-container">
+
+
+      <a
+        href="index.html"
+        class="event-details-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="event-details-brand-icon">
+
+          <i class="fa-solid fa-futbol"></i>
+
+        </span>
+
+
+        <span class="event-details-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Mission FIFA 2034
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="event-details-desktop-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="players.html">
+          Players
+        </a>
+
+        <a href="academies.html">
+          Academies
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+        <a
+          href="events.html"
+          class="active"
+        >
+          Events
+        </a>
+
+      </nav>
+
+
+      <div class="event-details-navbar-actions">
+
+        <a
+          href="events.html"
+          class="event-details-back-button"
+        >
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          All Events
+
+        </a>
+
+
+        <button
+          class="event-details-menu-toggle"
+          id="eventDetailsMenuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="eventDetailsMobileMenu"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MOBILE OVERLAY
+  ====================================================== -->
+
+  <div
+    class="event-details-mobile-overlay"
+    id="eventDetailsMobileOverlay"
+    hidden
+  ></div>
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <aside
+    class="event-details-mobile-menu"
+    id="eventDetailsMobileMenu"
+    aria-label="Mobile navigation"
+    hidden
+  >
+
+    <div class="event-details-mobile-menu-header">
+
+      <strong>
+        Navigation
+      </strong>
+
+      <button
+        id="eventDetailsMobileMenuClose"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <nav>
+
+      <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+      </a>
+
+
+      <a href="players.html">
+
+        <i class="fa-solid fa-person-running"></i>
+
+        Players
+
+      </a>
+
+
+      <a href="academies.html">
+
+        <i class="fa-solid fa-building"></i>
+
+        Academies
+
+      </a>
+
+
+      <a href="news.html">
+
+        <i class="fa-regular fa-newspaper"></i>
+
+        News
+
+      </a>
+
+
+      <a href="events.html">
+
+        <i class="fa-regular fa-calendar"></i>
+
+        Events
+
+      </a>
+
+
+      <a href="join.html">
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        Join the Mission
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main
+    class="event-details-main"
+    id="eventDetailsMain"
+  >
+
+
+    <!-- ===================================================
+         BREADCRUMB
+    ==================================================== -->
+
+    <section class="event-details-breadcrumb-section">
+
+      <div class="event-details-page-container">
+
+        <nav
+          class="event-details-breadcrumb"
+          aria-label="Breadcrumb"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <i class="fa-solid fa-chevron-right"></i>
+
+          <span id="eventBreadcrumbTitle">
+            Event Details
+          </span>
+
+        </nav>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EVENT HERO
+    ==================================================== -->
+
+    <section class="event-details-hero">
+
+      <div class="event-details-hero-background"></div>
+
+      <div class="event-details-hero-glow event-details-glow-one"></div>
+
+      <div class="event-details-hero-glow event-details-glow-two"></div>
+
+
+      <div class="event-details-page-container">
+
+        <article
+          class="event-details-hero-card"
+          id="eventDetailsHeroCard"
+        >
+
+          <!-- Rendered by event-details.js -->
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EVENT CONTENT
+    ==================================================== -->
+
+    <section class="event-details-content-section">
+
+      <div class="event-details-page-container">
+
+        <div class="event-details-layout">
+
+
+          <!-- ===============================================
+               LEFT CONTENT
+          ================================================ -->
+
+          <div class="event-details-primary-content">
+
+
+            <!-- EVENT OVERVIEW -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-regular fa-file-lines"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Event Overview
+                  </span>
+
+                  <h2>
+                    About This Event
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-description"
+                id="eventDetailsDescription"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- EVENT HIGHLIGHTS -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-solid fa-star"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    What to Expect
+                  </span>
+
+                  <h2>
+                    Event Highlights
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-highlights-grid"
+                id="eventDetailsHighlights"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- ELIGIBILITY -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-solid fa-user-check"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Participation Criteria
+                  </span>
+
+                  <h2>
+                    Eligibility
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-eligibility"
+                id="eventDetailsEligibility"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- REQUIRED DOCUMENTS -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-regular fa-folder-open"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Registration Checklist
+                  </span>
+
+                  <h2>
+                    Required Documents
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-documents-grid"
+                id="eventDetailsDocuments"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- EVENT SCHEDULE -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-regular fa-clock"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Event Timeline
+                  </span>
+
+                  <h2>
+                    Event Schedule
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-schedule"
+                id="eventDetailsSchedule"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- ORGANIZER -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Event Management
+                  </span>
+
+                  <h2>
+                    Organizer Information
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-organizer"
+                id="eventDetailsOrganizer"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- LOCATION -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Event Venue
+                  </span>
+
+                  <h2>
+                    Location and Directions
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-location"
+                id="eventDetailsLocation"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section class="event-details-content-card">
+
+              <div class="event-details-card-heading">
+
+                <span class="event-details-card-icon">
+
+                  <i class="fa-regular fa-circle-question"></i>
+
+                </span>
+
+
+                <div>
+
+                  <span>
+                    Frequently Asked Questions
+                  </span>
+
+                  <h2>
+                    Need More Information?
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div
+                class="event-details-faq-list"
+                id="eventDetailsFaqList"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+          </div>
+
+
+          <!-- ===============================================
+               SIDEBAR
+          ================================================ -->
+
+          <aside class="event-details-sidebar">
+
+
+            <!-- REGISTRATION CARD -->
+
+            <section
+              class="event-details-registration-card"
+              id="eventDetailsRegistrationCard"
+            >
+
+              <div class="event-details-registration-header">
+
+                <span class="event-details-registration-status">
+
+                  <span></span>
+
+                  <strong id="eventRegistrationStatus">
+                    Registration Open
+                  </strong>
+
+                </span>
+
+
+                <h2>
+                  Secure Your Place
+                </h2>
+
+
+                <p>
+                  Complete your registration before available slots are filled.
+                </p>
+
+              </div>
+
+
+              <div class="event-details-registration-progress">
+
+                <div class="event-details-registration-progress-text">
+
+                  <span>
+                    Registration Progress
+                  </span>
+
+                  <strong id="eventRegistrationProgressText">
+                    0 of 0
+                  </strong>
+
+                </div>
+
+
+                <div class="event-details-registration-progress-track">
+
+                  <span
+                    id="eventRegistrationProgressBar"
+                    style="width: 0%;"
+                  ></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="event-details-countdown-wrapper">
+
+                <span class="event-details-countdown-label">
+                  Registration closes in
+                </span>
+
+
+                <div
+                  class="event-details-countdown"
+                  id="eventDetailsCountdown"
+                >
+
+                  <div>
+
+                    <strong id="eventCountdownDays">
+                      00
+                    </strong>
+
+                    <span>
+                      Days
+                    </span>
+
+                  </div>
+
+
+                  <div>
+
+                    <strong id="eventCountdownHours">
+                      00
+                    </strong>
+
+                    <span>
+                      Hours
+                    </span>
+
+                  </div>
+
+
+                  <div>
+
+                    <strong id="eventCountdownMinutes">
+                      00
+                    </strong>
+
+                    <span>
+                      Minutes
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="event-details-registration-price">
+
+                <span>
+                  Registration Fee
+                </span>
+
+                <strong id="eventRegistrationFee">
+                  Free
+                </strong>
+
+              </div>
+
+
+              <a
+                href="#"
+                class="event-details-register-button"
+                id="eventRegisterButton"
+              >
+
+                Register for This Event
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+
+              <button
+                class="event-details-save-button"
+                id="eventSaveButton"
+                type="button"
+              >
+
+                <i class="fa-regular fa-bookmark"></i>
+
+                Save Event
+
+              </button>
+
+
+              <p class="event-details-registration-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Your information will be used only for event registration and
+                communication.
+
+              </p>
+
+            </section>
+
+
+            <!-- QUICK DETAILS -->
+
+            <section class="event-details-sidebar-card">
+
+              <div class="event-details-sidebar-heading">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <h3>
+                  Quick Details
+                </h3>
+
+              </div>
+
+
+              <div
+                class="event-details-quick-info"
+                id="eventDetailsQuickInfo"
+              >
+
+                <!-- Rendered by event-details.js -->
+
+              </div>
+
+            </section>
+
+
+            <!-- SHARE EVENT -->
+
+            <section class="event-details-sidebar-card">
+
+              <div class="event-details-sidebar-heading">
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                <h3>
+                  Share This Event
+                </h3>
+
+              </div>
+
+
+              <p class="event-details-share-description">
+                Help players, coaches and football communities discover this
+                opportunity.
+              </p>
+
+
+              <div class="event-details-share-buttons">
+
+                <button
+                  id="eventShareWhatsApp"
+                  type="button"
+                  aria-label="Share event on WhatsApp"
+                >
+
+                  <i class="fa-brands fa-whatsapp"></i>
+
+                </button>
+
+
+                <button
+                  id="eventShareFacebook"
+                  type="button"
+                  aria-label="Share event on Facebook"
+                >
+
+                  <i class="fa-brands fa-facebook-f"></i>
+
+                </button>
+
+
+                <button
+                  id="eventShareX"
+                  type="button"
+                  aria-label="Share event on X"
+                >
+
+                  <i class="fa-brands fa-x-twitter"></i>
+
+                </button>
+
+
+                <button
+                  id="eventCopyLink"
+                  type="button"
+                  aria-label="Copy event link"
+                >
+
+                  <i class="fa-solid fa-link"></i>
+
+                </button>
+
+              </div>
+
+            </section>
+
+
+            <!-- HELP CARD -->
+
+            <section class="event-details-help-card">
+
+              <span class="event-details-help-icon">
+
+                <i class="fa-regular fa-message"></i>
+
+              </span>
+
+
+              <h3>
+                Need Help?
+              </h3>
+
+
+              <p>
+                Contact our support team for registration or event-related
+                assistance.
+              </p>
+
+
+              <a href="contact.html">
+
+                Contact Support
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </section>
+
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         RELATED EVENTS
+    ==================================================== -->
+
+    <section class="event-details-related-section">
+
+      <div class="event-details-page-container">
+
+        <div class="event-details-related-header">
+
+          <div>
+
+            <span class="event-details-section-eyebrow">
+              More Opportunities
+            </span>
+
+            <h2>
+              Related Football Events
+            </h2>
+
+            <p>
+              Explore other trials, tournaments, workshops and football
+              programs happening across India.
+            </p>
+
+          </div>
+
+
+          <a href="events.html">
+
+            View All Events
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+
+        <div
+          class="event-details-related-grid"
+          id="eventDetailsRelatedGrid"
+        >
+
+          <!-- Rendered by event-details.js -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         BOTTOM CTA
+    ==================================================== -->
+
+    <section class="event-details-bottom-cta-section">
+
+      <div class="event-details-bottom-cta">
+
+        <div class="event-details-bottom-cta-icon">
+
+          <i class="fa-solid fa-calendar-plus"></i>
+
+        </div>
+
+
+        <div class="event-details-bottom-cta-content">
+
+          <span>
+            Create Football Opportunities
+          </span>
+
+          <h2>
+            Hosting a Football Event?
+          </h2>
+
+          <p>
+            Submit your football trial, tournament, workshop or academy event
+            and reach communities across India.
+          </p>
+
+        </div>
+
+
+        <div class="event-details-bottom-cta-actions">
+
+          <a
+            href="host-event.html"
+            class="event-details-bottom-primary"
+          >
+
+            Submit Your Event
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+
+          <a
+            href="events.html"
+            class="event-details-bottom-secondary"
+          >
+
+            Explore Events
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       EVENT NOT FOUND
+  ====================================================== -->
+
+  <section
+    class="event-details-not-found"
+    id="eventDetailsNotFound"
+    hidden
+  >
+
+    <div class="event-details-not-found-card">
+
+      <span>
+
+        <i class="fa-regular fa-calendar-xmark"></i>
+
+      </span>
+
+
+      <h1>
+        Event Not Found
+      </h1>
+
+
+      <p>
+        The event you are looking for may have been removed, renamed or is no
+        longer available.
+      </p>
+
+
+      <a href="events.html">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Return to Events
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="event-details-footer">
+
+    <div class="event-details-footer-container">
+
+      <div class="event-details-footer-top">
+
+
+        <div class="event-details-footer-brand">
+
+          <span>
+
+            <i class="fa-solid fa-futbol"></i>
+
+          </span>
+
+
+          <div>
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <p>
+              Building India's football future together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="event-details-footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="players.html">
+            Players
+          </a>
+
+          <a href="academies.html">
+            Academies
+          </a>
+
+          <a href="news.html">
+            News
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="event-details-footer-bottom">
+
+        <p>
+          © 2026 FIFA Mission India. All rights reserved.
+        </p>
+
+
+        <div>
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="event-details-toast"
+    id="eventDetailsToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <i
+      id="eventDetailsToastIcon"
+      class="fa-solid fa-circle-check"
+    ></i>
+
+    <span id="eventDetailsToastMessage">
+      Action completed successfully.
+    </span>
+
+  </div>
+
+
+  <!-- PAGE JAVASCRIPT -->
+
+  <script src="js/event-details.js"></script>
+
+</body>
+
+</html>

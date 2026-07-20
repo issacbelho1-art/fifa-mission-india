@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Upload and manage player verification documents on FIFA Mission India."
+  >
+
+  <title>Documents & Verification | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/player-documents.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="documents-header">
+
+    <a
+      href="player-dashboard.html"
+      class="documents-brand"
+      aria-label="Return to player dashboard"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-copy">
+
+        <strong>
+          FIFA MISSION INDIA
+        </strong>
+
+        <span>
+          Player Portal
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <nav
+      class="documents-navigation"
+      aria-label="Player portal navigation"
+    >
+
+      <a href="player-dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="player-trials.html">
+        Trials
+      </a>
+
+      <a href="player-performance.html">
+        Performance
+      </a>
+
+      <a href="player-achievements.html">
+        Achievements
+      </a>
+
+      <a
+        href="player-documents.html"
+        class="active"
+        aria-current="page"
+      >
+        Documents
+      </a>
+
+    </nav>
+
+
+    <a
+      href="player-dashboard.html"
+      class="dashboard-button"
+    >
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="documents-hero">
+
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">
+        PLAYER VERIFICATION
+      </span>
+
+      <h1>
+        Keep your football documents secure and ready.
+      </h1>
+
+      <p>
+        Upload the documents required for player verification,
+        academy applications, trials and official football programmes.
+      </p>
+
+    </div>
+
+
+    <div class="hero-status-card">
+
+      <span>
+        Verification Progress
+      </span>
+
+      <strong id="verificationPercentage">
+        60%
+      </strong>
+
+      <div class="hero-progress">
+
+        <span id="verificationProgressBar"></span>
+
+      </div>
+
+      <small>
+        3 of 5 required documents submitted
+      </small>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="documents-main">
+
+
+    <!-- ================= SUMMARY ================= -->
+
+    <section class="documents-summary-grid">
+
+      <article class="document-summary-card">
+
+        <div class="summary-icon">
+          ▤
+        </div>
+
+        <div>
+
+          <span>
+            Total Documents
+          </span>
+
+          <strong id="totalDocumentCount">
+            5
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="document-summary-card">
+
+        <div class="summary-icon verified-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <span>
+            Verified
+          </span>
+
+          <strong id="verifiedDocumentCount">
+            2
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="document-summary-card">
+
+        <div class="summary-icon pending-icon">
+          ⏳
+        </div>
+
+        <div>
+
+          <span>
+            Under Review
+          </span>
+
+          <strong id="pendingDocumentCount">
+            1
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="document-summary-card">
+
+        <div class="summary-icon missing-icon">
+          !
+        </div>
+
+        <div>
+
+          <span>
+            Missing
+          </span>
+
+          <strong id="missingDocumentCount">
+            2
+          </strong>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ================= NOTICE ================= -->
+
+    <section class="security-notice">
+
+      <div class="security-notice-icon">
+        🔒
+      </div>
+
+      <div>
+
+        <h2>
+          Your documents should remain private and protected.
+        </h2>
+
+        <p>
+          Documents displayed here are frontend demonstration data.
+          Mr. Harsh can later connect secure authentication, encrypted
+          storage, file validation and role-based document access.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= REQUIRED DOCUMENTS ================= -->
+
+    <section class="documents-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            REQUIRED DOCUMENTS
+          </span>
+
+          <h2>
+            Player verification files
+          </h2>
+
+          <p>
+            Upload clear and valid copies of the requested documents.
+          </p>
+
+        </div>
+
+        <button
+          type="button"
+          class="upload-document-button"
+          id="openUploadModalButton"
+        >
+          + Upload Document
+        </button>
+
+      </div>
+
+
+      <div
+        class="documents-list"
+        id="documentsList"
+      ></div>
+
+    </section>
+
+
+    <!-- ================= UPLOAD GUIDELINES ================= -->
+
+    <section class="guidelines-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            BEFORE UPLOADING
+          </span>
+
+          <h2>
+            Document guidelines
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="guidelines-grid">
+
+        <article class="guideline-card">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Upload clear files
+          </h3>
+
+          <p>
+            Ensure that names, dates, photographs and identification
+            numbers are readable.
+          </p>
+
+        </article>
+
+
+        <article class="guideline-card">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Use supported formats
+          </h3>
+
+          <p>
+            Upload PDF, JPG or PNG files. The final file limits will
+            be enforced by the backend.
+          </p>
+
+        </article>
+
+
+        <article class="guideline-card">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Submit valid documents
+          </h3>
+
+          <p>
+            Expired, edited or incomplete documents may be rejected
+            during verification.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= UPLOAD MODAL ================= -->
+
+  <div
+    class="upload-modal-backdrop"
+    id="uploadModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="uploadModalTitle"
+    hidden
+  >
+
+    <div class="upload-modal">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="closeUploadModalButton"
+        aria-label="Close upload window"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-heading">
+
+        <span class="section-eyebrow">
+          DOCUMENT UPLOAD
+        </span>
+
+        <h2 id="uploadModalTitle">
+          Upload player document
+        </h2>
+
+        <p>
+          Select the document category and choose a file from your device.
+        </p>
+
+      </div>
+
+
+      <form
+        class="document-upload-form"
+        id="documentUploadForm"
+        novalidate
+      >
+
+        <div class="form-group">
+
+          <label for="documentType">
+            Document Type
+          </label>
+
+          <select
+            id="documentType"
+            name="documentType"
+            required
+          >
+
+            <option value="">
+              Select document type
+            </option>
+
+            <option value="identity">
+              Identity Proof
+            </option>
+
+            <option value="birth-certificate">
+              Birth Certificate
+            </option>
+
+            <option value="player-photo">
+              Passport-size Photograph
+            </option>
+
+            <option value="medical-certificate">
+              Medical Fitness Certificate
+            </option>
+
+            <option value="football-record">
+              Football Registration Record
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="documentFile">
+            Select File
+          </label>
+
+          <div class="file-upload-area">
+
+            <input
+              type="file"
+              id="documentFile"
+              name="documentFile"
+              accept=".pdf,.jpg,.jpeg,.png"
+              required
+            >
+
+            <div class="file-upload-content">
+
+              <span class="file-upload-icon">
+                ⇧
+              </span>
+
+              <strong>
+                Choose a file to upload
+              </strong>
+
+              <small>
+                PDF, JPG or PNG
+              </small>
+
+            </div>
+
+          </div>
+
+          <span
+            class="selected-file-name"
+            id="selectedFileName"
+          >
+            No file selected
+          </span>
+
+        </div>
+
+
+        <div
+          class="upload-message"
+          id="uploadMessage"
+          hidden
+        ></div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="cancel-upload-button"
+            id="cancelUploadButton"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="submit-upload-button"
+          >
+            Submit Document
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/player-documents.js"></script>
+
+</body>
+
+</html>

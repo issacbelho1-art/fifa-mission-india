@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- =====================================================
+       META
+  ====================================================== -->
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Manage your FIFA Mission India scout profile, professional details, scouting regions, experience and account information."
+  />
+
+  <meta
+    name="theme-color"
+    content="#071a33"
+  />
+
+  <title>
+    Scout Profile | FIFA Mission India
+  </title>
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <!-- =====================================================
+       STYLESHEET
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="scout-profile.css"
+  />
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       ACCESSIBILITY
+  ====================================================== -->
+
+  <a
+    href="#scoutProfileMainContent"
+    class="scout-skip-link"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- =====================================================
+       APPLICATION SHELL
+  ====================================================== -->
+
+  <div
+    class="scout-app-shell"
+    id="scoutAppShell"
+  >
+
+
+    <!-- ===================================================
+         MOBILE SIDEBAR OVERLAY
+    ==================================================== -->
+
+    <div
+      class="scout-sidebar-overlay"
+      id="scoutSidebarOverlay"
+      aria-hidden="true"
+    ></div>
+
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside
+      class="scout-sidebar"
+      id="scoutSidebar"
+      aria-label="Scout portal navigation"
+    >
+
+
+      <!-- =================================================
+           SIDEBAR HEADER
+      ================================================== -->
+
+      <div class="scout-sidebar-header">
+
+        <a
+          href="index.html"
+          class="scout-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <div
+            class="scout-brand-mark"
+            aria-hidden="true"
+          >
+            ⚽
+          </div>
+
+          <div class="scout-brand-copy">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Scout Portal
+            </small>
+
+          </div>
+
+        </a>
+
+
+        <button
+          class="scout-sidebar-close"
+          id="scoutSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- =================================================
+           SCOUT SUMMARY
+      ================================================== -->
+
+      <div class="scout-profile-summary">
+
+        <div class="scout-profile-avatar">
+
+          <img
+            src="images/scout-avatar-placeholder.jpg"
+            alt="Scout profile"
+            data-scout-avatar
+          />
+
+          <span
+            class="scout-profile-status"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="scout-profile-summary-copy">
+
+          <strong data-scout-name>
+            Scout Name
+          </strong>
+
+          <span data-scout-designation>
+            Talent Scout
+          </span>
+
+          <small data-scout-organization>
+            FIFA Mission India
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           NAVIGATION
+      ================================================== -->
+
+      <nav class="scout-navigation">
+
+
+        <!-- ===============================================
+             MAIN
+        ================================================ -->
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Main
+          </span>
+
+
+          <a
+            href="scout-dashboard.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◫
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-players.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👥
+            </span>
+
+            <span>
+              Players
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-matches.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ⚽
+            </span>
+
+            <span>
+              Matches
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-academies.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              🏟
+            </span>
+
+            <span>
+              Academies
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- ===============================================
+             SCOUTING
+        ================================================ -->
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Scouting
+          </span>
+
+
+          <a
+            href="scout-report-create.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ✎
+            </span>
+
+            <span>
+              Create Report
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-reports.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ▤
+            </span>
+
+            <span>
+              My Reports
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- ===============================================
+             ACCOUNT
+        ================================================ -->
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Account
+          </span>
+
+
+          <a
+            href="scout-profile.html"
+            class="scout-navigation-link is-active"
+            aria-current="page"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👤
+            </span>
+
+            <span>
+              My Profile
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-help.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ?
+            </span>
+
+            <span>
+              Help & Support
+            </span>
+
+          </a>
+
+        </div>
+
+      </nav>
+
+
+      <!-- =================================================
+           SUPPORT CARD
+      ================================================== -->
+
+      <div class="scout-sidebar-support-card">
+
+        <div
+          class="scout-support-icon"
+          aria-hidden="true"
+        >
+          🎧
+        </div>
+
+        <div>
+
+          <strong>
+            Need Assistance?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team.
+          </p>
+
+          <a href="scout-help.html">
+            Visit Support
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           SIDEBAR FOOTER
+      ================================================== -->
+
+      <div class="scout-sidebar-footer">
+
+        <button
+          class="scout-logout-button"
+          id="scoutLogoutButton"
+          type="button"
+        >
+
+          <span aria-hidden="true">
+            ↪
+          </span>
+
+          <span>
+            Log Out
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- ===================================================
+         MAIN AREA
+    ==================================================== -->
+
+    <div class="scout-main-area">
+
+
+      <!-- =================================================
+           TOPBAR
+      ================================================== -->
+
+      <header class="scout-topbar">
+
+
+        <!-- ===============================================
+             TOPBAR LEFT
+        ================================================ -->
+
+        <div class="scout-topbar-left">
+
+          <button
+            class="scout-menu-button"
+            id="scoutMenuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="scoutSidebar"
+          >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </button>
+
+
+          <div class="scout-page-heading">
+
+            <span class="scout-page-eyebrow">
+              Scout Account
+            </span>
+
+            <h1>
+              My Profile
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             TOPBAR ACTIONS
+        ================================================ -->
+
+        <div class="scout-topbar-actions">
+
+          <a
+            href="scout-help.html"
+            class="scout-icon-button"
+            aria-label="Open help and support"
+          >
+            ?
+          </a>
+
+
+          <button
+            class="scout-icon-button"
+            id="scoutNotificationButton"
+            type="button"
+            aria-label="Open notifications"
+          >
+
+            <span aria-hidden="true">
+              🔔
+            </span>
+
+            <span
+              class="scout-notification-badge"
+              id="scoutNotificationBadge"
+            >
+              3
+            </span>
+
+          </button>
+
+
+          <div class="scout-topbar-profile">
+
+            <img
+              src="images/scout-avatar-placeholder.jpg"
+              alt="Scout profile"
+              data-scout-avatar
+            />
+
+            <div>
+
+              <strong data-scout-name>
+                Scout Name
+              </strong>
+
+              <span data-scout-designation>
+                Talent Scout
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =================================================
+           MAIN CONTENT
+      ================================================== -->
+
+      <main
+        class="scout-main-content"
+        id="scoutProfileMainContent"
+      >
+
+
+        <!-- ===============================================
+             PAGE INTRO
+        ================================================ -->
+
+        <section class="scout-profile-page-intro">
+
+          <div>
+
+            <nav
+              class="scout-breadcrumb"
+              aria-label="Breadcrumb"
+            >
+
+              <a href="scout-dashboard.html">
+                Dashboard
+              </a>
+
+              <span aria-hidden="true">
+                /
+              </span>
+
+              <span aria-current="page">
+                My Profile
+              </span>
+
+            </nav>
+
+
+            <h2>
+              Manage Your Scout Profile
+            </h2>
+
+            <p>
+              Keep your personal, professional and scouting information accurate and up to date.
+            </p>
+
+          </div>
+
+
+          <div class="scout-profile-header-actions">
+
+            <button
+              class="scout-secondary-button"
+              id="cancelProfileChangesButton"
+              type="button"
+              hidden
+            >
+              Cancel Changes
+            </button>
+
+            <button
+              class="scout-primary-button"
+              id="editProfileButton"
+              type="button"
+            >
+              Edit Profile
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             LOADING STATE
+        ================================================ -->
+
+        <section
+          class="scout-profile-loading-state"
+          id="scoutProfileLoadingState"
+          aria-live="polite"
+        >
+
+          <div class="scout-profile-loading-card">
+
+            <div class="scout-loading-avatar"></div>
+
+            <div class="scout-loading-content">
+
+              <div class="scout-loading-line is-large"></div>
+
+              <div class="scout-loading-line"></div>
+
+              <div class="scout-loading-line is-short"></div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             ERROR STATE
+        ================================================ -->
+
+        <section
+          class="scout-profile-error-state"
+          id="scoutProfileErrorState"
+          hidden
+        >
+
+          <div
+            class="scout-error-state-icon"
+            aria-hidden="true"
+          >
+            !
+          </div>
+
+          <div>
+
+            <h2>
+              Profile could not be loaded
+            </h2>
+
+            <p id="scoutProfileErrorMessage">
+              We were unable to retrieve your scout profile.
+            </p>
+
+            <button
+              class="scout-primary-button"
+              id="retryScoutProfileButton"
+              type="button"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             PROFILE CONTENT
+        ================================================ -->
+
+        <div
+          class="scout-profile-content"
+          id="scoutProfileContent"
+          hidden
+        >
+
+
+          <!-- =============================================
+               PROFILE HERO
+          ============================================== -->
+
+          <section class="scout-profile-hero-card">
+
+            <div class="scout-profile-cover">
+
+              <img
+                src="images/scout-profile-cover-placeholder.jpg"
+                alt=""
+                id="scoutProfileCoverImage"
+              />
+
+              <div class="scout-profile-cover-overlay"></div>
+
+
+              <label
+                class="scout-cover-upload-button"
+                id="scoutCoverUploadLabel"
+                hidden
+              >
+
+                <input
+                  type="file"
+                  id="scoutCoverUploadInput"
+                  accept="image/jpeg,image/png,image/webp"
+                />
+
+                <span aria-hidden="true">
+                  📷
+                </span>
+
+                <span>
+                  Change Cover
+                </span>
+
+              </label>
+
+            </div>
+
+
+            <div class="scout-profile-hero-body">
+
+              <div class="scout-profile-primary-info">
+
+                <div class="scout-profile-photo-wrapper">
+
+                  <img
+                    src="images/scout-avatar-placeholder.jpg"
+                    alt="Scout profile"
+                    id="scoutProfileMainImage"
+                  />
+
+                  <span
+                    class="scout-profile-online-status"
+                    title="Profile active"
+                  ></span>
+
+
+                  <label
+                    class="scout-profile-photo-upload"
+                    id="scoutPhotoUploadLabel"
+                    hidden
+                  >
+
+                    <input
+                      type="file"
+                      id="scoutPhotoUploadInput"
+                      accept="image/jpeg,image/png,image/webp"
+                    />
+
+                    <span aria-hidden="true">
+                      📷
+                    </span>
+
+                    <span class="scout-visually-hidden">
+                      Change profile photo
+                    </span>
+
+                  </label>
+
+                </div>
+
+
+                <div class="scout-profile-identity">
+
+                  <div class="scout-profile-name-row">
+
+                    <h2 id="scoutProfileDisplayName">
+                      Scout Name
+                    </h2>
+
+                    <span
+                      class="scout-profile-verification-badge"
+                      id="scoutProfileVerificationBadge"
+                      hidden
+                    >
+                      ✓ Verified
+                    </span>
+
+                  </div>
+
+
+                  <p id="scoutProfileDisplayDesignation">
+                    Talent Scout
+                  </p>
+
+
+                  <div class="scout-profile-meta-list">
+
+                    <span>
+
+                      <strong>
+                        Organization:
+                      </strong>
+
+                      <span id="scoutProfileDisplayOrganization">
+                        FIFA Mission India
+                      </span>
+
+                    </span>
+
+
+                    <span>
+
+                      <strong>
+                        Region:
+                      </strong>
+
+                      <span id="scoutProfileDisplayRegion">
+                        India
+                      </span>
+
+                    </span>
+
+
+                    <span>
+
+                      <strong>
+                        Member Since:
+                      </strong>
+
+                      <span id="scoutProfileMemberSince">
+                        —
+                      </span>
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-profile-completion-card">
+
+                <div class="scout-profile-completion-heading">
+
+                  <span>
+                    Profile Completion
+                  </span>
+
+                  <strong id="scoutProfileCompletionValue">
+                    0%
+                  </strong>
+
+                </div>
+
+                <div
+                  class="scout-profile-completion-track"
+                  role="progressbar"
+                  aria-label="Profile completion"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                  id="scoutProfileCompletionTrack"
+                >
+
+                  <span
+                    id="scoutProfileCompletionBar"
+                  ></span>
+
+                </div>
+
+                <small id="scoutProfileCompletionMessage">
+                  Complete your profile to improve scouting credibility.
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="scout-profile-summary-stats">
+
+              <div>
+
+                <span>
+                  Reports Created
+                </span>
+
+                <strong id="scoutProfileReportsCount">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Players Scouted
+                </span>
+
+                <strong id="scoutProfilePlayersCount">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Matches Attended
+                </span>
+
+                <strong id="scoutProfileMatchesCount">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Experience
+                </span>
+
+                <strong id="scoutProfileExperienceDisplay">
+                  —
+                </strong>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- =============================================
+               PROFILE FORM
+          ============================================== -->
+
+          <form
+            class="scout-profile-form"
+            id="scoutProfileForm"
+            novalidate
+          >
+
+
+            <!-- ===========================================
+                 PERSONAL INFORMATION
+            ============================================ -->
+
+            <section class="scout-profile-section-card">
+
+              <div class="scout-section-heading">
+
+                <div>
+
+                  <span class="scout-section-eyebrow">
+                    Personal Details
+                  </span>
+
+                  <h3>
+                    Personal Information
+                  </h3>
+
+                  <p>
+                    Basic details used to identify your scout account.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-profile-form-grid">
+
+                <div class="scout-form-group">
+
+                  <label for="scoutFirstName">
+                    First Name
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutFirstName"
+                    name="firstName"
+                    autocomplete="given-name"
+                    maxlength="60"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutFirstName"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutLastName">
+                    Last Name
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutLastName"
+                    name="lastName"
+                    autocomplete="family-name"
+                    maxlength="60"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutLastName"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutEmail">
+                    Email Address
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="scoutEmail"
+                    name="email"
+                    autocomplete="email"
+                    maxlength="120"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutEmail"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutPhone">
+                    Phone Number
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="scoutPhone"
+                    name="phone"
+                    autocomplete="tel"
+                    maxlength="20"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutPhone"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutDateOfBirth">
+                    Date of Birth
+                  </label>
+
+                  <input
+                    type="date"
+                    id="scoutDateOfBirth"
+                    name="dateOfBirth"
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutDateOfBirth"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutGender">
+                    Gender
+                  </label>
+
+                  <select
+                    id="scoutGender"
+                    name="gender"
+                    disabled
+                  >
+
+                    <option value="">
+                      Select gender
+                    </option>
+
+                    <option value="male">
+                      Male
+                    </option>
+
+                    <option value="female">
+                      Female
+                    </option>
+
+                    <option value="other">
+                      Other
+                    </option>
+
+                    <option value="prefer-not-to-say">
+                      Prefer not to say
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutNationality">
+                    Nationality
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutNationality"
+                    name="nationality"
+                    maxlength="80"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutLanguages">
+                    Languages Spoken
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutLanguages"
+                    name="languages"
+                    maxlength="180"
+                    placeholder="Example: English, Hindi, Bengali"
+                    disabled
+                  />
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 PROFESSIONAL INFORMATION
+            ============================================ -->
+
+            <section class="scout-profile-section-card">
+
+              <div class="scout-section-heading">
+
+                <div>
+
+                  <span class="scout-section-eyebrow">
+                    Professional Profile
+                  </span>
+
+                  <h3>
+                    Scouting Information
+                  </h3>
+
+                  <p>
+                    Add your designation, organization, qualifications and scouting experience.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-profile-form-grid">
+
+                <div class="scout-form-group">
+
+                  <label for="scoutDesignation">
+                    Professional Designation
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutDesignation"
+                    name="designation"
+                    maxlength="100"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutDesignation"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutOrganization">
+                    Organization
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutOrganization"
+                    name="organization"
+                    maxlength="120"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutLicenseNumber">
+                    Scout License Number
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutLicenseNumber"
+                    name="licenseNumber"
+                    maxlength="80"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutExperienceYears">
+                    Years of Experience
+                  </label>
+
+                  <input
+                    type="number"
+                    id="scoutExperienceYears"
+                    name="experienceYears"
+                    min="0"
+                    max="60"
+                    step="1"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group scout-form-group-full">
+
+                  <label for="scoutQualifications">
+                    Qualifications and Certifications
+                  </label>
+
+                  <textarea
+                    id="scoutQualifications"
+                    name="qualifications"
+                    rows="4"
+                    maxlength="800"
+                    placeholder="List relevant scouting, coaching or football qualifications."
+                    disabled
+                  ></textarea>
+
+                  <div class="scout-field-meta">
+
+                    <small>
+                      Include verified football or scouting qualifications.
+                    </small>
+
+                    <small>
+                      <span id="scoutQualificationsCharacterCount">
+                        0
+                      </span>/800
+                    </small>
+
+                  </div>
+
+                </div>
+
+
+                <div class="scout-form-group scout-form-group-full">
+
+                  <label for="scoutBiography">
+                    Professional Biography
+                  </label>
+
+                  <textarea
+                    id="scoutBiography"
+                    name="biography"
+                    rows="6"
+                    maxlength="1200"
+                    placeholder="Describe your football background, scouting experience and professional interests."
+                    disabled
+                  ></textarea>
+
+                  <div class="scout-field-meta">
+
+                    <small>
+                      This information may be visible to authorized platform users.
+                    </small>
+
+                    <small>
+                      <span id="scoutBiographyCharacterCount">
+                        0
+                      </span>/1200
+                    </small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 SCOUTING REGIONS
+            ============================================ -->
+
+            <section class="scout-profile-section-card">
+
+              <div class="scout-section-heading">
+
+                <div>
+
+                  <span class="scout-section-eyebrow">
+                    Coverage Area
+                  </span>
+
+                  <h3>
+                    Scouting Regions
+                  </h3>
+
+                  <p>
+                    Define the primary geographical areas where you scout players and matches.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-profile-form-grid">
+
+                <div class="scout-form-group">
+
+                  <label for="scoutCountry">
+                    Country
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutCountry"
+                    name="country"
+                    maxlength="80"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutCountry"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutState">
+                    Primary State
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutState"
+                    name="state"
+                    maxlength="80"
+                    required
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutState"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutCity">
+                    City or District
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutCity"
+                    name="city"
+                    maxlength="100"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutTravelAvailability">
+                    Travel Availability
+                  </label>
+
+                  <select
+                    id="scoutTravelAvailability"
+                    name="travelAvailability"
+                    disabled
+                  >
+
+                    <option value="">
+                      Select availability
+                    </option>
+
+                    <option value="local">
+                      Local only
+                    </option>
+
+                    <option value="state">
+                      Within state
+                    </option>
+
+                    <option value="regional">
+                      Regional travel
+                    </option>
+
+                    <option value="national">
+                      Nationwide
+                    </option>
+
+                    <option value="international">
+                      International
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="scout-form-group scout-form-group-full">
+
+                  <label>
+                    Additional Scouting States
+                  </label>
+
+                  <div
+                    class="scout-tag-input"
+                    id="scoutAdditionalRegionsContainer"
+                  >
+
+                    <div
+                      class="scout-selected-tags"
+                      id="scoutSelectedRegions"
+                    ></div>
+
+
+                    <div
+                      class="scout-tag-input-controls"
+                      id="scoutRegionInputControls"
+                      hidden
+                    >
+
+                      <input
+                        type="text"
+                        id="scoutAdditionalRegionInput"
+                        maxlength="80"
+                        placeholder="Enter another state or region"
+                      />
+
+                      <button
+                        class="scout-secondary-button"
+                        id="addScoutRegionButton"
+                        type="button"
+                      >
+                        Add Region
+                      </button>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 SCOUTING PREFERENCES
+            ============================================ -->
+
+            <section class="scout-profile-section-card">
+
+              <div class="scout-section-heading">
+
+                <div>
+
+                  <span class="scout-section-eyebrow">
+                    Talent Focus
+                  </span>
+
+                  <h3>
+                    Scouting Preferences
+                  </h3>
+
+                  <p>
+                    Select the player categories and football areas you specialize in.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-preference-section">
+
+                <fieldset
+                  class="scout-checkbox-fieldset"
+                  id="scoutAgeGroupFieldset"
+                  disabled
+                >
+
+                  <legend>
+                    Preferred Age Groups
+                  </legend>
+
+
+                  <div class="scout-checkbox-grid">
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="u10"
+                      />
+
+                      <span>
+                        Under 10
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="u12"
+                      />
+
+                      <span>
+                        Under 12
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="u15"
+                      />
+
+                      <span>
+                        Under 15
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="u17"
+                      />
+
+                      <span>
+                        Under 17
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="u19"
+                      />
+
+                      <span>
+                        Under 19
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredAgeGroups"
+                        value="senior"
+                      />
+
+                      <span>
+                        Senior
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </fieldset>
+
+
+                <fieldset
+                  class="scout-checkbox-fieldset"
+                  id="scoutPositionFieldset"
+                  disabled
+                >
+
+                  <legend>
+                    Preferred Positions
+                  </legend>
+
+
+                  <div class="scout-checkbox-grid">
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="goalkeeper"
+                      />
+
+                      <span>
+                        Goalkeeper
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="defender"
+                      />
+
+                      <span>
+                        Defender
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="midfielder"
+                      />
+
+                      <span>
+                        Midfielder
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="winger"
+                      />
+
+                      <span>
+                        Winger
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="forward"
+                      />
+
+                      <span>
+                        Forward
+                      </span>
+
+                    </label>
+
+
+                    <label>
+
+                      <input
+                        type="checkbox"
+                        name="preferredPositions"
+                        value="all"
+                      />
+
+                      <span>
+                        All Positions
+                      </span>
+
+                    </label>
+
+                  </div>
+
+                </fieldset>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 SOCIAL AND PROFESSIONAL LINKS
+            ============================================ -->
+
+            <section class="scout-profile-section-card">
+
+              <div class="scout-section-heading">
+
+                <div>
+
+                  <span class="scout-section-eyebrow">
+                    Online Presence
+                  </span>
+
+                  <h3>
+                    Professional Links
+                  </h3>
+
+                  <p>
+                    Add relevant professional and social profile links.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-profile-form-grid">
+
+                <div class="scout-form-group">
+
+                  <label for="scoutLinkedIn">
+                    LinkedIn Profile
+                  </label>
+
+                  <input
+                    type="url"
+                    id="scoutLinkedIn"
+                    name="linkedin"
+                    placeholder="https://linkedin.com/in/username"
+                    maxlength="240"
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutLinkedIn"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutWebsite">
+                    Website or Portfolio
+                  </label>
+
+                  <input
+                    type="url"
+                    id="scoutWebsite"
+                    name="website"
+                    placeholder="https://example.com"
+                    maxlength="240"
+                    disabled
+                  />
+
+                  <small
+                    class="scout-field-error"
+                    data-error-for="scoutWebsite"
+                  ></small>
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutInstagram">
+                    Instagram
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutInstagram"
+                    name="instagram"
+                    placeholder="@username"
+                    maxlength="100"
+                    disabled
+                  />
+
+                </div>
+
+
+                <div class="scout-form-group">
+
+                  <label for="scoutXProfile">
+                    X / Twitter
+                  </label>
+
+                  <input
+                    type="text"
+                    id="scoutXProfile"
+                    name="xProfile"
+                    placeholder="@username"
+                    maxlength="100"
+                    disabled
+                  />
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ===========================================
+                 SAVE ACTIONS
+            ============================================ -->
+
+            <div
+              class="scout-profile-save-actions"
+              id="scoutProfileSaveActions"
+              hidden
+            >
+
+              <div>
+
+                <strong>
+                  Unsaved Profile Changes
+                </strong>
+
+                <p>
+                  Review your information before saving.
+                </p>
+
+              </div>
+
+
+              <div class="scout-profile-save-buttons">
+
+                <button
+                  class="scout-secondary-button"
+                  id="resetProfileFormButton"
+                  type="button"
+                >
+                  Reset
+                </button>
+
+                <button
+                  class="scout-primary-button"
+                  id="saveProfileButton"
+                  type="submit"
+                >
+                  Save Changes
+                </button>
+
+              </div>
+
+            </div>
+
+          </form>
+
+
+          <!-- =============================================
+               ACCOUNT SECURITY
+          ============================================== -->
+
+          <section class="scout-profile-section-card scout-account-security-card">
+
+            <div class="scout-section-heading">
+
+              <div>
+
+                <span class="scout-section-eyebrow">
+                  Account
+                </span>
+
+                <h3>
+                  Security and Access
+                </h3>
+
+                <p>
+                  Review your account security and authentication settings.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="scout-account-action-list">
+
+              <div class="scout-account-action-item">
+
+                <div>
+
+                  <strong>
+                    Password
+                  </strong>
+
+                  <p>
+                    Update your account password regularly.
+                  </p>
+
+                </div>
+
+                <button
+                  class="scout-secondary-button"
+                  id="changePasswordButton"
+                  type="button"
+                >
+                  Change Password
+                </button>
+
+              </div>
+
+
+              <div class="scout-account-action-item">
+
+                <div>
+
+                  <strong>
+                    Two-Factor Authentication
+                  </strong>
+
+                  <p>
+                    Add an additional security layer to your account.
+                  </p>
+
+                </div>
+
+                <button
+                  class="scout-secondary-button"
+                  id="twoFactorButton"
+                  type="button"
+                >
+                  Enable
+                </button>
+
+              </div>
+
+
+              <div class="scout-account-action-item">
+
+                <div>
+
+                  <strong>
+                    Active Sessions
+                  </strong>
+
+                  <p>
+                    Review devices currently signed in to your account.
+                  </p>
+
+                </div>
+
+                <button
+                  class="scout-secondary-button"
+                  id="viewSessionsButton"
+                  type="button"
+                >
+                  View Sessions
+                </button>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       CHANGE PASSWORD MODAL
+  ====================================================== -->
+
+  <div
+    class="scout-modal"
+    id="changePasswordModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="changePasswordModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-password-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog">
+
+      <div class="scout-modal-header">
+
+        <h2 id="changePasswordModalTitle">
+          Change Password
+        </h2>
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close change password dialog"
+          data-password-modal-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form
+        class="scout-modal-body"
+        id="changePasswordForm"
+        novalidate
+      >
+
+        <div class="scout-form-group">
+
+          <label for="currentPassword">
+            Current Password
+          </label>
+
+          <input
+            type="password"
+            id="currentPassword"
+            name="currentPassword"
+            autocomplete="current-password"
+            required
+          />
+
+          <small
+            class="scout-field-error"
+            data-error-for="currentPassword"
+          ></small>
+
+        </div>
+
+
+        <div class="scout-form-group">
+
+          <label for="newPassword">
+            New Password
+          </label>
+
+          <input
+            type="password"
+            id="newPassword"
+            name="newPassword"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+
+          <small
+            class="scout-field-error"
+            data-error-for="newPassword"
+          ></small>
+
+        </div>
+
+
+        <div class="scout-form-group">
+
+          <label for="confirmNewPassword">
+            Confirm New Password
+          </label>
+
+          <input
+            type="password"
+            id="confirmNewPassword"
+            name="confirmNewPassword"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+
+          <small
+            class="scout-field-error"
+            data-error-for="confirmNewPassword"
+          ></small>
+
+        </div>
+
+
+        <div class="scout-modal-actions">
+
+          <button
+            class="scout-secondary-button"
+            type="button"
+            data-password-modal-close
+          >
+            Cancel
+          </button>
+
+          <button
+            class="scout-primary-button"
+            id="submitPasswordChangeButton"
+            type="submit"
+          >
+            Update Password
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       LOGOUT MODAL
+  ====================================================== -->
+
+  <div
+    class="scout-modal"
+    id="scoutLogoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="scoutLogoutModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-logout-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-logout-dialog">
+
+      <div
+        class="scout-logout-icon"
+        aria-hidden="true"
+      >
+        ↪
+      </div>
+
+
+      <h2 id="scoutLogoutModalTitle">
+        Log out of Scout Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to access scouting tools and reports.
+      </p>
+
+
+      <div class="scout-modal-actions">
+
+        <button
+          class="scout-secondary-button"
+          type="button"
+          data-logout-modal-close
+        >
+          Cancel
+        </button>
+
+        <button
+          class="scout-danger-button"
+          id="confirmScoutLogoutButton"
+          type="button"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICATION REGION
+  ====================================================== -->
+
+  <div
+    class="scout-notification-region"
+    id="scoutNotificationRegion"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <!-- =====================================================
+       SCRIPT
+  ====================================================== -->
+
+  <script src="scout-profile.js"></script>
+
+</body>
+
+</html>

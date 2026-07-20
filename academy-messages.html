@@ -1,0 +1,1046 @@
+<!-- ==========================================================
+     ACADEMY MESSAGES
+     Frontend: Issac Belho
+     Backend: Mr. Harsh
+     Security: Samarth
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Academy Messages</title>
+
+<link rel="stylesheet"
+      href="academy-messages.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside
+class="academy-sidebar"
+id="academySidebar">
+
+<div class="academy-sidebar-header">
+
+<h2>Mission India</h2>
+
+<button id="academySidebarClose">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches & Staff
+
+</a>
+
+<a
+class="active"
+href="academy-messages.html">
+
+<i class="fa-solid fa-comments"></i>
+
+Messages
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+class="academy-sidebar-overlay"
+id="academySidebarOverlay"
+hidden></div>
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main class="academy-main">
+
+<header class="academy-topbar">
+
+<button
+id="academyMenuButton">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h1>
+
+Academy Messages
+
+</h1>
+
+<div
+class="academy-profile-dropdown-wrapper">
+
+<button
+id="academyProfileTrigger">
+
+<img
+src="images/admin.jpg"
+alt="Administrator">
+
+</button>
+
+<div
+class="academy-profile-dropdown"
+id="academyProfileDropdown"
+hidden>
+
+<a href="#">My Profile</a>
+
+<a href="#">Settings</a>
+
+<button
+id="academyLogoutButton">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section
+class="academy-page-hero">
+
+<div>
+
+<span>
+
+Communication Centre
+
+</span>
+
+<h2>
+
+Stay Connected With Your Academy
+
+</h2>
+
+<p>
+
+Communicate with players, parents,
+coaches, scouts and academy staff
+from one secure platform.
+
+</p>
+
+</div>
+
+<button
+class="academy-primary-button"
+id="academyNewMessageButton">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+New Message
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     MESSAGES LAYOUT
+========================================================== -->
+
+<section class="academy-chat-layout">
+
+<!-- ================= CONVERSATION LIST ================= -->
+
+<aside
+class="academy-chat-sidebar">
+
+<div class="academy-chat-search">
+
+<input
+type="text"
+id="academyChatSearch"
+placeholder="Search conversations...">
+
+</div>
+
+<div
+class="academy-chat-list"
+id="academyChatList">
+
+<article
+class="academy-chat-item active">
+
+<img
+src="images/player1.jpg"
+alt="Player">
+
+<div>
+
+<h4>
+
+Rahul Sharma
+
+</h4>
+
+<p>
+
+Thank you coach...
+
+</p>
+
+</div>
+
+<span>
+
+09:30
+
+</span>
+
+</article>
+
+<article
+class="academy-chat-item">
+
+<img
+src="images/player2.jpg"
+alt="Player">
+
+<div>
+
+<h4>
+
+Aman Singh
+
+</h4>
+
+<p>
+
+Can I attend tomorrow's trial?
+
+</p>
+
+</div>
+
+<span>
+
+Yesterday
+
+</span>
+
+</article>
+
+</div>
+
+</aside>
+
+<!-- ================= CHAT WINDOW ================= -->
+
+<section
+class="academy-chat-window">
+
+<div
+class="academy-chat-header">
+
+<div>
+
+<h3>
+
+Rahul Sharma
+
+</h3>
+
+<p>
+
+Online
+
+</p>
+
+</div>
+
+<div>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-phone"></i>
+
+</button>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-video"></i>
+
+</button>
+
+<button
+class="academy-icon-button">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     CHAT MESSAGES
+========================================================== -->
+
+<div
+class="academy-chat-messages"
+id="academyChatMessages">
+
+<div
+class="academy-chat-date">
+
+Today
+
+</div>
+
+<!-- ================= RECEIVED ================= -->
+
+<div
+class="academy-message received">
+
+<img
+src="images/player1.jpg"
+alt="Player">
+
+<div
+class="academy-message-bubble">
+
+<p>
+
+Good morning Coach.
+
+I wanted to ask if I can join
+the fitness session tomorrow.
+
+</p>
+
+<span>
+
+09:15 AM
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ================= SENT ================= -->
+
+<div
+class="academy-message sent">
+
+<div
+class="academy-message-bubble">
+
+<p>
+
+Good morning Rahul.
+
+Yes, please report by
+8:30 AM at the academy.
+
+Bring your training kit.
+
+</p>
+
+<span>
+
+09:18 AM
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ================= RECEIVED ================= -->
+
+<div
+class="academy-message received">
+
+<img
+src="images/player1.jpg"
+alt="Player">
+
+<div
+class="academy-message-bubble">
+
+<p>
+
+Thank you coach.
+
+I'll be there on time.
+
+</p>
+
+<span>
+
+09:20 AM
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ================= ATTACHMENT ================= -->
+
+<div
+class="academy-message sent">
+
+<div
+class="academy-message-bubble">
+
+<div
+class="academy-file-card">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<div>
+
+<h5>
+
+Training Schedule.pdf
+
+</h5>
+
+<p>
+
+245 KB
+
+</p>
+
+</div>
+
+<button>
+
+Download
+
+</button>
+
+</div>
+
+<span>
+
+09:24 AM
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ================= TYPING ================= -->
+
+<div
+class="academy-typing-indicator">
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     MESSAGE COMPOSER
+========================================================== -->
+
+<div
+class="academy-message-composer">
+
+<button
+class="academy-icon-button"
+id="academyAttachFile">
+
+<i class="fa-solid fa-paperclip"></i>
+
+</button>
+
+<textarea
+id="academyMessageInput"
+placeholder="Type your message..."></textarea>
+
+<button
+class="academy-icon-button"
+id="academyEmojiButton">
+
+<i class="fa-regular fa-face-smile"></i>
+
+</button>
+
+<button
+class="academy-primary-button"
+id="academySendMessage">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Send
+
+</button>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ==========================================================
+     NEW MESSAGE MODAL
+========================================================== -->
+
+<div
+class="academy-modal"
+id="academyNewMessageModal"
+hidden>
+
+<div
+class="academy-modal-content academy-large-modal">
+
+<div
+class="academy-modal-header">
+
+<h2>
+
+New Message
+
+</h2>
+
+<button
+data-close-new-message>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<form
+class="academy-form-grid">
+
+<div>
+
+<label>
+
+Recipient
+
+</label>
+
+<select>
+
+<option>
+
+Select Player / Coach / Parent
+
+</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+
+Category
+
+</label>
+
+<select>
+
+<option>
+
+General
+
+</option>
+
+<option>
+
+Training
+
+</option>
+
+<option>
+
+Medical
+
+</option>
+
+<option>
+
+Trial
+
+</option>
+
+<option>
+
+Administration
+
+</option>
+
+</select>
+
+</div>
+
+<div
+style="grid-column:1/-1;">
+
+<label>
+
+Message
+
+</label>
+
+<textarea
+rows="8"></textarea>
+
+</div>
+
+</form>
+
+<div
+class="academy-modal-footer">
+
+<button
+class="academy-secondary-button"
+data-close-new-message>
+
+Cancel
+
+</button>
+
+<button
+class="academy-primary-button">
+
+Send Message
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     CONVERSATION INFO DRAWER
+========================================================== -->
+
+<aside
+class="academy-chat-info"
+id="academyChatInfo">
+
+<div
+class="academy-drawer-header">
+
+<h2>
+
+Conversation Details
+
+</h2>
+
+<button
+data-close-chat-info>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div
+class="academy-drawer-scroll">
+
+<div
+class="academy-player-summary">
+
+<img
+src="images/player1.jpg"
+alt="Player">
+
+<h3>
+
+Rahul Sharma
+
+</h3>
+
+<p>
+
+Midfielder • U17 Team
+
+</p>
+
+<span
+class="academy-status active">
+
+Online
+
+</span>
+
+</div>
+
+<!-- ================= CONTACT ================= -->
+
+<section
+class="academy-info-grid">
+
+<div>
+
+<label>
+
+Email
+
+</label>
+
+<strong>
+
+rahul@email.com
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Phone
+
+</label>
+
+<strong>
+
++91 XXXXX XXXXX
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Team
+
+</label>
+
+<strong>
+
+U17
+
+</strong>
+
+</div>
+
+<div>
+
+<label>
+
+Position
+
+</label>
+
+<strong>
+
+Midfielder
+
+</strong>
+
+</div>
+
+</section>
+
+<!-- ================= SHARED FILES ================= -->
+
+<section
+class="academy-documents">
+
+<h3>
+
+Shared Files
+
+</h3>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Training Schedule.pdf
+
+</button>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-image"></i>
+
+Fitness Plan.jpg
+
+</button>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-file-word"></i>
+
+Match Notes.docx
+
+</button>
+
+</section>
+
+<!-- ================= MEDIA ================= -->
+
+<section
+class="academy-documents">
+
+<h3>
+
+Shared Media
+
+</h3>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-image"></i>
+
+Training Photo
+
+</button>
+
+<button
+class="academy-secondary-button">
+
+<i class="fa-solid fa-video"></i>
+
+Practice Session.mp4
+
+</button>
+
+</section>
+
+</div>
+
+</aside>
+
+<!-- ==========================================================
+     DELETE CONVERSATION MODAL
+========================================================== -->
+
+<div
+class="academy-modal"
+id="academyDeleteConversationModal"
+hidden>
+
+<div
+class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Delete Conversation?
+
+</h2>
+
+<p>
+
+This conversation will be removed
+from your inbox.
+
+</p>
+
+<div
+class="academy-modal-footer">
+
+<button
+class="academy-secondary-button"
+data-close-delete-chat>
+
+Cancel
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyConfirmDeleteConversation">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div
+class="academy-modal"
+id="academyLogoutModal"
+hidden>
+
+<div
+class="academy-modal-content academy-small-modal">
+
+<h2>
+
+Logout?
+
+</h2>
+
+<p>
+
+Are you sure you want to logout?
+
+</p>
+
+<div
+class="academy-modal-footer">
+
+<button
+class="academy-secondary-button"
+data-close-logout>
+
+Cancel
+
+</button>
+
+<button
+class="academy-danger-button"
+id="academyConfirmLogout">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================================
+     TOAST CONTAINER
+========================================================== -->
+
+<div
+class="academy-toast-container"
+id="academyToastContainer"></div>
+
+</main>
+
+<!-- ==========================================================
+     BACKEND PLACEHOLDERS
+========================================================== -->
+
+<!--
+============================================================
+
+Backend Integration
+Mr. Harsh
+
+Required APIs
+
+GET     /api/messages
+GET     /api/messages/:conversationId
+POST    /api/messages/send
+POST    /api/messages/upload
+DELETE  /api/messages/:conversationId
+GET     /api/users/search
+
+Real-time:
+WebSocket / Socket.IO
+
+============================================================
+-->
+
+<script src="academy-messages.js"></script>
+
+</body>
+
+</html>

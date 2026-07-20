@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- =====================================================
+       DOCUMENT META
+  ====================================================== -->
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Manage coach profile, qualifications, experience and coaching information on FIFA Mission India."
+  />
+
+  <title>
+    Coach Profile | FIFA Mission India
+  </title>
+
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+
+  <!-- =====================================================
+       STYLESHEET
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="coach-profile.css"
+  />
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH SIDEBAR
+  ====================================================== -->
+
+  <aside
+    class="coach-sidebar"
+    id="coachSidebar"
+    aria-label="Coach portal navigation"
+  >
+
+    <!-- SIDEBAR HEADER -->
+
+    <div class="sidebar-header">
+
+      <a
+        href="../index.html"
+        class="sidebar-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <span class="brand-icon">
+          <i class="fa-solid fa-futbol"></i>
+        </span>
+
+        <span class="brand-text">
+          <strong>FIFA MISSION INDIA</strong>
+          <small>Coach Portal</small>
+        </span>
+
+      </a>
+
+      <button
+        class="sidebar-close-button"
+        id="sidebarCloseButton"
+        type="button"
+        aria-label="Close sidebar"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <!-- COACH SUMMARY -->
+
+    <div class="sidebar-coach-summary">
+
+      <div class="sidebar-coach-avatar">
+
+        <img
+          src="../images/coach-avatar.jpg"
+          alt="Coach Arjun Singh"
+          id="sidebarCoachAvatar"
+        />
+
+        <span
+          class="coach-online-indicator"
+          aria-label="Online"
+        ></span>
+
+      </div>
+
+      <div class="sidebar-coach-details">
+
+        <strong id="sidebarCoachName">
+          Arjun Singh
+        </strong>
+
+        <span id="sidebarCoachRole">
+          Head Coach
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <nav class="sidebar-navigation">
+
+      <span class="sidebar-navigation-label">
+        MAIN MENU
+      </span>
+
+      <a
+        href="coach-dashboard.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <a
+        href="coach-profile.html"
+        class="sidebar-link active"
+        aria-current="page"
+      >
+        <i class="fa-solid fa-user-tie"></i>
+        <span>Profile</span>
+      </a>
+
+      <a
+        href="coach-players.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-users"></i>
+        <span>Players</span>
+      </a>
+
+      <a
+        href="coach-training.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>Training</span>
+      </a>
+
+      <a
+        href="coach-schedule.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Schedule</span>
+      </a>
+
+      <a
+        href="coach-performance.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Performance</span>
+      </a>
+
+      <a
+        href="coach-trials.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-medal"></i>
+        <span>Trials</span>
+      </a>
+
+      <a
+        href="coach-messages.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-message"></i>
+        <span>Messages</span>
+
+        <span
+          class="sidebar-link-badge"
+          id="sidebarMessageCount"
+        >
+          4
+        </span>
+      </a>
+
+      <a
+        href="coach-documents.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-folder-open"></i>
+        <span>Documents</span>
+      </a>
+
+
+      <span class="sidebar-navigation-label sidebar-secondary-label">
+        ACCOUNT
+      </span>
+
+      <a
+        href="coach-settings.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+      </a>
+
+      <a
+        href="coach-help.html"
+        class="sidebar-link"
+      >
+        <i class="fa-solid fa-circle-question"></i>
+        <span>Help & Support</span>
+      </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR FOOTER -->
+
+    <div class="sidebar-footer">
+
+      <button
+        class="sidebar-logout-button"
+        id="sidebarLogoutButton"
+        type="button"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Logout</span>
+      </button>
+
+      <p>
+        FIFA Mission India ©
+        <span id="sidebarCurrentYear">2026</span>
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       COACH PORTAL WRAPPER
+  ====================================================== -->
+
+  <div class="coach-portal-wrapper">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <header class="coach-topbar">
+
+      <div class="topbar-left">
+
+        <button
+          class="mobile-menu-button"
+          id="mobileMenuButton"
+          type="button"
+          aria-label="Open sidebar"
+          aria-controls="coachSidebar"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-page-title">
+
+          <span class="page-eyebrow">
+            COACH PORTAL
+          </span>
+
+          <h1>
+            Coach Profile
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <button
+          class="topbar-icon-button"
+          id="searchToggleButton"
+          type="button"
+          aria-label="Open search"
+          aria-controls="profileSearchPanel"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+
+        <button
+          class="topbar-icon-button notification-button"
+          id="notificationButton"
+          type="button"
+          aria-label="Open notifications"
+          aria-controls="notificationPanel"
+          aria-expanded="false"
+        >
+
+          <i class="fa-regular fa-bell"></i>
+
+          <span
+            class="notification-indicator"
+            id="notificationIndicator"
+            aria-label="Unread notifications"
+          ></span>
+
+        </button>
+
+
+        <div class="coach-account-menu">
+
+          <button
+            class="coach-account-button"
+            id="coachAccountButton"
+            type="button"
+            aria-label="Open coach account menu"
+            aria-controls="coachAccountDropdown"
+            aria-expanded="false"
+          >
+
+            <img
+              src="../images/coach-avatar.jpg"
+              alt="Coach Arjun Singh"
+              id="topbarCoachAvatar"
+            />
+
+            <span class="coach-account-details">
+
+              <strong id="topbarCoachName">
+                Arjun Singh
+              </strong>
+
+              <small id="topbarCoachRole">
+                Head Coach
+              </small>
+
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-down account-chevron"
+              aria-hidden="true"
+            ></i>
+
+          </button>
+
+
+          <div
+            class="coach-account-dropdown"
+            id="coachAccountDropdown"
+            hidden
+          >
+
+            <a href="coach-profile.html">
+              <i class="fa-regular fa-user"></i>
+              View Profile
+            </a>
+
+            <a href="coach-settings.html">
+              <i class="fa-solid fa-gear"></i>
+              Account Settings
+            </a>
+
+            <button
+              id="accountLogoutButton"
+              type="button"
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Logout
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         SEARCH PANEL
+    ====================================================== -->
+
+    <section
+      class="profile-search-panel"
+      id="profileSearchPanel"
+      hidden
+    >
+
+      <form
+        class="profile-search-form"
+        id="profileSearchForm"
+        role="search"
+      >
+
+        <label
+          class="visually-hidden"
+          for="profileSearchInput"
+        >
+          Search profile information
+        </label>
+
+        <input
+          id="profileSearchInput"
+          type="search"
+          placeholder="Search qualifications, experience or achievements..."
+          autocomplete="off"
+        />
+
+        <button type="submit">
+          Search
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="coach-profile-main">
+
+
+      <!-- ===================================================
+           PROFILE HERO
+      ==================================================== -->
+
+      <section class="coach-profile-hero">
+
+        <div class="profile-cover-image">
+
+          <img
+            src="../images/coach-profile-cover.jpg"
+            alt=""
+            id="coachCoverPreview"
+          />
+
+          <div class="profile-cover-overlay"></div>
+
+          <label
+            class="cover-upload-button"
+            for="coachCoverUpload"
+          >
+            <i class="fa-solid fa-camera"></i>
+            Change Cover
+          </label>
+
+          <input
+            id="coachCoverUpload"
+            name="coachCover"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            hidden
+          />
+
+        </div>
+
+
+        <div class="profile-identity-section">
+
+          <div class="profile-avatar-wrapper">
+
+            <img
+              src="../images/coach-avatar.jpg"
+              alt="Coach Arjun Singh"
+              id="coachProfileAvatar"
+            />
+
+            <label
+              class="avatar-upload-button"
+              for="coachAvatarUpload"
+              aria-label="Change profile image"
+            >
+              <i class="fa-solid fa-camera"></i>
+            </label>
+
+            <input
+              id="coachAvatarUpload"
+              name="coachAvatar"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              hidden
+            />
+
+          </div>
+
+
+          <div class="profile-identity-content">
+
+            <div class="profile-name-row">
+
+              <div>
+
+                <span class="profile-role-label">
+                  PROFESSIONAL COACH PROFILE
+                </span>
+
+                <h2 id="profileDisplayName">
+                  Arjun Singh
+                </h2>
+
+                <p id="profileDisplayRole">
+                  Head Coach · Minerva Football Academy
+                </p>
+
+              </div>
+
+
+              <div class="profile-verification-badge">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                  Verified Coach
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="profile-meta-list">
+
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Chandigarh, India
+              </span>
+
+              <span>
+                <i class="fa-solid fa-language"></i>
+                English, Hindi, Punjabi
+              </span>
+
+              <span>
+                <i class="fa-solid fa-calendar-check"></i>
+                Member since January 2026
+              </span>
+
+            </div>
+
+
+            <div class="profile-hero-actions">
+
+              <button
+                class="primary-profile-button"
+                id="editProfileButton"
+                type="button"
+              >
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+              </button>
+
+              <button
+                class="secondary-profile-button"
+                id="previewProfileButton"
+                type="button"
+              >
+                <i class="fa-regular fa-eye"></i>
+                Preview Public Profile
+              </button>
+
+              <button
+                class="icon-profile-button"
+                id="shareProfileButton"
+                type="button"
+                aria-label="Share profile"
+              >
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           PROFILE COMPLETION
+      ==================================================== -->
+
+      <section
+        class="profile-completion-card"
+        aria-labelledby="profileCompletionTitle"
+      >
+
+        <div class="completion-icon">
+
+          <i class="fa-solid fa-user-check"></i>
+
+        </div>
+
+
+        <div class="completion-content">
+
+          <div class="completion-heading">
+
+            <div>
+
+              <span>
+                PROFILE STRENGTH
+              </span>
+
+              <h2 id="profileCompletionTitle">
+                Complete your professional profile
+              </h2>
+
+            </div>
+
+            <strong id="profileCompletionPercentage">
+              82%
+            </strong>
+
+          </div>
+
+          <p>
+            Add your coaching philosophy, latest certification and
+            professional references to improve your profile visibility.
+          </p>
+
+          <div
+            class="completion-progress-track"
+            role="progressbar"
+            aria-label="Profile completion"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="82"
+          >
+
+            <span
+              id="profileCompletionBar"
+              style="width: 82%;"
+            ></span>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="completion-action-button"
+          id="completeProfileButton"
+          type="button"
+        >
+          Complete Profile
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </section>
+
+
+      <!-- ===================================================
+           PROFILE CONTENT GRID
+      ==================================================== -->
+
+      <section class="profile-content-grid">
+
+
+        <!-- ===============================================
+             MAIN PROFILE COLUMN
+        ================================================ -->
+
+        <div class="profile-main-column">
+
+
+          <!-- =============================================
+               ABOUT COACH
+          ============================================== -->
+
+          <article
+            class="profile-card searchable-profile-section"
+            id="aboutSection"
+            data-search-section="about coaching biography philosophy"
+          >
+
+            <div class="profile-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  ABOUT
+                </span>
+
+                <h2>
+                  Professional Summary
+                </h2>
+
+              </div>
+
+              <button
+                class="card-edit-button"
+                type="button"
+                data-edit-section="about"
+              >
+                <i class="fa-solid fa-pen"></i>
+                Edit
+              </button>
+
+            </div>
+
+
+            <div class="profile-about-content">
+
+              <p id="coachBiography">
+                UEFA-licensed football coach with more than nine years of
+                experience in youth development, player assessment and
+                high-performance training. Passionate about building
+                disciplined, intelligent and technically confident players
+                prepared for elite competition.
+              </p>
+
+              <blockquote id="coachPhilosophy">
+                “My coaching philosophy is built around discipline,
+                creativity, teamwork and helping every player understand
+                the game beyond the ball.”
+              </blockquote>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               COACHING EXPERIENCE
+          ============================================== -->
+
+          <article
+            class="profile-card searchable-profile-section"
+            id="experienceSection"
+            data-search-section="experience career employment clubs academy"
+          >
+
+            <div class="profile-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  CAREER
+                </span>
+
+                <h2>
+                  Coaching Experience
+                </h2>
+
+              </div>
+
+              <button
+                class="card-add-button"
+                type="button"
+                data-add-section="experience"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add Experience
+              </button>
+
+            </div>
+
+
+            <div
+              class="experience-timeline"
+              id="experienceTimeline"
+            >
+
+
+              <article
+                class="experience-item"
+                data-experience-id="experience-001"
+              >
+
+                <div class="experience-logo">
+
+                  <img
+                    src="../images/minerva-logo.png"
+                    alt="Minerva Football Academy"
+                  />
+
+                </div>
+
+                <div class="experience-content">
+
+                  <div class="experience-heading">
+
+                    <div>
+
+                      <h3>
+                        Head Coach — Under-17 Elite Team
+                      </h3>
+
+                      <p>
+                        Minerva Football Academy
+                      </p>
+
+                    </div>
+
+                    <button
+                      class="item-options-button"
+                      type="button"
+                      aria-label="Experience options"
+                      data-item-options="experience-001"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </div>
+
+                  <div class="experience-meta">
+
+                    <span>
+                      <i class="fa-regular fa-calendar"></i>
+                      January 2024 – Present
+                    </span>
+
+                    <span>
+                      <i class="fa-solid fa-location-dot"></i>
+                      Chandigarh, India
+                    </span>
+
+                  </div>
+
+                  <p>
+                    Leading player development, tactical planning and match
+                    preparation for the academy’s elite Under-17 squad.
+                  </p>
+
+                  <div class="experience-tags">
+
+                    <span>Youth Development</span>
+                    <span>Tactical Coaching</span>
+                    <span>Player Assessment</span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <article
+                class="experience-item"
+                data-experience-id="experience-002"
+              >
+
+                <div class="experience-logo experience-logo-placeholder">
+
+                  <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div class="experience-content">
+
+                  <div class="experience-heading">
+
+                    <div>
+
+                      <h3>
+                        Assistant Coach
+                      </h3>
+
+                      <p>
+                        Punjab Youth Football Centre
+                      </p>
+
+                    </div>
+
+                    <button
+                      class="item-options-button"
+                      type="button"
+                      aria-label="Experience options"
+                      data-item-options="experience-002"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </div>
+
+                  <div class="experience-meta">
+
+                    <span>
+                      <i class="fa-regular fa-calendar"></i>
+                      July 2020 – December 2023
+                    </span>
+
+                    <span>
+                      <i class="fa-solid fa-location-dot"></i>
+                      Ludhiana, India
+                    </span>
+
+                  </div>
+
+                  <p>
+                    Supported technical development programmes, individual
+                    player reviews and regional youth competition planning.
+                  </p>
+
+                  <div class="experience-tags">
+
+                    <span>Technical Training</span>
+                    <span>Match Analysis</span>
+                    <span>Scouting</span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              <article
+                class="experience-item"
+                data-experience-id="experience-003"
+              >
+
+                <div class="experience-logo experience-logo-placeholder">
+
+                  <i class="fa-solid fa-futbol"></i>
+
+                </div>
+
+                <div class="experience-content">
+
+                  <div class="experience-heading">
+
+                    <div>
+
+                      <h3>
+                        Development Coach
+                      </h3>
+
+                      <p>
+                        City Football Grassroots Programme
+                      </p>
+
+                    </div>
+
+                    <button
+                      class="item-options-button"
+                      type="button"
+                      aria-label="Experience options"
+                      data-item-options="experience-003"
+                    >
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </div>
+
+                  <div class="experience-meta">
+
+                    <span>
+                      <i class="fa-regular fa-calendar"></i>
+                      June 2017 – June 2020
+                    </span>
+
+                    <span>
+                      <i class="fa-solid fa-location-dot"></i>
+                      New Delhi, India
+                    </span>
+
+                  </div>
+
+                  <p>
+                    Delivered structured grassroots sessions for players
+                    aged 10–15 and supported regional talent identification.
+                  </p>
+
+                  <div class="experience-tags">
+
+                    <span>Grassroots Football</span>
+                    <span>Talent Identification</span>
+                    <span>Mentoring</span>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               QUALIFICATIONS
+          ============================================== -->
+
+          <article
+            class="profile-card searchable-profile-section"
+            id="qualificationsSection"
+            data-search-section="qualifications licences licenses certificates certification education"
+          >
+
+            <div class="profile-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  CREDENTIALS
+                </span>
+
+                <h2>
+                  Licences & Qualifications
+                </h2>
+
+              </div>
+
+              <button
+                class="card-add-button"
+                type="button"
+                data-add-section="qualification"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add Qualification
+              </button>
+
+            </div>
+
+
+            <div
+              class="qualification-grid"
+              id="qualificationGrid"
+            >
+
+
+              <article
+                class="qualification-card"
+                data-qualification-id="qualification-001"
+              >
+
+                <div class="qualification-card-top">
+
+                  <span class="qualification-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                  </span>
+
+                  <span class="qualification-status verified">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Verified
+                  </span>
+
+                </div>
+
+                <h3>
+                  AFC A Coaching Licence
+                </h3>
+
+                <p>
+                  Asian Football Confederation
+                </p>
+
+                <div class="qualification-details">
+
+                  <span>
+                    Issued: March 2023
+                  </span>
+
+                  <span>
+                    Credential ID: AFC-A-92841
+                  </span>
+
+                </div>
+
+                <button
+                  class="qualification-view-button"
+                  type="button"
+                  data-view-qualification="qualification-001"
+                >
+                  View Credential
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+              </article>
+
+
+              <article
+                class="qualification-card"
+                data-qualification-id="qualification-002"
+              >
+
+                <div class="qualification-card-top">
+
+                  <span class="qualification-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                  </span>
+
+                  <span class="qualification-status verified">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Verified
+                  </span>
+
+                </div>
+
+                <h3>
+                  Sports First Aid Certification
+                </h3>
+
+                <p>
+                  National Sports Medical Council
+                </p>
+
+                <div class="qualification-details">
+
+                  <span>
+                    Issued: August 2025
+                  </span>
+
+                  <span>
+                    Expires: August 2027
+                  </span>
+
+                </div>
+
+                <button
+                  class="qualification-view-button"
+                  type="button"
+                  data-view-qualification="qualification-002"
+                >
+                  View Credential
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+              </article>
+
+
+              <article
+                class="qualification-card"
+                data-qualification-id="qualification-003"
+              >
+
+                <div class="qualification-card-top">
+
+                  <span class="qualification-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </span>
+
+                  <span class="qualification-status pending">
+                    <i class="fa-regular fa-clock"></i>
+                    Under Review
+                  </span>
+
+                </div>
+
+                <h3>
+                  Diploma in Sports Coaching
+                </h3>
+
+                <p>
+                  National Institute of Sports
+                </p>
+
+                <div class="qualification-details">
+
+                  <span>
+                    Completed: June 2017
+                  </span>
+
+                  <span>
+                    Document verification pending
+                  </span>
+
+                </div>
+
+                <button
+                  class="qualification-view-button"
+                  type="button"
+                  data-view-qualification="qualification-003"
+                >
+                  Review Details
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+              </article>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               ACHIEVEMENTS
+          ============================================== -->
+
+          <article
+            class="profile-card searchable-profile-section"
+            id="achievementsSection"
+            data-search-section="achievements honours awards tournaments results"
+          >
+
+            <div class="profile-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  MILESTONES
+                </span>
+
+                <h2>
+                  Coaching Achievements
+                </h2>
+
+              </div>
+
+              <button
+                class="card-add-button"
+                type="button"
+                data-add-section="achievement"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add Achievement
+              </button>
+
+            </div>
+
+
+            <div
+              class="achievement-list"
+              id="achievementList"
+            >
+
+
+              <article class="achievement-item">
+
+                <span class="achievement-icon trophy">
+                  <i class="fa-solid fa-trophy"></i>
+                </span>
+
+                <div>
+
+                  <h3>
+                    National Youth League Semi-Finalist
+                  </h3>
+
+                  <p>
+                    Guided the Under-17 team to the national semi-finals
+                    during the 2025 season.
+                  </p>
+
+                  <span>
+                    2025 · Minerva Football Academy
+                  </span>
+
+                </div>
+
+              </article>
+
+
+              <article class="achievement-item">
+
+                <span class="achievement-icon medal">
+                  <i class="fa-solid fa-medal"></i>
+                </span>
+
+                <div>
+
+                  <h3>
+                    Regional Youth Championship Winner
+                  </h3>
+
+                  <p>
+                    Won the Punjab regional championship with an unbeaten
+                    tournament record.
+                  </p>
+
+                  <span>
+                    2023 · Punjab Youth Football Centre
+                  </span>
+
+                </div>
+
+              </article>
+
+
+              <article class="achievement-item">
+
+                <span class="achievement-icon development">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </span>
+
+                <div>
+
+                  <h3>
+                    Seven Players Progressed to Elite Academies
+                  </h3>
+
+                  <p>
+                    Supported seven youth players in earning placements
+                    within elite football development programmes.
+                  </p>
+
+                  <span>
+                    2021–2024 · Player Development
+                  </span>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- ===============================================
+             PROFILE SIDEBAR COLUMN
+        ================================================ -->
+
+        <aside class="profile-side-column">
+
+
+          <!-- =============================================
+               CONTACT INFORMATION
+          ============================================== -->
+
+          <article
+            class="profile-card compact-profile-card searchable-profile-section"
+            id="contactSection"
+            data-search-section="contact email phone location availability"
+          >
+
+            <div class="profile-card-header compact-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  CONTACT
+                </span>
+
+                <h2>
+                  Contact Information
+                </h2>
+
+              </div>
+
+              <button
+                class="icon-card-edit-button"
+                type="button"
+                data-edit-section="contact"
+                aria-label="Edit contact information"
+              >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+            </div>
+
+
+            <div class="contact-information-list">
+
+              <div class="contact-information-item">
+
+                <span>
+                  <i class="fa-regular fa-envelope"></i>
+                </span>
+
+                <div>
+                  <small>Email</small>
+                  <strong id="coachEmail">
+                    arjun.singh@example.com
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="contact-information-item">
+
+                <span>
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+
+                <div>
+                  <small>Phone</small>
+                  <strong id="coachPhone">
+                    +91 98765 43210
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="contact-information-item">
+
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+
+                <div>
+                  <small>Location</small>
+                  <strong id="coachLocation">
+                    Chandigarh, India
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="contact-information-item">
+
+                <span>
+                  <i class="fa-regular fa-clock"></i>
+                </span>
+
+                <div>
+                  <small>Availability</small>
+                  <strong id="coachAvailability">
+                    Monday – Saturday
+                  </strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               COACHING SPECIALISATIONS
+          ============================================== -->
+
+          <article
+            class="profile-card compact-profile-card searchable-profile-section"
+            id="specialisationsSection"
+            data-search-section="specialisations specialties skills youth tactical technical"
+          >
+
+            <div class="profile-card-header compact-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  EXPERTISE
+                </span>
+
+                <h2>
+                  Coaching Specialisations
+                </h2>
+
+              </div>
+
+              <button
+                class="icon-card-edit-button"
+                type="button"
+                data-edit-section="specialisations"
+                aria-label="Edit coaching specialisations"
+              >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+            </div>
+
+
+            <div
+              class="specialisation-tags"
+              id="specialisationTags"
+            >
+
+              <span>
+                Youth Development
+              </span>
+
+              <span>
+                Tactical Analysis
+              </span>
+
+              <span>
+                Player Assessment
+              </span>
+
+              <span>
+                Technical Training
+              </span>
+
+              <span>
+                Match Preparation
+              </span>
+
+              <span>
+                Talent Identification
+              </span>
+
+              <span>
+                Team Leadership
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               PROFILE STATISTICS
+          ============================================== -->
+
+          <article class="profile-card compact-profile-card">
+
+            <div class="profile-card-header compact-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  CAREER SUMMARY
+                </span>
+
+                <h2>
+                  Coaching Statistics
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <div class="profile-statistics-grid">
+
+              <div class="profile-statistic-item">
+
+                <strong
+                  class="profile-statistic-value"
+                  data-count="9"
+                >
+                  9+
+                </strong>
+
+                <span>
+                  Years Experience
+                </span>
+
+              </div>
+
+
+              <div class="profile-statistic-item">
+
+                <strong
+                  class="profile-statistic-value"
+                  data-count="146"
+                >
+                  146
+                </strong>
+
+                <span>
+                  Players Coached
+                </span>
+
+              </div>
+
+
+              <div class="profile-statistic-item">
+
+                <strong
+                  class="profile-statistic-value"
+                  data-count="18"
+                >
+                  18
+                </strong>
+
+                <span>
+                  Competitions
+                </span>
+
+              </div>
+
+
+              <div class="profile-statistic-item">
+
+                <strong
+                  class="profile-statistic-value"
+                  data-count="7"
+                >
+                  7
+                </strong>
+
+                <span>
+                  Major Honours
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               LANGUAGES
+          ============================================== -->
+
+          <article
+            class="profile-card compact-profile-card searchable-profile-section"
+            id="languagesSection"
+            data-search-section="languages english hindi punjabi communication"
+          >
+
+            <div class="profile-card-header compact-card-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  COMMUNICATION
+                </span>
+
+                <h2>
+                  Languages
+                </h2>
+
+              </div>
+
+              <button
+                class="icon-card-edit-button"
+                type="button"
+                data-edit-section="languages"
+                aria-label="Edit languages"
+              >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+
+            </div>
+
+
+            <div class="language-list">
+
+              <div class="language-item">
+
+                <div>
+
+                  <strong>English</strong>
+                  <span>Professional proficiency</span>
+
+                </div>
+
+                <span class="language-level">
+                  Fluent
+                </span>
+
+              </div>
+
+
+              <div class="language-item">
+
+                <div>
+
+                  <strong>Hindi</strong>
+                  <span>Native proficiency</span>
+
+                </div>
+
+                <span class="language-level">
+                  Native
+                </span>
+
+              </div>
+
+
+              <div class="language-item">
+
+                <div>
+
+                  <strong>Punjabi</strong>
+                  <span>Native proficiency</span>
+
+                </div>
+
+                <span class="language-level">
+                  Native
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =============================================
+               PROFILE VISIBILITY
+          ============================================== -->
+
+          <article class="profile-visibility-card">
+
+            <div class="visibility-card-icon">
+
+              <i class="fa-solid fa-earth-asia"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                PUBLIC PROFILE
+              </span>
+
+              <h2>
+                Your profile is visible
+              </h2>
+
+              <p>
+                Academies, scouts and authorised platform members can
+                discover your coaching profile.
+              </p>
+
+            </div>
+
+            <label class="visibility-toggle">
+
+              <input
+                id="profileVisibilityToggle"
+                type="checkbox"
+                checked
+              />
+
+              <span class="visibility-toggle-track"></span>
+
+            </label>
+
+          </article>
+
+        </aside>
+
+      </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="coach-portal-footer">
+
+      <p>
+        © <span id="currentYear">2026</span>
+        FIFA Mission India. All rights reserved.
+      </p>
+
+      <div class="portal-footer-links">
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+        <a href="coach-help.html">
+          Support
+        </a>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICATION PANEL
+  ====================================================== -->
+
+  <aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-label="Notifications"
+    hidden
+  >
+
+    <div class="notification-panel-header">
+
+      <div>
+
+        <span>
+          COACH PORTAL
+        </span>
+
+        <h2>
+          Notifications
+        </h2>
+
+      </div>
+
+      <button
+        id="closeNotificationPanel"
+        type="button"
+        aria-label="Close notifications"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <div class="notification-panel-actions">
+
+      <button
+        id="markAllNotificationsRead"
+        type="button"
+      >
+        Mark all as read
+      </button>
+
+    </div>
+
+
+    <div
+      class="notification-list"
+      id="notificationList"
+    >
+
+
+      <article
+        class="notification-item unread"
+        data-notification-id="notification-001"
+      >
+
+        <span class="notification-type-icon">
+          <i class="fa-solid fa-certificate"></i>
+        </span>
+
+        <div>
+
+          <strong>
+            Qualification verification update
+          </strong>
+
+          <p>
+            Your sports coaching diploma is currently being reviewed.
+          </p>
+
+          <span>
+            18 minutes ago
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="notification-item unread"
+        data-notification-id="notification-002"
+      >
+
+        <span class="notification-type-icon">
+          <i class="fa-solid fa-user-check"></i>
+        </span>
+
+        <div>
+
+          <strong>
+            Profile completion reminder
+          </strong>
+
+          <p>
+            Add a professional reference to strengthen your coach profile.
+          </p>
+
+          <span>
+            2 hours ago
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="notification-item"
+        data-notification-id="notification-003"
+      >
+
+        <span class="notification-type-icon">
+          <i class="fa-solid fa-eye"></i>
+        </span>
+
+        <div>
+
+          <strong>
+            Profile viewed
+          </strong>
+
+          <p>
+            An authorised academy representative viewed your profile.
+          </p>
+
+          <span>
+            Yesterday
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       EDIT PROFILE MODAL
+  ====================================================== -->
+
+  <section
+    class="portal-modal"
+    id="editProfileModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="editProfileModalTitle"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-close-modal="editProfileModal"
+    ></div>
+
+
+    <div class="portal-modal-content profile-edit-modal-content">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span>
+            COACH PROFILE
+          </span>
+
+          <h2 id="editProfileModalTitle">
+            Edit Profile
+          </h2>
+
+        </div>
+
+        <button
+          class="modal-close-button"
+          type="button"
+          data-close-modal="editProfileModal"
+          aria-label="Close edit profile modal"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <form
+        class="profile-edit-form"
+        id="profileEditForm"
+      >
+
+        <div class="profile-form-grid">
+
+          <label>
+            First Name
+
+            <input
+              id="coachFirstName"
+              name="firstName"
+              type="text"
+              value="Arjun"
+              required
+            />
+          </label>
+
+
+          <label>
+            Last Name
+
+            <input
+              id="coachLastName"
+              name="lastName"
+              type="text"
+              value="Singh"
+              required
+            />
+          </label>
+
+
+          <label>
+            Professional Role
+
+            <input
+              id="coachProfessionalRole"
+              name="professionalRole"
+              type="text"
+              value="Head Coach"
+              required
+            />
+          </label>
+
+
+          <label>
+            Academy
+
+            <input
+              id="coachAcademy"
+              name="academy"
+              type="text"
+              value="Minerva Football Academy"
+            />
+          </label>
+
+
+          <label>
+            City
+
+            <input
+              id="coachCity"
+              name="city"
+              type="text"
+              value="Chandigarh"
+            />
+          </label>
+
+
+          <label>
+            Country
+
+            <select
+              id="coachCountry"
+              name="country"
+            >
+              <option value="India" selected>
+                India
+              </option>
+            </select>
+          </label>
+
+        </div>
+
+
+        <label class="full-width-form-field">
+          Professional Summary
+
+          <textarea
+            id="coachBiographyInput"
+            name="biography"
+            rows="6"
+            maxlength="800"
+          >UEFA-licensed football coach with more than nine years of experience in youth development, player assessment and high-performance training. Passionate about building disciplined, intelligent and technically confident players prepared for elite competition.</textarea>
+        </label>
+
+
+        <label class="full-width-form-field">
+          Coaching Philosophy
+
+          <textarea
+            id="coachPhilosophyInput"
+            name="philosophy"
+            rows="4"
+            maxlength="400"
+          >My coaching philosophy is built around discipline, creativity, teamwork and helping every player understand the game beyond the ball.</textarea>
+        </label>
+
+
+        <div class="portal-modal-actions">
+
+          <button
+            class="modal-cancel-button"
+            type="button"
+            data-close-modal="editProfileModal"
+          >
+            Cancel
+          </button>
+
+          <button
+            class="modal-confirm-button"
+            id="saveProfileButton"
+            type="submit"
+          >
+            Save Changes
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PUBLIC PROFILE PREVIEW MODAL
+  ====================================================== -->
+
+  <section
+    class="portal-modal"
+    id="profilePreviewModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="profilePreviewModalTitle"
+    hidden
+  >
+
+    <div
+      class="portal-modal-backdrop"
+      data-close-modal="profilePreviewModal"
+    ></div>
+
+
+    <div class="portal-modal-content preview-modal-content">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span>
+            PUBLIC VIEW
+          </span>
+
+          <h2 id="profilePreviewModalTitle">
+            Profile Preview
+          </h2>
+
+        </div>
+
+        <button
+          class="modal-close-button"
+          type="button"
+          data-close-modal="profilePreviewModal"
+          aria-label="Close profile preview"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div class="public-profile-preview">
+
+        <div class="preview-profile-cover">
+
+          <img
+            src="../images/coach-profile-cover.jpg"
+            alt=""
+            id="previewCoverImage"
+          />
+
+        </div>
+
+
+        <div class="preview-profile-identity">
+
+          <img
+            src="../images/coach-avatar.jpg"
+            alt="Coach Arjun Singh"
+            id="previewProfileAvatar"
+          />
+
+          <div>
+
+            <span>
+              VERIFIED COACH
+            </span>
+
+            <h3 id="previewProfileName">
+              Arjun Singh
+            </h3>
+
+            <p id="previewProfileRole">
+              Head Coach · Minerva Football Academy
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="preview-profile-summary">
+
+          <h4>
+            About
+          </h4>
+
+          <p id="previewBiography">
+            UEFA-licensed football coach with more than nine years of
+            experience in youth development, player assessment and
+            high-performance training.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       LOGOUT MODAL
+  ====================================================== -->
+
+  <section
+    class="portal-modal"
+    id="logoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="logoutModalTitle"
+    hidden
+  >
+
+    <div class="portal-modal-backdrop"></div>
+
+
+    <div class="portal-modal-content logout-modal-content">
+
+      <div class="logout-modal-icon">
+
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+      </div>
+
+      <h2 id="logoutModalTitle">
+        Logout from Coach Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to access your profile,
+        players and coaching tools.
+      </p>
+
+      <div class="portal-modal-actions">
+
+        <button
+          class="modal-cancel-button"
+          id="cancelLogoutButton"
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="modal-confirm-button logout-confirm-button"
+          id="confirmLogoutButton"
+          type="button"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TOAST NOTIFICATION
+  ====================================================== -->
+
+  <div
+    class="profile-toast"
+    id="profileToast"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="profileToastMessage">
+      Profile updated successfully.
+    </span>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="coach-profile.js"></script>
+
+</body>
+
+</html>

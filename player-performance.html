@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Track player development and football performance through FIFA Mission India."
+  >
+
+  <title>Player Performance | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/player-performance.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="performance-header">
+
+    <a
+      href="player-dashboard.html"
+      class="performance-brand"
+      aria-label="Return to player dashboard"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-copy">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Player Portal</span>
+
+      </div>
+
+    </a>
+
+
+    <nav
+      class="header-navigation"
+      aria-label="Player portal navigation"
+    >
+
+      <a href="player-dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="player-trials.html">
+        Trials
+      </a>
+
+      <a
+        href="player-performance.html"
+        class="active"
+        aria-current="page"
+      >
+        Performance
+      </a>
+
+      <a href="player-profile-edit.html">
+        Profile
+      </a>
+
+    </nav>
+
+
+    <a
+      href="player-dashboard.html"
+      class="dashboard-button"
+    >
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="performance-hero">
+
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">
+        PLAYER DEVELOPMENT
+      </span>
+
+      <h1>
+        Measure your progress. Improve your game.
+      </h1>
+
+      <p>
+        Review your football assessments, track development trends
+        and understand the areas that can take your performance
+        to the next level.
+      </p>
+
+    </div>
+
+
+    <div class="hero-score-card">
+
+      <span>
+        OVERALL PERFORMANCE
+      </span>
+
+      <div class="hero-score">
+
+        <strong id="heroPerformanceScore">
+          78
+        </strong>
+
+        <small>/100</small>
+
+      </div>
+
+      <p id="heroPerformanceChange">
+        +6 points this month
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="performance-main">
+
+    <!-- ================= FILTER BAR ================= -->
+
+    <section class="performance-toolbar">
+
+      <div>
+
+        <span class="section-eyebrow">
+          PERFORMANCE REPORT
+        </span>
+
+        <h2>
+          Player development overview
+        </h2>
+
+      </div>
+
+
+      <div class="toolbar-controls">
+
+        <label for="performancePeriod">
+          Period
+        </label>
+
+        <select id="performancePeriod">
+
+          <option value="month">
+            This Month
+          </option>
+
+          <option value="quarter">
+            Last 3 Months
+          </option>
+
+          <option value="year">
+            This Year
+          </option>
+
+        </select>
+
+      </div>
+
+    </section>
+
+
+<div class="performance-section-heading">
+
+  <div>
+
+    <span class="section-eyebrow">
+      PLAYER ANALYTICS
+    </span>
+
+    <h2>
+      Performance Overview
+    </h2>
+
+    <p>
+      Review your current technical, physical and tactical performance.
+    </p>
+
+  </div>
+
+  <a
+    href="player-achievements.html"
+    class="view-report-button"
+  >
+    View Achievements →
+  </a>
+
+</div>
+
+
+<!-- ================= PERFORMANCE CARDS ================= -->
+
+<section
+  class="performance-summary-grid"
+  id="performanceSummaryGrid">
+
+</section>
+
+    <!-- ================= ANALYTICS GRID ================= -->
+
+    <section class="analytics-grid">
+
+      <!-- ================= CHART ================= -->
+
+      <article class="performance-card chart-card">
+
+        <div class="card-header">
+
+          <div>
+
+            <span class="card-eyebrow">
+              DEVELOPMENT TREND
+            </span>
+
+            <h3>
+              Monthly progress
+            </h3>
+
+          </div>
+
+
+          <div class="chart-legend">
+
+            <span></span>
+
+            Performance score
+
+          </div>
+
+        </div>
+
+
+        <div class="chart-wrapper">
+
+          <div
+            class="performance-chart"
+            id="performanceChart"
+            role="img"
+            aria-label="Monthly player performance chart"
+          ></div>
+
+        </div>
+
+
+        <div
+          class="chart-labels"
+          id="chartLabels"
+        ></div>
+
+      </article>
+
+
+      <!-- ================= SCORE BREAKDOWN ================= -->
+
+      <article class="performance-card breakdown-card">
+
+        <div class="card-header">
+
+          <div>
+
+            <span class="card-eyebrow">
+              SCORE BREAKDOWN
+            </span>
+
+            <h3>
+              Assessment categories
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="breakdown-list"
+          id="breakdownList"
+        ></div>
+
+      </article>
+
+
+      <!-- ================= RECENT ASSESSMENTS ================= -->
+
+      <article class="performance-card assessments-card">
+
+        <div class="card-header">
+
+          <div>
+
+            <span class="card-eyebrow">
+              RECENT ACTIVITY
+            </span>
+
+            <h3>
+              Performance assessments
+            </h3>
+
+          </div>
+
+          <button
+            type="button"
+            class="text-button"
+            id="viewAllAssessmentsButton"
+          >
+            View All
+          </button>
+
+        </div>
+
+
+        <div
+          class="assessment-list"
+          id="assessmentList"
+        ></div>
+
+      </article>
+
+
+      <!-- ================= COACH FEEDBACK ================= -->
+
+      <article class="performance-card feedback-card">
+
+        <div class="card-header">
+
+          <div>
+
+            <span class="card-eyebrow">
+              COACH REVIEW
+            </span>
+
+            <h3>
+              Latest feedback
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <blockquote>
+
+          <p id="coachFeedbackText">
+            The player has shown strong technical improvement and
+            greater confidence while receiving the ball under pressure.
+            The next focus should be quicker decision-making and
+            consistent off-the-ball movement.
+          </p>
+
+          <footer>
+
+            <div class="coach-avatar">
+              AS
+            </div>
+
+            <div>
+
+              <strong id="coachName">
+                Coach Arjun Singh
+              </strong>
+
+              <span id="feedbackDate">
+                Assessment completed 12 July 2026
+              </span>
+
+            </div>
+
+          </footer>
+
+        </blockquote>
+
+      </article>
+
+
+      <!-- ================= DEVELOPMENT GOALS ================= -->
+
+      <article class="performance-card goals-card">
+
+        <div class="card-header">
+
+          <div>
+
+            <span class="card-eyebrow">
+              DEVELOPMENT PLAN
+            </span>
+
+            <h3>
+              Current goals
+            </h3>
+
+          </div>
+
+          <button
+            type="button"
+            class="text-button"
+            id="addGoalButton"
+          >
+            Add Goal
+          </button>
+
+        </div>
+
+
+        <div
+          class="goal-list"
+          id="goalList"
+        ></div>
+
+      </article>
+
+
+      <!-- ================= NEXT ASSESSMENT ================= -->
+
+      <article class="performance-card next-assessment-card">
+
+        <span class="card-eyebrow">
+          NEXT ASSESSMENT
+        </span>
+
+        <div class="assessment-date">
+
+          <strong>28</strong>
+
+          <span>JUL</span>
+
+        </div>
+
+        <h3>
+          Technical and physical review
+        </h3>
+
+        <p>
+          Dimapur Regional Training Centre
+        </p>
+
+        <div class="assessment-meta">
+
+          <span>
+            10:30 AM
+          </span>
+
+          <span>
+            90 minutes
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          id="assessmentDetailsButton"
+        >
+          View Assessment Details
+        </button>
+
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= GOAL MODAL ================= -->
+
+  <div
+    class="modal-backdrop"
+    id="goalModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="goalModalTitle"
+    hidden
+  >
+
+    <div class="goal-modal">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="goalModalCloseButton"
+        aria-label="Close goal form"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-heading">
+
+        <span class="card-eyebrow">
+          PLAYER DEVELOPMENT
+        </span>
+
+        <h2 id="goalModalTitle">
+          Add a new goal
+        </h2>
+
+        <p>
+          Create a measurable football development target.
+        </p>
+
+      </div>
+
+
+      <form
+        id="goalForm"
+        novalidate
+      >
+
+        <div class="form-group">
+
+          <label for="goalTitle">
+            Goal title
+          </label>
+
+          <input
+            type="text"
+            id="goalTitle"
+            maxlength="80"
+            placeholder="Example: Improve passing accuracy"
+            required
+          >
+
+          <small class="error-message"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="goalCategory">
+            Category
+          </label>
+
+          <select
+            id="goalCategory"
+            required
+          >
+
+            <option value="">
+              Select category
+            </option>
+
+            <option value="Technical">
+              Technical
+            </option>
+
+            <option value="Physical">
+              Physical
+            </option>
+
+            <option value="Tactical">
+              Tactical
+            </option>
+
+            <option value="Mental">
+              Mental
+            </option>
+
+            <option value="Discipline">
+              Discipline
+            </option>
+
+          </select>
+
+          <small class="error-message"></small>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="goalTargetDate">
+            Target date
+          </label>
+
+          <input
+            type="date"
+            id="goalTargetDate"
+            required
+          >
+
+          <small class="error-message"></small>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="secondary-button"
+            id="goalCancelButton"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="primary-button"
+          >
+            Add Goal
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/player-performance.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View player profile, football statistics, achievements, match performances and development journey."
+  >
+
+  <title>Player Profile | FIFA Mission India</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- PAGE CSS -->
+
+  <link
+    rel="stylesheet"
+    href="css/player-profile.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ACCESSIBILITY
+  ====================================================== -->
+
+  <a
+    href="#mainContent"
+    class="skip-link"
+  >
+    Skip to player profile
+  </a>
+
+
+  <!-- =====================================================
+       PAGE LOADER
+  ====================================================== -->
+
+  <div
+    class="page-loader"
+    id="pageLoader"
+    aria-hidden="true"
+  >
+
+    <div class="loader-ball"></div>
+
+    <p>Loading player profile...</p>
+
+  </div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="profile-navbar"
+    id="profileNavbar"
+  >
+
+    <div class="profile-navbar-container">
+
+      <a
+        href="index.html"
+        class="profile-brand"
+        aria-label="FIFA Mission India homepage"
+      >
+
+        <span
+          class="profile-brand-icon"
+          aria-hidden="true"
+        >
+          ⚽
+        </span>
+
+        <span class="profile-brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <small>
+            Building India’s Football Future
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav
+        class="profile-navbar-links"
+        aria-label="Player profile navigation"
+      >
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="player.html">
+          Players
+        </a>
+
+        <a href="#performance">
+          Performance
+        </a>
+
+        <a href="#achievements">
+          Achievements
+        </a>
+
+      </nav>
+
+
+      <div class="profile-navbar-actions">
+
+        <a
+          href="login.html"
+          class="profile-login-link"
+        >
+          Login
+        </a>
+
+        <a
+          href="player-register.html"
+          class="profile-join-button"
+        >
+          Join the Mission
+        </a>
+
+        <button
+          class="profile-menu-button"
+          id="profileMenuButton"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="profileMobileMenu"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+      class="profile-mobile-menu"
+      id="profileMobileMenu"
+      hidden
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="player.html">
+        Players
+      </a>
+
+      <a href="#overview">
+        Overview
+      </a>
+
+      <a href="#performance">
+        Performance
+      </a>
+
+      <a href="#achievements">
+        Achievements
+      </a>
+
+      <a href="#highlights">
+        Highlights
+      </a>
+
+      <a href="login.html">
+        Login
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main
+    id="mainContent"
+    data-player-id=""
+  >
+
+
+    <!-- =====================================================
+         PLAYER HERO
+    ====================================================== -->
+
+    <section
+      class="player-profile-hero"
+      id="overview"
+    >
+
+      <div
+        class="player-hero-background"
+        aria-hidden="true"
+      ></div>
+
+      <div class="player-profile-container">
+
+        <div class="player-profile-breadcrumb">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <a href="player.html">
+            Players
+          </a>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <span id="breadcrumbPlayerName">
+            Arjun Sharma
+          </span>
+
+        </div>
+
+
+        <div class="player-hero-grid">
+
+          <!-- PLAYER IMAGE -->
+
+          <div class="player-profile-photo-column">
+
+            <div class="player-profile-photo-card">
+
+              <div class="player-profile-photo">
+
+                <img
+                  id="playerProfileImage"
+                  src="images/player1.jpg"
+                  alt="Arjun Sharma football player profile"
+                  width="800"
+                  height="1000"
+                >
+
+                <div
+                  class="player-photo-gradient"
+                  aria-hidden="true"
+                ></div>
+
+                <span
+                  class="player-profile-position"
+                  id="playerPositionBadge"
+                >
+                  CAM
+                </span>
+
+                <span
+                  class="player-profile-status"
+                  id="playerAvailabilityStatus"
+                >
+                  Available for scouting
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PLAYER INTRODUCTION -->
+
+          <div class="player-profile-introduction">
+
+            <div class="player-profile-eyebrow">
+
+              <span class="player-country">
+
+                <span aria-hidden="true">
+                  🇮🇳
+                </span>
+
+                India
+
+              </span>
+
+              <span class="player-verified">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9.2 12.6L11.1 14.5L15.2 10.2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <path
+                    d="M12 2.8L14.1 4.3L16.7 4.1L17.5 6.6L19.7 8L18.9 10.5L19.7 13L17.5 14.4L16.7 16.9L14.1 16.7L12 18.2L9.9 16.7L7.3 16.9L6.5 14.4L4.3 13L5.1 10.5L4.3 8L6.5 6.6L7.3 4.1L9.9 4.3L12 2.8Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                Verified Player
+
+              </span>
+
+            </div>
+
+
+            <h1 id="playerName">
+              Arjun Sharma
+            </h1>
+
+            <p
+              class="player-profile-role"
+              id="playerRole"
+            >
+              Attacking Midfielder
+            </p>
+
+
+            <div class="player-academy-line">
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 21C12 21 19 15.3 19 9.5C19 5.9 15.9 3 12 3C8.1 3 5 5.9 5 9.5C5 15.3 12 21 12 21Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+
+                <circle
+                  cx="12"
+                  cy="9.5"
+                  r="2.4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+
+              <span id="playerAcademy">
+                Delhi Football Academy
+              </span>
+
+            </div>
+
+
+            <p
+              class="player-profile-summary"
+              id="playerSummary"
+            >
+              A technically gifted attacking midfielder known for creativity,
+              close control and the ability to create opportunities in the
+              final third. Focused on continuous development and progressing
+              towards professional football.
+            </p>
+
+
+            <!-- QUICK INFORMATION -->
+
+            <div class="player-quick-information">
+
+              <div class="player-quick-item">
+
+                <span>
+                  Age
+                </span>
+
+                <strong id="playerAge">
+                  18
+                </strong>
+
+              </div>
+
+              <div class="player-quick-item">
+
+                <span>
+                  State
+                </span>
+
+                <strong id="playerState">
+                  Delhi
+                </strong>
+
+              </div>
+
+              <div class="player-quick-item">
+
+                <span>
+                  Preferred Foot
+                </span>
+
+                <strong id="playerFoot">
+                  Right
+                </strong>
+
+              </div>
+
+              <div class="player-quick-item">
+
+                <span>
+                  Jersey Number
+                </span>
+
+                <strong id="playerJersey">
+                  10
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <!-- HERO ACTIONS -->
+
+            <div class="player-profile-actions">
+
+              <a
+                href="#highlights"
+                class="player-primary-action"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 7L17 12L9 17V7Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+                Watch Highlights
+
+              </a>
+
+              <button
+                class="player-secondary-action"
+                id="shareProfileButton"
+                type="button"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="18"
+                    cy="5"
+                    r="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+
+                  <circle
+                    cx="6"
+                    cy="12"
+                    r="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+
+                  <circle
+                    cx="18"
+                    cy="19"
+                    r="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+
+                  <path
+                    d="M8.3 10.8L15.7 6.2M8.3 13.2L15.7 17.8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                </svg>
+
+                Share Profile
+
+              </button>
+
+            </div>
+
+
+            <!-- RATING -->
+
+            <div class="player-profile-rating">
+
+              <div class="player-rating-score">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3.8L14.5 8.9L20.1 9.7L16.1 13.6L17 19.2L12 16.6L7 19.2L7.9 13.6L3.9 9.7L9.5 8.9L12 3.8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+                <strong id="playerRating">
+                  4.8
+                </strong>
+
+                <span>
+                  Player Rating
+                </span>
+
+              </div>
+
+              <p>
+                Based on verified match and academy evaluations.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROFILE NAVIGATION
+    ====================================================== -->
+
+    <nav
+      class="player-section-navigation"
+      aria-label="Profile sections"
+    >
+
+      <div class="player-profile-container">
+
+        <a
+          href="#about"
+          class="profile-section-link active"
+        >
+          About
+        </a>
+
+        <a
+          href="#performance"
+          class="profile-section-link"
+        >
+          Performance
+        </a>
+
+        <a
+          href="#matches"
+          class="profile-section-link"
+        >
+          Matches
+        </a>
+
+        <a
+          href="#achievements"
+          class="profile-section-link"
+        >
+          Achievements
+        </a>
+
+        <a
+          href="#highlights"
+          class="profile-section-link"
+        >
+          Highlights
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         ABOUT PLAYER
+    ====================================================== -->
+
+    <section
+      class="player-profile-section"
+      id="about"
+    >
+
+      <div class="player-profile-container">
+
+        <div class="player-profile-content-grid">
+
+          <div class="player-profile-main-column">
+
+            <div class="profile-content-card reveal">
+
+              <div class="profile-card-heading">
+
+                <div>
+
+                  <span>
+                    Player Story
+                  </span>
+
+                  <h2>
+                    About the Player
+                  </h2>
+
+                </div>
+
+              </div>
+
+              <div
+                class="player-biography"
+                id="playerBiography"
+              >
+
+                <p>
+                  Arjun began playing football at a young age and quickly
+                  developed a passion for attacking play. His ability to
+                  control the tempo, identify passing opportunities and
+                  operate between defensive lines has made him a promising
+                  midfield talent.
+                </p>
+
+                <p>
+                  He currently trains with Delhi Football Academy, where he
+                  continues to improve his technical, tactical and physical
+                  abilities. His long-term goal is to represent India and
+                  compete at the highest professional level.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- PLAYING STYLE -->
+
+            <div class="profile-content-card reveal">
+
+              <div class="profile-card-heading">
+
+                <div>
+
+                  <span>
+                    Technical Identity
+                  </span>
+
+                  <h2>
+                    Playing Style
+                  </h2>
+
+                </div>
+
+              </div>
+
+              <div class="player-style-tags">
+
+                <span>
+                  Creative Playmaker
+                </span>
+
+                <span>
+                  Close Control
+                </span>
+
+                <span>
+                  Through Passing
+                </span>
+
+                <span>
+                  Set Pieces
+                </span>
+
+                <span>
+                  Final-Third Movement
+                </span>
+
+              </div>
+
+              <p class="player-style-description">
+                Prefers operating centrally behind the striker, receiving
+                possession between the lines and creating chances through
+                intelligent passing and movement.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- SIDEBAR -->
+
+          <aside class="player-profile-sidebar">
+
+            <div class="profile-sidebar-card reveal">
+
+              <h2>
+                Player Information
+              </h2>
+
+              <dl class="player-information-list">
+
+                <div>
+                  <dt>
+                    Full Name
+                  </dt>
+
+                  <dd id="playerFullName">
+                    Arjun Sharma
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Date of Birth
+                  </dt>
+
+                  <dd id="playerDateOfBirth">
+                    18 August 2008
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Height
+                  </dt>
+
+                  <dd id="playerHeight">
+                    174 cm
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Weight
+                  </dt>
+
+                  <dd id="playerWeight">
+                    66 kg
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Primary Position
+                  </dt>
+
+                  <dd id="playerPrimaryPosition">
+                    Attacking Midfielder
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Secondary Position
+                  </dt>
+
+                  <dd id="playerSecondaryPosition">
+                    Central Midfielder
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Preferred Foot
+                  </dt>
+
+                  <dd id="playerPreferredFoot">
+                    Right
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>
+                    Current Academy
+                  </dt>
+
+                  <dd id="playerCurrentAcademy">
+                    Delhi Football Academy
+                  </dd>
+                </div>
+
+              </dl>
+
+            </div>
+
+
+            <div class="profile-sidebar-card profile-contact-card reveal">
+
+              <div class="profile-contact-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 7L12 13L20 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                </svg>
+
+              </div>
+
+              <h2>
+                Interested in this player?
+              </h2>
+
+              <p>
+                Registered scouts and academies can submit a verified enquiry.
+              </p>
+
+              <button
+                class="player-enquiry-button"
+                id="playerEnquiryButton"
+                type="button"
+              >
+                Send Scout Enquiry
+              </button>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PERFORMANCE
+    ====================================================== -->
+
+    <section
+      class="player-profile-section player-performance-section"
+      id="performance"
+    >
+
+      <div class="player-profile-container">
+
+        <div class="profile-section-heading reveal">
+
+          <div>
+
+            <span>
+              Current Season
+            </span>
+
+            <h2>
+              Performance Overview
+            </h2>
+
+          </div>
+
+          <p>
+            Verified performance statistics from academy and competitive
+            matches.
+          </p>
+
+        </div>
+
+
+        <div class="player-statistics-grid">
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Appearances
+            </span>
+
+            <strong
+              class="player-stat-number"
+              data-count="22"
+            >
+              22
+            </strong>
+
+            <small>
+              Matches played
+            </small>
+
+          </article>
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Goals
+            </span>
+
+            <strong
+              class="player-stat-number"
+              data-count="9"
+            >
+              9
+            </strong>
+
+            <small>
+              Current season
+            </small>
+
+          </article>
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Assists
+            </span>
+
+            <strong
+              class="player-stat-number"
+              data-count="12"
+            >
+              12
+            </strong>
+
+            <small>
+              Current season
+            </small>
+
+          </article>
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Pass Accuracy
+            </span>
+
+            <strong>
+              86%
+            </strong>
+
+            <small>
+              Average accuracy
+            </small>
+
+          </article>
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Minutes
+            </span>
+
+            <strong>
+              1,684
+            </strong>
+
+            <small>
+              Total minutes
+            </small>
+
+          </article>
+
+          <article class="player-stat-card reveal">
+
+            <span>
+              Player Rating
+            </span>
+
+            <strong>
+              4.8
+            </strong>
+
+            <small>
+              Out of 5
+            </small>
+
+          </article>
+
+        </div>
+
+
+        <!-- ATTRIBUTE RATINGS -->
+
+        <div class="player-attributes-card reveal">
+
+          <div class="profile-card-heading">
+
+            <div>
+
+              <span>
+                Development Analysis
+              </span>
+
+              <h2>
+                Player Attributes
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <div class="player-attributes-grid">
+
+            <div
+              class="player-attribute"
+              data-value="88"
+            >
+
+              <div>
+                <span>
+                  Ball Control
+                </span>
+
+                <strong>
+                  88
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+            <div
+              class="player-attribute"
+              data-value="86"
+            >
+
+              <div>
+                <span>
+                  Passing
+                </span>
+
+                <strong>
+                  86
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+            <div
+              class="player-attribute"
+              data-value="82"
+            >
+
+              <div>
+                <span>
+                  Dribbling
+                </span>
+
+                <strong>
+                  82
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+            <div
+              class="player-attribute"
+              data-value="75"
+            >
+
+              <div>
+                <span>
+                  Shooting
+                </span>
+
+                <strong>
+                  75
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+            <div
+              class="player-attribute"
+              data-value="79"
+            >
+
+              <div>
+                <span>
+                  Pace
+                </span>
+
+                <strong>
+                  79
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+            <div
+              class="player-attribute"
+              data-value="81"
+            >
+
+              <div>
+                <span>
+                  Vision
+                </span>
+
+                <strong>
+                  81
+                </strong>
+              </div>
+
+              <div class="attribute-progress">
+                <span></span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RECENT MATCHES
+    ====================================================== -->
+
+    <section
+      class="player-profile-section"
+      id="matches"
+    >
+
+      <div class="player-profile-container">
+
+        <div class="profile-section-heading reveal">
+
+          <div>
+
+            <span>
+              Match Record
+            </span>
+
+            <h2>
+              Recent Performances
+            </h2>
+
+          </div>
+
+          <a
+            href="player-performance.html"
+            class="profile-heading-link"
+          >
+            View Full Performance
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </div>
+
+
+        <div class="player-match-list">
+
+          <article class="player-match-card reveal">
+
+            <div class="player-match-date">
+
+              <span>
+                14
+              </span>
+
+              <small>
+                JUL
+              </small>
+
+            </div>
+
+            <div class="player-match-opponents">
+
+              <strong>
+                Delhi Football Academy
+              </strong>
+
+              <span>
+                vs
+              </span>
+
+              <strong>
+                North East Youth FC
+              </strong>
+
+            </div>
+
+            <div class="player-match-score">
+              3–1
+            </div>
+
+            <div class="player-match-performance">
+
+              <span>
+                1 Goal
+              </span>
+
+              <span>
+                2 Assists
+              </span>
+
+              <strong>
+                8.7
+              </strong>
+
+            </div>
+
+          </article>
+
+
+          <article class="player-match-card reveal">
+
+            <div class="player-match-date">
+
+              <span>
+                07
+              </span>
+
+              <small>
+                JUL
+              </small>
+
+            </div>
+
+            <div class="player-match-opponents">
+
+              <strong>
+                Delhi Football Academy
+              </strong>
+
+              <span>
+                vs
+              </span>
+
+              <strong>
+                Capital Football Club
+              </strong>
+
+            </div>
+
+            <div class="player-match-score">
+              2–2
+            </div>
+
+            <div class="player-match-performance">
+
+              <span>
+                1 Assist
+              </span>
+
+              <span>
+                86% Passing
+              </span>
+
+              <strong>
+                7.9
+              </strong>
+
+            </div>
+
+          </article>
+
+
+          <article class="player-match-card reveal">
+
+            <div class="player-match-date">
+
+              <span>
+                29
+              </span>
+
+              <small>
+                JUN
+              </small>
+
+            </div>
+
+            <div class="player-match-opponents">
+
+              <strong>
+                Delhi Football Academy
+              </strong>
+
+              <span>
+                vs
+              </span>
+
+              <strong>
+                National Youth Centre
+              </strong>
+
+            </div>
+
+            <div class="player-match-score">
+              4–0
+            </div>
+
+            <div class="player-match-performance">
+
+              <span>
+                2 Goals
+              </span>
+
+              <span>
+                Player of the Match
+              </span>
+
+              <strong>
+                9.1
+              </strong>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACHIEVEMENTS
+    ====================================================== -->
+
+    <section
+      class="player-profile-section player-achievements-section"
+      id="achievements"
+    >
+
+      <div class="player-profile-container">
+
+        <div class="profile-section-heading reveal">
+
+          <div>
+
+            <span>
+              Career Milestones
+            </span>
+
+            <h2>
+              Achievements
+            </h2>
+
+          </div>
+
+          <a
+            href="player-achievements.html"
+            class="profile-heading-link"
+          >
+            View All Achievements
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </div>
+
+
+        <div class="player-achievements-grid">
+
+          <article class="player-achievement-card reveal">
+
+            <div class="achievement-icon">
+              🏆
+            </div>
+
+            <span>
+              2026
+            </span>
+
+            <h3>
+              Tournament Champion
+            </h3>
+
+            <p>
+              Won the Delhi Youth Football Championship with his academy.
+            </p>
+
+          </article>
+
+          <article class="player-achievement-card reveal">
+
+            <div class="achievement-icon">
+              ⭐
+            </div>
+
+            <span>
+              2026
+            </span>
+
+            <h3>
+              Best Midfielder
+            </h3>
+
+            <p>
+              Recognised as the tournament’s leading attacking midfielder.
+            </p>
+
+          </article>
+
+          <article class="player-achievement-card reveal">
+
+            <div class="achievement-icon">
+              ⚽
+            </div>
+
+            <span>
+              2025
+            </span>
+
+            <h3>
+              Academy Top Creator
+            </h3>
+
+            <p>
+              Recorded the highest number of assists during the academy season.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VIDEO HIGHLIGHTS
+    ====================================================== -->
+
+    <section
+      class="player-profile-section"
+      id="highlights"
+    >
+
+      <div class="player-profile-container">
+
+        <div class="profile-section-heading reveal">
+
+          <div>
+
+            <span>
+              Player Media
+            </span>
+
+            <h2>
+              Video Highlights
+            </h2>
+
+          </div>
+
+          <p>
+            Match clips, technical highlights and development footage.
+          </p>
+
+        </div>
+
+
+        <div class="player-highlights-grid">
+
+          <article
+            class="player-highlight-card reveal"
+            data-video-src="videos/player-highlight-1.mp4"
+          >
+
+            <div class="highlight-thumbnail">
+
+              <img
+                src="images/player-highlight-1.jpg"
+                alt="Arjun Sharma match highlights"
+                loading="lazy"
+                width="1000"
+                height="600"
+              >
+
+              <button
+                class="highlight-play-button"
+                type="button"
+                aria-label="Play match highlights"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 7L17 12L9 17V7Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+              </button>
+
+              <span class="highlight-duration">
+                03:42
+              </span>
+
+            </div>
+
+            <div class="highlight-content">
+
+              <span>
+                Match Highlights
+              </span>
+
+              <h3>
+                Creative Midfield Performance
+              </h3>
+
+              <p>
+                Goals, assists and key attacking moments from the latest
+                academy fixture.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="player-highlight-card reveal"
+            data-video-src="videos/player-highlight-2.mp4"
+          >
+
+            <div class="highlight-thumbnail">
+
+              <img
+                src="images/player-highlight-2.jpg"
+                alt="Arjun Sharma technical training highlights"
+                loading="lazy"
+                width="1000"
+                height="600"
+              >
+
+              <button
+                class="highlight-play-button"
+                type="button"
+                aria-label="Play training highlights"
+              >
+
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 7L17 12L9 17V7Z"
+                    fill="currentColor"
+                  />
+                </svg>
+
+              </button>
+
+              <span class="highlight-duration">
+                02:18
+              </span>
+
+            </div>
+
+            <div class="highlight-content">
+
+              <span>
+                Training
+              </span>
+
+              <h3>
+                Technical Development Session
+              </h3>
+
+              <p>
+                Ball control, passing combinations and final-third decision
+                making.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PLAYER CTA
+    ====================================================== -->
+
+    <section class="player-profile-cta">
+
+      <div class="player-profile-container">
+
+        <div class="player-profile-cta-content reveal">
+
+          <div>
+
+            <span>
+              Discover India’s Football Talent
+            </span>
+
+            <h2>
+              Explore More Rising Players
+            </h2>
+
+            <p>
+              Discover promising footballers from academies and communities
+              across India.
+            </p>
+
+          </div>
+
+          <a
+            href="player.html"
+            class="player-profile-cta-button"
+          >
+            Explore All Players
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       VIDEO MODAL
+  ====================================================== -->
+
+  <div
+    class="profile-modal"
+    id="videoModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="videoModalTitle"
+    hidden
+  >
+
+    <div
+      class="profile-modal-backdrop"
+      data-close-modal
+    ></div>
+
+    <div class="profile-video-modal-content">
+
+      <div class="profile-modal-header">
+
+        <h2 id="videoModalTitle">
+          Player Highlight
+        </h2>
+
+        <button
+          class="profile-modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close video"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <video
+        id="profileHighlightVideo"
+        controls
+        playsinline
+      ></video>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SCOUT ENQUIRY MODAL
+  ====================================================== -->
+
+  <div
+    class="profile-modal"
+    id="enquiryModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="enquiryModalTitle"
+    hidden
+  >
+
+    <div
+      class="profile-modal-backdrop"
+      data-close-enquiry
+    ></div>
+
+    <div class="profile-enquiry-modal-content">
+
+      <div class="profile-modal-header">
+
+        <div>
+
+          <span>
+            Verified Enquiry
+          </span>
+
+          <h2 id="enquiryModalTitle">
+            Contact Player
+          </h2>
+
+        </div>
+
+        <button
+          class="profile-modal-close"
+          type="button"
+          data-close-enquiry
+          aria-label="Close enquiry form"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <form
+        class="player-enquiry-form"
+        id="playerEnquiryForm"
+        novalidate
+      >
+
+        <div class="enquiry-form-grid">
+
+          <label>
+            Full Name
+
+            <input
+              id="enquiryName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </label>
+
+          <label>
+            Email Address
+
+            <input
+              id="enquiryEmail"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </label>
+
+          <label>
+            Organisation
+
+            <input
+              id="enquiryOrganisation"
+              name="organisation"
+              type="text"
+              required
+            >
+          </label>
+
+          <label>
+            Role
+
+            <select
+              id="enquiryRole"
+              name="role"
+              required
+            >
+              <option value="">
+                Select your role
+              </option>
+
+              <option value="scout">
+                Scout
+              </option>
+
+              <option value="academy">
+                Academy Representative
+              </option>
+
+              <option value="club">
+                Club Representative
+              </option>
+
+              <option value="coach">
+                Coach
+              </option>
+
+              <option value="other">
+                Other
+              </option>
+            </select>
+          </label>
+
+        </div>
+
+        <label>
+          Message
+
+          <textarea
+            id="enquiryMessage"
+            name="message"
+            rows="5"
+            required
+            placeholder="Explain why you are interested in this player."
+          ></textarea>
+        </label>
+
+        <p class="enquiry-privacy-note">
+          Personal player contact information is protected. Enquiries will be
+          reviewed by authorised administrators before being shared.
+        </p>
+
+        <div class="enquiry-form-actions">
+
+          <button
+            type="button"
+            class="enquiry-cancel-button"
+            data-close-enquiry
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="enquiry-submit-button"
+          >
+            Submit Enquiry
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICATION
+  ====================================================== -->
+
+  <div
+    class="profile-notification"
+    id="profileNotification"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="player-profile-footer">
+
+    <div class="player-profile-container">
+
+      <div class="player-profile-footer-content">
+
+        <div>
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <p>
+            Building a stronger pathway for Indian football talent.
+          </p>
+
+        </div>
+
+        <nav aria-label="Footer navigation">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="player.html">
+            Players
+          </a>
+
+          <a href="index.html#vision">
+            Vision 2034
+          </a>
+
+          <a href="index.html#join-mission">
+            Join the Mission
+          </a>
+
+        </nav>
+
+      </div>
+
+      <div class="player-profile-footer-bottom">
+
+        <p>
+          © <span id="currentYear"></span> FIFA Mission India. All rights
+          reserved.
+        </p>
+
+        <a href="#overview">
+          Back to top ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- PAGE JAVASCRIPT -->
+
+  <script
+    src="js/player-profile.js"
+    defer
+  ></script>
+
+</body>
+
+</html>

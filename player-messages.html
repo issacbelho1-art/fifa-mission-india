@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Player messaging portal for FIFA Mission India.">
+
+  <title>Player Messages | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/player-dashboard.css">
+  <link rel="stylesheet" href="css/player-messages.css">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- Reuse this exact sidebar across all player dashboard pages. -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Player dashboard navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-logo" aria-label="FIFA Mission India home">
+          <span class="sidebar-logo-mark"><i class="fa-solid fa-futbol"></i></span>
+          <span>
+            <strong>FIFA Mission</strong>
+            <small>India 2034</small>
+          </span>
+        </a>
+
+        <button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-player-card">
+        <img src="images/player-avatar.jpg" alt="Player profile">
+        <div>
+          <strong>Arjun Sharma</strong>
+          <span>Player ID: FMI-2034-0182</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="sidebar-label">Player portal</span>
+
+        <a href="player-dashboard.html">
+          <i class="fa-solid fa-table-columns"></i>
+          <span>Overview</span>
+        </a>
+
+        <a href="player-profile.html">
+          <i class="fa-regular fa-user"></i>
+          <span>My Profile</span>
+        </a>
+
+        <a href="player-trials.html">
+          <i class="fa-solid fa-person-running"></i>
+          <span>Trials</span>
+        </a>
+
+        <a href="player-achievements.html">
+          <i class="fa-solid fa-trophy"></i>
+          <span>Achievements</span>
+        </a>
+
+        <a href="player-documents.html">
+          <i class="fa-regular fa-folder-open"></i>
+          <span>Documents</span>
+        </a>
+
+        <a href="player-messages.html" class="active" aria-current="page">
+          <i class="fa-regular fa-message"></i>
+          <span>Messages</span>
+          <span class="sidebar-count" id="sidebarUnreadCount">3</span>
+        </a>
+
+        <a href="player-settings.html">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-support-card">
+        <span><i class="fa-regular fa-circle-question"></i></span>
+        <div>
+          <strong>Need help?</strong>
+          <p>Contact the Mission India support team.</p>
+          <a href="contact.html">Get support</a>
+        </div>
+      </div>
+
+      <a href="login.html" class="sidebar-logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Log out</span>
+      </a>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+    <main class="dashboard-main messages-page">
+      <header class="dashboard-topbar">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-title">
+          <span>Player Portal</span>
+          <strong>Messages</strong>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="topbar-icon-btn" type="button" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+
+          <a href="player-profile.html" class="topbar-profile" aria-label="View player profile">
+            <img src="images/player-avatar.jpg" alt="">
+            <span>
+              <strong>Arjun Sharma</strong>
+              <small>Player</small>
+            </span>
+          </a>
+        </div>
+      </header>
+
+      <div class="messages-content">
+        <header class="messages-page-header">
+          <div>
+            <span class="section-eyebrow">PLAYER COMMUNICATION</span>
+            <h1>Messages</h1>
+            <p>Communicate securely with academies, coaches, scouts and the FIFA Mission India team.</p>
+          </div>
+
+          <button class="new-message-btn" id="newMessageBtn" type="button">
+            <i class="fa-solid fa-pen"></i>
+            <span>New message</span>
+          </button>
+        </header>
+
+        <section class="messages-shell" aria-label="Player messages">
+          <aside class="conversation-panel" id="conversationPanel">
+            <div class="conversation-top">
+              <div>
+                <h2>Inbox</h2>
+                <span id="conversationCount">4 conversations</span>
+              </div>
+
+              <button class="panel-action-btn" id="mobileNewMessageBtn" type="button" aria-label="Compose new message">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+            </div>
+
+            <label class="conversation-search" for="conversationSearch">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" id="conversationSearch" placeholder="Search conversations" autocomplete="off">
+            </label>
+
+            <div class="conversation-filters" id="conversationFilters" aria-label="Conversation filters">
+              <button class="active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="unread" aria-pressed="false">Unread</button>
+              <button type="button" data-filter="academy" aria-pressed="false">Academies</button>
+              <button type="button" data-filter="coach" aria-pressed="false">Coaches</button>
+              <button type="button" data-filter="scout" aria-pressed="false">Scouts</button>
+            </div>
+
+            <div class="conversation-list" id="conversationList" role="list"></div>
+
+            <div class="conversation-empty" id="conversationEmpty" hidden>
+              <i class="fa-regular fa-message"></i>
+              <h3>No conversations found</h3>
+              <p>Try another search or filter.</p>
+            </div>
+          </aside>
+
+          <section class="chat-section" id="chatSection" aria-label="Selected conversation">
+            <header class="chat-header">
+              <div class="chat-user-wrap">
+                <button class="mobile-back-btn" id="mobileBackBtn" type="button" aria-label="Back to conversations">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <div class="chat-user">
+                  <div class="chat-user-avatar">
+                    <img id="chatAvatar" src="images/academy1.jpg" alt="">
+                    <span class="status-indicator" id="chatStatusIndicator"></span>
+                  </div>
+
+                  <div>
+                    <h2>
+                      <span id="chatName">Minerva Academy</span>
+                      <i class="fa-solid fa-circle-check verified" id="verifiedIcon" title="Verified"></i>
+                    </h2>
+                    <span id="chatStatus">Online · Academy</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chat-actions">
+                <button type="button" aria-label="Start voice call" data-toast="Voice calling will be connected by the backend.">
+                  <i class="fa-solid fa-phone"></i>
+                </button>
+                <button type="button" aria-label="Start video call" data-toast="Video calling will be connected by the backend.">
+                  <i class="fa-solid fa-video"></i>
+                </button>
+                <button type="button" id="detailsToggleBtn" aria-label="Show conversation details">
+                  <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </header>
+
+            <div class="chat-body" id="chatMessages" aria-live="polite"></div>
+
+            <form class="chat-composer" id="messageForm">
+              <button type="button" class="composer-action" aria-label="Add emoji" data-toast="Emoji picker is ready for backend integration.">
+                <i class="fa-regular fa-face-smile"></i>
+              </button>
+
+              <button type="button" class="composer-action" aria-label="Attach file" data-toast="File attachment upload will be connected by the backend.">
+                <i class="fa-solid fa-paperclip"></i>
+              </button>
+
+              <label class="message-input-wrap" for="messageInput">
+                <input type="text" id="messageInput" maxlength="1000" placeholder="Type your message..." autocomplete="off">
+              </label>
+
+              <button type="button" class="composer-action voice-action" aria-label="Record voice message" data-toast="Voice messages will be connected by the backend.">
+                <i class="fa-solid fa-microphone"></i>
+              </button>
+
+              <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message" disabled>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </section>
+
+          <aside class="details-panel" id="detailsPanel" aria-label="Conversation details">
+            <button class="details-close-btn" id="detailsCloseBtn" type="button" aria-label="Close conversation details">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="details-profile">
+              <img id="detailsAvatar" src="images/academy1.jpg" class="details-avatar" alt="">
+              <h2 id="detailsName">Minerva Academy</h2>
+              <span id="detailsRole">Verified Football Academy</span>
+            </div>
+
+            <div class="details-quick-actions">
+              <button type="button" data-toast="Notifications updated for this conversation.">
+                <i class="fa-regular fa-bell"></i>
+                <span>Mute</span>
+              </button>
+              <button type="button" data-toast="Search-in-chat will be connected by the backend.">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Search</span>
+              </button>
+              <button type="button" data-toast="Shared files will appear here after backend integration.">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>Files</span>
+              </button>
+            </div>
+
+            <div class="details-card">
+              <h3>About</h3>
+              <p id="detailsAbout">Elite football academy participating in the FIFA Mission India Talent Development Programme.</p>
+            </div>
+
+            <div class="details-card details-row">
+              <span><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <h3>Location</h3>
+                <p id="detailsLocation">Punjab, India</p>
+              </div>
+            </div>
+
+            <div class="details-card details-row">
+              <span><i class="fa-regular fa-calendar-check"></i></span>
+              <div>
+                <h3>Upcoming trial</h3>
+                <p id="detailsTrial">25 August 2034</p>
+              </div>
+            </div>
+
+            <a href="academy-profile.html" class="profile-btn" id="profileBtn">
+              View profile
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="composeModal" hidden>
+    <section class="compose-modal" role="dialog" aria-modal="true" aria-labelledby="composeModalTitle">
+      <header>
+        <div>
+          <span class="section-eyebrow">NEW CONVERSATION</span>
+          <h2 id="composeModalTitle">Create message</h2>
+        </div>
+        <button type="button" id="closeComposeModal" aria-label="Close new message dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+
+      <form id="composeForm">
+        <label>
+          Recipient
+          <select id="composeRecipient" required>
+            <option value="">Select a recipient</option>
+            <option value="mission">Mission India Team</option>
+            <option value="minerva">Minerva Academy</option>
+            <option value="rahul">Coach Rahul</option>
+            <option value="scout">National Scout</option>
+          </select>
+        </label>
+
+        <label>
+          Message
+          <textarea id="composeMessage" rows="5" maxlength="1000" placeholder="Write your message" required></textarea>
+        </label>
+
+        <div class="compose-actions">
+          <button type="button" class="secondary-btn" id="cancelComposeModal">Cancel</button>
+          <button type="submit" class="primary-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send message
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="pageToast" role="status" aria-live="polite"></div>
+
+  <script src="js/player-dashboard.js"></script>
+  <script src="js/player-messages.js"></script>
+</body>
+</html>

@@ -1,0 +1,2982 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Manage football training sessions, attendance, objectives and player development."
+  >
+
+  <title>
+    Training Sessions | FIFA Mission India
+  </title>
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =====================================================
+       ICONS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- =====================================================
+       STYLES
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="coach-training.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       APPLICATION LAYOUT
+  ====================================================== -->
+
+  <div class="coach-dashboard-layout">
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside
+      class="coach-sidebar"
+      id="coachSidebar"
+      aria-label="Coach dashboard navigation"
+    >
+
+      <!-- Sidebar Header -->
+
+      <div class="sidebar-header">
+
+        <a
+          href="index.html"
+          class="coach-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <div class="coach-brand-icon">
+
+            <i class="fa-solid fa-futbol"></i>
+
+          </div>
+
+          <div class="coach-brand-text">
+
+            <strong>
+              FIFA Mission
+            </strong>
+
+            <span>
+              India 2034
+            </span>
+
+          </div>
+
+        </a>
+
+        <button
+          class="sidebar-close-button"
+          id="sidebarCloseButton"
+          type="button"
+          aria-label="Close sidebar"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <!-- Coach Summary -->
+
+      <div class="sidebar-coach-summary">
+
+        <div class="sidebar-coach-avatar">
+
+          <img
+            src="images/coach-avatar.jpg"
+            alt="Coach profile"
+            onerror="this.src='images/coach-placeholder.jpg'"
+          >
+
+          <span
+            class="coach-online-indicator"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+        <div class="sidebar-coach-details">
+
+          <strong>
+            Coach Arjun Mehta
+          </strong>
+
+          <span>
+            Head Coach
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- Navigation -->
+
+      <nav class="coach-sidebar-navigation">
+
+        <span class="sidebar-navigation-label">
+          MAIN MENU
+        </span>
+
+        <a
+          href="coach-dashboard.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-table-columns"></i>
+
+          <span>
+            Dashboard
+          </span>
+
+        </a>
+
+        <a
+          href="coach-players.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-users"></i>
+
+          <span>
+            Players
+          </span>
+
+          <span class="sidebar-count">
+            26
+          </span>
+
+        </a>
+
+        <a
+          href="coach-training.html"
+          class="sidebar-navigation-link active"
+          aria-current="page"
+        >
+
+          <i class="fa-solid fa-stopwatch"></i>
+
+          <span>
+            Training
+          </span>
+
+          <span class="sidebar-badge">
+            8
+          </span>
+
+        </a>
+
+        <a
+          href="coach-matches.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-trophy"></i>
+
+          <span>
+            Matches
+          </span>
+
+        </a>
+
+        <a
+          href="coach-performance.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-chart-line"></i>
+
+          <span>
+            Performance
+          </span>
+
+        </a>
+
+        <a
+          href="coach-calendar.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-calendar-days"></i>
+
+          <span>
+            Calendar
+          </span>
+
+        </a>
+
+        <span class="sidebar-navigation-label">
+          MANAGEMENT
+        </span>
+
+        <a
+          href="coach-messages.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-message"></i>
+
+          <span>
+            Messages
+          </span>
+
+          <span class="sidebar-badge">
+            4
+          </span>
+
+        </a>
+
+        <a
+          href="coach-reports.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-file-lines"></i>
+
+          <span>
+            Reports
+          </span>
+
+        </a>
+
+        <a
+          href="coach-profile.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-user-gear"></i>
+
+          <span>
+            Profile
+          </span>
+
+        </a>
+
+        <a
+          href="coach-settings.html"
+          class="sidebar-navigation-link"
+        >
+
+          <i class="fa-solid fa-gear"></i>
+
+          <span>
+            Settings
+          </span>
+
+        </a>
+
+      </nav>
+
+      <!-- Sidebar Footer -->
+
+      <div class="sidebar-footer">
+
+        <div class="sidebar-support-card">
+
+          <div class="sidebar-support-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+          </div>
+
+          <div>
+
+            <strong>
+              Need assistance?
+            </strong>
+
+            <p>
+              Contact platform support.
+            </p>
+
+          </div>
+
+          <a
+            href="coach-help.html"
+            aria-label="Open coach help centre"
+          >
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+        <button
+          class="sidebar-logout-button"
+          id="sidebarLogoutButton"
+          type="button"
+        >
+
+          <i class="fa-solid fa-right-from-bracket"></i>
+
+          <span>
+            Sign Out
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+    <!-- Sidebar Overlay -->
+
+    <button
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      type="button"
+      aria-label="Close navigation"
+      tabindex="-1"
+    ></button>
+
+    <!-- ===================================================
+         MAIN AREA
+    ==================================================== -->
+
+    <div class="coach-main-area">
+
+      <!-- =================================================
+           TOPBAR
+      ================================================== -->
+
+      <header class="coach-topbar">
+
+        <div class="coach-topbar-left">
+
+          <button
+            class="sidebar-toggle-button"
+            id="sidebarToggleButton"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="coachSidebar"
+            aria-expanded="false"
+          >
+
+            <i class="fa-solid fa-bars"></i>
+
+          </button>
+
+          <div class="topbar-page-heading">
+
+            <span>
+              Coach Portal
+            </span>
+
+            <h2>
+              Training Management
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div class="coach-topbar-actions">
+
+          <!-- Search -->
+
+          <button
+            class="topbar-action-button"
+            id="openCoachSearch"
+            type="button"
+            aria-label="Search coach portal"
+            aria-expanded="false"
+          >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </button>
+
+          <!-- Notifications -->
+
+          <div class="topbar-dropdown-wrapper">
+
+            <button
+              class="topbar-action-button notification-button"
+              id="notificationButton"
+              type="button"
+              aria-label="Open notifications"
+              aria-expanded="false"
+              aria-controls="notificationPanel"
+            >
+
+              <i class="fa-regular fa-bell"></i>
+
+              <span class="notification-indicator">
+                3
+              </span>
+
+            </button>
+
+            <div
+              class="topbar-dropdown notification-panel"
+              id="notificationPanel"
+              hidden
+            >
+
+              <div class="dropdown-header">
+
+                <div>
+
+                  <h3>
+                    Notifications
+                  </h3>
+
+                  <p>
+                    3 unread updates
+                  </p>
+
+                </div>
+
+                <button
+                  id="markNotificationsRead"
+                  type="button"
+                >
+                  Mark all read
+                </button>
+
+              </div>
+
+              <div class="notification-dropdown-list">
+
+                <button
+                  class="notification-dropdown-item unread"
+                  type="button"
+                >
+
+                  <span class="notification-dropdown-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Training reminder
+                    </strong>
+
+                    <small>
+                      Evening tactical session starts at 6:00 PM.
+                    </small>
+
+                    <time datetime="2026-07-18T14:30">
+                      20 minutes ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+                <button
+                  class="notification-dropdown-item unread"
+                  type="button"
+                >
+
+                  <span class="notification-dropdown-icon">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Attendance pending
+                    </strong>
+
+                    <small>
+                      Attendance for the morning session is incomplete.
+                    </small>
+
+                    <time datetime="2026-07-18T12:00">
+                      2 hours ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+                <button
+                  class="notification-dropdown-item unread"
+                  type="button"
+                >
+
+                  <span class="notification-dropdown-icon">
+
+                    <i class="fa-solid fa-kit-medical"></i>
+
+                  </span>
+
+                  <span>
+
+                    <strong>
+                      Medical update
+                    </strong>
+
+                    <small>
+                      Kabir Patel has submitted a recovery update.
+                    </small>
+
+                    <time datetime="2026-07-18T09:00">
+                      5 hours ago
+                    </time>
+
+                  </span>
+
+                </button>
+
+              </div>
+
+              <a
+                href="coach-notifications.html"
+                class="dropdown-footer-link"
+              >
+                View all notifications
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Account -->
+
+          <div class="topbar-dropdown-wrapper">
+
+            <button
+              class="coach-account-button"
+              id="coachAccountButton"
+              type="button"
+              aria-expanded="false"
+              aria-controls="coachAccountMenu"
+            >
+
+              <img
+                src="images/coach-avatar.jpg"
+                alt=""
+                onerror="this.src='images/coach-placeholder.jpg'"
+              >
+
+              <span class="coach-account-copy">
+
+                <strong>
+                  Arjun Mehta
+                </strong>
+
+                <small>
+                  Head Coach
+                </small>
+
+              </span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div
+              class="topbar-dropdown coach-account-menu"
+              id="coachAccountMenu"
+              hidden
+            >
+
+              <a href="coach-profile.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                My Profile
+
+              </a>
+
+              <a href="coach-settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Account Settings
+
+              </a>
+
+              <a href="coach-help.html">
+
+                <i class="fa-regular fa-circle-question"></i>
+
+                Help Centre
+
+              </a>
+
+              <hr>
+
+              <button
+                id="accountLogoutButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sign Out
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- =================================================
+           SEARCH PANEL
+      ================================================== -->
+
+      <section
+        class="coach-search-panel"
+        id="coachSearchPanel"
+        hidden
+        aria-label="Coach portal search"
+      >
+
+        <div class="coach-search-container">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            id="coachGlobalSearch"
+            type="search"
+            placeholder="Search sessions, players, venues or reports..."
+            autocomplete="off"
+          >
+
+          <button
+            id="closeCoachSearch"
+            type="button"
+            aria-label="Close search"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+          </button>
+
+        </div>
+
+        <div
+          class="coach-search-results"
+          id="coachSearchResults"
+          hidden
+        ></div>
+
+      </section>
+
+      <!-- =================================================
+           MAIN CONTENT
+      ================================================== -->
+
+      <main class="coach-page-content">
+
+        <!-- ===============================================
+             PAGE HERO
+        ================================================ -->
+
+        <section class="coach-page-header training-page-hero">
+
+          <div class="coach-page-header-content">
+
+            <span class="page-eyebrow">
+              TRAINING MANAGEMENT
+            </span>
+
+            <h1>
+              Training Sessions
+            </h1>
+
+            <p>
+              Plan, organise and monitor every training session. Manage
+              schedules, attendance, player development and coaching
+              objectives from one professional workspace.
+            </p>
+
+            <div class="training-hero-meta">
+
+              <span>
+
+                <i class="fa-solid fa-calendar-day"></i>
+
+                Saturday, 18 July 2026
+
+              </span>
+
+              <span>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Main Training Ground
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="coach-page-header-actions">
+
+            <button
+              class="secondary-button"
+              id="exportTrainingButton"
+              type="button"
+            >
+
+              <i class="fa-solid fa-file-export"></i>
+
+              Export Schedule
+
+            </button>
+
+            <button
+              class="primary-button"
+              id="openTrainingModal"
+              type="button"
+            >
+
+              <i class="fa-solid fa-plus"></i>
+
+              Create Session
+
+            </button>
+
+          </div>
+
+        </section>
+
+        <!-- ===============================================
+             TRAINING OVERVIEW
+        ================================================ -->
+
+        <section
+          class="coach-overview-grid"
+          aria-label="Training overview"
+        >
+
+          <article class="coach-card overview-card">
+
+            <div class="overview-icon">
+
+              <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>
+                Total Sessions
+              </span>
+
+              <h2 id="totalSessionsValue">
+                42
+              </h2>
+
+              <small class="overview-trend positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                5 this month
+
+              </small>
+
+            </div>
+
+          </article>
+
+          <article class="coach-card overview-card">
+
+            <div class="overview-icon success">
+
+              <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>
+                Upcoming
+              </span>
+
+              <h2 id="upcomingSessionsValue">
+                8
+              </h2>
+
+              <small class="overview-trend">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Scheduled
+
+              </small>
+
+            </div>
+
+          </article>
+
+          <article class="coach-card overview-card">
+
+            <div class="overview-icon warning">
+
+              <i class="fa-solid fa-user-check"></i>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>
+                Average Attendance
+              </span>
+
+              <h2 id="attendanceAverageValue">
+                94%
+              </h2>
+
+              <small class="overview-trend positive">
+
+                <i class="fa-solid fa-arrow-up"></i>
+
+                2.4% improvement
+
+              </small>
+
+            </div>
+
+          </article>
+
+          <article class="coach-card overview-card">
+
+            <div class="overview-icon danger">
+
+              <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div class="overview-card-content">
+
+              <span>
+                Completion Rate
+              </span>
+
+              <h2 id="completionRateValue">
+                97%
+              </h2>
+
+              <small class="overview-trend positive">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Excellent
+
+              </small>
+
+            </div>
+
+          </article>
+
+        </section>
+
+        <!-- ===============================================
+             UPCOMING TRAINING SESSIONS
+        ================================================ -->
+
+        <section class="coach-card training-section">
+
+          <div class="section-header">
+
+            <div>
+
+              <span class="section-eyebrow">
+                WEEKLY PLAN
+              </span>
+
+              <h2>
+                Upcoming Training Sessions
+              </h2>
+
+              <p>
+                Review and manage scheduled sessions for the current week.
+              </p>
+
+            </div>
+
+            <div class="section-header-actions">
+
+              <button
+                class="icon-text-button"
+                id="trainingFilterButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-sliders"></i>
+
+                Filter
+
+              </button>
+
+              <a
+                href="coach-calendar.html"
+                class="secondary-button"
+                id="viewCalendarButton"
+              >
+
+                <i class="fa-solid fa-calendar"></i>
+
+                View Calendar
+
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Filters -->
+
+          <div
+            class="training-filter-panel"
+            id="trainingFilterPanel"
+            hidden
+          >
+
+            <label>
+
+              Session Type
+
+              <select id="sessionTypeFilter">
+
+                <option value="">
+                  All types
+                </option>
+
+                <option value="Technical">
+                  Technical
+                </option>
+
+                <option value="Tactical">
+                  Tactical
+                </option>
+
+                <option value="Physical">
+                  Physical
+                </option>
+
+                <option value="Recovery">
+                  Recovery
+                </option>
+
+                <option value="Match Preparation">
+                  Match Preparation
+                </option>
+
+              </select>
+
+            </label>
+
+            <label>
+
+              Status
+
+              <select id="sessionStatusFilter">
+
+                <option value="">
+                  All statuses
+                </option>
+
+                <option value="Upcoming">
+                  Upcoming
+                </option>
+
+                <option value="Completed">
+                  Completed
+                </option>
+
+                <option value="Cancelled">
+                  Cancelled
+                </option>
+
+              </select>
+
+            </label>
+
+            <label>
+
+              Date
+
+              <input
+                id="sessionDateFilter"
+                type="date"
+              >
+
+            </label>
+
+            <button
+              class="clear-training-filters"
+              id="clearTrainingFilters"
+              type="button"
+            >
+
+              <i class="fa-solid fa-rotate-left"></i>
+
+              Clear
+
+            </button>
+
+          </div>
+
+          <div
+            class="training-session-grid"
+            id="trainingSessionGrid"
+            aria-live="polite"
+          >
+
+            <!-- JavaScript renders training session cards here. -->
+
+          </div>
+
+          <div
+            class="training-empty-state"
+            id="trainingEmptyState"
+            hidden
+          >
+
+            <div class="empty-state-icon">
+
+              <i class="fa-regular fa-calendar-xmark"></i>
+
+            </div>
+
+            <h3>
+              No training sessions found
+            </h3>
+
+            <p>
+              Change the selected filters or create a new training session.
+            </p>
+
+            <button
+              class="primary-button"
+              id="emptyStateCreateSession"
+              type="button"
+            >
+
+              <i class="fa-solid fa-plus"></i>
+
+              Create Session
+
+            </button>
+
+          </div>
+
+        </section>
+
+        <!-- ===============================================
+             SESSION DETAILS AND OBJECTIVES
+        ================================================ -->
+
+        <section class="training-content-grid">
+
+          <!-- Session Details -->
+
+          <article class="coach-card session-details-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  NEXT SESSION
+                </span>
+
+                <h2>
+                  Session Details
+                </h2>
+
+              </div>
+
+              <button
+                class="section-icon-button"
+                id="editCurrentSessionButton"
+                type="button"
+                aria-label="Edit current session"
+              >
+
+                <i class="fa-regular fa-pen-to-square"></i>
+
+              </button>
+
+            </div>
+
+            <div class="next-session-summary">
+
+              <span
+                class="session-type-badge"
+                id="currentSessionType"
+              >
+                Tactical
+              </span>
+
+              <h3 id="currentSessionTitle">
+                Defensive Shape and Transition
+              </h3>
+
+              <p id="currentSessionDescription">
+                A focused tactical session designed to improve team shape,
+                pressing triggers and rapid transitions after possession
+                recovery.
+              </p>
+
+            </div>
+
+            <div class="training-detail-list">
+
+              <div class="training-detail-item">
+
+                <div class="training-detail-icon">
+
+                  <i class="fa-solid fa-calendar-day"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Date
+                  </h4>
+
+                  <p id="sessionDate">
+                    Monday, 20 July 2026
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="training-detail-item">
+
+                <div class="training-detail-icon">
+
+                  <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Time
+                  </h4>
+
+                  <p id="sessionTime">
+                    6:00 PM – 8:00 PM
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="training-detail-item">
+
+                <div class="training-detail-icon">
+
+                  <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Venue
+                  </h4>
+
+                  <p id="sessionVenue">
+                    Main Training Ground
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="training-detail-item">
+
+                <div class="training-detail-icon">
+
+                  <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Players Invited
+                  </h4>
+
+                  <p id="sessionPlayers">
+                    26 Players
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <button
+              class="full-width-secondary-button"
+              id="previewCurrentSessionButton"
+              type="button"
+            >
+
+              <i class="fa-regular fa-eye"></i>
+
+              View Full Session Plan
+
+            </button>
+
+          </article>
+
+          <!-- Objectives -->
+
+          <article class="coach-card training-objectives-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  SESSION GOALS
+                </span>
+
+                <h2>
+                  Training Objectives
+                </h2>
+
+              </div>
+
+              <button
+                class="section-icon-button"
+                id="addObjectiveButton"
+                type="button"
+                aria-label="Add objective"
+              >
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+            </div>
+
+            <ul
+              class="training-objectives-list"
+              id="trainingObjectives"
+            >
+
+              <li>
+
+                <button
+                  class="objective-check-button completed"
+                  type="button"
+                  aria-label="Toggle objective completion"
+                >
+
+                  <i class="fa-solid fa-check"></i>
+
+                </button>
+
+                <span>
+                  Improve passing accuracy under pressure.
+                </span>
+
+              </li>
+
+              <li>
+
+                <button
+                  class="objective-check-button"
+                  type="button"
+                  aria-label="Toggle objective completion"
+                >
+
+                  <i class="fa-solid fa-check"></i>
+
+                </button>
+
+                <span>
+                  Enhance defensive positioning and communication.
+                </span>
+
+              </li>
+
+              <li>
+
+                <button
+                  class="objective-check-button"
+                  type="button"
+                  aria-label="Toggle objective completion"
+                >
+
+                  <i class="fa-solid fa-check"></i>
+
+                </button>
+
+                <span>
+                  Improve transition speed after regaining possession.
+                </span>
+
+              </li>
+
+              <li>
+
+                <button
+                  class="objective-check-button"
+                  type="button"
+                  aria-label="Toggle objective completion"
+                >
+
+                  <i class="fa-solid fa-check"></i>
+
+                </button>
+
+                <span>
+                  Finish with a competitive small-sided match.
+                </span>
+
+              </li>
+
+            </ul>
+
+            <div class="objective-progress">
+
+              <div class="objective-progress-header">
+
+                <span>
+                  Objective completion
+                </span>
+
+                <strong id="objectiveProgressValue">
+                  25%
+                </strong>
+
+              </div>
+
+              <div class="progress-track">
+
+                <span
+                  id="objectiveProgressBar"
+                  style="width: 25%;"
+                ></span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+        <!-- ===============================================
+             PLAYER ATTENDANCE
+        ================================================ -->
+
+        <section class="coach-card attendance-section">
+
+          <div class="section-header">
+
+            <div>
+
+              <span class="section-eyebrow">
+                ATTENDANCE
+              </span>
+
+              <h2>
+                Player Attendance
+              </h2>
+
+              <p>
+                Review invited players and update their attendance status.
+              </p>
+
+            </div>
+
+            <div class="section-header-actions">
+
+              <span class="attendance-summary">
+
+                <strong id="attendancePresentCount">
+                  0
+                </strong>
+
+                of
+
+                <strong id="attendanceTotalCount">
+                  0
+                </strong>
+
+                present
+
+              </span>
+
+              <button
+                class="secondary-button"
+                id="markAttendanceButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-user-check"></i>
+
+                Mark Attendance
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="attendance-toolbar">
+
+            <div class="attendance-search">
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                id="attendanceSearch"
+                type="search"
+                placeholder="Search invited players..."
+              >
+
+            </div>
+
+            <select
+              id="attendanceStatusFilter"
+              aria-label="Filter attendance status"
+            >
+
+              <option value="">
+                All attendance statuses
+              </option>
+
+              <option value="Present">
+                Present
+              </option>
+
+              <option value="Absent">
+                Absent
+              </option>
+
+              <option value="Late">
+                Late
+              </option>
+
+              <option value="Pending">
+                Pending
+              </option>
+
+            </select>
+
+          </div>
+
+          <div
+            class="attendance-grid"
+            id="attendanceGrid"
+            aria-live="polite"
+          >
+
+            <!-- JavaScript renders attendance cards here. -->
+
+          </div>
+
+          <div class="attendance-footer">
+
+            <button
+              class="secondary-button"
+              id="resetAttendanceButton"
+              type="button"
+            >
+
+              <i class="fa-solid fa-rotate-left"></i>
+
+              Reset
+
+            </button>
+
+            <button
+              class="primary-button"
+              id="saveAttendanceButton"
+              type="button"
+            >
+
+              <i class="fa-solid fa-floppy-disk"></i>
+
+              Save Attendance
+
+            </button>
+
+          </div>
+
+        </section>
+
+        <!-- ===============================================
+             TIMELINE AND REMINDERS
+        ================================================ -->
+
+        <section class="training-bottom-grid">
+
+          <!-- Timeline -->
+
+          <article class="coach-card training-timeline-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  SESSION PLAN
+                </span>
+
+                <h2>
+                  Training Timeline
+                </h2>
+
+              </div>
+
+              <button
+                class="section-icon-button"
+                id="editTimelineButton"
+                type="button"
+                aria-label="Edit training timeline"
+              >
+
+                <i class="fa-regular fa-pen-to-square"></i>
+
+              </button>
+
+            </div>
+
+            <div
+              class="training-timeline"
+              id="trainingTimeline"
+            >
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  06:00 PM
+                </div>
+
+                <div class="timeline-marker">
+
+                  <span class="timeline-dot"></span>
+
+                  <span class="timeline-line"></span>
+
+                </div>
+
+                <div class="timeline-content">
+
+                  <span class="timeline-duration">
+                    20 min
+                  </span>
+
+                  <h4>
+                    Warm-up and Mobility
+                  </h4>
+
+                  <p>
+                    Dynamic stretching, activation drills and light jogging.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  06:20 PM
+                </div>
+
+                <div class="timeline-marker">
+
+                  <span class="timeline-dot"></span>
+
+                  <span class="timeline-line"></span>
+
+                </div>
+
+                <div class="timeline-content">
+
+                  <span class="timeline-duration">
+                    40 min
+                  </span>
+
+                  <h4>
+                    Technical Passing
+                  </h4>
+
+                  <p>
+                    One-touch passing, triangles and possession exercises.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  07:00 PM
+                </div>
+
+                <div class="timeline-marker">
+
+                  <span class="timeline-dot"></span>
+
+                  <span class="timeline-line"></span>
+
+                </div>
+
+                <div class="timeline-content">
+
+                  <span class="timeline-duration">
+                    35 min
+                  </span>
+
+                  <h4>
+                    Tactical Shape
+                  </h4>
+
+                  <p>
+                    Defensive organisation and attacking transition work.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  07:35 PM
+                </div>
+
+                <div class="timeline-marker">
+
+                  <span class="timeline-dot"></span>
+
+                </div>
+
+                <div class="timeline-content">
+
+                  <span class="timeline-duration">
+                    25 min
+                  </span>
+
+                  <h4>
+                    Match Simulation
+                  </h4>
+
+                  <p>
+                    Small-sided competitive game with tactical coaching.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Reminders -->
+
+          <article class="coach-card training-reminders-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  REMINDERS
+                </span>
+
+                <h2>
+                  Coach Reminders
+                </h2>
+
+              </div>
+
+              <button
+                class="section-icon-button"
+                id="addReminderButton"
+                type="button"
+                aria-label="Add reminder"
+              >
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+            </div>
+
+            <div
+              class="training-reminders"
+              id="trainingReminders"
+            >
+
+              <div class="reminder-item">
+
+                <div class="reminder-icon">
+
+                  <i class="fa-solid fa-futbol"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Bring Match Balls
+                  </h4>
+
+                  <p>
+                    Prepare 20 official training balls.
+                  </p>
+
+                </div>
+
+                <button
+                  type="button"
+                  aria-label="Complete reminder"
+                >
+
+                  <i class="fa-regular fa-circle-check"></i>
+
+                </button>
+
+              </div>
+
+              <div class="reminder-item">
+
+                <div class="reminder-icon medical">
+
+                  <i class="fa-solid fa-kit-medical"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Verify Medical Kit
+                  </h4>
+
+                  <p>
+                    Check all first-aid equipment before training.
+                  </p>
+
+                </div>
+
+                <button
+                  type="button"
+                  aria-label="Complete reminder"
+                >
+
+                  <i class="fa-regular fa-circle-check"></i>
+
+                </button>
+
+              </div>
+
+              <div class="reminder-item">
+
+                <div class="reminder-icon hydration">
+
+                  <i class="fa-solid fa-bottle-water"></i>
+
+                </div>
+
+                <div>
+
+                  <h4>
+                    Hydration Stations
+                  </h4>
+
+                  <p>
+                    Arrange water breaks every 30 minutes.
+                  </p>
+
+                </div>
+
+                <button
+                  type="button"
+                  aria-label="Complete reminder"
+                >
+
+                  <i class="fa-regular fa-circle-check"></i>
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+        <!-- ===============================================
+             PERFORMANCE AND NOTES
+        ================================================ -->
+
+        <section class="training-content-grid">
+
+          <!-- Performance -->
+
+          <article class="coach-card training-performance-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  PERFORMANCE
+                </span>
+
+                <h2>
+                  Training Performance
+                </h2>
+
+              </div>
+
+              <select
+                id="performancePeriodFilter"
+                aria-label="Training performance period"
+              >
+
+                <option value="7">
+                  Last 7 days
+                </option>
+
+                <option value="30" selected>
+                  Last 30 days
+                </option>
+
+                <option value="90">
+                  Last 90 days
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="training-performance-grid">
+
+              <div class="training-performance-item">
+
+                <div>
+
+                  <span>
+                    Technical
+                  </span>
+
+                  <strong>
+                    88%
+                  </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                  <span style="width: 88%;"></span>
+
+                </div>
+
+              </div>
+
+              <div class="training-performance-item">
+
+                <div>
+
+                  <span>
+                    Tactical
+                  </span>
+
+                  <strong>
+                    82%
+                  </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                  <span style="width: 82%;"></span>
+
+                </div>
+
+              </div>
+
+              <div class="training-performance-item">
+
+                <div>
+
+                  <span>
+                    Physical
+                  </span>
+
+                  <strong>
+                    91%
+                  </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                  <span style="width: 91%;"></span>
+
+                </div>
+
+              </div>
+
+              <div class="training-performance-item">
+
+                <div>
+
+                  <span>
+                    Discipline
+                  </span>
+
+                  <strong>
+                    95%
+                  </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                  <span style="width: 95%;"></span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <a
+              href="coach-performance.html"
+              class="full-width-secondary-button"
+            >
+
+              <i class="fa-solid fa-chart-line"></i>
+
+              Open Performance Analytics
+
+            </a>
+
+          </article>
+
+          <!-- Notes -->
+
+          <article class="coach-card coach-training-notes-card">
+
+            <div class="section-header">
+
+              <div>
+
+                <span class="section-eyebrow">
+                  SESSION NOTES
+                </span>
+
+                <h2>
+                  Coach Notes
+                </h2>
+
+              </div>
+
+              <span
+                class="notes-save-status"
+                id="notesSaveStatus"
+                aria-live="polite"
+              >
+                Not saved
+              </span>
+
+            </div>
+
+            <label
+              class="visually-hidden"
+              for="coachTrainingNotes"
+            >
+              Coach training notes
+            </label>
+
+            <textarea
+              id="coachTrainingNotes"
+              rows="9"
+              maxlength="1500"
+              placeholder="Write observations, tactical notes, player improvements and reminders..."
+            ></textarea>
+
+            <div class="notes-footer">
+
+              <span id="trainingNotesCharacterCount">
+                0 / 1500
+              </span>
+
+              <button
+                class="primary-button"
+                id="saveTrainingNotes"
+                type="button"
+              >
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Notes
+
+              </button>
+
+            </div>
+
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       CREATE / EDIT TRAINING SESSION MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="trainingModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="trainingModalTitle"
+    hidden
+  >
+
+    <div class="modal training-form-modal">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="modal-eyebrow">
+            TRAINING PLAN
+          </span>
+
+          <h3 id="trainingModalTitle">
+            Create Training Session
+          </h3>
+
+        </div>
+
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close training session modal"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <form
+        id="trainingForm"
+        class="modal-body"
+      >
+
+        <input
+          id="trainingSessionId"
+          type="hidden"
+        >
+
+        <div class="modal-form-grid">
+
+          <label class="full-width">
+
+            Session Title
+
+            <input
+              type="text"
+              id="trainingTitle"
+              name="title"
+              placeholder="Example: Defensive Shape and Transition"
+              maxlength="100"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Session Type
+
+            <select
+              id="trainingType"
+              name="type"
+              required
+            >
+
+              <option value="">
+                Select session type
+              </option>
+
+              <option value="Technical">
+                Technical
+              </option>
+
+              <option value="Tactical">
+                Tactical
+              </option>
+
+              <option value="Physical">
+                Physical
+              </option>
+
+              <option value="Recovery">
+                Recovery
+              </option>
+
+              <option value="Match Preparation">
+                Match Preparation
+              </option>
+
+            </select>
+
+          </label>
+
+          <label>
+
+            Squad
+
+            <select
+              id="trainingSquad"
+              name="squad"
+              required
+            >
+
+              <option value="">
+                Select squad
+              </option>
+
+              <option value="Senior Team">
+                Senior Team
+              </option>
+
+              <option value="Under 19">
+                Under 19
+              </option>
+
+              <option value="Under 17">
+                Under 17
+              </option>
+
+              <option value="Under 15">
+                Under 15
+              </option>
+
+            </select>
+
+          </label>
+
+          <label>
+
+            Date
+
+            <input
+              type="date"
+              id="trainingDate"
+              name="date"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Venue
+
+            <input
+              type="text"
+              id="trainingVenue"
+              name="venue"
+              placeholder="Main Training Ground"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Start Time
+
+            <input
+              type="time"
+              id="trainingStartTime"
+              name="startTime"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            End Time
+
+            <input
+              type="time"
+              id="trainingEndTime"
+              name="endTime"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Maximum Players
+
+            <input
+              type="number"
+              id="trainingPlayerLimit"
+              name="playerLimit"
+              min="1"
+              max="100"
+              value="26"
+              required
+            >
+
+          </label>
+
+          <label>
+
+            Intensity
+
+            <select
+              id="trainingIntensity"
+              name="intensity"
+              required
+            >
+
+              <option value="">
+                Select intensity
+              </option>
+
+              <option value="Low">
+                Low
+              </option>
+
+              <option value="Moderate">
+                Moderate
+              </option>
+
+              <option value="High">
+                High
+              </option>
+
+            </select>
+
+          </label>
+
+          <label class="full-width">
+
+            Session Description
+
+            <textarea
+              id="trainingDescription"
+              name="description"
+              rows="4"
+              maxlength="600"
+              placeholder="Describe the session focus and expected outcome..."
+            ></textarea>
+
+          </label>
+
+          <fieldset class="full-width training-objective-fields">
+
+            <legend>
+              Training Objectives
+            </legend>
+
+            <div id="trainingObjectiveInputs">
+
+              <div class="dynamic-input-row">
+
+                <input
+                  type="text"
+                  name="objectives[]"
+                  placeholder="Enter a training objective"
+                >
+
+                <button
+                  type="button"
+                  class="remove-dynamic-input"
+                  aria-label="Remove objective"
+                >
+
+                  <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+              </div>
+
+            </div>
+
+            <button
+              class="add-dynamic-input-button"
+              id="addTrainingObjectiveInput"
+              type="button"
+            >
+
+              <i class="fa-solid fa-plus"></i>
+
+              Add Objective
+
+            </button>
+
+          </fieldset>
+
+          <label class="full-width">
+
+            Additional Notes
+
+            <textarea
+              id="trainingAdditionalNotes"
+              name="additionalNotes"
+              rows="3"
+              maxlength="500"
+              placeholder="Equipment, medical or preparation notes..."
+            ></textarea>
+
+          </label>
+
+        </div>
+
+      </form>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="primary-button"
+          type="submit"
+          form="trainingForm"
+        >
+
+          <i class="fa-solid fa-calendar-plus"></i>
+
+          Save Session
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       SESSION PREVIEW MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="sessionPreviewModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="sessionPreviewTitle"
+    hidden
+  >
+
+    <div class="modal session-preview-modal">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span
+            class="session-type-badge"
+            data-preview-type
+          >
+            Tactical
+          </span>
+
+          <h3
+            id="sessionPreviewTitle"
+            data-preview-title
+          >
+            Training Session
+          </h3>
+
+        </div>
+
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close session preview"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <p
+          class="session-preview-description"
+          data-preview-description
+        ></p>
+
+        <div class="session-preview-information">
+
+          <div>
+
+            <i class="fa-solid fa-calendar-day"></i>
+
+            <span>
+
+              <small>
+                Date
+              </small>
+
+              <strong data-preview-date>
+                —
+              </strong>
+
+            </span>
+
+          </div>
+
+          <div>
+
+            <i class="fa-solid fa-clock"></i>
+
+            <span>
+
+              <small>
+                Time
+              </small>
+
+              <strong data-preview-time>
+                —
+              </strong>
+
+            </span>
+
+          </div>
+
+          <div>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <span>
+
+              <small>
+                Venue
+              </small>
+
+              <strong data-preview-venue>
+                —
+              </strong>
+
+            </span>
+
+          </div>
+
+          <div>
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+
+              <small>
+                Players
+              </small>
+
+              <strong data-preview-players>
+                —
+              </strong>
+
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="session-preview-objectives">
+
+          <h4>
+            Session Objectives
+          </h4>
+
+          <ul data-preview-objectives></ul>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Close
+        </button>
+
+        <button
+          class="primary-button"
+          id="editPreviewSessionButton"
+          type="button"
+        >
+
+          <i class="fa-regular fa-pen-to-square"></i>
+
+          Edit Session
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       ATTENDANCE MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="attendanceModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="attendanceModalTitle"
+    hidden
+  >
+
+    <div class="modal attendance-modal">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="modal-eyebrow">
+            PLAYER AVAILABILITY
+          </span>
+
+          <h3 id="attendanceModalTitle">
+            Mark Attendance
+          </h3>
+
+        </div>
+
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close attendance modal"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="attendance-modal-toolbar">
+
+          <button
+            id="markAllPresentButton"
+            type="button"
+          >
+
+            <i class="fa-solid fa-check-double"></i>
+
+            Mark all present
+
+          </button>
+
+          <button
+            id="markAllPendingButton"
+            type="button"
+          >
+
+            <i class="fa-solid fa-clock"></i>
+
+            Reset to pending
+
+          </button>
+
+        </div>
+
+        <div
+          class="attendance-modal-list"
+          id="attendanceModalList"
+        >
+
+          <!-- JavaScript renders attendance rows here. -->
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="primary-button"
+          id="confirmAttendanceButton"
+          type="button"
+        >
+
+          <i class="fa-solid fa-user-check"></i>
+
+          Confirm Attendance
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       ADD OBJECTIVE MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="objectiveModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="objectiveModalTitle"
+    hidden
+  >
+
+    <div class="modal small-modal">
+
+      <div class="modal-header">
+
+        <h3 id="objectiveModalTitle">
+          Add Training Objective
+        </h3>
+
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close objective modal"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <form
+        id="objectiveForm"
+        class="modal-body"
+      >
+
+        <label>
+
+          Objective
+
+          <textarea
+            id="newObjectiveText"
+            rows="4"
+            maxlength="220"
+            placeholder="Enter a clear training objective..."
+            required
+          ></textarea>
+
+        </label>
+
+      </form>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="primary-button"
+          type="submit"
+          form="objectiveForm"
+        >
+          Add Objective
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       ADD REMINDER MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="reminderModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="reminderModalTitle"
+    hidden
+  >
+
+    <div class="modal small-modal">
+
+      <div class="modal-header">
+
+        <h3 id="reminderModalTitle">
+          Add Coach Reminder
+        </h3>
+
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Close reminder modal"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+      <form
+        id="reminderForm"
+        class="modal-body modal-form-grid"
+      >
+
+        <label class="full-width">
+
+          Reminder Title
+
+          <input
+            id="reminderTitle"
+            type="text"
+            maxlength="80"
+            required
+          >
+
+        </label>
+
+        <label class="full-width">
+
+          Description
+
+          <textarea
+            id="reminderDescription"
+            rows="4"
+            maxlength="240"
+          ></textarea>
+
+        </label>
+
+      </form>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="primary-button"
+          type="submit"
+          form="reminderForm"
+        >
+          Add Reminder
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       LOGOUT CONFIRMATION MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="logoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="logoutModalTitle"
+    hidden
+  >
+
+    <div class="modal small-modal logout-confirmation-modal">
+
+      <div class="logout-modal-icon">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+      </div>
+
+      <div class="logout-modal-content">
+
+        <h3 id="logoutModalTitle">
+          Sign out of your account?
+        </h3>
+
+        <p>
+          You will need to sign in again to access the coach dashboard.
+        </p>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button
+          class="secondary-button"
+          data-close-modal
+          type="button"
+        >
+          Stay Signed In
+        </button>
+
+        <button
+          class="danger-button"
+          id="logoutConfirmButton"
+          type="button"
+        >
+          Sign Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================================
+       TOAST NOTIFICATION
+  ====================================================== -->
+
+  <div
+    class="toast"
+    id="coachToast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+
+    <i
+      class="toast-icon fa-solid fa-circle-check"
+      aria-hidden="true"
+    ></i>
+
+    <span id="coachToastMessage"></span>
+
+    <button
+      id="closeCoachToast"
+      type="button"
+      aria-label="Close notification"
+    >
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+  </div>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script
+    src="coach-training.js"
+    defer
+  ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1318 @@
+<!-- ==========================================================
+     ACADEMY COACHES & STAFF
+     Frontend: Issac Belho
+     Backend: Mr. Harsh
+     Security: Samarth
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Academy Coaches & Staff</title>
+
+<link rel="stylesheet"
+      href="academy-coaches.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside class="academy-sidebar"
+id="academySidebar">
+
+<div class="academy-sidebar-header">
+
+<h2>Mission India</h2>
+
+<button
+id="academySidebarClose">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<nav>
+
+<a href="academy-dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+<a href="academy-profile.html">
+
+<i class="fa-solid fa-building"></i>
+
+Academy Profile
+
+</a>
+
+<a href="academy-applications.html">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Applications
+
+</a>
+
+<a href="academy-trials.html">
+
+<i class="fa-solid fa-futbol"></i>
+
+Trials
+
+</a>
+
+<a href="academy-players.html">
+
+<i class="fa-solid fa-users"></i>
+
+Players
+
+</a>
+
+<a
+class="active"
+href="academy-coaches.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Coaches & Staff
+
+</a>
+
+</nav>
+
+</aside>
+
+<div
+class="academy-sidebar-overlay"
+id="academySidebarOverlay"
+hidden></div>
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main class="academy-main">
+
+<!-- ==========================================================
+     TOPBAR
+========================================================== -->
+
+<header class="academy-topbar">
+
+<button
+id="academyMenuButton">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h1>
+
+Academy Coaches & Staff
+
+</h1>
+
+<div
+class="academy-profile-dropdown-wrapper">
+
+<button
+id="academyProfileTrigger">
+
+<img
+src="images/admin.jpg"
+alt="Admin">
+
+</button>
+
+<div
+class="academy-profile-dropdown"
+id="academyProfileDropdown"
+hidden>
+
+<a href="#">My Profile</a>
+
+<a href="#">Settings</a>
+
+<button
+id="academyLogoutButton">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="academy-page-hero">
+
+<div>
+
+<span>
+
+Academy Staff Management
+
+</span>
+
+<h2>
+
+Build a Strong Coaching Team
+
+</h2>
+
+<p>
+
+Manage coaches, trainers, scouts,
+medical staff and support personnel
+through one professional dashboard.
+
+</p>
+
+</div>
+
+<button
+class="academy-primary-button"
+id="academyAddStaffButton">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Staff
+
+</button>
+
+</section>
+
+<!-- ==========================================================
+     STATISTICS
+========================================================== -->
+
+<section
+class="academy-statistics">
+
+<div
+class="academy-stat-card">
+
+<h3
+data-stat="total">
+
+52
+
+</h3>
+
+<p>
+
+Registered Staff
+
+</p>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<h3
+data-stat="licensed">
+
+18
+
+</h3>
+
+<p>
+
+Licensed Coaches
+
+</p>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<h3
+data-stat="medical">
+
+7
+
+</h3>
+
+<p>
+
+Medical Staff
+
+</p>
+
+</div>
+
+<div
+class="academy-stat-card">
+
+<h3
+data-stat="attendance">
+
+96%
+
+</h3>
+
+<p>
+
+Attendance
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     TOOLBAR
+========================================================== -->
+
+<section
+class="academy-toolbar">
+
+<input
+type="text"
+id="academyStaffSearch"
+placeholder="Search coach, trainer or staff...">
+
+<select
+id="academyRoleFilter">
+
+<option>
+
+All Roles
+
+</option>
+
+<option>
+
+Head Coach
+
+</option>
+
+<option>
+
+Assistant Coach
+
+</option>
+
+<option>
+
+Goalkeeping Coach
+
+</option>
+
+<option>
+
+Fitness Trainer
+
+</option>
+
+<option>
+
+Scout
+
+</option>
+
+<option>
+
+Physiotherapist
+
+</option>
+
+<option>
+
+Nutritionist
+
+</option>
+
+</select>
+
+<select
+id="academyTeamFilter">
+
+<option>
+
+All Teams
+
+</option>
+
+<option>
+
+U15
+
+</option>
+
+<option>
+
+U17
+
+</option>
+
+<option>
+
+Senior
+
+</option>
+
+</select>
+
+<select
+id="academyStatusFilter">
+
+<option>
+
+All Status
+
+</option>
+
+<option>
+
+Active
+
+</option>
+
+<option>
+
+On Leave
+
+</option>
+
+<option>
+
+Inactive
+
+</option>
+
+</select>
+
+<div
+class="academy-toolbar-actions">
+
+<button
+class="academy-secondary-button"
+id="academyExportStaff">
+
+<i class="fa-solid fa-file-export"></i>
+
+Export
+
+</button>
+
+<button
+class="academy-primary-button">
+
+<i class="fa-solid fa-filter"></i>
+
+Apply Filters
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+     STAFF DIRECTORY
+========================================================== -->
+
+<section class="academy-table-wrapper">
+
+<table class="academy-table">
+
+<thead>
+
+<tr>
+
+<th>
+<input type="checkbox"
+id="academySelectAllStaff">
+</th>
+
+<th>Staff</th>
+
+<th>Employee ID</th>
+
+<th>Role</th>
+
+<th>License</th>
+
+<th>Experience</th>
+
+<th>Assigned Team</th>
+
+<th>Attendance</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<!-- ================= STAFF 1 ================= -->
+
+<tr>
+
+<td>
+
+<input type="checkbox">
+
+</td>
+
+<td>
+
+<div class="academy-player-cell">
+
+<img
+src="images/coach1.jpg"
+alt="Coach">
+
+<div>
+
+<h4>Rahul Mehta</h4>
+
+<p>Head Coach</p>
+
+</div>
+
+</div>
+
+</td>
+
+<td>EMP-1001</td>
+
+<td>Head Coach</td>
+
+<td>AFC A</td>
+
+<td>12 Years</td>
+
+<td>Senior</td>
+
+<td>
+
+<div class="academy-progress">
+
+<div
+class="academy-progress-bar"
+style="width:96%">
+
+</div>
+
+</div>
+
+96%
+
+</td>
+
+<td>
+
+<span
+class="academy-status active">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<div
+class="academy-table-actions">
+
+<button
+class="academy-icon-button academy-view-staff">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-edit-staff">
+
+<i class="fa-solid fa-pen"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-delete-staff">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- ================= STAFF 2 ================= -->
+
+<tr>
+
+<td>
+
+<input type="checkbox">
+
+</td>
+
+<td>
+
+<div class="academy-player-cell">
+
+<img
+src="images/coach2.jpg"
+alt="Coach">
+
+<div>
+
+<h4>David Joseph</h4>
+
+<p>Fitness Trainer</p>
+
+</div>
+
+</div>
+
+</td>
+
+<td>EMP-1012</td>
+
+<td>Fitness Trainer</td>
+
+<td>AIFF C</td>
+
+<td>8 Years</td>
+
+<td>U17</td>
+
+<td>
+
+<div class="academy-progress">
+
+<div
+class="academy-progress-bar"
+style="width:91%">
+
+</div>
+
+</div>
+
+91%
+
+</td>
+
+<td>
+
+<span
+class="academy-status active">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<div
+class="academy-table-actions">
+
+<button
+class="academy-icon-button academy-view-staff">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-edit-staff">
+
+<i class="fa-solid fa-pen"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-delete-staff">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- ================= STAFF 3 ================= -->
+
+<tr>
+
+<td>
+
+<input type="checkbox">
+
+</td>
+
+<td>
+
+<div class="academy-player-cell">
+
+<img
+src="images/coach3.jpg"
+alt="Coach">
+
+<div>
+
+<h4>Samuel Das</h4>
+
+<p>Physiotherapist</p>
+
+</div>
+
+</div>
+
+</td>
+
+<td>EMP-1034</td>
+
+<td>Medical</td>
+
+<td>Certified</td>
+
+<td>6 Years</td>
+
+<td>All Teams</td>
+
+<td>
+
+<div class="academy-progress">
+
+<div
+class="academy-progress-bar"
+style="width:98%">
+
+</div>
+
+</div>
+
+98%
+
+</td>
+
+<td>
+
+<span
+class="academy-status active">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<div
+class="academy-table-actions">
+
+<button
+class="academy-icon-button academy-view-staff">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-edit-staff">
+
+<i class="fa-solid fa-pen"></i>
+
+</button>
+
+<button
+class="academy-icon-button academy-delete-staff">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ==========================================================
+     MOBILE STAFF CARDS
+========================================================== -->
+
+<section
+class="academy-player-cards"
+id="academyStaffCards">
+
+<!-- ================= CARD ================= -->
+
+<article
+class="academy-player-card">
+
+<div
+class="academy-player-header">
+
+<img
+src="images/coach1.jpg"
+alt="Coach">
+
+<div>
+
+<h3>Rahul Mehta</h3>
+
+<p>Head Coach</p>
+
+</div>
+
+</div>
+
+<div
+class="academy-player-info">
+
+<div>
+
+<span>Experience</span>
+
+<strong>12 Years</strong>
+
+</div>
+
+<div>
+
+<span>Team</span>
+
+<strong>Senior</strong>
+
+</div>
+
+<div>
+
+<span>Attendance</span>
+
+<strong>96%</strong>
+
+</div>
+
+</div>
+
+<span
+class="academy-status active">
+
+Active
+
+</span>
+
+<div
+class="academy-player-actions">
+
+<button
+class="academy-secondary-button academy-view-staff">
+
+View
+
+</button>
+
+<button
+class="academy-primary-button academy-edit-staff">
+
+Edit
+
+</button>
+
+</div>
+
+</article>
+
+<!-- Additional cards populated dynamically later by backend -->
+
+</section>
+<!-- ==========================================================
+     STAFF PROFILE DRAWER
+========================================================== -->
+
+<aside class="academy-player-drawer" id="academyStaffDrawer">
+
+    <div class="academy-drawer-header">
+
+        <h2>Staff Profile</h2>
+
+        <button data-close-staff-drawer>
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <div class="academy-drawer-scroll">
+
+        <div class="academy-player-summary">
+
+            <img src="images/coach1.jpg" alt="Coach">
+
+            <h3>Rahul Mehta</h3>
+
+            <p>Head Coach • Senior Team</p>
+
+            <span class="academy-status active">Active</span>
+
+        </div>
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section class="academy-info-grid">
+
+            <div>
+
+                <label>Employee ID</label>
+
+                <strong>EMP-1001</strong>
+
+            </div>
+
+            <div>
+
+                <label>Experience</label>
+
+                <strong>12 Years</strong>
+
+            </div>
+
+            <div>
+
+                <label>License</label>
+
+                <strong>AFC A</strong>
+
+            </div>
+
+            <div>
+
+                <label>Department</label>
+
+                <strong>Football Coaching</strong>
+
+            </div>
+
+        </section>
+
+        <!-- PERFORMANCE -->
+
+        <section class="academy-performance">
+
+            <h3>Performance</h3>
+
+            <div class="academy-performance-grid">
+
+                <div>
+
+                    <span>Sessions</span>
+
+                    <strong>385</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Attendance</span>
+
+                    <strong>96%</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Rating</span>
+
+                    <strong>4.9★</strong>
+
+                </div>
+
+                <div>
+
+                    <span>Players Developed</span>
+
+                    <strong>148</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="academy-documents">
+
+            <h3>Certifications</h3>
+
+            <button class="academy-secondary-button">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                AFC A License
+
+            </button>
+
+            <button class="academy-secondary-button">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                Medical Certificate
+
+            </button>
+
+            <button class="academy-secondary-button">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                Identity Proof
+
+            </button>
+
+        </section>
+
+        <!-- COACH NOTES -->
+
+        <section class="academy-coach-notes">
+
+            <h3>Administrator Notes</h3>
+
+            <textarea
+                placeholder="Private notes for academy administrators..."></textarea>
+
+        </section>
+
+    </div>
+
+</aside>
+
+<!-- ==========================================================
+     ADD STAFF MODAL
+========================================================== -->
+
+<div class="academy-modal"
+     id="academyAddStaffModal"
+     hidden>
+
+    <div class="academy-modal-content academy-large-modal">
+
+        <div class="academy-modal-header">
+
+            <h2>Add Staff Member</h2>
+
+            <button data-close-add-staff>
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form class="academy-form-grid">
+
+            <div>
+
+                <label>Full Name</label>
+
+                <input type="text">
+
+            </div>
+
+            <div>
+
+                <label>Employee ID</label>
+
+                <input type="text">
+
+            </div>
+
+            <div>
+
+                <label>Email</label>
+
+                <input type="email">
+
+            </div>
+
+            <div>
+
+                <label>Mobile</label>
+
+                <input type="tel">
+
+            </div>
+
+            <div>
+
+                <label>Role</label>
+
+                <select>
+
+                    <option>Head Coach</option>
+
+                    <option>Assistant Coach</option>
+
+                    <option>Fitness Trainer</option>
+
+                    <option>Goalkeeping Coach</option>
+
+                    <option>Scout</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>License</label>
+
+                <input type="text">
+
+            </div>
+
+            <div>
+
+                <label>Experience</label>
+
+                <input type="text">
+
+            </div>
+
+            <div>
+
+                <label>Assigned Team</label>
+
+                <select>
+
+                    <option>Senior</option>
+
+                    <option>U17</option>
+
+                    <option>U15</option>
+
+                </select>
+
+            </div>
+
+        </form>
+
+        <div class="academy-modal-footer">
+
+            <button
+                class="academy-secondary-button"
+                data-close-add-staff>
+
+                Cancel
+
+            </button>
+
+            <button
+                class="academy-primary-button">
+
+                Save Staff
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     EDIT STAFF MODAL
+========================================================== -->
+
+<div class="academy-modal"
+     id="academyEditStaffModal"
+     hidden>
+
+    <div class="academy-modal-content academy-large-modal">
+
+        <div class="academy-modal-header">
+
+            <h2>Edit Staff Member</h2>
+
+            <button data-close-edit-staff>
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <!--
+            Backend Integration
+            Mr. Harsh:
+            Populate this form with staff data.
+        -->
+
+        <div class="academy-modal-footer">
+
+            <button
+                class="academy-secondary-button"
+                data-close-edit-staff>
+
+                Cancel
+
+            </button>
+
+            <button
+                class="academy-primary-button">
+
+                Update Staff
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     DELETE MODAL
+========================================================== -->
+
+<div class="academy-modal"
+     id="academyDeleteStaffModal"
+     hidden>
+
+    <div class="academy-modal-content academy-small-modal">
+
+        <h2>Delete Staff Member?</h2>
+
+        <p>
+
+            This action cannot be undone.
+
+        </p>
+
+        <div class="academy-modal-footer">
+
+            <button
+                class="academy-secondary-button"
+                data-close-delete-staff>
+
+                Cancel
+
+            </button>
+
+            <button
+                class="academy-danger-button"
+                id="academyConfirmDeleteStaff">
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     LOGOUT MODAL
+========================================================== -->
+
+<div class="academy-modal"
+     id="academyLogoutModal"
+     hidden>
+
+    <div class="academy-modal-content academy-small-modal">
+
+        <h2>Logout?</h2>
+
+        <p>
+
+            Are you sure you want to logout?
+
+        </p>
+
+        <div class="academy-modal-footer">
+
+            <button
+                class="academy-secondary-button"
+                data-close-logout>
+
+                Cancel
+
+            </button>
+
+            <button
+                class="academy-danger-button"
+                id="academyConfirmLogout">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     TOASTS
+========================================================== -->
+
+<div class="academy-toast-container"
+     id="academyToastContainer"></div>
+
+</main>
+
+<script src="academy-coaches.js"></script>
+
+</body>
+
+</html>

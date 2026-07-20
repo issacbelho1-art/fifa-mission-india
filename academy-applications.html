@@ -1,0 +1,4277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Manage player applications for FIFA Mission India academy portal."
+  >
+
+  <title>
+    Player Applications | FIFA Mission India
+  </title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Dashboard Base Styles -->
+  <link
+    rel="stylesheet"
+    href="css/academy-dashboard.css"
+  >
+
+  <!-- Page Styles -->
+  <link
+    rel="stylesheet"
+    href="css/academy-applications.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="academy-dashboard-shell">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+      class="academy-sidebar"
+      id="academySidebar"
+    >
+
+      <div class="academy-sidebar-header">
+
+        <a
+          href="index.html"
+          class="academy-sidebar-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <span class="academy-brand-icon">
+            <i class="fa-solid fa-futbol"></i>
+          </span>
+
+          <span class="academy-brand-copy">
+
+            <strong>
+              FIFA Mission India
+            </strong>
+
+            <small>
+              Academy Portal
+            </small>
+
+          </span>
+
+        </a>
+
+        <button
+          type="button"
+          class="academy-sidebar-close"
+          id="academySidebarClose"
+          aria-label="Close sidebar"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- Academy Mini Profile -->
+
+      <div class="academy-sidebar-profile">
+
+        <img
+          src="images/academy-logo-placeholder.png"
+          alt="Rising Stars Football Academy logo"
+        >
+
+        <div>
+
+          <strong>
+            Rising Stars Academy
+          </strong>
+
+          <span>
+            Verified Academy
+          </span>
+
+        </div>
+
+        <i
+          class="fa-solid fa-circle-check"
+          aria-label="Verified"
+        ></i>
+
+      </div>
+
+
+      <!-- Navigation -->
+
+      <nav
+        class="academy-sidebar-nav"
+        aria-label="Academy portal navigation"
+      >
+
+        <span class="academy-nav-label">
+          Overview
+        </span>
+
+        <a href="academy-dashboard.html">
+
+          <i class="fa-solid fa-grid-2"></i>
+
+          <span>
+            Dashboard
+          </span>
+
+        </a>
+
+        <a href="academy-profile.html">
+
+          <i class="fa-solid fa-building-shield"></i>
+
+          <span>
+            Academy Profile
+          </span>
+
+        </a>
+
+
+        <span class="academy-nav-label">
+          Management
+        </span>
+
+        <a
+          href="academy-applications.html"
+          class="active"
+          aria-current="page"
+        >
+
+          <i class="fa-solid fa-file-signature"></i>
+
+          <span>
+            Player Applications
+          </span>
+
+          <span class="academy-nav-count">
+            24
+          </span>
+
+        </a>
+
+        <a href="academy-trials.html">
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+          <span>
+            Trials Management
+          </span>
+
+        </a>
+
+        <a href="academy-players.html">
+
+          <i class="fa-solid fa-people-group"></i>
+
+          <span>
+            Registered Players
+          </span>
+
+        </a>
+
+        <a href="academy-coaches.html">
+
+          <i class="fa-solid fa-user-tie"></i>
+
+          <span>
+            Coaches & Staff
+          </span>
+
+        </a>
+
+
+        <span class="academy-nav-label">
+          Communication
+        </span>
+
+        <a href="academy-messages.html">
+
+          <i class="fa-solid fa-message"></i>
+
+          <span>
+            Messages
+          </span>
+
+          <span class="academy-nav-count">
+            6
+          </span>
+
+        </a>
+
+        <a href="academy-notifications.html">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span>
+            Notifications
+          </span>
+
+        </a>
+
+
+        <span class="academy-nav-label">
+          Account
+        </span>
+
+        <a href="academy-documents.html">
+
+          <i class="fa-solid fa-folder-open"></i>
+
+          <span>
+            Documents
+          </span>
+
+        </a>
+
+        <a href="academy-settings.html">
+
+          <i class="fa-solid fa-gear"></i>
+
+          <span>
+            Settings
+          </span>
+
+        </a>
+
+        <a href="academy-support.html">
+
+          <i class="fa-solid fa-circle-question"></i>
+
+          <span>
+            Help & Support
+          </span>
+
+        </a>
+
+      </nav>
+
+
+      <div class="academy-sidebar-footer">
+
+        <button
+          type="button"
+          id="academyLogoutButton"
+        >
+
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+          <span>
+            Logout
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div
+      class="academy-sidebar-overlay"
+      id="academySidebarOverlay"
+      hidden
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <div class="academy-dashboard-main">
+
+      <!-- Top Navigation -->
+
+      <header class="academy-topbar">
+
+        <div class="academy-topbar-left">
+
+          <button
+            type="button"
+            class="academy-menu-button"
+            id="academyMenuButton"
+            aria-label="Open sidebar"
+          >
+
+            <i class="fa-solid fa-bars"></i>
+
+          </button>
+
+          <div>
+
+            <span class="academy-topbar-eyebrow">
+              Academy Management
+            </span>
+
+            <h1>
+              Player Applications
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="academy-topbar-actions">
+
+          <button
+            type="button"
+            class="academy-topbar-icon-button"
+            aria-label="Search"
+          >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </button>
+
+          <button
+            type="button"
+            class="academy-topbar-icon-button"
+            aria-label="Notifications"
+          >
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span class="academy-notification-dot"></span>
+
+          </button>
+
+
+          <div class="academy-profile-menu">
+
+            <button
+              type="button"
+              class="academy-profile-trigger"
+              id="academyProfileTrigger"
+              aria-expanded="false"
+            >
+
+              <img
+                src="images/academy-logo-placeholder.png"
+                alt="Academy profile"
+              >
+
+              <span>
+
+                <strong>
+                  Rising Stars
+                </strong>
+
+                <small>
+                  Academy Admin
+                </small>
+
+              </span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="academy-profile-dropdown"
+              id="academyProfileDropdown"
+              hidden
+            >
+
+              <a href="academy-profile.html">
+
+                <i class="fa-solid fa-building"></i>
+
+                Academy Profile
+
+              </a>
+
+              <a href="academy-settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Account Settings
+
+              </a>
+
+              <button
+                type="button"
+                data-academy-logout
+              >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                Logout
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- ===================================================
+           PAGE CONTENT
+      ==================================================== -->
+
+      <main class="academy-applications-page">
+
+        <!-- Page Intro -->
+
+        <section class="academy-applications-header">
+
+          <div>
+
+            <span class="academy-page-eyebrow">
+              Recruitment Pipeline
+            </span>
+
+            <h2>
+              Review Player Applications
+            </h2>
+
+            <p>
+              Evaluate player profiles, review documents,
+              shortlist promising talent and invite selected
+              applicants for academy trials.
+            </p>
+
+          </div>
+
+
+          <div class="academy-applications-header-actions">
+
+            <button
+              type="button"
+              class="academy-secondary-button"
+              id="academyExportApplications"
+            >
+
+              <i class="fa-solid fa-file-export"></i>
+
+              Export
+
+            </button>
+
+            <button
+              type="button"
+              class="academy-primary-button"
+              id="academyCreateApplication"
+            >
+
+              <i class="fa-solid fa-user-plus"></i>
+
+              Add Application
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APPLICATION STATISTICS
+        ================================================== -->
+
+        <section class="academy-application-stats">
+
+          <article
+            class="academy-application-stat-card"
+            data-status-filter="all"
+          >
+
+            <div class="academy-stat-icon academy-stat-icon-blue">
+
+              <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Total Applications
+              </span>
+
+              <strong id="totalApplicationsCount">
+                148
+              </strong>
+
+              <small>
+                All submitted applications
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="academy-application-stat-card"
+            data-status-filter="pending"
+          >
+
+            <div class="academy-stat-icon academy-stat-icon-orange">
+
+              <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Pending Review
+              </span>
+
+              <strong id="pendingApplicationsCount">
+                24
+              </strong>
+
+              <small>
+                Awaiting academy review
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="academy-application-stat-card"
+            data-status-filter="shortlisted"
+          >
+
+            <div class="academy-stat-icon academy-stat-icon-purple">
+
+              <i class="fa-solid fa-star"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Shortlisted
+              </span>
+
+              <strong id="shortlistedApplicationsCount">
+                18
+              </strong>
+
+              <small>
+                Selected for next stage
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="academy-application-stat-card"
+            data-status-filter="accepted"
+          >
+
+            <div class="academy-stat-icon academy-stat-icon-green">
+
+              <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Accepted
+              </span>
+
+              <strong id="acceptedApplicationsCount">
+                87
+              </strong>
+
+              <small>
+                Approved for admission
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="academy-application-stat-card"
+            data-status-filter="rejected"
+          >
+
+            <div class="academy-stat-icon academy-stat-icon-red">
+
+              <i class="fa-solid fa-circle-xmark"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Rejected
+              </span>
+
+              <strong id="rejectedApplicationsCount">
+                19
+              </strong>
+
+              <small>
+                Applications not selected
+              </small>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTERS
+        ================================================== -->
+
+        <section class="academy-application-toolbar">
+
+          <div class="academy-application-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="academyApplicationSearch"
+              placeholder="Search player name, application ID or location..."
+              aria-label="Search applications"
+            >
+
+          </div>
+
+
+          <div class="academy-application-filters">
+
+            <div class="academy-filter-field">
+
+              <label for="academyApplicationStatus">
+                Status
+              </label>
+
+              <select id="academyApplicationStatus">
+
+                <option value="all">
+                  All Statuses
+                </option>
+
+                <option value="pending">
+                  Pending
+                </option>
+
+                <option value="shortlisted">
+                  Shortlisted
+                </option>
+
+                <option value="accepted">
+                  Accepted
+                </option>
+
+                <option value="rejected">
+                  Rejected
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="academy-filter-field">
+
+              <label for="academyApplicationAgeGroup">
+                Age Group
+              </label>
+
+              <select id="academyApplicationAgeGroup">
+
+                <option value="all">
+                  All Age Groups
+                </option>
+
+                <option value="u10">
+                  Under 10
+                </option>
+
+                <option value="u12">
+                  Under 12
+                </option>
+
+                <option value="u14">
+                  Under 14
+                </option>
+
+                <option value="u16">
+                  Under 16
+                </option>
+
+                <option value="u18">
+                  Under 18
+                </option>
+
+                <option value="senior">
+                  Senior
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="academy-filter-field">
+
+              <label for="academyApplicationPosition">
+                Position
+              </label>
+
+              <select id="academyApplicationPosition">
+
+                <option value="all">
+                  All Positions
+                </option>
+
+                <option value="goalkeeper">
+                  Goalkeeper
+                </option>
+
+                <option value="defender">
+                  Defender
+                </option>
+
+                <option value="midfielder">
+                  Midfielder
+                </option>
+
+                <option value="forward">
+                  Forward
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="academy-filter-field">
+
+              <label for="academyApplicationSort">
+                Sort By
+              </label>
+
+              <select id="academyApplicationSort">
+
+                <option value="newest">
+                  Newest First
+                </option>
+
+                <option value="oldest">
+                  Oldest First
+                </option>
+
+                <option value="name">
+                  Player Name
+                </option>
+
+                <option value="rating">
+                  Highest Rating
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="academy-filter-reset"
+              id="academyApplicationReset"
+            >
+
+              <i class="fa-solid fa-rotate-left"></i>
+
+              Reset
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BULK ACTIONS
+        ================================================== -->
+
+        <section
+          class="academy-bulk-actions"
+          id="academyBulkActions"
+          hidden
+        >
+
+          <div>
+
+            <span id="academySelectedCount">
+              0 selected
+            </span>
+
+            <button
+              type="button"
+              id="academyClearSelection"
+            >
+              Clear selection
+            </button>
+
+          </div>
+
+
+          <div class="academy-bulk-action-buttons">
+
+            <button
+              type="button"
+              data-bulk-action="shortlisted"
+            >
+
+              <i class="fa-solid fa-star"></i>
+
+              Shortlist
+
+            </button>
+
+            <button
+              type="button"
+              data-bulk-action="accepted"
+            >
+
+              <i class="fa-solid fa-check"></i>
+
+              Accept
+
+            </button>
+
+            <button
+              type="button"
+              data-bulk-action="rejected"
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+              Reject
+
+            </button>
+
+          </div>
+
+        </section>
+
+                <!-- =================================================
+             APPLICATIONS LIST
+        ================================================== -->
+
+        <section class="academy-applications-panel">
+
+          <div class="academy-applications-panel-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Applications
+              </span>
+
+              <h3>
+                Player Application Queue
+              </h3>
+
+              <p id="academyApplicationsResultText">
+                Showing 6 of 148 applications
+              </p>
+
+            </div>
+
+
+            <div class="academy-view-switcher">
+
+              <button
+                type="button"
+                class="active"
+                data-application-view="table"
+                aria-label="Table view"
+              >
+
+                <i class="fa-solid fa-table-list"></i>
+
+              </button>
+
+              <button
+                type="button"
+                data-application-view="grid"
+                aria-label="Grid view"
+              >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- ===============================================
+               APPLICATION TABLE
+          ================================================ -->
+
+          <div
+            class="academy-applications-table-wrapper"
+            id="academyApplicationsTableWrapper"
+          >
+
+            <table class="academy-applications-table">
+
+              <thead>
+
+                <tr>
+
+                  <th class="academy-checkbox-column">
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        id="academySelectAllApplications"
+                        aria-label="Select all applications"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </th>
+
+                  <th>
+                    Player
+                  </th>
+
+                  <th>
+                    Application
+                  </th>
+
+                  <th>
+                    Age Group
+                  </th>
+
+                  <th>
+                    Position
+                  </th>
+
+                  <th>
+                    Rating
+                  </th>
+
+                  <th>
+                    Documents
+                  </th>
+
+                  <th>
+                    Status
+                  </th>
+
+                  <th>
+                    Submitted
+                  </th>
+
+                  <th>
+                    Actions
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="academyApplicationsTableBody">
+
+                <!-- Application 1 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0148"
+                  data-player-name="Arjun Mehta"
+                  data-status="pending"
+                  data-age-group="u16"
+                  data-position="midfielder"
+                  data-rating="4.7"
+                  data-location="Guwahati, Assam"
+                  data-submitted="2026-07-17"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Arjun Mehta"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-1.jpg"
+                        alt="Arjun Mehta"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Arjun Mehta
+                        </strong>
+
+                        <span>
+                          Guwahati, Assam
+                        </span>
+
+                        <small>
+                          Left-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0148
+                      </strong>
+
+                      <span>
+                        Academy admission
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U16
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-circle-nodes"></i>
+
+                      </span>
+
+                      <span>
+                        Midfielder
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        4.7
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status complete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-circle-check"></i>
+
+                      4/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge pending">
+                      Pending
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        17 Jul 2026
+                      </strong>
+
+                      <span>
+                        2 hours ago
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                        aria-label="View Arjun Mehta application"
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                        aria-expanded="false"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-application-action="shortlisted"
+                        >
+
+                          <i class="fa-solid fa-star"></i>
+
+                          Shortlist
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-application-action="accepted"
+                        >
+
+                          <i class="fa-solid fa-check"></i>
+
+                          Accept
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-invite-trial
+                        >
+
+                          <i class="fa-solid fa-calendar-check"></i>
+
+                          Invite to Trial
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-send-message
+                        >
+
+                          <i class="fa-solid fa-message"></i>
+
+                          Send Message
+
+                        </button>
+
+                        <button
+                          type="button"
+                          class="danger"
+                          data-application-action="rejected"
+                        >
+
+                          <i class="fa-solid fa-xmark"></i>
+
+                          Reject
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+
+                <!-- Application 2 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0147"
+                  data-player-name="Lalrinzuala Hmar"
+                  data-status="shortlisted"
+                  data-age-group="u18"
+                  data-position="forward"
+                  data-rating="4.9"
+                  data-location="Aizawl, Mizoram"
+                  data-submitted="2026-07-16"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Lalrinzuala Hmar"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-2.jpg"
+                        alt="Lalrinzuala Hmar"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Lalrinzuala Hmar
+                        </strong>
+
+                        <span>
+                          Aizawl, Mizoram
+                        </span>
+
+                        <small>
+                          Right-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0147
+                      </strong>
+
+                      <span>
+                        Elite trial
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U18
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                      </span>
+
+                      <span>
+                        Forward
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        4.9
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status complete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-circle-check"></i>
+
+                      4/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge shortlisted">
+                      Shortlisted
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        16 Jul 2026
+                      </strong>
+
+                      <span>
+                        Yesterday
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-invite-trial
+                        >
+
+                          <i class="fa-solid fa-calendar-check"></i>
+
+                          Invite to Trial
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-application-action="accepted"
+                        >
+
+                          <i class="fa-solid fa-check"></i>
+
+                          Accept
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-send-message
+                        >
+
+                          <i class="fa-solid fa-message"></i>
+
+                          Send Message
+
+                        </button>
+
+                        <button
+                          type="button"
+                          class="danger"
+                          data-application-action="rejected"
+                        >
+
+                          <i class="fa-solid fa-xmark"></i>
+
+                          Reject
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+
+                <!-- Application 3 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0146"
+                  data-player-name="Neikhriezo Pienyu"
+                  data-status="pending"
+                  data-age-group="u14"
+                  data-position="defender"
+                  data-rating="4.5"
+                  data-location="Kohima, Nagaland"
+                  data-submitted="2026-07-15"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Neikhriezo Pienyu"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-3.jpg"
+                        alt="Neikhriezo Pienyu"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Neikhriezo Pienyu
+                        </strong>
+
+                        <span>
+                          Kohima, Nagaland
+                        </span>
+
+                        <small>
+                          Right-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0146
+                      </strong>
+
+                      <span>
+                        Scholarship
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U14
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                      </span>
+
+                      <span>
+                        Defender
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        4.5
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status incomplete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+
+                      3/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge pending">
+                      Pending
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        15 Jul 2026
+                      </strong>
+
+                      <span>
+                        2 days ago
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-application-action="shortlisted"
+                        >
+
+                          <i class="fa-solid fa-star"></i>
+
+                          Shortlist
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-request-documents
+                        >
+
+                          <i class="fa-solid fa-file-circle-plus"></i>
+
+                          Request Document
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-send-message
+                        >
+
+                          <i class="fa-solid fa-message"></i>
+
+                          Send Message
+
+                        </button>
+
+                        <button
+                          type="button"
+                          class="danger"
+                          data-application-action="rejected"
+                        >
+
+                          <i class="fa-solid fa-xmark"></i>
+
+                          Reject
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+
+                <!-- Application 4 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0145"
+                  data-player-name="Mohammed Faizan"
+                  data-status="accepted"
+                  data-age-group="u16"
+                  data-position="goalkeeper"
+                  data-rating="4.6"
+                  data-location="Hyderabad, Telangana"
+                  data-submitted="2026-07-14"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Mohammed Faizan"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-4.jpg"
+                        alt="Mohammed Faizan"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Mohammed Faizan
+                        </strong>
+
+                        <span>
+                          Hyderabad, Telangana
+                        </span>
+
+                        <small>
+                          Right-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0145
+                      </strong>
+
+                      <span>
+                        Academy admission
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U16
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-hands"></i>
+
+                      </span>
+
+                      <span>
+                        Goalkeeper
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        4.6
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status complete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-circle-check"></i>
+
+                      4/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge accepted">
+                      Accepted
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        14 Jul 2026
+                      </strong>
+
+                      <span>
+                        3 days ago
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-send-message
+                        >
+
+                          <i class="fa-solid fa-message"></i>
+
+                          Send Message
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-view-player
+                        >
+
+                          <i class="fa-solid fa-user"></i>
+
+                          View Player Profile
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+
+                <!-- Application 5 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0144"
+                  data-player-name="Riya Das"
+                  data-status="shortlisted"
+                  data-age-group="u18"
+                  data-position="midfielder"
+                  data-rating="4.8"
+                  data-location="Kolkata, West Bengal"
+                  data-submitted="2026-07-13"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Riya Das"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-5.jpg"
+                        alt="Riya Das"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Riya Das
+                        </strong>
+
+                        <span>
+                          Kolkata, West Bengal
+                        </span>
+
+                        <small>
+                          Left-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0144
+                      </strong>
+
+                      <span>
+                        Girls development
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U18
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-circle-nodes"></i>
+
+                      </span>
+
+                      <span>
+                        Midfielder
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        4.8
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status complete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-circle-check"></i>
+
+                      4/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge shortlisted">
+                      Shortlisted
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        13 Jul 2026
+                      </strong>
+
+                      <span>
+                        4 days ago
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-invite-trial
+                        >
+
+                          <i class="fa-solid fa-calendar-check"></i>
+
+                          Invite to Trial
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-application-action="accepted"
+                        >
+
+                          <i class="fa-solid fa-check"></i>
+
+                          Accept
+
+                        </button>
+
+                        <button
+                          type="button"
+                          class="danger"
+                          data-application-action="rejected"
+                        >
+
+                          <i class="fa-solid fa-xmark"></i>
+
+                          Reject
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+
+                <!-- Application 6 -->
+
+                <tr
+                  class="academy-application-row"
+                  data-application-id="FMI-APP-2026-0143"
+                  data-player-name="Devraj Singh"
+                  data-status="rejected"
+                  data-age-group="u12"
+                  data-position="forward"
+                  data-rating="3.9"
+                  data-location="Jaipur, Rajasthan"
+                  data-submitted="2026-07-12"
+                >
+
+                  <td>
+
+                    <label class="academy-table-checkbox">
+
+                      <input
+                        type="checkbox"
+                        class="academy-application-select"
+                        aria-label="Select Devraj Singh"
+                      >
+
+                      <span>
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+
+                    </label>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-player-cell">
+
+                      <img
+                        src="images/player-avatar-6.jpg"
+                        alt="Devraj Singh"
+                      >
+
+                      <div>
+
+                        <strong>
+                          Devraj Singh
+                        </strong>
+
+                        <span>
+                          Jaipur, Rajasthan
+                        </span>
+
+                        <small>
+                          Right-footed
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-application-id">
+
+                      <strong>
+                        FMI-APP-2026-0143
+                      </strong>
+
+                      <span>
+                        Academy admission
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-age-badge">
+                      U12
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-position-cell">
+
+                      <span class="academy-position-icon">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                      </span>
+
+                      <span>
+                        Forward
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-rating-cell">
+
+                      <i class="fa-solid fa-star"></i>
+
+                      <strong>
+                        3.9
+                      </strong>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="academy-document-status incomplete"
+                      data-document-action
+                    >
+
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+
+                      2/4
+
+                    </button>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="academy-status-badge rejected">
+                      Rejected
+                    </span>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-date-cell">
+
+                      <strong>
+                        12 Jul 2026
+                      </strong>
+
+                      <span>
+                        5 days ago
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <div class="academy-row-actions">
+
+                      <button
+                        type="button"
+                        class="academy-row-primary-action"
+                        data-view-application
+                      >
+
+                        View
+
+                      </button>
+
+                      <button
+                        type="button"
+                        class="academy-row-menu-button"
+                        data-row-menu-trigger
+                        aria-label="More actions"
+                      >
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </button>
+
+
+                      <div
+                        class="academy-row-action-menu"
+                        hidden
+                      >
+
+                        <button
+                          type="button"
+                          data-application-action="pending"
+                        >
+
+                          <i class="fa-solid fa-rotate-left"></i>
+
+                          Reopen Application
+
+                        </button>
+
+                        <button
+                          type="button"
+                          data-send-message
+                        >
+
+                          <i class="fa-solid fa-message"></i>
+
+                          Send Message
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <!-- ===============================================
+               GRID VIEW
+          ================================================ -->
+
+          <div
+            class="academy-applications-grid"
+            id="academyApplicationsGrid"
+            hidden
+          ></div>
+
+
+          <!-- ===============================================
+               EMPTY STATE
+          ================================================ -->
+
+          <div
+            class="academy-applications-empty"
+            id="academyApplicationsEmpty"
+            hidden
+          >
+
+            <div>
+
+              <i class="fa-solid fa-file-circle-xmark"></i>
+
+            </div>
+
+            <h3>
+              No applications found
+            </h3>
+
+            <p>
+              Try changing the search term or resetting
+              the selected filters.
+            </p>
+
+            <button
+              type="button"
+              id="academyEmptyResetFilters"
+            >
+
+              <i class="fa-solid fa-rotate-left"></i>
+
+              Reset Filters
+
+            </button>
+
+          </div>
+
+
+          <!-- ===============================================
+               PAGINATION
+          ================================================ -->
+
+          <div class="academy-applications-pagination">
+
+            <div>
+
+              <span>
+                Rows per page
+              </span>
+
+              <select
+                id="academyApplicationsPerPage"
+                aria-label="Applications per page"
+              >
+
+                <option value="6">
+                  6
+                </option>
+
+                <option value="10">
+                  10
+                </option>
+
+                <option value="20">
+                  20
+                </option>
+
+                <option value="50">
+                  50
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="academy-pagination-info">
+
+              <span id="academyPaginationText">
+                1–6 of 148
+              </span>
+
+            </div>
+
+
+            <div class="academy-pagination-controls">
+
+              <button
+                type="button"
+                id="academyFirstPage"
+                aria-label="First page"
+              >
+
+                <i class="fa-solid fa-angles-left"></i>
+
+              </button>
+
+              <button
+                type="button"
+                id="academyPreviousPage"
+                aria-label="Previous page"
+              >
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+              </button>
+
+              <button
+                type="button"
+                class="academy-page-number active"
+                data-page="1"
+              >
+                1
+              </button>
+
+              <button
+                type="button"
+                class="academy-page-number"
+                data-page="2"
+              >
+                2
+              </button>
+
+              <button
+                type="button"
+                class="academy-page-number"
+                data-page="3"
+              >
+                3
+              </button>
+
+              <span>
+                …
+              </span>
+
+              <button
+                type="button"
+                class="academy-page-number"
+                data-page="25"
+              >
+                25
+              </button>
+
+              <button
+                type="button"
+                id="academyNextPage"
+                aria-label="Next page"
+              >
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+              </button>
+
+              <button
+                type="button"
+                id="academyLastPage"
+                aria-label="Last page"
+              >
+
+                <i class="fa-solid fa-angles-right"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       PLAYER APPLICATION DRAWER
+  ====================================================== -->
+
+  <div
+    class="academy-application-drawer"
+    id="academyApplicationDrawer"
+    aria-hidden="true"
+  >
+
+    <div
+      class="academy-drawer-backdrop"
+      data-close-application-drawer
+    ></div>
+
+
+    <aside
+      class="academy-drawer-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyDrawerPlayerName"
+    >
+
+      <div class="academy-drawer-header">
+
+        <div>
+
+          <span>
+            Player Application
+          </span>
+
+          <strong id="academyDrawerApplicationId">
+            FMI-APP-2026-0148
+          </strong>
+
+        </div>
+
+        <button
+          type="button"
+          data-close-application-drawer
+          aria-label="Close application"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+
+      <div class="academy-drawer-scroll">
+
+        <!-- Player Summary -->
+
+        <section class="academy-drawer-player-summary">
+
+          <img
+            id="academyDrawerPlayerImage"
+            src="images/player-avatar-1.jpg"
+            alt="Player"
+          >
+
+          <div>
+
+            <div class="academy-drawer-player-title">
+
+              <h2 id="academyDrawerPlayerName">
+                Arjun Mehta
+              </h2>
+
+              <span
+                class="academy-status-badge pending"
+                id="academyDrawerStatus"
+              >
+                Pending
+              </span>
+
+            </div>
+
+            <p id="academyDrawerPlayerLocation">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              Guwahati, Assam
+
+            </p>
+
+            <div class="academy-drawer-player-meta">
+
+              <span>
+
+                <i class="fa-solid fa-cake-candles"></i>
+
+                15 years
+
+              </span>
+
+              <span>
+
+                <i class="fa-solid fa-shirt"></i>
+
+                Midfielder
+
+              </span>
+
+              <span>
+
+                <i class="fa-solid fa-shoe-prints"></i>
+
+                Left-footed
+
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- Evaluation Score -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Academy Evaluation
+              </span>
+
+              <h3>
+                Player Rating
+              </h3>
+
+            </div>
+
+            <strong class="academy-drawer-rating">
+
+              <i class="fa-solid fa-star"></i>
+
+              <span id="academyDrawerRating">
+                4.7
+              </span>
+
+            </strong>
+
+          </div>
+
+
+          <div class="academy-player-score-grid">
+
+            <article>
+
+              <span>
+                Technical
+              </span>
+
+              <strong>
+                88
+              </strong>
+
+              <div>
+
+                <span style="width:88%"></span>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>
+                Physical
+              </span>
+
+              <strong>
+                81
+              </strong>
+
+              <div>
+
+                <span style="width:81%"></span>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>
+                Tactical
+              </span>
+
+              <strong>
+                85
+              </strong>
+
+              <div>
+
+                <span style="width:85%"></span>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>
+                Mentality
+              </span>
+
+              <strong>
+                90
+              </strong>
+
+              <div>
+
+                <span style="width:90%"></span>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- Personal Details -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Personal Details
+              </span>
+
+              <h3>
+                Player Information
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="academy-player-information-grid">
+
+            <div>
+
+              <span>
+                Date of Birth
+              </span>
+
+              <strong>
+                12 September 2010
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Gender
+              </span>
+
+              <strong>
+                Male
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Height
+              </span>
+
+              <strong>
+                171 cm
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Weight
+              </span>
+
+              <strong>
+                59 kg
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Preferred Position
+              </span>
+
+              <strong id="academyDrawerPosition">
+                Midfielder
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Secondary Position
+              </span>
+
+              <strong>
+                Left Winger
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Playing Foot
+              </span>
+
+              <strong>
+                Left
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Current Club
+              </span>
+
+              <strong>
+                Guwahati Youth FC
+              </strong>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- Player Bio -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Profile
+              </span>
+
+              <h3>
+                Player Statement
+              </h3>
+
+            </div>
+
+          </div>
+
+          <p class="academy-player-statement">
+            I am a creative midfielder who enjoys controlling
+            the tempo of the match, creating chances and helping
+            the team in both attack and defence. My goal is to
+            develop under professional coaches and represent India.
+          </p>
+
+        </section>
+
+
+        <!-- Documents -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Verification
+              </span>
+
+              <h3>
+                Submitted Documents
+              </h3>
+
+            </div>
+
+            <span class="academy-documents-complete">
+              4 of 4 verified
+            </span>
+
+          </div>
+
+
+          <div class="academy-document-list">
+
+            <article>
+
+              <span class="academy-document-icon">
+
+                <i class="fa-solid fa-id-card"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  Birth Certificate
+                </strong>
+
+                <span>
+                  PDF · 1.4 MB
+                </span>
+
+              </div>
+
+              <span class="academy-document-verified">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Verified
+
+              </span>
+
+              <button
+                type="button"
+                aria-label="View birth certificate"
+              >
+
+                <i class="fa-solid fa-eye"></i>
+
+              </button>
+
+            </article>
+
+
+            <article>
+
+              <span class="academy-document-icon">
+
+                <i class="fa-solid fa-school"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  School ID
+                </strong>
+
+                <span>
+                  JPG · 820 KB
+                </span>
+
+              </div>
+
+              <span class="academy-document-verified">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Verified
+
+              </span>
+
+              <button
+                type="button"
+                aria-label="View school ID"
+              >
+
+                <i class="fa-solid fa-eye"></i>
+
+              </button>
+
+            </article>
+
+
+            <article>
+
+              <span class="academy-document-icon">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  Parent Consent
+                </strong>
+
+                <span>
+                  PDF · 640 KB
+                </span>
+
+              </div>
+
+              <span class="academy-document-verified">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Verified
+
+              </span>
+
+              <button
+                type="button"
+                aria-label="View parent consent"
+              >
+
+                <i class="fa-solid fa-eye"></i>
+
+              </button>
+
+            </article>
+
+
+            <article>
+
+              <span class="academy-document-icon">
+
+                <i class="fa-solid fa-notes-medical"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  Medical Fitness Certificate
+                </strong>
+
+                <span>
+                  PDF · 980 KB
+                </span>
+
+              </div>
+
+              <span class="academy-document-verified">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Verified
+
+              </span>
+
+              <button
+                type="button"
+                aria-label="View medical certificate"
+              >
+
+                <i class="fa-solid fa-eye"></i>
+
+              </button>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- Videos -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Performance Media
+              </span>
+
+              <h3>
+                Player Videos
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <div class="academy-player-video-grid">
+
+            <button type="button">
+
+              <span>
+
+                <i class="fa-solid fa-play"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  Match Highlights
+                </strong>
+
+                <small>
+                  04:32 minutes
+                </small>
+
+              </div>
+
+            </button>
+
+
+            <button type="button">
+
+              <span>
+
+                <i class="fa-solid fa-play"></i>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  Technical Skills
+                </strong>
+
+                <small>
+                  02:18 minutes
+                </small>
+
+              </div>
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- Internal Notes -->
+
+        <section class="academy-drawer-section">
+
+          <div class="academy-drawer-section-header">
+
+            <div>
+
+              <span class="academy-panel-eyebrow">
+                Private
+              </span>
+
+              <h3>
+                Academy Notes
+              </h3>
+
+            </div>
+
+          </div>
+
+          <textarea
+            id="academyApplicationNotes"
+            rows="5"
+            placeholder="Write internal evaluation notes. These notes will not be visible to the player."
+          ></textarea>
+
+          <button
+            type="button"
+            class="academy-save-notes-button"
+            id="academySaveApplicationNotes"
+          >
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Notes
+
+          </button>
+
+        </section>
+
+      </div>
+
+
+      <!-- Drawer Actions -->
+
+      <div class="academy-drawer-footer">
+
+        <button
+          type="button"
+          class="academy-drawer-reject-button"
+          data-drawer-action="rejected"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+          Reject
+
+        </button>
+
+        <button
+          type="button"
+          class="academy-drawer-shortlist-button"
+          data-drawer-action="shortlisted"
+        >
+
+          <i class="fa-solid fa-star"></i>
+
+          Shortlist
+
+        </button>
+
+        <button
+          type="button"
+          class="academy-drawer-trial-button"
+          id="academyDrawerTrialInvite"
+        >
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+          Invite to Trial
+
+        </button>
+
+        <button
+          type="button"
+          class="academy-drawer-accept-button"
+          data-drawer-action="accepted"
+        >
+
+          <i class="fa-solid fa-check"></i>
+
+          Accept
+
+        </button>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- =====================================================
+       STATUS CONFIRMATION MODAL
+  ====================================================== -->
+
+  <div
+    class="academy-modal"
+    id="academyApplicationActionModal"
+    hidden
+  >
+
+    <div
+      class="academy-modal-backdrop"
+      data-close-action-modal
+    ></div>
+
+
+    <div
+      class="academy-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyActionModalTitle"
+    >
+
+      <button
+        type="button"
+        class="academy-modal-close-button"
+        data-close-action-modal
+        aria-label="Close modal"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+
+      <div
+        class="academy-modal-icon"
+        id="academyActionModalIcon"
+      >
+
+        <i class="fa-solid fa-circle-question"></i>
+
+      </div>
+
+
+      <h2 id="academyActionModalTitle">
+        Update Application
+      </h2>
+
+      <p id="academyActionModalMessage">
+        Are you sure you want to update this application?
+      </p>
+
+
+      <div class="academy-modal-player-preview">
+
+        <span id="academyActionPlayerInitials">
+          AM
+        </span>
+
+        <div>
+
+          <strong id="academyActionPlayerName">
+            Arjun Mehta
+          </strong>
+
+          <small id="academyActionApplicationId">
+            FMI-APP-2026-0148
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="academy-modal-actions">
+
+        <button
+          type="button"
+          class="academy-modal-cancel"
+          data-close-action-modal
+        >
+
+          Cancel
+
+        </button>
+
+        <button
+          type="button"
+          class="academy-modal-confirm"
+          id="academyConfirmApplicationAction"
+        >
+
+          Confirm
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       REJECTION MODAL
+  ====================================================== -->
+
+  <div
+    class="academy-modal"
+    id="academyRejectApplicationModal"
+    hidden
+  >
+
+    <div
+      class="academy-modal-backdrop"
+      data-close-reject-modal
+    ></div>
+
+
+    <div
+      class="academy-modal-card academy-rejection-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyRejectModalTitle"
+    >
+
+      <button
+        type="button"
+        class="academy-modal-close-button"
+        data-close-reject-modal
+        aria-label="Close rejection form"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+
+      <div class="academy-rejection-heading">
+
+        <span>
+
+          <i class="fa-solid fa-user-xmark"></i>
+
+        </span>
+
+        <div>
+
+          <h2 id="academyRejectModalTitle">
+            Reject Application
+          </h2>
+
+          <p>
+            Select a reason and add an optional message
+            for the player.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <form id="academyRejectApplicationForm">
+
+        <div class="academy-form-group">
+
+          <label for="academyRejectionReason">
+            Rejection Reason
+          </label>
+
+          <select
+            id="academyRejectionReason"
+            required
+          >
+
+            <option value="">
+              Select a reason
+            </option>
+
+            <option value="eligibility">
+              Player does not meet eligibility criteria
+            </option>
+
+            <option value="documents">
+              Required documents are incomplete
+            </option>
+
+            <option value="capacity">
+              Academy intake capacity is full
+            </option>
+
+            <option value="evaluation">
+              Player evaluation did not meet requirements
+            </option>
+
+            <option value="age">
+              Age group is currently unavailable
+            </option>
+
+            <option value="other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="academy-form-group">
+
+          <label for="academyRejectionMessage">
+            Message to Player
+          </label>
+
+          <textarea
+            id="academyRejectionMessage"
+            rows="5"
+            maxlength="500"
+            placeholder="Thank the player for applying and explain the decision respectfully."
+          ></textarea>
+
+          <div class="academy-form-counter">
+
+            <span id="academyRejectionCharacterCount">
+              0
+            </span>
+
+            / 500
+
+          </div>
+
+        </div>
+
+
+        <label class="academy-form-checkbox">
+
+          <input
+            type="checkbox"
+            id="academyAllowFutureApplications"
+            checked
+          >
+
+          <span>
+
+            <i class="fa-solid fa-check"></i>
+
+          </span>
+
+          Allow the player to apply again in future
+
+        </label>
+
+
+        <div class="academy-modal-actions">
+
+          <button
+            type="button"
+            class="academy-modal-cancel"
+            data-close-reject-modal
+          >
+
+            Cancel
+
+          </button>
+
+          <button
+            type="submit"
+            class="academy-modal-danger"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Reject Application
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       TRIAL INVITATION MODAL
+  ====================================================== -->
+
+  <div
+    class="academy-modal"
+    id="academyTrialInvitationModal"
+    hidden
+  >
+
+    <div
+      class="academy-modal-backdrop"
+      data-close-trial-modal
+    ></div>
+
+
+    <div
+      class="academy-modal-card academy-trial-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyTrialModalTitle"
+    >
+
+      <button
+        type="button"
+        class="academy-modal-close-button"
+        data-close-trial-modal
+        aria-label="Close trial invitation"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+
+      <div class="academy-trial-modal-heading">
+
+        <span>
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+        </span>
+
+        <div>
+
+          <h2 id="academyTrialModalTitle">
+            Invite Player to Trial
+          </h2>
+
+          <p>
+            Create and send a professional trial invitation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="academy-trial-player-preview">
+
+        <span id="academyTrialPlayerInitials">
+          AM
+        </span>
+
+        <div>
+
+          <strong id="academyTrialPlayerName">
+            Arjun Mehta
+          </strong>
+
+          <small id="academyTrialApplicationId">
+            FMI-APP-2026-0148
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <form id="academyTrialInvitationForm">
+
+        <div class="academy-form-grid">
+
+          <div class="academy-form-group">
+
+            <label for="academyTrialName">
+              Trial Name
+            </label>
+
+            <input
+              type="text"
+              id="academyTrialName"
+              required
+              placeholder="U16 Academy Selection Trial"
+            >
+
+          </div>
+
+
+          <div class="academy-form-group">
+
+            <label for="academyTrialAgeGroup">
+              Age Group
+            </label>
+
+            <select
+              id="academyTrialAgeGroup"
+              required
+            >
+
+              <option value="">
+                Select age group
+              </option>
+
+              <option value="u10">
+                Under 10
+              </option>
+
+              <option value="u12">
+                Under 12
+              </option>
+
+              <option value="u14">
+                Under 14
+              </option>
+
+              <option value="u16">
+                Under 16
+              </option>
+
+              <option value="u18">
+                Under 18
+              </option>
+
+              <option value="senior">
+                Senior
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="academy-form-group">
+
+            <label for="academyTrialDate">
+              Trial Date
+            </label>
+
+            <input
+              type="date"
+              id="academyTrialDate"
+              required
+            >
+
+          </div>
+
+
+          <div class="academy-form-group">
+
+            <label for="academyTrialTime">
+              Reporting Time
+            </label>
+
+            <input
+              type="time"
+              id="academyTrialTime"
+              required
+            >
+
+          </div>
+
+
+          <div class="academy-form-group academy-full-width">
+
+            <label for="academyTrialVenue">
+              Venue
+            </label>
+
+            <input
+              type="text"
+              id="academyTrialVenue"
+              required
+              placeholder="Academy Training Ground, Dimapur"
+            >
+
+          </div>
+
+
+          <div class="academy-form-group academy-full-width">
+
+            <label for="academyTrialInstructions">
+              Instructions
+            </label>
+
+            <textarea
+              id="academyTrialInstructions"
+              rows="5"
+              maxlength="700"
+              placeholder="Mention required documents, kit, arrival time, medical requirements and contact details."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <label class="academy-form-checkbox">
+
+          <input
+            type="checkbox"
+            id="academySendTrialNotification"
+            checked
+          >
+
+          <span>
+
+            <i class="fa-solid fa-check"></i>
+
+          </span>
+
+          Send in-app and email notification to the player
+
+        </label>
+
+
+        <div class="academy-modal-actions">
+
+          <button
+            type="button"
+            class="academy-modal-cancel"
+            data-close-trial-modal
+          >
+
+            Cancel
+
+          </button>
+
+          <button
+            type="submit"
+            class="academy-modal-confirm"
+          >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Send Invitation
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       DOCUMENT PREVIEW MODAL
+  ====================================================== -->
+
+  <div
+    class="academy-modal"
+    id="academyDocumentsModal"
+    hidden
+  >
+
+    <div
+      class="academy-modal-backdrop"
+      data-close-documents-modal
+    ></div>
+
+
+    <div
+      class="academy-modal-card academy-documents-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyDocumentsModalTitle"
+    >
+
+      <button
+        type="button"
+        class="academy-modal-close-button"
+        data-close-documents-modal
+        aria-label="Close documents"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+
+      <div class="academy-documents-modal-heading">
+
+        <span>
+
+          <i class="fa-solid fa-folder-open"></i>
+
+        </span>
+
+        <div>
+
+          <h2 id="academyDocumentsModalTitle">
+            Player Documents
+          </h2>
+
+          <p id="academyDocumentsPlayerName">
+            Arjun Mehta · FMI-APP-2026-0148
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="academy-modal-document-list">
+
+        <article>
+
+          <span>
+
+            <i class="fa-solid fa-id-card"></i>
+
+          </span>
+
+          <div>
+
+            <strong>
+              Birth Certificate
+            </strong>
+
+            <small>
+              PDF · 1.4 MB
+            </small>
+
+          </div>
+
+          <button type="button">
+
+            <i class="fa-solid fa-eye"></i>
+
+            Preview
+
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>
+
+            <i class="fa-solid fa-school"></i>
+
+          </span>
+
+          <div>
+
+            <strong>
+              School ID
+            </strong>
+
+            <small>
+              JPG · 820 KB
+            </small>
+
+          </div>
+
+          <button type="button">
+
+            <i class="fa-solid fa-eye"></i>
+
+            Preview
+
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>
+
+            <i class="fa-solid fa-user-shield"></i>
+
+          </span>
+
+          <div>
+
+            <strong>
+              Parent Consent
+            </strong>
+
+            <small>
+              PDF · 640 KB
+            </small>
+
+          </div>
+
+          <button type="button">
+
+            <i class="fa-solid fa-eye"></i>
+
+            Preview
+
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+          </span>
+
+          <div>
+
+            <strong>
+              Medical Fitness Certificate
+            </strong>
+
+            <small>
+              PDF · 980 KB
+            </small>
+
+          </div>
+
+          <button type="button">
+
+            <i class="fa-solid fa-eye"></i>
+
+            Preview
+
+          </button>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       LOGOUT MODAL
+  ====================================================== -->
+
+  <div
+    class="academy-modal"
+    id="academyLogoutModal"
+    hidden
+  >
+
+    <div
+      class="academy-modal-backdrop"
+      data-close-logout-modal
+    ></div>
+
+
+    <div
+      class="academy-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="academyLogoutModalTitle"
+    >
+
+      <div class="academy-modal-icon academy-logout-modal-icon">
+
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+      </div>
+
+      <h2 id="academyLogoutModalTitle">
+        Logout from Academy Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to manage
+        your academy account.
+      </p>
+
+
+      <div class="academy-modal-actions">
+
+        <button
+          type="button"
+          class="academy-modal-cancel"
+          data-close-logout-modal
+        >
+
+          Cancel
+
+        </button>
+
+        <button
+          type="button"
+          class="academy-modal-danger"
+          id="academyConfirmLogout"
+        >
+
+          Logout
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+
+       BACKEND INTEGRATION — MR. HARSH
+
+       Required API integration:
+
+       1. Fetch academy player applications
+       2. Search, filter, sort and paginate applications
+       3. Fetch complete player profile and application details
+       4. Update application status
+       5. Shortlist player
+       6. Accept player application
+       7. Reject player application with reason
+       8. Invite player to academy trial
+       9. Save internal academy notes
+       10. Fetch and verify submitted documents
+       11. Send messages and notifications
+       12. Export application data
+       13. Bulk status updates
+       14. Create manual application
+       15. Record audit log for every action
+
+       Security requirements:
+
+       - Verify academy ownership server-side
+       - Validate all application IDs
+       - Restrict document access using secure URLs
+       - Sanitize academy notes and messages
+       - Store status-change history
+       - Prevent unauthorized bulk updates
+       - Enforce role-based permissions
+       - Log administrator identity and action timestamps
+
+  ====================================================== -->
+
+
+  <script src="js/academy-dashboard.js"></script>
+
+  <script src="js/academy-applications.js"></script>
+
+</body>
+
+</html>

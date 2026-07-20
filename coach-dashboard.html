@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Coach Dashboard for FIFA Mission India"
+  />
+
+  <title>
+    Coach Dashboard | FIFA Mission India
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="coach-dashboard.css"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MOBILE SIDEBAR OVERLAY
+  ====================================================== -->
+
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       COACH SIDEBAR
+  ====================================================== -->
+
+  <aside
+    class="coach-sidebar"
+    id="coachSidebar"
+    aria-label="Coach portal navigation"
+  >
+
+    <div class="sidebar-header">
+
+      <a
+        href="../index.html"
+        class="portal-brand"
+        aria-label="FIFA Mission India home"
+      >
+
+        <div class="brand-icon">
+          ⚽
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            FIFA MISSION INDIA
+          </strong>
+
+          <span>
+            Coach Portal
+          </span>
+
+        </div>
+
+      </a>
+
+      <button
+        class="sidebar-close-button"
+        id="sidebarCloseButton"
+        type="button"
+        aria-label="Close navigation"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <nav class="sidebar-navigation">
+
+      <p class="navigation-label">
+        OVERVIEW
+      </p>
+
+      <a
+        href="coach-dashboard.html"
+        class="sidebar-link active"
+        aria-current="page"
+      >
+        <span class="sidebar-link-icon">
+          ▦
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+      </a>
+
+      <a
+        href="coach-profile.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ◉
+        </span>
+
+        <span>
+          My Profile
+        </span>
+      </a>
+
+
+      <p class="navigation-label">
+        COACHING
+      </p>
+
+      <a
+        href="coach-players.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ♟
+        </span>
+
+        <span>
+          Players
+        </span>
+
+        <span
+          class="sidebar-count"
+          id="sidebarPlayerCount"
+        >
+          24
+        </span>
+      </a>
+
+      <a
+        href="coach-training.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ◫
+        </span>
+
+        <span>
+          Training
+        </span>
+      </a>
+
+      <a
+        href="coach-schedule.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ◷
+        </span>
+
+        <span>
+          Schedule
+        </span>
+      </a>
+
+      <a
+        href="coach-performance.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ◒
+        </span>
+
+        <span>
+          Performance
+        </span>
+      </a>
+
+      <a
+        href="coach-trials.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ◎
+        </span>
+
+        <span>
+          Trials
+        </span>
+
+        <span
+          class="sidebar-count"
+          id="sidebarTrialCount"
+        >
+          3
+        </span>
+      </a>
+
+
+      <p class="navigation-label">
+        COMMUNICATION
+      </p>
+
+      <a
+        href="coach-messages.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ✉
+        </span>
+
+        <span>
+          Messages
+        </span>
+
+        <span
+          class="sidebar-notification"
+          id="sidebarMessageCount"
+        >
+          5
+        </span>
+      </a>
+
+      <a
+        href="coach-documents.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ▤
+        </span>
+
+        <span>
+          Documents
+        </span>
+      </a>
+
+
+      <p class="navigation-label">
+        ACCOUNT
+      </p>
+
+      <a
+        href="coach-settings.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ⚙
+        </span>
+
+        <span>
+          Settings
+        </span>
+      </a>
+
+      <a
+        href="coach-help.html"
+        class="sidebar-link"
+      >
+        <span class="sidebar-link-icon">
+          ?
+        </span>
+
+        <span>
+          Help & Support
+        </span>
+      </a>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+
+      <div class="sidebar-support-card">
+
+        <span class="support-card-icon">
+          🏆
+        </span>
+
+        <div>
+
+          <strong>
+            Mission FIFA 2034
+          </strong>
+
+          <p>
+            Developing India's next generation of football talent.
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="sidebar-logout-button"
+        id="sidebarLogoutButton"
+        type="button"
+      >
+        <span>
+          ↪
+        </span>
+
+        Logout
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN PORTAL WRAPPER
+  ====================================================== -->
+
+  <div class="coach-portal-wrapper">
+
+
+    <!-- ===================================================
+         TOP HEADER
+    ==================================================== -->
+
+    <header class="coach-topbar">
+
+      <div class="topbar-left">
+
+        <button
+          class="mobile-menu-button"
+          id="mobileMenuButton"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="coachSidebar"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+        <div class="topbar-page-title">
+
+          <span class="page-eyebrow">
+            COACH PORTAL
+          </span>
+
+          <h1>
+            Dashboard
+          </h1>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <button
+          class="topbar-icon-button"
+          id="searchToggleButton"
+          type="button"
+          aria-label="Search"
+        >
+          ⌕
+        </button>
+
+        <button
+          class="topbar-icon-button notification-button"
+          id="notificationButton"
+          type="button"
+          aria-label="Notifications"
+        >
+          ♢
+
+          <span
+            class="notification-indicator"
+            id="notificationIndicator"
+          ></span>
+        </button>
+
+
+        <div class="coach-account-menu">
+
+          <button
+            class="coach-account-button"
+            id="coachAccountButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="coachAccountDropdown"
+          >
+
+            <img
+              src="images/coach-avatar-placeholder.jpg"
+              alt="Coach profile"
+              id="topbarCoachAvatar"
+            />
+
+            <div class="coach-account-details">
+
+              <strong id="topbarCoachName">
+                Coach Arjun Singh
+              </strong>
+
+              <span id="topbarCoachRole">
+                Head Coach
+              </span>
+
+            </div>
+
+            <span class="account-chevron">
+              ▾
+            </span>
+
+          </button>
+
+
+          <div
+            class="coach-account-dropdown"
+            id="coachAccountDropdown"
+            hidden
+          >
+
+            <a href="coach-profile.html">
+              View Profile
+            </a>
+
+            <a href="coach-settings.html">
+              Account Settings
+            </a>
+
+            <button
+              id="accountLogoutButton"
+              type="button"
+            >
+              Logout
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         SEARCH PANEL
+    ==================================================== -->
+
+    <div
+      class="dashboard-search-panel"
+      id="dashboardSearchPanel"
+      hidden
+    >
+
+      <form
+        class="dashboard-search-form"
+        id="dashboardSearchForm"
+        role="search"
+      >
+
+        <label
+          class="sr-only"
+          for="dashboardSearchInput"
+        >
+          Search dashboard
+        </label>
+
+        <input
+          id="dashboardSearchInput"
+          name="search"
+          type="search"
+          placeholder="Search players, training sessions, trials or messages..."
+          autocomplete="off"
+        />
+
+        <button type="submit">
+          Search
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- ===================================================
+         MAIN DASHBOARD CONTENT
+    ==================================================== -->
+
+    <main class="coach-dashboard-main">
+
+
+      <!-- =================================================
+           WELCOME HERO
+      ================================================== -->
+
+      <section class="dashboard-welcome-section">
+
+        <div class="welcome-content">
+
+          <span class="welcome-badge">
+            COACH DEVELOPMENT CENTRE
+          </span>
+
+          <h2>
+            Welcome back,
+            <span id="welcomeCoachName">
+              Coach Arjun
+            </span>
+          </h2>
+
+          <p>
+            Guide your players, organise training and monitor team
+            development from one connected coaching platform.
+          </p>
+
+          <div class="welcome-actions">
+
+            <a
+              href="coach-training.html"
+              class="primary-dashboard-button"
+            >
+              Create Training Session
+            </a>
+
+            <a
+              href="coach-players.html"
+              class="secondary-dashboard-button"
+            >
+              View Players
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="welcome-team-card">
+
+          <span class="team-card-label">
+            CURRENT ASSIGNMENT
+          </span>
+
+          <div class="team-card-main">
+
+            <div class="team-logo">
+              MI
+            </div>
+
+            <div>
+
+              <h3 id="assignedAcademyName">
+                Minerva Football Academy
+              </h3>
+
+              <p id="assignedTeamName">
+                Under-17 Elite Team
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="team-card-footer">
+
+            <div>
+
+              <span>
+                Season
+              </span>
+
+              <strong id="currentSeason">
+                2026–27
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Team Size
+              </span>
+
+              <strong id="currentTeamSize">
+                24 Players
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           DASHBOARD STATISTICS
+      ================================================== -->
+
+      <section
+        class="dashboard-statistics-grid"
+        aria-label="Coach statistics"
+      >
+
+        <article class="dashboard-stat-card">
+
+          <div class="stat-card-icon players-icon">
+            ♟
+          </div>
+
+          <div class="stat-card-content">
+
+            <span>
+              Assigned Players
+            </span>
+
+            <strong
+              class="stat-card-value"
+              id="assignedPlayersCount"
+              data-count="24"
+            >
+              24
+            </strong>
+
+            <small class="positive-stat">
+              +3 this month
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="dashboard-stat-card">
+
+          <div class="stat-card-icon training-icon">
+            ◫
+          </div>
+
+          <div class="stat-card-content">
+
+            <span>
+              Training Sessions
+            </span>
+
+            <strong
+              class="stat-card-value"
+              id="trainingSessionCount"
+              data-count="18"
+            >
+              18
+            </strong>
+
+            <small>
+              This month
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="dashboard-stat-card">
+
+          <div class="stat-card-icon attendance-icon">
+            ✓
+          </div>
+
+          <div class="stat-card-content">
+
+            <span>
+              Average Attendance
+            </span>
+
+            <strong
+              class="stat-card-value"
+              id="averageAttendance"
+              data-count="91"
+            >
+              91%
+            </strong>
+
+            <small class="positive-stat">
+              +4% improvement
+            </small>
+
+          </div>
+
+        </article>
+
+
+        <article class="dashboard-stat-card">
+
+          <div class="stat-card-icon trial-icon">
+            ◎
+          </div>
+
+          <div class="stat-card-content">
+
+            <span>
+              Trial Invitations
+            </span>
+
+            <strong
+              class="stat-card-value"
+              id="trialInvitationCount"
+              data-count="3"
+            >
+              3
+            </strong>
+
+            <small>
+              Action required
+            </small>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =================================================
+           DASHBOARD PRIMARY GRID
+      ================================================== -->
+
+      <section class="dashboard-primary-grid">
+
+
+        <!-- ===============================================
+             UPCOMING TRAINING SESSIONS
+        ================================================ -->
+
+        <article class="dashboard-card upcoming-training-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                TRAINING
+              </span>
+
+              <h2>
+                Upcoming Sessions
+              </h2>
+
+            </div>
+
+            <a
+              href="coach-training.html"
+              class="card-header-link"
+            >
+              View All →
+            </a>
+
+          </div>
+
+
+          <div
+            class="training-session-list"
+            id="trainingSessionList"
+          >
+
+
+            <article
+              class="training-session-item"
+              data-session-id="session-001"
+            >
+
+              <div class="session-date">
+
+                <span>
+                  JUL
+                </span>
+
+                <strong>
+                  19
+                </strong>
+
+              </div>
+
+              <div class="session-information">
+
+                <div class="session-heading">
+
+                  <h3>
+                    Attacking Transition
+                  </h3>
+
+                  <span class="session-status confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <p>
+                  U-17 Elite Team · Main Training Ground
+                </p>
+
+                <div class="session-meta">
+
+                  <span>
+                    ◷ 6:30 AM – 8:30 AM
+                  </span>
+
+                  <span>
+                    ♟ 24 Players
+                  </span>
+
+                </div>
+
+              </div>
+
+              <button
+                class="session-menu-button"
+                type="button"
+                aria-label="Session options"
+              >
+                ⋮
+              </button>
+
+            </article>
+
+
+            <article
+              class="training-session-item"
+              data-session-id="session-002"
+            >
+
+              <div class="session-date">
+
+                <span>
+                  JUL
+                </span>
+
+                <strong>
+                  21
+                </strong>
+
+              </div>
+
+              <div class="session-information">
+
+                <div class="session-heading">
+
+                  <h3>
+                    Defensive Organisation
+                  </h3>
+
+                  <span class="session-status confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <p>
+                  U-17 Elite Team · Tactical Pitch
+                </p>
+
+                <div class="session-meta">
+
+                  <span>
+                    ◷ 4:00 PM – 6:00 PM
+                  </span>
+
+                  <span>
+                    ♟ 24 Players
+                  </span>
+
+                </div>
+
+              </div>
+
+              <button
+                class="session-menu-button"
+                type="button"
+                aria-label="Session options"
+              >
+                ⋮
+              </button>
+
+            </article>
+
+
+            <article
+              class="training-session-item"
+              data-session-id="session-003"
+            >
+
+              <div class="session-date">
+
+                <span>
+                  JUL
+                </span>
+
+                <strong>
+                  23
+                </strong>
+
+              </div>
+
+              <div class="session-information">
+
+                <div class="session-heading">
+
+                  <h3>
+                    Match Preparation
+                  </h3>
+
+                  <span class="session-status planning">
+                    Planning
+                  </span>
+
+                </div>
+
+                <p>
+                  U-17 Elite Team · Main Stadium
+                </p>
+
+                <div class="session-meta">
+
+                  <span>
+                    ◷ 5:00 PM – 7:00 PM
+                  </span>
+
+                  <span>
+                    ♟ 22 Players
+                  </span>
+
+                </div>
+
+              </div>
+
+              <button
+                class="session-menu-button"
+                type="button"
+                aria-label="Session options"
+              >
+                ⋮
+              </button>
+
+            </article>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             TODAY'S SCHEDULE
+        ================================================ -->
+
+        <article class="dashboard-card todays-schedule-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                TODAY
+              </span>
+
+              <h2>
+                Schedule
+              </h2>
+
+            </div>
+
+            <a
+              href="coach-schedule.html"
+              class="card-header-link"
+            >
+              Calendar →
+            </a>
+
+          </div>
+
+
+          <div
+            class="today-date-display"
+            id="todayDateDisplay"
+          >
+
+            <strong id="currentDayName">
+              Saturday
+            </strong>
+
+            <span id="currentFullDate">
+              18 July 2026
+            </span>
+
+          </div>
+
+
+          <div
+            class="today-schedule-timeline"
+            id="todayScheduleTimeline"
+          >
+
+            <div class="timeline-item">
+
+              <div class="timeline-time">
+                06:30
+              </div>
+
+              <div class="timeline-marker active"></div>
+
+              <div class="timeline-content">
+
+                <strong>
+                  Morning Fitness Review
+                </strong>
+
+                <span>
+                  Performance Centre
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+              <div class="timeline-time">
+                10:00
+              </div>
+
+              <div class="timeline-marker"></div>
+
+              <div class="timeline-content">
+
+                <strong>
+                  Coaching Staff Meeting
+                </strong>
+
+                <span>
+                  Analysis Room
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+              <div class="timeline-time">
+                14:30
+              </div>
+
+              <div class="timeline-marker"></div>
+
+              <div class="timeline-content">
+
+                <strong>
+                  Individual Player Reviews
+                </strong>
+
+                <span>
+                  Coach Office
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+              <div class="timeline-time">
+                17:00
+              </div>
+
+              <div class="timeline-marker"></div>
+
+              <div class="timeline-content">
+
+                <strong>
+                  Tactical Training
+                </strong>
+
+                <span>
+                  Main Training Ground
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =================================================
+           PERFORMANCE AND PLAYER ALERTS
+      ================================================== -->
+
+      <section class="dashboard-secondary-grid">
+
+
+        <!-- ===============================================
+             TEAM PERFORMANCE
+        ================================================ -->
+
+        <article class="dashboard-card team-performance-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                ANALYTICS
+              </span>
+
+              <h2>
+                Team Performance
+              </h2>
+
+            </div>
+
+            <select
+              id="performancePeriodSelect"
+              class="card-period-select"
+              aria-label="Select performance period"
+            >
+              <option value="month">
+                This Month
+              </option>
+
+              <option value="quarter">
+                Last 3 Months
+              </option>
+
+              <option value="season">
+                Current Season
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="performance-score-wrapper">
+
+            <div
+              class="performance-score-ring"
+              id="performanceScoreRing"
+              style="--performance-value: 82;"
+            >
+
+              <div>
+
+                <strong id="overallPerformanceScore">
+                  82
+                </strong>
+
+                <span>
+                  Overall
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="performance-breakdown">
+
+              <div class="performance-metric">
+
+                <div class="metric-heading">
+
+                  <span>
+                    Technical
+                  </span>
+
+                  <strong>
+                    84%
+                  </strong>
+
+                </div>
+
+                <div class="metric-progress">
+
+                  <span style="width: 84%;"></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="performance-metric">
+
+                <div class="metric-heading">
+
+                  <span>
+                    Physical
+                  </span>
+
+                  <strong>
+                    78%
+                  </strong>
+
+                </div>
+
+                <div class="metric-progress">
+
+                  <span style="width: 78%;"></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="performance-metric">
+
+                <div class="metric-heading">
+
+                  <span>
+                    Tactical
+                  </span>
+
+                  <strong>
+                    86%
+                  </strong>
+
+                </div>
+
+                <div class="metric-progress">
+
+                  <span style="width: 86%;"></span>
+
+                </div>
+
+              </div>
+
+
+              <div class="performance-metric">
+
+                <div class="metric-heading">
+
+                  <span>
+                    Discipline
+                  </span>
+
+                  <strong>
+                    80%
+                  </strong>
+
+                </div>
+
+                <div class="metric-progress">
+
+                  <span style="width: 80%;"></span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="performance-summary-footer">
+
+            <span class="performance-change positive">
+              ↑ 6% from last month
+            </span>
+
+            <a href="coach-performance.html">
+              Full Performance Report →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             PLAYER ATTENTION ALERTS
+        ================================================ -->
+
+        <article class="dashboard-card player-alerts-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                PLAYER MONITORING
+              </span>
+
+              <h2>
+                Needs Attention
+              </h2>
+
+            </div>
+
+            <span
+              class="alert-total"
+              id="playerAlertTotal"
+            >
+              4 Alerts
+            </span>
+
+          </div>
+
+
+          <div
+            class="player-alert-list"
+            id="playerAlertList"
+          >
+
+            <a
+              href="coach-players.html?player=aryan-sharma"
+              class="player-alert-item"
+              data-alert-id="alert-001"
+            >
+
+              <img
+                src="images/player-placeholder-1.jpg"
+                alt="Aryan Sharma"
+              />
+
+              <div class="player-alert-information">
+
+                <strong>
+                  Aryan Sharma
+                </strong>
+
+                <span>
+                  Attendance below 75%
+                </span>
+
+              </div>
+
+              <span class="alert-severity high">
+                High
+              </span>
+
+            </a>
+
+
+            <a
+              href="coach-players.html?player=rohan-mehta"
+              class="player-alert-item"
+              data-alert-id="alert-002"
+            >
+
+              <img
+                src="images/player-placeholder-2.jpg"
+                alt="Rohan Mehta"
+              />
+
+              <div class="player-alert-information">
+
+                <strong>
+                  Rohan Mehta
+                </strong>
+
+                <span>
+                  Fitness score declining
+                </span>
+
+              </div>
+
+              <span class="alert-severity medium">
+                Medium
+              </span>
+
+            </a>
+
+
+            <a
+              href="coach-players.html?player=kabir-singh"
+              class="player-alert-item"
+              data-alert-id="alert-003"
+            >
+
+              <img
+                src="images/player-placeholder-3.jpg"
+                alt="Kabir Singh"
+              />
+
+              <div class="player-alert-information">
+
+                <strong>
+                  Kabir Singh
+                </strong>
+
+                <span>
+                  Performance review pending
+                </span>
+
+              </div>
+
+              <span class="alert-severity low">
+                Review
+              </span>
+
+            </a>
+
+
+            <a
+              href="coach-players.html?player=dev-patel"
+              class="player-alert-item"
+              data-alert-id="alert-004"
+            >
+
+              <img
+                src="images/player-placeholder-4.jpg"
+                alt="Dev Patel"
+              />
+
+              <div class="player-alert-information">
+
+                <strong>
+                  Dev Patel
+                </strong>
+
+                <span>
+                  Medical clearance required
+                </span>
+
+              </div>
+
+              <span class="alert-severity high">
+                High
+              </span>
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =================================================
+           TRIALS, MESSAGES AND QUICK ACTIONS
+      ================================================== -->
+
+      <section class="dashboard-tertiary-grid">
+
+
+        <!-- ===============================================
+             TRIAL INVITATIONS
+        ================================================ -->
+
+        <article class="dashboard-card trial-invitations-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                OPPORTUNITIES
+              </span>
+
+              <h2>
+                Trial Invitations
+              </h2>
+
+            </div>
+
+            <a
+              href="coach-trials.html"
+              class="card-header-link"
+            >
+              View All →
+            </a>
+
+          </div>
+
+
+          <div
+            class="trial-invitation-list"
+            id="trialInvitationList"
+          >
+
+            <article
+              class="trial-invitation-item"
+              data-trial-id="trial-001"
+            >
+
+              <div class="trial-club-logo">
+                DFC
+              </div>
+
+              <div class="trial-invitation-information">
+
+                <h3>
+                  Delhi Future Cup Selection Trial
+                </h3>
+
+                <p>
+                  New Delhi · Under-17
+                </p>
+
+                <span>
+                  25 July 2026
+                </span>
+
+              </div>
+
+              <span class="trial-invitation-status pending">
+                Pending
+              </span>
+
+            </article>
+
+
+            <article
+              class="trial-invitation-item"
+              data-trial-id="trial-002"
+            >
+
+              <div class="trial-club-logo">
+                NFA
+              </div>
+
+              <div class="trial-invitation-information">
+
+                <h3>
+                  National Academy Talent Camp
+                </h3>
+
+                <p>
+                  Goa · Under-17
+                </p>
+
+                <span>
+                  2 August 2026
+                </span>
+
+              </div>
+
+              <span class="trial-invitation-status accepted">
+                Accepted
+              </span>
+
+            </article>
+
+
+            <article
+              class="trial-invitation-item"
+              data-trial-id="trial-003"
+            >
+
+              <div class="trial-club-logo">
+                NEU
+              </div>
+
+              <div class="trial-invitation-information">
+
+                <h3>
+                  Northeast Elite Scouting Camp
+                </h3>
+
+                <p>
+                  Guwahati · Under-17
+                </p>
+
+                <span>
+                  12 August 2026
+                </span>
+
+              </div>
+
+              <span class="trial-invitation-status pending">
+                Pending
+              </span>
+
+            </article>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             RECENT MESSAGES
+        ================================================ -->
+
+        <article class="dashboard-card recent-messages-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                COMMUNICATION
+              </span>
+
+              <h2>
+                Recent Messages
+              </h2>
+
+            </div>
+
+            <a
+              href="coach-messages.html"
+              class="card-header-link"
+            >
+              Inbox →
+            </a>
+
+          </div>
+
+
+          <div
+            class="recent-message-list"
+            id="recentMessageList"
+          >
+
+            <a
+              href="coach-messages.html?conversation=academy-director"
+              class="recent-message-item unread"
+            >
+
+              <div class="message-avatar academy-avatar">
+                AD
+              </div>
+
+              <div class="message-information">
+
+                <div class="message-heading">
+
+                  <strong>
+                    Academy Director
+                  </strong>
+
+                  <span>
+                    10:45 AM
+                  </span>
+
+                </div>
+
+                <p>
+                  Please submit the weekly performance report by tomorrow.
+                </p>
+
+              </div>
+
+              <span class="unread-message-dot"></span>
+
+            </a>
+
+
+            <a
+              href="coach-messages.html?conversation=medical-team"
+              class="recent-message-item unread"
+            >
+
+              <div class="message-avatar medical-avatar">
+                MT
+              </div>
+
+              <div class="message-information">
+
+                <div class="message-heading">
+
+                  <strong>
+                    Medical Team
+                  </strong>
+
+                  <span>
+                    Yesterday
+                  </span>
+
+                </div>
+
+                <p>
+                  Dev Patel's fitness assessment has been updated.
+                </p>
+
+              </div>
+
+              <span class="unread-message-dot"></span>
+
+            </a>
+
+
+            <a
+              href="coach-messages.html?conversation=assistant-coach"
+              class="recent-message-item"
+            >
+
+              <div class="message-avatar coach-avatar">
+                RK
+              </div>
+
+              <div class="message-information">
+
+                <div class="message-heading">
+
+                  <strong>
+                    Rahul Kumar
+                  </strong>
+
+                  <span>
+                    17 Jul
+                  </span>
+
+                </div>
+
+                <p>
+                  The defensive training clips are ready for review.
+                </p>
+
+              </div>
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===============================================
+             QUICK ACTIONS
+        ================================================ -->
+
+        <article class="dashboard-card quick-actions-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+
+              <span class="card-eyebrow">
+                SHORTCUTS
+              </span>
+
+              <h2>
+                Quick Actions
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <div class="quick-action-grid">
+
+            <a
+              href="coach-training.html?action=create"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ＋
+              </span>
+
+              <strong>
+                New Training
+              </strong>
+
+              <small>
+                Schedule a session
+              </small>
+
+            </a>
+
+
+            <a
+              href="coach-players.html?action=review"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ◉
+              </span>
+
+              <strong>
+                Player Review
+              </strong>
+
+              <small>
+                Add assessment
+              </small>
+
+            </a>
+
+
+            <a
+              href="coach-schedule.html?action=event"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ◷
+              </span>
+
+              <strong>
+                Add Event
+              </strong>
+
+              <small>
+                Update calendar
+              </small>
+
+            </a>
+
+
+            <a
+              href="coach-messages.html?action=compose"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ✉
+              </span>
+
+              <strong>
+                Send Message
+              </strong>
+
+              <small>
+                Contact the team
+              </small>
+
+            </a>
+
+
+            <a
+              href="coach-documents.html?action=upload"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ⇧
+              </span>
+
+              <strong>
+                Upload Report
+              </strong>
+
+              <small>
+                Add a document
+              </small>
+
+            </a>
+
+
+            <a
+              href="coach-performance.html"
+              class="quick-action-item"
+            >
+
+              <span class="quick-action-icon">
+                ◒
+              </span>
+
+              <strong>
+                Analytics
+              </strong>
+
+              <small>
+                View performance
+              </small>
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =================================================
+           DEVELOPMENT MILESTONE
+      ================================================== -->
+
+      <section class="coach-development-banner">
+
+        <div class="development-banner-icon">
+          🏆
+        </div>
+
+        <div class="development-banner-content">
+
+          <span>
+            COACH DEVELOPMENT
+          </span>
+
+          <h2>
+            Complete your coaching profile
+          </h2>
+
+          <p>
+            Add your certifications, coaching philosophy and experience
+            to improve your professional visibility across the platform.
+          </p>
+
+        </div>
+
+        <div class="development-progress">
+
+          <div class="development-progress-heading">
+
+            <span>
+              Profile completion
+            </span>
+
+            <strong id="coachProfileCompletion">
+              75%
+            </strong>
+
+          </div>
+
+          <div class="development-progress-bar">
+
+            <span
+              id="coachProfileProgressBar"
+              style="width: 75%;"
+            ></span>
+
+          </div>
+
+          <a href="coach-profile.html">
+            Complete Profile →
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ===================================================
+         PORTAL FOOTER
+    ==================================================== -->
+
+    <footer class="coach-portal-footer">
+
+      <p>
+        © <span id="currentYear">2026</span>
+        FIFA Mission India. Mission FIFA 2034.
+      </p>
+
+      <div class="portal-footer-links">
+
+        <a href="../privacy-policy.html">
+          Privacy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+        <a href="coach-help.html">
+          Support
+        </a>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICATION PANEL
+  ====================================================== -->
+
+  <aside
+    class="notification-panel"
+    id="notificationPanel"
+    aria-label="Notifications"
+    hidden
+  >
+
+    <div class="notification-panel-header">
+
+      <div>
+
+        <span>
+          UPDATES
+        </span>
+
+        <h2>
+          Notifications
+        </h2>
+
+      </div>
+
+      <button
+        id="closeNotificationPanel"
+        type="button"
+        aria-label="Close notifications"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="notification-panel-actions">
+
+      <button
+        id="markAllNotificationsRead"
+        type="button"
+      >
+        Mark all as read
+      </button>
+
+    </div>
+
+
+    <div
+      class="notification-list"
+      id="notificationList"
+    >
+
+      <article
+        class="notification-item unread"
+        data-notification-id="notification-001"
+      >
+
+        <span class="notification-type-icon">
+          ◫
+        </span>
+
+        <div>
+
+          <strong>
+            Training session reminder
+          </strong>
+
+          <p>
+            Attacking Transition starts tomorrow at 6:30 AM.
+          </p>
+
+          <span>
+            20 minutes ago
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="notification-item unread"
+        data-notification-id="notification-002"
+      >
+
+        <span class="notification-type-icon">
+          ◎
+        </span>
+
+        <div>
+
+          <strong>
+            New trial invitation
+          </strong>
+
+          <p>
+            Northeast Elite has invited your team to a scouting camp.
+          </p>
+
+          <span>
+            2 hours ago
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="notification-item"
+        data-notification-id="notification-003"
+      >
+
+        <span class="notification-type-icon">
+          ✉
+        </span>
+
+        <div>
+
+          <strong>
+            New message
+          </strong>
+
+          <p>
+            The academy director sent you a performance report request.
+          </p>
+
+          <span>
+            Yesterday
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       LOGOUT CONFIRMATION MODAL
+  ====================================================== -->
+
+  <div
+    class="portal-modal"
+    id="logoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="logoutModalTitle"
+    hidden
+  >
+
+    <div class="portal-modal-backdrop"></div>
+
+    <div class="portal-modal-content">
+
+      <div class="logout-modal-icon">
+        ↪
+      </div>
+
+      <h2 id="logoutModalTitle">
+        Logout from Coach Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to access your coaching dashboard.
+      </p>
+
+      <div class="portal-modal-actions">
+
+        <button
+          class="modal-cancel-button"
+          id="cancelLogoutButton"
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="modal-confirm-button"
+          id="confirmLogoutButton"
+          type="button"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       BACKEND INTEGRATION NOTES
+
+       Suggested endpoints for Mr. Harsh:
+
+       GET  /api/v1/coaches/dashboard
+       GET  /api/v1/coaches/me
+       GET  /api/v1/coaches/players
+       GET  /api/v1/coaches/training-sessions
+       GET  /api/v1/coaches/schedule
+       GET  /api/v1/coaches/performance
+       GET  /api/v1/coaches/trial-invitations
+       GET  /api/v1/coaches/messages
+       GET  /api/v1/coaches/notifications
+       PATCH /api/v1/coaches/notifications/read
+       POST /api/v1/auth/logout
+  ====================================================== -->
+
+
+  <script src="coach-dashboard.js"></script>
+
+</body>
+
+</html>

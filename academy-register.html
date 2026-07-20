@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Register a football academy with FIFA Mission India."
+  >
+
+  <title>Academy Registration | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/player-register.css">
+
+</head>
+
+<body>
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <div class="page-background" aria-hidden="true">
+
+    <span class="background-orb orb-one"></span>
+    <span class="background-orb orb-two"></span>
+    <span class="background-grid"></span>
+
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="registration-header">
+
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="FIFA Mission India homepage"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-text">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Road to 2034</span>
+
+      </div>
+
+    </a>
+
+
+    <a href="role-selection.html" class="back-link">
+
+      <span aria-hidden="true">←</span>
+
+      Back to roles
+
+    </a>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="registration-main">
+
+    <section class="registration-layout">
+
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="registration-sidebar">
+
+        <div class="sidebar-content">
+
+          <span class="eyebrow">
+            ACADEMY ONBOARDING
+          </span>
+
+          <h1>
+
+            Build the institutions that will
+
+            <span>shape India’s future.</span>
+
+          </h1>
+
+          <p class="sidebar-description">
+
+            Register your football academy, showcase your programmes and
+            connect with talented players, coaches and scouts across India.
+
+          </p>
+
+
+          <nav
+            class="progress-navigation"
+            aria-label="Academy registration progress"
+          >
+
+            <button
+              class="progress-step active"
+              type="button"
+              data-progress-step="1"
+              aria-current="step"
+            >
+
+              <span class="step-number">01</span>
+
+              <span class="step-copy">
+
+                <strong>Academy Details</strong>
+
+                <small>Basic organisation information</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="2"
+            >
+
+              <span class="step-number">02</span>
+
+              <span class="step-copy">
+
+                <strong>Football Programmes</strong>
+
+                <small>Facilities and development</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="3"
+            >
+
+              <span class="step-number">03</span>
+
+              <span class="step-copy">
+
+                <strong>Media & Documents</strong>
+
+                <small>Logo and verification</small>
+
+              </span>
+
+            </button>
+
+
+            <button
+              class="progress-step"
+              type="button"
+              data-progress-step="4"
+            >
+
+              <span class="step-number">04</span>
+
+              <span class="step-copy">
+
+                <strong>Review & Submit</strong>
+
+                <small>Confirm academy information</small>
+
+              </span>
+
+            </button>
+
+          </nav>
+
+
+          <div class="opportunity-card">
+
+            <div class="opportunity-icon" aria-hidden="true">
+              ★
+            </div>
+
+            <div>
+
+              <strong>Expand your academy’s reach</strong>
+
+              <p>
+
+                Become discoverable to players, families, coaches and football
+                development partners throughout India.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+          <span>MISSION 2034</span>
+
+          <span>•</span>
+
+          <span>DISCOVER. DEVELOP. DELIVER.</span>
+
+        </div>
+
+      </aside>
+
+
+      <!-- ================= FORM PANEL ================= -->
+
+      <section class="form-panel">
+
+        <div class="mobile-progress">
+
+          <div class="mobile-progress-header">
+
+            <span id="mobileStepLabel">
+              Step 1 of 4
+            </span>
+
+            <strong id="mobileStepTitle">
+              Academy Details
+            </strong>
+
+          </div>
+
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="4"
+            aria-valuenow="1"
+          >
+
+            <span id="progressBarFill"></span>
+
+          </div>
+
+        </div>
+
+
+        <form
+          id="academyRegistrationForm"
+          class="player-registration-form"
+          novalidate
+        >
+
+          <!--
+            BACKEND INTEGRATION POINT
+
+            Suggested endpoint:
+            POST /api/v1/academies/register
+
+            Backend Lead: Mr. Harsh
+            Security Review: Samarth
+          -->
+
+
+          <!-- ================= STEP 1 ================= -->
+
+          <fieldset
+            class="form-step active"
+            data-form-step="1"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 01
+              </span>
+
+              <h2>
+                Tell us about your academy
+              </h2>
+
+              <p>
+
+                Provide your organisation’s official details and primary
+                contact information.
+
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+              <div class="form-group form-group-full">
+
+                <label for="academyName">
+
+                  Academy name
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="academyName"
+                  name="academyName"
+                  placeholder="Enter official academy name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="yearEstablished">
+
+                  Year established
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="number"
+                  id="yearEstablished"
+                  name="yearEstablished"
+                  placeholder="Example: 2018"
+                  min="1900"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="academyType">
+
+                  Academy type
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="academyType"
+                    name="academyType"
+                    required
+                  >
+
+                    <option value="">
+                      Select academy type
+                    </option>
+
+                    <option value="private">
+                      Private Academy
+                    </option>
+
+                    <option value="club">
+                      Football Club Academy
+                    </option>
+
+                    <option value="school">
+                      School Football Academy
+                    </option>
+
+                    <option value="college">
+                      College or University Academy
+                    </option>
+
+                    <option value="government">
+                      Government Academy
+                    </option>
+
+                    <option value="community">
+                      Community or NGO Academy
+                    </option>
+
+                    <option value="residential">
+                      Residential Academy
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="registrationNumber">
+                  Organisation registration number
+                </label>
+
+                <input
+                  type="text"
+                  id="registrationNumber"
+                  name="registrationNumber"
+                  placeholder="Enter registration number"
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="website">
+                  Official website
+                </label>
+
+                <input
+                  type="url"
+                  id="website"
+                  name="website"
+                  placeholder="https://academy.example.com"
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="contactName">
+
+                  Primary contact person
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  placeholder="Enter contact person’s name"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="contactRole">
+
+                  Contact person’s role
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="contactRole"
+                  name="contactRole"
+                  placeholder="Director, Manager or Head Coach"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+
+                  Official email
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="academy@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+
+                  Official mobile number
+                  <span>*</span>
+
+                </label>
+
+                <div class="phone-input">
+
+                  <span class="country-code">
+                    +91
+                  </span>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="10-digit mobile number"
+                    inputmode="numeric"
+                    maxlength="10"
+                    required
+                  >
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="state">
+
+                  State / Union Territory
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="state"
+                    name="state"
+                    required
+                  >
+
+                    <option value="">
+                      Select state
+                    </option>
+
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                    <option value="assam">Assam</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="chhattisgarh">Chhattisgarh</option>
+                    <option value="goa">Goa</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="manipur">Manipur</option>
+                    <option value="meghalaya">Meghalaya</option>
+                    <option value="mizoram">Mizoram</option>
+                    <option value="nagaland">Nagaland</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="rajasthan">Rajasthan</option>
+                    <option value="sikkim">Sikkim</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="tripura">Tripura</option>
+                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                    <option value="uttarakhand">Uttarakhand</option>
+                    <option value="west-bengal">West Bengal</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="jammu-kashmir">Jammu and Kashmir</option>
+                    <option value="ladakh">Ladakh</option>
+                    <option value="puducherry">Puducherry</option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="city">
+
+                  City / District
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Enter city or district"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="address">
+
+                  Academy address
+                  <span>*</span>
+
+                </label>
+
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  placeholder="Enter the complete academy address"
+                  required
+                ></textarea>
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 2 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="2"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 02
+              </span>
+
+              <h2>
+                Describe your football programmes
+              </h2>
+
+              <p>
+
+                Tell players and families about your training programmes,
+                facilities and development environment.
+
+              </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+              <div class="form-group">
+
+                <label for="playerCapacity">
+
+                  Current player capacity
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="number"
+                  id="playerCapacity"
+                  name="playerCapacity"
+                  placeholder="Example: 120"
+                  min="1"
+                  max="10000"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="coachCount">
+
+                  Number of coaches
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="number"
+                  id="coachCount"
+                  name="coachCount"
+                  placeholder="Example: 8"
+                  min="1"
+                  max="500"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="minimumAge">
+
+                  Minimum player age
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="number"
+                  id="minimumAge"
+                  name="minimumAge"
+                  placeholder="Example: 6"
+                  min="3"
+                  max="60"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="maximumAge">
+
+                  Maximum player age
+                  <span>*</span>
+
+                </label>
+
+                <input
+                  type="number"
+                  id="maximumAge"
+                  name="maximumAge"
+                  placeholder="Example: 21"
+                  min="4"
+                  max="70"
+                  required
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="academyLevel">
+
+                  Highest competition level
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="academyLevel"
+                    name="academyLevel"
+                    required
+                  >
+
+                    <option value="">
+                      Select competition level
+                    </option>
+
+                    <option value="grassroots">
+                      Grassroots
+                    </option>
+
+                    <option value="school">
+                      School Level
+                    </option>
+
+                    <option value="district">
+                      District Level
+                    </option>
+
+                    <option value="state">
+                      State Level
+                    </option>
+
+                    <option value="national">
+                      National Level
+                    </option>
+
+                    <option value="professional">
+                      Professional League
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="residentialFacility">
+
+                  Residential facility
+                  <span>*</span>
+
+                </label>
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="residentialFacility"
+                    name="residentialFacility"
+                    required
+                  >
+
+                    <option value="">
+                      Select option
+                    </option>
+
+                    <option value="available">
+                      Available
+                    </option>
+
+                    <option value="not-available">
+                      Not Available
+                    </option>
+
+                    <option value="planned">
+                      Planned for the Future
+                    </option>
+
+                  </select>
+
+                </div>
+
+                <small class="error-message"></small>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="programmes">
+
+                  Training programmes
+                  <span>*</span>
+
+                </label>
+
+                <textarea
+                  id="programmes"
+                  name="programmes"
+                  rows="4"
+                  maxlength="600"
+                  placeholder="Describe age groups, training schedules, competitions and development programmes."
+                  required
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="programmesCharacterCount">0</b>/600
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="facilities">
+
+                  Facilities and infrastructure
+                  <span>*</span>
+
+                </label>
+
+                <textarea
+                  id="facilities"
+                  name="facilities"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="Mention football pitches, gym, medical support, classrooms, hostel or other facilities."
+                  required
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="facilitiesCharacterCount">0</b>/500
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group form-group-full">
+
+                <label for="academyDescription">
+
+                  Academy introduction
+                  <span>*</span>
+
+                </label>
+
+                <textarea
+                  id="academyDescription"
+                  name="academyDescription"
+                  rows="5"
+                  maxlength="800"
+                  placeholder="Introduce your academy, its vision, achievements and approach to player development."
+                  required
+                ></textarea>
+
+                <div class="textarea-meta">
+
+                  <small class="error-message"></small>
+
+                  <span>
+                    <b id="descriptionCharacterCount">0</b>/800
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 3 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="3"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 03
+              </span>
+
+              <h2>
+                Add academy media and documents
+              </h2>
+
+              <p>
+
+                Upload your academy logo, registration document and supporting
+                verification materials.
+
+              </p>
+
+            </div>
+
+
+            <div class="upload-section">
+
+
+              <div class="profile-upload-container">
+
+                <div
+                  class="profile-preview"
+                  id="profilePreview"
+                >
+
+                  <span id="profileInitials">
+                    FA
+                  </span>
+
+                  <img
+                    id="profilePreviewImage"
+                    alt="Academy logo preview"
+                    hidden
+                  >
+
+                </div>
+
+
+                <div class="profile-upload-copy">
+
+                  <h3>
+                    Academy logo
+                  </h3>
+
+                  <p>
+                    Upload your academy’s official logo or emblem.
+                  </p>
+
+                  <label
+                    class="upload-button"
+                    for="academyLogo"
+                  >
+                    Choose logo
+                  </label>
+
+                  <input
+                    type="file"
+                    id="academyLogo"
+                    name="academyLogo"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                    required
+                  >
+
+                  <small>
+                    JPG, PNG or WEBP. Maximum 5 MB.
+                  </small>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="upload-grid">
+
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    REG
+                  </div>
+
+                  <div>
+
+                    <h3>
+                      Registration document
+                    </h3>
+
+                    <p>
+                      Upload the academy or organisation registration proof.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="registrationDocument"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="registrationDocument"
+                    name="registrationDocument"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                    required
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="registrationDocumentName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+
+                <div class="document-upload">
+
+                  <div class="upload-icon">
+                    ID
+                  </div>
+
+                  <div>
+
+                    <h3>
+                      Contact person ID
+                    </h3>
+
+                    <p>
+                      Upload the authorised representative’s identity proof.
+                    </p>
+
+                  </div>
+
+                  <label
+                    for="representativeId"
+                    class="document-button"
+                  >
+                    Select file
+                  </label>
+
+                  <input
+                    type="file"
+                    id="representativeId"
+                    name="representativeId"
+                    accept=".pdf,image/jpeg,image/png"
+                    hidden
+                    required
+                  >
+
+                  <span
+                    class="selected-file"
+                    id="representativeIdName"
+                  >
+                    No file selected
+                  </span>
+
+                  <small class="error-message"></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="academyVideo">
+                  Academy video or YouTube link
+                </label>
+
+                <input
+                  type="url"
+                  id="academyVideo"
+                  name="academyVideo"
+                  placeholder="https://youtube.com/..."
+                >
+
+                <small class="error-message"></small>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= STEP 4 ================= -->
+
+          <fieldset
+            class="form-step"
+            data-form-step="4"
+          >
+
+            <div class="form-heading">
+
+              <span class="form-kicker">
+                STEP 04
+              </span>
+
+              <h2>
+                Review your academy
+              </h2>
+
+              <p>
+                Confirm that the academy information is correct before submission.
+              </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+              <div class="review-header">
+
+                <div class="review-avatar">
+
+                  <img
+                    id="reviewProfileImage"
+                    alt="Academy logo"
+                    hidden
+                  >
+
+                  <span id="reviewInitials">
+                    FA
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    ACADEMY APPLICATION
+                  </span>
+
+                  <h3 id="reviewAcademyName">
+                    Academy Name
+                  </h3>
+
+                  <p id="reviewAcademyLocation">
+                    Location not entered
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="review-grid">
+
+
+                <div class="review-item">
+
+                  <span>Academy type</span>
+
+                  <strong id="reviewAcademyType">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Established</span>
+
+                  <strong id="reviewEstablished">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Official email</span>
+
+                  <strong id="reviewEmail">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Official phone</span>
+
+                  <strong id="reviewPhone">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Primary contact</span>
+
+                  <strong id="reviewContact">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Competition level</span>
+
+                  <strong id="reviewLevel">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Player capacity</span>
+
+                  <strong id="reviewCapacity">—</strong>
+
+                </div>
+
+
+                <div class="review-item">
+
+                  <span>Number of coaches</span>
+
+                  <strong id="reviewCoachCount">—</strong>
+
+                </div>
+
+
+                <div class="review-item review-item-full">
+
+                  <span>Academy introduction</span>
+
+                  <strong id="reviewDescription">—</strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="consent-section">
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="informationConsent"
+                  name="informationConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+
+                  I confirm that I am authorised to register this academy and
+                  that the information provided is accurate.
+
+                </span>
+
+              </label>
+
+
+              <label class="custom-checkbox">
+
+                <input
+                  type="checkbox"
+                  id="termsConsent"
+                  name="termsConsent"
+                  required
+                >
+
+                <span class="checkbox-control"></span>
+
+                <span>
+
+                  I agree to the
+
+                  <a href="#">
+                    Terms and Conditions
+                  </a>
+
+                  and
+
+                  <a href="#">
+                    Privacy Policy
+                  </a>.
+
+                </span>
+
+              </label>
+
+              <small
+                class="error-message consent-error"
+                id="consentError"
+              ></small>
+
+            </div>
+
+          </fieldset>
+
+
+          <!-- ================= ACTIONS ================= -->
+
+          <div class="form-actions">
+
+            <button
+              type="button"
+              class="secondary-button"
+              id="previousButton"
+              hidden
+            >
+
+              <span aria-hidden="true">←</span>
+
+              Previous
+
+            </button>
+
+            <div class="action-spacer"></div>
+
+            <button
+              type="button"
+              class="primary-button"
+              id="nextButton"
+            >
+
+              Continue
+
+              <span aria-hidden="true">→</span>
+
+            </button>
+
+            <button
+              type="submit"
+              class="primary-button submit-button"
+              id="submitButton"
+              hidden
+            >
+
+              <span class="button-label">
+                Submit Academy
+              </span>
+
+              <span
+                class="button-loader"
+                aria-hidden="true"
+              ></span>
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= SUCCESS MODAL ================= -->
+
+  <div
+    class="success-modal"
+    id="successModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successModalTitle"
+    hidden
+  >
+
+    <div class="success-modal-backdrop"></div>
+
+    <div class="success-modal-card">
+
+      <div class="success-icon" aria-hidden="true">
+        ✓
+      </div>
+
+      <span class="success-eyebrow">
+        APPLICATION RECEIVED
+      </span>
+
+      <h2 id="successModalTitle">
+        Academy submitted.
+      </h2>
+
+      <p>
+
+        Your academy registration has been prepared successfully in this
+        frontend demonstration.
+
+      </p>
+
+      <div class="application-reference">
+
+        <span>Application reference</span>
+
+        <strong id="applicationReference">
+          FMI-ACADEMY-000000
+        </strong>
+
+      </div>
+
+      <a href="index.html" class="modal-button">
+        Return to Homepage
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/academy-register.js"></script>
+
+</body>
+
+</html>

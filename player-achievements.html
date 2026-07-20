@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="View football achievements, badges and certificates on FIFA Mission India."
+  >
+
+  <title>Achievements & Certificates | FIFA Mission India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/player-achievements.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="achievements-header">
+
+    <a
+      href="player-dashboard.html"
+      class="achievements-brand"
+      aria-label="Return to player dashboard"
+    >
+
+      <div class="brand-icon" aria-hidden="true">
+        ⚽
+      </div>
+
+      <div class="brand-copy">
+
+        <strong>FIFA MISSION INDIA</strong>
+
+        <span>Player Portal</span>
+
+      </div>
+
+    </a>
+
+
+    <nav
+      class="header-navigation"
+      aria-label="Player portal navigation"
+    >
+
+      <a href="player-dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="player-trials.html">
+        Trials
+      </a>
+
+      <a href="player-performance.html">
+        Performance
+      </a>
+
+      <a
+        href="player-achievements.html"
+        class="active"
+        aria-current="page"
+      >
+        Achievements
+      </a>
+
+      <a href="player-profile-edit.html">
+        Profile
+      </a>
+
+    </nav>
+
+
+    <a
+      href="player-dashboard.html"
+      class="dashboard-button"
+    >
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="achievements-hero">
+
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">
+        PLAYER RECOGNITION
+      </span>
+
+      <h1>
+        Celebrate every step of your football journey.
+      </h1>
+
+      <p>
+        View your earned badges, official certificates and player
+        milestones recorded through FIFA Mission India.
+      </p>
+
+    </div>
+
+
+    <div class="hero-trophy" aria-hidden="true">
+
+      <div class="trophy-circle">
+        🏆
+      </div>
+
+      <span>
+        ROAD TO 2034
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="achievements-main">
+
+
+    <!-- ================= SUMMARY ================= -->
+
+    <section class="achievement-summary-grid">
+
+      <article class="summary-card">
+
+        <div class="summary-icon">
+          🏆
+        </div>
+
+        <div>
+
+          <span>Total Achievements</span>
+
+          <strong id="totalAchievements">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="summary-card">
+
+        <div class="summary-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <span>Badges Earned</span>
+
+          <strong id="earnedBadgeCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="summary-card">
+
+        <div class="summary-icon">
+          ▤
+        </div>
+
+        <div>
+
+          <span>Certificates</span>
+
+          <strong id="certificateCount">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+
+      <article class="summary-card">
+
+        <div class="summary-icon">
+          ★
+        </div>
+
+        <div>
+
+          <span>Achievement Points</span>
+
+          <strong id="achievementPoints">
+            0
+          </strong>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- ================= BADGES ================= -->
+
+    <section class="achievement-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            PLAYER BADGES
+          </span>
+
+          <h2>
+            Your achievements
+          </h2>
+
+          <p>
+            Badges are earned through profile completion, trials,
+            assessments and player development activities.
+          </p>
+
+        </div>
+
+
+        <div class="badge-filter-buttons">
+
+          <button
+            type="button"
+            class="badge-filter active"
+            data-badge-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            class="badge-filter"
+            data-badge-filter="earned"
+          >
+            Earned
+          </button>
+
+          <button
+            type="button"
+            class="badge-filter"
+            data-badge-filter="locked"
+          >
+            Locked
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="badge-grid"
+        id="badgeGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- ================= CERTIFICATES ================= -->
+
+    <section class="achievement-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            OFFICIAL RECORDS
+          </span>
+
+          <h2>
+            Certificates
+          </h2>
+
+          <p>
+            View certificates awarded for assessments, development
+            camps and verified football participation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="certificate-grid"
+        id="certificateGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- ================= MILESTONES ================= -->
+
+    <section class="achievement-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-eyebrow">
+            PLAYER JOURNEY
+          </span>
+
+          <h2>
+            Milestone timeline
+          </h2>
+
+          <p>
+            A record of important moments throughout your platform journey.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="milestone-timeline"
+        id="milestoneTimeline"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= CERTIFICATE MODAL ================= -->
+
+  <div
+    class="modal-backdrop"
+    id="certificateModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="certificateModalTitle"
+    hidden
+  >
+
+    <div class="certificate-modal">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="certificateModalCloseButton"
+        aria-label="Close certificate preview"
+      >
+        ×
+      </button>
+
+
+      <div class="certificate-preview">
+
+        <div class="certificate-border">
+
+          <div class="certificate-logo">
+            ⚽
+          </div>
+
+          <span class="certificate-platform">
+            FIFA MISSION INDIA
+          </span>
+
+          <span class="certificate-label">
+            CERTIFICATE OF ACHIEVEMENT
+          </span>
+
+          <h2 id="certificateModalTitle">
+            Certificate
+          </h2>
+
+          <p>
+            This certificate is proudly presented to
+          </p>
+
+          <strong id="certificatePlayerName">
+            Player Name
+          </strong>
+
+          <p id="certificateDescription">
+            For successful participation and achievement.
+          </p>
+
+          <div class="certificate-details">
+
+            <div>
+
+              <span>Date Awarded</span>
+
+              <strong id="certificateAwardDate">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Certificate ID</span>
+
+              <strong id="certificateReference">
+                —
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="certificate-signatures">
+
+            <div>
+
+              <span></span>
+
+              <strong>
+                Programme Director
+              </strong>
+
+            </div>
+
+
+            <div class="certificate-seal">
+              2034
+            </div>
+
+
+            <div>
+
+              <span></span>
+
+              <strong>
+                Technical Director
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="modal-message"
+        id="certificateModalMessage"
+        hidden
+      ></div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-modal-button"
+          id="certificateCloseButton"
+        >
+          Close
+        </button>
+
+        <button
+          type="button"
+          class="primary-modal-button"
+          id="downloadCertificateButton"
+        >
+          Download Certificate
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/player-achievements.js"></script>
+
+</body>
+
+</html>

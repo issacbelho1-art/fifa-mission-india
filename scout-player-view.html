@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="View detailed player profiles, scouting information, performance data and reports in the FIFA Mission India Scout Portal."
+  />
+
+  <meta
+    name="theme-color"
+    content="#071a33"
+  />
+
+  <title>
+    Player Profile | FIFA Mission India Scout Portal
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="scout-player-view.css"
+  />
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       SKIP LINK
+  ====================================================== -->
+
+  <a
+    class="scout-skip-link"
+    href="#mainContent"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- =====================================================
+       APP SHELL
+  ====================================================== -->
+
+  <div
+    class="scout-app-shell"
+    id="scoutAppShell"
+  >
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+      class="scout-sidebar-overlay"
+      id="scoutSidebarOverlay"
+      aria-hidden="true"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+      class="scout-sidebar"
+      id="scoutSidebar"
+      aria-label="Scout portal navigation"
+    >
+
+      <div class="scout-sidebar-header">
+
+        <a
+          href="scout-dashboard.html"
+          class="scout-brand"
+          aria-label="FIFA Mission India Scout Portal home"
+        >
+
+          <span
+            class="scout-brand-mark"
+            aria-hidden="true"
+          >
+            ⚽
+          </span>
+
+          <span class="scout-brand-copy">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Scout Portal
+            </small>
+
+          </span>
+
+        </a>
+
+
+        <button
+          class="scout-sidebar-close"
+          id="scoutSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          <span aria-hidden="true">
+            ×
+          </span>
+        </button>
+
+      </div>
+
+
+      <!-- =====================================================
+           SCOUT PROFILE SUMMARY
+      ====================================================== -->
+
+      <section
+        class="scout-profile-summary"
+        aria-label="Signed-in scout"
+      >
+
+        <div class="scout-profile-avatar">
+
+          <img
+            src="images/scout-avatar-placeholder.jpg"
+            alt="Scout profile"
+            id="scoutSidebarAvatar"
+            data-scout-avatar
+          />
+
+          <span
+            class="scout-profile-status"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="scout-profile-summary-copy">
+
+          <strong data-scout-name>
+            Scout Name
+          </strong>
+
+          <span data-scout-designation>
+            Talent Scout
+          </span>
+
+          <small data-scout-organization>
+            FIFA Mission India
+          </small>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           PRIMARY NAVIGATION
+      ====================================================== -->
+
+      <nav
+        class="scout-navigation"
+        aria-label="Primary navigation"
+      >
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Overview
+          </span>
+
+          <a
+            href="scout-dashboard.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ▦
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Scouting
+          </span>
+
+          <a
+            href="scout-players.html"
+            class="scout-navigation-link is-active"
+            aria-current="page"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◉
+            </span>
+
+            <span>
+              Players
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-report-create.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ＋
+            </span>
+
+            <span>
+              Create Report
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-reports.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ▤
+            </span>
+
+            <span>
+              Reports
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-matches.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◫
+            </span>
+
+            <span>
+              Matches
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-academies.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ⌂
+            </span>
+
+            <span>
+              Academies
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Account
+          </span>
+
+          <a
+            href="scout-profile.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◎
+            </span>
+
+            <span>
+              My Profile
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-help.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ?
+            </span>
+
+            <span>
+              Help & Support
+            </span>
+
+          </a>
+
+        </div>
+
+      </nav>
+
+
+      <!-- =====================================================
+           SIDEBAR SUPPORT CARD
+      ====================================================== -->
+
+      <section class="scout-sidebar-support-card">
+
+        <span
+          class="scout-support-icon"
+          aria-hidden="true"
+        >
+          ⚑
+        </span>
+
+        <div>
+
+          <strong>
+            Need scouting support?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team for assistance.
+          </p>
+
+          <a href="scout-help.html">
+            Get help
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           SIDEBAR FOOTER
+      ====================================================== -->
+
+      <div class="scout-sidebar-footer">
+
+        <button
+          class="scout-logout-button"
+          id="scoutLogoutButton"
+          type="button"
+        >
+
+          <span aria-hidden="true">
+            ↪
+          </span>
+
+          <span>
+            Logout
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN APP AREA
+    ====================================================== -->
+
+    <div class="scout-main-area">
+
+
+      <!-- =====================================================
+           TOPBAR
+      ====================================================== -->
+
+      <header class="scout-topbar">
+
+        <div class="scout-topbar-left">
+
+          <button
+            class="scout-menu-button"
+            id="scoutMenuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="scoutSidebar"
+            aria-expanded="false"
+          >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </button>
+
+
+          <div class="scout-page-heading">
+
+            <span class="scout-page-eyebrow">
+              Player Intelligence
+            </span>
+
+            <h1>
+              Player Profile
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-topbar-actions">
+
+          <button
+            class="scout-icon-button"
+            id="scoutSearchButton"
+            type="button"
+            aria-label="Search players"
+          >
+            <span aria-hidden="true">
+              ⌕
+            </span>
+          </button>
+
+
+          <button
+            class="scout-icon-button scout-notification-button"
+            id="scoutNotificationButton"
+            type="button"
+            aria-label="Open notifications"
+            aria-expanded="false"
+          >
+
+            <span aria-hidden="true">
+              ♢
+            </span>
+
+            <span
+              class="scout-notification-badge"
+              id="scoutNotificationBadge"
+            >
+              3
+            </span>
+
+          </button>
+
+
+          <div class="scout-topbar-profile">
+
+            <img
+              src="images/scout-avatar-placeholder.jpg"
+              alt="Scout profile"
+              data-scout-avatar
+            />
+
+            <div>
+
+              <strong data-scout-name>
+                Scout Name
+              </strong>
+
+              <span data-scout-designation>
+                Talent Scout
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           MAIN CONTENT
+      ====================================================== -->
+
+      <main
+        class="scout-main-content"
+        id="mainContent"
+      >
+
+
+        <!-- =====================================================
+             BREADCRUMB AND PAGE ACTIONS
+        ====================================================== -->
+
+        <section class="scout-player-page-toolbar">
+
+          <nav
+            class="scout-breadcrumb"
+            aria-label="Breadcrumb"
+          >
+
+            <a href="scout-dashboard.html">
+              Dashboard
+            </a>
+
+            <span aria-hidden="true">
+              /
+            </span>
+
+            <a href="scout-players.html">
+              Players
+            </a>
+
+            <span aria-hidden="true">
+              /
+            </span>
+
+            <span
+              aria-current="page"
+              id="breadcrumbPlayerName"
+            >
+              Player Profile
+            </span>
+
+          </nav>
+
+
+          <div class="scout-player-toolbar-actions">
+
+            <button
+              class="scout-secondary-button"
+              id="savePlayerButton"
+              type="button"
+              aria-pressed="false"
+            >
+
+              <span aria-hidden="true">
+                ☆
+              </span>
+
+              <span>
+                Save Player
+              </span>
+
+            </button>
+
+
+            <button
+              class="scout-secondary-button"
+              id="sharePlayerButton"
+              type="button"
+            >
+
+              <span aria-hidden="true">
+                ↗
+              </span>
+
+              <span>
+                Share
+              </span>
+
+            </button>
+
+
+            <a
+              class="scout-primary-button"
+              id="createReportLink"
+              href="scout-report-create.html"
+            >
+
+              <span aria-hidden="true">
+                ＋
+              </span>
+
+              <span>
+                Create Report
+              </span>
+
+            </a>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LOADING STATE
+        ====================================================== -->
+
+        <section
+          class="scout-player-loading-state"
+          id="playerLoadingState"
+          aria-live="polite"
+        >
+
+          <div class="scout-player-loading-card">
+
+            <div class="scout-loading-avatar"></div>
+
+            <div class="scout-loading-content">
+
+              <div class="scout-loading-line is-large"></div>
+
+              <div class="scout-loading-line"></div>
+
+              <div class="scout-loading-line is-short"></div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ERROR STATE
+        ====================================================== -->
+
+        <section
+          class="scout-player-error-state"
+          id="playerErrorState"
+          hidden
+          role="alert"
+        >
+
+          <div class="scout-error-state-icon">
+            !
+          </div>
+
+          <div>
+
+            <h2>
+              Player profile unavailable
+            </h2>
+
+            <p id="playerErrorMessage">
+              We could not load this player's information.
+            </p>
+
+            <button
+              class="scout-primary-button"
+              id="retryPlayerLoadButton"
+              type="button"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PLAYER PROFILE CONTENT
+        ====================================================== -->
+
+        <div
+          class="scout-player-view-content"
+          id="playerViewContent"
+          hidden
+        >
+
+
+          <!-- =====================================================
+               PLAYER HERO CARD
+          ====================================================== -->
+
+          <section class="scout-player-hero-card">
+
+            <div class="scout-player-hero-cover">
+
+              <img
+                src="images/scout-player-cover-placeholder.jpg"
+                alt=""
+                id="playerCoverImage"
+              />
+
+              <div class="scout-player-cover-overlay"></div>
+
+
+              <div class="scout-player-hero-badges">
+
+                <span
+                  class="scout-player-status-badge"
+                  id="playerStatusBadge"
+                >
+                  Active
+                </span>
+
+                <span
+                  class="scout-player-verified-badge"
+                  id="playerVerifiedBadge"
+                  hidden
+                >
+                  ✓ Verified
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="scout-player-hero-body">
+
+              <div class="scout-player-primary-info">
+
+                <div class="scout-player-profile-photo">
+
+                  <img
+                    src="images/player-avatar-placeholder.jpg"
+                    alt="Player profile"
+                    id="playerProfileImage"
+                  />
+
+                  <span
+                    class="scout-player-online-indicator"
+                    id="playerAvailabilityIndicator"
+                    title="Available for scouting"
+                  ></span>
+
+                </div>
+
+
+                <div class="scout-player-identity">
+
+                  <div class="scout-player-name-row">
+
+                    <h2 id="playerFullName">
+                      Player Name
+                    </h2>
+
+                    <span
+                      class="scout-player-id"
+                      id="playerPublicId"
+                    >
+                      FMI-PLAYER
+                    </span>
+
+                  </div>
+
+
+                  <p class="scout-player-role">
+
+                    <span id="playerPrimaryPosition">
+                      Position
+                    </span>
+
+                    <span aria-hidden="true">
+                      •
+                    </span>
+
+                    <span id="playerAcademyName">
+                      Academy
+                    </span>
+
+                  </p>
+
+
+                  <div class="scout-player-meta-list">
+
+                    <span>
+
+                      <strong>
+                        Age:
+                      </strong>
+
+                      <span id="playerAge">
+                        —
+                      </span>
+
+                    </span>
+
+
+                    <span>
+
+                      <strong>
+                        Location:
+                      </strong>
+
+                      <span id="playerLocation">
+                        —
+                      </span>
+
+                    </span>
+
+
+                    <span>
+
+                      <strong>
+                        Preferred Foot:
+                      </strong>
+
+                      <span id="playerPreferredFoot">
+                        —
+                      </span>
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-player-hero-score">
+
+                <span>
+                  Scout Rating
+                </span>
+
+                <strong id="playerOverallRating">
+                  —
+                </strong>
+
+                <small>
+                  Out of 10
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="scout-player-quick-stats">
+
+              <article class="scout-player-quick-stat">
+
+                <span>
+                  Reports
+                </span>
+
+                <strong id="playerReportCount">
+                  0
+                </strong>
+
+              </article>
+
+
+              <article class="scout-player-quick-stat">
+
+                <span>
+                  Matches Viewed
+                </span>
+
+                <strong id="playerMatchesViewed">
+                  0
+                </strong>
+
+              </article>
+
+
+              <article class="scout-player-quick-stat">
+
+                <span>
+                  Potential Rating
+                </span>
+
+                <strong id="playerPotentialRating">
+                  —
+                </strong>
+
+              </article>
+
+
+              <article class="scout-player-quick-stat">
+
+                <span>
+                  Last Scouted
+                </span>
+
+                <strong id="playerLastScouted">
+                  —
+                </strong>
+
+              </article>
+
+            </div>
+
+          </section>
+
+
+          <!-- =====================================================
+               PLAYER CONTENT GRID
+          ====================================================== -->
+
+          <div class="scout-player-content-grid">
+
+
+            <!-- =====================================================
+                 LEFT COLUMN
+            ====================================================== -->
+
+            <div class="scout-player-primary-column">
+
+
+              <!-- =====================================================
+                   PROFILE TABS
+              ====================================================== -->
+
+              <section class="scout-player-tabs-section">
+
+                <div
+                  class="scout-player-tabs"
+                  role="tablist"
+                  aria-label="Player profile sections"
+                >
+
+                  <button
+                    class="scout-player-tab is-active"
+                    id="overviewTab"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="overviewPanel"
+                    data-player-tab="overview"
+                  >
+                    Overview
+                  </button>
+
+
+                  <button
+                    class="scout-player-tab"
+                    id="performanceTab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="performancePanel"
+                    data-player-tab="performance"
+                  >
+                    Performance
+                  </button>
+
+
+                  <button
+                    class="scout-player-tab"
+                    id="reportsTab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="reportsPanel"
+                    data-player-tab="reports"
+                  >
+                    Reports
+                  </button>
+
+
+                  <button
+                    class="scout-player-tab"
+                    id="mediaTab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="mediaPanel"
+                    data-player-tab="media"
+                  >
+                    Media
+                  </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     OVERVIEW PANEL
+                ================================================== -->
+
+                <div
+                  class="scout-player-tab-panel is-active"
+                  id="overviewPanel"
+                  role="tabpanel"
+                  aria-labelledby="overviewTab"
+                  data-player-panel="overview"
+                >
+
+
+                  <!-- ===============================================
+                       PLAYER BIOGRAPHY
+                  ================================================ -->
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Player Profile
+                        </span>
+
+                        <h3>
+                          About the Player
+                        </h3>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="scout-player-biography">
+
+                      <p id="playerBiography">
+                        Player biography will appear here.
+                      </p>
+
+                    </div>
+
+                  </article>
+
+
+                  <!-- ===============================================
+                       PERSONAL DETAILS
+                  ================================================ -->
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Personal Information
+                        </span>
+
+                        <h3>
+                          Player Details
+                        </h3>
+
+                      </div>
+
+                    </div>
+
+
+                    <dl class="scout-player-details-grid">
+
+                      <div>
+
+                        <dt>
+                          Full Name
+                        </dt>
+
+                        <dd id="detailPlayerFullName">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Date of Birth
+                        </dt>
+
+                        <dd id="detailPlayerDob">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Age
+                        </dt>
+
+                        <dd id="detailPlayerAge">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Gender
+                        </dt>
+
+                        <dd id="detailPlayerGender">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Nationality
+                        </dt>
+
+                        <dd id="detailPlayerNationality">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          State
+                        </dt>
+
+                        <dd id="detailPlayerState">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          District
+                        </dt>
+
+                        <dd id="detailPlayerDistrict">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Registration ID
+                        </dt>
+
+                        <dd id="detailPlayerRegistrationId">
+                          —
+                        </dd>
+
+                      </div>
+
+                    </dl>
+
+                  </article>
+
+
+                  <!-- ===============================================
+                       FOOTBALL DETAILS
+                  ================================================ -->
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Football Profile
+                        </span>
+
+                        <h3>
+                          Playing Information
+                        </h3>
+
+                      </div>
+
+                    </div>
+
+
+                    <dl class="scout-player-details-grid">
+
+                      <div>
+
+                        <dt>
+                          Primary Position
+                        </dt>
+
+                        <dd id="detailPrimaryPosition">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Secondary Position
+                        </dt>
+
+                        <dd id="detailSecondaryPosition">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Preferred Foot
+                        </dt>
+
+                        <dd id="detailPreferredFoot">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Jersey Number
+                        </dt>
+
+                        <dd id="detailJerseyNumber">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Current Academy
+                        </dt>
+
+                        <dd id="detailCurrentAcademy">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Current Team
+                        </dt>
+
+                        <dd id="detailCurrentTeam">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Playing Level
+                        </dt>
+
+                        <dd id="detailPlayingLevel">
+                          —
+                        </dd>
+
+                      </div>
+
+
+                      <div>
+
+                        <dt>
+                          Years of Experience
+                        </dt>
+
+                        <dd id="detailExperience">
+                          —
+                        </dd>
+
+                      </div>
+
+                    </dl>
+
+                  </article>
+
+
+                  <!-- ===============================================
+                       PHYSICAL PROFILE
+                  ================================================ -->
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Physical Information
+                        </span>
+
+                        <h3>
+                          Physical Profile
+                        </h3>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="scout-physical-profile-grid">
+
+                      <div class="scout-physical-stat">
+
+                        <span>
+                          Height
+                        </span>
+
+                        <strong id="playerHeight">
+                          —
+                        </strong>
+
+                      </div>
+
+
+                      <div class="scout-physical-stat">
+
+                        <span>
+                          Weight
+                        </span>
+
+                        <strong id="playerWeight">
+                          —
+                        </strong>
+
+                      </div>
+
+
+                      <div class="scout-physical-stat">
+
+                        <span>
+                          BMI
+                        </span>
+
+                        <strong id="playerBmi">
+                          —
+                        </strong>
+
+                      </div>
+
+
+                      <div class="scout-physical-stat">
+
+                        <span>
+                          Dominant Foot
+                        </span>
+
+                        <strong id="playerDominantFoot">
+                          —
+                        </strong>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     PERFORMANCE PANEL
+                ================================================== -->
+
+                <div
+                  class="scout-player-tab-panel"
+                  id="performancePanel"
+                  role="tabpanel"
+                  aria-labelledby="performanceTab"
+                  data-player-panel="performance"
+                  hidden
+                >
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Scouting Analytics
+                        </span>
+
+                        <h3>
+                          Performance Ratings
+                        </h3>
+
+                      </div>
+
+
+                      <span
+                        class="scout-rating-source"
+                        id="ratingSourceLabel"
+                      >
+                        Latest Scout Assessment
+                      </span>
+
+                    </div>
+
+
+                    <div class="scout-performance-rating-list">
+
+                      <div class="scout-performance-rating-item">
+
+                        <div class="scout-rating-label">
+
+                          <span>
+                            Technical Ability
+                          </span>
+
+                          <strong id="technicalRatingValue">
+                            0
+                          </strong>
+
+                        </div>
+
+                        <div
+                          class="scout-rating-track"
+                          role="progressbar"
+                          aria-label="Technical ability rating"
+                          aria-valuemin="0"
+                          aria-valuemax="10"
+                          aria-valuenow="0"
+                        >
+
+                          <span
+                            id="technicalRatingBar"
+                            style="width: 0%;"
+                          ></span>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="scout-performance-rating-item">
+
+                        <div class="scout-rating-label">
+
+                          <span>
+                            Tactical Intelligence
+                          </span>
+
+                          <strong id="tacticalRatingValue">
+                            0
+                          </strong>
+
+                        </div>
+
+                        <div
+                          class="scout-rating-track"
+                          role="progressbar"
+                          aria-label="Tactical intelligence rating"
+                          aria-valuemin="0"
+                          aria-valuemax="10"
+                          aria-valuenow="0"
+                        >
+
+                          <span
+                            id="tacticalRatingBar"
+                            style="width: 0%;"
+                          ></span>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="scout-performance-rating-item">
+
+                        <div class="scout-rating-label">
+
+                          <span>
+                            Physical Ability
+                          </span>
+
+                          <strong id="physicalRatingValue">
+                            0
+                          </strong>
+
+                        </div>
+
+                        <div
+                          class="scout-rating-track"
+                          role="progressbar"
+                          aria-label="Physical ability rating"
+                          aria-valuemin="0"
+                          aria-valuemax="10"
+                          aria-valuenow="0"
+                        >
+
+                          <span
+                            id="physicalRatingBar"
+                            style="width: 0%;"
+                          ></span>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="scout-performance-rating-item">
+
+                        <div class="scout-rating-label">
+
+                          <span>
+                            Mental Strength
+                          </span>
+
+                          <strong id="mentalRatingValue">
+                            0
+                          </strong>
+
+                        </div>
+
+                        <div
+                          class="scout-rating-track"
+                          role="progressbar"
+                          aria-label="Mental strength rating"
+                          aria-valuemin="0"
+                          aria-valuemax="10"
+                          aria-valuenow="0"
+                        >
+
+                          <span
+                            id="mentalRatingBar"
+                            style="width: 0%;"
+                          ></span>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     REPORTS PANEL
+                ================================================== -->
+
+                <div
+                  class="scout-player-tab-panel"
+                  id="reportsPanel"
+                  role="tabpanel"
+                  aria-labelledby="reportsTab"
+                  data-player-panel="reports"
+                  hidden
+                >
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Scout History
+                        </span>
+
+                        <h3>
+                          Scouting Reports
+                        </h3>
+
+                      </div>
+
+
+                      <a
+                        href="scout-report-create.html"
+                        class="scout-text-link"
+                        id="reportsCreateLink"
+                      >
+                        Create New Report
+                      </a>
+
+                    </div>
+
+
+                    <div
+                      class="scout-player-report-list"
+                      id="playerReportList"
+                      aria-live="polite"
+                    ></div>
+
+
+                    <div
+                      class="scout-empty-state"
+                      id="playerReportsEmptyState"
+                      hidden
+                    >
+
+                      <span aria-hidden="true">
+                        ▤
+                      </span>
+
+                      <h4>
+                        No scouting reports yet
+                      </h4>
+
+                      <p>
+                        Create the first professional report for this player.
+                      </p>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     MEDIA PANEL
+                ================================================== -->
+
+                <div
+                  class="scout-player-tab-panel"
+                  id="mediaPanel"
+                  role="tabpanel"
+                  aria-labelledby="mediaTab"
+                  data-player-panel="media"
+                  hidden
+                >
+
+                  <article class="scout-content-card">
+
+                    <div class="scout-card-heading">
+
+                      <div>
+
+                        <span class="scout-card-eyebrow">
+                          Player Media
+                        </span>
+
+                        <h3>
+                          Photos and Videos
+                        </h3>
+
+                      </div>
+
+                    </div>
+
+
+                    <div
+                      class="scout-player-media-grid"
+                      id="playerMediaGrid"
+                    ></div>
+
+
+                    <div
+                      class="scout-empty-state"
+                      id="playerMediaEmptyState"
+                      hidden
+                    >
+
+                      <span aria-hidden="true">
+                        ◫
+                      </span>
+
+                      <h4>
+                        No media available
+                      </h4>
+
+                      <p>
+                        Player photos and performance videos will appear here.
+                      </p>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+              </section>
+
+            </div>
+
+
+            <!-- =====================================================
+                 RIGHT COLUMN
+            ====================================================== -->
+
+            <aside class="scout-player-secondary-column">
+
+
+              <!-- =====================================================
+                   SCOUT RECOMMENDATION
+              ====================================================== -->
+
+              <section class="scout-content-card scout-recommendation-card">
+
+                <div class="scout-card-heading">
+
+                  <div>
+
+                    <span class="scout-card-eyebrow">
+                      Scout Decision
+                    </span>
+
+                    <h3>
+                      Recommendation
+                    </h3>
+
+                  </div>
+
+                </div>
+
+
+                <div class="scout-recommendation-status">
+
+                  <span
+                    class="scout-recommendation-badge"
+                    id="playerRecommendationBadge"
+                  >
+                    Pending Review
+                  </span>
+
+                  <p id="playerRecommendationSummary">
+                    No final recommendation has been recorded.
+                  </p>
+
+                </div>
+
+
+                <dl class="scout-recommendation-details">
+
+                  <div>
+
+                    <dt>
+                      Priority
+                    </dt>
+
+                    <dd id="playerPriority">
+                      —
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Potential
+                    </dt>
+
+                    <dd id="playerPotentialLabel">
+                      —
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Report Confidence
+                    </dt>
+
+                    <dd id="playerConfidenceLevel">
+                      —
+                    </dd>
+
+                  </div>
+
+                </dl>
+
+              </section>
+
+
+              <!-- =====================================================
+                   KEY STRENGTHS
+              ====================================================== -->
+
+              <section class="scout-content-card">
+
+                <div class="scout-card-heading">
+
+                  <div>
+
+                    <span class="scout-card-eyebrow">
+                      Assessment
+                    </span>
+
+                    <h3>
+                      Key Strengths
+                    </h3>
+
+                  </div>
+
+                </div>
+
+
+                <ul
+                  class="scout-player-insight-list"
+                  id="playerStrengthsList"
+                >
+
+                  <li>
+                    No strengths recorded yet.
+                  </li>
+
+                </ul>
+
+              </section>
+
+
+              <!-- =====================================================
+                   DEVELOPMENT AREAS
+              ====================================================== -->
+
+              <section class="scout-content-card">
+
+                <div class="scout-card-heading">
+
+                  <div>
+
+                    <span class="scout-card-eyebrow">
+                      Development
+                    </span>
+
+                    <h3>
+                      Areas to Improve
+                    </h3>
+
+                  </div>
+
+                </div>
+
+
+                <ul
+                  class="scout-player-insight-list is-development"
+                  id="playerDevelopmentList"
+                >
+
+                  <li>
+                    No development areas recorded yet.
+                  </li>
+
+                </ul>
+
+              </section>
+
+
+              <!-- =====================================================
+                   CONTACT AND GUARDIAN
+              ====================================================== -->
+
+              <section class="scout-content-card">
+
+                <div class="scout-card-heading">
+
+                  <div>
+
+                    <span class="scout-card-eyebrow">
+                      Contact Information
+                    </span>
+
+                    <h3>
+                      Player Contact
+                    </h3>
+
+                  </div>
+
+                </div>
+
+
+                <dl class="scout-contact-details">
+
+                  <div>
+
+                    <dt>
+                      Email
+                    </dt>
+
+                    <dd>
+
+                      <a
+                        href="#"
+                        id="playerEmailLink"
+                      >
+                        —
+                      </a>
+
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Phone
+                    </dt>
+
+                    <dd>
+
+                      <a
+                        href="#"
+                        id="playerPhoneLink"
+                      >
+                        —
+                      </a>
+
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Guardian
+                    </dt>
+
+                    <dd id="playerGuardianName">
+                      —
+                    </dd>
+
+                  </div>
+
+
+                  <div>
+
+                    <dt>
+                      Guardian Phone
+                    </dt>
+
+                    <dd>
+
+                      <a
+                        href="#"
+                        id="guardianPhoneLink"
+                      >
+                        —
+                      </a>
+
+                    </dd>
+
+                  </div>
+
+                </dl>
+
+              </section>
+
+
+              <!-- =====================================================
+                   DOCUMENT STATUS
+              ====================================================== -->
+
+              <section class="scout-content-card">
+
+                <div class="scout-card-heading">
+
+                  <div>
+
+                    <span class="scout-card-eyebrow">
+                      Verification
+                    </span>
+
+                    <h3>
+                      Document Status
+                    </h3>
+
+                  </div>
+
+                </div>
+
+
+                <div class="scout-document-status-list">
+
+                  <div class="scout-document-status-item">
+
+                    <span>
+                      Identity Proof
+                    </span>
+
+                    <strong
+                      class="is-pending"
+                      id="identityDocumentStatus"
+                    >
+                      Pending
+                    </strong>
+
+                  </div>
+
+
+                  <div class="scout-document-status-item">
+
+                    <span>
+                      Age Proof
+                    </span>
+
+                    <strong
+                      class="is-pending"
+                      id="ageDocumentStatus"
+                    >
+                      Pending
+                    </strong>
+
+                  </div>
+
+
+                  <div class="scout-document-status-item">
+
+                    <span>
+                      Guardian Consent
+                    </span>
+
+                    <strong
+                      class="is-pending"
+                      id="guardianConsentStatus"
+                    >
+                      Pending
+                    </strong>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+            </aside>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SHARE PLAYER MODAL
+  ====================================================== -->
+
+  <div
+    class="scout-modal"
+    id="sharePlayerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="sharePlayerModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-share-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-card-eyebrow">
+            Share Profile
+          </span>
+
+          <h2 id="sharePlayerModalTitle">
+            Share Player Profile
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close share dialog"
+          data-share-modal-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-modal-body">
+
+        <label
+          class="scout-form-label"
+          for="playerShareLink"
+        >
+          Player profile link
+        </label>
+
+
+        <div class="scout-copy-link-group">
+
+          <input
+            id="playerShareLink"
+            type="text"
+            readonly
+          />
+
+          <button
+            class="scout-primary-button"
+            id="copyPlayerLinkButton"
+            type="button"
+          >
+            Copy Link
+          </button>
+
+        </div>
+
+
+        <div class="scout-share-actions">
+
+          <button
+            class="scout-share-action-button"
+            id="shareViaWhatsAppButton"
+            type="button"
+          >
+            WhatsApp
+          </button>
+
+
+          <button
+            class="scout-share-action-button"
+            id="shareViaEmailButton"
+            type="button"
+          >
+            Email
+          </button>
+
+
+          <button
+            class="scout-share-action-button"
+            id="nativeShareButton"
+            type="button"
+          >
+            More
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MEDIA VIEWER MODAL
+  ====================================================== -->
+
+  <div
+    class="scout-modal scout-media-viewer-modal"
+    id="playerMediaViewerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="playerMediaViewerTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-media-modal-close
+    ></div>
+
+
+    <div class="scout-media-viewer-dialog">
+
+      <div class="scout-modal-header">
+
+        <h2 id="playerMediaViewerTitle">
+          Player Media
+        </h2>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close media viewer"
+          data-media-modal-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="scout-media-viewer-content"
+        id="playerMediaViewerContent"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       LOGOUT CONFIRMATION MODAL
+  ====================================================== -->
+
+  <div
+    class="scout-modal"
+    id="scoutLogoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="scoutLogoutModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-logout-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-logout-dialog">
+
+      <div class="scout-logout-icon">
+        ↪
+      </div>
+
+
+      <h2 id="scoutLogoutModalTitle">
+        Logout from Scout Portal?
+      </h2>
+
+
+      <p>
+        You will need to sign in again to access player scouting information.
+      </p>
+
+
+      <div class="scout-modal-actions">
+
+        <button
+          class="scout-secondary-button"
+          type="button"
+          data-logout-modal-close
+        >
+          Cancel
+        </button>
+
+
+        <button
+          class="scout-danger-button"
+          id="confirmScoutLogoutButton"
+          type="button"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICATION REGION
+  ====================================================== -->
+
+  <div
+    class="scout-notification-region"
+    id="scoutNotificationRegion"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="scout-player-view.js"></script>
+
+</body>
+
+</html>

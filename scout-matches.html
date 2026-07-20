@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Browse, filter and review football matches in the FIFA Mission India Scout Portal."
+  />
+
+  <meta
+    name="theme-color"
+    content="#071a33"
+  />
+
+  <title>
+    Scout Matches | FIFA Mission India
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="scout-matches.css"
+  />
+
+</head>
+
+
+<body>
+
+  <a
+    href="#scoutMatchesMainContent"
+    class="scout-skip-link"
+  >
+    Skip to main content
+  </a>
+
+
+  <div
+    class="scout-app-shell"
+    id="scoutAppShell"
+  >
+
+
+    <div
+      class="scout-sidebar-overlay"
+      id="scoutSidebarOverlay"
+      aria-hidden="true"
+    ></div>
+
+
+    <aside
+      class="scout-sidebar"
+      id="scoutSidebar"
+      aria-label="Scout portal navigation"
+    >
+
+
+      <div class="scout-sidebar-header">
+
+        <a
+          href="index.html"
+          class="scout-brand"
+          aria-label="FIFA Mission India home"
+        >
+
+          <div
+            class="scout-brand-mark"
+            aria-hidden="true"
+          >
+            ⚽
+          </div>
+
+          <div class="scout-brand-copy">
+
+            <strong>
+              FIFA MISSION INDIA
+            </strong>
+
+            <small>
+              Scout Portal
+            </small>
+
+          </div>
+
+        </a>
+
+
+        <button
+          class="scout-sidebar-close"
+          id="scoutSidebarClose"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-profile-summary">
+
+        <div class="scout-profile-avatar">
+
+          <img
+            src="images/scout-avatar-placeholder.jpg"
+            alt="Scout profile"
+            data-scout-avatar
+          />
+
+          <span
+            class="scout-profile-status"
+            aria-label="Online"
+          ></span>
+
+        </div>
+
+
+        <div class="scout-profile-summary-copy">
+
+          <strong data-scout-name>
+            Scout Name
+          </strong>
+
+          <span data-scout-designation>
+            Talent Scout
+          </span>
+
+          <small data-scout-organization>
+            FIFA Mission India
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <nav class="scout-navigation">
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Main
+          </span>
+
+
+          <a
+            href="scout-dashboard.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ◫
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-players.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👥
+            </span>
+
+            <span>
+              Players
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-matches.html"
+            class="scout-navigation-link is-active"
+            aria-current="page"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ⚽
+            </span>
+
+            <span>
+              Matches
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-academies.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              🏟
+            </span>
+
+            <span>
+              Academies
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Scouting
+          </span>
+
+
+          <a
+            href="scout-report-create.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ✎
+            </span>
+
+            <span>
+              Create Report
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-reports.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ▤
+            </span>
+
+            <span>
+              My Reports
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <div class="scout-navigation-group">
+
+          <span class="scout-navigation-label">
+            Account
+          </span>
+
+
+          <a
+            href="scout-profile.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              👤
+            </span>
+
+            <span>
+              My Profile
+            </span>
+
+          </a>
+
+
+          <a
+            href="scout-help.html"
+            class="scout-navigation-link"
+          >
+
+            <span
+              class="scout-navigation-icon"
+              aria-hidden="true"
+            >
+              ?
+            </span>
+
+            <span>
+              Help & Support
+            </span>
+
+          </a>
+
+        </div>
+
+      </nav>
+
+
+      <div class="scout-sidebar-support-card">
+
+        <div
+          class="scout-support-icon"
+          aria-hidden="true"
+        >
+          🎧
+        </div>
+
+        <div>
+
+          <strong>
+            Need Assistance?
+          </strong>
+
+          <p>
+            Contact the FIFA Mission India support team.
+          </p>
+
+          <a href="scout-help.html">
+            Visit Support
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="scout-sidebar-footer">
+
+        <button
+          class="scout-logout-button"
+          id="scoutLogoutButton"
+          type="button"
+        >
+
+          <span aria-hidden="true">
+            ↪
+          </span>
+
+          <span>
+            Log Out
+          </span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <div class="scout-main-area">
+
+
+      <header class="scout-topbar">
+
+        <div class="scout-topbar-left">
+
+          <button
+            class="scout-menu-button"
+            id="scoutMenuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="scoutSidebar"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+          <div class="scout-page-heading">
+
+            <span class="scout-page-eyebrow">
+              Match Intelligence
+            </span>
+
+            <h1>
+              Matches
+            </h1>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-topbar-actions">
+
+          <a
+            href="scout-help.html"
+            class="scout-icon-button"
+            aria-label="Open help and support"
+          >
+            ?
+          </a>
+
+
+          <button
+            class="scout-icon-button"
+            id="scoutNotificationButton"
+            type="button"
+            aria-label="Open notifications"
+          >
+
+            <span aria-hidden="true">
+              🔔
+            </span>
+
+            <span
+              class="scout-notification-badge"
+              id="scoutNotificationBadge"
+            >
+              3
+            </span>
+
+          </button>
+
+
+          <div class="scout-topbar-profile">
+
+            <img
+              src="images/scout-avatar-placeholder.jpg"
+              alt="Scout profile"
+              data-scout-avatar
+            />
+
+            <div>
+
+              <strong data-scout-name>
+                Scout Name
+              </strong>
+
+              <span data-scout-designation>
+                Talent Scout
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <main
+        class="scout-main-content"
+        id="scoutMatchesMainContent"
+      >
+
+
+        <section class="scout-matches-intro">
+
+          <div>
+
+            <nav
+              class="scout-breadcrumb"
+              aria-label="Breadcrumb"
+            >
+              <a href="scout-dashboard.html">
+                Dashboard
+              </a>
+
+              <span aria-hidden="true">
+                /
+              </span>
+
+              <span aria-current="page">
+                Matches
+              </span>
+            </nav>
+
+
+            <h2>
+              Discover and Track Football Matches
+            </h2>
+
+            <p>
+              Explore upcoming, live and completed fixtures to identify scouting opportunities and follow player performances.
+            </p>
+
+          </div>
+
+
+          <div class="scout-matches-intro-actions">
+
+            <button
+              class="scout-secondary-button"
+              id="openCalendarViewButton"
+              type="button"
+            >
+              Calendar View
+            </button>
+
+
+            <button
+              class="scout-primary-button"
+              id="addMatchButton"
+              type="button"
+            >
+              + Add Match
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <section class="scout-match-statistics">
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              ⚽
+            </div>
+
+            <div>
+
+              <span>
+                Total Matches
+              </span>
+
+              <strong id="totalMatchesCount">
+                0
+              </strong>
+
+              <small>
+                Available fixtures
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              📅
+            </div>
+
+            <div>
+
+              <span>
+                Upcoming
+              </span>
+
+              <strong id="upcomingMatchesCount">
+                0
+              </strong>
+
+              <small>
+                Scheduled matches
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              🔴
+            </div>
+
+            <div>
+
+              <span>
+                Live Now
+              </span>
+
+              <strong id="liveMatchesCount">
+                0
+              </strong>
+
+              <small>
+                Matches in progress
+              </small>
+
+            </div>
+
+          </article>
+
+
+          <article class="scout-stat-card">
+
+            <div class="scout-stat-icon">
+              ★
+            </div>
+
+            <div>
+
+              <span>
+                Saved
+              </span>
+
+              <strong id="savedMatchesCount">
+                0
+              </strong>
+
+              <small>
+                Scouting watchlist
+              </small>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <section class="scout-match-toolbar">
+
+          <div class="scout-match-search">
+
+            <span aria-hidden="true">
+              ⌕
+            </span>
+
+            <input
+              type="search"
+              id="matchSearchInput"
+              placeholder="Search teams, academy, tournament or venue"
+              autocomplete="off"
+            />
+
+          </div>
+
+
+          <div class="scout-match-toolbar-actions">
+
+            <button
+              class="scout-filter-toggle-button"
+              id="matchFilterToggleButton"
+              type="button"
+              aria-expanded="true"
+              aria-controls="matchFiltersPanel"
+            >
+              Filters
+            </button>
+
+
+            <select
+              id="matchSortSelect"
+              aria-label="Sort matches"
+            >
+
+              <option value="date-asc">
+                Date: Earliest
+              </option>
+
+              <option value="date-desc">
+                Date: Latest
+              </option>
+
+              <option value="competition">
+                Competition
+              </option>
+
+              <option value="status">
+                Match Status
+              </option>
+
+            </select>
+
+
+            <div
+              class="scout-view-switcher"
+              role="group"
+              aria-label="Match display view"
+            >
+
+              <button
+                class="scout-view-button is-active"
+                id="gridViewButton"
+                type="button"
+                aria-label="Grid view"
+                aria-pressed="true"
+              >
+                ▦
+              </button>
+
+              <button
+                class="scout-view-button"
+                id="listViewButton"
+                type="button"
+                aria-label="List view"
+                aria-pressed="false"
+              >
+                ☰
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section
+          class="scout-match-filters"
+          id="matchFiltersPanel"
+        >
+
+          <div class="scout-filter-grid">
+
+            <div class="scout-filter-group">
+
+              <label for="matchStatusFilter">
+                Status
+              </label>
+
+              <select id="matchStatusFilter">
+
+                <option value="all">
+                  All statuses
+                </option>
+
+                <option value="upcoming">
+                  Upcoming
+                </option>
+
+                <option value="live">
+                  Live
+                </option>
+
+                <option value="completed">
+                  Completed
+                </option>
+
+                <option value="cancelled">
+                  Cancelled
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="matchCompetitionFilter">
+                Competition
+              </label>
+
+              <select id="matchCompetitionFilter">
+
+                <option value="all">
+                  All competitions
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="matchAgeGroupFilter">
+                Age Group
+              </label>
+
+              <select id="matchAgeGroupFilter">
+
+                <option value="all">
+                  All age groups
+                </option>
+
+                <option value="u10">
+                  Under 10
+                </option>
+
+                <option value="u12">
+                  Under 12
+                </option>
+
+                <option value="u15">
+                  Under 15
+                </option>
+
+                <option value="u17">
+                  Under 17
+                </option>
+
+                <option value="u19">
+                  Under 19
+                </option>
+
+                <option value="senior">
+                  Senior
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="matchStateFilter">
+                State
+              </label>
+
+              <select id="matchStateFilter">
+
+                <option value="all">
+                  All states
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="matchDateFromFilter">
+                From
+              </label>
+
+              <input
+                type="date"
+                id="matchDateFromFilter"
+              />
+
+            </div>
+
+
+            <div class="scout-filter-group">
+
+              <label for="matchDateToFilter">
+                To
+              </label>
+
+              <input
+                type="date"
+                id="matchDateToFilter"
+              />
+
+            </div>
+
+          </div>
+
+
+          <div class="scout-filter-footer">
+
+            <div
+              class="scout-active-filter-summary"
+              id="activeFilterSummary"
+            >
+              No filters applied
+            </div>
+
+
+            <div class="scout-filter-actions">
+
+              <button
+                class="scout-secondary-button"
+                id="clearMatchFiltersButton"
+                type="button"
+              >
+                Clear Filters
+              </button>
+
+              <button
+                class="scout-primary-button"
+                id="applyMatchFiltersButton"
+                type="button"
+              >
+                Apply Filters
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <section
+          class="scout-featured-match-section"
+          id="featuredMatchSection"
+          hidden
+        >
+
+          <div class="scout-section-heading">
+
+            <div>
+
+              <span class="scout-section-eyebrow">
+                Featured Fixture
+              </span>
+
+              <h3>
+                Priority Scouting Match
+              </h3>
+
+            </div>
+
+          </div>
+
+
+          <article
+            class="scout-featured-match-card"
+            id="featuredMatchCard"
+          >
+
+            <div class="scout-featured-match-cover">
+
+              <img
+                src="images/match-cover-placeholder.jpg"
+                alt=""
+                id="featuredMatchImage"
+              />
+
+              <div class="scout-featured-match-overlay"></div>
+
+              <span
+                class="scout-featured-match-status"
+                id="featuredMatchStatus"
+              >
+                Upcoming
+              </span>
+
+            </div>
+
+
+            <div class="scout-featured-match-content">
+
+              <div class="scout-featured-match-meta">
+
+                <span id="featuredMatchCompetition">
+                  Competition
+                </span>
+
+                <span id="featuredMatchAgeGroup">
+                  U15
+                </span>
+
+              </div>
+
+
+              <div class="scout-featured-teams">
+
+                <div class="scout-featured-team">
+
+                  <img
+                    src="images/team-logo-placeholder.png"
+                    alt=""
+                    id="featuredHomeTeamLogo"
+                  />
+
+                  <strong id="featuredHomeTeamName">
+                    Home Team
+                  </strong>
+
+                </div>
+
+
+                <div class="scout-featured-score">
+
+                  <span id="featuredMatchDate">
+                    —
+                  </span>
+
+                  <strong id="featuredMatchScore">
+                    VS
+                  </strong>
+
+                  <small id="featuredMatchTime">
+                    —
+                  </small>
+
+                </div>
+
+
+                <div class="scout-featured-team">
+
+                  <img
+                    src="images/team-logo-placeholder.png"
+                    alt=""
+                    id="featuredAwayTeamLogo"
+                  />
+
+                  <strong id="featuredAwayTeamName">
+                    Away Team
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="scout-featured-match-details">
+
+                <span>
+                  📍
+                  <strong id="featuredMatchVenue">
+                    Venue
+                  </strong>
+                </span>
+
+                <span>
+                  🗺
+                  <strong id="featuredMatchLocation">
+                    Location
+                  </strong>
+                </span>
+
+              </div>
+
+
+              <div class="scout-featured-match-actions">
+
+                <button
+                  class="scout-secondary-button"
+                  id="featuredSaveMatchButton"
+                  type="button"
+                >
+                  Save Match
+                </button>
+
+                <button
+                  class="scout-primary-button"
+                  id="featuredViewMatchButton"
+                  type="button"
+                >
+                  View Match
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+        <section class="scout-match-results-section">
+
+          <div class="scout-match-results-header">
+
+            <div>
+
+              <span class="scout-section-eyebrow">
+                Match Directory
+              </span>
+
+              <h3>
+                Available Matches
+              </h3>
+
+            </div>
+
+
+            <span
+              class="scout-result-count"
+              id="matchResultCount"
+            >
+              0 matches
+            </span>
+
+          </div>
+
+
+          <div
+            class="scout-match-loading-state"
+            id="matchLoadingState"
+            aria-live="polite"
+          >
+
+            <article class="scout-match-skeleton-card"></article>
+            <article class="scout-match-skeleton-card"></article>
+            <article class="scout-match-skeleton-card"></article>
+
+          </div>
+
+
+          <div
+            class="scout-match-error-state"
+            id="matchErrorState"
+            hidden
+          >
+
+            <div class="scout-match-state-icon">
+              !
+            </div>
+
+            <h3>
+              Matches could not be loaded
+            </h3>
+
+            <p id="matchErrorMessage">
+              Please try again.
+            </p>
+
+            <button
+              class="scout-primary-button"
+              id="retryMatchesButton"
+              type="button"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+
+          <div
+            class="scout-match-empty-state"
+            id="matchEmptyState"
+            hidden
+          >
+
+            <div class="scout-match-state-icon">
+              ⚽
+            </div>
+
+            <h3>
+              No matches found
+            </h3>
+
+            <p>
+              Try changing the search text or clearing the selected filters.
+            </p>
+
+            <button
+              class="scout-secondary-button"
+              id="emptyStateClearFiltersButton"
+              type="button"
+            >
+              Clear Filters
+            </button>
+
+          </div>
+
+
+          <div
+            class="scout-match-grid"
+            id="matchGrid"
+            aria-live="polite"
+          ></div>
+
+
+          <div
+            class="scout-pagination"
+            id="matchPagination"
+            hidden
+          >
+
+            <button
+              class="scout-pagination-button"
+              id="previousMatchesPageButton"
+              type="button"
+              disabled
+            >
+              Previous
+            </button>
+
+            <div
+              class="scout-pagination-pages"
+              id="matchPaginationPages"
+            ></div>
+
+            <button
+              class="scout-pagination-button"
+              id="nextMatchesPageButton"
+              type="button"
+            >
+              Next
+            </button>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="matchDetailsModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="matchDetailsModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-match-details-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-match-details-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-section-eyebrow">
+            Match Details
+          </span>
+
+          <h2 id="matchDetailsModalTitle">
+            Match Overview
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close match details"
+          data-match-details-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="scout-match-details-body">
+
+        <div class="scout-match-details-competition">
+
+          <span id="modalMatchCompetition">
+            Competition
+          </span>
+
+          <span id="modalMatchStatus">
+            Upcoming
+          </span>
+
+        </div>
+
+
+        <div class="scout-match-details-teams">
+
+          <div>
+
+            <img
+              src="images/team-logo-placeholder.png"
+              alt=""
+              id="modalHomeTeamLogo"
+            />
+
+            <strong id="modalHomeTeamName">
+              Home Team
+            </strong>
+
+          </div>
+
+
+          <div class="scout-match-details-score">
+
+            <span id="modalMatchDate">
+              —
+            </span>
+
+            <strong id="modalMatchScore">
+              VS
+            </strong>
+
+            <small id="modalMatchTime">
+              —
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <img
+              src="images/team-logo-placeholder.png"
+              alt=""
+              id="modalAwayTeamLogo"
+            />
+
+            <strong id="modalAwayTeamName">
+              Away Team
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-match-details-info-grid">
+
+          <div>
+
+            <span>
+              Venue
+            </span>
+
+            <strong id="modalMatchVenue">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Location
+            </span>
+
+            <strong id="modalMatchLocation">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Age Group
+            </span>
+
+            <strong id="modalMatchAgeGroup">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Surface
+            </span>
+
+            <strong id="modalMatchSurface">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-match-details-description">
+
+          <h3>
+            Scouting Notes
+          </h3>
+
+          <p id="modalMatchDescription">
+            No additional match information available.
+          </p>
+
+        </div>
+
+
+        <div class="scout-modal-actions">
+
+          <button
+            class="scout-secondary-button"
+            id="modalSaveMatchButton"
+            type="button"
+          >
+            Save Match
+          </button>
+
+          <a
+            href="scout-report-create.html"
+            class="scout-primary-button"
+            id="modalCreateReportLink"
+          >
+            Create Report
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="addMatchModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="addMatchModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-add-match-close
+    ></div>
+
+
+    <div class="scout-modal-dialog">
+
+      <div class="scout-modal-header">
+
+        <div>
+
+          <span class="scout-section-eyebrow">
+            Scout Entry
+          </span>
+
+          <h2 id="addMatchModalTitle">
+            Add Match
+          </h2>
+
+        </div>
+
+
+        <button
+          class="scout-modal-close-button"
+          type="button"
+          aria-label="Close add match dialog"
+          data-add-match-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form
+        class="scout-add-match-form"
+        id="addMatchForm"
+        novalidate
+      >
+
+        <div class="scout-form-grid">
+
+          <div class="scout-form-group">
+
+            <label for="newMatchHomeTeam">
+              Home Team
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="newMatchHomeTeam"
+              name="homeTeam"
+              maxlength="120"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="newMatchHomeTeam"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchAwayTeam">
+              Away Team
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="newMatchAwayTeam"
+              name="awayTeam"
+              maxlength="120"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="newMatchAwayTeam"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchCompetition">
+              Competition
+              <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="newMatchCompetition"
+              name="competition"
+              maxlength="120"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="newMatchCompetition"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchAgeGroup">
+              Age Group
+            </label>
+
+            <select
+              id="newMatchAgeGroup"
+              name="ageGroup"
+            >
+
+              <option value="">
+                Select age group
+              </option>
+
+              <option value="u10">
+                Under 10
+              </option>
+
+              <option value="u12">
+                Under 12
+              </option>
+
+              <option value="u15">
+                Under 15
+              </option>
+
+              <option value="u17">
+                Under 17
+              </option>
+
+              <option value="u19">
+                Under 19
+              </option>
+
+              <option value="senior">
+                Senior
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchDate">
+              Date
+              <span>*</span>
+            </label>
+
+            <input
+              type="date"
+              id="newMatchDate"
+              name="date"
+              required
+            />
+
+            <small
+              class="scout-field-error"
+              data-error-for="newMatchDate"
+            ></small>
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchTime">
+              Time
+            </label>
+
+            <input
+              type="time"
+              id="newMatchTime"
+              name="time"
+            />
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchVenue">
+              Venue
+            </label>
+
+            <input
+              type="text"
+              id="newMatchVenue"
+              name="venue"
+              maxlength="160"
+            />
+
+          </div>
+
+
+          <div class="scout-form-group">
+
+            <label for="newMatchState">
+              State
+            </label>
+
+            <input
+              type="text"
+              id="newMatchState"
+              name="state"
+              maxlength="100"
+            />
+
+          </div>
+
+
+          <div class="scout-form-group scout-form-group-full">
+
+            <label for="newMatchNotes">
+              Match Notes
+            </label>
+
+            <textarea
+              id="newMatchNotes"
+              name="notes"
+              rows="4"
+              maxlength="700"
+              placeholder="Add scouting relevance or other useful match details."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <div class="scout-modal-actions">
+
+          <button
+            class="scout-secondary-button"
+            type="button"
+            data-add-match-close
+          >
+            Cancel
+          </button>
+
+          <button
+            class="scout-primary-button"
+            id="submitNewMatchButton"
+            type="submit"
+          >
+            Add Match
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-modal"
+    id="scoutLogoutModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="scoutLogoutModalTitle"
+    hidden
+  >
+
+    <div
+      class="scout-modal-backdrop"
+      data-logout-modal-close
+    ></div>
+
+
+    <div class="scout-modal-dialog scout-logout-dialog">
+
+      <div
+        class="scout-logout-icon"
+        aria-hidden="true"
+      >
+        ↪
+      </div>
+
+      <h2 id="scoutLogoutModalTitle">
+        Log out of Scout Portal?
+      </h2>
+
+      <p>
+        You will need to sign in again to access scouting tools and match intelligence.
+      </p>
+
+      <div class="scout-modal-actions">
+
+        <button
+          class="scout-secondary-button"
+          type="button"
+          data-logout-modal-close
+        >
+          Cancel
+        </button>
+
+        <button
+          class="scout-danger-button"
+          id="confirmScoutLogoutButton"
+          type="button"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="scout-notification-region"
+    id="scoutNotificationRegion"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+  <script src="scout-matches.js"></script>
+
+</body>
+
+</html>

@@ -112,7 +112,7 @@ const academyDatabase = {minerva:{
     selectionMethod:"Open Trials + Scouting",
 
     cover:
-    "images/academies/minerva-cover.jpg",
+    "images/academies/minerva-cover.jpeg",
 
     logo:
     "images/academies/minerva-logo.png",
@@ -125,7 +125,7 @@ const academyDatabase = {minerva:{
             role:"Owner & Primary Director",
 
             image:
-            "images/leadership/ranjit-bajaj.jpg",
+            "images/leadership/ranjit-bajaj.jpeg",
 
             description:
             "Founder and Owner of Minerva Football Academy. A leading figure in Indian football, committed to developing young talent through professional coaching, world-class infrastructure and long-term player development."
@@ -147,15 +147,15 @@ const academyDatabase = {minerva:{
 
     address:
 
-    "Mohali, Punjab, India",
+    "Minerva Academy NH 21, V.P.O. Daon, Sector 120, Punjab-140301, India",
 
     phone:
 
-    "+91 9876543210",
+    "+91 6284779696",
 
     email:
 
-    "info@minervaacademy.in",
+    "minervaacademyfootballclub@gmail.com",
 
         website:
 
@@ -424,33 +424,33 @@ const academyContentDatabase = {
         ],
 
 
-        socialLinks:[
+        socialLinks: [
 
-            {
-                platform:"Facebook",
-                icon:"fa-brands fa-facebook-f",
-                url:"#"
-            },
+    {
+        platform: "Facebook",
+        icon: "fa-brands fa-facebook-f",
+        url: "https://www.facebook.com/MinervaAcademyFootballCricketClub"
+    },
 
-            {
-                platform:"Instagram",
-                icon:"fa-brands fa-instagram",
-                url:"#"
-            },
+    {
+        platform: "Instagram",
+        icon: "fa-brands fa-instagram",
+        url: "https://www.instagram.com/minervapunjabfc/"
+    },
 
-            {
-                platform:"YouTube",
-                icon:"fa-brands fa-youtube",
-                url:"#"
-            },
+    {
+        platform: "YouTube",
+        icon: "fa-brands fa-youtube",
+        url: "#" // Replace with the official Minerva YouTube channel when available
+    },
 
-            {
-                platform:"X",
-                icon:"fa-brands fa-x-twitter",
-                url:"#"
-            }
+    {
+        platform: "X",
+        icon: "fa-brands fa-x-twitter",
+        url: "https://x.com/minervapunjabfc"
+    }
 
-        ]
+],
 
     }
 

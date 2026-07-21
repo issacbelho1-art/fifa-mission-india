@@ -12,26 +12,27 @@
 
   <meta
     name="description"
-    content="Explore verified football academies, training programs, facilities, coaches, achievements and trial opportunities across India."
+    content="Explore Minerva Football Academy, its player-development programs, leadership, facilities, achievements, trials and contribution to Indian football."
   >
 
   <meta
     name="keywords"
-    content="FIFA Mission India, football academy, Minerva Academy, football trials, youth football India"
+    content="Minerva Football Academy, football academy India, football trials Punjab, youth football India, Mission FIFA 2034"
   >
 
   <meta
     name="author"
-    content="FIFA Mission India"
+    content="Bharat Football Fans"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07172d"
   >
 
   <title>
-    Academy Profile | FIFA Mission India
+    Minerva Football Academy | Bharat Football Fans
   </title>
-
-  <!-- =====================================================
-       GOOGLE FONTS
-  ====================================================== -->
 
   <link
     rel="preconnect"
@@ -49,18 +50,10 @@
     rel="stylesheet"
   >
 
-  <!-- =====================================================
-       ICON LIBRARY
-  ====================================================== -->
-
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
-
-  <!-- =====================================================
-       PAGE STYLESHEET
-  ====================================================== -->
 
   <link
     rel="stylesheet"
@@ -76,25 +69,27 @@
   ====================================================== -->
 
   <div
-    class="academy-page-loader"
+    class="academy-loader"
     id="academyPageLoader"
     aria-live="polite"
   >
 
-    <div class="academy-loader-content">
+    <div class="academy-loader-inner">
 
       <div
-        class="academy-loader-spinner"
+        class="academy-loader-ball"
         aria-hidden="true"
-      ></div>
+      >
+        <i class="fa-solid fa-futbol"></i>
+      </div>
 
       <strong>
         Loading Academy Profile
       </strong>
 
-      <p>
-        Please wait while we prepare the academy information.
-      </p>
+      <span>
+        Preparing the academy experience
+      </span>
 
     </div>
 
@@ -102,7 +97,7 @@
 
 
   <!-- =====================================================
-       MOBILE NAVIGATION OVERLAY
+       MOBILE OVERLAY
   ====================================================== -->
 
   <div
@@ -113,42 +108,45 @@
 
 
   <!-- =====================================================
-       NAVBAR
+       HEADER
   ====================================================== -->
 
   <header
-    class="academy-navbar"
+    class="academy-header"
     id="academyNavbar"
   >
 
-    <div class="academy-navbar-container">
+    <div class="academy-header-container">
 
       <a
-        href="index.html"
-        class="academy-brand"
-        aria-label="FIFA Mission India home"
-      >
+    href="index.html"
+    class="academy-brand"
+    aria-label="Bharat Football Fans homepage"
+>
 
-        <div
-          class="academy-brand-icon"
-          aria-hidden="true"
+    <span
+        class="academy-brand-mark"
+        aria-hidden="true"
+    >
+        <img
+            src="images/logo.png"
+            alt="Bharat Football Fans Logo"
         >
-          <i class="fa-solid fa-futbol"></i>
-        </div>
+    </span>
 
-        <div class="academy-brand-text">
+    <span class="academy-brand-copy">
 
-          <strong>
-            FIFA MISSION INDIA
-          </strong>
+        <strong>
+            BHARAT FOOTBALL FANS
+        </strong>
 
-          <span>
+        <small>
             Mission FIFA 2034
-          </span>
+        </small>
 
-        </div>
+    </span>
 
-      </a>
+</a>
 
 
       <nav
@@ -172,6 +170,10 @@
           Programs
         </a>
 
+        <a href="#academyLegacy">
+          Legacy
+        </a>
+
         <a href="#academyTrials">
           Trials
         </a>
@@ -179,24 +181,24 @@
       </nav>
 
 
-      <div class="academy-navbar-actions">
+      <div class="academy-header-actions">
 
         <a
           href="login.html"
-          class="academy-nav-login"
+          class="academy-login-link"
         >
           Login
         </a>
 
         <a
           href="register.html"
-          class="academy-nav-register"
+          class="academy-join-button"
         >
           Join Mission
         </a>
 
         <button
-          class="academy-menu-toggle"
+          class="academy-menu-button"
           id="academyMenuToggle"
           type="button"
           aria-label="Open navigation menu"
@@ -218,7 +220,7 @@
 
 
   <!-- =====================================================
-       MOBILE NAVIGATION
+       MOBILE MENU
   ====================================================== -->
 
   <aside
@@ -230,31 +232,34 @@
 
     <div class="academy-mobile-menu-header">
 
-      <div class="academy-mobile-menu-brand">
+      <a
+        href="index.html"
+        class="academy-brand"
+      >
 
-        <div
-          class="academy-brand-icon"
+        <span
+          class="academy-brand-mark"
           aria-hidden="true"
         >
           <i class="fa-solid fa-futbol"></i>
-        </div>
+        </span>
 
-        <div class="academy-brand-text">
+        <span class="academy-brand-copy">
 
           <strong>
-            FIFA MISSION INDIA
+            BHARAT FOOTBALL FANS
           </strong>
 
-          <span>
-            Academy Network
-          </span>
+          <small>
+            Mission FIFA 2034
+          </small>
 
-        </div>
+        </span>
 
-      </div>
+      </a>
 
       <button
-        class="academy-mobile-menu-close"
+        class="academy-mobile-close"
         id="academyMobileMenuClose"
         type="button"
         aria-label="Close navigation menu"
@@ -284,7 +289,7 @@
 
       <a href="#academyPrograms">
         <i class="fa-solid fa-person-running"></i>
-        Training Programs
+        Programs
       </a>
 
       <a href="#academyFacilities">
@@ -292,14 +297,14 @@
         Facilities
       </a>
 
-      <a href="#academyAchievements">
-        <i class="fa-solid fa-trophy"></i>
-        Achievements
+      <a href="#academyLeadership">
+        <i class="fa-solid fa-user-tie"></i>
+        Leadership
       </a>
 
-      <a href="#academyCoaches">
-        <i class="fa-solid fa-user-tie"></i>
-        Coaches
+      <a href="#academyLegacy">
+        <i class="fa-solid fa-trophy"></i>
+        Legacy
       </a>
 
       <a href="#academyTrials">
@@ -312,23 +317,28 @@
         Gallery
       </a>
 
+      <a href="#academyContact">
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+      </a>
+
     </nav>
 
 
-    <div class="academy-mobile-menu-actions">
+    <div class="academy-mobile-actions">
 
       <a
         href="login.html"
-        class="academy-mobile-secondary-button"
+        class="academy-mobile-secondary"
       >
         Login
       </a>
 
       <a
         href="register.html"
-        class="academy-mobile-primary-button"
+        class="academy-mobile-primary"
       >
-        Join the Mission
+        Join Mission
       </a>
 
     </div>
@@ -337,7 +347,7 @@
 
 
   <!-- =====================================================
-       MAIN PAGE CONTENT
+       MAIN PROFILE
   ====================================================== -->
 
   <main
@@ -346,105 +356,126 @@
     hidden
   >
 
-      <!-- =====================================================
-         ACADEMY HERO
-    ====================================================== -->
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
 
     <section
-      class="academy-profile-hero"
-      id="academyProfileHero"
+      class="academy-hero"
+      id="academyHero"
     >
 
-      <div
-        class="academy-profile-cover"
-        id="academyProfileCover"
-      >
+      <div class="academy-hero-media">
 
         <img
           id="academyCoverImage"
-          src="images/academies/default-academy-cover.jpg"
-          alt="Football academy training ground"
+          src="images/academies/minerva-cover.jpeg"
+          alt="Minerva Football Academy team celebrating"
         >
 
-        <div class="academy-cover-overlay"></div>
+        <div class="academy-hero-gradient"></div>
+
+        <div class="academy-hero-pattern"></div>
 
       </div>
 
 
       <div class="academy-hero-container">
 
-        <div class="academy-hero-content">
+        <div class="academy-hero-breadcrumbs">
 
-          <div class="academy-profile-logo-wrapper">
+          <a href="index.html">
+            Home
+          </a>
 
-            <img
-              id="academyLogoImage"
-              class="academy-profile-logo"
-              src="images/academies/default-academy-logo.png"
-              alt="Academy logo"
-            >
+          <i class="fa-solid fa-chevron-right"></i>
 
-          </div>
+          <a href="academies.html">
+            Academies
+          </a>
 
+          <i class="fa-solid fa-chevron-right"></i>
 
-          <div class="academy-profile-heading">
+          <span id="academyBreadcrumbName">
+            Minerva Football Academy
+          </span>
 
-            <div class="academy-heading-topline">
-
-              <span
-                class="academy-status-badge"
-                id="academyStatusBadge"
-              >
-                <i class="fa-solid fa-circle-check"></i>
-                Verified Academy
-              </span>
-
-              <span
-                class="academy-type-badge"
-                id="academyTypeBadge"
-              >
-                Elite Development Academy
-              </span>
-
-            </div>
+        </div>
 
 
-            <h1 id="academyName">
-              Football Academy
-            </h1>
+        <div class="academy-hero-layout">
+
+          <div class="academy-hero-main">
+
+            <div class="academy-identity-row">
+
+              <div class="academy-logo-shell">
+
+                <img
+                  id="academyLogoImage"
+                  src="images/academies/minerva-logo.png"
+                  alt="Minerva Football Academy logo"
+                >
+
+              </div>
 
 
-            <div class="academy-hero-meta">
+              <div class="academy-identity-content">
 
-              <span>
-                <i class="fa-solid fa-location-dot"></i>
+                <div class="academy-badge-row">
 
-                <span id="academyLocation">
-                  India
-                </span>
-              </span>
+                  <span
+                    class="academy-verified-badge"
+                    id="academyStatusBadge"
+                  >
+                    <i class="fa-solid fa-circle-check"></i>
+                    Verified Academy
+                  </span>
 
+                  <span
+                    class="academy-type-badge"
+                    id="academyTypeBadge"
+                  >
+                    Elite Residential Academy
+                  </span>
 
-              <span>
-                <i class="fa-solid fa-calendar-days"></i>
+                </div>
 
-                Established
+                <h1 id="academyName">
+                  Minerva Football Academy
+                </h1>
 
-                <strong id="academyEstablishedYear">
-                  —
-                </strong>
-              </span>
+                <div class="academy-hero-meta">
 
+                  <span>
+                    <i class="fa-solid fa-location-dot"></i>
 
-              <span>
-                <i class="fa-solid fa-users"></i>
+                    <span id="academyLocation">
+                      Mohali, Punjab
+                    </span>
+                  </span>
 
-                <strong id="academyPlayerCount">
-                  —
-                </strong>
+                  <span>
+                    <i class="fa-solid fa-calendar-days"></i>
 
-                Players
-              </span>
+                    Established
+
+                    <strong id="academyEstablishedYear">
+                      2005
+                    </strong>
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-house"></i>
+
+                    <strong id="academyResidentialHero">
+                      Residential Available
+                    </strong>
+                  </span>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -453,8 +484,9 @@
               class="academy-hero-description"
               id="academyShortDescription"
             >
-              Developing talented young footballers through structured
-              coaching, competitive exposure and professional player pathways.
+              Developing talented footballers through structured coaching,
+              elite competition and long-term pathways towards professional,
+              national and international football.
             </p>
 
 
@@ -462,32 +494,75 @@
 
               <a
                 href="#academyTrials"
-                class="academy-primary-action"
+                class="academy-primary-button"
               >
                 <i class="fa-solid fa-calendar-check"></i>
                 View Trials
               </a>
 
-              <a
-                href="#academyContact"
-                class="academy-secondary-action"
+              <button
+                class="academy-secondary-button"
+                id="academyContactButton"
+                type="button"
               >
                 <i class="fa-solid fa-envelope"></i>
                 Contact Academy
-              </a>
+              </button>
 
               <button
-                class="academy-share-button"
+                class="academy-icon-button"
                 id="academyShareButton"
                 type="button"
+                aria-label="Share academy profile"
               >
                 <i class="fa-solid fa-share-nodes"></i>
-                Share
               </button>
 
             </div>
 
           </div>
+
+
+          <aside class="academy-hero-card">
+
+            <span class="academy-hero-card-label">
+              ACADEMY PROFILE
+            </span>
+
+            <h2>
+              Elite Player Development
+            </h2>
+
+            <p>
+              Building technically capable, disciplined and competitive
+              footballers through a complete development ecosystem.
+            </p>
+
+            <div class="academy-hero-card-list">
+
+              <span>
+                <i class="fa-solid fa-check"></i>
+                Professional coaching
+              </span>
+
+              <span>
+                <i class="fa-solid fa-check"></i>
+                Residential pathway
+              </span>
+
+              <span>
+                <i class="fa-solid fa-check"></i>
+                Competitive exposure
+              </span>
+
+              <span>
+                <i class="fa-solid fa-check"></i>
+                Open trials and scouting
+              </span>
+
+            </div>
+
+          </aside>
 
         </div>
 
@@ -496,11 +571,11 @@
     </section>
 
 
-    <!-- =====================================================
-         ACADEMY QUICK STATISTICS
-    ====================================================== -->
+    <!-- ===================================================
+         QUICK STATS
+    ==================================================== -->
 
-    <section class="academy-quick-stats">
+    <section class="academy-stats-section">
 
       <div class="academy-content-container">
 
@@ -508,14 +583,35 @@
 
           <article class="academy-stat-card">
 
-            <div class="academy-stat-icon">
-              <i class="fa-solid fa-user-graduate"></i>
+            <span class="academy-stat-icon">
+              <i class="fa-solid fa-users"></i>
+            </span>
+
+            <div>
+
+              <strong id="academyPlayerCount">
+                420+
+              </strong>
+
+              <span>
+                Academy Players
+              </span>
+
             </div>
+
+          </article>
+
+
+          <article class="academy-stat-card">
+
+            <span class="academy-stat-icon">
+              <i class="fa-solid fa-user-graduate"></i>
+            </span>
 
             <div>
 
               <strong id="academyGraduatesCount">
-                —
+                180+
               </strong>
 
               <span>
@@ -529,14 +625,14 @@
 
           <article class="academy-stat-card">
 
-            <div class="academy-stat-icon">
+            <span class="academy-stat-icon">
               <i class="fa-solid fa-user-tie"></i>
-            </div>
+            </span>
 
             <div>
 
               <strong id="academyCoachesCount">
-                —
+                18
               </strong>
 
               <span>
@@ -550,18 +646,18 @@
 
           <article class="academy-stat-card">
 
-            <div class="academy-stat-icon">
+            <span class="academy-stat-icon">
               <i class="fa-solid fa-trophy"></i>
-            </div>
+            </span>
 
             <div>
 
               <strong id="academyTrophiesCount">
-                —
+                104+
               </strong>
 
               <span>
-                Major Achievements
+                Trophies Won
               </span>
 
             </div>
@@ -571,18 +667,18 @@
 
           <article class="academy-stat-card">
 
-            <div class="academy-stat-icon">
+            <span class="academy-stat-icon">
               <i class="fa-solid fa-futbol"></i>
-            </div>
+            </span>
 
             <div>
 
               <strong id="academyProgramsCount">
-                —
+                7
               </strong>
 
               <span>
-                Training Programs
+                Development Programs
               </span>
 
             </div>
@@ -596,38 +692,38 @@
     </section>
 
 
-    <!-- =====================================================
-         PROFILE BODY
-    ====================================================== -->
+    <!-- ===================================================
+         BODY
+    ==================================================== -->
 
     <section class="academy-profile-body">
 
-      <div class="academy-content-container academy-profile-layout">
-
-        <!-- =================================================
-             MAIN CONTENT COLUMN
-        ================================================== -->
+      <div class="academy-content-container academy-page-layout">
 
         <div class="academy-main-column">
 
-          <!-- ===============================================
+          <!-- =============================================
                OVERVIEW
-          ================================================ -->
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyOverview"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                ABOUT THE ACADEMY
-              </span>
+              <div>
 
-              <h2>
-                Academy Overview
-              </h2>
+                <span class="academy-section-eyebrow">
+                  ABOUT THE ACADEMY
+                </span>
+
+                <h2>
+                  A Complete Football Development Environment
+                </h2>
+
+              </div>
 
             </div>
 
@@ -635,59 +731,90 @@
             <div class="academy-overview-card">
 
               <p id="academyFullDescription">
-                Academy information will be displayed here.
+                Minerva Football Academy is a professional player-development
+                institution committed to identifying, training and preparing
+                talented footballers for elite competition. Its structured
+                environment combines technical coaching, tactical education,
+                physical development, discipline, education, residential
+                support and competitive exposure.
               </p>
 
 
-              <div class="academy-overview-details">
+              <div class="academy-overview-grid">
 
-                <div class="academy-overview-detail">
+                <div class="academy-overview-item">
 
                   <span>
                     Academy Category
                   </span>
 
                   <strong id="academyCategory">
-                    —
+                    Professional Football Academy
                   </strong>
 
                 </div>
 
 
-                <div class="academy-overview-detail">
+                <div class="academy-overview-item">
 
                   <span>
                     Training Model
                   </span>
 
                   <strong id="academyTrainingModel">
-                    —
+                    UEFA-Inspired Development
                   </strong>
 
                 </div>
 
 
-                <div class="academy-overview-detail">
+                <div class="academy-overview-item">
 
                   <span>
                     Age Groups
                   </span>
 
                   <strong id="academyAgeGroups">
-                    —
+                    U-8 to U-21
                   </strong>
 
                 </div>
 
 
-                <div class="academy-overview-detail">
+                <div class="academy-overview-item">
+
+                  <span>
+                    Player Category
+                  </span>
+
+                  <strong id="academyPlayerCategory">
+                    Boys &amp; Girls
+                  </strong>
+
+                </div>
+
+
+                <div class="academy-overview-item">
 
                   <span>
                     Residential Program
                   </span>
 
                   <strong id="academyResidentialStatus">
-                    —
+                    Available
+                  </strong>
+
+                </div>
+
+
+                <div class="academy-overview-item">
+
+                  <span>
+                    Selection Method
+                  </span>
+
+                  <strong id="academySelectionMethod">
+                    Open Trials + Scouting
                   </strong>
 
                 </div>
@@ -699,24 +826,28 @@
           </section>
 
 
-          <!-- ===============================================
-               MISSION AND PHILOSOPHY
-          ================================================ -->
+          <!-- =============================================
+               MISSION
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyPhilosophy"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                PLAYER DEVELOPMENT
-              </span>
+              <div>
 
-              <h2>
-                Mission and Coaching Philosophy
-              </h2>
+                <span class="academy-section-eyebrow">
+                  DEVELOPMENT VISION
+                </span>
+
+                <h2>
+                  Mission and Coaching Philosophy
+                </h2>
+
+              </div>
 
             </div>
 
@@ -725,17 +856,18 @@
 
               <article class="academy-philosophy-card">
 
-                <div class="academy-card-icon">
+                <span class="academy-feature-icon">
                   <i class="fa-solid fa-bullseye"></i>
-                </div>
+                </span>
 
                 <h3>
                   Academy Mission
                 </h3>
 
                 <p id="academyMission">
-                  Building disciplined, skilled and confident footballers
-                  prepared for competitive opportunities.
+                  To develop technically gifted, disciplined and intelligent
+                  footballers capable of representing professional clubs,
+                  state teams and the nation.
                 </p>
 
               </article>
@@ -743,17 +875,18 @@
 
               <article class="academy-philosophy-card">
 
-                <div class="academy-card-icon">
+                <span class="academy-feature-icon">
                   <i class="fa-solid fa-lightbulb"></i>
-                </div>
+                </span>
 
                 <h3>
                   Coaching Philosophy
                 </h3>
 
                 <p id="academyCoachingPhilosophy">
-                  A player-first approach focused on technical ability,
-                  tactical understanding, physical development and character.
+                  A player-first approach focused on technical mastery,
+                  tactical intelligence, athletic development, discipline,
+                  character and competitive confidence.
                 </p>
 
               </article>
@@ -761,29 +894,82 @@
             </div>
 
           </section>
-                    <!-- ===============================================
-               TRAINING PROGRAMS
-          ================================================ -->
+
+
+          <!-- =============================================
+               LEADERSHIP
+          ============================================== -->
 
           <section
-            class="academy-content-section"
-            id="academyPrograms"
+            class="academy-section"
+            id="academyLeadership"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                TRAINING PATHWAYS
+              <div>
+
+                <span class="academy-section-eyebrow">
+                  ACADEMY LEADERSHIP
+                </span>
+
+                <h2>
+                  Vision Behind the Academy
+                </h2>
+
+                <p>
+                  Leadership committed to transforming Indian football through
+                  talent identification and long-term player development.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="academy-leadership-grid"
+              id="academyLeadershipGrid"
+            >
+
+              <!-- Rendered by academy-profile.js -->
+
+            </div>
+
+          </section>
+
+
+          <!-- =============================================
+               PROGRAMS
+          ============================================== -->
+
+          <section
+            class="academy-section"
+            id="academyPrograms"
+          >
+
+            <div class="academy-section-heading academy-heading-row">
+
+              <div>
+
+                <span class="academy-section-eyebrow">
+                  TRAINING PATHWAYS
+                </span>
+
+                <h2>
+                  Development Programs
+                </h2>
+
+                <p>
+                  Structured pathways created for different age groups,
+                  development stages and performance levels.
+                </p>
+
+              </div>
+
+              <span class="academy-section-count">
+                7 Programs
               </span>
-
-              <h2>
-                Academy Programs
-              </h2>
-
-              <p>
-                Explore structured development programs designed for different
-                age groups and performance levels.
-              </p>
 
             </div>
 
@@ -793,36 +979,40 @@
               id="academyProgramsGrid"
             >
 
-              <!-- Programs will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
           </section>
 
 
-          <!-- ===============================================
+          <!-- =============================================
                FACILITIES
-          ================================================ -->
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyFacilities"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                TRAINING ENVIRONMENT
-              </span>
+              <div>
 
-              <h2>
-                Academy Facilities
-              </h2>
+                <span class="academy-section-eyebrow">
+                  TRAINING ENVIRONMENT
+                </span>
 
-              <p>
-                Facilities available to support technical training, fitness,
-                recovery and player development.
-              </p>
+                <h2>
+                  Facilities and Player Support
+                </h2>
+
+                <p>
+                  A complete environment designed to support football,
+                  education, fitness, recovery, nutrition and player welfare.
+                </p>
+
+              </div>
 
             </div>
 
@@ -832,78 +1022,152 @@
               id="academyFacilitiesGrid"
             >
 
-              <!-- Facilities will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
           </section>
 
-          <!-- =====================================================
-     ACADEMY LEADERSHIP
-====================================================== -->
 
-<section
-    class="academy-profile-section academy-leadership-section"
-    id="leadership"
->
-
-    <div class="academy-section-heading">
-
-        <div>
-
-            <span class="academy-section-eyebrow">
-                ACADEMY MANAGEMENT
-            </span>
-
-            <h2>
-                Academy Leadership
-            </h2>
-
-            <p>
-                Meet the leadership responsible for the academy's vision,
-                management and long-term football development.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div
-        class="academy-leadership-grid"
-        id="academyLeadershipGrid"
-    >
-
-        <!-- Leadership cards will be rendered by academy-profile.js -->
-
-    </div>
-
-</section>
-
-
-          <!-- ===============================================
-               ACHIEVEMENTS
-          ================================================ -->
+          <!-- =============================================
+               LEGACY
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section academy-legacy-section"
+            id="academyLegacy"
+          >
+
+            <div class="academy-section-heading">
+
+              <div>
+
+                <span class="academy-section-eyebrow">
+                  A DECADE OF DOMINANCE
+                </span>
+
+                <h2>
+                  Minerva Football Legacy
+                </h2>
+
+                <p>
+                  A record of sustained success in player development,
+                  coaching, national competition and international exposure.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="academy-impact-grid">
+
+              <article class="academy-impact-card">
+
+                <span class="academy-impact-number">
+                  240+
+                </span>
+
+                <h3>
+                  Internationals Produced
+                </h3>
+
+                <p>
+                  Players developed for national and international football
+                  opportunities.
+                </p>
+
+              </article>
+
+
+              <article class="academy-impact-card">
+
+                <span class="academy-impact-number">
+                  3000+
+                </span>
+
+                <h3>
+                  Coaches Developed
+                </h3>
+
+                <p>
+                  Contribution to football education and coaching development
+                  across India.
+                </p>
+
+              </article>
+
+
+              <article class="academy-impact-card">
+
+                <span class="academy-impact-number">
+                  44
+                </span>
+
+                <h3>
+                  State Titles
+                </h3>
+
+                <p>
+                  A strong record across competitive state-level football.
+                </p>
+
+              </article>
+
+
+              <article class="academy-impact-card">
+
+                <span class="academy-impact-number">
+                  29
+                </span>
+
+                <h3>
+                  All-India Open Titles
+                </h3>
+
+                <p>
+                  National tournament success across multiple competitions.
+                </p>
+
+              </article>
+
+            </div>
+
+
+            <div
+              class="academy-achievement-showcase"
+              id="academyAchievementShowcase"
+            >
+
+              <!-- Rendered by academy-profile.js -->
+
+            </div>
+
+          </section>
+
+
+          <!-- =============================================
+               ACHIEVEMENTS
+          ============================================== -->
+
+          <section
+            class="academy-section"
             id="academyAchievements"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                ACADEMY MILESTONES
-              </span>
+              <div>
 
-              <h2>
-                Achievements
-              </h2>
+                <span class="academy-section-eyebrow">
+                  CLUB MILESTONES
+                </span>
 
-              <p>
-                Key milestones, tournament performances and contributions to
-                Indian football development.
-              </p>
+                <h2>
+                  Key Achievements
+                </h2>
+
+              </div>
 
             </div>
 
@@ -913,36 +1177,40 @@
               id="academyAchievementsList"
             >
 
-              <!-- Achievements will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
           </section>
 
 
-          <!-- ===============================================
-               COACHING TEAM
-          ================================================ -->
+          <!-- =============================================
+               COACHES
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyCoaches"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                TECHNICAL TEAM
-              </span>
+              <div>
 
-              <h2>
-                Coaching Staff
-              </h2>
+                <span class="academy-section-eyebrow">
+                  TECHNICAL TEAM
+                </span>
 
-              <p>
-                Meet the coaches responsible for guiding player development
-                across the academy.
-              </p>
+                <h2>
+                  Coaching Staff
+                </h2>
+
+                <p>
+                  Professionals responsible for technical development,
+                  performance preparation and player progression.
+                </p>
+
+              </div>
 
             </div>
 
@@ -952,36 +1220,40 @@
               id="academyCoachesGrid"
             >
 
-              <!-- Coaches will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
           </section>
 
 
-          <!-- ===============================================
-               PLAYER DEVELOPMENT PATHWAY
-          ================================================ -->
+          <!-- =============================================
+               PATHWAY
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyPathway"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                DEVELOPMENT JOURNEY
-              </span>
+              <div>
 
-              <h2>
-                Player Pathway
-              </h2>
+                <span class="academy-section-eyebrow">
+                  PLAYER JOURNEY
+                </span>
 
-              <p>
-                A structured pathway helping young players progress from
-                foundation training to competitive football.
-              </p>
+                <h2>
+                  Development Pathway
+                </h2>
+
+                <p>
+                  A clear journey from early talent identification to elite
+                  competition and professional transition.
+                </p>
+
+              </div>
 
             </div>
 
@@ -991,28 +1263,71 @@
               id="academyPathwayList"
             >
 
-              <!-- Pathway steps will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
           </section>
 
 
-          <!-- ===============================================
-               TRIALS
-          ================================================ -->
+          <!-- =============================================
+               SISTER CLUBS
+          ============================================== -->
 
           <section
-            class="academy-content-section"
-            id="academyTrials"
+            class="academy-section"
+            id="academySisterClubs"
           >
 
-            <div class="academy-section-heading academy-section-heading-row">
+            <div class="academy-section-heading">
 
               <div>
 
-                <span class="academy-section-label">
-                  OPPORTUNITIES
+                <span class="academy-section-eyebrow">
+                  FOOTBALL NETWORK
+                </span>
+
+                <h2>
+                  Sister Clubs
+                </h2>
+
+                <p>
+                  Clubs connected through a shared commitment to Indian
+                  football development.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="academy-clubs-grid"
+              id="academySisterClubsGrid"
+            >
+
+              <!-- Rendered by academy-profile.js -->
+
+            </div>
+
+          </section>
+
+
+          <!-- =============================================
+               TRIALS
+          ============================================== -->
+
+          <section
+            class="academy-section"
+            id="academyTrials"
+          >
+
+            <div class="academy-section-heading academy-heading-row">
+
+              <div>
+
+                <span class="academy-section-eyebrow">
+                  PLAYER OPPORTUNITIES
                 </span>
 
                 <h2>
@@ -1020,16 +1335,14 @@
                 </h2>
 
                 <p>
-                  View current selection opportunities and academy trial
-                  information.
+                  Current selection opportunities for aspiring footballers.
                 </p>
 
               </div>
 
-
               <a
                 href="player-trials.html"
-                class="academy-section-link"
+                class="academy-text-link"
               >
                 View All Trials
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1043,7 +1356,7 @@
               id="academyTrialsList"
             >
 
-              <!-- Trials will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
@@ -1054,17 +1367,17 @@
               hidden
             >
 
-              <div class="academy-empty-state-icon">
+              <span class="academy-empty-icon">
                 <i class="fa-regular fa-calendar-xmark"></i>
-              </div>
+              </span>
 
               <h3>
                 No Trials Announced
               </h3>
 
               <p>
-                This academy has not announced any upcoming trials yet.
-                Check again later for new opportunities.
+                New trial opportunities will appear here when officially
+                announced.
               </p>
 
             </div>
@@ -1072,29 +1385,33 @@
           </section>
 
 
-          <!-- ===============================================
+          <!-- =============================================
                GALLERY
-          ================================================ -->
+          ============================================== -->
 
           <section
-            class="academy-content-section"
+            class="academy-section"
             id="academyGallery"
           >
 
             <div class="academy-section-heading">
 
-              <span class="academy-section-label">
-                ACADEMY LIFE
-              </span>
+              <div>
 
-              <h2>
-                Photo Gallery
-              </h2>
+                <span class="academy-section-eyebrow">
+                  ACADEMY STORY
+                </span>
 
-              <p>
-                Training sessions, facilities, tournaments and player
-                development moments from the academy.
-              </p>
+                <h2>
+                  Gallery and Achievements
+                </h2>
+
+                <p>
+                  Moments from academy life, celebrations, honours and the
+                  journey of Minerva Football Academy.
+                </p>
+
+              </div>
 
             </div>
 
@@ -1104,7 +1421,7 @@
               id="academyGalleryGrid"
             >
 
-              <!-- Gallery images will be rendered by academy-profile.js -->
+              <!-- Rendered by academy-profile.js -->
 
             </div>
 
@@ -1119,26 +1436,26 @@
 
         <aside class="academy-sidebar">
 
-          <!-- ===============================================
-               ACADEMY CONTACT
-          ================================================ -->
+          <!-- =============================================
+               CONTACT
+          ============================================== -->
 
           <section
-            class="academy-sidebar-card"
+            class="academy-sidebar-card academy-contact-card"
             id="academyContact"
           >
 
             <div class="academy-sidebar-heading">
 
-              <div class="academy-sidebar-icon">
+              <span class="academy-sidebar-icon">
                 <i class="fa-solid fa-address-card"></i>
-              </div>
+              </span>
 
               <div>
 
-                <span>
+                <small>
                   GET IN TOUCH
-                </span>
+                </small>
 
                 <h2>
                   Academy Contact
@@ -1153,18 +1470,18 @@
 
               <div class="academy-contact-item">
 
-                <div class="academy-contact-icon">
+                <span class="academy-contact-icon">
                   <i class="fa-solid fa-location-dot"></i>
-                </div>
+                </span>
 
                 <div>
 
-                  <span>
+                  <small>
                     Address
-                  </span>
+                  </small>
 
                   <p id="academyAddress">
-                    Address not available
+                    Mohali, Punjab, India
                   </p>
 
                 </div>
@@ -1174,15 +1491,15 @@
 
               <div class="academy-contact-item">
 
-                <div class="academy-contact-icon">
+                <span class="academy-contact-icon">
                   <i class="fa-solid fa-phone"></i>
-                </div>
+                </span>
 
                 <div>
 
-                  <span>
+                  <small>
                     Phone
-                  </span>
+                  </small>
 
                   <a
                     href="#"
@@ -1198,15 +1515,15 @@
 
               <div class="academy-contact-item">
 
-                <div class="academy-contact-icon">
+                <span class="academy-contact-icon">
                   <i class="fa-solid fa-envelope"></i>
-                </div>
+                </span>
 
                 <div>
 
-                  <span>
+                  <small>
                     Email
-                  </span>
+                  </small>
 
                   <a
                     href="#"
@@ -1222,15 +1539,15 @@
 
               <div class="academy-contact-item">
 
-                <div class="academy-contact-icon">
+                <span class="academy-contact-icon">
                   <i class="fa-solid fa-globe"></i>
-                </div>
+                </span>
 
                 <div>
 
-                  <span>
+                  <small>
                     Website
-                  </span>
+                  </small>
 
                   <a
                     href="#"
@@ -1252,15 +1569,15 @@
 
               <a
                 href="#academyTrials"
-                class="academy-sidebar-primary-button"
+                class="academy-sidebar-primary"
               >
                 <i class="fa-solid fa-calendar-check"></i>
                 Apply for Trial
               </a>
 
               <button
-                class="academy-sidebar-secondary-button"
-                id="academyContactButton"
+                class="academy-sidebar-secondary"
+                id="academySidebarEnquiryButton"
                 type="button"
               >
                 <i class="fa-solid fa-paper-plane"></i>
@@ -1272,62 +1589,23 @@
           </section>
 
 
-          <!-- ===============================================
-               SOCIAL LINKS
-          ================================================ -->
+          <!-- =============================================
+               ELIGIBILITY
+          ============================================== -->
 
           <section class="academy-sidebar-card">
 
             <div class="academy-sidebar-heading">
 
-              <div class="academy-sidebar-icon">
-                <i class="fa-solid fa-share-nodes"></i>
-              </div>
-
-              <div>
-
-                <span>
-                  STAY CONNECTED
-                </span>
-
-                <h2>
-                  Follow Academy
-                </h2>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="academy-social-links"
-              id="academySocialLinks"
-            >
-
-              <!-- Social links will be rendered by academy-profile.js -->
-
-            </div>
-
-          </section>
-
-
-          <!-- ===============================================
-               ADMISSION SUMMARY
-          ================================================ -->
-
-          <section class="academy-sidebar-card">
-
-            <div class="academy-sidebar-heading">
-
-              <div class="academy-sidebar-icon">
+              <span class="academy-sidebar-icon">
                 <i class="fa-solid fa-clipboard-check"></i>
-              </div>
+              </span>
 
               <div>
 
-                <span>
+                <small>
                   ADMISSIONS
-                </span>
+                </small>
 
                 <h2>
                   Eligibility
@@ -1346,12 +1624,12 @@
 
                 <div>
 
-                  <span>
+                  <small>
                     Accepted Age
-                  </span>
+                  </small>
 
                   <strong id="academyAcceptedAge">
-                    —
+                    8–21 Years
                   </strong>
 
                 </div>
@@ -1365,12 +1643,12 @@
 
                 <div>
 
-                  <span>
+                  <small>
                     Player Category
-                  </span>
+                  </small>
 
-                  <strong id="academyPlayerCategory">
-                    —
+                  <strong id="academyEligibilityCategory">
+                    Boys &amp; Girls
                   </strong>
 
                 </div>
@@ -1384,12 +1662,12 @@
 
                 <div>
 
-                  <span>
+                  <small>
                     Residential
-                  </span>
+                  </small>
 
                   <strong id="academyResidentialEligibility">
-                    —
+                    Available
                   </strong>
 
                 </div>
@@ -1399,16 +1677,16 @@
 
               <div class="academy-eligibility-item">
 
-                <i class="fa-solid fa-file-signature"></i>
+                <i class="fa-solid fa-binoculars"></i>
 
                 <div>
 
-                  <span>
-                    Selection Method
-                  </span>
+                  <small>
+                    Selection
+                  </small>
 
-                  <strong id="academySelectionMethod">
-                    —
+                  <strong id="academyEligibilitySelection">
+                    Trials + Scouting
                   </strong>
 
                 </div>
@@ -1419,16 +1697,137 @@
 
           </section>
 
+
+          <!-- =============================================
+               SOCIAL
+          ============================================== -->
+
+          <section class="academy-sidebar-card">
+
+            <div class="academy-sidebar-heading">
+
+              <span class="academy-sidebar-icon">
+                <i class="fa-solid fa-share-nodes"></i>
+              </span>
+
+              <div>
+
+                <small>
+                  STAY CONNECTED
+                </small>
+
+                <h2>
+                  Follow Academy
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="academy-social-links"
+              id="academySocialLinks"
+            >
+
+              <!-- Rendered by academy-profile.js -->
+
+            </div>
+
+          </section>
+
+
+          <!-- =============================================
+               VERIFIED NOTE
+          ============================================== -->
+
+          <section class="academy-sidebar-card academy-verification-card">
+
+            <span class="academy-verification-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <h2>
+              Verified Academy
+            </h2>
+
+            <p>
+              This profile is presented as part of the Bharat Football Fans
+              academy network. Official academy data can later be verified and
+              managed through the backend.
+            </p>
+
+          </section>
+
         </aside>
 
       </div>
 
     </section>
-      </main>
+
+
+    <!-- ===================================================
+         FINAL CTA
+    ==================================================== -->
+
+    <section class="academy-final-cta">
+
+      <div class="academy-final-cta-media">
+
+        <img
+          src="images/academies/minerva-gallery-6.jpeg"
+          alt="Minerva Football Academy decade of dominance"
+        >
+
+        <div class="academy-final-cta-overlay"></div>
+
+      </div>
+
+
+      <div class="academy-final-cta-container">
+
+        <span>
+          BUILD YOUR FOOTBALL FUTURE
+        </span>
+
+        <h2>
+          Your Journey Can Begin Here
+        </h2>
+
+        <p>
+          Explore trial opportunities, connect with the academy and take the
+          next step towards structured football development.
+        </p>
+
+        <div class="academy-final-cta-actions">
+
+          <a
+            href="#academyTrials"
+            class="academy-primary-button"
+          >
+            View Upcoming Trials
+          </a>
+
+          <button
+            class="academy-secondary-button"
+            id="academyFinalEnquiryButton"
+            type="button"
+            onclick="openEnquiryModal()"
+          >
+            Contact Academy
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!-- =====================================================
-       ACADEMY NOT FOUND
+       NOT FOUND
   ====================================================== -->
 
   <section
@@ -1439,17 +1838,17 @@
 
     <div class="academy-not-found-card">
 
-      <div class="academy-not-found-icon">
+      <span class="academy-not-found-icon">
         <i class="fa-solid fa-triangle-exclamation"></i>
-      </div>
+      </span>
 
       <h1>
-        Academy Not Found
+        Academy Profile Not Found
       </h1>
 
       <p>
-        The academy you are trying to view could not be found.
-        Please return to the Academies page and choose another academy.
+        The requested academy profile could not be located. Return to the
+        academy directory and select an available academy.
       </p>
 
       <div class="academy-not-found-actions">
@@ -1458,7 +1857,6 @@
           href="academies.html"
           class="academy-primary-button"
         >
-          <i class="fa-solid fa-building"></i>
           Browse Academies
         </a>
 
@@ -1466,8 +1864,7 @@
           href="index.html"
           class="academy-secondary-button"
         >
-          <i class="fa-solid fa-house"></i>
-          Home
+          Return Home
         </a>
 
       </div>
@@ -1487,40 +1884,45 @@
     hidden
   >
 
-    <div class="academy-modal-backdrop"></div>
+    <div
+      class="academy-modal-backdrop"
+      id="academyModalBackdrop"
+    ></div>
 
     <div
       class="academy-modal-dialog"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="academyEnquiryTitle"
+      aria-labelledby="academyModalTitle"
     >
 
       <button
         class="academy-modal-close"
         id="academyModalClose"
         type="button"
-        aria-label="Close"
+        aria-label="Close enquiry form"
       >
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <div class="academy-modal-header">
+
+      <div class="academy-modal-heading">
 
         <span>
-          CONTACT ACADEMY
+          CONTACT MINERVA ACADEMY
         </span>
 
-        <h2 id="academyEnquiryTitle">
+        <h2 id="academyModalTitle">
           Send an Enquiry
         </h2>
 
         <p>
-          Complete the form below. Backend integration will be connected
-          by Mr. Harsh.
+          Complete the form below. The submission endpoint will be connected
+          during backend integration.
         </p>
 
       </div>
+
 
       <form
         id="academyEnquiryForm"
@@ -1538,6 +1940,7 @@
               id="enquiryName"
               name="name"
               placeholder="Enter your full name"
+              autocomplete="name"
               required
             >
 
@@ -1553,6 +1956,7 @@
               id="enquiryEmail"
               name="email"
               placeholder="Enter your email"
+              autocomplete="email"
               required
             >
 
@@ -1568,6 +1972,7 @@
               id="enquiryPhone"
               name="phone"
               placeholder="+91"
+              autocomplete="tel"
             >
 
           </label>
@@ -1583,7 +1988,7 @@
             >
 
               <option value="">
-                Select Program
+                Select a program
               </option>
 
             </select>
@@ -1593,7 +1998,7 @@
         </div>
 
 
-        <label class="academy-message-field">
+        <label class="academy-form-full">
 
           Message
 
@@ -1601,7 +2006,7 @@
             id="enquiryMessage"
             name="message"
             rows="6"
-            placeholder="Write your enquiry..."
+            placeholder="Tell the academy how they can help you"
           ></textarea>
 
         </label>
@@ -1610,16 +2015,16 @@
         <div class="academy-modal-actions">
 
           <button
-            type="button"
-            class="academy-secondary-button"
+            class="academy-modal-cancel"
             id="academyCancelEnquiry"
+            type="button"
           >
             Cancel
           </button>
 
           <button
+            class="academy-modal-submit"
             type="submit"
-            class="academy-primary-button"
           >
             <i class="fa-solid fa-paper-plane"></i>
             Send Enquiry
@@ -1635,12 +2040,57 @@
 
 
   <!-- =====================================================
-       TOAST NOTIFICATION
+       GALLERY PREVIEW
+  ====================================================== -->
+
+  <div
+    class="academy-gallery-modal"
+    id="academyGalleryModal"
+    hidden
+  >
+
+    <div
+      class="academy-gallery-modal-backdrop"
+      id="academyGalleryModalBackdrop"
+    ></div>
+
+    <div
+      class="academy-gallery-modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Academy gallery preview"
+    >
+
+      <button
+        class="academy-gallery-modal-close"
+        id="academyGalleryModalClose"
+        type="button"
+        aria-label="Close gallery preview"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img
+        id="academyGalleryPreviewImage"
+        src=""
+        alt=""
+      >
+
+      <p id="academyGalleryPreviewCaption"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       TOAST
   ====================================================== -->
 
   <div
     class="academy-toast"
     id="academyToast"
+    role="status"
     aria-live="polite"
     hidden
   >
@@ -1658,6 +2108,22 @@
 
 
   <!-- =====================================================
+       BACK TO TOP
+  ====================================================== -->
+
+  <button
+    class="academy-back-to-top"
+    id="academyBackToTop"
+    type="button"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    aria-label="Back to top"
+    hidden
+  >
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <!-- =====================================================
        FOOTER
   ====================================================== -->
 
@@ -1667,19 +2133,45 @@
 
       <div class="academy-footer-brand">
 
-        <h2>
-          FIFA Mission India
-        </h2>
+        <a
+          href="index.html"
+          class="academy-brand"
+        >
+
+          <span
+            class="academy-brand-mark"
+            aria-hidden="true"
+          >
+            <i class="fa-solid fa-futbol"></i>
+          </span>
+
+          <span class="academy-brand-copy">
+
+            <strong>
+              BHARAT FOOTBALL FANS
+            </strong>
+
+            <small>
+              Mission FIFA 2034
+            </small>
+
+          </span>
+
+        </a>
 
         <p>
-          Connecting talented footballers with academies across India and
-          supporting the Mission FIFA 2034 vision.
+          Building a national football community that connects players,
+          academies, coaches, scouts and supporters across India.
         </p>
 
       </div>
 
 
-      <div class="academy-footer-links">
+      <div class="academy-footer-column">
+
+        <h2>
+          Explore
+        </h2>
 
         <a href="index.html">
           Home
@@ -1689,12 +2181,33 @@
           Academies
         </a>
 
-        <a href="players.html">
+        <a href="player.html">
           Players
         </a>
 
-        <a href="coach-dashboard.html">
-          Coaches
+        <a href="news.html">
+          News
+        </a>
+
+      </div>
+
+
+      <div class="academy-footer-column">
+
+        <h2>
+          Mission
+        </h2>
+
+        <a href="index.html#mission">
+          Our Mission
+        </a>
+
+        <a href="index.html#vision">
+          Vision 2034
+        </a>
+
+        <a href="register.html">
+          Join the Mission
         </a>
 
         <a href="contact.html">
@@ -1709,8 +2222,12 @@
     <div class="academy-footer-bottom">
 
       <p>
-        © 2026 FIFA Mission India. All Rights Reserved.
+        © 2026 Bharat Football Fans. All Rights Reserved.
       </p>
+
+      <span>
+        Mission FIFA 2034
+      </span>
 
     </div>
 
@@ -1718,7 +2235,7 @@
 
 
   <!-- =====================================================
-       PAGE SCRIPT
+       SCRIPT
   ====================================================== -->
 
   <script src="js/academy-profile.js"></script>

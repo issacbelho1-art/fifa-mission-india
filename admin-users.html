@@ -1,0 +1,3288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage players, coaches, scouts, academies and supporters on the Bharat Football Fans platform."
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>
+        Manage Users | Bharat Football Fans
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+
+    <!-- =====================================================
+         STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-users.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ACCESSIBILITY SKIP LINK
+    ====================================================== -->
+
+    <a
+        class="admin-skip-link"
+        href="#adminUsersMainContent"
+    >
+        Skip to user management
+    </a>
+
+
+    <!-- =====================================================
+         LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminLoadingScreen"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading user management"
+    >
+
+        <div class="admin-loading-content">
+
+            <div class="admin-loading-logo">
+
+                <span>
+                    BFF
+                </span>
+
+            </div>
+
+            <div
+                class="admin-loading-spinner"
+                aria-hidden="true"
+            ></div>
+
+            <strong>
+                Loading User Management
+            </strong>
+
+            <p>
+                Preparing registered platform accounts.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SESSION WARNING
+    ====================================================== -->
+
+    <section
+        class="admin-session-warning"
+        id="adminSessionWarning"
+        role="alert"
+        aria-live="assertive"
+        aria-hidden="true"
+        hidden
+    >
+
+        <div class="admin-session-warning-content">
+
+            <i
+                class="fa-solid fa-shield-halved"
+                aria-hidden="true"
+            ></i>
+
+            <p id="adminSessionWarningText">
+                Your secure administrator session will expire soon.
+            </p>
+
+        </div>
+
+
+        <div class="admin-session-warning-actions">
+
+            <button
+                class="admin-session-extend-button"
+                id="adminSessionExtendButton"
+                type="button"
+            >
+                Extend Session
+            </button>
+
+            <button
+                class="admin-session-warning-close"
+                id="adminSessionWarningClose"
+                type="button"
+                aria-label="Dismiss session warning"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="admin-sidebar-overlay"
+        id="adminSidebarOverlay"
+        hidden
+    ></div>
+
+
+    <!-- =====================================================
+         ADMIN APPLICATION
+    ====================================================== -->
+
+    <div class="admin-app">
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Administrator navigation"
+        >
+
+            <!-- =============================================
+                 SIDEBAR HEADER
+            ============================================== -->
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    class="admin-brand"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans administrator dashboard"
+                >
+
+                    <span class="admin-brand-mark">
+                        BFF
+                    </span>
+
+                    <span class="admin-brand-content">
+
+                        <strong>
+                            Bharat Football Fans
+                        </strong>
+
+                        <small>
+                            Mission FIFA 2034
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close"
+                    id="adminSidebarCloseButton"
+                    type="button"
+                    aria-label="Close administrator navigation"
+                >
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+            </div>
+
+
+            <!-- =============================================
+                 ADMIN PROFILE
+            ============================================== -->
+
+            <div class="admin-profile-summary">
+
+                <img
+                    class="admin-profile-avatar"
+                    src="images/admin/admin-avatar.jpg"
+                    alt="Administrator profile"
+                    data-admin-avatar
+                >
+
+
+                <div class="admin-profile-details">
+
+                    <strong data-admin-name>
+                        Mission Administrator
+                    </strong>
+
+                    <span data-admin-role>
+                        Super Administrator
+                    </span>
+
+                    <small class="admin-profile-status">
+
+                        <span
+                            class="admin-profile-status-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        Secure Session
+
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="admin-profile-menu-button"
+                    id="adminProfileMenuButton"
+                    type="button"
+                    aria-label="Open profile menu"
+                    aria-expanded="false"
+                    aria-controls="adminProfileDropdown"
+                >
+                    <i
+                        class="fa-solid fa-ellipsis-vertical"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+
+                <div
+                    class="admin-profile-dropdown"
+                    id="adminProfileDropdown"
+                    hidden
+                >
+
+                    <a href="admin-profile.html">
+
+                        <i
+                            class="fa-regular fa-user"
+                            aria-hidden="true"
+                        ></i>
+
+                        My Profile
+
+                    </a>
+
+                    <a href="admin-settings.html">
+
+                        <i
+                            class="fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i>
+
+                        Settings
+
+                    </a>
+
+                    <button
+                        type="button"
+                        data-admin-logout
+                    >
+
+                        <i
+                            class="fa-solid fa-right-from-bracket"
+                            aria-hidden="true"
+                        ></i>
+
+                        Sign Out
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 NAVIGATION
+            ============================================== -->
+
+            <nav class="admin-navigation">
+
+                <span class="admin-navigation-label">
+                    Overview
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-dashboard.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-line"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    Platform Management
+                </span>
+
+
+                <a
+                    class="admin-navigation-link active"
+                    href="admin-users.html"
+                    aria-current="page"
+                >
+
+                    <i
+                        class="fa-solid fa-users"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-approvals.html"
+                >
+
+                    <i
+                        class="fa-solid fa-user-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Approvals
+                    </span>
+
+                    <span
+                        class="admin-navigation-count"
+                        data-navigation-count="approvals"
+                    >
+                        73
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-academies.html"
+                >
+
+                    <i
+                        class="fa-solid fa-building"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Academies
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-events.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-days"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Events
+                    </span>
+
+                    <span
+                        class="admin-navigation-count"
+                        data-navigation-count="events"
+                    >
+                        16
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-trials.html"
+                >
+
+                    <i
+                        class="fa-solid fa-futbol"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Trials
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-news.html"
+                >
+
+                    <i
+                        class="fa-solid fa-newspaper"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        News
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    Safety & System
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-reports.html"
+                >
+
+                    <i
+                        class="fa-solid fa-flag"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-security.html"
+                >
+
+                    <i
+                        class="fa-solid fa-shield-halved"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Security
+                    </span>
+
+                    <span
+                        class="admin-navigation-count danger"
+                        data-navigation-count="security"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-settings.html"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =============================================
+                 SIDEBAR SECURITY CARD
+            ============================================== -->
+
+            <section class="admin-sidebar-security">
+
+                <div class="admin-sidebar-security-icon">
+
+                    <i
+                        class="fa-solid fa-lock"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Protected Admin Area
+                    </strong>
+
+                    <p>
+                        All user management actions must be recorded in the audit log.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+            ============================================== -->
+
+            <div class="admin-sidebar-footer">
+
+                <a href="admin-help.html">
+
+                    <i
+                        class="fa-regular fa-circle-question"
+                        aria-hidden="true"
+                    ></i>
+
+                    Help & Support
+
+                </a>
+
+                <button
+                    type="button"
+                    data-admin-logout
+                >
+
+                    <i
+                        class="fa-solid fa-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                    Secure Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <div class="admin-main-area">
+
+            <!-- =============================================
+                 TOPBAR
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-menu-toggle"
+                        id="adminSidebarOpenButton"
+                        type="button"
+                        aria-label="Open administrator navigation"
+                        aria-expanded="false"
+                        aria-controls="adminSidebar"
+                    >
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+
+                    <div class="admin-page-heading">
+
+                        <h1>
+                            User Management
+                        </h1>
+
+                        <p>
+                            Manage platform accounts, roles and access.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+                    <!-- =====================================
+                         GLOBAL SEARCH
+                    ====================================== -->
+
+                    <form
+                        class="admin-global-search"
+                        id="adminGlobalSearchForm"
+                        role="search"
+                    >
+
+                        <label
+                            class="admin-visually-hidden"
+                            for="adminGlobalSearchInput"
+                        >
+                            Search administrator pages
+                        </label>
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            id="adminGlobalSearchInput"
+                            name="adminSearch"
+                            type="search"
+                            placeholder="Search admin panel"
+                            autocomplete="off"
+                        >
+
+                        <kbd>
+                            Ctrl K
+                        </kbd>
+
+
+                        <div
+                            class="admin-search-results"
+                            id="adminGlobalSearchResults"
+                            hidden
+                        ></div>
+
+                    </form>
+
+
+                    <!-- =====================================
+                         NOTIFICATIONS
+                    ====================================== -->
+
+                    <div class="admin-topbar-menu">
+
+                        <button
+                            class="admin-icon-button"
+                            id="adminNotificationButton"
+                            type="button"
+                            aria-label="Open notifications"
+                            aria-expanded="false"
+                            aria-controls="adminNotificationPanel"
+                        >
+
+                            <i
+                                class="fa-regular fa-bell"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span
+                                class="admin-notification-badge"
+                                id="adminNotificationBadge"
+                            >
+                                2
+                            </span>
+
+                        </button>
+
+
+                        <section
+                            class="admin-notification-panel"
+                            id="adminNotificationPanel"
+                            aria-label="Administrator notifications"
+                            hidden
+                        >
+
+                            <header>
+
+                                <div>
+
+                                    <strong>
+                                        Notifications
+                                    </strong>
+
+                                    <span>
+                                        Latest platform updates
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    id="adminMarkNotificationsReadButton"
+                                    type="button"
+                                >
+                                    Mark all read
+                                </button>
+
+                            </header>
+
+
+                            <div
+                                class="admin-notification-list"
+                                id="adminNotificationList"
+                            ></div>
+
+
+                            <footer>
+
+                                <a href="admin-notifications.html">
+                                    View all notifications
+                                </a>
+
+                            </footer>
+
+                        </section>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         QUICK CREATE
+                    ====================================== -->
+
+                    <div class="admin-topbar-menu">
+
+                        <button
+                            class="admin-topbar-action primary"
+                            id="adminQuickCreateButton"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="adminQuickCreateMenu"
+                        >
+
+                            <i
+                                class="fa-solid fa-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span>
+                                Create
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            class="admin-quick-create-menu"
+                            id="adminQuickCreateMenu"
+                            hidden
+                        >
+
+                            <button
+                                type="button"
+                                data-quick-create-destination="admin-news-create.html"
+                            >
+
+                                <i
+                                    class="fa-solid fa-newspaper"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Publish News
+
+                            </button>
+
+                            <button
+                                type="button"
+                                data-quick-create-destination="admin-event-create.html"
+                            >
+
+                                <i
+                                    class="fa-solid fa-calendar-plus"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Create Event
+
+                            </button>
+
+                            <button
+                                type="button"
+                                data-quick-create-destination="admin-trial-create.html"
+                            >
+
+                                <i
+                                    class="fa-solid fa-futbol"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Create Trial
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         TOPBAR PROFILE
+                    ====================================== -->
+
+                    <div class="admin-topbar-menu">
+
+                        <button
+                            class="admin-topbar-profile-button"
+                            id="adminTopbarProfileButton"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="adminTopbarProfileDropdown"
+                        >
+
+                            <img
+                                src="images/admin/admin-avatar.jpg"
+                                alt=""
+                                data-admin-avatar
+                            >
+
+                            <span class="admin-topbar-profile-text">
+
+                                <strong data-admin-name>
+                                    Mission Administrator
+                                </strong>
+
+                                <small data-admin-role>
+                                    Super Administrator
+                                </small>
+
+                            </span>
+
+                            <i
+                                class="fa-solid fa-chevron-down"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+
+                        <div
+                            class="admin-profile-dropdown admin-topbar-profile-dropdown"
+                            id="adminTopbarProfileDropdown"
+                            hidden
+                        >
+
+                            <a href="admin-profile.html">
+
+                                <i
+                                    class="fa-regular fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                                My Profile
+
+                            </a>
+
+                            <a href="admin-settings.html">
+
+                                <i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Settings
+
+                            </a>
+
+                            <button
+                                type="button"
+                                data-admin-logout
+                            >
+
+                                <i
+                                    class="fa-solid fa-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Sign Out
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 MAIN CONTENT
+            ============================================== -->
+
+            <main
+                class="admin-main-content admin-users-main-content"
+                id="adminUsersMainContent"
+                data-admin-users-page
+            >
+
+                <!-- =========================================
+                     PAGE INTRODUCTION
+                ========================================== -->
+
+                <section class="admin-users-introduction">
+
+                    <div class="admin-users-introduction-copy">
+
+                        <span class="admin-section-eyebrow">
+                            PLATFORM ACCOUNTS
+                        </span>
+
+                        <h2>
+                            Manage Registered Users
+                        </h2>
+
+                        <p>
+                            Review accounts, assign roles, verify profiles, suspend access and monitor platform membership.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-users-introduction-actions">
+
+                        <button
+                            class="admin-secondary-button"
+                            id="adminExportUsersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export Users
+
+                        </button>
+
+
+                        <button
+                            class="admin-primary-button"
+                            id="adminAddUserButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            Add User
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     USER METRICS
+                ========================================== -->
+
+                <section
+                    class="admin-users-metrics"
+                    aria-label="User account statistics"
+                >
+
+                    <article class="admin-user-metric-card">
+
+                        <div class="admin-user-metric-icon blue">
+
+                            <i
+                                class="fa-solid fa-users"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Users
+                            </span>
+
+                            <strong id="adminUsersTotalMetric">
+                                18,426
+                            </strong>
+
+                            <small>
+                                All registered accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-user-metric-card">
+
+                        <div class="admin-user-metric-icon green">
+
+                            <i
+                                class="fa-solid fa-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Verified
+                            </span>
+
+                            <strong id="adminUsersVerifiedMetric">
+                                12,984
+                            </strong>
+
+                            <small>
+                                Verified platform members
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-user-metric-card">
+
+                        <div class="admin-user-metric-icon orange">
+
+                            <i
+                                class="fa-solid fa-user-clock"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Pending
+                            </span>
+
+                            <strong id="adminUsersPendingMetric">
+                                73
+                            </strong>
+
+                            <small>
+                                Awaiting verification
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-user-metric-card">
+
+                        <div class="admin-user-metric-icon red">
+
+                            <i
+                                class="fa-solid fa-user-lock"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Suspended
+                            </span>
+
+                            <strong id="adminUsersSuspendedMetric">
+                                18
+                            </strong>
+
+                            <small>
+                                Restricted accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                                <!-- =====================================================
+                     FILTERS & SEARCH
+                ====================================================== -->
+
+                <section
+                    class="admin-users-filter-card admin-dashboard-card"
+                    aria-labelledby="adminUsersFilterHeading"
+                >
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3 id="adminUsersFilterHeading">
+                                Search & Filters
+                            </h3>
+
+                            <p>
+                                Find users by name, email, role or account status.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="admin-users-filter-form"
+                        id="adminUsersFilterForm"
+                        autocomplete="off"
+                    >
+
+                        <div class="admin-users-search-box">
+
+                            <label
+                                class="admin-visually-hidden"
+                                for="adminUsersSearchInput"
+                            >
+                                Search users
+                            </label>
+
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i>
+
+                            <input
+                                id="adminUsersSearchInput"
+                                name="search"
+                                type="search"
+                                placeholder="Search by name, email, academy..."
+                            >
+
+                        </div>
+
+
+                        <div class="admin-users-filter-grid">
+
+                            <label>
+
+                                <span>
+                                    User Type
+                                </span>
+
+                                <select
+                                    id="adminUserRoleFilter"
+                                    name="role"
+                                >
+
+                                    <option value="">
+                                        All Roles
+                                    </option>
+
+                                    <option value="player">
+                                        Player
+                                    </option>
+
+                                    <option value="coach">
+                                        Coach
+                                    </option>
+
+                                    <option value="scout">
+                                        Scout
+                                    </option>
+
+                                    <option value="academy">
+                                        Academy
+                                    </option>
+
+                                    <option value="supporter">
+                                        Supporter
+                                    </option>
+
+                                    <option value="admin">
+                                        Administrator
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Status
+                                </span>
+
+                                <select
+                                    id="adminUserStatusFilter"
+                                    name="status"
+                                >
+
+                                    <option value="">
+                                        All Status
+                                    </option>
+
+                                    <option value="verified">
+                                        Verified
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="suspended">
+                                        Suspended
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    State
+                                </span>
+
+                                <select
+                                    id="adminStateFilter"
+                                    name="state"
+                                >
+
+                                    <option value="">
+                                        All States
+                                    </option>
+
+                                    <option>
+                                        Punjab
+                                    </option>
+
+                                    <option>
+                                        Maharashtra
+                                    </option>
+
+                                    <option>
+                                        Karnataka
+                                    </option>
+
+                                    <option>
+                                        Kerala
+                                    </option>
+
+                                    <option>
+                                        Assam
+                                    </option>
+
+                                    <option>
+                                        Nagaland
+                                    </option>
+
+                                    <option>
+                                        Manipur
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Sort By
+                                </span>
+
+                                <select
+                                    id="adminUsersSort"
+                                    name="sort"
+                                >
+
+                                    <option value="latest">
+                                        Latest Registered
+                                    </option>
+
+                                    <option value="oldest">
+                                        Oldest Registered
+                                    </option>
+
+                                    <option value="name">
+                                        Name (A–Z)
+                                    </option>
+
+                                    <option value="activity">
+                                        Last Active
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="admin-users-filter-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="adminResetUserFiltersButton"
+                                type="reset"
+                            >
+
+                                <i
+                                    class="fa-solid fa-rotate-left"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Reset Filters
+
+                            </button>
+
+
+                            <button
+                                class="admin-primary-button"
+                                id="adminApplyUserFiltersButton"
+                                type="submit"
+                            >
+
+                                <i
+                                    class="fa-solid fa-filter"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Apply Filters
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- =====================================================
+                     USERS TABLE
+                ====================================================== -->
+
+                <section
+                    class="admin-dashboard-card"
+                    aria-labelledby="adminUsersTableHeading"
+                >
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3 id="adminUsersTableHeading">
+                                Registered Users
+                            </h3>
+
+                            <p>
+                                Complete list of platform members.
+                            </p>
+
+                        </div>
+
+
+                        <div class="admin-users-table-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="adminRefreshUsersButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-rotate"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Refresh
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-users-table-wrapper">
+
+                        <table
+                            class="admin-users-table"
+                            aria-describedby="adminUsersTableDescription"
+                        >
+
+                            <caption
+                                id="adminUsersTableDescription"
+                                class="admin-visually-hidden"
+                            >
+                                Platform user management table.
+                            </caption>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        User
+                                    </th>
+
+                                    <th scope="col">
+                                        Role
+                                    </th>
+
+                                    <th scope="col">
+                                        State
+                                    </th>
+
+                                    <th scope="col">
+                                        Status
+                                    </th>
+
+                                    <th scope="col">
+                                        Joined
+                                    </th>
+
+                                    <th scope="col">
+                                        Last Active
+                                    </th>
+
+                                    <th scope="col">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminUsersTableBody">
+
+                                <!-- JavaScript will render users here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     PAGINATION
+                ====================================================== -->
+
+                <nav
+                    class="admin-pagination"
+                    aria-label="Users pagination"
+                >
+
+                    <button
+                        class="admin-pagination-button"
+                        id="adminPreviousUsersPageButton"
+                        type="button"
+                    >
+
+                        <i
+                            class="fa-solid fa-chevron-left"
+                            aria-hidden="true"
+                        ></i>
+
+                        Previous
+
+                    </button>
+
+
+                    <div
+                        class="admin-pagination-pages"
+                        id="adminUsersPagination"
+                    >
+
+                        <!-- JavaScript -->
+
+                    </div>
+
+
+                    <button
+                        class="admin-pagination-button"
+                        id="adminNextUsersPageButton"
+                        type="button"
+                    >
+
+                        Next
+
+                        <i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </nav>
+
+                                <!-- =====================================================
+                     ADD USER MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminAddUserModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminAddUserModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminAddUserModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-user-form-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    NEW PLATFORM ACCOUNT
+                                </span>
+
+                                <h2 id="adminAddUserModalTitle">
+                                    Add New User
+                                </h2>
+
+                                <p>
+                                    Create a user account and assign the correct platform role.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminAddUserModalCloseButton"
+                                type="button"
+                                aria-label="Close add user form"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <form
+                            class="admin-user-form"
+                            id="adminAddUserForm"
+                            novalidate
+                        >
+
+                            <div class="admin-user-form-grid">
+
+                                <label>
+
+                                    <span>
+                                        Full Name
+                                    </span>
+
+                                    <input
+                                        id="adminNewUserName"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Enter full name"
+                                        autocomplete="name"
+                                        minlength="2"
+                                        maxlength="100"
+                                        required
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="name"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Email Address
+                                    </span>
+
+                                    <input
+                                        id="adminNewUserEmail"
+                                        name="email"
+                                        type="email"
+                                        placeholder="name@example.com"
+                                        autocomplete="email"
+                                        maxlength="160"
+                                        required
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="email"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Phone Number
+                                    </span>
+
+                                    <input
+                                        id="adminNewUserPhone"
+                                        name="phone"
+                                        type="tel"
+                                        placeholder="+91 98765 43210"
+                                        autocomplete="tel"
+                                        maxlength="20"
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="phone"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        User Role
+                                    </span>
+
+                                    <select
+                                        id="adminNewUserRole"
+                                        name="role"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select role
+                                        </option>
+
+                                        <option value="player">
+                                            Player
+                                        </option>
+
+                                        <option value="coach">
+                                            Coach
+                                        </option>
+
+                                        <option value="scout">
+                                            Scout
+                                        </option>
+
+                                        <option value="academy">
+                                            Academy
+                                        </option>
+
+                                        <option value="supporter">
+                                            Supporter
+                                        </option>
+
+                                        <option value="admin">
+                                            Administrator
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="role"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        State
+                                    </span>
+
+                                    <select
+                                        id="adminNewUserState"
+                                        name="state"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select state
+                                        </option>
+
+                                        <option value="Andhra Pradesh">
+                                            Andhra Pradesh
+                                        </option>
+
+                                        <option value="Assam">
+                                            Assam
+                                        </option>
+
+                                        <option value="Delhi">
+                                            Delhi
+                                        </option>
+
+                                        <option value="Goa">
+                                            Goa
+                                        </option>
+
+                                        <option value="Karnataka">
+                                            Karnataka
+                                        </option>
+
+                                        <option value="Kerala">
+                                            Kerala
+                                        </option>
+
+                                        <option value="Maharashtra">
+                                            Maharashtra
+                                        </option>
+
+                                        <option value="Manipur">
+                                            Manipur
+                                        </option>
+
+                                        <option value="Nagaland">
+                                            Nagaland
+                                        </option>
+
+                                        <option value="Punjab">
+                                            Punjab
+                                        </option>
+
+                                        <option value="Tamil Nadu">
+                                            Tamil Nadu
+                                        </option>
+
+                                        <option value="West Bengal">
+                                            West Bengal
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="state"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Initial Status
+                                    </span>
+
+                                    <select
+                                        id="adminNewUserStatus"
+                                        name="status"
+                                        required
+                                    >
+
+                                        <option value="pending">
+                                            Pending Verification
+                                        </option>
+
+                                        <option value="verified">
+                                            Verified
+                                        </option>
+
+                                        <option value="inactive">
+                                            Inactive
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-error-for="status"
+                                    ></small>
+
+                                </label>
+
+                            </div>
+
+
+                            <label class="admin-user-form-full-width">
+
+                                <span>
+                                    Administrator Note
+                                </span>
+
+                                <textarea
+                                    id="adminNewUserNote"
+                                    name="note"
+                                    rows="4"
+                                    maxlength="500"
+                                    placeholder="Optional internal note about this account"
+                                ></textarea>
+
+                                <small>
+                                    This note is visible only to authorized administrators.
+                                </small>
+
+                            </label>
+
+
+                            <div class="admin-user-form-options">
+
+                                <label class="admin-checkbox-field">
+
+                                    <input
+                                        id="adminSendInvitationEmail"
+                                        name="sendInvitation"
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Send invitation email
+                                        </strong>
+
+                                        <small>
+                                            Email the user a secure account activation link.
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+                                <label class="admin-checkbox-field">
+
+                                    <input
+                                        id="adminRequirePasswordReset"
+                                        name="requirePasswordReset"
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Require password setup
+                                        </strong>
+
+                                        <small>
+                                            The user must create a password during activation.
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="admin-modal-actions">
+
+                                <button
+                                    class="admin-secondary-button"
+                                    id="adminCancelAddUserButton"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    class="admin-primary-button"
+                                    id="adminCreateUserButton"
+                                    type="submit"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-user-plus"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Create User
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     USER DETAILS MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminUserDetailsModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminUserDetailsModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminUserDetailsModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-user-details-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    USER PROFILE
+                                </span>
+
+                                <h2 id="adminUserDetailsModalTitle">
+                                    User Details
+                                </h2>
+
+                                <p>
+                                    Review account information, access and activity.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminUserDetailsModalCloseButton"
+                                type="button"
+                                aria-label="Close user details"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <div
+                            class="admin-user-details-content"
+                            id="adminUserDetailsContent"
+                        >
+
+                            <!-- JavaScript will render user details -->
+
+                        </div>
+
+
+                        <footer class="admin-modal-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="adminCloseUserDetailsButton"
+                                type="button"
+                            >
+                                Close
+                            </button>
+
+
+                            <button
+                                class="admin-primary-button"
+                                id="adminEditUserFromDetailsButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-pen"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Edit User
+
+                            </button>
+
+                        </footer>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     EDIT USER MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminEditUserModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminEditUserModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminEditUserModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-user-form-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    ACCOUNT MANAGEMENT
+                                </span>
+
+                                <h2 id="adminEditUserModalTitle">
+                                    Edit User
+                                </h2>
+
+                                <p>
+                                    Update profile details, role and account status.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminEditUserModalCloseButton"
+                                type="button"
+                                aria-label="Close edit user form"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <form
+                            class="admin-user-form"
+                            id="adminEditUserForm"
+                            novalidate
+                        >
+
+                            <input
+                                id="adminEditUserId"
+                                name="userId"
+                                type="hidden"
+                            >
+
+
+                            <div class="admin-user-form-grid">
+
+                                <label>
+
+                                    <span>
+                                        Full Name
+                                    </span>
+
+                                    <input
+                                        id="adminEditUserName"
+                                        name="name"
+                                        type="text"
+                                        minlength="2"
+                                        maxlength="100"
+                                        required
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="name"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Email Address
+                                    </span>
+
+                                    <input
+                                        id="adminEditUserEmail"
+                                        name="email"
+                                        type="email"
+                                        maxlength="160"
+                                        required
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="email"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Phone Number
+                                    </span>
+
+                                    <input
+                                        id="adminEditUserPhone"
+                                        name="phone"
+                                        type="tel"
+                                        maxlength="20"
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="phone"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Role
+                                    </span>
+
+                                    <select
+                                        id="adminEditUserRole"
+                                        name="role"
+                                        required
+                                    >
+
+                                        <option value="player">
+                                            Player
+                                        </option>
+
+                                        <option value="coach">
+                                            Coach
+                                        </option>
+
+                                        <option value="scout">
+                                            Scout
+                                        </option>
+
+                                        <option value="academy">
+                                            Academy
+                                        </option>
+
+                                        <option value="supporter">
+                                            Supporter
+                                        </option>
+
+                                        <option value="admin">
+                                            Administrator
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="role"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        State
+                                    </span>
+
+                                    <input
+                                        id="adminEditUserState"
+                                        name="state"
+                                        type="text"
+                                        maxlength="80"
+                                        required
+                                    >
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="state"
+                                    ></small>
+
+                                </label>
+
+
+                                <label>
+
+                                    <span>
+                                        Account Status
+                                    </span>
+
+                                    <select
+                                        id="adminEditUserStatus"
+                                        name="status"
+                                        required
+                                    >
+
+                                        <option value="verified">
+                                            Verified
+                                        </option>
+
+                                        <option value="pending">
+                                            Pending
+                                        </option>
+
+                                        <option value="suspended">
+                                            Suspended
+                                        </option>
+
+                                        <option value="inactive">
+                                            Inactive
+                                        </option>
+
+                                    </select>
+
+                                    <small
+                                        class="admin-form-error"
+                                        data-edit-error-for="status"
+                                    ></small>
+
+                                </label>
+
+                            </div>
+
+
+                            <label class="admin-user-form-full-width">
+
+                                <span>
+                                    Internal Note
+                                </span>
+
+                                <textarea
+                                    id="adminEditUserNote"
+                                    name="note"
+                                    rows="4"
+                                    maxlength="500"
+                                ></textarea>
+
+                            </label>
+
+
+                            <div class="admin-modal-actions">
+
+                                <button
+                                    class="admin-secondary-button"
+                                    id="adminCancelEditUserButton"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    class="admin-primary-button"
+                                    id="adminSaveUserChangesButton"
+                                    type="submit"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-floppy-disk"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Save Changes
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+                                <!-- =====================================================
+                     SUSPEND USER MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminSuspendUserModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminSuspendUserModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminSuspendUserModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-confirmation-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow danger">
+                                    ACCOUNT RESTRICTION
+                                </span>
+
+                                <h2 id="adminSuspendUserModalTitle">
+                                    Suspend User
+                                </h2>
+
+                                <p>
+                                    Temporarily restrict this account from accessing protected platform features.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminSuspendUserModalCloseButton"
+                                type="button"
+                                aria-label="Close suspension confirmation"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <form
+                            class="admin-user-action-form"
+                            id="adminSuspendUserForm"
+                            novalidate
+                        >
+
+                            <input
+                                id="adminSuspendUserId"
+                                name="userId"
+                                type="hidden"
+                            >
+
+
+                            <div class="admin-confirmation-icon warning">
+
+                                <i
+                                    class="fa-solid fa-user-lock"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div class="admin-confirmation-copy">
+
+                                <strong id="adminSuspendUserName">
+                                    Selected User
+                                </strong>
+
+                                <p>
+                                    The user will be unable to sign in until an authorized administrator restores the account.
+                                </p>
+
+                            </div>
+
+
+                            <label class="admin-user-form-full-width">
+
+                                <span>
+                                    Suspension Reason
+                                </span>
+
+                                <select
+                                    id="adminSuspendReason"
+                                    name="reason"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select a reason
+                                    </option>
+
+                                    <option value="policy_violation">
+                                        Platform policy violation
+                                    </option>
+
+                                    <option value="security_review">
+                                        Security review required
+                                    </option>
+
+                                    <option value="false_information">
+                                        False or misleading information
+                                    </option>
+
+                                    <option value="reported_behavior">
+                                        Reported harmful behaviour
+                                    </option>
+
+                                    <option value="duplicate_account">
+                                        Duplicate account
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    class="admin-form-error"
+                                    data-suspend-error-for="reason"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-user-form-full-width">
+
+                                <span>
+                                    Administrator Note
+                                </span>
+
+                                <textarea
+                                    id="adminSuspendNote"
+                                    name="note"
+                                    rows="4"
+                                    maxlength="500"
+                                    placeholder="Add internal details for the audit log"
+                                    required
+                                ></textarea>
+
+                                <small
+                                    class="admin-form-error"
+                                    data-suspend-error-for="note"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-checkbox-field">
+
+                                <input
+                                    id="adminNotifySuspendedUser"
+                                    name="notifyUser"
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        Notify the user
+                                    </strong>
+
+                                    <small>
+                                        Send an email explaining that the account has been suspended.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <div class="admin-modal-actions">
+
+                                <button
+                                    class="admin-secondary-button"
+                                    id="adminCancelSuspendUserButton"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    class="admin-danger-button"
+                                    id="adminConfirmSuspendUserButton"
+                                    type="submit"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-user-lock"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Suspend Account
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     RESTORE USER MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminRestoreUserModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminRestoreUserModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminRestoreUserModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-confirmation-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    ACCOUNT RESTORATION
+                                </span>
+
+                                <h2 id="adminRestoreUserModalTitle">
+                                    Restore User Access
+                                </h2>
+
+                                <p>
+                                    Reactivate this account and return normal platform access.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminRestoreUserModalCloseButton"
+                                type="button"
+                                aria-label="Close restore confirmation"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <div class="admin-confirmation-content">
+
+                            <div class="admin-confirmation-icon success">
+
+                                <i
+                                    class="fa-solid fa-user-check"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div class="admin-confirmation-copy">
+
+                                <strong id="adminRestoreUserName">
+                                    Selected User
+                                </strong>
+
+                                <p>
+                                    This account will regain access according to its assigned role and permissions.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-modal-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="adminCancelRestoreUserButton"
+                                type="button"
+                            >
+                                Cancel
+                            </button>
+
+
+                            <button
+                                class="admin-primary-button"
+                                id="adminConfirmRestoreUserButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-user-check"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Restore Access
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     DELETE USER MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminDeleteUserModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminDeleteUserModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminDeleteUserModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-confirmation-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow danger">
+                                    PERMANENT ACTION
+                                </span>
+
+                                <h2 id="adminDeleteUserModalTitle">
+                                    Delete User
+                                </h2>
+
+                                <p>
+                                    Permanently remove this account from the platform.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminDeleteUserModalCloseButton"
+                                type="button"
+                                aria-label="Close delete confirmation"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <form
+                            class="admin-user-action-form"
+                            id="adminDeleteUserForm"
+                            novalidate
+                        >
+
+                            <input
+                                id="adminDeleteUserId"
+                                name="userId"
+                                type="hidden"
+                            >
+
+
+                            <div class="admin-confirmation-icon danger">
+
+                                <i
+                                    class="fa-solid fa-trash-can"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div class="admin-confirmation-copy">
+
+                                <strong id="adminDeleteUserName">
+                                    Selected User
+                                </strong>
+
+                                <p>
+                                    This action cannot be undone. Related platform records may also be affected.
+                                </p>
+
+                            </div>
+
+
+                            <label class="admin-user-form-full-width">
+
+                                <span>
+                                    Type DELETE to confirm
+                                </span>
+
+                                <input
+                                    id="adminDeleteUserConfirmation"
+                                    name="confirmation"
+                                    type="text"
+                                    placeholder="DELETE"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                                <small
+                                    class="admin-form-error"
+                                    data-delete-error-for="confirmation"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-checkbox-field danger">
+
+                                <input
+                                    id="adminDeleteRelatedData"
+                                    name="deleteRelatedData"
+                                    type="checkbox"
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        Delete related non-essential data
+                                    </strong>
+
+                                    <small>
+                                        Remove drafts, preferences and temporary user-generated records where legally permitted.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <div class="admin-modal-actions">
+
+                                <button
+                                    class="admin-secondary-button"
+                                    id="adminCancelDeleteUserButton"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    class="admin-danger-button"
+                                    id="adminConfirmDeleteUserButton"
+                                    type="submit"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-trash-can"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Permanently Delete
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     EXPORT USERS MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminExportUsersModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminExportUsersModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminExportUsersModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-export-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    DATA EXPORT
+                                </span>
+
+                                <h2 id="adminExportUsersModalTitle">
+                                    Export Users
+                                </h2>
+
+                                <p>
+                                    Download user information according to your administrative permissions.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminExportUsersModalCloseButton"
+                                type="button"
+                                aria-label="Close export users form"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <form
+                            class="admin-export-form"
+                            id="adminExportUsersForm"
+                        >
+
+                            <label>
+
+                                <span>
+                                    Export Format
+                                </span>
+
+                                <select
+                                    id="adminUsersExportFormat"
+                                    name="format"
+                                    required
+                                >
+
+                                    <option value="csv">
+                                        CSV Spreadsheet
+                                    </option>
+
+                                    <option value="xlsx">
+                                        Excel Workbook
+                                    </option>
+
+                                    <option value="pdf">
+                                        PDF Report
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Records
+                                </span>
+
+                                <select
+                                    id="adminUsersExportScope"
+                                    name="scope"
+                                    required
+                                >
+
+                                    <option value="filtered">
+                                        Current filtered results
+                                    </option>
+
+                                    <option value="current_page">
+                                        Current page only
+                                    </option>
+
+                                    <option value="all">
+                                        All authorized users
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label class="admin-checkbox-field">
+
+                                <input
+                                    id="adminIncludeUserContactData"
+                                    name="includeContactData"
+                                    type="checkbox"
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        Include contact details
+                                    </strong>
+
+                                    <small>
+                                        Export email addresses and phone numbers where your role permits.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <div class="admin-export-security-note">
+
+                                <i
+                                    class="fa-solid fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <p>
+                                    This export will be recorded in the administrator audit log.
+                                </p>
+
+                            </div>
+
+
+                            <div class="admin-modal-actions">
+
+                                <button
+                                    class="admin-secondary-button"
+                                    id="adminCancelExportUsersButton"
+                                    type="button"
+                                >
+                                    Cancel
+                                </button>
+
+
+                                <button
+                                    class="admin-primary-button"
+                                    id="adminConfirmExportUsersButton"
+                                    type="submit"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-download"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Export Data
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     LOGOUT MODAL
+                ====================================================== -->
+
+                <section
+                    class="admin-modal"
+                    id="adminLogoutModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="adminLogoutModalTitle"
+                    aria-hidden="true"
+                    hidden
+                >
+
+                    <div
+                        class="admin-modal-backdrop"
+                        id="adminLogoutModalBackdrop"
+                    ></div>
+
+
+                    <div class="admin-modal-dialog admin-confirmation-modal">
+
+                        <header class="admin-modal-header">
+
+                            <div>
+
+                                <span class="admin-modal-eyebrow">
+                                    SECURE SESSION
+                                </span>
+
+                                <h2 id="adminLogoutModalTitle">
+                                    Sign Out
+                                </h2>
+
+                                <p>
+                                    End your current administrator session securely.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="admin-modal-close"
+                                id="adminLogoutModalCloseButton"
+                                type="button"
+                                aria-label="Close logout confirmation"
+                            >
+                                <i
+                                    class="fa-solid fa-xmark"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </header>
+
+
+                        <div class="admin-confirmation-content">
+
+                            <div class="admin-confirmation-icon">
+
+                                <i
+                                    class="fa-solid fa-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div class="admin-confirmation-copy">
+
+                                <strong>
+                                    End administrator session?
+                                </strong>
+
+                                <p>
+                                    You will need to sign in again to access protected management tools.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-modal-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="adminLogoutCancelButton"
+                                type="button"
+                            >
+                                Stay Signed In
+                            </button>
+
+
+                            <button
+                                class="admin-danger-button"
+                                id="adminLogoutConfirmButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Sign Out
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="admin-footer">
+
+                <p>
+                    © <span id="adminFooterYear"></span>
+                    Bharat Football Fans. Mission FIFA 2034.
+                </p>
+
+
+                <div class="admin-footer-links">
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                    <a href="admin-help.html">
+                        Admin Support
+                    </a>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST REGION
+    ====================================================== -->
+
+    <div
+        class="admin-toast-region"
+        id="adminToastRegion"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script
+        src="js/admin-dashboard.js"
+        defer
+    ></script>
+
+    <script
+        src="js/admin-users.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

@@ -2282,19 +2282,26 @@ blockquote {
 }
 
 .footer-secondary-button {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(72, 188, 255, 0.42);
 
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 
   background: rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .footer-secondary-button:hover {
   color: #ffffff;
 
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(37, 170, 255, 0.10);
 
-  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(72, 188, 255, 0.82);
+
+  box-shadow:
+    0 0 18px rgba(37, 170, 255, 0.18),
+    0 12px 28px rgba(37, 170, 255, 0.14);
 
   transform: translateY(-3px);
 }
@@ -4620,279 +4627,37 @@ section[id] {
 
 }
 
-.academy-section-heading{
-    margin-bottom:4.5rem;
-}
-
-.academy-section-heading .section-tag{
-    margin-bottom:1rem;
-}
-
-.academy-section-heading h2{
-    margin:0 0 1rem;
-    line-height:1.15;
-}
-
-.academy-section-heading p{
-    margin:0;
-    line-height:1.8;
-    max-width:700px;
-}
 /* =====================================================
-   COMPACT FEATURED ACADEMIES — DESKTOP
+   FEATURED ACADEMIES — COMPLETE LAUNCH VERSION
 ===================================================== */
-
-@media (min-width: 1024px) {
-
-  .featured-academies {
-    padding-top: 3rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .featured-academies .academy-section-heading {
-    margin-bottom: 1.75rem;
-  }
-
-  .featured-academies .academy-section-heading .section-tag {
-    margin-bottom: 0.5rem;
-  }
-
-  .featured-academies .academy-section-heading h2 {
-    margin-bottom: 0.55rem;
-    font-size: clamp(2rem, 3vw, 2.8rem);
-  }
-
-  .featured-academies .academy-section-heading p {
-    max-width: 680px;
-    line-height: 1.55;
-    font-size: 0.98rem;
-  }
-
-  .featured-academies .academies-grid {
-    gap: 1.25rem;
-  }
-
-  .featured-academies .academy-card {
-    min-height: 0;
-  }
-
-  .featured-academies .academy-image {
-    height: 145px;
-  }
-
-  .featured-academies .academy-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .featured-academies .academy-content {
-    padding: 1.15rem;
-  }
-
-  .featured-academies .academy-title {
-    margin-bottom: 0.85rem;
-  }
-
-  .featured-academies .academy-title h3 {
-    margin-bottom: 0.2rem;
-    font-size: 1.05rem;
-  }
-
-  .featured-academies .academy-title p {
-    font-size: 0.82rem;
-  }
-
-  .featured-academies .academy-logo {
-    width: 42px;
-    height: 42px;
-  }
-
-  .featured-academies .academy-stats {
-    margin-bottom: 0.85rem;
-    padding: 0.75rem 0;
-  }
-
-  .featured-academies .academy-stats strong {
-    font-size: 1rem;
-  }
-
-  .featured-academies .academy-stats span {
-    font-size: 0.7rem;
-  }
-
-  .featured-academies .academy-description {
-    margin-bottom: 1rem;
-    font-size: 0.83rem;
-    line-height: 1.5;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .featured-academies .academy-button {
-    min-height: 42px;
-    padding: 0.7rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .featured-academies .academies-footer {
-    margin-top: 1.5rem;
-  }
-
-  .featured-academies .view-all-academies {
-    padding: 0.8rem 1.4rem;
-  }
-}
-
-/* =====================================================
-   FIT COMPLETE FEATURED ACADEMIES SECTION ON DESKTOP
-===================================================== */
-
-@media (min-width: 1200px) {
-
-  .featured-academies {
-    min-height: 100vh;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .featured-academies .academy-section-heading {
-    margin-bottom: 1.4rem;
-  }
-
-  .featured-academies .academy-section-heading .section-tag {
-    margin-bottom: 0.35rem;
-    font-size: 0.78rem;
-  }
-
-  .featured-academies .academy-section-heading h2 {
-    margin-bottom: 0.45rem;
-    font-size: clamp(2rem, 2.7vw, 2.65rem);
-  }
-
-  .featured-academies .academy-section-heading p {
-    max-width: 650px;
-    font-size: 0.95rem;
-    line-height: 1.45;
-  }
-
-  .featured-academies .academies-grid {
-    gap: 1.2rem;
-  }
-
-  .featured-academies .academy-card {
-    min-height: 0;
-  }
-
-  .featured-academies .academy-image {
-    height: 145px;
-    min-height: 145px;
-  }
-
-  .featured-academies .academy-content {
-    padding: 1rem;
-  }
-
-  .featured-academies .academy-title {
-    gap: 0.75rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .featured-academies .academy-logo {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-
-  .featured-academies .academy-title h3 {
-    margin: 0 0 0.1rem;
-    font-size: 1rem;
-  }
-
-  .featured-academies .academy-title p {
-    font-size: 0.78rem;
-  }
-
-  .featured-academies .academy-stats {
-    gap: 0.65rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .featured-academies .academy-stats > div {
-    min-height: 58px;
-    padding: 0.55rem;
-  }
-
-  .featured-academies .academy-stats strong {
-    font-size: 0.95rem;
-    line-height: 1;
-  }
-
-  .featured-academies .academy-stats span {
-    margin-top: 0.35rem;
-    font-size: 0.62rem;
-  }
-
-  .featured-academies .academy-description {
-    min-height: 42px;
-    margin: 0 0 0.75rem;
-    font-size: 0.77rem;
-    line-height: 1.4;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .featured-academies .academy-button {
-    min-height: 38px;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.78rem;
-  }
-
-  .featured-academies .academies-footer {
-    margin-top: 1rem;
-  }
-
-  .featured-academies .view-all-academies {
-    min-height: 40px;
-    padding: 0.65rem 1.2rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* ================= FEATURED ACADEMIES ================= */
 
 .featured-academies {
   position: relative;
   overflow: hidden;
-  padding: 120px 8%;
+  padding: clamp(5rem, 8vw, 7.5rem) clamp(1.25rem, 5vw, 5rem);
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(37, 99, 235, 0.1),
-      transparent 32%
+      circle at 8% 12%,
+      rgba(37, 99, 235, 0.12),
+      transparent 30%
     ),
     radial-gradient(
-      circle at 88% 75%,
-      rgba(22, 163, 74, 0.08),
-      transparent 34%
+      circle at 92% 82%,
+      rgba(250, 204, 21, 0.08),
+      transparent 28%
     ),
-    #08111d;
-  color: #ffffff;
+    linear-gradient(
+      180deg,
+      #07111f 0%,
+      #0a1626 48%,
+      #07111f 100%
+    );
 }
 
 .featured-academies::before {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(
       rgba(255, 255, 255, 0.018) 1px,
@@ -4904,305 +4669,373 @@ section[id] {
       transparent 1px
     );
   background-size: 44px 44px;
-  pointer-events: none;
   content: "";
 }
 
 .featured-academies > * {
   position: relative;
   z-index: 1;
+  width: min(100%, 1240px);
+  margin-inline: auto;
 }
 
-.academies-grid {
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.academy-section-heading {
+  margin-bottom: 3rem;
+}
+
+.academy-section-heading .section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  color: #facc15;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.academy-section-heading .section-tag::before {
+  width: 28px;
+  height: 2px;
+  background: #facc15;
+  content: "";
+}
+
+.academy-section-heading h2 {
+  max-width: 900px;
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.academy-section-heading p {
+  max-width: 760px;
+  margin: 0;
+  color: #aebdce;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.8;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.featured-academies .academies-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
 }
 
-.academy-card {
+/* =====================================================
+   BASE CARD
+===================================================== */
+
+.featured-academies .academy-card {
   position: relative;
   display: flex;
-  overflow: hidden;
-  flex-direction: column;
   min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 24px;
   background:
     linear-gradient(
       145deg,
-      rgba(20, 33, 53, 0.98),
-      rgba(13, 24, 40, 0.98)
+      rgba(17, 30, 49, 0.98),
+      rgba(7, 17, 31, 0.98)
     );
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    0 24px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
     box-shadow 0.35s ease;
 }
 
-.academy-card::after {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.04),
-      transparent 30%
-    );
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  content: "";
-}
-
-.academy-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(34, 197, 94, 0.55);
+.featured-academies .academy-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(96, 165, 250, 0.4);
   box-shadow:
-    0 28px 65px rgba(0, 0, 0, 0.38),
-    0 0 0 1px rgba(34, 197, 94, 0.08);
+    0 34px 80px rgba(0, 0, 0, 0.42),
+    0 0 40px rgba(37, 99, 235, 0.1);
 }
 
-.academy-card:hover::after {
-  opacity: 1;
-}
+/* =====================================================
+   IMAGE
+===================================================== */
 
-.academy-image {
+.featured-academies .academy-image {
   position: relative;
+  flex: 0 0 42%;
+  min-width: 0;
+  min-height: 100%;
   overflow: hidden;
-  height: 230px;
-  background: #172338;
+  background: #0b1726;
 }
 
-.academy-image::after {
+.featured-academies .academy-image::after {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
     linear-gradient(
-      to bottom,
-      transparent 35%,
-      rgba(8, 17, 29, 0.18) 65%,
-      rgba(8, 17, 29, 0.72) 100%
+      to top,
+      rgba(4, 11, 21, 0.78),
+      rgba(4, 11, 21, 0.08) 58%,
+      transparent
     );
-  pointer-events: none;
   content: "";
 }
 
-.academy-image img {
+.featured-academies .academy-image img {
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 390px;
   object-fit: cover;
   transition:
-    transform 0.55s ease,
-    filter 0.55s ease;
+    transform 0.5s ease,
+    filter 0.5s ease;
 }
 
-.academy-card:hover .academy-image img {
-  transform: scale(1.07);
-  filter: saturate(1.06) contrast(1.03);
+.featured-academies .academy-card:hover .academy-image img {
+  transform: scale(1.055);
+  filter: brightness(1.03) saturate(1.08);
 }
 
-.academy-status {
+/* =====================================================
+   STATUS BADGE
+===================================================== */
+
+.featured-academies .academy-status {
   position: absolute;
   top: 18px;
   right: 18px;
-  z-index: 2;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 13px;
-  background: rgba(21, 128, 61, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  gap: 0.4rem;
+  max-width: calc(100% - 36px);
+  padding: 0.62rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(7, 17, 31, 0.76);
   color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  backdrop-filter: blur(10px);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
-.academy-status::before {
-  width: 7px;
-  height: 7px;
-  background: #bbf7d0;
-  border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(187, 247, 208, 0.16);
-  content: "";
+.featured-academies .academy-status-featured {
+  border: 0;
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+  color: #111827;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.3);
 }
 
-.academy-content {
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.featured-academies .academy-content {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 26px;
+  min-width: 0;
+  padding: 1.8rem;
 }
 
-.academy-title {
+.featured-academies .academy-title {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 24px;
+  gap: 1rem;
+  min-width: 0;
+  margin-bottom: 1.35rem;
 }
 
-.academy-logo {
-  display: grid;
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  place-items: center;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(37, 99, 235, 0.2),
-      rgba(14, 165, 233, 0.08)
-    );
-  border: 1px solid rgba(59, 130, 246, 0.42);
-  border-radius: 15px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.academy-logo span {
-  color: #60a5fa;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-}
-
-.academy-title > div:last-child {
+.featured-academies .academy-title-content {
   min-width: 0;
 }
 
-.academy-title h3 {
-  margin: 0 0 6px;
-  color: #ffffff;
-  font-size: 21px;
-  line-height: 1.25;
+.featured-academies .academy-logo {
+  display: grid;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border: 1px solid rgba(96, 165, 250, 0.26);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 99, 235, 0.18),
+      rgba(255, 255, 255, 0.04)
+    );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.academy-title p {
+.featured-academies .academy-logo span {
+  color: #93c5fd;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.featured-academies .academy-logo-india span {
+  font-size: 1.8rem;
+}
+
+.featured-academies .academy-logo-partner span {
+  color: #facc15;
+  font-size: 1.35rem;
+}
+
+.featured-academies .academy-title h3 {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 850;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.featured-academies .academy-title p {
   margin: 0;
-  color: #9bacbf;
-  font-size: 14px;
+  color: #8fa2b8;
+  font-size: 0.88rem;
   line-height: 1.5;
 }
 
-.academy-stats {
+/* =====================================================
+   STATS
+===================================================== */
+
+.featured-academies .academy-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 0.7rem;
+  margin-bottom: 1.3rem;
 }
 
-.academy-stats div {
-  padding: 14px 8px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.055);
+.featured-academies .academy-stats > div {
+  display: flex;
+  min-width: 0;
+  min-height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.35rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 13px;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
+  background: rgba(255, 255, 255, 0.035);
+  text-align: center;
 }
 
-.academy-card:hover .academy-stats div {
-  border-color: rgba(255, 255, 255, 0.09);
-}
-
-.academy-stats div:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.055);
-}
-
-.academy-stats strong {
+.featured-academies .academy-stats strong {
   display: block;
-  margin-bottom: 5px;
+  max-width: 100%;
+  margin-bottom: 0.35rem;
+  overflow: hidden;
   color: #ffffff;
-  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-weight: 850;
   line-height: 1;
+  text-overflow: ellipsis;
 }
 
-.academy-stats span {
-  color: #8193a8;
-  font-size: 10px;
-  font-weight: 700;
+.featured-academies .academy-stats span {
+  color: #8093a8;
+  font-size: 0.63rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
-.academy-description {
-  min-height: 85px;
-  margin: 0 0 24px;
-  color: #b7c4d3;
-  font-size: 14px;
-  line-height: 1.75;
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.featured-academies .academy-description {
+  margin: 0 0 1.35rem;
+  color: #b7c5d4;
+  font-size: 0.9rem;
+  line-height: 1.72;
 }
 
-.academy-button {
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
+.featured-academies .academy-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.featured-academies .academy-highlights li {
   display: flex;
+  min-width: 0;
   align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding: 14px 17px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 12px;
-  color: #ffffff;
+  gap: 0.5rem;
+  padding: 0.68rem 0.75rem;
+  border: 1px solid rgba(96, 165, 250, 0.14);
+  border-radius: 11px;
+  background: rgba(37, 99, 235, 0.07);
+  color: #d5e0eb;
+  font-size: 0.76rem;
   font-weight: 700;
-  text-decoration: none;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  line-height: 1.4;
 }
 
-.academy-button span {
-  display: inline-block;
-  font-size: 17px;
-  transition: transform 0.3s ease;
+.featured-academies .academy-highlights li span {
+  flex: 0 0 auto;
+  color: #60a5fa;
+  font-weight: 900;
 }
 
-.academy-button:hover {
-  transform: translateY(-2px);
-  background: rgba(22, 163, 74, 0.13);
-  border-color: rgba(34, 197, 94, 0.8);
-  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.12);
-}
+/* =====================================================
+   BUTTON
+===================================================== */
 
-.academy-button:hover span {
-  transform: translate(3px, -3px);
-}
-
-.academy-button:focus-visible,
-.view-all-academies:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.8);
-  outline-offset: 4px;
-}
-
-.academies-footer {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.view-all-academies {
+.featured-academies .academy-button {
   display: inline-flex;
+  width: max-content;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 15px 25px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
   color: #ffffff;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 850;
+  line-height: 1.2;
   text-decoration: none;
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.2);
   transition:
     transform 0.3s ease,
     background 0.3s ease,
@@ -5210,122 +5043,397 @@ section[id] {
     box-shadow 0.3s ease;
 }
 
-.view-all-academies span {
+.featured-academies .academy-button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(147, 197, 253, 0.62);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 17px 34px rgba(37, 99, 235, 0.3);
+}
+
+.featured-academies .academy-button span:last-child {
+  font-size: 1rem;
   transition: transform 0.3s ease;
 }
 
-.view-all-academies:hover {
-  transform: translateY(-3px);
-  background: rgba(22, 163, 74, 0.12);
-  border-color: rgba(34, 197, 94, 0.8);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-}
-
-.view-all-academies:hover span {
+.featured-academies .academy-button:hover span:last-child {
   transform: translateX(4px);
 }
 
-/* ================= TABLET ================= */
+/* =====================================================
+   MINERVA FEATURED CARD
+===================================================== */
 
-@media (max-width: 1100px) {
+.featured-academies .academy-card-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(400px, 0.88fr);
+  min-height: 540px;
+  border-color: rgba(250, 204, 21, 0.24);
+  background:
+    radial-gradient(
+      circle at 85% 12%,
+      rgba(37, 99, 235, 0.17),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(17, 30, 49, 0.99),
+      rgba(6, 16, 28, 0.99)
+    );
+}
+
+.featured-academies .academy-card-featured:hover {
+  border-color: rgba(250, 204, 21, 0.55);
+  box-shadow:
+    0 42px 100px rgba(0, 0, 0, 0.5),
+    0 0 72px rgba(37, 99, 235, 0.14);
+}
+
+.featured-academies .academy-card-featured .academy-image {
+  min-height: 540px;
+}
+
+.featured-academies .academy-card-featured .academy-image::before {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  z-index: 3;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.58);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  content: "MISSION FIFA 2034";
+}
+
+.featured-academies .academy-card-featured .academy-image::after {
+  background:
+    linear-gradient(
+      to top,
+      rgba(4, 11, 21, 0.9),
+      rgba(4, 11, 21, 0.2) 52%,
+      transparent 78%
+    );
+}
+
+.featured-academies .academy-card-featured .academy-image img {
+  min-height: 540px;
+}
+
+.featured-academies .academy-card-featured .academy-content {
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.featured-academies .academy-card-featured .academy-title {
+  gap: 1.15rem;
+  margin-bottom: 1.7rem;
+}
+
+.featured-academies .academy-card-featured .academy-logo {
+  width: 76px;
+  height: 76px;
+  border-color: rgba(250, 204, 21, 0.35);
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(250, 204, 21, 0.14),
+      rgba(37, 99, 235, 0.12)
+    );
+}
+
+.featured-academies .academy-card-featured .academy-logo span {
+  color: #facc15;
+  font-size: 1.05rem;
+}
+
+.featured-academies .academy-card-featured .academy-title h3 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1.08;
+}
+
+.featured-academies .academy-card-featured .academy-title p {
+  font-size: 1rem;
+}
+
+.featured-academies .academy-card-featured .academy-stats {
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-academies .academy-card-featured .academy-stats > div {
+  min-height: 84px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.featured-academies .academy-card-featured .academy-stats strong {
+  color: #facc15;
+  font-size: 1.55rem;
+}
+
+.featured-academies .academy-card-featured .academy-description {
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+  color: #c6d2df;
+  font-size: 0.96rem;
+  line-height: 1.78;
+}
+
+.featured-academies .academy-card-featured .academy-button {
+  min-height: 52px;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.92rem;
+}
+
+/* =====================================================
+   FOOTER BUTTON
+===================================================== */
+
+.featured-academies .academies-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+.featured-academies .view-all-academies {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.featured-academies .view-all-academies:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.55);
+  background: rgba(37, 99, 235, 0.14);
+  box-shadow: 0 15px 34px rgba(0, 0, 0, 0.25);
+}
+
+.featured-academies .view-all-academies span:last-child {
+  font-size: 1.05rem;
+  transition: transform 0.3s ease;
+}
+
+.featured-academies .view-all-academies:hover span:last-child {
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1023px) {
   .featured-academies {
-    padding-right: 6%;
-    padding-left: 6%;
+    padding-inline: clamp(1rem, 4vw, 2rem);
   }
 
-  .academies-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .featured-academies .academies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-academies .academy-card {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .featured-academies .academy-card-featured {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .featured-academies .academy-card-featured .academy-image,
+  .featured-academies .academy-card-featured .academy-image img {
+    min-height: 370px;
+    height: 370px;
+  }
+
+  .featured-academies .academy-card-featured .academy-content {
+    padding: 2rem;
   }
 }
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 700px) {
   .featured-academies {
-    padding: 85px 5%;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 
-  .academies-grid {
+  .academy-section-heading {
+    margin-bottom: 2.2rem;
+  }
+
+  .academy-section-heading h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .featured-academies .academy-card,
+  .featured-academies .academy-card-featured {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .featured-academies .academy-image,
+  .featured-academies .academy-card-featured .academy-image {
+    flex: none;
+    width: 100%;
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .featured-academies .academy-image img,
+  .featured-academies .academy-card-featured .academy-image img {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .featured-academies .academy-content,
+  .featured-academies .academy-card-featured .academy-content {
+    padding: 1.4rem;
+  }
+
+  .featured-academies .academy-title,
+  .featured-academies .academy-card-featured .academy-title {
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .featured-academies .academy-logo,
+  .featured-academies .academy-card-featured .academy-logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+  }
+
+  .featured-academies .academy-card-featured .academy-title h3,
+  .featured-academies .academy-title h3 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .featured-academies .academy-card-featured .academy-title p,
+  .featured-academies .academy-title p {
+    font-size: 0.82rem;
+  }
+
+  .featured-academies .academy-stats {
+    gap: 0.5rem;
+  }
+
+  .featured-academies .academy-stats > div,
+  .featured-academies .academy-card-featured .academy-stats > div {
+    min-height: 70px;
+    padding: 0.75rem 0.25rem;
+  }
+
+  .featured-academies .academy-stats strong,
+  .featured-academies .academy-card-featured .academy-stats strong {
+    font-size: 1.15rem;
+  }
+
+  .featured-academies .academy-description,
+  .featured-academies .academy-card-featured .academy-description {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .featured-academies .academy-highlights {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 0.5rem;
   }
 
-  .academy-image {
-    height: 240px;
+  .featured-academies .academy-button,
+  .featured-academies .academy-card-featured .academy-button {
+    width: 100%;
   }
 
-  .academy-content {
-    padding: 23px;
-  }
-
-  .academy-description {
-    min-height: auto;
+  .featured-academies .academy-card-featured .academy-image::before {
+    bottom: 15px;
+    left: 15px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.55rem;
   }
 }
 
 @media (max-width: 430px) {
   .featured-academies {
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-inline: 0.9rem;
   }
 
-  .academy-image {
-    height: 215px;
+  .featured-academies .academy-image,
+  .featured-academies .academy-card-featured .academy-image,
+  .featured-academies .academy-image img,
+  .featured-academies .academy-card-featured .academy-image img {
+    height: 235px;
+    min-height: 235px;
   }
 
-  .academy-title {
+  .featured-academies .academy-content,
+  .featured-academies .academy-card-featured .academy-content {
+    padding: 1.2rem;
+  }
+
+  .featured-academies .academy-status {
+    top: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+    padding: 0.5rem 0.7rem;
+    font-size: 0.58rem;
+  }
+
+  .featured-academies .academy-title {
     align-items: flex-start;
   }
 
-  .academy-logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .academy-title h3 {
-    font-size: 19px;
-  }
-
-  .academy-stats {
-    gap: 8px;
-  }
-
-  .academy-stats div {
-    padding: 13px 5px;
-  }
-
-  .academy-content {
-    padding: 21px;
-  }
-
-  .academy-button,
-  .view-all-academies {
-    min-height: 50px;
+  .featured-academies .academy-stats span {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
   }
 }
 
-/* ================= REDUCED MOTION ================= */
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .academy-card,
-  .academy-card::after,
-  .academy-image img,
-  .academy-stats div,
-  .academy-button,
-  .academy-button span,
-  .view-all-academies,
-  .view-all-academies span {
+  .featured-academies .academy-card,
+  .featured-academies .academy-image img,
+  .featured-academies .academy-button,
+  .featured-academies .view-all-academies,
+  .featured-academies .academy-button span,
+  .featured-academies .view-all-academies span {
     transition: none;
   }
 
-  .academy-card:hover,
-  .academy-stats div:hover,
-  .academy-button:hover,
-  .view-all-academies:hover {
-    transform: none;
-  }
-
-  .academy-card:hover .academy-image img {
+  .featured-academies .academy-card:hover,
+  .featured-academies .academy-card:hover .academy-image img,
+  .featured-academies .academy-button:hover,
+  .featured-academies .view-all-academies:hover {
     transform: none;
   }
 }

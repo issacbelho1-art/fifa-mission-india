@@ -1,0 +1,4264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage registered football coaches across the Bharat Football Fans platform."
+    >
+
+    <meta
+        name="theme-color"
+        content="#071426"
+    >
+
+    <title>
+        Coaches Management | Bharat Football Fans Admin
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         ADMIN STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/academy-players.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminCoachesLoadingScreen"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="admin-loading-brand">
+
+            <div class="admin-loading-logo">
+
+                <i
+                    class="fa-solid fa-futbol"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Bharat Football Fans
+                </strong>
+
+                <span>
+                    Loading coaches management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="admin-loading-spinner"
+            aria-hidden="true"
+        ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <button
+        class="admin-sidebar-overlay"
+        id="adminSidebarOverlay"
+        type="button"
+        aria-label="Close navigation menu"
+        hidden
+    ></button>
+
+
+    <!-- =====================================================
+         ADMIN LAYOUT
+    ====================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Admin navigation"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR BRAND
+            ============================================== -->
+
+            <div class="admin-sidebar-brand">
+
+                <a
+                    class="admin-brand-link"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans admin dashboard"
+                >
+
+                    <span class="admin-brand-mark">
+
+                        <i
+                            class="fa-solid fa-futbol"
+                            aria-hidden="true"
+                        ></i>
+
+                    </span>
+
+
+                    <span class="admin-brand-copy">
+
+                        <strong>
+                            Bharat Football Fans
+                        </strong>
+
+                        <small>
+                            Mission FIFA 2034
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close"
+                    id="adminSidebarCloseButton"
+                    type="button"
+                    aria-label="Close sidebar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =============================================
+                 ADMIN PROFILE SUMMARY
+            ============================================== -->
+
+            <div class="admin-profile-summary">
+
+                <div class="admin-profile-avatar">
+
+                    <span>
+                        IB
+                    </span>
+
+                </div>
+
+
+                <div class="admin-profile-copy">
+
+                    <strong>
+                        Issac Belho
+                    </strong>
+
+                    <span>
+                        Platform Administrator
+                    </span>
+
+                </div>
+
+
+                <span
+                    class="admin-online-indicator"
+                    title="Online"
+                    aria-label="Online"
+                ></span>
+
+            </div>
+
+
+            <!-- =============================================
+                 PRIMARY NAVIGATION
+            ============================================== -->
+
+            <nav class="admin-navigation">
+
+                <span class="admin-navigation-label">
+                    Overview
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-dashboard.html"
+                >
+
+                    <i
+                        class="fa-solid fa-grid-2"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-analytics.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-line"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    Community
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-users.html"
+                >
+
+                    <i
+                        class="fa-solid fa-users"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-players.html"
+                >
+
+                    <i
+                        class="fa-solid fa-person-running"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Players
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link active"
+                    href="admin-coaches.html"
+                    aria-current="page"
+                >
+
+                    <i
+                        class="fa-solid fa-user-tie"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Coaches
+                    </span>
+
+                    <span class="admin-navigation-badge">
+                        84
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-scouts.html"
+                >
+
+                    <i
+                        class="fa-solid fa-binoculars"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Scouts
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-academies.html"
+                >
+
+                    <i
+                        class="fa-solid fa-building-columns"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Academies
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    Platform
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-trials.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Trials
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-reports.html"
+                >
+
+                    <i
+                        class="fa-solid fa-file-lines"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Scout Reports
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-news.html"
+                >
+
+                    <i
+                        class="fa-solid fa-newspaper"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        News
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-events.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-days"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-messages.html"
+                >
+
+                    <i
+                        class="fa-solid fa-envelope"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="admin-navigation-badge warning">
+                        12
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    System
+                </span>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-settings.html"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-security.html"
+                >
+
+                    <i
+                        class="fa-solid fa-shield-halved"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Security
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =============================================
+                 SIDEBAR SUPPORT CARD
+            ============================================== -->
+
+            <div class="admin-sidebar-support">
+
+                <div class="admin-sidebar-support-icon">
+
+                    <i
+                        class="fa-solid fa-headset"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Need assistance?
+                    </strong>
+
+                    <p>
+                        Contact the technical support team.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="admin-help.html"
+                >
+                    Get Support
+                </a>
+
+            </div>
+
+
+            <!-- =============================================
+                 LOGOUT BUTTON
+            ============================================== -->
+
+            <button
+                class="admin-sidebar-logout"
+                id="adminLogoutButton"
+                type="button"
+            >
+
+                <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                ></i>
+
+                <span>
+                    Sign Out
+                </span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <div class="admin-main-area">
+
+
+            <!-- =============================================
+                 TOP HEADER
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-mobile-menu-button"
+                        id="adminMobileMenuButton"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="adminSidebar"
+                        aria-expanded="false"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+
+                    <div class="admin-topbar-page-title">
+
+                        <span>
+                            Community Management
+                        </span>
+
+                        <strong>
+                            Coaches
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-actions">
+
+
+                    <!-- =====================================
+                         GLOBAL SEARCH
+                    ====================================== -->
+
+                    <label class="admin-global-search">
+
+                        <span class="sr-only">
+                            Search the admin platform
+                        </span>
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            id="adminGlobalSearch"
+                            type="search"
+                            placeholder="Search platform"
+                            autocomplete="off"
+                        >
+
+                        <kbd>
+                            /
+                        </kbd>
+
+                    </label>
+
+
+                    <!-- =====================================
+                         NOTIFICATIONS
+                    ====================================== -->
+
+                    <button
+                        class="admin-topbar-icon-button"
+                        id="adminNotificationsButton"
+                        type="button"
+                        aria-label="Open notifications"
+                    >
+
+                        <i
+                            class="fa-regular fa-bell"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span
+                            class="admin-notification-count"
+                            aria-label="5 unread notifications"
+                        >
+                            5
+                        </span>
+
+                    </button>
+
+
+                    <!-- =====================================
+                         ADMIN ACCOUNT
+                    ====================================== -->
+
+                    <button
+                        class="admin-account-button"
+                        id="adminAccountButton"
+                        type="button"
+                        aria-label="Open admin account menu"
+                        aria-expanded="false"
+                    >
+
+                        <span class="admin-account-avatar">
+                            IB
+                        </span>
+
+                        <span class="admin-account-copy">
+
+                            <strong>
+                                Issac
+                            </strong>
+
+                            <small>
+                                Administrator
+                            </small>
+
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 PAGE CONTENT
+            ============================================== -->
+
+            <main class="admin-page-content">
+
+
+                <!-- =========================================
+                     PAGE HEADING
+                ========================================== -->
+
+                <section class="admin-page-heading">
+
+                    <div class="admin-page-heading-copy">
+
+                        <span class="admin-section-tag">
+
+                            <i
+                                class="fa-solid fa-user-tie"
+                                aria-hidden="true"
+                            ></i>
+
+                            Coach Network
+                        </span>
+
+
+                        <h1>
+                            Coaches Management
+                        </h1>
+
+
+                        <p>
+                            Review, verify and manage football coaches registered
+                            across the Bharat Football Fans platform.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-page-heading-actions">
+
+                        <button
+                            class="admin-secondary-button"
+                            id="exportCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export Coaches
+
+                        </button>
+
+
+                        <button
+                            class="admin-primary-button"
+                            id="addCoachButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            Add Coach
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     METRIC CARDS
+                ========================================== -->
+
+                <section
+                    class="admin-coaches-metrics"
+                    aria-label="Coach statistics"
+                >
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon blue">
+
+                            <i
+                                class="fa-solid fa-user-tie"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+
+                        <div class="admin-metric-copy">
+
+                            <span>
+                                Total Coaches
+                            </span>
+
+                            <strong id="coachMetricTotal">
+                                0
+                            </strong>
+
+                            <small class="positive">
+
+                                <i
+                                    class="fa-solid fa-arrow-trend-up"
+                                    aria-hidden="true"
+                                ></i>
+
+                                12% this month
+
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon green">
+
+                            <i
+                                class="fa-solid fa-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+
+                        <div class="admin-metric-copy">
+
+                            <span>
+                                Verified Coaches
+                            </span>
+
+                            <strong id="coachMetricVerified">
+                                0
+                            </strong>
+
+                            <small>
+                                Approved profiles
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon orange">
+
+                            <i
+                                class="fa-solid fa-clock"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+
+                        <div class="admin-metric-copy">
+
+                            <span>
+                                Pending Review
+                            </span>
+
+                            <strong id="coachMetricPending">
+                                0
+                            </strong>
+
+                            <small>
+                                Awaiting verification
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon purple">
+
+                            <i
+                                class="fa-solid fa-people-group"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+
+                        <div class="admin-metric-copy">
+
+                            <span>
+                                Active Coaches
+                            </span>
+
+                            <strong id="coachMetricActive">
+                                0
+                            </strong>
+
+                            <small>
+                                Currently available
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =========================================
+                     FILTER PANEL
+                ========================================== -->
+
+                <section class="admin-filter-panel">
+
+                    <div class="admin-filter-panel-heading">
+
+                        <div>
+
+                            <h2>
+                                Coach Directory
+                            </h2>
+
+                            <p>
+                                Search and filter registered coaching professionals.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-refresh-button"
+                            id="refreshCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-rotate"
+                                aria-hidden="true"
+                            ></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <form
+                        class="admin-filter-form"
+                        id="coachFilterForm"
+                    >
+
+
+                        <label class="admin-search-field">
+
+                            <span>
+                                Search Coaches
+                            </span>
+
+                            <div>
+
+                                <i
+                                    class="fa-solid fa-magnifying-glass"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    id="coachSearchInput"
+                                    name="search"
+                                    type="search"
+                                    placeholder="Search by name, email, location or licence"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Verification
+                            </span>
+
+                            <select
+                                id="coachVerificationFilter"
+                                name="verification"
+                            >
+
+                                <option value="all">
+                                    All Statuses
+                                </option>
+
+                                <option value="verified">
+                                    Verified
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="rejected">
+                                    Rejected
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Licence Level
+                            </span>
+
+                            <select
+                                id="coachLicenceFilter"
+                                name="licence"
+                            >
+
+                                <option value="all">
+                                    All Licences
+                                </option>
+
+                                <option value="afc-pro">
+                                    AFC Pro
+                                </option>
+
+                                <option value="afc-a">
+                                    AFC A
+                                </option>
+
+                                <option value="afc-b">
+                                    AFC B
+                                </option>
+
+                                <option value="afc-c">
+                                    AFC C
+                                </option>
+
+                                <option value="grassroots">
+                                    Grassroots
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Specialisation
+                            </span>
+
+                            <select
+                                id="coachSpecialisationFilter"
+                                name="specialisation"
+                            >
+
+                                <option value="all">
+                                    All Specialisations
+                                </option>
+
+                                <option value="head-coach">
+                                    Head Coach
+                                </option>
+
+                                <option value="assistant-coach">
+                                    Assistant Coach
+                                </option>
+
+                                <option value="goalkeeping">
+                                    Goalkeeping
+                                </option>
+
+                                <option value="fitness">
+                                    Fitness
+                                </option>
+
+                                <option value="youth-development">
+                                    Youth Development
+                                </option>
+
+                                <option value="technical">
+                                    Technical Coach
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                State
+                            </span>
+
+                            <select
+                                id="coachStateFilter"
+                                name="state"
+                            >
+
+                                <option value="all">
+                                    All States
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Availability
+                            </span>
+
+                            <select
+                                id="coachAvailabilityFilter"
+                                name="availability"
+                            >
+
+                                <option value="all">
+                                    All Availability
+                                </option>
+
+                                <option value="available">
+                                    Available
+                                </option>
+
+                                <option value="engaged">
+                                    Engaged
+                                </option>
+
+                                <option value="unavailable">
+                                    Unavailable
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Sort By
+                            </span>
+
+                            <select
+                                id="coachSortFilter"
+                                name="sort"
+                            >
+
+                                <option value="newest">
+                                    Newest First
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest First
+                                </option>
+
+                                <option value="name-asc">
+                                    Name A–Z
+                                </option>
+
+                                <option value="name-desc">
+                                    Name Z–A
+                                </option>
+
+                                <option value="experience-high">
+                                    Most Experience
+                                </option>
+
+                                <option value="players-high">
+                                    Most Players
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <div class="admin-filter-actions">
+
+                            <button
+                                class="admin-secondary-button"
+                                id="resetCoachFiltersButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-filter-circle-xmark"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Reset
+
+                            </button>
+
+
+                            <button
+                                class="admin-primary-button"
+                                type="submit"
+                            >
+
+                                <i
+                                    class="fa-solid fa-filter"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Apply Filters
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+                                <!-- =========================================
+                     BULK ACTION BAR
+                ========================================== -->
+
+                <section
+                    class="admin-bulk-actions"
+                    id="coachBulkActions"
+                    hidden
+                >
+
+                    <div class="admin-bulk-actions-left">
+
+                        <strong id="selectedCoachCount">
+                            0 coaches selected
+                        </strong>
+
+                        <span>
+                            Apply actions to all selected coaches.
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-bulk-actions-right">
+
+                        <button
+                            class="admin-secondary-button"
+                            id="bulkVerifyCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                            Verify
+
+                        </button>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="bulkAvailableCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-check"
+                                aria-hidden="true"
+                            ></i>
+
+                            Mark Available
+
+                        </button>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="bulkUnavailableCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-slash"
+                                aria-hidden="true"
+                            ></i>
+
+                            Mark Unavailable
+
+                        </button>
+
+
+                        <button
+                            class="admin-danger-button"
+                            id="bulkDeleteCoachesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-trash-can"
+                                aria-hidden="true"
+                            ></i>
+
+                            Delete
+
+                        </button>
+
+
+                        <button
+                            class="admin-text-button"
+                            id="clearCoachSelectionButton"
+                            type="button"
+                        >
+
+                            Clear Selection
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     COACHES TABLE
+                ========================================== -->
+
+                <section class="admin-table-card">
+
+                    <div class="admin-table-header">
+
+                        <div>
+
+                            <h2>
+                                Registered Coaches
+                            </h2>
+
+                            <p
+                                id="coachPaginationSummary"
+                            >
+                                Showing 0 coaches
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="admin-table-wrapper"
+                        id="coachTableWrapper"
+                    >
+
+                        <table
+                            class="admin-data-table"
+                            id="coachTable"
+                        >
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+
+                                        <input
+                                            id="selectAllCoachesCheckbox"
+                                            type="checkbox"
+                                            aria-label="Select all coaches"
+                                        >
+
+                                    </th>
+
+                                    <th>
+                                        Coach
+                                    </th>
+
+                                    <th>
+                                        Licence
+                                    </th>
+
+                                    <th>
+                                        Specialisation
+                                    </th>
+
+                                    <th>
+                                        Location
+                                    </th>
+
+                                    <th>
+                                        Experience
+                                    </th>
+
+                                    <th>
+                                        Players
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Availability
+                                    </th>
+
+                                    <th>
+                                        Updated
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="coachTableBody"
+                            >
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- ===============================
+                             EMPTY STATE
+                        ================================ -->
+
+                        <div
+                            class="admin-empty-state"
+                            id="coachEmptyState"
+                            hidden
+                        >
+
+                            <div
+                                class="admin-empty-state-icon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-user-tie"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <h3>
+                                No coaches found
+                            </h3>
+
+
+                            <p>
+                                Try adjusting the search filters or
+                                add a new coach.
+                            </p>
+
+
+                            <button
+                                class="admin-primary-button"
+                                id="emptyAddCoachButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-user-plus"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Add Coach
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ===============================
+                         PAGINATION
+                    ================================ -->
+
+                    <footer
+                        class="admin-pagination"
+                    >
+
+                        <button
+                            class="admin-pagination-button"
+                            id="previousCoachPageButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-chevron-left"
+                                aria-hidden="true"
+                            ></i>
+
+                            Previous
+
+                        </button>
+
+
+                        <div
+                            class="admin-pagination-pages"
+                            id="coachPagination"
+                        >
+
+                        </div>
+
+
+                        <button
+                            class="admin-pagination-button"
+                            id="nextCoachPageButton"
+                            type="button"
+                        >
+
+                            Next
+
+                            <i
+                                class="fa-solid fa-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+                    </footer>
+
+                </section>
+
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         VIEW COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="viewCoachModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="viewCoachModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="viewCoachModalTitle"
+        >
+
+            <header
+                class="admin-modal-header"
+            >
+
+                <h2
+                    id="viewCoachModalTitle"
+                >
+                    Coach Details
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="viewCoachModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <div
+                class="admin-modal-body"
+                id="coachDetailsContent"
+            >
+
+            </div>
+
+
+            <footer
+                class="admin-modal-footer"
+            >
+
+                <button
+                    class="admin-secondary-button"
+                    id="editFromCoachDetailsButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-pen"
+                        aria-hidden="true"
+                    ></i>
+
+                    Edit Coach
+
+                </button>
+
+
+                <button
+                    class="admin-primary-button"
+                    id="closeCoachDetailsButton"
+                    type="button"
+                >
+
+                    Close
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADD COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="addCoachModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="addCoachModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-2xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="addCoachModalTitle"
+        >
+
+            <header
+                class="admin-modal-header"
+            >
+
+                <h2
+                    id="addCoachModalTitle"
+                >
+                    Register Coach
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="addCoachModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <form
+                id="addCoachForm"
+                class="admin-modal-form"
+                novalidate
+            >
+                            <div class="admin-modal-body">
+
+
+                    <!-- =====================================
+                         PERSONAL INFORMATION
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Personal Information
+                                </h3>
+
+                                <p>
+                                    Enter the coach’s basic identity and contact details.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Full Name
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder="Enter coach full name"
+                                    autocomplete="name"
+                                    minlength="3"
+                                    maxlength="80"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="name"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Email Address
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="coach@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="email"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Mobile Number
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="+91 98765 43210"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="phone"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Date of Birth
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="dateOfBirth"
+                                    type="date"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="dateOfBirth"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Gender
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="gender"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="male">
+                                        Male
+                                    </option>
+
+                                    <option value="female">
+                                        Female
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                    <option value="prefer-not-to-say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="gender"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Profile Photo URL
+                                </span>
+
+                                <input
+                                    name="photo"
+                                    type="url"
+                                    placeholder="https://example.com/coach-photo.jpg"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="photo"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         LOCATION INFORMATION
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-location-dot"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Location
+                                </h3>
+
+                                <p>
+                                    Add the coach’s current city and state.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    State
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="state"
+                                    type="text"
+                                    placeholder="Enter state"
+                                    autocomplete="address-level1"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="state"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    City
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="city"
+                                    type="text"
+                                    placeholder="Enter city"
+                                    autocomplete="address-level2"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="city"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Full Address
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <textarea
+                                    name="address"
+                                    rows="3"
+                                    placeholder="Enter complete address"
+                                    autocomplete="street-address"
+                                    required
+                                ></textarea>
+
+                                <small
+                                    data-add-coach-error-for="address"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         COACHING CREDENTIALS
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-certificate"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Coaching Credentials
+                                </h3>
+
+                                <p>
+                                    Record licence, experience and professional role.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Licence Level
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="licence"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select licence
+                                    </option>
+
+                                    <option value="afc-pro">
+                                        AFC Pro
+                                    </option>
+
+                                    <option value="afc-a">
+                                        AFC A
+                                    </option>
+
+                                    <option value="afc-b">
+                                        AFC B
+                                    </option>
+
+                                    <option value="afc-c">
+                                        AFC C
+                                    </option>
+
+                                    <option value="grassroots">
+                                        Grassroots
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="licence"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Licence Number
+                                </span>
+
+                                <input
+                                    name="licenceNumber"
+                                    type="text"
+                                    placeholder="Enter licence number"
+                                    maxlength="60"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="licenceNumber"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Specialisation
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="specialisation"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select specialisation
+                                    </option>
+
+                                    <option value="head-coach">
+                                        Head Coach
+                                    </option>
+
+                                    <option value="assistant-coach">
+                                        Assistant Coach
+                                    </option>
+
+                                    <option value="goalkeeping">
+                                        Goalkeeping Coach
+                                    </option>
+
+                                    <option value="fitness">
+                                        Fitness Coach
+                                    </option>
+
+                                    <option value="youth-development">
+                                        Youth Development
+                                    </option>
+
+                                    <option value="technical">
+                                        Technical Coach
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="specialisation"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Years of Experience
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="experienceYears"
+                                    type="number"
+                                    min="0"
+                                    max="60"
+                                    step="1"
+                                    placeholder="0"
+                                    required
+                                >
+
+                                <small
+                                    data-add-coach-error-for="experienceYears"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Current Academy / Club
+                                </span>
+
+                                <input
+                                    name="currentOrganisation"
+                                    type="text"
+                                    placeholder="Enter academy or club name"
+                                    maxlength="120"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="currentOrganisation"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Players Managed
+                                </span>
+
+                                <input
+                                    name="playersManaged"
+                                    type="number"
+                                    min="0"
+                                    max="10000"
+                                    step="1"
+                                    value="0"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="playersManaged"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Preferred Age Group
+                                </span>
+
+                                <input
+                                    name="preferredAgeGroup"
+                                    type="text"
+                                    placeholder="Example: U-13 to U-18"
+                                    maxlength="80"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="preferredAgeGroup"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Availability
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="availability"
+                                    required
+                                >
+
+                                    <option value="available">
+                                        Available
+                                    </option>
+
+                                    <option value="engaged">
+                                        Engaged
+                                    </option>
+
+                                    <option value="unavailable">
+                                        Unavailable
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="availability"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PLATFORM STATUS
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Platform Status
+                                </h3>
+
+                                <p>
+                                    Control verification and account visibility.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Verification Status
+                                </span>
+
+                                <select
+                                    name="verification"
+                                >
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="verified">
+                                        Verified
+                                    </option>
+
+                                    <option value="rejected">
+                                        Rejected
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="verification"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <select
+                                    name="accountStatus"
+                                >
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="suspended">
+                                        Suspended
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-add-coach-error-for="accountStatus"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Profile Completion
+                                </span>
+
+                                <input
+                                    name="profileCompletion"
+                                    type="number"
+                                    min="0"
+                                    max="100"
+                                    step="1"
+                                    value="60"
+                                >
+
+                                <small
+                                    data-add-coach-error-for="profileCompletion"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PROFESSIONAL SUMMARY
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-file-lines"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Professional Summary
+                                </h3>
+
+                                <p>
+                                    Add background details and internal notes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Biography
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <textarea
+                                    name="bio"
+                                    rows="5"
+                                    minlength="20"
+                                    maxlength="1200"
+                                    placeholder="Describe the coach’s experience, philosophy and achievements"
+                                    required
+                                ></textarea>
+
+                                <small
+                                    data-add-coach-error-for="bio"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Administrative Note
+                                </span>
+
+                                <textarea
+                                    name="note"
+                                    rows="4"
+                                    maxlength="800"
+                                    placeholder="Visible only to platform administrators"
+                                ></textarea>
+
+                                <small
+                                    data-add-coach-error-for="note"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <footer class="admin-modal-footer">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="cancelAddCoachButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-plus"
+                            aria-hidden="true"
+                        ></i>
+
+                        Add Coach
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EDIT COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="editCoachModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="editCoachModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-2xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="editCoachModalTitle"
+        >
+
+            <header class="admin-modal-header">
+
+                <h2 id="editCoachModalTitle">
+                    Edit Coach
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="editCoachModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <form
+                id="editCoachForm"
+                class="admin-modal-form"
+                novalidate
+            >
+
+                <input
+                    id="editCoachId"
+                    name="coachId"
+                    type="hidden"
+                >
+
+                                <div class="admin-modal-body">
+
+
+                    <!-- =====================================
+                         PERSONAL INFORMATION
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Personal Information
+                                </h3>
+
+                                <p>
+                                    Update the coach’s identity and contact details.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Full Name
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="name"
+                                    type="text"
+                                    autocomplete="name"
+                                    minlength="3"
+                                    maxlength="80"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="name"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Email Address
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="email"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Mobile Number
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="phone"
+                                    type="tel"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="phone"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Date of Birth
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="dateOfBirth"
+                                    type="date"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="dateOfBirth"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Gender
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="gender"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select gender
+                                    </option>
+
+                                    <option value="male">
+                                        Male
+                                    </option>
+
+                                    <option value="female">
+                                        Female
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                    <option value="prefer-not-to-say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="gender"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Profile Photo URL
+                                </span>
+
+                                <input
+                                    name="photo"
+                                    type="url"
+                                    placeholder="https://example.com/coach-photo.jpg"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="photo"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         LOCATION INFORMATION
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-location-dot"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Location
+                                </h3>
+
+                                <p>
+                                    Update the coach’s current address.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    State
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="state"
+                                    type="text"
+                                    autocomplete="address-level1"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="state"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    City
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="city"
+                                    type="text"
+                                    autocomplete="address-level2"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="city"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Full Address
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <textarea
+                                    name="address"
+                                    rows="3"
+                                    autocomplete="street-address"
+                                    required
+                                ></textarea>
+
+                                <small
+                                    data-edit-coach-error-for="address"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         COACHING CREDENTIALS
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-certificate"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Coaching Credentials
+                                </h3>
+
+                                <p>
+                                    Update professional qualifications and experience.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Licence Level
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="licence"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select licence
+                                    </option>
+
+                                    <option value="afc-pro">
+                                        AFC Pro
+                                    </option>
+
+                                    <option value="afc-a">
+                                        AFC A
+                                    </option>
+
+                                    <option value="afc-b">
+                                        AFC B
+                                    </option>
+
+                                    <option value="afc-c">
+                                        AFC C
+                                    </option>
+
+                                    <option value="grassroots">
+                                        Grassroots
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="licence"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Licence Number
+                                </span>
+
+                                <input
+                                    name="licenceNumber"
+                                    type="text"
+                                    maxlength="60"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="licenceNumber"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Specialisation
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="specialisation"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select specialisation
+                                    </option>
+
+                                    <option value="head-coach">
+                                        Head Coach
+                                    </option>
+
+                                    <option value="assistant-coach">
+                                        Assistant Coach
+                                    </option>
+
+                                    <option value="goalkeeping">
+                                        Goalkeeping Coach
+                                    </option>
+
+                                    <option value="fitness">
+                                        Fitness Coach
+                                    </option>
+
+                                    <option value="youth-development">
+                                        Youth Development
+                                    </option>
+
+                                    <option value="technical">
+                                        Technical Coach
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="specialisation"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Years of Experience
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <input
+                                    name="experienceYears"
+                                    type="number"
+                                    min="0"
+                                    max="60"
+                                    step="1"
+                                    required
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="experienceYears"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Current Academy / Club
+                                </span>
+
+                                <input
+                                    name="currentOrganisation"
+                                    type="text"
+                                    maxlength="120"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="currentOrganisation"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Players Managed
+                                </span>
+
+                                <input
+                                    name="playersManaged"
+                                    type="number"
+                                    min="0"
+                                    max="10000"
+                                    step="1"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="playersManaged"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Preferred Age Group
+                                </span>
+
+                                <input
+                                    name="preferredAgeGroup"
+                                    type="text"
+                                    maxlength="80"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="preferredAgeGroup"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Availability
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <select
+                                    name="availability"
+                                    required
+                                >
+
+                                    <option value="available">
+                                        Available
+                                    </option>
+
+                                    <option value="engaged">
+                                        Engaged
+                                    </option>
+
+                                    <option value="unavailable">
+                                        Unavailable
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="availability"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PLATFORM STATUS
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Platform Status
+                                </h3>
+
+                                <p>
+                                    Update verification and account access.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Verification Status
+                                </span>
+
+                                <select
+                                    name="verification"
+                                >
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="verified">
+                                        Verified
+                                    </option>
+
+                                    <option value="rejected">
+                                        Rejected
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="verification"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <select
+                                    name="accountStatus"
+                                >
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="suspended">
+                                        Suspended
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    data-edit-coach-error-for="accountStatus"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field">
+
+                                <span>
+                                    Profile Completion
+                                </span>
+
+                                <input
+                                    name="profileCompletion"
+                                    type="number"
+                                    min="0"
+                                    max="100"
+                                    step="1"
+                                >
+
+                                <small
+                                    data-edit-coach-error-for="profileCompletion"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PROFESSIONAL SUMMARY
+                    ====================================== -->
+
+                    <section class="admin-form-section">
+
+                        <div class="admin-form-section-heading">
+
+                            <div class="admin-form-section-icon">
+
+                                <i
+                                    class="fa-solid fa-file-lines"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Professional Summary
+                                </h3>
+
+                                <p>
+                                    Update the biography and administrative notes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-grid">
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Biography
+                                    <b aria-hidden="true">*</b>
+                                </span>
+
+                                <textarea
+                                    name="bio"
+                                    rows="5"
+                                    minlength="20"
+                                    maxlength="1200"
+                                    required
+                                ></textarea>
+
+                                <small
+                                    data-edit-coach-error-for="bio"
+                                ></small>
+
+                            </label>
+
+
+                            <label class="admin-form-field admin-form-field-full">
+
+                                <span>
+                                    Administrative Note
+                                </span>
+
+                                <textarea
+                                    name="note"
+                                    rows="4"
+                                    maxlength="800"
+                                ></textarea>
+
+                                <small
+                                    data-edit-coach-error-for="note"
+                                ></small>
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <footer class="admin-modal-footer">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="cancelEditCoachButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-floppy-disk"
+                            aria-hidden="true"
+                        ></i>
+
+                        Save Changes
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         VERIFY COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="verifyCoachModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="verifyCoachModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="verifyCoachModalTitle"
+        >
+
+            <header class="admin-modal-header">
+
+                <h2 id="verifyCoachModalTitle">
+                    Verify Coach
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="verifyCoachModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <div class="admin-modal-body">
+
+                <div class="admin-confirmation-icon success">
+
+                    <i
+                        class="fa-solid fa-certificate"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div class="admin-confirmation-copy">
+
+                    <h3>
+                        Approve coach profile?
+                    </h3>
+
+                    <p>
+                        You are about to verify
+                        <strong id="verifyCoachName">
+                            this coach
+                        </strong>.
+                    </p>
+
+                    <span>
+                        Confirm that the submitted credentials and licence
+                        information have been reviewed.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <footer class="admin-modal-footer">
+
+                <button
+                    class="admin-secondary-button"
+                    id="cancelVerifyCoachButton"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="admin-success-button"
+                    id="confirmVerifyCoachButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-circle-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    Verify Coach
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DELETE COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="deleteCoachModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="deleteCoachModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="deleteCoachModalTitle"
+        >
+
+            <header class="admin-modal-header">
+
+                <h2 id="deleteCoachModalTitle">
+                    Delete Coach
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="deleteCoachModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <form
+                id="deleteCoachForm"
+                novalidate
+            >
+
+                <input
+                    id="deleteCoachId"
+                    name="coachId"
+                    type="hidden"
+                >
+
+
+                <div class="admin-modal-body">
+
+                    <div class="admin-confirmation-icon danger">
+
+                        <i
+                            class="fa-solid fa-triangle-exclamation"
+                            aria-hidden="true"
+                        ></i>
+
+                    </div>
+
+
+                    <div class="admin-confirmation-copy">
+
+                        <h3>
+                            Permanently delete coach?
+                        </h3>
+
+                        <p>
+                            This will remove
+                            <strong id="deleteCoachName">
+                                this coach
+                            </strong>
+                            and associated platform data.
+                        </p>
+
+                    </div>
+
+
+                    <label class="admin-form-field admin-form-field-full">
+
+                        <span>
+                            Type DELETE to confirm
+                        </span>
+
+                        <input
+                            id="deleteCoachConfirmationInput"
+                            name="confirmation"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="DELETE"
+                        >
+
+                        <small
+                            data-delete-coach-error-for="confirmation"
+                        ></small>
+
+                    </label>
+
+                </div>
+
+
+                <footer class="admin-modal-footer">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="cancelDeleteCoachButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="admin-danger-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-trash-can"
+                            aria-hidden="true"
+                        ></i>
+
+                        Delete Coach
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </div>
+
+        <!-- =====================================================
+         EXPORT COACHES MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="exportCoachesModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="exportCoachesModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-md"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exportCoachesModalTitle"
+        >
+
+            <header class="admin-modal-header">
+
+                <h2 id="exportCoachesModalTitle">
+                    Export Coaches
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="exportCoachesModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <form
+                id="exportCoachesForm"
+                novalidate
+            >
+
+                <div class="admin-modal-body">
+
+                    <div class="admin-export-intro">
+
+                        <div class="admin-export-icon">
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Download coach records
+                            </h3>
+
+                            <p>
+                                Choose the file format and the records
+                                you want to include.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-form-grid">
+
+                        <label class="admin-form-field admin-form-field-full">
+
+                            <span>
+                                Export Scope
+                            </span>
+
+                            <select
+                                name="scope"
+                                required
+                            >
+
+                                <option value="all">
+                                    All Coaches
+                                </option>
+
+                                <option value="filtered">
+                                    Current Filtered Results
+                                </option>
+
+                                <option value="selected">
+                                    Selected Coaches Only
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label class="admin-form-field admin-form-field-full">
+
+                            <span>
+                                File Format
+                            </span>
+
+                            <select
+                                id="coachExportFormat"
+                                name="format"
+                                required
+                            >
+
+                                <option value="csv">
+                                    CSV Spreadsheet
+                                </option>
+
+                                <option value="json">
+                                    JSON Data
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="admin-export-note">
+
+                        <i
+                            class="fa-solid fa-circle-info"
+                            aria-hidden="true"
+                        ></i>
+
+                        <p>
+                            Exported files may contain personal information.
+                            Store and share them securely.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <footer class="admin-modal-footer">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="cancelExportCoachesButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-download"
+                            aria-hidden="true"
+                        ></i>
+
+                        Export File
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATIONS PANEL
+    ====================================================== -->
+
+    <aside
+        class="admin-notifications-panel"
+        id="adminNotificationsPanel"
+        aria-label="Notifications"
+        hidden
+    >
+
+        <header class="admin-notifications-header">
+
+            <div>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <span>
+                    5 unread updates
+                </span>
+
+            </div>
+
+
+            <button
+                class="admin-modal-close"
+                id="adminNotificationsCloseButton"
+                type="button"
+                aria-label="Close notifications"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+
+            </button>
+
+        </header>
+
+
+        <div class="admin-notifications-list">
+
+            <article class="admin-notification-item unread">
+
+                <div class="admin-notification-icon success">
+
+                    <i
+                        class="fa-solid fa-user-check"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        New coach registration
+                    </strong>
+
+                    <p>
+                        A new coaching profile is awaiting review.
+                    </p>
+
+                    <time datetime="2026-07-21T09:20:00+05:30">
+                        18 minutes ago
+                    </time>
+
+                </div>
+
+            </article>
+
+
+            <article class="admin-notification-item unread">
+
+                <div class="admin-notification-icon warning">
+
+                    <i
+                        class="fa-solid fa-certificate"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Licence document uploaded
+                    </strong>
+
+                    <p>
+                        A coach submitted updated certification documents.
+                    </p>
+
+                    <time datetime="2026-07-21T08:10:00+05:30">
+                        1 hour ago
+                    </time>
+
+                </div>
+
+            </article>
+
+
+            <article class="admin-notification-item">
+
+                <div class="admin-notification-icon blue">
+
+                    <i
+                        class="fa-solid fa-message"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Support message received
+                    </strong>
+
+                    <p>
+                        A coach requested help updating profile information.
+                    </p>
+
+                    <time datetime="2026-07-20T18:30:00+05:30">
+                        Yesterday
+                    </time>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <footer class="admin-notifications-footer">
+
+            <a href="admin-notifications.html">
+                View All Notifications
+            </a>
+
+        </footer>
+
+    </aside>
+
+
+    <!-- =====================================================
+         ACCOUNT MENU
+    ====================================================== -->
+
+    <div
+        class="admin-account-menu"
+        id="adminAccountMenu"
+        hidden
+    >
+
+        <div class="admin-account-menu-profile">
+
+            <span class="admin-account-menu-avatar">
+                IB
+            </span>
+
+
+            <div>
+
+                <strong>
+                    Issac Belho
+                </strong>
+
+                <span>
+                    Platform Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="admin-profile.html">
+
+                <i
+                    class="fa-solid fa-user"
+                    aria-hidden="true"
+                ></i>
+
+                My Profile
+
+            </a>
+
+
+            <a href="admin-settings.html">
+
+                <i
+                    class="fa-solid fa-gear"
+                    aria-hidden="true"
+                ></i>
+
+                Account Settings
+
+            </a>
+
+
+            <a href="admin-security.html">
+
+                <i
+                    class="fa-solid fa-shield-halved"
+                    aria-hidden="true"
+                ></i>
+
+                Security
+
+            </a>
+
+        </nav>
+
+
+        <button
+            id="adminAccountLogoutButton"
+            type="button"
+        >
+
+            <i
+                class="fa-solid fa-arrow-right-from-bracket"
+                aria-hidden="true"
+            ></i>
+
+            Sign Out
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGOUT CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="adminLogoutModal"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="adminLogoutModalBackdrop"
+            type="button"
+            aria-label="Close"
+        ></button>
+
+
+        <div
+            class="admin-modal-dialog admin-modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminLogoutModalTitle"
+        >
+
+            <header class="admin-modal-header">
+
+                <h2 id="adminLogoutModalTitle">
+                    Sign Out
+                </h2>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="adminLogoutModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <div class="admin-modal-body">
+
+                <div class="admin-confirmation-icon warning">
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+
+                <div class="admin-confirmation-copy">
+
+                    <h3>
+                        Sign out of the admin portal?
+                    </h3>
+
+                    <p>
+                        You will need to enter your credentials again
+                        to access protected administration pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <footer class="admin-modal-footer">
+
+                <button
+                    class="admin-secondary-button"
+                    id="adminLogoutCancelButton"
+                    type="button"
+                >
+                    Stay Signed In
+                </button>
+
+
+                <button
+                    class="admin-danger-button"
+                    id="adminLogoutConfirmButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                    Sign Out
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST NOTIFICATION REGION
+    ====================================================== -->
+
+    <div
+        class="admin-toast-region"
+        id="adminCoachToastRegion"
+        role="region"
+        aria-label="Notifications"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =====================================================
+         NOSCRIPT MESSAGE
+    ====================================================== -->
+
+    <noscript>
+
+        <div class="admin-noscript-message">
+
+            JavaScript is required to use the coaches management dashboard.
+
+        </div>
+
+    </noscript>
+
+
+    <!-- =====================================================
+         ADMIN COACHES JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/admin-coaches.js"></script>
+
+</body>
+
+</html>

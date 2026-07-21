@@ -1,0 +1,2832 @@
+<!-- =========================================================
+     ADMIN ACADEMIES
+     FILE: admin-academies.html
+     PART 1
+========================================================= -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage football academies registered on the Bharat Football Fans platform."
+    >
+
+    <title>
+        Academy Management | Bharat Football Fans Admin
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         STYLESHEETS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin-academies.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminLoadingScreen"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="admin-loading-content">
+
+            <div
+                class="admin-loading-logo"
+                aria-hidden="true"
+            >
+                <span>
+                    BFF
+                </span>
+            </div>
+
+            <div
+                class="admin-loading-spinner"
+                aria-hidden="true"
+            ></div>
+
+            <p>
+                Loading academy management...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADMIN APP
+    ====================================================== -->
+
+    <div class="admin-app">
+
+
+        <!-- =================================================
+             MOBILE SIDEBAR OVERLAY
+        ================================================== -->
+
+        <button
+            class="admin-sidebar-overlay"
+            id="adminSidebarOverlay"
+            type="button"
+            aria-label="Close navigation menu"
+            hidden
+        ></button>
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Admin navigation"
+        >
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    class="admin-brand"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans admin dashboard"
+                >
+
+                    <div
+                        class="admin-brand-mark"
+                        aria-hidden="true"
+                    >
+                        BFF
+                    </div>
+
+                    <div class="admin-brand-copy">
+
+                        <strong>
+                            Bharat Football Fans
+                        </strong>
+
+                        <span>
+                            Admin Control Centre
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close-button"
+                    id="adminSidebarCloseButton"
+                    type="button"
+                    aria-label="Close sidebar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 ADMIN PROFILE
+            ================================================== -->
+
+            <div class="admin-sidebar-profile">
+
+                <div
+                    class="admin-sidebar-avatar"
+                    aria-hidden="true"
+                >
+                    AD
+                </div>
+
+                <div class="admin-sidebar-profile-copy">
+
+                    <strong>
+                        Platform Administrator
+                    </strong>
+
+                    <span>
+                        National Operations
+                    </span>
+
+                </div>
+
+                <span
+                    class="admin-online-indicator"
+                    aria-label="Online"
+                ></span>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <nav class="admin-navigation">
+
+                <div class="admin-navigation-group">
+
+                    <span class="admin-navigation-label">
+                        Overview
+                    </span>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-dashboard.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-analytics.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-chart-line"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Analytics
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-group">
+
+                    <span class="admin-navigation-label">
+                        Community
+                    </span>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-users.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Users
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-players.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-person-running"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Players
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link active"
+                        href="admin-academies.html"
+                        aria-current="page"
+                    >
+
+                        <i
+                            class="fa-solid fa-shield-halved"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Academies
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-coaches.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-tie"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Coaches
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-scouts.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-binoculars"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Scouts
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-group">
+
+                    <span class="admin-navigation-label">
+                        Football Operations
+                    </span>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-trials.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Trials
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-events.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-calendar-days"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Events
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-scout-reports.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-file-signature"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Scout Reports
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-group">
+
+                    <span class="admin-navigation-label">
+                        Content
+                    </span>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-news.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-newspaper"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            News
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-media.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-photo-film"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Media Library
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-group">
+
+                    <span class="admin-navigation-label">
+                        Administration
+                    </span>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-verification.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-check"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Verification
+                        </span>
+
+                        <span class="admin-navigation-count">
+                            12
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-reports.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-flag"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Reports
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-settings.html"
+                    >
+
+                        <i
+                            class="fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Settings
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- =================================================
+                 SIDEBAR SUPPORT CARD
+            ================================================== -->
+
+            <div class="admin-sidebar-support-card">
+
+                <div class="admin-sidebar-support-icon">
+
+                    <i
+                        class="fa-solid fa-headset"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Need technical support?
+                    </strong>
+
+                    <p>
+                        Contact the development and security team.
+                    </p>
+
+                </div>
+
+                <a href="admin-help.html">
+                    Open Support
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOGOUT
+            ================================================== -->
+
+            <button
+                class="admin-sidebar-logout-button"
+                id="adminLogoutButton"
+                type="button"
+            >
+
+                <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                ></i>
+
+                <span>
+                    Sign Out
+                </span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+        ================================================== -->
+
+        <div class="admin-main-wrapper">
+
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-mobile-menu-button"
+                        id="adminMobileMenuButton"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="adminSidebar"
+                        aria-expanded="false"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                    <div class="admin-topbar-heading">
+
+                        <span>
+                            Football Operations
+                        </span>
+
+                        <h1>
+                            Academy Management
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-actions">
+
+                    <button
+                        class="admin-topbar-icon-button"
+                        id="adminGlobalSearchButton"
+                        type="button"
+                        aria-label="Search platform"
+                    >
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+
+                    <button
+                        class="admin-topbar-icon-button"
+                        id="adminNotificationsButton"
+                        type="button"
+                        aria-label="Open notifications"
+                    >
+
+                        <i
+                            class="fa-regular fa-bell"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span
+                            class="admin-notification-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+
+                    <button
+                        class="admin-topbar-profile-button"
+                        id="adminProfileMenuButton"
+                        type="button"
+                        aria-label="Open administrator menu"
+                        aria-expanded="false"
+                    >
+
+                        <span
+                            class="admin-topbar-avatar"
+                            aria-hidden="true"
+                        >
+                            AD
+                        </span>
+
+                        <span class="admin-topbar-profile-copy">
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <small>
+                                Super Admin
+                            </small>
+
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 MAIN CONTENT
+            ================================================== -->
+
+            <main class="admin-academies-main">
+
+
+                <!-- =================================================
+                     PAGE INTRO
+                ================================================== -->
+
+                <section class="admin-academies-page-intro">
+
+                    <div class="admin-academies-page-heading">
+
+                        <span class="admin-academies-eyebrow">
+                            National Academy Network
+                        </span>
+
+                        <h2>
+                            Manage Registered Academies
+                        </h2>
+
+                        <p>
+
+                            Review academy registrations, approve verified
+                            institutions, manage public visibility and monitor
+                            development programmes across India.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-academies-page-actions">
+
+                        <button
+                            class="admin-academies-secondary-button"
+                            id="adminExportAcademiesButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export Academies
+
+                        </button>
+
+                        <button
+                            class="admin-academies-primary-button"
+                            id="adminAddAcademyButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            Add Academy
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     METRICS
+                ================================================== -->
+
+                <section
+                    class="admin-academy-metrics-grid"
+                    aria-label="Academy statistics"
+                >
+
+                    <article class="admin-academy-metric-card">
+
+                        <div
+                            class="
+                                admin-academy-metric-icon
+                                primary
+                            "
+                        >
+
+                            <i
+                                class="fa-solid fa-shield-halved"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-academy-metric-copy">
+
+                            <span>
+                                Total Academies
+                            </span>
+
+                            <strong
+                                id="adminTotalAcademiesMetric"
+                            >
+                                0
+                            </strong>
+
+                            <small>
+                                Registered institutions
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-academy-metric-card">
+
+                        <div
+                            class="
+                                admin-academy-metric-icon
+                                success
+                            "
+                        >
+
+                            <i
+                                class="fa-solid fa-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-academy-metric-copy">
+
+                            <span>
+                                Verified
+                            </span>
+
+                            <strong
+                                id="adminVerifiedAcademiesMetric"
+                            >
+                                0
+                            </strong>
+
+                            <small>
+                                Approved academies
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-academy-metric-card">
+
+                        <div
+                            class="
+                                admin-academy-metric-icon
+                                warning
+                            "
+                        >
+
+                            <i
+                                class="fa-solid fa-clock"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-academy-metric-copy">
+
+                            <span>
+                                Pending Review
+                            </span>
+
+                            <strong
+                                id="adminPendingAcademiesMetric"
+                            >
+                                0
+                            </strong>
+
+                            <small>
+                                Awaiting verification
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-academy-metric-card">
+
+                        <div
+                            class="
+                                admin-academy-metric-icon
+                                info
+                            "
+                        >
+
+                            <i
+                                class="fa-solid fa-eye"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-academy-metric-copy">
+
+                            <span>
+                                Public Profiles
+                            </span>
+
+                            <strong
+                                id="adminPublicAcademiesMetric"
+                            >
+                                0
+                            </strong>
+
+                            <small>
+                                Visible in directory
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+                <!-- =========================================================
+     ADMIN ACADEMIES
+     FILE: admin-academies.html
+     PART 2
+========================================================= -->
+
+
+                <!-- =================================================
+                     FILTERS
+                ================================================== -->
+
+                <section class="admin-academies-filter-card">
+
+                    <form
+                        class="admin-academies-filter-form"
+                        id="adminAcademiesFilterForm"
+                    >
+
+                        <div class="admin-academies-search-field">
+
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i>
+
+                            <input
+                                id="adminAcademiesSearchInput"
+                                name="search"
+                                type="search"
+                                placeholder="Search by academy, owner, city or ID"
+                                autocomplete="off"
+                                aria-label="Search academies"
+                            >
+
+                        </div>
+
+
+                        <label>
+
+                            <span>
+                                Verification
+                            </span>
+
+                            <select
+                                id="adminAcademiesVerificationFilter"
+                                name="verification"
+                            >
+
+                                <option value="">
+                                    All statuses
+                                </option>
+
+                                <option value="verified">
+                                    Verified
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="rejected">
+                                    Rejected
+                                </option>
+
+                                <option value="incomplete">
+                                    Incomplete
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Academy Type
+                            </span>
+
+                            <select
+                                id="adminAcademiesTypeFilter"
+                                name="type"
+                            >
+
+                                <option value="">
+                                    All types
+                                </option>
+
+                                <option value="elite-residential">
+                                    Elite Residential
+                                </option>
+
+                                <option value="professional">
+                                    Professional Academy
+                                </option>
+
+                                <option value="club">
+                                    Club Academy
+                                </option>
+
+                                <option value="grassroots">
+                                    Grassroots Academy
+                                </option>
+
+                                <option value="school">
+                                    School Academy
+                                </option>
+
+                                <option value="community">
+                                    Community Academy
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                State
+                            </span>
+
+                            <select
+                                id="adminAcademiesStateFilter"
+                                name="state"
+                            >
+
+                                <option value="">
+                                    All states
+                                </option>
+
+                                <option value="Punjab">
+                                    Punjab
+                                </option>
+
+                                <option value="Maharashtra">
+                                    Maharashtra
+                                </option>
+
+                                <option value="Goa">
+                                    Goa
+                                </option>
+
+                                <option value="West Bengal">
+                                    West Bengal
+                                </option>
+
+                                <option value="Kerala">
+                                    Kerala
+                                </option>
+
+                                <option value="Karnataka">
+                                    Karnataka
+                                </option>
+
+                                <option value="Delhi">
+                                    Delhi
+                                </option>
+
+                                <option value="Assam">
+                                    Assam
+                                </option>
+
+                                <option value="Nagaland">
+                                    Nagaland
+                                </option>
+
+                                <option value="Manipur">
+                                    Manipur
+                                </option>
+
+                                <option value="Meghalaya">
+                                    Meghalaya
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Visibility
+                            </span>
+
+                            <select
+                                id="adminAcademiesVisibilityFilter"
+                                name="visibility"
+                            >
+
+                                <option value="">
+                                    All visibility
+                                </option>
+
+                                <option value="public">
+                                    Public
+                                </option>
+
+                                <option value="hidden">
+                                    Hidden
+                                </option>
+
+                                <option value="restricted">
+                                    Restricted
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <label>
+
+                            <span>
+                                Sort By
+                            </span>
+
+                            <select
+                                id="adminAcademiesSortFilter"
+                                name="sort"
+                            >
+
+                                <option value="latest">
+                                    Latest Added
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest Added
+                                </option>
+
+                                <option value="name-asc">
+                                    Name A–Z
+                                </option>
+
+                                <option value="name-desc">
+                                    Name Z–A
+                                </option>
+
+                                <option value="players-high">
+                                    Most Players
+                                </option>
+
+                                <option value="completion-high">
+                                    Highest Completion
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <button
+                            class="admin-academies-filter-button"
+                            type="submit"
+                        >
+
+                            <i
+                                class="fa-solid fa-filter"
+                                aria-hidden="true"
+                            ></i>
+
+                            Apply Filters
+
+                        </button>
+
+
+                        <button
+                            class="admin-academies-reset-button"
+                            id="adminAcademiesResetFiltersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-rotate-left"
+                                aria-hidden="true"
+                            ></i>
+
+                            Reset
+
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+                <!-- =================================================
+                     TABLE CARD
+                ================================================== -->
+
+                <section class="admin-academies-table-card">
+
+                    <div class="admin-academies-table-header">
+
+                        <div>
+
+                            <span class="admin-academies-table-eyebrow">
+                                Academy Directory
+                            </span>
+
+                            <h3>
+                                Registered Academies
+                            </h3>
+
+                            <p
+                                id="adminAcademiesTableSummary"
+                                aria-live="polite"
+                            >
+                                Loading academy records...
+                            </p>
+
+                        </div>
+
+
+                        <div class="admin-academies-table-header-actions">
+
+                            <button
+                                class="admin-academies-icon-button"
+                                id="adminRefreshAcademiesButton"
+                                type="button"
+                                aria-label="Refresh academy list"
+                                title="Refresh academy list"
+                            >
+
+                                <i
+                                    class="fa-solid fa-rotate"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         BULK ACTIONS
+                    ================================================== -->
+
+                    <div
+                        class="admin-academies-bulk-actions"
+                        id="adminAcademiesBulkActionsBar"
+                        hidden
+                    >
+
+                        <div class="admin-academies-bulk-summary">
+
+                            <strong
+                                id="adminSelectedAcademiesCount"
+                            >
+                                0 academies selected
+                            </strong>
+
+                            <button
+                                id="adminClearAcademySelectionButton"
+                                type="button"
+                            >
+                                Clear selection
+                            </button>
+
+                        </div>
+
+
+                        <div class="admin-academies-bulk-buttons">
+
+                            <button
+                                class="admin-academies-bulk-button success"
+                                id="adminBulkVerifyAcademiesButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-circle-check"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Verify
+
+                            </button>
+
+                            <button
+                                class="admin-academies-bulk-button"
+                                id="adminBulkShowAcademiesButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Make Public
+
+                            </button>
+
+                            <button
+                                class="admin-academies-bulk-button"
+                                id="adminBulkHideAcademiesButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye-slash"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Hide
+
+                            </button>
+
+                            <button
+                                class="admin-academies-bulk-button danger"
+                                id="adminBulkDeleteAcademiesButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-trash-can"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TABLE
+                    ================================================== -->
+
+                    <div class="admin-academies-table-wrapper">
+
+                        <table class="admin-academies-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+
+                                        <input
+                                            id="adminSelectAllAcademiesCheckbox"
+                                            type="checkbox"
+                                            aria-label="Select all visible academies"
+                                        >
+
+                                    </th>
+
+                                    <th>
+                                        Academy
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Location
+                                    </th>
+
+                                    <th>
+                                        Owner / Director
+                                    </th>
+
+                                    <th>
+                                        Players
+                                    </th>
+
+                                    <th>
+                                        Verification
+                                    </th>
+
+                                    <th>
+                                        Visibility
+                                    </th>
+
+                                    <th>
+                                        Profile
+                                    </th>
+
+                                    <th>
+                                        Last Updated
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminAcademiesTableBody">
+
+                                <tr>
+
+                                    <td colspan="11">
+
+                                        <div class="admin-academies-initial-loading">
+
+                                            <i
+                                                class="fa-solid fa-spinner fa-spin"
+                                                aria-hidden="true"
+                                            ></i>
+
+                                            <span>
+                                                Loading academies...
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PAGINATION
+                    ================================================== -->
+
+                    <div class="admin-academies-pagination-wrapper">
+
+                        <button
+                            class="admin-academies-pagination-button"
+                            id="adminAcademiesPreviousPageButton"
+                            type="button"
+                            disabled
+                        >
+
+                            <i
+                                class="fa-solid fa-chevron-left"
+                                aria-hidden="true"
+                            ></i>
+
+                            Previous
+
+                        </button>
+
+
+                        <div
+                            class="admin-academies-pagination"
+                            id="adminAcademiesPagination"
+                            aria-label="Academy pagination"
+                        ></div>
+
+
+                        <button
+                            class="admin-academies-pagination-button"
+                            id="adminAcademiesNextPageButton"
+                            type="button"
+                            disabled
+                        >
+
+                            Next
+
+                            <i
+                                class="fa-solid fa-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="admin-footer">
+
+                <p>
+
+                    ©
+                    <span id="adminFooterYear"></span>
+                    Bharat Football Fans. Mission FIFA 2034.
+
+                </p>
+
+                <div>
+
+                    <a href="admin-privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="admin-security.html">
+                        Security
+                    </a>
+
+                    <a href="admin-help.html">
+                        Support
+                    </a>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST REGION
+    ====================================================== -->
+
+    <div
+        class="admin-toast-region"
+        id="adminToastRegion"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <!-- =========================================================
+     ADMIN ACADEMIES
+     FILE: admin-academies.html
+     PART 3
+========================================================= -->
+
+
+    <!-- =====================================================
+         ADD ACADEMY MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminAddAcademyModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminAddAcademyModalBackdrop"
+            type="button"
+            aria-label="Close add academy modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminAddAcademyModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Academy Registration
+                    </span>
+
+                    <h2 id="adminAddAcademyModalTitle">
+                        Add New Academy
+                    </h2>
+
+                    <p>
+                        Create a new academy record for the national directory.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminAddAcademyModalCloseButton"
+                    type="button"
+                    aria-label="Close add academy modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <form
+                class="admin-academy-form"
+                id="adminAddAcademyForm"
+                novalidate
+            >
+
+                <div class="admin-academy-form-grid">
+
+
+                    <label>
+
+                        <span>
+                            Academy Name
+                        </span>
+
+                        <input
+                            id="adminAddAcademyName"
+                            name="name"
+                            type="text"
+                            autocomplete="organization"
+                            placeholder="Enter academy name"
+                            required
+                        >
+
+                        <small data-add-error-for="name"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Registration Email
+                        </span>
+
+                        <input
+                            id="adminAddAcademyEmail"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="academy@example.com"
+                            required
+                        >
+
+                        <small data-add-error-for="email"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Contact Number
+                        </span>
+
+                        <input
+                            id="adminAddAcademyPhone"
+                            name="phone"
+                            type="tel"
+                            autocomplete="tel"
+                            placeholder="+91 98765 43210"
+                        >
+
+                        <small data-add-error-for="phone"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Academy Type
+                        </span>
+
+                        <select
+                            id="adminAddAcademyType"
+                            name="type"
+                            required
+                        >
+
+                            <option value="">
+                                Select academy type
+                            </option>
+
+                            <option value="elite-residential">
+                                Elite Residential
+                            </option>
+
+                            <option value="professional">
+                                Professional Academy
+                            </option>
+
+                            <option value="club">
+                                Club Academy
+                            </option>
+
+                            <option value="grassroots">
+                                Grassroots Academy
+                            </option>
+
+                            <option value="school">
+                                School Academy
+                            </option>
+
+                            <option value="community">
+                                Community Academy
+                            </option>
+
+                        </select>
+
+                        <small data-add-error-for="type"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Established Year
+                        </span>
+
+                        <input
+                            id="adminAddAcademyEstablishedYear"
+                            name="establishedYear"
+                            type="number"
+                            min="1900"
+                            max="2100"
+                            placeholder="2005"
+                        >
+
+                        <small data-add-error-for="establishedYear"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Owner / Director
+                        </span>
+
+                        <input
+                            id="adminAddAcademyOwnerName"
+                            name="ownerName"
+                            type="text"
+                            placeholder="Enter owner or director name"
+                            required
+                        >
+
+                        <small data-add-error-for="ownerName"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            State
+                        </span>
+
+                        <input
+                            id="adminAddAcademyState"
+                            name="state"
+                            type="text"
+                            placeholder="Punjab"
+                            required
+                        >
+
+                        <small data-add-error-for="state"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            City
+                        </span>
+
+                        <input
+                            id="adminAddAcademyCity"
+                            name="city"
+                            type="text"
+                            placeholder="Mohali"
+                            required
+                        >
+
+                        <small data-add-error-for="city"></small>
+
+                    </label>
+
+
+                    <label class="admin-academy-form-full-width">
+
+                        <span>
+                            Address
+                        </span>
+
+                        <input
+                            id="adminAddAcademyAddress"
+                            name="address"
+                            type="text"
+                            autocomplete="street-address"
+                            placeholder="Enter complete academy address"
+                        >
+
+                        <small data-add-error-for="address"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Number of Players
+                        </span>
+
+                        <input
+                            id="adminAddAcademyPlayers"
+                            name="players"
+                            type="number"
+                            min="0"
+                            step="1"
+                            value="0"
+                        >
+
+                        <small data-add-error-for="players"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Number of Coaches
+                        </span>
+
+                        <input
+                            id="adminAddAcademyCoaches"
+                            name="coaches"
+                            type="number"
+                            min="0"
+                            step="1"
+                            value="0"
+                        >
+
+                        <small data-add-error-for="coaches"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Age Groups
+                        </span>
+
+                        <input
+                            id="adminAddAcademyAgeGroups"
+                            name="ageGroups"
+                            type="text"
+                            placeholder="U-8 to U-21"
+                        >
+
+                        <small data-add-error-for="ageGroups"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Residential Facility
+                        </span>
+
+                        <select
+                            id="adminAddAcademyResidential"
+                            name="residential"
+                        >
+
+                            <option value="available">
+                                Available
+                            </option>
+
+                            <option value="not-available">
+                                Not Available
+                            </option>
+
+                            <option value="limited">
+                                Limited
+                            </option>
+
+                        </select>
+
+                        <small data-add-error-for="residential"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Verification Status
+                        </span>
+
+                        <select
+                            id="adminAddAcademyVerification"
+                            name="verification"
+                        >
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="verified">
+                                Verified
+                            </option>
+
+                            <option value="rejected">
+                                Rejected
+                            </option>
+
+                            <option value="incomplete">
+                                Incomplete
+                            </option>
+
+                        </select>
+
+                        <small data-add-error-for="verification"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Profile Visibility
+                        </span>
+
+                        <select
+                            id="adminAddAcademyVisibility"
+                            name="visibility"
+                        >
+
+                            <option value="hidden">
+                                Hidden
+                            </option>
+
+                            <option value="public">
+                                Public
+                            </option>
+
+                            <option value="restricted">
+                                Restricted
+                            </option>
+
+                        </select>
+
+                        <small data-add-error-for="visibility"></small>
+
+                    </label>
+
+
+                    <label class="admin-academy-form-full-width">
+
+                        <span>
+                            Academy Description
+                        </span>
+
+                        <textarea
+                            id="adminAddAcademyDescription"
+                            name="description"
+                            rows="5"
+                            placeholder="Enter a short academy overview"
+                        ></textarea>
+
+                        <small data-add-error-for="description"></small>
+
+                    </label>
+
+
+                    <label class="admin-academy-form-full-width">
+
+                        <span>
+                            Administrative Note
+                        </span>
+
+                        <textarea
+                            id="adminAddAcademyNote"
+                            name="note"
+                            rows="4"
+                            placeholder="Add an internal note for administrators"
+                        ></textarea>
+
+                        <small data-add-error-for="note"></small>
+
+                    </label>
+
+                </div>
+
+
+                <div class="admin-academy-modal-actions">
+
+                    <button
+                        class="admin-academies-secondary-button"
+                        id="adminCancelAddAcademyButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-academies-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-plus"
+                            aria-hidden="true"
+                        ></i>
+
+                        Add Academy
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VIEW ACADEMY MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminViewAcademyModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminViewAcademyModalBackdrop"
+            type="button"
+            aria-label="Close academy details"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog extra-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminViewAcademyModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Academy Profile
+                    </span>
+
+                    <h2 id="adminViewAcademyModalTitle">
+                        Academy Details
+                    </h2>
+
+                    <p>
+                        Review complete academy registration information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminViewAcademyModalCloseButton"
+                    type="button"
+                    aria-label="Close academy details"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="admin-academy-details-content"
+                id="adminAcademyDetailsContent"
+            ></div>
+
+
+            <div class="admin-academy-modal-actions">
+
+                <button
+                    class="admin-academies-secondary-button"
+                    id="adminCloseAcademyDetailsButton"
+                    type="button"
+                >
+                    Close
+                </button>
+
+                <button
+                    class="admin-academies-primary-button"
+                    id="adminEditAcademyFromDetailsButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-pen"
+                        aria-hidden="true"
+                    ></i>
+
+                    Edit Academy
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDIT ACADEMY MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminEditAcademyModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminEditAcademyModalBackdrop"
+            type="button"
+            aria-label="Close edit academy modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminEditAcademyModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Academy Management
+                    </span>
+
+                    <h2 id="adminEditAcademyModalTitle">
+                        Edit Academy
+                    </h2>
+
+                    <p>
+                        Update academy information, verification and visibility.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminEditAcademyModalCloseButton"
+                    type="button"
+                    aria-label="Close edit academy modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <form
+                class="admin-academy-form"
+                id="adminEditAcademyForm"
+                novalidate
+            >
+
+                <input
+                    id="adminEditAcademyId"
+                    name="academyId"
+                    type="hidden"
+                >
+
+
+                <div
+                    class="admin-academy-form-grid"
+                    id="adminEditAcademyFormFields"
+                ></div>
+
+
+                <div class="admin-academy-modal-actions">
+
+                    <button
+                        class="admin-academies-secondary-button"
+                        id="adminCancelEditAcademyButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-academies-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-floppy-disk"
+                            aria-hidden="true"
+                        ></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+     ADMIN ACADEMIES
+     FILE: admin-academies.html
+     PART 4
+========================================================= -->
+
+
+    <!-- =====================================================
+         VERIFY ACADEMY MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminVerifyAcademyModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminVerifyAcademyModalBackdrop"
+            type="button"
+            aria-label="Close verify academy modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminVerifyAcademyModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Verification Review
+                    </span>
+
+                    <h2 id="adminVerifyAcademyModalTitle">
+                        Verify Academy
+                    </h2>
+
+                    <p>
+                        Confirm that this academy meets the platform verification requirements.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminVerifyAcademyModalCloseButton"
+                    type="button"
+                    aria-label="Close verify academy modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="admin-academy-confirmation-content">
+
+                <div
+                    class="admin-academy-confirmation-icon success"
+                    aria-hidden="true"
+                >
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <h3>
+                    Approve academy verification?
+                </h3>
+
+                <p>
+
+                    You are about to verify
+
+                    <strong id="adminVerifyAcademyName">
+                        this academy
+                    </strong>.
+
+                    The academy will receive verified status on the platform.
+
+                </p>
+
+            </div>
+
+
+            <div class="admin-academy-modal-actions">
+
+                <button
+                    class="admin-academies-secondary-button"
+                    id="adminCancelVerifyAcademyButton"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="admin-academies-primary-button"
+                    id="adminConfirmVerifyAcademyButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-circle-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    Verify Academy
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DELETE ACADEMY MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminDeleteAcademyModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminDeleteAcademyModalBackdrop"
+            type="button"
+            aria-label="Close delete academy modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminDeleteAcademyModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Permanent Action
+                    </span>
+
+                    <h2 id="adminDeleteAcademyModalTitle">
+                        Delete Academy
+                    </h2>
+
+                    <p>
+                        This action will remove the academy record from the platform.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminDeleteAcademyModalCloseButton"
+                    type="button"
+                    aria-label="Close delete academy modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <form
+                class="admin-academy-delete-form"
+                id="adminDeleteAcademyForm"
+                novalidate
+            >
+
+                <input
+                    id="adminDeleteAcademyId"
+                    name="academyId"
+                    type="hidden"
+                >
+
+
+                <div class="admin-academy-confirmation-content">
+
+                    <div
+                        class="admin-academy-confirmation-icon danger"
+                        aria-hidden="true"
+                    >
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    </div>
+
+                    <h3>
+                        Delete this academy permanently?
+                    </h3>
+
+                    <p>
+
+                        You are deleting
+
+                        <strong id="adminDeleteAcademyName">
+                            this academy
+                        </strong>.
+
+                        Associated public profile data may no longer be available.
+
+                    </p>
+
+                </div>
+
+
+                <label class="admin-academy-delete-confirmation-field">
+
+                    <span>
+                        Type DELETE to confirm
+                    </span>
+
+                    <input
+                        id="adminDeleteAcademyConfirmationInput"
+                        name="confirmation"
+                        type="text"
+                        autocomplete="off"
+                        placeholder="DELETE"
+                    >
+
+                    <small data-delete-academy-error-for="confirmation"></small>
+
+                </label>
+
+
+                <div class="admin-academy-modal-actions">
+
+                    <button
+                        class="admin-academies-secondary-button"
+                        id="adminCancelDeleteAcademyButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-academies-danger-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-trash-can"
+                            aria-hidden="true"
+                        ></i>
+
+                        Delete Academy
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPORT ACADEMIES MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminExportAcademiesModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminExportAcademiesModalBackdrop"
+            type="button"
+            aria-label="Close export academies modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminExportAcademiesModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Data Export
+                    </span>
+
+                    <h2 id="adminExportAcademiesModalTitle">
+                        Export Academies
+                    </h2>
+
+                    <p>
+                        Download the current academy records for reporting or review.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminExportAcademiesModalCloseButton"
+                    type="button"
+                    aria-label="Close export academies modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <form
+                class="admin-academy-export-form"
+                id="adminExportAcademiesForm"
+            >
+
+                <label>
+
+                    <span>
+                        Export Format
+                    </span>
+
+                    <select
+                        id="adminAcademiesExportFormat"
+                        name="format"
+                    >
+
+                        <option value="csv">
+                            CSV Spreadsheet
+                        </option>
+
+                        <option value="json">
+                            JSON Data
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <div class="admin-academy-export-note">
+
+                    <i
+                        class="fa-solid fa-circle-info"
+                        aria-hidden="true"
+                    ></i>
+
+                    <p>
+                        The export will include the academy records matching the current filters.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-academy-modal-actions">
+
+                    <button
+                        class="admin-academies-secondary-button"
+                        id="adminCancelExportAcademiesButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-academies-primary-button"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-download"
+                            aria-hidden="true"
+                        ></i>
+
+                        Download Export
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-academy-modal"
+        id="adminLogoutModal"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-academy-modal-backdrop"
+            id="adminLogoutModalBackdrop"
+            type="button"
+            aria-label="Close sign out modal"
+        ></button>
+
+
+        <div
+            class="admin-academy-modal-dialog small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminLogoutModalTitle"
+        >
+
+            <div class="admin-academy-modal-header">
+
+                <div>
+
+                    <span>
+                        Account Session
+                    </span>
+
+                    <h2 id="adminLogoutModalTitle">
+                        Sign Out
+                    </h2>
+
+                    <p>
+                        Confirm that you want to end your administrator session.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-academy-modal-close-button"
+                    id="adminLogoutModalCloseButton"
+                    type="button"
+                    aria-label="Close sign out modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="admin-academy-confirmation-content">
+
+                <div
+                    class="admin-academy-confirmation-icon warning"
+                    aria-hidden="true"
+                >
+
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                </div>
+
+                <h3>
+                    Sign out of the admin portal?
+                </h3>
+
+                <p>
+                    You will need to authenticate again to access administrative controls.
+                </p>
+
+            </div>
+
+
+            <div class="admin-academy-modal-actions">
+
+                <button
+                    class="admin-academies-secondary-button"
+                    id="adminLogoutCancelButton"
+                    type="button"
+                >
+                    Stay Signed In
+                </button>
+
+                <button
+                    class="admin-academies-danger-button"
+                    id="adminLogoutConfirmButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                    Sign Out
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="js/admin-common.js"></script>
+
+    <script src="js/admin-academies.js"></script>
+
+</body>
+
+</html>

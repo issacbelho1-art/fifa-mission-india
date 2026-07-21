@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage football scouts, verification, assignments and performance from the Bharat Football Fans admin portal."
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>
+        Scouts Management | Bharat Football Fans Admin
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin-scouts.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         PAGE LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminScoutsLoadingScreen"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading scouts management"
+    >
+
+        <div class="admin-loading-content">
+
+            <div
+                class="admin-loading-logo"
+                aria-hidden="true"
+            >
+
+                <i class="fa-solid fa-binoculars"></i>
+
+            </div>
+
+            <h1>
+                Scouts Management
+            </h1>
+
+            <p>
+                Loading scout records and platform data...
+            </p>
+
+            <div
+                class="admin-loading-bar"
+                aria-hidden="true"
+            >
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="admin-sidebar-overlay"
+        id="adminScoutsSidebarOverlay"
+        hidden
+    ></div>
+
+
+    <!-- =====================================================
+         ADMIN APPLICATION
+    ====================================================== -->
+
+    <div class="admin-app-shell">
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminScoutsSidebar"
+            aria-label="Admin navigation"
+        >
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    class="admin-brand"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans Admin Dashboard"
+                >
+
+                    <span
+                        class="admin-brand-icon"
+                        aria-hidden="true"
+                    >
+
+                        <i class="fa-solid fa-futbol"></i>
+
+                    </span>
+
+                    <span class="admin-brand-text">
+
+                        <strong>
+                            BHARAT
+                        </strong>
+
+                        <small>
+                            FOOTBALL FANS
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close"
+                    id="adminScoutsSidebarCloseButton"
+                    type="button"
+                    aria-label="Close sidebar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="admin-profile-card">
+
+                <div
+                    class="admin-profile-avatar"
+                    aria-hidden="true"
+                >
+
+                    IB
+
+                </div>
+
+                <div class="admin-profile-details">
+
+                    <strong>
+                        Issac Belho
+                    </strong>
+
+                    <span>
+                        Platform Administrator
+                    </span>
+
+                </div>
+
+                <span
+                    class="admin-profile-status"
+                    title="Online"
+                    aria-label="Online"
+                ></span>
+
+            </div>
+
+
+            <!-- PRIMARY NAVIGATION -->
+
+            <nav class="admin-navigation">
+
+                <p class="admin-navigation-label">
+                    Overview
+                </p>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-dashboard.html"
+                >
+
+                    <i
+                        class="fa-solid fa-grid-2"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-analytics.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-line"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Analytics
+                    </span>
+
+                </a>
+
+
+                <p class="admin-navigation-label">
+                    Community
+                </p>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-users.html"
+                >
+
+                    <i
+                        class="fa-solid fa-users"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-players.html"
+                >
+
+                    <i
+                        class="fa-solid fa-person-running"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Players
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-academies.html"
+                >
+
+                    <i
+                        class="fa-solid fa-building-columns"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Academies
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-coaches.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chalkboard-user"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Coaches
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link active"
+                    href="admin-scouts.html"
+                    aria-current="page"
+                >
+
+                    <i
+                        class="fa-solid fa-binoculars"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Scouts
+                    </span>
+
+                </a>
+
+
+                <p class="admin-navigation-label">
+                    Football Operations
+                </p>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-trials.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Trials
+                    </span>
+
+                    <span class="admin-navigation-count">
+                        18
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-reports.html"
+                >
+
+                    <i
+                        class="fa-solid fa-file-signature"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Scout Reports
+                    </span>
+
+                    <span class="admin-navigation-count">
+                        24
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-clubs.html"
+                >
+
+                    <i
+                        class="fa-solid fa-shield-halved"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Clubs
+                    </span>
+
+                </a>
+
+
+                <p class="admin-navigation-label">
+                    Content
+                </p>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-news.html"
+                >
+
+                    <i
+                        class="fa-solid fa-newspaper"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        News
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-events.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-days"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Events
+                    </span>
+
+                </a>
+
+
+                <p class="admin-navigation-label">
+                    Administration
+                </p>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-settings.html"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-roles.html"
+                >
+
+                    <i
+                        class="fa-solid fa-user-shield"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Roles & Permissions
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SUPPORT CARD -->
+
+            <div class="admin-sidebar-support">
+
+                <div
+                    class="admin-sidebar-support-icon"
+                    aria-hidden="true"
+                >
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Need assistance?
+                    </strong>
+
+                    <p>
+                        Contact the technical support team.
+                    </p>
+
+                </div>
+
+                <a href="admin-support.html">
+                    Get Support
+                </a>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                class="admin-sidebar-logout"
+                id="adminScoutsLogoutButton"
+                type="button"
+            >
+
+                <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                ></i>
+
+                <span>
+                    Sign Out
+                </span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <div class="admin-main-shell">
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-sidebar-toggle"
+                        id="adminScoutsSidebarToggleButton"
+                        type="button"
+                        aria-label="Open sidebar"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+
+                    <div class="admin-topbar-search">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            id="adminScoutsGlobalSearch"
+                            type="search"
+                            placeholder="Search across the admin portal..."
+                            aria-label="Search across the admin portal"
+                            autocomplete="off"
+                        >
+
+                        <span class="admin-search-shortcut">
+                            Ctrl K
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-actions">
+
+                    <a
+                        class="admin-view-website-button"
+                        href="index.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            View Website
+                        </span>
+
+                    </a>
+
+
+                    <div
+                        class="admin-notification-wrapper"
+                        data-notification-control
+                    >
+
+                        <button
+                            class="admin-notification-button"
+                            id="adminScoutsNotificationButton"
+                            type="button"
+                            aria-label="Open notifications"
+                            aria-haspopup="true"
+                        >
+
+                            <i
+                                class="fa-regular fa-bell"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span
+                                class="admin-notification-indicator"
+                                aria-label="3 unread notifications"
+                            >
+                                3
+                            </span>
+
+                        </button>
+
+
+                        <section
+                            class="admin-notification-panel"
+                            id="adminScoutsNotificationPanel"
+                            aria-label="Notifications"
+                            hidden
+                        >
+
+                            <header class="admin-panel-header">
+
+                                <div>
+
+                                    <h2>
+                                        Notifications
+                                    </h2>
+
+                                    <p>
+                                        Recent platform activity
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    id="adminScoutsNotificationCloseButton"
+                                    type="button"
+                                    aria-label="Close notifications"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-xmark"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+                            </header>
+
+
+                            <div class="admin-notification-list">
+
+                                <article class="admin-notification-item unread">
+
+                                    <span
+                                        class="admin-notification-icon verification"
+                                        aria-hidden="true"
+                                    >
+
+                                        <i class="fa-solid fa-user-check"></i>
+
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            New scout verification request
+                                        </strong>
+
+                                        <p>
+                                            Arjun Mehta submitted identity and licence documents.
+                                        </p>
+
+                                        <time datetime="2026-07-21T17:30:00+05:30">
+                                            35 minutes ago
+                                        </time>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="admin-notification-item unread">
+
+                                    <span
+                                        class="admin-notification-icon report"
+                                        aria-hidden="true"
+                                    >
+
+                                        <i class="fa-solid fa-file-lines"></i>
+
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Player report submitted
+                                        </strong>
+
+                                        <p>
+                                            A new scouting report requires moderation.
+                                        </p>
+
+                                        <time datetime="2026-07-21T15:45:00+05:30">
+                                            2 hours ago
+                                        </time>
+
+                                    </div>
+
+                                </article>
+
+
+                                <article class="admin-notification-item unread">
+
+                                    <span
+                                        class="admin-notification-icon warning"
+                                        aria-hidden="true"
+                                    >
+
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Document review overdue
+                                        </strong>
+
+                                        <p>
+                                            Four scout applications have been pending for over 48 hours.
+                                        </p>
+
+                                        <time datetime="2026-07-20T18:00:00+05:30">
+                                            Yesterday
+                                        </time>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <footer class="admin-panel-footer">
+
+                                <a href="admin-notifications.html">
+                                    View all notifications
+                                </a>
+
+                            </footer>
+
+                        </section>
+
+                    </div>
+
+
+                    <div
+                        class="admin-account-wrapper"
+                        data-account-control
+                    >
+
+                        <button
+                            class="admin-account-button"
+                            id="adminScoutsAccountButton"
+                            type="button"
+                            aria-label="Open administrator account menu"
+                            aria-haspopup="true"
+                        >
+
+                            <span class="admin-account-avatar">
+                                IB
+                            </span>
+
+                            <span class="admin-account-text">
+
+                                <strong>
+                                    Issac Belho
+                                </strong>
+
+                                <small>
+                                    Administrator
+                                </small>
+
+                            </span>
+
+                            <i
+                                class="fa-solid fa-chevron-down"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+
+                        <div
+                            class="admin-account-menu"
+                            id="adminScoutsAccountMenu"
+                            role="menu"
+                            hidden
+                        >
+
+                            <a
+                                href="admin-profile.html"
+                                role="menuitem"
+                            >
+
+                                <i
+                                    class="fa-regular fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="admin-settings.html"
+                                role="menuitem"
+                            >
+
+                                <i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Account Settings
+
+                            </a>
+
+
+                            <hr>
+
+
+                            <button
+                                id="adminScoutsAccountLogoutButton"
+                                type="button"
+                                role="menuitem"
+                            >
+
+                                <i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Sign Out
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <main class="admin-main-content">
+
+                <!-- PAGE HEADING -->
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <nav
+                            class="admin-breadcrumb"
+                            aria-label="Breadcrumb"
+                        >
+
+                            <a href="admin-dashboard.html">
+                                Dashboard
+                            </a>
+
+                            <i
+                                class="fa-solid fa-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span aria-current="page">
+                                Scouts
+                            </span>
+
+                        </nav>
+
+                        <h1>
+                            Scouts Management
+                        </h1>
+
+                        <p>
+                            Review scout profiles, verify credentials, manage assignments and monitor scouting activity across India.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-page-heading-actions">
+
+                        <button
+                            class="admin-secondary-button"
+                            id="adminScoutsExportButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export Scouts
+
+                        </button>
+
+
+                        <button
+                            class="admin-primary-button"
+                            id="adminScoutsAddButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            Add Scout
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     METRIC CARDS
+                ================================================== -->
+
+                <section
+                    class="admin-metrics-grid"
+                    aria-label="Scout statistics"
+                >
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-card-header">
+
+                            <span class="admin-metric-icon scouts">
+
+                                <i
+                                    class="fa-solid fa-binoculars"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </span>
+
+                            <span class="admin-metric-trend positive">
+
+                                <i
+                                    class="fa-solid fa-arrow-trend-up"
+                                    aria-hidden="true"
+                                ></i>
+
+                                8.4%
+
+                            </span>
+
+                        </div>
+
+                        <div class="admin-metric-card-body">
+
+                            <span>
+                                Total Scouts
+                            </span>
+
+                            <strong id="adminScoutsTotalMetric">
+                                0
+                            </strong>
+
+                            <p>
+                                Registered scout profiles
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-card-header">
+
+                            <span class="admin-metric-icon verified">
+
+                                <i
+                                    class="fa-solid fa-circle-check"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </span>
+
+                            <span class="admin-metric-label">
+                                Approved
+                            </span>
+
+                        </div>
+
+                        <div class="admin-metric-card-body">
+
+                            <span>
+                                Verified Scouts
+                            </span>
+
+                            <strong id="adminScoutsVerifiedMetric">
+                                0
+                            </strong>
+
+                            <p>
+                                Identity and credentials approved
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-card-header">
+
+                            <span class="admin-metric-icon pending">
+
+                                <i
+                                    class="fa-solid fa-clock"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </span>
+
+                            <span class="admin-metric-label">
+                                Review Required
+                            </span>
+
+                        </div>
+
+                        <div class="admin-metric-card-body">
+
+                            <span>
+                                Pending Verification
+                            </span>
+
+                            <strong id="adminScoutsPendingMetric">
+                                0
+                            </strong>
+
+                            <p>
+                                Applications awaiting review
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-card-header">
+
+                            <span class="admin-metric-icon reports">
+
+                                <i
+                                    class="fa-solid fa-file-signature"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </span>
+
+                            <span class="admin-metric-trend positive">
+
+                                <i
+                                    class="fa-solid fa-arrow-trend-up"
+                                    aria-hidden="true"
+                                ></i>
+
+                                12.6%
+
+                            </span>
+
+                        </div>
+
+                        <div class="admin-metric-card-body">
+
+                            <span>
+                                Reports Submitted
+                            </span>
+
+                            <strong id="adminScoutsReportsMetric">
+                                0
+                            </strong>
+
+                            <p>
+                                Player reports submitted this month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                

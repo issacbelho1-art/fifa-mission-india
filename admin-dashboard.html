@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Bharat Football Fans Mission FIFA 2034 administrative dashboard."
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="referrer"
+        content="strict-origin-when-cross-origin"
+    >
+
+    <meta
+        name="theme-color"
+        content="#07172e"
+    >
+
+
+    <!-- =====================================================
+         PAGE TITLE
+    ====================================================== -->
+
+    <title>
+        Admin Dashboard | Bharat Football Fans
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICON LIBRARY
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD STYLESHEET
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ACCESSIBILITY SKIP LINK
+    ====================================================== -->
+
+    <a
+        class="admin-skip-link"
+        href="#adminMainContent"
+    >
+        Skip to dashboard content
+    </a>
+
+
+    <!-- =====================================================
+         APPLICATION LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminLoadingScreen"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading administrative dashboard"
+    >
+
+        <div class="admin-loading-content">
+
+            <div
+                class="admin-loading-logo"
+                aria-hidden="true"
+            >
+                BFF
+            </div>
+
+            <div
+                class="admin-loading-spinner"
+                aria-hidden="true"
+            ></div>
+
+            <p>
+                Securing your admin session...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SESSION WARNING BANNER
+    ====================================================== -->
+
+    <div
+        class="admin-session-warning"
+        id="adminSessionWarning"
+        role="alert"
+        hidden
+    >
+
+        <div class="admin-session-warning-content">
+
+            <i
+                class="fa-solid fa-clock"
+                aria-hidden="true"
+            ></i>
+
+            <p>
+                Your administrative session will expire soon.
+            </p>
+
+            <button
+                class="admin-session-extend-button"
+                id="extendAdminSessionButton"
+                type="button"
+            >
+                Extend session
+            </button>
+
+            <button
+                class="admin-session-warning-close"
+                id="closeSessionWarningButton"
+                type="button"
+                aria-label="Dismiss session warning"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADMIN APPLICATION
+    ====================================================== -->
+
+    <div
+        class="admin-app"
+        id="adminApp"
+    >
+
+
+        <!-- =================================================
+             MOBILE SIDEBAR OVERLAY
+        ================================================== -->
+
+        <button
+            class="admin-sidebar-overlay"
+            id="adminSidebarOverlay"
+            type="button"
+            aria-label="Close navigation menu"
+            tabindex="-1"
+        ></button>
+
+
+        <!-- =================================================
+             ADMIN SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Administrative navigation"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR HEADER
+            ============================================== -->
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    class="admin-brand"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans admin dashboard"
+                >
+
+                    <span
+                        class="admin-brand-mark"
+                        aria-hidden="true"
+                    >
+                        BFF
+                    </span>
+
+                    <span class="admin-brand-content">
+
+                        <strong>
+                            BHARAT FOOTBALL FANS
+                        </strong>
+
+                        <small>
+                            Mission FIFA 2034
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close"
+                    id="adminSidebarCloseButton"
+                    type="button"
+                    aria-label="Close navigation menu"
+                >
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+            </div>
+
+
+            <!-- =============================================
+                 ADMIN PROFILE SUMMARY
+            ============================================== -->
+
+            <div class="admin-profile-summary">
+
+                <div class="admin-profile-avatar-wrapper">
+
+                    <img
+                        class="admin-profile-avatar"
+                        id="adminSidebarAvatar"
+                        src="images/admin/admin-avatar-placeholder.webp"
+                        alt="Administrator profile"
+                    >
+
+                    <span
+                        class="admin-profile-status"
+                        title="Active session"
+                        aria-label="Active session"
+                    ></span>
+
+                </div>
+
+                <div class="admin-profile-details">
+
+                    <strong id="adminSidebarName">
+                        System Administrator
+                    </strong>
+
+                    <span id="adminSidebarRole">
+                        Super Admin
+                    </span>
+
+                </div>
+
+                <button
+                    class="admin-profile-menu-button"
+                    id="adminProfileMenuButton"
+                    type="button"
+                    aria-label="Open administrator profile menu"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <i
+                        class="fa-solid fa-ellipsis-vertical"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+
+
+                <!-- =========================================
+                     PROFILE DROPDOWN
+                ========================================== -->
+
+                <div
+                    class="admin-profile-dropdown"
+                    id="adminProfileDropdown"
+                    role="menu"
+                    hidden
+                >
+
+                    <a
+                        href="admin-profile.html"
+                        role="menuitem"
+                    >
+                        <i
+                            class="fa-regular fa-user"
+                            aria-hidden="true"
+                        ></i>
+
+                        My profile
+                    </a>
+
+                    <a
+                        href="admin-settings.html"
+                        role="menuitem"
+                    >
+                        <i
+                            class="fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i>
+
+                        Account settings
+                    </a>
+
+                    <button
+                        id="adminSidebarLogoutButton"
+                        type="button"
+                        role="menuitem"
+                    >
+                        <i
+                            class="fa-solid fa-arrow-right-from-bracket"
+                            aria-hidden="true"
+                        ></i>
+
+                        Secure logout
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 SIDEBAR NAVIGATION
+            ============================================== -->
+
+            <nav class="admin-navigation">
+
+                <div class="admin-navigation-section">
+
+                    <p class="admin-navigation-label">
+                        Overview
+                    </p>
+
+                    <a
+                        class="admin-navigation-link active"
+                        href="admin-dashboard.html"
+                        aria-current="page"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-chart-pie"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-analytics.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-chart-line"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Analytics
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-activity.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-wave-square"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Live activity
+                        </span>
+
+                        <span
+                            class="admin-navigation-live-indicator"
+                            aria-label="Live"
+                        ></span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-section">
+
+                    <p class="admin-navigation-label">
+                        Community Management
+                    </p>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-users.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-users"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            All users
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-players.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-person-running"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Players
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-coaches.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-chalkboard-user"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Coaches
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-scouts.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-binoculars"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Scouts
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-academies.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-building-columns"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Academies
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-section">
+
+                    <p class="admin-navigation-label">
+                        Verification
+                    </p>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-approvals.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-user-check"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Pending approvals
+                        </span>
+
+                        <span
+                            class="admin-navigation-count"
+                            id="pendingApprovalsSidebarCount"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-documents.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-file-shield"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Document review
+                        </span>
+
+                        <span
+                            class="admin-navigation-count warning"
+                            id="pendingDocumentsSidebarCount"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-reports.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-flag"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            User reports
+                        </span>
+
+                        <span
+                            class="admin-navigation-count danger"
+                            id="openReportsSidebarCount"
+                        >
+                            0
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-section">
+
+                    <p class="admin-navigation-label">
+                        Platform Content
+                    </p>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-news.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-regular fa-newspaper"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            News
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-events.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-regular fa-calendar-days"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Events
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-trials.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-futbol"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Trials
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-featured-content.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-star"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Featured content
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-media.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-regular fa-images"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Media library
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-navigation-section">
+
+                    <p class="admin-navigation-label">
+                        System
+                    </p>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-team.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-user-shield"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Admin team
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-audit-logs.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-list-check"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Audit logs
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-security.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-shield-halved"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Security centre
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="admin-navigation-link"
+                        href="admin-settings.html"
+                    >
+
+                        <span class="admin-navigation-icon">
+                            <i
+                                class="fa-solid fa-sliders"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span>
+                            Platform settings
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- =============================================
+                 SIDEBAR SECURITY STATUS
+            ============================================== -->
+
+            <div class="admin-security-summary">
+
+                <div class="admin-security-summary-icon">
+
+                    <i
+                        class="fa-solid fa-shield-check"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Protected session
+                    </strong>
+
+                    <span id="adminSecurityStatusText">
+                        Authentication verified
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+            ============================================== -->
+
+            <div class="admin-sidebar-footer">
+
+                <a
+                    href="index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i
+                        class="fa-solid fa-arrow-up-right-from-square"
+                        aria-hidden="true"
+                    ></i>
+
+                    View public website
+                </a>
+
+                <span>
+                    Admin Portal v1.0
+                </span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN ADMIN AREA
+        ================================================== -->
+
+        <div class="admin-main-area">
+
+
+            <!-- =============================================
+                 TOP HEADER
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-menu-toggle"
+                        id="adminMenuToggleButton"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="adminSidebar"
+                        aria-expanded="false"
+                    >
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+
+                    <div class="admin-page-heading">
+
+                        <p>
+                            Mission Control
+                        </p>
+
+                        <h1>
+                            Admin Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+
+                    <!-- =====================================
+                         GLOBAL SEARCH
+                    ====================================== -->
+
+                    <div class="admin-global-search">
+
+                        <label
+                            class="admin-visually-hidden"
+                            for="adminGlobalSearchInput"
+                        >
+                            Search the admin portal
+                        </label>
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            id="adminGlobalSearchInput"
+                            type="search"
+                            placeholder="Search players, academies, reports..."
+                            autocomplete="off"
+                            maxlength="120"
+                            aria-controls="adminGlobalSearchResults"
+                            aria-expanded="false"
+                        >
+
+                        <kbd>
+                            Ctrl K
+                        </kbd>
+
+
+                        <div
+                            class="admin-global-search-results"
+                            id="adminGlobalSearchResults"
+                            role="listbox"
+                            hidden
+                        ></div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         QUICK CREATE MENU
+                    ====================================== -->
+
+                    <div class="admin-topbar-menu-wrapper">
+
+                        <button
+                            class="admin-topbar-action primary"
+                            id="adminQuickCreateButton"
+                            type="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <i
+                                class="fa-solid fa-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span>
+                                Create
+                            </span>
+                        </button>
+
+
+                        <div
+                            class="admin-quick-create-menu"
+                            id="adminQuickCreateMenu"
+                            role="menu"
+                            hidden
+                        >
+
+                            <a
+                                href="admin-news-create.html"
+                                role="menuitem"
+                            >
+                                <i
+                                    class="fa-regular fa-newspaper"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span>
+                                    <strong>
+                                        News article
+                                    </strong>
+
+                                    <small>
+                                        Publish a platform update
+                                    </small>
+                                </span>
+                            </a>
+
+                            <a
+                                href="admin-event-create.html"
+                                role="menuitem"
+                            >
+                                <i
+                                    class="fa-regular fa-calendar-plus"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span>
+                                    <strong>
+                                        Event
+                                    </strong>
+
+                                    <small>
+                                        Add a new football event
+                                    </small>
+                                </span>
+                            </a>
+
+                            <a
+                                href="admin-trial-create.html"
+                                role="menuitem"
+                            >
+                                <i
+                                    class="fa-solid fa-futbol"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span>
+                                    <strong>
+                                        Trial
+                                    </strong>
+
+                                    <small>
+                                        Create a player trial
+                                    </small>
+                                </span>
+                            </a>
+
+                            <a
+                                href="admin-user-create.html"
+                                role="menuitem"
+                            >
+                                <i
+                                    class="fa-solid fa-user-plus"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span>
+                                    <strong>
+                                        User
+                                    </strong>
+
+                                    <small>
+                                        Add an authorised account
+                                    </small>
+                                </span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         NOTIFICATION CENTRE
+                    ====================================== -->
+
+                    <div class="admin-topbar-menu-wrapper">
+
+                        <button
+                            class="admin-icon-button"
+                            id="adminNotificationButton"
+                            type="button"
+                            aria-label="Open notifications"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+
+                            <i
+                                class="fa-regular fa-bell"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span
+                                class="admin-notification-badge"
+                                id="adminNotificationBadge"
+                                aria-label="0 unread notifications"
+                                hidden
+                            >
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            class="admin-notification-panel"
+                            id="adminNotificationPanel"
+                            role="dialog"
+                            aria-label="Administrative notifications"
+                            hidden
+                        >
+
+                            <div class="admin-notification-panel-header">
+
+                                <div>
+
+                                    <h2>
+                                        Notifications
+                                    </h2>
+
+                                    <p id="adminUnreadNotificationText">
+                                        No unread notifications
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    id="markAllNotificationsReadButton"
+                                    type="button"
+                                >
+                                    Mark all as read
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="admin-notification-list"
+                                id="adminNotificationList"
+                            >
+
+                                <div class="admin-empty-notification-state">
+
+                                    <i
+                                        class="fa-regular fa-bell-slash"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <strong>
+                                        You are all caught up
+                                    </strong>
+
+                                    <p>
+                                        New approval requests and security alerts
+                                        will appear here.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                class="admin-notification-footer-link"
+                                href="admin-notifications.html"
+                            >
+                                View all notifications
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         ADMIN AVATAR BUTTON
+                    ====================================== -->
+
+                    <button
+                        class="admin-topbar-profile-button"
+                        id="adminTopbarProfileButton"
+                        type="button"
+                        aria-label="Open administrator account menu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+
+                        <img
+                            id="adminTopbarAvatar"
+                            src="images/admin/admin-avatar-placeholder.webp"
+                            alt=""
+                        >
+
+                        <span class="admin-topbar-profile-text">
+
+                            <strong id="adminTopbarName">
+                                Administrator
+                            </strong>
+
+                            <small id="adminTopbarRole">
+                                Super Admin
+                            </small>
+
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 MAIN DASHBOARD CONTENT
+            ============================================== -->
+
+            <main
+                class="admin-main-content"
+                id="adminMainContent"
+                tabindex="-1"
+            >
+
+
+                <!-- =========================================
+                     DASHBOARD INTRODUCTION
+                ========================================== -->
+
+                <section class="admin-dashboard-introduction">
+
+                    <div class="admin-dashboard-welcome">
+
+                        <span class="admin-dashboard-eyebrow">
+                            NATIONAL FOOTBALL PLATFORM
+                        </span>
+
+                        <h2>
+                            Welcome back,
+                            <span id="adminWelcomeName">
+                                Administrator
+                            </span>
+                        </h2>
+
+                        <p>
+                            Monitor platform growth, review pending applications,
+                            manage content and protect the Bharat Football Fans
+                            community.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-dashboard-intro-actions">
+
+                        <button
+                            class="admin-secondary-button"
+                            id="refreshDashboardButton"
+                            type="button"
+                        >
+                            <i
+                                class="fa-solid fa-rotate"
+                                aria-hidden="true"
+                            ></i>
+
+                            Refresh data
+                        </button>
+
+                        <button
+                            class="admin-primary-button"
+                            id="downloadDashboardReportButton"
+                            type="button"
+                        >
+                            <i
+                                class="fa-solid fa-download"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export report
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     DASHBOARD STATUS BAR
+                ========================================== -->
+
+                <section
+                    class="admin-dashboard-status-bar"
+                    aria-label="Dashboard status"
+                >
+
+                    <div class="admin-dashboard-status-item">
+
+                        <span
+                            class="admin-status-dot online"
+                            aria-hidden="true"
+                        ></span>
+
+                        <div>
+
+                            <strong>
+                                Platform operational
+                            </strong>
+
+                            <span id="platformStatusTimestamp">
+                                Last checked just now
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-dashboard-status-divider"></div>
+
+
+                    <div class="admin-dashboard-status-item">
+
+                        <i
+                            class="fa-solid fa-database"
+                            aria-hidden="true"
+                        ></i>
+
+                        <div>
+
+                            <strong id="adminDataModeLabel">
+                                Demo data mode
+                            </strong>
+
+                            <span>
+                                Backend integration pending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-dashboard-status-divider"></div>
+
+
+                    <div class="admin-dashboard-status-item">
+
+                        <i
+                            class="fa-solid fa-lock"
+                            aria-hidden="true"
+                        ></i>
+
+                        <div>
+
+                            <strong>
+                                Secure admin access
+                            </strong>
+
+                            <span>
+                                Role verification required
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     SECURITY INTEGRATION NOTE
+
+                     HARSH:
+                     Replace frontend-only session checks with:
+                     GET /api/v1/admin/auth/session
+
+                     Expected response:
+                     {
+                         "authenticated": true,
+                         "user": {
+                             "id": "admin_uuid",
+                             "name": "Administrator Name",
+                             "role": "super_admin",
+                             "permissions": []
+                         },
+                         "session_expires_at": "ISO_DATE"
+                     }
+
+                     SAMARTH:
+                     The backend must verify JWT signature, issuer,
+                     audience, expiry and role on every admin endpoint.
+
+                     Never trust role or permissions stored only in
+                     localStorage, sessionStorage or the DOM.
+
+                     Prefer HttpOnly, Secure, SameSite cookies for
+                     refresh/session tokens. Add CSRF protection for
+                     state-changing cookie-authenticated requests.
+                ========================================== -->
+
+                                <!-- =========================================
+                     OVERVIEW METRICS
+                ========================================== -->
+
+                <section
+                    class="admin-dashboard-metrics"
+                    aria-label="Platform overview metrics"
+                >
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon blue">
+
+                            <i
+                                class="fa-solid fa-users"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Total Registered Users
+                            </span>
+
+                            <strong id="metricTotalUsers">
+                                0
+                            </strong>
+
+                            <p>
+                                <span
+                                    class="metric-positive"
+                                    id="metricUsersGrowth"
+                                >
+                                    +0%
+                                </span>
+
+                                compared to last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon green">
+
+                            <i
+                                class="fa-solid fa-user-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Verified Members
+                            </span>
+
+                            <strong id="metricVerifiedUsers">
+                                0
+                            </strong>
+
+                            <p>
+
+                                <span
+                                    class="metric-positive"
+                                    id="metricVerificationRate"
+                                >
+                                    0%
+                                </span>
+
+                                verification rate
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon orange">
+
+                            <i
+                                class="fa-solid fa-file-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Pending Approvals
+                            </span>
+
+                            <strong id="metricPendingApprovals">
+                                0
+                            </strong>
+
+                            <p>
+
+                                Awaiting administrator review
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon red">
+
+                            <i
+                                class="fa-solid fa-shield-halved"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Security Alerts
+                            </span>
+
+                            <strong id="metricSecurityAlerts">
+                                0
+                            </strong>
+
+                            <p>
+
+                                High priority incidents
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon purple">
+
+                            <i
+                                class="fa-solid fa-building-columns"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Football Academies
+                            </span>
+
+                            <strong id="metricAcademies">
+                                0
+                            </strong>
+
+                            <p>
+
+                                Registered nationwide
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= CARD ================= -->
+
+                    <article class="admin-metric-card">
+
+                        <div class="admin-metric-icon cyan">
+
+                            <i
+                                class="fa-solid fa-calendar-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-metric-content">
+
+                            <span>
+                                Active Events
+                            </span>
+
+                            <strong id="metricEvents">
+                                0
+                            </strong>
+
+                            <p>
+
+                                Upcoming football activities
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     DASHBOARD GRID
+                ========================================== -->
+
+                <section class="admin-dashboard-grid">
+
+
+
+                    <!-- =====================================
+                         LEFT COLUMN
+                    ====================================== -->
+
+                    <div class="admin-dashboard-column">
+
+
+
+                        <!-- =================================
+                             RECENT ACTIVITY
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        LIVE FEED
+                                    </span>
+
+                                    <h3>
+                                        Recent Activity
+                                    </h3>
+
+                                </div>
+
+                                <a
+                                    href="admin-activity.html"
+                                    class="admin-card-link"
+                                >
+                                    View all
+                                </a>
+
+                            </header>
+
+
+                            <div
+                                class="admin-activity-feed"
+                                id="adminActivityFeed"
+                            >
+
+
+                                <div class="admin-empty-state">
+
+                                    <i
+                                        class="fa-solid fa-wave-square"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <strong>
+                                        No recent activity
+                                    </strong>
+
+                                    <p>
+
+                                        User activity will appear here
+                                        after backend integration.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             PENDING APPROVALS
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        ACTION REQUIRED
+                                    </span>
+
+                                    <h3>
+                                        Pending Approvals
+                                    </h3>
+
+                                </div>
+
+                                <a
+                                    href="admin-approvals.html"
+                                    class="admin-card-link"
+                                >
+                                    Open queue
+                                </a>
+
+                            </header>
+
+
+                            <div
+                                class="admin-approval-list"
+                                id="adminApprovalList"
+                            >
+
+
+                                <div class="admin-empty-state">
+
+                                    <i
+                                        class="fa-solid fa-user-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <strong>
+                                        No approval requests
+                                    </strong>
+
+                                    <p>
+
+                                        Player, coach, academy and scout
+                                        verification requests will appear here.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             RECENT REPORTS
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        MODERATION
+                                    </span>
+
+                                    <h3>
+                                        Recent Reports
+                                    </h3>
+
+                                </div>
+
+                                <a
+                                    href="admin-reports.html"
+                                    class="admin-card-link"
+                                >
+                                    Review reports
+                                </a>
+
+                            </header>
+
+
+                            <div
+                                class="admin-report-list"
+                                id="adminReportList"
+                            >
+
+
+                                <div class="admin-empty-state">
+
+                                    <i
+                                        class="fa-solid fa-flag"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <strong>
+                                        No reports submitted
+                                    </strong>
+
+                                    <p>
+
+                                        Community reports will appear
+                                        once users submit them.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         RIGHT COLUMN
+                    ====================================== -->
+
+                    <aside class="admin-dashboard-column">
+
+                                                <!-- =================================
+                             QUICK ACTIONS
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        PRODUCTIVITY
+                                    </span>
+
+                                    <h3>
+                                        Quick Actions
+                                    </h3>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="admin-quick-actions-grid">
+
+                                <a
+                                    class="admin-quick-action-card"
+                                    href="admin-news-create.html"
+                                >
+
+                                    <div class="admin-quick-action-icon blue">
+
+                                        <i
+                                            class="fa-regular fa-newspaper"
+                                            aria-hidden="true"
+                                        ></i>
+
+                                    </div>
+
+                                    <strong>
+                                        Publish News
+                                    </strong>
+
+                                    <span>
+                                        Create a new article
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    class="admin-quick-action-card"
+                                    href="admin-event-create.html"
+                                >
+
+                                    <div class="admin-quick-action-icon green">
+
+                                        <i
+                                            class="fa-regular fa-calendar-plus"
+                                            aria-hidden="true"
+                                        ></i>
+
+                                    </div>
+
+                                    <strong>
+                                        Create Event
+                                    </strong>
+
+                                    <span>
+                                        Add football events
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    class="admin-quick-action-card"
+                                    href="admin-trial-create.html"
+                                >
+
+                                    <div class="admin-quick-action-icon orange">
+
+                                        <i
+                                            class="fa-solid fa-futbol"
+                                            aria-hidden="true"
+                                        ></i>
+
+                                    </div>
+
+                                    <strong>
+                                        Create Trial
+                                    </strong>
+
+                                    <span>
+                                        Publish player trials
+                                    </span>
+
+                                </a>
+
+
+                                <a
+                                    class="admin-quick-action-card"
+                                    href="admin-users.html"
+                                >
+
+                                    <div class="admin-quick-action-icon purple">
+
+                                        <i
+                                            class="fa-solid fa-users"
+                                            aria-hidden="true"
+                                        ></i>
+
+                                    </div>
+
+                                    <strong>
+                                        Manage Users
+                                    </strong>
+
+                                    <span>
+                                        Open user management
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             SYSTEM HEALTH
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        PLATFORM STATUS
+                                    </span>
+
+                                    <h3>
+                                        System Health
+                                    </h3>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="admin-system-health">
+
+                                <div class="admin-health-item">
+
+                                    <div>
+
+                                        <strong>
+                                            API Status
+                                        </strong>
+
+                                        <span>
+                                            Awaiting backend connection
+                                        </span>
+
+                                    </div>
+
+                                    <span
+                                        class="admin-health-badge warning"
+                                        id="apiHealthBadge"
+                                    >
+                                        Pending
+                                    </span>
+
+                                </div>
+
+
+                                <div class="admin-health-item">
+
+                                    <div>
+
+                                        <strong>
+                                            Database
+                                        </strong>
+
+                                        <span>
+                                            PostgreSQL connection
+                                        </span>
+
+                                    </div>
+
+                                    <span
+                                        class="admin-health-badge warning"
+                                        id="databaseHealthBadge"
+                                    >
+                                        Pending
+                                    </span>
+
+                                </div>
+
+
+                                <div class="admin-health-item">
+
+                                    <div>
+
+                                        <strong>
+                                            Authentication
+                                        </strong>
+
+                                        <span>
+                                            JWT verification
+                                        </span>
+
+                                    </div>
+
+                                    <span
+                                        class="admin-health-badge success"
+                                    >
+                                        Ready
+                                    </span>
+
+                                </div>
+
+
+                                <div class="admin-health-item">
+
+                                    <div>
+
+                                        <strong>
+                                            Storage
+                                        </strong>
+
+                                        <span>
+                                            Media uploads
+                                        </span>
+
+                                    </div>
+
+                                    <span
+                                        class="admin-health-badge warning"
+                                    >
+                                        Pending
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             SECURITY CHECKLIST
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        SECURITY
+                                    </span>
+
+                                    <h3>
+                                        Security Checklist
+                                    </h3>
+
+                                </div>
+
+                            </header>
+
+
+                            <ul class="admin-security-checklist">
+
+                                <li>
+
+                                    <i
+                                        class="fa-solid fa-circle-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    HTTPS Enabled
+
+                                </li>
+
+                                <li>
+
+                                    <i
+                                        class="fa-solid fa-circle-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    CSP Ready
+
+                                </li>
+
+                                <li>
+
+                                    <i
+                                        class="fa-solid fa-circle-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Role Based Access
+
+                                </li>
+
+                                <li>
+
+                                    <i
+                                        class="fa-solid fa-circle-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Audit Logging Ready
+
+                                </li>
+
+                                <li>
+
+                                    <i
+                                        class="fa-solid fa-circle-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Session Timeout Enabled
+
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+
+
+                        <!-- =================================
+                             BACKEND NOTES
+                        ================================== -->
+
+                        <section class="admin-dashboard-card">
+
+                            <header class="admin-card-header">
+
+                                <div>
+
+                                    <span class="admin-card-tag">
+                                        DEVELOPER NOTES
+                                    </span>
+
+                                    <h3>
+                                        Backend Integration
+                                    </h3>
+
+                                </div>
+
+                            </header>
+
+
+                            <div class="admin-integration-notes">
+
+                                <h4>
+                                    Harsh (Backend)
+                                </h4>
+
+                                <ul>
+
+                                    <li>
+                                        Replace demo metrics using
+                                        <code>/api/v1/admin/dashboard</code>
+                                    </li>
+
+                                    <li>
+                                        Populate activity feed.
+                                    </li>
+
+                                    <li>
+                                        Populate approvals queue.
+                                    </li>
+
+                                    <li>
+                                        Populate notification center.
+                                    </li>
+
+                                    <li>
+                                        Replace export button with
+                                        report generation endpoint.
+                                    </li>
+
+                                </ul>
+
+
+                                <h4>
+                                    Samarth (Security)
+                                </h4>
+
+                                <ul>
+
+                                    <li>
+                                        Verify JWT on every request.
+                                    </li>
+
+                                    <li>
+                                        Enforce RBAC server-side.
+                                    </li>
+
+                                    <li>
+                                        Enable CSRF protection.
+                                    </li>
+
+                                    <li>
+                                        Log every admin action.
+                                    </li>
+
+                                    <li>
+                                        Apply rate limiting to admin APIs.
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </section>
+
+                                <!-- =========================================
+                     ADMIN FOOTER
+                ========================================== -->
+
+                <footer class="admin-dashboard-footer">
+
+                    <div>
+
+                        <strong>
+                            Bharat Football Fans
+                        </strong>
+
+                        <span>
+                            Mission FIFA 2034 Administrative Portal
+                        </span>
+
+                    </div>
+
+                    <div class="admin-dashboard-footer-meta">
+
+                        <span id="adminFooterYear">
+                            2026
+                        </span>
+
+                        <span aria-hidden="true">
+                            •
+                        </span>
+
+                        <a href="admin-security.html">
+                            Security
+                        </a>
+
+                        <span aria-hidden="true">
+                            •
+                        </span>
+
+                        <a href="admin-audit-logs.html">
+                            Audit Logs
+                        </a>
+
+                    </div>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGOUT CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="adminLogoutModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminLogoutModalTitle"
+        aria-describedby="adminLogoutModalDescription"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="adminLogoutModalBackdrop"
+            type="button"
+            aria-label="Close logout confirmation"
+        ></button>
+
+
+        <div class="admin-modal-dialog">
+
+            <button
+                class="admin-modal-close"
+                id="adminLogoutModalCloseButton"
+                type="button"
+                aria-label="Close logout confirmation"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+
+            <div class="admin-modal-icon danger">
+
+                <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <div class="admin-modal-content">
+
+                <span class="admin-modal-eyebrow">
+                    SECURE SESSION
+                </span>
+
+                <h2 id="adminLogoutModalTitle">
+                    Log out of the Admin Portal?
+                </h2>
+
+                <p id="adminLogoutModalDescription">
+                    Your current administrative session will be ended.
+                    Unsaved changes on other admin pages may be lost.
+                </p>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    class="admin-secondary-button"
+                    id="adminLogoutCancelButton"
+                    type="button"
+                >
+                    Stay signed in
+                </button>
+
+                <button
+                    class="admin-danger-button"
+                    id="adminLogoutConfirmButton"
+                    type="button"
+                >
+                    <i
+                        class="fa-solid fa-lock"
+                        aria-hidden="true"
+                    ></i>
+
+                    Secure logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EXPORT REPORT MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="adminExportModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminExportModalTitle"
+        aria-describedby="adminExportModalDescription"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="adminExportModalBackdrop"
+            type="button"
+            aria-label="Close report export"
+        ></button>
+
+
+        <div class="admin-modal-dialog">
+
+            <button
+                class="admin-modal-close"
+                id="adminExportModalCloseButton"
+                type="button"
+                aria-label="Close report export"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+
+            <div class="admin-modal-icon">
+
+                <i
+                    class="fa-solid fa-file-export"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <div class="admin-modal-content">
+
+                <span class="admin-modal-eyebrow">
+                    DASHBOARD REPORT
+                </span>
+
+                <h2 id="adminExportModalTitle">
+                    Export platform summary
+                </h2>
+
+                <p id="adminExportModalDescription">
+                    Choose the report format. The current frontend demo
+                    generates a local summary until the backend export
+                    endpoint is connected.
+                </p>
+
+            </div>
+
+
+            <form
+                class="admin-export-form"
+                id="adminExportForm"
+                novalidate
+            >
+
+                <fieldset>
+
+                    <legend>
+                        Report format
+                    </legend>
+
+                    <label class="admin-radio-card">
+
+                        <input
+                            type="radio"
+                            name="exportFormat"
+                            value="csv"
+                            checked
+                        >
+
+                        <span>
+
+                            <i
+                                class="fa-solid fa-file-csv"
+                                aria-hidden="true"
+                            ></i>
+
+                            <strong>
+                                CSV
+                            </strong>
+
+                            <small>
+                                Best for spreadsheets and analysis
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="admin-radio-card">
+
+                        <input
+                            type="radio"
+                            name="exportFormat"
+                            value="json"
+                        >
+
+                        <span>
+
+                            <i
+                                class="fa-solid fa-code"
+                                aria-hidden="true"
+                            ></i>
+
+                            <strong>
+                                JSON
+                            </strong>
+
+                            <small>
+                                Best for development and data transfer
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </fieldset>
+
+
+                <div class="admin-modal-actions">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="adminExportCancelButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+                        <i
+                            class="fa-solid fa-download"
+                            aria-hidden="true"
+                        ></i>
+
+                        Export report
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GLOBAL CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        class="admin-modal"
+        id="adminConfirmationModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminConfirmationModalTitle"
+        aria-describedby="adminConfirmationModalDescription"
+        hidden
+    >
+
+        <button
+            class="admin-modal-backdrop"
+            id="adminConfirmationModalBackdrop"
+            type="button"
+            aria-label="Close confirmation dialog"
+        ></button>
+
+
+        <div class="admin-modal-dialog">
+
+            <button
+                class="admin-modal-close"
+                id="adminConfirmationModalCloseButton"
+                type="button"
+                aria-label="Close confirmation dialog"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+            </button>
+
+
+            <div
+                class="admin-modal-icon"
+                id="adminConfirmationModalIcon"
+            >
+
+                <i
+                    class="fa-solid fa-circle-question"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <div class="admin-modal-content">
+
+                <span class="admin-modal-eyebrow">
+                    CONFIRM ACTION
+                </span>
+
+                <h2 id="adminConfirmationModalTitle">
+                    Confirm administrative action
+                </h2>
+
+                <p id="adminConfirmationModalDescription">
+                    Please confirm before continuing.
+                </p>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    class="admin-secondary-button"
+                    id="adminConfirmationCancelButton"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="admin-primary-button"
+                    id="adminConfirmationConfirmButton"
+                    type="button"
+                >
+                    Confirm
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GLOBAL TOAST NOTIFICATIONS
+    ====================================================== -->
+
+    <div
+        class="admin-toast-region"
+        id="adminToastRegion"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =====================================================
+         BACKEND AND SECURITY INTEGRATION NOTES
+
+         HARSH:
+         Suggested dashboard endpoints:
+
+         GET /api/v1/admin/dashboard
+         GET /api/v1/admin/activity?limit=10
+         GET /api/v1/admin/approvals?status=pending&limit=5
+         GET /api/v1/admin/reports?status=open&limit=5
+         GET /api/v1/admin/notifications?limit=10
+         PATCH /api/v1/admin/notifications/read-all
+         POST /api/v1/admin/reports/export
+         POST /api/v1/admin/auth/refresh
+         POST /api/v1/admin/auth/logout
+         GET /api/v1/admin/system/health
+
+         Every mutation should return a request or trace ID
+         for audit and debugging purposes.
+
+         SAMARTH:
+         Protect all /api/v1/admin routes using server-side RBAC.
+
+         Recommended controls:
+         - Validate JWT algorithm and reject "none".
+         - Validate issuer, audience, expiry and token type.
+         - Rotate refresh tokens and revoke reused tokens.
+         - Use short-lived access sessions.
+         - Use HttpOnly, Secure and SameSite cookies where suitable.
+         - Apply CSRF tokens to cookie-authenticated mutations.
+         - Add strict CORS rules.
+         - Add rate limiting and temporary lockouts.
+         - Record immutable admin audit events.
+         - Sanitize stored content and escape rendered output.
+         - Validate uploads by MIME type, extension, size and signature.
+         - Require re-authentication for destructive actions.
+         - Never expose sensitive stack traces to the frontend.
+    ====================================================== -->
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="admin-dashboard.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

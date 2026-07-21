@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage registered football players, profiles, verification, performance records and scouting visibility for Bharat Football Fans."
+    >
+
+    <meta
+        name="theme-color"
+        content="#071b33"
+    >
+
+    <title>
+        Player Management | Bharat Football Fans Admin
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/logo/favicon.png"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         STYLESHEETS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-players.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="adminLoadingScreen"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading player management"
+    >
+
+        <div class="admin-loading-content">
+
+            <div class="admin-loading-logo">
+
+                <span>
+                    BFF
+                </span>
+
+            </div>
+
+            <div class="admin-loading-spinner"></div>
+
+            <p>
+                Loading Player Management
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <button
+        class="admin-sidebar-overlay"
+        id="adminSidebarOverlay"
+        type="button"
+        aria-label="Close navigation menu"
+        hidden
+    ></button>
+
+
+    <!-- =====================================================
+         ADMIN APPLICATION
+    ====================================================== -->
+
+    <div class="admin-app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Administrator navigation"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR BRAND
+            ============================================== -->
+
+            <div class="admin-sidebar-brand">
+
+                <a
+                    class="admin-brand-link"
+                    href="admin-dashboard.html"
+                    aria-label="Bharat Football Fans admin dashboard"
+                >
+
+                    <div class="admin-brand-logo">
+
+                        <span>
+                            BFF
+                        </span>
+
+                    </div>
+
+                    <div class="admin-brand-text">
+
+                        <strong>
+                            BHARAT FOOTBALL
+                        </strong>
+
+                        <span>
+                            ADMIN COMMAND
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <button
+                    class="admin-sidebar-close"
+                    id="adminSidebarCloseButton"
+                    type="button"
+                    aria-label="Close sidebar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =============================================
+                 ADMIN PROFILE SUMMARY
+            ============================================== -->
+
+            <section class="admin-sidebar-profile">
+
+                <div
+                    class="admin-sidebar-avatar"
+                    aria-hidden="true"
+                >
+
+                    IB
+
+                </div>
+
+                <div class="admin-sidebar-profile-copy">
+
+                    <strong>
+                        Issac Belho
+                    </strong>
+
+                    <span>
+                        Platform Administrator
+                    </span>
+
+                </div>
+
+                <span
+                    class="admin-online-indicator"
+                    title="Online"
+                    aria-label="Online"
+                ></span>
+
+            </section>
+
+
+            <!-- =============================================
+                 PRIMARY NAVIGATION
+            ============================================== -->
+
+            <nav class="admin-sidebar-navigation">
+
+                <span class="admin-navigation-label">
+                    OVERVIEW
+                </span>
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-dashboard.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-pie"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    PLATFORM MANAGEMENT
+                </span>
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-users.html"
+                >
+
+                    <i
+                        class="fa-solid fa-users"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link active"
+                    href="admin-players.html"
+                    aria-current="page"
+                >
+
+                    <i
+                        class="fa-solid fa-person-running"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Players
+                    </span>
+
+                    <span
+                        class="admin-navigation-badge"
+                        id="adminPendingPlayerBadge"
+                    >
+                        12
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-academies.html"
+                >
+
+                    <i
+                        class="fa-solid fa-building-columns"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Academies
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-coaches.html"
+                >
+
+                    <i
+                        class="fa-solid fa-user-tie"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Coaches
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-scouts.html"
+                >
+
+                    <i
+                        class="fa-solid fa-binoculars"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Scouts
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-trials.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-check"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Trials
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    CONTENT
+                </span>
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-news.html"
+                >
+
+                    <i
+                        class="fa-regular fa-newspaper"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        News
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-events.html"
+                >
+
+                    <i
+                        class="fa-solid fa-calendar-days"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-media.html"
+                >
+
+                    <i
+                        class="fa-solid fa-photo-film"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Media Library
+                    </span>
+
+                </a>
+
+
+                <span class="admin-navigation-label">
+                    SYSTEM
+                </span>
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-reports.html"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-line"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-security.html"
+                >
+
+                    <i
+                        class="fa-solid fa-shield-halved"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Security
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="admin-navigation-link"
+                    href="admin-settings.html"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =============================================
+                 SIDEBAR SUPPORT
+            ============================================== -->
+
+            <section class="admin-sidebar-support">
+
+                <div class="admin-sidebar-support-icon">
+
+                    <i
+                        class="fa-solid fa-headset"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Need Technical Help?
+                    </strong>
+
+                    <p>
+                        Contact the development and security team.
+                    </p>
+
+                </div>
+
+                <a href="admin-help.html">
+                    Open Support
+                </a>
+
+            </section>
+
+
+            <!-- =============================================
+                 LOGOUT
+            ============================================== -->
+
+            <button
+                class="admin-sidebar-logout"
+                id="adminLogoutButton"
+                type="button"
+            >
+
+                <i
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    aria-hidden="true"
+                ></i>
+
+                <span>
+                    Sign Out
+                </span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <div class="admin-main-area">
+
+
+            <!-- =============================================
+                 TOPBAR
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-mobile-menu-button"
+                        id="adminMobileMenuButton"
+                        type="button"
+                        aria-label="Open administrator menu"
+                        aria-controls="adminSidebar"
+                        aria-expanded="false"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                    <div class="admin-topbar-page-title">
+
+                        <span>
+                            PLATFORM MANAGEMENT
+                        </span>
+
+                        <h1>
+                            Player Management
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-actions">
+
+
+                    <!-- =====================================
+                         GLOBAL SEARCH
+                    ====================================== -->
+
+                    <form
+                        class="admin-global-search"
+                        id="adminGlobalSearchForm"
+                        role="search"
+                    >
+
+                        <label
+                            class="sr-only"
+                            for="adminGlobalSearchInput"
+                        >
+                            Search admin portal
+                        </label>
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            id="adminGlobalSearchInput"
+                            name="query"
+                            type="search"
+                            placeholder="Search platform"
+                            autocomplete="off"
+                        >
+
+                        <kbd>
+                            /
+                        </kbd>
+
+                    </form>
+
+
+                    <!-- =====================================
+                         NOTIFICATIONS
+                    ====================================== -->
+
+                    <div class="admin-notification-wrapper">
+
+                        <button
+                            class="admin-topbar-icon-button"
+                            id="adminNotificationButton"
+                            type="button"
+                            aria-label="Open notifications"
+                            aria-expanded="false"
+                            aria-controls="adminNotificationPanel"
+                        >
+
+                            <i
+                                class="fa-regular fa-bell"
+                                aria-hidden="true"
+                            ></i>
+
+                            <span
+                                class="admin-notification-count"
+                                id="adminNotificationCount"
+                            >
+                                4
+                            </span>
+
+                        </button>
+
+                        <section
+                            class="admin-notification-panel"
+                            id="adminNotificationPanel"
+                            aria-label="Administrator notifications"
+                            hidden
+                        >
+
+                            <div class="admin-notification-panel-header">
+
+                                <div>
+
+                                    <span>
+                                        NOTIFICATIONS
+                                    </span>
+
+                                    <h2>
+                                        Recent Activity
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    id="adminMarkNotificationsReadButton"
+                                    type="button"
+                                >
+                                    Mark all read
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="admin-notification-list"
+                                id="adminNotificationList"
+                            ></div>
+
+                            <a
+                                class="admin-notification-footer"
+                                href="admin-notifications.html"
+                            >
+                                View All Notifications
+                            </a>
+
+                        </section>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         ADMIN MENU
+                    ====================================== -->
+
+                    <div class="admin-profile-menu-wrapper">
+
+                        <button
+                            class="admin-topbar-profile-button"
+                            id="adminProfileMenuButton"
+                            type="button"
+                            aria-label="Open administrator account menu"
+                            aria-expanded="false"
+                            aria-controls="adminProfileMenu"
+                        >
+
+                            <span class="admin-topbar-profile-avatar">
+                                IB
+                            </span>
+
+                            <span class="admin-topbar-profile-copy">
+
+                                <strong>
+                                    Issac Belho
+                                </strong>
+
+                                <small>
+                                    Super Admin
+                                </small>
+
+                            </span>
+
+                            <i
+                                class="fa-solid fa-chevron-down"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+                        <div
+                            class="admin-profile-menu"
+                            id="adminProfileMenu"
+                            hidden
+                        >
+
+                            <a href="admin-profile.html">
+
+                                <i
+                                    class="fa-regular fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                                My Profile
+
+                            </a>
+
+                            <a href="admin-settings.html">
+
+                                <i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Account Settings
+
+                            </a>
+
+                            <button
+                                id="adminProfileLogoutButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Sign Out
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 MAIN CONTENT
+            ============================================== -->
+
+            <main class="admin-players-main">
+
+
+                <!-- =========================================
+                     PAGE INTRO
+                ========================================== -->
+
+                <section class="admin-players-page-intro">
+
+                    <div class="admin-players-page-heading">
+
+                        <span class="admin-players-eyebrow">
+                            NATIONAL TALENT DATABASE
+                        </span>
+
+                        <h2>
+                            Manage Registered Players
+                        </h2>
+
+                        <p>
+                            Review player profiles, verify documents, monitor
+                            development status and control scouting visibility
+                            across the Mission FIFA 2034 platform.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-players-page-actions">
+
+                        <button
+                            class="admin-players-secondary-button"
+                            id="adminExportPlayersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-export"
+                                aria-hidden="true"
+                            ></i>
+
+                            Export Players
+
+                        </button>
+
+                        <button
+                            class="admin-players-primary-button"
+                            id="adminAddPlayerButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-plus"
+                                aria-hidden="true"
+                            ></i>
+
+                            Add Player
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     PLAYER METRICS
+                ========================================== -->
+
+                <section
+                    class="admin-player-metrics-grid"
+                    aria-label="Player statistics"
+                >
+
+
+                    <!-- TOTAL PLAYERS -->
+
+                    <article class="admin-player-metric-card">
+
+                        <div class="admin-player-metric-icon primary">
+
+                            <i
+                                class="fa-solid fa-person-running"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-player-metric-content">
+
+                            <span>
+                                Total Players
+                            </span>
+
+                            <strong id="adminTotalPlayersMetric">
+                                0
+                            </strong>
+
+                            <small class="positive">
+
+                                <i
+                                    class="fa-solid fa-arrow-trend-up"
+                                    aria-hidden="true"
+                                ></i>
+
+                                National registrations
+
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- VERIFIED PLAYERS -->
+
+                    <article class="admin-player-metric-card">
+
+                        <div class="admin-player-metric-icon success">
+
+                            <i
+                                class="fa-solid fa-user-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-player-metric-content">
+
+                            <span>
+                                Verified Profiles
+                            </span>
+
+                            <strong id="adminVerifiedPlayersMetric">
+                                0
+                            </strong>
+
+                            <small>
+                                Approved documents
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PENDING REVIEW -->
+
+                    <article class="admin-player-metric-card">
+
+                        <div class="admin-player-metric-icon warning">
+
+                            <i
+                                class="fa-solid fa-hourglass-half"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-player-metric-content">
+
+                            <span>
+                                Pending Review
+                            </span>
+
+                            <strong id="adminPendingPlayersMetric">
+                                0
+                            </strong>
+
+                            <small>
+                                Requires verification
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SCOUTING READY -->
+
+                    <article class="admin-player-metric-card">
+
+                        <div class="admin-player-metric-icon accent">
+
+                            <i
+                                class="fa-solid fa-binoculars"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div class="admin-player-metric-content">
+
+                            <span>
+                                Scouting Ready
+                            </span>
+
+                            <strong id="adminScoutingReadyMetric">
+                                0
+                            </strong>
+
+                            <small>
+                                Visible to approved scouts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                                <!-- =========================================
+                     PLAYER FILTERS
+                ========================================== -->
+
+                <section class="admin-players-filter-card">
+
+                    <form
+                        class="admin-players-filter-form"
+                        id="adminPlayersFilterForm"
+                    >
+
+                        <div class="admin-players-search-field">
+
+                            <label
+                                class="sr-only"
+                                for="adminPlayersSearchInput"
+                            >
+                                Search players
+                            </label>
+
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i>
+
+                            <input
+                                id="adminPlayersSearchInput"
+                                name="search"
+                                type="search"
+                                placeholder="Search by name, ID, academy, position or state"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <div class="admin-players-filter-grid">
+
+                            <label>
+
+                                <span>
+                                    Verification
+                                </span>
+
+                                <select
+                                    id="adminPlayerVerificationFilter"
+                                    name="verification"
+                                >
+
+                                    <option value="">
+                                        All Statuses
+                                    </option>
+
+                                    <option value="verified">
+                                        Verified
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending Review
+                                    </option>
+
+                                    <option value="rejected">
+                                        Rejected
+                                    </option>
+
+                                    <option value="incomplete">
+                                        Incomplete
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Position
+                                </span>
+
+                                <select
+                                    id="adminPlayerPositionFilter"
+                                    name="position"
+                                >
+
+                                    <option value="">
+                                        All Positions
+                                    </option>
+
+                                    <option value="goalkeeper">
+                                        Goalkeeper
+                                    </option>
+
+                                    <option value="defender">
+                                        Defender
+                                    </option>
+
+                                    <option value="midfielder">
+                                        Midfielder
+                                    </option>
+
+                                    <option value="forward">
+                                        Forward
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Age Group
+                                </span>
+
+                                <select
+                                    id="adminPlayerAgeGroupFilter"
+                                    name="ageGroup"
+                                >
+
+                                    <option value="">
+                                        All Age Groups
+                                    </option>
+
+                                    <option value="u8">
+                                        Under 8
+                                    </option>
+
+                                    <option value="u10">
+                                        Under 10
+                                    </option>
+
+                                    <option value="u12">
+                                        Under 12
+                                    </option>
+
+                                    <option value="u14">
+                                        Under 14
+                                    </option>
+
+                                    <option value="u16">
+                                        Under 16
+                                    </option>
+
+                                    <option value="u18">
+                                        Under 18
+                                    </option>
+
+                                    <option value="u21">
+                                        Under 21
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    State
+                                </span>
+
+                                <select
+                                    id="adminPlayerStateFilter"
+                                    name="state"
+                                >
+
+                                    <option value="">
+                                        All States
+                                    </option>
+
+                                    <option value="Assam">
+                                        Assam
+                                    </option>
+
+                                    <option value="Delhi">
+                                        Delhi
+                                    </option>
+
+                                    <option value="Goa">
+                                        Goa
+                                    </option>
+
+                                    <option value="Karnataka">
+                                        Karnataka
+                                    </option>
+
+                                    <option value="Kerala">
+                                        Kerala
+                                    </option>
+
+                                    <option value="Maharashtra">
+                                        Maharashtra
+                                    </option>
+
+                                    <option value="Manipur">
+                                        Manipur
+                                    </option>
+
+                                    <option value="Nagaland">
+                                        Nagaland
+                                    </option>
+
+                                    <option value="Punjab">
+                                        Punjab
+                                    </option>
+
+                                    <option value="Tamil Nadu">
+                                        Tamil Nadu
+                                    </option>
+
+                                    <option value="West Bengal">
+                                        West Bengal
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Scouting Visibility
+                                </span>
+
+                                <select
+                                    id="adminPlayerVisibilityFilter"
+                                    name="visibility"
+                                >
+
+                                    <option value="">
+                                        All Visibility
+                                    </option>
+
+                                    <option value="visible">
+                                        Scout Visible
+                                    </option>
+
+                                    <option value="hidden">
+                                        Hidden
+                                    </option>
+
+                                    <option value="restricted">
+                                        Restricted
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+
+                                <span>
+                                    Sort By
+                                </span>
+
+                                <select
+                                    id="adminPlayersSort"
+                                    name="sort"
+                                >
+
+                                    <option value="latest">
+                                        Latest Registrations
+                                    </option>
+
+                                    <option value="oldest">
+                                        Oldest Registrations
+                                    </option>
+
+                                    <option value="name_asc">
+                                        Name A–Z
+                                    </option>
+
+                                    <option value="name_desc">
+                                        Name Z–A
+                                    </option>
+
+                                    <option value="recent_activity">
+                                        Recent Activity
+                                    </option>
+
+                                    <option value="rating_desc">
+                                        Highest Rating
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="admin-players-filter-actions">
+
+                            <button
+                                class="admin-players-secondary-button"
+                                id="adminResetPlayerFiltersButton"
+                                type="button"
+                            >
+
+                                <i
+                                    class="fa-solid fa-rotate-left"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Reset Filters
+
+                            </button>
+
+                            <button
+                                class="admin-players-primary-button"
+                                type="submit"
+                            >
+
+                                <i
+                                    class="fa-solid fa-filter"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Apply Filters
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- =========================================
+                     BULK ACTIONS
+                ========================================== -->
+
+                <section
+                    class="admin-players-bulk-actions"
+                    id="adminPlayersBulkActionsBar"
+                    hidden
+                >
+
+                    <div class="admin-players-bulk-summary">
+
+                        <strong id="adminSelectedPlayersCount">
+                            0 selected
+                        </strong>
+
+                        <button
+                            id="adminClearPlayersSelectionButton"
+                            type="button"
+                        >
+                            Clear selection
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-players-bulk-buttons">
+
+                        <button
+                            class="admin-players-secondary-button"
+                            id="adminBulkVerifyPlayersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-user-check"
+                                aria-hidden="true"
+                            ></i>
+
+                            Verify
+
+                        </button>
+
+                        <button
+                            class="admin-players-secondary-button"
+                            id="adminBulkShowPlayersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-eye"
+                                aria-hidden="true"
+                            ></i>
+
+                            Make Visible
+
+                        </button>
+
+                        <button
+                            class="admin-players-secondary-button"
+                            id="adminBulkHidePlayersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-eye-slash"
+                                aria-hidden="true"
+                            ></i>
+
+                            Hide
+
+                        </button>
+
+                        <button
+                            class="admin-players-danger-button"
+                            id="adminBulkDeletePlayersButton"
+                            type="button"
+                        >
+
+                            <i
+                                class="fa-solid fa-trash-can"
+                                aria-hidden="true"
+                            ></i>
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     PLAYERS TABLE
+                ========================================== -->
+
+                <section class="admin-players-table-card">
+
+                    <div class="admin-players-table-header">
+
+                        <div>
+
+                            <span class="admin-players-eyebrow">
+                                PLAYER DIRECTORY
+                            </span>
+
+                            <h3>
+                                Registered Players
+                            </h3>
+
+                            <p>
+                                Review player identity, profile progress,
+                                verification and scouting availability.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-players-refresh-button"
+                            id="adminRefreshPlayersButton"
+                            type="button"
+                            aria-label="Refresh player list"
+                        >
+
+                            <i
+                                class="fa-solid fa-rotate"
+                                aria-hidden="true"
+                            ></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-players-table-wrapper">
+
+                        <table class="admin-players-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+
+                                        <input
+                                            id="adminSelectAllPlayersCheckbox"
+                                            type="checkbox"
+                                            aria-label="Select all visible players"
+                                        >
+
+                                    </th>
+
+                                    <th scope="col">
+                                        Player
+                                    </th>
+
+                                    <th scope="col">
+                                        Profile
+                                    </th>
+
+                                    <th scope="col">
+                                        Position
+                                    </th>
+
+                                    <th scope="col">
+                                        Academy
+                                    </th>
+
+                                    <th scope="col">
+                                        Verification
+                                    </th>
+
+                                    <th scope="col">
+                                        Scout Visibility
+                                    </th>
+
+                                    <th scope="col">
+                                        Last Active
+                                    </th>
+
+                                    <th scope="col">
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminPlayersTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="admin-players-table-footer">
+
+                        <p id="adminPlayersTableSummary">
+                            Showing 0 players
+                        </p>
+
+
+                        <nav
+                            class="admin-players-pagination-wrapper"
+                            aria-label="Player table pagination"
+                        >
+
+                            <button
+                                class="admin-players-pagination-button"
+                                id="adminPreviousPlayersPageButton"
+                                type="button"
+                                aria-label="Previous page"
+                            >
+
+                                <i
+                                    class="fa-solid fa-chevron-left"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </button>
+
+                            <div
+                                class="admin-players-pagination"
+                                id="adminPlayersPagination"
+                            ></div>
+
+                            <button
+                                class="admin-players-pagination-button"
+                                id="adminNextPlayersPageButton"
+                                type="button"
+                                aria-label="Next page"
+                            >
+
+                                <i
+                                    class="fa-solid fa-chevron-right"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </button>
+
+                        </nav>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+            <!-- =============================================
+                 FOOTER
+            ============================================== -->
+
+            <footer class="admin-footer">
+
+                <p>
+                    ©
+                    <span id="adminFooterYear"></span>
+                    Bharat Football Fans. Mission FIFA 2034.
+                </p>
+
+                <div>
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                    <a href="admin-help.html">
+                        Support
+                    </a>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADD PLAYER MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminAddPlayerModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminAddPlayerModalTitle"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminAddPlayerModalBackdrop"
+            type="button"
+            aria-label="Close add player modal"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-form-modal">
+
+            <header class="admin-player-modal-header">
+
+                <div>
+
+                    <span class="admin-player-modal-eyebrow">
+                        NEW PLAYER
+                    </span>
+
+                    <h2 id="adminAddPlayerModalTitle">
+                        Add Player Profile
+                    </h2>
+
+                    <p>
+                        Create a player record and prepare the profile
+                        for document verification and scouting review.
+                    </p>
+
+                </div>
+
+                <button
+                    class="admin-player-modal-close"
+                    id="adminAddPlayerModalCloseButton"
+                    type="button"
+                    aria-label="Close add player modal"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+
+            <form
+                class="admin-player-form"
+                id="adminAddPlayerForm"
+                novalidate
+            >
+
+                <div class="admin-player-form-grid">
+
+                    <label>
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <input
+                            id="adminNewPlayerName"
+                            name="name"
+                            type="text"
+                            minlength="2"
+                            maxlength="80"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <small data-player-error-for="name"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <input
+                            id="adminNewPlayerEmail"
+                            name="email"
+                            type="email"
+                            maxlength="120"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small data-player-error-for="email"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Phone Number
+                        </span>
+
+                        <input
+                            id="adminNewPlayerPhone"
+                            name="phone"
+                            type="tel"
+                            maxlength="20"
+                            autocomplete="tel"
+                        >
+
+                        <small data-player-error-for="phone"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <input
+                            id="adminNewPlayerDateOfBirth"
+                            name="dateOfBirth"
+                            type="date"
+                            required
+                        >
+
+                        <small data-player-error-for="dateOfBirth"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Gender
+                        </span>
+
+                        <select
+                            id="adminNewPlayerGender"
+                            name="gender"
+                            required
+                        >
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="male">
+                                Male
+                            </option>
+
+                            <option value="female">
+                                Female
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                            <option value="prefer_not_to_say">
+                                Prefer Not to Say
+                            </option>
+
+                        </select>
+
+                        <small data-player-error-for="gender"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Primary Position
+                        </span>
+
+                        <select
+                            id="adminNewPlayerPosition"
+                            name="position"
+                            required
+                        >
+
+                            <option value="">
+                                Select Position
+                            </option>
+
+                            <option value="goalkeeper">
+                                Goalkeeper
+                            </option>
+
+                            <option value="defender">
+                                Defender
+                            </option>
+
+                            <option value="midfielder">
+                                Midfielder
+                            </option>
+
+                            <option value="forward">
+                                Forward
+                            </option>
+
+                        </select>
+
+                        <small data-player-error-for="position"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Preferred Foot
+                        </span>
+
+                        <select
+                            id="adminNewPlayerPreferredFoot"
+                            name="preferredFoot"
+                        >
+
+                            <option value="">
+                                Select Preferred Foot
+                            </option>
+
+                            <option value="right">
+                                Right
+                            </option>
+
+                            <option value="left">
+                                Left
+                            </option>
+
+                            <option value="both">
+                                Both
+                            </option>
+
+                        </select>
+
+                        <small data-player-error-for="preferredFoot"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            State
+                        </span>
+
+                        <input
+                            id="adminNewPlayerState"
+                            name="state"
+                            type="text"
+                            maxlength="50"
+                            autocomplete="address-level1"
+                            required
+                        >
+
+                        <small data-player-error-for="state"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Current Academy
+                        </span>
+
+                        <input
+                            id="adminNewPlayerAcademy"
+                            name="academy"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Independent if not enrolled"
+                        >
+
+                        <small data-player-error-for="academy"></small>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Verification Status
+                        </span>
+
+                        <select
+                            id="adminNewPlayerVerification"
+                            name="verification"
+                            required
+                        >
+
+                            <option value="pending">
+                                Pending Review
+                            </option>
+
+                            <option value="verified">
+                                Verified
+                            </option>
+
+                            <option value="incomplete">
+                                Incomplete
+                            </option>
+
+                            <option value="rejected">
+                                Rejected
+                            </option>
+
+                        </select>
+
+                        <small data-player-error-for="verification"></small>
+
+                    </label>
+
+                </div>
+
+
+                <label class="admin-player-form-full-width">
+
+                    <span>
+                        Administrator Note
+                    </span>
+
+                    <textarea
+                        id="adminNewPlayerNote"
+                        name="note"
+                        maxlength="500"
+                        placeholder="Add an internal note for verification, development or scouting review."
+                    ></textarea>
+
+                    <small data-player-error-for="note"></small>
+
+                </label>
+
+
+                <div class="admin-player-form-options">
+
+                    <label class="admin-player-checkbox-field">
+
+                        <input
+                            id="adminNewPlayerScoutVisibility"
+                            name="scoutVisible"
+                            type="checkbox"
+                        >
+
+                        <span>
+
+                            <strong>
+                                Visible to approved scouts
+                            </strong>
+
+                            <small>
+                                Only verified scouts can access the profile.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="admin-player-checkbox-field">
+
+                        <input
+                            id="adminSendPlayerWelcomeEmail"
+                            name="sendWelcomeEmail"
+                            type="checkbox"
+                            checked
+                        >
+
+                        <span>
+
+                            <strong>
+                                Send welcome email
+                            </strong>
+
+                            <small>
+                                Email login and profile completion instructions.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <footer class="admin-player-modal-actions">
+
+                    <button
+                        class="admin-players-secondary-button"
+                        id="adminCancelAddPlayerButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-players-primary-button"
+                        id="adminCreatePlayerButton"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-plus"
+                            aria-hidden="true"
+                        ></i>
+
+                        Create Player
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </section>
+
+        <!-- =====================================================
+         VIEW PLAYER MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminViewPlayerModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminViewPlayerModalTitle"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminViewPlayerModalBackdrop"
+            type="button"
+            aria-label="Close player details"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-details-modal">
+
+            <header class="admin-player-modal-header">
+
+                <div>
+
+                    <span class="admin-player-modal-eyebrow">
+                        PLAYER PROFILE
+                    </span>
+
+                    <h2 id="adminViewPlayerModalTitle">
+                        Player Details
+                    </h2>
+
+                </div>
+
+                <button
+                    class="admin-player-modal-close"
+                    id="adminViewPlayerModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+            <div
+                id="adminPlayerDetailsContent"
+                class="admin-player-details-content"
+            ></div>
+
+            <footer class="admin-player-modal-actions">
+
+                <button
+                    class="admin-players-secondary-button"
+                    id="adminClosePlayerDetailsButton"
+                    type="button"
+                >
+                    Close
+                </button>
+
+                <button
+                    class="admin-players-primary-button"
+                    id="adminEditPlayerFromDetailsButton"
+                    type="button"
+                >
+
+                    <i
+                        class="fa-solid fa-pen"
+                        aria-hidden="true"
+                    ></i>
+
+                    Edit Player
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDIT PLAYER MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminEditPlayerModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminEditPlayerModalTitle"
+        aria-hidden="true"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminEditPlayerModalBackdrop"
+            type="button"
+            aria-label="Close edit player modal"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-form-modal">
+
+            <header class="admin-player-modal-header">
+
+                <div>
+
+                    <span class="admin-player-modal-eyebrow">
+                        EDIT PLAYER
+                    </span>
+
+                    <h2 id="adminEditPlayerModalTitle">
+                        Update Player Profile
+                    </h2>
+
+                </div>
+
+                <button
+                    class="admin-player-modal-close"
+                    id="adminEditPlayerModalCloseButton"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </header>
+
+            <form
+                id="adminEditPlayerForm"
+                class="admin-player-form"
+                novalidate
+            >
+
+                <input
+                    id="adminEditPlayerId"
+                    name="playerId"
+                    type="hidden"
+                >
+
+                <div
+                    id="adminEditPlayerFormFields"
+                    class="admin-player-form-grid"
+                ></div>
+
+                <footer class="admin-player-modal-actions">
+
+                    <button
+                        class="admin-players-secondary-button"
+                        id="adminCancelEditPlayerButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-players-primary-button"
+                        id="adminSavePlayerChangesButton"
+                        type="submit"
+                    >
+
+                        <i
+                            class="fa-solid fa-floppy-disk"
+                            aria-hidden="true"
+                        ></i>
+
+                        Save Changes
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VERIFY PLAYER MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminVerifyPlayerModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminVerifyPlayerModalTitle"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminVerifyPlayerModalBackdrop"
+            type="button"
+            aria-label="Close verification dialog"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-confirm-modal">
+
+            <header class="admin-player-modal-header">
+
+                <h2 id="adminVerifyPlayerModalTitle">
+                    Verify Player
+                </h2>
+
+            </header>
+
+            <div class="admin-player-confirm-content">
+
+                <div class="admin-player-confirm-icon success">
+
+                    <i
+                        class="fa-solid fa-user-check"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <p>
+
+                    Are you sure you want to verify
+
+                    <strong id="adminVerifyPlayerName">
+                        Player
+                    </strong>
+
+                    ?
+
+                </p>
+
+                <p class="admin-player-confirm-description">
+
+                    This will make the player's profile officially verified
+                    and eligible for academy and scout visibility.
+
+                </p>
+
+            </div>
+
+            <footer class="admin-player-modal-actions">
+
+                <button
+                    class="admin-players-secondary-button"
+                    id="adminCancelVerifyPlayerButton"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="admin-players-primary-button"
+                    id="adminConfirmVerifyPlayerButton"
+                    type="button"
+                >
+
+                    Verify Player
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DELETE PLAYER MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminDeletePlayerModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminDeletePlayerModalTitle"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminDeletePlayerModalBackdrop"
+            type="button"
+            aria-label="Close delete dialog"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-confirm-modal">
+
+            <header class="admin-player-modal-header">
+
+                <h2 id="adminDeletePlayerModalTitle">
+                    Delete Player
+                </h2>
+
+            </header>
+
+            <form
+                id="adminDeletePlayerForm"
+                class="admin-player-confirm-content"
+            >
+
+                <input
+                    id="adminDeletePlayerId"
+                    name="playerId"
+                    type="hidden"
+                >
+
+                <div class="admin-player-confirm-icon danger">
+
+                    <i
+                        class="fa-solid fa-trash-can"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <p>
+
+                    This action will permanently delete
+
+                    <strong id="adminDeletePlayerName">
+                        Player
+                    </strong>
+
+                    from the platform.
+
+                </p>
+
+                <p>
+
+                    Type
+
+                    <strong>DELETE</strong>
+
+                    to continue.
+
+                </p>
+
+                <input
+                    id="adminDeletePlayerConfirmation"
+                    name="confirmation"
+                    type="text"
+                    autocomplete="off"
+                    required
+                >
+
+                <small
+                    data-delete-player-error-for="confirmation"
+                ></small>
+
+                <footer class="admin-player-modal-actions">
+
+                    <button
+                        class="admin-players-secondary-button"
+                        id="adminCancelDeletePlayerButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-players-danger-button"
+                        id="adminConfirmDeletePlayerButton"
+                        type="submit"
+                    >
+
+                        Delete Player
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPORT PLAYERS MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminExportPlayersModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminExportPlayersModalTitle"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminExportPlayersModalBackdrop"
+            type="button"
+            aria-label="Close export dialog"
+        ></button>
+
+        <div class="admin-player-modal-dialog">
+
+            <header class="admin-player-modal-header">
+
+                <h2 id="adminExportPlayersModalTitle">
+                    Export Players
+                </h2>
+
+            </header>
+
+            <form
+                id="adminExportPlayersForm"
+                class="admin-player-form"
+            >
+
+                <label>
+
+                    <span>
+                        Export Format
+                    </span>
+
+                    <select
+                        id="adminPlayersExportFormat"
+                        name="format"
+                    >
+
+                        <option value="csv">
+                            CSV
+                        </option>
+
+                        <option value="json">
+                            JSON
+                        </option>
+
+                        <option value="xlsx">
+                            Excel (.xlsx)
+                        </option>
+
+                    </select>
+
+                </label>
+
+                <footer class="admin-player-modal-actions">
+
+                    <button
+                        class="admin-players-secondary-button"
+                        id="adminCancelExportPlayersButton"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="admin-players-primary-button"
+                        id="adminConfirmExportPlayersButton"
+                        type="submit"
+                    >
+
+                        Export
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+    ====================================================== -->
+
+    <section
+        class="admin-player-modal"
+        id="adminLogoutModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminLogoutModalTitle"
+        hidden
+    >
+
+        <button
+            class="admin-player-modal-backdrop"
+            id="adminLogoutModalBackdrop"
+            type="button"
+            aria-label="Close logout dialog"
+        ></button>
+
+        <div class="admin-player-modal-dialog admin-player-confirm-modal">
+
+            <header class="admin-player-modal-header">
+
+                <h2 id="adminLogoutModalTitle">
+                    Sign Out
+                </h2>
+
+            </header>
+
+            <div class="admin-player-confirm-content">
+
+                <div class="admin-player-confirm-icon">
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <p>
+                    Are you sure you want to sign out?
+                </p>
+
+            </div>
+
+            <footer class="admin-player-modal-actions">
+
+                <button
+                    class="admin-players-secondary-button"
+                    id="adminLogoutCancelButton"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="admin-players-danger-button"
+                    id="adminLogoutConfirmButton"
+                    type="button"
+                >
+                    Sign Out
+                </button>
+
+            </footer>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TOAST REGION
+    ====================================================== -->
+
+    <div
+        class="admin-toast-region"
+        id="adminToastRegion"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="js/admin-dashboard.js"
+        defer
+    ></script>
+
+    <script
+        src="js/admin-players.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

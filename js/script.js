@@ -1242,3 +1242,902 @@ function updateExploreRegionButton(regionKey){
     `;
 
 }
+/* =====================================================
+   CINEMATIC HERO CAROUSEL
+   Paste at the END of script.js
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===================================================
+     ELEMENTS
+  =================================================== */
+
+  const heroCarousel =
+    document.querySelector(".hero-carousel");
+
+  const heroSlides = Array.from(
+    document.querySelectorAll("[data-hero-slide]")
+  );
+
+  const heroDots = Array.from(
+    document.querySelectorAll("[data-hero-dot]")
+  );
+
+  const heroPreviousButton =
+    document.getElementById("heroPreviousButton");
+
+  const heroNextButton =
+    document.getElementById("heroNextButton");
+
+  const heroCurrentSlide =
+    document.getElementById("heroCurrentSlide");
+
+  const heroTotalSlides =
+    document.getElementById("heroTotalSlides");
+
+  const heroProgressBar =
+    document.getElementById("heroCarouselProgress");
+
+
+  /*
+    Stop safely if the carousel HTML is not available.
+  */
+
+  if (!heroCarousel || heroSlides.length === 0) {
+    return;
+  }
+
+
+  /* ===================================================
+     CONFIGURATION
+  =================================================== */
+
+  const HERO_AUTOPLAY_DELAY = 7500;
+  const HERO_SWIPE_THRESHOLD = 45;
+
+  let currentHeroIndex = 0;
+
+  let heroAutoplayTimer = null;
+
+  let heroTouchStartX = 0;
+  let heroTouchEndX = 0;
+
+  let heroIsTouching = false;
+  let heroIsVisible = true;
+
+  let heroTransitionLocked = false;
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+
+  /* ===================================================
+     HELPERS
+  =================================================== */
+
+  function formatHeroNumber(number) {
+    return String(number).padStart(2, "0");
+  }
+
+
+  function normaliseHeroIndex(index) {
+
+    if (index >= heroSlides.length) {
+      return 0;
+    }
+
+    if (index < 0) {
+      return heroSlides.length - 1;
+    }
+
+    return index;
+  }
+
+
+  function shouldHeroAutoplay() {
+
+  return (
+    heroSlides.length > 1 &&
+    !heroIsTouching &&
+    heroIsVisible &&
+    !document.hidden &&
+    !prefersReducedMotion.matches
+  );
+
+}
+
+
+  /* ===================================================
+     COUNTER
+  =================================================== */
+
+  function updateHeroCounter() {
+
+    if (heroCurrentSlide) {
+      heroCurrentSlide.textContent =
+        formatHeroNumber(currentHeroIndex + 1);
+    }
+
+    if (heroTotalSlides) {
+      heroTotalSlides.textContent =
+        formatHeroNumber(heroSlides.length);
+    }
+
+  }
+
+
+  /* ===================================================
+     DOTS
+  =================================================== */
+
+  function updateHeroDots() {
+
+    heroDots.forEach(function (dot, index) {
+
+      const isActive =
+        index === currentHeroIndex;
+
+      dot.classList.toggle(
+        "is-active",
+        isActive
+      );
+
+      dot.setAttribute(
+        "aria-current",
+        isActive ? "true" : "false"
+      );
+
+      dot.setAttribute(
+        "tabindex",
+        isActive ? "0" : "-1"
+      );
+
+    });
+
+  }
+
+
+  /* ===================================================
+     PROGRESS BAR
+  =================================================== */
+
+  function stopHeroProgress() {
+
+    if (!heroProgressBar) {
+      return;
+    }
+
+    const computedWidth =
+      window.getComputedStyle(
+        heroProgressBar
+      ).width;
+
+    heroProgressBar.style.transition = "none";
+    heroProgressBar.style.width = computedWidth;
+
+  }
+
+
+  function resetHeroProgress() {
+
+    if (!heroProgressBar) {
+      return;
+    }
+
+    heroProgressBar.style.transition = "none";
+    heroProgressBar.style.width = "0%";
+
+    /*
+      Force the browser to apply width 0 before
+      starting the new progress animation.
+    */
+
+    void heroProgressBar.offsetWidth;
+
+    if (!shouldHeroAutoplay()) {
+      return;
+    }
+
+    heroProgressBar.style.transition =
+      `width ${HERO_AUTOPLAY_DELAY}ms linear`;
+
+    heroProgressBar.style.width = "100%";
+
+  }
+
+
+  /* ===================================================
+     SHOW A SLIDE
+  =================================================== */
+
+  function showHeroSlide(
+    requestedIndex,
+    direction = "next",
+    userInitiated = false
+  ) {
+
+    if (
+      heroTransitionLocked ||
+      heroSlides.length === 0
+    ) {
+      return;
+    }
+
+    const nextIndex =
+      normaliseHeroIndex(requestedIndex);
+
+    /*
+      If the requested slide is already active,
+      simply restart autoplay when necessary.
+    */
+
+    if (
+      nextIndex === currentHeroIndex &&
+      heroSlides[currentHeroIndex]
+        .classList.contains("is-active")
+    ) {
+
+      if (userInitiated) {
+        restartHeroAutoplay();
+      }
+
+      return;
+    }
+
+
+    heroTransitionLocked = true;
+
+    currentHeroIndex = nextIndex;
+
+
+    heroSlides.forEach(function (slide, index) {
+
+      const isActive =
+        index === currentHeroIndex;
+
+      slide.classList.toggle(
+        "is-active",
+        isActive
+      );
+
+      slide.classList.remove(
+        "is-entering-next",
+        "is-entering-previous"
+      );
+
+      slide.setAttribute(
+        "aria-hidden",
+        isActive ? "false" : "true"
+      );
+
+      /*
+        Prevent links inside hidden slides from
+        receiving keyboard focus.
+      */
+
+      slide
+        .querySelectorAll(
+          "a, button, input, select, textarea"
+        )
+        .forEach(function (interactiveElement) {
+
+          if (isActive) {
+            interactiveElement.removeAttribute(
+              "tabindex"
+            );
+          } else {
+            interactiveElement.setAttribute(
+              "tabindex",
+              "-1"
+            );
+          }
+
+        });
+
+    });
+
+
+    const activeHeroSlide =
+      heroSlides[currentHeroIndex];
+
+    activeHeroSlide.classList.add(
+      direction === "previous"
+        ? "is-entering-previous"
+        : "is-entering-next"
+    );
+
+
+    /*
+      Restart the Ken Burns animation whenever
+      a slide becomes active again.
+    */
+
+    const activeBackground =
+      activeHeroSlide.querySelector(
+        ".hero-slide-background"
+      );
+
+    if (activeBackground) {
+
+      activeBackground.style.animation = "none";
+
+      void activeBackground.offsetWidth;
+
+      activeBackground.style.animation = "";
+
+    }
+
+
+    updateHeroCounter();
+    updateHeroDots();
+    resetHeroProgress();
+
+
+    window.setTimeout(function () {
+
+      activeHeroSlide.classList.remove(
+        "is-entering-next",
+        "is-entering-previous"
+      );
+
+      heroTransitionLocked = false;
+
+    }, 1150);
+
+
+    if (userInitiated) {
+      restartHeroAutoplay();
+    }
+
+  }
+
+
+  /* ===================================================
+     NEXT AND PREVIOUS
+  =================================================== */
+
+  function showNextHeroSlide(
+    userInitiated = false
+  ) {
+
+    showHeroSlide(
+      currentHeroIndex + 1,
+      "next",
+      userInitiated
+    );
+
+  }
+
+
+  function showPreviousHeroSlide(
+    userInitiated = false
+  ) {
+
+    showHeroSlide(
+      currentHeroIndex - 1,
+      "previous",
+      userInitiated
+    );
+
+  }
+
+
+  /* ===================================================
+     AUTOPLAY
+  =================================================== */
+
+  function stopHeroAutoplay() {
+
+    if (heroAutoplayTimer) {
+
+      window.clearTimeout(
+        heroAutoplayTimer
+      );
+
+      heroAutoplayTimer = null;
+
+    }
+
+  }
+
+
+  function startHeroAutoplay() {
+
+  stopHeroAutoplay();
+
+  if (!shouldHeroAutoplay()) {
+
+    stopHeroProgress();
+    return;
+
+  }
+
+  resetHeroProgress();
+
+  heroAutoplayTimer =
+    window.setTimeout(function () {
+
+      showNextHeroSlide(false);
+
+      window.setTimeout(
+        startHeroAutoplay,
+        1200
+      );
+
+    }, HERO_AUTOPLAY_DELAY);
+
+}
+
+
+  function restartHeroAutoplay() {
+
+    stopHeroAutoplay();
+    startHeroAutoplay();
+
+  }
+
+
+  /* ===================================================
+     ARROW BUTTONS
+  =================================================== */
+
+  if (heroPreviousButton) {
+
+    heroPreviousButton.addEventListener(
+      "click",
+      function () {
+
+        showPreviousHeroSlide(true);
+
+      }
+    );
+
+  }
+
+
+  if (heroNextButton) {
+
+    heroNextButton.addEventListener(
+      "click",
+      function () {
+
+        showNextHeroSlide(true);
+
+      }
+    );
+
+  }
+
+
+  /* ===================================================
+     DOT BUTTONS
+  =================================================== */
+
+  heroDots.forEach(function (dot) {
+
+    dot.addEventListener(
+      "click",
+      function () {
+
+        const requestedIndex =
+          Number(dot.dataset.heroDot);
+
+        if (!Number.isInteger(requestedIndex)) {
+          return;
+        }
+
+        const direction =
+          requestedIndex < currentHeroIndex
+            ? "previous"
+            : "next";
+
+        showHeroSlide(
+          requestedIndex,
+          direction,
+          true
+        );
+
+      }
+    );
+
+  });
+
+
+
+  /* ===================================================
+     KEYBOARD NAVIGATION
+  =================================================== */
+
+  heroCarousel.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (event.key === "ArrowRight") {
+
+        event.preventDefault();
+
+        showNextHeroSlide(true);
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        event.preventDefault();
+
+        showPreviousHeroSlide(true);
+
+      }
+
+
+      if (event.key === "Home") {
+
+        event.preventDefault();
+
+        showHeroSlide(
+          0,
+          "previous",
+          true
+        );
+
+      }
+
+
+      if (event.key === "End") {
+
+        event.preventDefault();
+
+        showHeroSlide(
+          heroSlides.length - 1,
+          "next",
+          true
+        );
+
+      }
+
+    }
+  );
+
+
+  /* ===================================================
+     MOBILE SWIPE
+  =================================================== */
+
+  heroCarousel.addEventListener(
+    "touchstart",
+    function (event) {
+
+      if (
+        !event.changedTouches ||
+        event.changedTouches.length === 0
+      ) {
+        return;
+      }
+
+      heroTouchStartX =
+        event.changedTouches[0].clientX;
+
+      heroTouchEndX =
+        heroTouchStartX;
+
+      heroIsTouching = true;
+
+      stopHeroAutoplay();
+      stopHeroProgress();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  heroCarousel.addEventListener(
+    "touchmove",
+    function (event) {
+
+      if (
+        !event.changedTouches ||
+        event.changedTouches.length === 0
+      ) {
+        return;
+      }
+
+      heroTouchEndX =
+        event.changedTouches[0].clientX;
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  heroCarousel.addEventListener(
+    "touchend",
+    function () {
+
+      const swipeDistance =
+        heroTouchEndX - heroTouchStartX;
+
+      if (
+        Math.abs(swipeDistance) >=
+        HERO_SWIPE_THRESHOLD
+      ) {
+
+        if (swipeDistance < 0) {
+
+          showNextHeroSlide(true);
+
+        } else {
+
+          showPreviousHeroSlide(true);
+
+        }
+
+      }
+
+      heroIsTouching = false;
+
+      restartHeroAutoplay();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  heroCarousel.addEventListener(
+    "touchcancel",
+    function () {
+
+      heroIsTouching = false;
+
+      restartHeroAutoplay();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* ===================================================
+     PAUSE WHEN THE HERO IS OUTSIDE THE VIEWPORT
+  =================================================== */
+
+  if ("IntersectionObserver" in window) {
+
+    const heroVisibilityObserver =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            heroIsVisible =
+              entry.isIntersecting;
+
+            if (heroIsVisible) {
+
+              restartHeroAutoplay();
+
+            } else {
+
+              stopHeroAutoplay();
+              stopHeroProgress();
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.2
+        }
+      );
+
+    heroVisibilityObserver.observe(
+      heroCarousel
+    );
+
+  }
+
+
+  /* ===================================================
+     PAUSE WHEN BROWSER TAB IS HIDDEN
+  =================================================== */
+
+  document.addEventListener(
+    "visibilitychange",
+    function () {
+
+      if (document.hidden) {
+
+        stopHeroAutoplay();
+        stopHeroProgress();
+
+      } else {
+
+        restartHeroAutoplay();
+
+      }
+
+    }
+  );
+
+
+  /* ===================================================
+     REDUCED MOTION
+  =================================================== */
+
+  function handleHeroReducedMotion() {
+
+    if (prefersReducedMotion.matches) {
+
+      stopHeroAutoplay();
+
+      if (heroProgressBar) {
+
+        heroProgressBar.style.transition =
+          "none";
+
+        heroProgressBar.style.width = "0%";
+
+      }
+
+    } else {
+
+      restartHeroAutoplay();
+
+    }
+
+  }
+
+
+  if (
+    typeof prefersReducedMotion
+      .addEventListener === "function"
+  ) {
+
+    prefersReducedMotion.addEventListener(
+      "change",
+      handleHeroReducedMotion
+    );
+
+  } else if (
+    typeof prefersReducedMotion
+      .addListener === "function"
+  ) {
+
+    /*
+      Support for older browsers.
+    */
+
+    prefersReducedMotion.addListener(
+      handleHeroReducedMotion
+    );
+
+  }
+
+
+  /* ===================================================
+     IMAGE ERROR FALLBACK
+  =================================================== */
+
+  heroSlides.forEach(function (slide) {
+
+    const background =
+      slide.querySelector(
+        ".hero-slide-background"
+      );
+
+    if (!background) {
+      return;
+    }
+
+    /*
+      CSS background images do not trigger a normal
+      image error event, so preload the URL using Image.
+    */
+
+    const backgroundStyle =
+      window.getComputedStyle(
+        background
+      ).backgroundImage;
+
+    const imageUrlMatch =
+      backgroundStyle.match(
+        /url\(["']?(.+?)["']?\)/
+      );
+
+    if (!imageUrlMatch) {
+      return;
+    }
+
+    const imageUrl =
+      imageUrlMatch[1];
+
+    const imagePreloader =
+      new Image();
+
+    imagePreloader.onerror =
+      function () {
+
+        background.classList.add(
+          "hero-background-missing"
+        );
+
+        background.style.backgroundImage =
+          "linear-gradient(135deg, #03162f, #061d39, #03231f)";
+
+      };
+
+    imagePreloader.src =
+      imageUrl;
+
+  });
+
+
+  /* ===================================================
+     INITIALISE
+  =================================================== */
+
+
+
+  heroSlides.forEach(function (slide, index) {
+
+    const isActive =
+      index === 0;
+
+    slide.classList.toggle(
+      "is-active",
+      isActive
+    );
+
+    slide.setAttribute(
+      "aria-hidden",
+      isActive ? "false" : "true"
+    );
+
+
+    slide
+      .querySelectorAll(
+        "a, button, input, select, textarea"
+      )
+      .forEach(function (interactiveElement) {
+
+        if (isActive) {
+
+          interactiveElement.removeAttribute(
+            "tabindex"
+          );
+
+        } else {
+
+          interactiveElement.setAttribute(
+            "tabindex",
+            "-1"
+          );
+
+        }
+
+      });
+
+  });
+
+
+  currentHeroIndex = 0;
+
+  updateHeroCounter();
+  updateHeroDots();
+
+  if (!prefersReducedMotion.matches) {
+
+    startHeroAutoplay();
+
+  }
+
+});

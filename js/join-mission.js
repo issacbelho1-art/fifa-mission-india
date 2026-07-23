@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     supporter: {
       title: "Become a Supporter",
-      icon: "🇮🇳",
+      icon: "🤝",
       description:
         "Join the national supporter community and follow India’s journey towards the FIFA World Cup."
     }
@@ -105,9 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.classList.add("role-modal-open");
 
-    window.setTimeout(() => {
-      continueRegistrationButton.focus();
-    }, 150);
+    window.requestAnimationFrame(() => {
+  continueRegistrationButton.focus();
+});
 
   }
 
@@ -140,8 +140,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   closeModalButtons.forEach((button) => {
-    button.addEventListener("click", closeRoleModal);
-  });
+  button.addEventListener("click", closeRoleModal);
+});
+
+
+roleModal.addEventListener("click", (event) => {
+
+  if (event.target === roleModal) {
+    closeRoleModal();
+  }
+
+});
 
 
   document.addEventListener("keydown", (event) => {
@@ -169,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     POST /api/auth/register
   */
 
+  continueRegistrationButton.disabled = true;
   continueRegistrationButton.addEventListener("click", () => {
 
     const selectedRole =
@@ -177,7 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!selectedRole) {
       return;
     }
-
+    // Future:
+// analytics.track("join_role_selected", {
+//     role: selectedRole
+// });
     console.log(
       `Frontend registration selected for role: ${selectedRole}`
     );
@@ -191,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href =
         `register.html?role=${encodeURIComponent(selectedRole)}`;
     */
-
+    continueRegistrationButton.disabled = false;
     closeRoleModal();
 
   });

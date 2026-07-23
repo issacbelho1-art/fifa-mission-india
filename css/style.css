@@ -8748,3 +8748,2272 @@ section[id] {
 .player-image::after {
   pointer-events: none;
 }
+/* =====================================================
+   CINEMATIC HERO CAROUSEL
+   Paste at the END of style.css
+===================================================== */
+
+.hero.hero-carousel {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background: #020b1c;
+}
+
+
+/* =====================================================
+   SLIDES WRAPPER
+===================================================== */
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =====================================================
+   INDIVIDUAL SLIDE
+===================================================== */
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  visibility: hidden;
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 1.1s ease,
+    visibility 1.1s ease;
+}
+
+.hero-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+
+  pointer-events: auto;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   SLIDE BACKGROUND
+===================================================== */
+
+.hero-slide-background {
+  position: absolute;
+  inset: -3%;
+
+  width: 106%;
+  height: 106%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: scale(1.04);
+
+  will-change: transform;
+}
+
+.hero-slide.is-active .hero-slide-background {
+  animation: heroKenBurns 6s linear forwards;
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.04);
+  }
+
+  to {
+    transform: scale(1.11);
+  }
+}
+
+
+/* =====================================================
+   SHARED DARK OVERLAY
+===================================================== */
+
+.hero-carousel-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 8, 20, 0.16) 0%,
+      rgba(1, 8, 20, 0.02) 34%,
+      rgba(1, 8, 20, 0.3) 67%,
+      rgba(1, 8, 20, 0.82) 100%
+    );
+}
+
+.hero-carousel-overlay::before {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      transparent 0%,
+      transparent 22%,
+      rgba(2, 10, 26, 0.06) 44%,
+      rgba(2, 10, 26, 0.42) 100%
+    );
+
+  content: "";
+}
+
+
+/* =====================================================
+   SUBTLE CINEMATIC TEXTURE
+===================================================== */
+
+.hero-carousel-noise {
+  position: absolute;
+  inset: 0;
+
+  z-index: 11;
+
+  pointer-events: none;
+
+  opacity: 0.05;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.22) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 4px 4px;
+
+  mix-blend-mode: soft-light;
+}
+@keyframes heroNoise {
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-20px,-20px);
+    }
+
+}
+
+.hero-carousel-noise{
+
+    animation:heroNoise 12s linear infinite;
+}
+
+/* =====================================================
+   SLIDE INNER LAYOUT
+===================================================== */
+
+.hero-slide-inner {
+  position: relative;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  width: min(1700px, 100%);
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 130px 6% 135px;
+}
+
+.hero-slide-content {
+  width: min(780px, 100%);
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 11px;
+
+  margin-bottom: 24px;
+
+  color: #ff8a23;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+
+.hero-eyebrow-line {
+  display: block;
+
+  width: 44px;
+  height: 2px;
+
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    90deg,
+    #ff8c28,
+    #ff5f00
+  );
+
+  box-shadow: 0 0 16px rgba(255, 106, 0, 0.65);
+}
+
+.hero-eyebrow-separator {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.hero-carousel .hero-title {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  line-height: 0.86;
+
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 5px 26px rgba(0, 0, 0, 0.42);
+}
+
+.hero-title-small {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: clamp(48px, 5.3vw, 90px);
+  line-height: 0.95;
+}
+
+.hero-title-main {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #ffffff;
+
+  font-size: clamp(78px, 8vw, 142px);
+  line-height: 0.82;
+}
+
+.hero-title-accent {
+  display: block;
+
+  margin-top: 18px;
+
+  color: #ff7a11;
+
+  font-size: clamp(32px, 3.4vw, 60px);
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+
+  text-shadow:
+    0 0 30px rgba(255, 106, 0, 0.2);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-carousel .hero-description {
+  max-width: 680px;
+
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-carousel .hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+.hero-carousel .primary-button,
+.hero-carousel .secondary-button {
+  position: relative;
+
+  min-height: 60px;
+
+  padding: 0 30px;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  letter-spacing: 1px;
+}
+
+.hero-carousel .primary-button::before {
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 65%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  content: "";
+
+  transform: skewX(-20deg);
+
+  transition: left 0.65s ease;
+}
+
+.hero-carousel .primary-button:hover::before {
+  left: 150%;
+}
+
+.hero-carousel .secondary-button {
+  background: rgba(255, 255, 255, 0.055);
+
+  border-color: rgba(255, 255, 255, 0.28);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* =====================================================
+   HERO STATS
+===================================================== */
+
+.hero-carousel .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 42px;
+}
+
+.hero-carousel .hero-stat {
+    min-width: 160px;
+
+    padding: 18px 22px;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.04);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.hero-carousel .hero-stat:hover{
+    transform: translateY(-5px);
+
+    background: rgba(255,255,255,.08);
+
+    border-color: rgba(255,255,255,.18);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.hero-carousel .hero-stat strong{
+    display:block;
+
+    color:#ffffff;
+
+    font-family:"Barlow Condensed",sans-serif;
+    font-size:34px;
+    font-weight:800;
+    line-height:1;
+}
+
+.hero-carousel .hero-stat span{
+    display:block;
+
+    margin-top:8px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+/* =====================================================
+   CONTENT ENTRANCE ANIMATION
+===================================================== */
+
+/* =========================================================
+   HERO CONTENT ANIMATION
+========================================================= */
+
+.hero-animate-item {
+    opacity: 0;
+
+    transform: translateY(36px);
+
+    filter: blur(8px);
+
+    transition:
+        opacity .8s ease,
+        transform .9s cubic-bezier(.22,1,.36,1),
+        filter .8s ease;
+}
+
+.hero-slide.is-active .hero-animate-item{
+    opacity:1;
+
+    transform:translateY(0);
+
+    filter:blur(0);
+}
+
+/* Small label */
+
+.hero-slide.is-active .hero-eyebrow{
+    transition-delay:.15s;
+}
+
+/* Main title */
+
+.hero-slide.is-active .hero-title{
+    transition-delay:.35s;
+}
+
+/* Description */
+
+.hero-slide.is-active .hero-description{
+    transition-delay:.55s;
+}
+
+/* Buttons */
+
+.hero-slide.is-active .hero-buttons{
+    transition-delay:.75s;
+}
+
+/* Statistics */
+
+.hero-slide.is-active .hero-stats{
+    transition-delay:.95s;
+}
+.hero-slide.is-active .hero-animate-item:nth-child(1) {
+    transition-delay: 0.20s;
+}
+
+.hero-slide.is-active .hero-animate-item:nth-child(2) {
+    transition-delay: 0.40s;
+}
+
+.hero-slide.is-active .hero-animate-item:nth-child(3) {
+    transition-delay: 0.60s;
+}
+
+.hero-slide.is-active .hero-animate-item:nth-child(4) {
+    transition-delay: 0.80s;
+}
+
+.hero-slide.is-active .hero-animate-item:nth-child(5) {
+    transition-delay: 1.00s;
+}
+
+
+/* =====================================================
+   TROPHY SLIDE GLOW
+===================================================== */
+
+.hero-trophy-glow {
+  position: absolute;
+  top: 18%;
+  right: 7%;
+
+  z-index: 4;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 193, 70, 0.28) 0%,
+      rgba(255, 140, 28, 0.12) 33%,
+      transparent 70%
+    );
+
+  filter: blur(35px);
+
+  animation: heroTrophyGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes heroTrophyGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.08);
+  }
+}
+
+
+/* =====================================================
+   SIDE TEXT
+===================================================== */
+
+.hero-carousel .hero-side-text {
+  position: absolute;
+  top: 50%;
+  right: 23px;
+
+  z-index: 30;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  writing-mode: vertical-rl;
+
+  transform: translateY(-50%);
+}
+
+
+/* =====================================================
+   CAROUSEL CONTROLS
+===================================================== */
+
+.hero-carousel-controls {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 42px;
+
+  z-index: 40;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =====================================================
+   SLIDE COUNTER
+===================================================== */
+
+.hero-slide-counter {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 105px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+#heroCurrentSlide {
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.hero-counter-divider {
+  display: block;
+
+  width: 28px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   PREMIUM HERO DOTS
+========================================================= */
+
+.hero-carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hero-carousel-dot {
+    width: 12px;
+    height: 12px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    cursor: pointer;
+
+    transition:
+        width 0.4s ease,
+        background-color 0.35s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.75);
+
+    transform: scale(1.15);
+}
+
+.hero-carousel-dot.is-active {
+    width: 42px;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 18px rgba(255,255,255,.45);
+}
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.hero-carousel-arrows {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.hero-carousel-arrow {
+  display: grid;
+  place-items: center;
+
+  width: 56px;
+  height: 56px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  font-size: 22px;
+font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    color .35s ease,
+    background .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    transform .35s ease;
+}
+
+.hero-carousel-arrow:hover {
+  color: #ffffff;
+
+  border-color: #ff7a11;
+
+  background: linear-gradient(
+    135deg,
+    #ff8a1d,
+    #ff6a00
+  );
+
+  box-shadow:
+    0 16px 36px rgba(255, 106, 0, 0.35);
+
+  transform: translateY(-3px) scale(1.05);
+}
+.hero-carousel-arrow:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+.hero-carousel-arrow span {
+  transition: transform 0.3s ease;
+}
+
+#heroNextButton:hover span {
+  transform: translateX(2px);
+}
+
+#heroPreviousButton:hover span {
+  transform: translateX(-2px);
+}
+
+
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
+
+.hero-carousel-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 45;
+
+  height: 4px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-carousel-progress span {
+  display: block;
+
+  width: 0;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff6a00,
+      #ffad4b
+    );
+
+  box-shadow:
+    0 0 15px rgba(255, 106, 0, 0.6);
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.hero-scroll-indicator {
+  position: absolute;
+  right: 6%;
+  bottom: 115px;
+
+  z-index: 40;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  color: #ffffff;
+}
+
+.hero-scroll-line {
+  position: relative;
+
+  display: block;
+
+  width: 52px;
+  height: 1px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.hero-scroll-line::after {
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: #ff7a11;
+
+  content: "";
+
+  animation: heroScrollLine 2s ease-in-out infinite;
+}
+
+@keyframes heroScrollLine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+
+/* =====================================================
+   LARGE SCREENS
+===================================================== */
+
+@media (min-width: 1600px) {
+
+  .hero-slide-inner {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .hero-slide-content {
+    width: min(860px, 100%);
+  }
+
+  .hero-carousel .hero-description {
+    font-size: 18px;
+  }
+
+  .hero-carousel-controls {
+    left: 7%;
+    right: 7%;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .hero.hero-carousel {
+    min-height: 900px;
+    height: 900px;
+  }
+
+  .hero-slide-inner {
+    align-items: center;
+
+    padding:
+      120px
+      24px
+      150px;
+  }
+
+  .hero-slide-content {
+    width: min(720px, 100%);
+  }
+
+  .hero-title-small {
+    font-size: clamp(43px, 8vw, 72px);
+  }
+
+  .hero-title-main {
+    font-size: clamp(70px, 12vw, 112px);
+  }
+
+  .hero-title-accent {
+    font-size: clamp(31px, 5vw, 50px);
+  }
+
+  .hero-carousel-controls {
+    left: 24px;
+    right: 24px;
+    bottom: 35px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  .hero-carousel .hero-side-text {
+    display: none;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .hero.hero-carousel {
+    min-height: 930px;
+    height: 930px;
+  }
+
+  .hero-slide-background {
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 62% center;
+
+    transform: scale(1.01);
+  }
+
+  .hero-slide.is-active .hero-slide-background {
+    animation-name: heroKenBurnsMobile;
+  }
+
+  @keyframes heroKenBurnsMobile {
+    from {
+      transform: scale(1.01);
+    }
+
+    to {
+      transform: scale(1.07);
+    }
+  }
+
+
+  .hero-carousel-overlay {
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(255, 122, 17, 0.09) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 82% 15%,
+      rgba(32, 185, 250, 0.07) 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 11, 28, 0.14) 0%,
+      rgba(2, 11, 28, 0.28) 35%,
+      rgba(2, 11, 28, 0.78) 68%,
+      rgba(2, 11, 28, 0.98) 100%
+    );
+}
+
+  .hero-slide-inner {
+    align-items: flex-end;
+
+    padding:
+      115px
+      18px
+      155px;
+  }
+
+  .hero-slide-content {
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    gap: 8px;
+
+    margin-bottom: 17px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .hero-eyebrow-line {
+    width: 28px;
+  }
+
+  .hero-title-small {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .hero-title-main {
+    font-size: clamp(62px, 17vw, 88px);
+    line-height: 0.84;
+
+    letter-spacing: -1px;
+  }
+
+  .hero-title-accent {
+    margin-top: 12px;
+
+    font-size: clamp(27px, 8vw, 41px);
+  }
+
+  .hero-carousel .hero-description {
+    margin-top: 20px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-carousel .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 11px;
+
+    margin-top: 24px;
+  }
+
+  .hero-carousel .primary-button,
+  .hero-carousel .secondary-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 53px;
+
+    padding: 0 18px;
+
+    font-size: 12px;
+  }
+
+  .hero-carousel .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    width: 100%;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    padding: 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-carousel .hero-stat {
+    min-width: 0;
+
+    margin: 0;
+    padding: 10px 5px;
+
+    border: 0;
+
+    text-align: center;
+}
+
+.hero-carousel .hero-stat strong {
+    display: block;
+
+    font-size: 21px;
+    line-height: 1;
+}
+
+.hero-carousel .hero-stat span {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 6px;
+    line-height: 1.35;
+
+    letter-spacing: 0.7px;
+}
+
+  .hero-carousel .hero-stat strong {
+    font-size: 24px;
+  }
+
+  .hero-carousel .hero-stat span {
+    font-size: 6px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .hero-carousel-controls {
+    left: 18px;
+    right: 18px;
+    bottom: 29px;
+
+    gap: 12px;
+  }
+
+  .hero-slide-counter {
+    display: none;
+  }
+
+  .hero-carousel-dots {
+    gap: 8px;
+  }
+
+  .hero-carousel-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border-radius: 999px;
+
+  font-size: 0;
+}
+
+.hero-carousel-dot.is-active,
+.hero-carousel-dot[aria-current="true"] {
+  width: 32px;
+}
+
+  .hero-carousel-dots {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+  .hero-carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .hero-trophy-glow {
+    top: 22%;
+    right: -20%;
+
+    width: 280px;
+    height: 280px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .hero.hero-carousel {
+    min-height: 900px;
+    height: 900px;
+  }
+
+  .hero-slide-inner {
+    padding-inline: 15px;
+  }
+
+  .hero-title-main {
+    font-size: clamp(56px, 16vw, 74px);
+  }
+
+  .hero-title-accent {
+    font-size: clamp(24px, 7.5vw, 34px);
+  }
+
+  .hero-carousel .hero-description {
+    font-size: 12.5px;
+  }
+
+  .hero-carousel-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.hero-carousel-dot.is-active,
+.hero-carousel-dot[aria-current="true"] {
+  width: 27px;
+}
+
+  .hero-carousel-arrow {
+    width: 39px;
+    height: 39px;
+  }
+
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.hero-carousel-dot:focus-visible,
+.hero-carousel-arrow:focus-visible,
+.hero-scroll-indicator:focus-visible,
+.hero-carousel .primary-button:focus-visible,
+.hero-carousel .secondary-button:focus-visible {
+  outline: 3px solid #ff8a22;
+
+  outline-offset: 4px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-slide,
+  .hero-animate-item,
+  .hero-carousel-dot,
+  .hero-carousel-arrow {
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-slide.is-active .hero-slide-background,
+  .hero-trophy-glow,
+  .hero-scroll-line::after {
+    animation: none !important;
+  }
+
+}
+/* =====================================================
+   CINEMATIC HERO — MOBILE LAYOUT CORRECTION
+   Paste at the END of style.css
+===================================================== */
+
+@media (max-width: 650px) {
+
+  /*
+    Use the visible mobile viewport instead of a fixed
+    930px hero. This prevents an excessively tall slide.
+  */
+
+  .hero.hero-carousel {
+    min-height: 760px;
+    height: 100svh;
+    max-height: 860px;
+  }
+
+
+  /*
+    Keep important subjects visible while providing
+    enough dark space behind the HTML text.
+  */
+
+  .hero-slide-background {
+    background-position: 58% center;
+  }
+
+  .hero-slide:nth-child(3) .hero-slide-background {
+    background-position: 44% center;
+  }
+
+  .hero-slide:nth-child(4) .hero-slide-background {
+    background-position: 68% center;
+  }
+
+
+  /*
+    Stronger mobile gradient so text remains readable.
+  */
+
+  .hero-carousel-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 11, 28, 0.12) 0%,
+        rgba(2, 11, 28, 0.18) 24%,
+        rgba(2, 11, 28, 0.58) 48%,
+        rgba(2, 11, 28, 0.94) 72%,
+        #020b1c 100%
+      );
+  }
+
+  .hero-carousel-overlay::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 11, 28, 0.62),
+        rgba(2, 11, 28, 0.08)
+      );
+  }
+
+
+  /*
+    Position the content near the bottom while reserving
+    space for carousel controls.
+  */
+
+  .hero-slide-inner {
+    align-items: flex-end;
+
+    padding:
+      105px
+      18px
+      105px;
+  }
+
+  .hero-slide-content {
+    width: 100%;
+    max-width: 540px;
+  }
+
+
+  /*
+    Reduce and simplify the eyebrow.
+  */
+
+  .hero-eyebrow {
+    gap: 7px;
+
+    margin-bottom: 13px;
+
+    font-size: 7.5px;
+    line-height: 1.4;
+
+    letter-spacing: 1.4px;
+  }
+
+  .hero-eyebrow-line {
+    width: 24px;
+  }
+
+  .hero-eyebrow-separator {
+    display: none;
+  }
+
+
+  /*
+    More balanced mobile typography.
+  */
+
+  .hero-carousel .hero-title {
+    line-height: 0.9;
+
+    letter-spacing: -0.8px;
+  }
+
+  .hero-title-small {
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1;
+  }
+
+  .hero-title-main {
+    margin-top: 3px;
+
+    font-size: clamp(52px, 14vw, 72px);
+    line-height: 0.88;
+  }
+
+  .hero-title-accent {
+    margin-top: 10px;
+
+    font-size: clamp(22px, 6.8vw, 34px);
+    line-height: 1.02;
+  }
+
+
+  /*
+    Slide 3 contains a longer heading, so it requires
+    slightly smaller typography.
+  */
+
+  .hero-slide:nth-child(3) .hero-title-small {
+    font-size: clamp(26px, 7.8vw, 37px);
+  }
+
+  .hero-slide:nth-child(3) .hero-title-main {
+    font-size: clamp(38px, 10.5vw, 55px);
+    line-height: 0.94;
+  }
+
+  .hero-slide:nth-child(3) .hero-title-accent {
+    font-size: clamp(27px, 8vw, 39px);
+  }
+
+
+  /*
+    Keep the description short and readable.
+  */
+
+  .hero-carousel .hero-description {
+    display: -webkit-box;
+
+    max-width: 480px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 12.5px;
+    line-height: 1.55;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+
+  /*
+    Show the two buttons side by side when space permits.
+  */
+
+  .hero-carousel .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    gap: 9px;
+
+    margin-top: 19px;
+  }
+
+  .hero-carousel .primary-button,
+  .hero-carousel .secondary-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    font-size: 9.5px;
+    line-height: 1.25;
+
+    letter-spacing: 0.5px;
+
+    text-align: center;
+  }
+
+  .hero-carousel .play-icon {
+    width: 27px;
+    height: 27px;
+
+    font-size: 8px;
+  }
+
+
+  /*
+    Statistics make the mobile hero crowded. Hide them
+    on phones; they remain visible on tablets/desktops.
+  */
+
+  .hero-carousel .hero-stats {
+    display: none;
+  }
+
+
+  /*
+    Use compact lower controls.
+  */
+
+  .hero-carousel-controls {
+    left: 18px;
+    right: 18px;
+    bottom: 22px;
+
+    justify-content: center;
+
+    gap: 18px;
+  }
+
+  .hero-slide-counter {
+    display: none;
+  }
+
+  .hero-carousel-dots {
+    gap: 7px;
+  }
+
+  .hero-carousel-dot {
+    width: 30px;
+    height: 30px;
+
+    font-size: 8px;
+  }
+
+  .hero-carousel-arrows {
+    position: absolute;
+    right: 0;
+
+    gap: 7px;
+  }
+
+  .hero-carousel-arrow {
+    width: 37px;
+    height: 37px;
+
+    font-size: 15px;
+  }
+
+
+  /*
+    Keep the progress line visible but subtle.
+  */
+
+  .hero-carousel-progress {
+    height: 3px;
+  }
+
+
+  /*
+    Hide elements that add visual congestion on phones.
+  */
+
+  .hero-scroll-indicator,
+  .hero-carousel .hero-side-text,
+  .hero-trophy-glow {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .hero.hero-carousel {
+    min-height: 720px;
+    max-height: 820px;
+  }
+
+  .hero-slide-inner {
+    padding:
+      98px
+      15px
+      98px;
+  }
+
+  .hero-title-small {
+    font-size: clamp(27px, 8.5vw, 36px);
+  }
+
+  .hero-title-main {
+    font-size: clamp(47px, 13vw, 64px);
+  }
+
+  .hero-title-accent {
+    font-size: clamp(20px, 6.4vw, 29px);
+  }
+
+  .hero-carousel .hero-description {
+    font-size: 11.5px;
+  }
+
+  .hero-carousel .primary-button,
+  .hero-carousel .secondary-button {
+    min-height: 46px;
+
+    padding-inline: 9px;
+
+    font-size: 8.7px;
+  }
+
+}
+
+
+@media (max-width: 360px) {
+
+  /*
+    On very narrow screens stack buttons to avoid
+    squeezed or overflowing text.
+  */
+
+  .hero-carousel .hero-buttons {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .hero.hero-carousel {
+    min-height: 760px;
+    max-height: 850px;
+  }
+
+}
+/* =====================================================
+   HERO CAROUSEL — WORLD-CLASS CONTROL REFINEMENT
+   Paste at the VERY END of style.css
+===================================================== */
+
+
+/* =====================================================
+   1. REMOVE UNNECESSARY VISUAL ELEMENTS
+===================================================== */
+
+.hero-slide-counter,
+.hero-carousel-progress,
+.hero-carousel .hero-side-text {
+  display: none !important;
+}
+
+
+/* =====================================================
+   2. SLIGHTLY LIGHTER CINEMATIC OVERLAY
+===================================================== */
+
+.hero-carousel-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 8, 20, 0.12) 0%,
+      rgba(1, 8, 20, 0.02) 30%,
+      rgba(1, 8, 20, 0.25) 64%,
+      rgba(1, 8, 20, 0.76) 100%
+    );
+}
+
+.hero-carousel-overlay::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 10, 26, 0.72) 0%,
+      rgba(2, 10, 26, 0.45) 38%,
+      rgba(2, 10, 26, 0.08) 72%,
+      rgba(2, 10, 26, 0.04) 100%
+    );
+}
+
+
+/* =====================================================
+   3. MOVE HERO CONTENT SLIGHTLY UP
+===================================================== */
+
+.hero-slide-inner {
+  padding-top: 110px;
+  padding-bottom: 155px;
+
+  transform: translateY(-22px);
+}
+
+
+/* =====================================================
+   4. CLEAN CONTROL LAYOUT
+===================================================== */
+
+.hero-carousel-controls {
+  left: 6%;
+  right: 6%;
+  bottom: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   5. MINIMALIST SLIDE INDICATORS
+===================================================== */
+
+.hero-carousel-dots {
+  position: absolute;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  transform: translateX(-50%);
+
+  pointer-events: auto;
+}
+
+.hero-carousel-dot {
+  position: relative;
+
+  display: block;
+
+  width: 28px;
+  height: 4px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 999px;
+
+  color: transparent;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  font-size: 0;
+
+  box-shadow: none;
+
+  cursor: pointer;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  transform: none;
+
+  transition:
+    width 0.4s ease,
+    background 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.3s ease;
+}
+
+.hero-carousel-dot::before {
+  display: none;
+}
+
+.hero-carousel-dot:hover {
+  width: 34px;
+
+  color: transparent;
+
+  border: 0;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  transform: none;
+}
+
+.hero-carousel-dot.is-active {
+  width: 52px;
+
+  color: transparent;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff6a00,
+      #ff9d3d
+    );
+
+  box-shadow:
+    0 0 14px rgba(255, 106, 0, 0.34);
+
+  transform: none;
+}
+
+
+/* Remove visible numbers inside indicators */
+
+.hero-carousel-dot span {
+  display: none !important;
+}
+
+
+/* =====================================================
+   6. POSITION ARROWS ON THE RIGHT
+===================================================== */
+
+.hero-carousel-arrows {
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  pointer-events: auto;
+}
+
+.hero-carousel-arrow {
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(3, 12, 29, 0.35);
+
+  box-shadow: none;
+}
+
+.hero-carousel-arrow:hover {
+  border-color: rgba(255, 122, 17, 0.9);
+
+  background: #ff6a00;
+
+  box-shadow:
+    0 12px 28px rgba(255, 106, 0, 0.25);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   7. REFINE SCROLL INDICATOR
+===================================================== */
+
+.hero-scroll-indicator {
+  right: 6%;
+  bottom: 104px;
+
+  gap: 11px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 8px;
+
+  letter-spacing: 1.8px;
+}
+
+.hero-scroll-line {
+  width: 42px;
+
+  background: rgba(255, 255, 255, 0.24);
+}
+
+
+/* =====================================================
+   8. BUTTON REFINEMENT
+===================================================== */
+
+.hero-carousel .primary-button,
+.hero-carousel .secondary-button {
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.hero-carousel .primary-button:hover,
+.hero-carousel .secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TABLET REFINEMENT
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .hero-slide-inner {
+    padding-top: 110px;
+    padding-bottom: 145px;
+
+    transform: translateY(-12px);
+  }
+
+  .hero-carousel-controls {
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+  }
+
+  .hero-carousel-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE REFINEMENT
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .hero-carousel-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 11, 28, 0.08) 0%,
+        rgba(2, 11, 28, 0.15) 28%,
+        rgba(2, 11, 28, 0.52) 52%,
+        rgba(2, 11, 28, 0.92) 76%,
+        #020b1c 100%
+      );
+  }
+
+  .hero-carousel-overlay::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 11, 28, 0.45),
+        rgba(2, 11, 28, 0.04)
+      );
+  }
+
+  .hero-slide-inner {
+    padding:
+      95px
+      18px
+      100px;
+
+    transform: none;
+  }
+
+  .hero-carousel-controls {
+    left: 18px;
+    right: 18px;
+    bottom: 21px;
+
+    justify-content: flex-start;
+
+    min-height: 40px;
+  }
+
+  .hero-carousel-dots {
+    position: static;
+
+    justify-content: flex-start;
+
+    transform: none;
+  }
+
+  .hero-carousel-dot {
+    width: 19px;
+    height: 3px;
+  }
+
+  .hero-carousel-dot:hover {
+    width: 23px;
+  }
+
+  .hero-carousel-dot.is-active {
+    width: 39px;
+  }
+
+  .hero-carousel-arrows {
+    right: 0;
+  }
+
+  .hero-carousel-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .hero-carousel-controls {
+    left: 15px;
+    right: 15px;
+  }
+
+  .hero-carousel-dot {
+    width: 16px;
+  }
+
+  .hero-carousel-dot.is-active {
+    width: 32px;
+  }
+
+  .hero-carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+/* =========================================================
+   PHASE 2 — CINEMATIC HERO TRANSITIONS
+========================================================= */
+
+/* Every slide begins hidden */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: scale(1.025);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 1;
+}
+
+/* Current slide */
+.hero-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: scale(1);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CINEMATIC BACKGROUND MOTION
+========================================================= */
+
+.hero-slide-background {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.08);
+
+    transition:
+        transform 7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.hero-slide.is-active .hero-slide-background {
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   CONTENT ANIMATION BASE STATE
+========================================================= */
+
+.hero-slide .hero-eyebrow,
+.hero-slide .hero-kicker,
+.hero-slide .hero-label,
+.hero-slide h1,
+.hero-slide .hero-title,
+.hero-slide .hero-description,
+.hero-slide .hero-subtitle,
+.hero-slide .hero-actions,
+.hero-slide .hero-buttons,
+.hero-slide .hero-statistics,
+.hero-slide .hero-stats {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    filter: blur(4px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.75s ease;
+}
+
+
+/* =========================================================
+   ACTIVE CONTENT STATE
+========================================================= */
+
+.hero-slide.is-active .hero-eyebrow,
+.hero-slide.is-active .hero-kicker,
+.hero-slide.is-active .hero-label,
+.hero-slide.is-active h1,
+.hero-slide.is-active .hero-title,
+.hero-slide.is-active .hero-description,
+.hero-slide.is-active .hero-subtitle,
+.hero-slide.is-active .hero-actions,
+.hero-slide.is-active .hero-buttons,
+.hero-slide.is-active .hero-statistics,
+.hero-slide.is-active .hero-stats {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   STAGGERED TIMING
+========================================================= */
+
+/* Small heading appears first */
+.hero-slide.is-active .hero-eyebrow,
+.hero-slide.is-active .hero-kicker,
+.hero-slide.is-active .hero-label {
+    transition-delay: 0.2s;
+}
+
+/* Main headline */
+.hero-slide.is-active h1,
+.hero-slide.is-active .hero-title {
+    transition-delay: 0.35s;
+}
+
+/* Description */
+.hero-slide.is-active .hero-description,
+.hero-slide.is-active .hero-subtitle {
+    transition-delay: 0.52s;
+}
+
+/* Buttons */
+.hero-slide.is-active .hero-actions,
+.hero-slide.is-active .hero-buttons {
+    transition-delay: 0.68s;
+}
+
+/* Statistics */
+.hero-slide.is-active .hero-statistics,
+.hero-slide.is-active .hero-stats {
+    transition-delay: 0.82s;
+}
+
+
+/* =========================================================
+   BUTTON MICRO-INTERACTIONS
+========================================================= */
+
+.hero-slide a,
+.hero-slide button {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-slide a:hover,
+.hero-slide button:hover {
+    transform: translateY(-3px);
+}
+
+.hero-slide a:active,
+.hero-slide button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =========================================================
+   PREMIUM ARROW MOVEMENT
+========================================================= */
+
+.hero-carousel-arrow {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-carousel-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.hero-carousel-arrow:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-slide,
+    .hero-slide-background,
+    .hero-slide .hero-eyebrow,
+    .hero-slide .hero-kicker,
+    .hero-slide .hero-label,
+    .hero-slide h1,
+    .hero-slide .hero-title,
+    .hero-slide .hero-description,
+    .hero-slide .hero-subtitle,
+    .hero-slide .hero-actions,
+    .hero-slide .hero-buttons,
+    .hero-slide .hero-statistics,
+    .hero-slide .hero-stats {
+        transition: none;
+        animation: none;
+        filter: none;
+        transform: none;
+    }
+
+}

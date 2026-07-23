@@ -89,69 +89,780 @@
 
   <main>
 
-    <!-- ================= HERO SECTION ================= -->
+<!-- =====================================================
+     CINEMATIC HERO CAROUSEL
+===================================================== -->
 
-<section class="hero" id="home">
+<section
+  class="hero hero-carousel"
+  id="home"
+  aria-label="Bharat Football Fans featured vision"
+>
 
-  <div class="hero-overlay"></div>
+  <!-- Decorative overlay shared by all slides -->
 
-  <div class="hero-content">
+  <div
+    class="hero-carousel-overlay"
+    aria-hidden="true"
+  ></div>
 
-    <div class="small-heading reveal">
-      <span class="orange-dot"></span>
-      A PEOPLE-LED MOVEMENT FOR INDIA'S FOOTBALL FUTURE
-    </div>
+  <div
+    class="hero-carousel-noise"
+    aria-hidden="true"
+  ></div>
 
-    <h1 class="reveal">
-      <span>ONE NATION.</span>
-      <span class="outline-text">ONE DREAM.</span>
-      <span class="india-text">INDIA TO THE WORLD.</span>
-    </h1>
 
-    <p class="hero-description reveal">
-      Building a national football community that connects players, coaches,
-      academies, scouts, supporters and sponsors with one shared vision:
-      helping India reach the FIFA World Cup by 2034.
-    </p>
+  <!-- =================================================
+       HERO SLIDES
+  ================================================== -->
 
-    <div class="hero-buttons reveal">
+  <div
+    class="hero-slides"
+    id="heroSlides"
+    aria-live="polite"
+  >
 
-      <a href="#join-mission" class="primary-button">
-        JOIN THE MISSION
-        <span>↗</span>
-      </a>
+    <!-- =============================================
+         SLIDE 1
+    ============================================== -->
 
-      <a href="#mission" class="secondary-button">
-        <span class="play-icon">▶</span>
-        EXPLORE VISION 2034
-      </a>
+    <article
+      class="hero-slide is-active"
+      data-hero-slide
+      data-slide-index="0"
+      aria-hidden="false"
+    >
 
-    </div>
+      <div
+        class="hero-slide-background"
+        style="
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(2, 13, 31, 0.98) 0%,
+              rgba(3, 18, 40, 0.92) 40%,
+              rgba(3, 18, 40, 0.58) 67%,
+              rgba(3, 18, 40, 0.18) 100%
+            ),
+            url('images/hero-slide-1.png');
+        "
+        aria-hidden="true"
+      ></div>
 
-    <div class="hero-stats reveal">
 
-      <div class="hero-stat">
-        <strong>28</strong>
-        <span>STATES</span>
+      <div class="hero-slide-inner">
+
+        <div class="hero-slide-content">
+
+          <div class="hero-eyebrow hero-animate-item">
+
+            <span class="hero-eyebrow-line"></span>
+
+            <span>
+              Bharat Football Fans
+            </span>
+
+            <span class="hero-eyebrow-separator">
+              ·
+            </span>
+
+            <span>
+              Mission FIFA 2034
+            </span>
+
+          </div>
+
+
+          <h1 class="hero-title hero-animate-item">
+
+            <span class="hero-title-small">
+              1.4 Billion
+            </span>
+
+            <span class="hero-title-main">
+              Dreams
+            </span>
+
+            <span class="hero-title-accent">
+              One Football Mission
+            </span>
+
+          </h1>
+
+
+          <p class="hero-description hero-animate-item">
+            One nation united by football. One generation determined to build
+            the pathway that can take India to the world stage.
+          </p>
+
+
+          <div class="hero-buttons hero-animate-item">
+
+            <a
+              href="#join-mission"
+              class="primary-button"
+            >
+              <span>
+                Join the Mission
+              </span>
+
+              <span aria-hidden="true">
+                ↗
+              </span>
+            </a>
+
+
+            <a
+              href="#vision"
+              class="secondary-button"
+            >
+              <span class="play-icon" aria-hidden="true">
+                ▶
+              </span>
+
+              <span>
+                Explore Vision 2034
+              </span>
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats hero-animate-item">
+
+            <div class="hero-stat">
+
+              <strong>
+                1.4B
+              </strong>
+
+              <span>
+                Indian Dreams
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                28
+              </strong>
+
+              <span>
+                States United
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                2034
+              </strong>
+
+              <span>
+                World Cup Vision
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="hero-stat">
-        <strong>8</strong>
-        <span>UNION TERRITORIES</span>
+    </article>
+
+
+    <!-- =============================================
+         SLIDE 2
+    ============================================== -->
+
+    <article
+      class="hero-slide"
+      data-hero-slide
+      data-slide-index="1"
+      aria-hidden="true"
+    >
+
+      <div
+        class="hero-slide-background"
+        style="
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(2, 13, 31, 0.96) 0%,
+              rgba(3, 18, 40, 0.88) 41%,
+              rgba(3, 18, 40, 0.50) 69%,
+              rgba(3, 18, 40, 0.14) 100%
+            ),
+            url('images/hero-slide-2.png');
+        "
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="hero-slide-inner">
+
+        <div class="hero-slide-content">
+
+          <div class="hero-eyebrow hero-animate-item">
+
+            <span class="hero-eyebrow-line"></span>
+
+            <span>
+              Grassroots to Greatness
+            </span>
+
+          </div>
+
+
+          <h2 class="hero-title hero-animate-item">
+
+            <span class="hero-title-small">
+              Building
+            </span>
+
+            <span class="hero-title-main">
+              Champions
+            </span>
+
+            <span class="hero-title-accent">
+              Building India's Future
+            </span>
+
+          </h2>
+
+
+          <p class="hero-description hero-animate-item">
+            Strong players begin with strong foundations. We are connecting
+            talent, academies, coaches and opportunities across India.
+          </p>
+
+
+          <div class="hero-buttons hero-animate-item">
+
+            <a
+              href="#featuredPlayers"
+              class="primary-button"
+            >
+              <span>
+                Discover Players
+              </span>
+
+              <span aria-hidden="true">
+                →
+              </span>
+            </a>
+
+
+            <a
+              href="#academies"
+              class="secondary-button"
+            >
+              <span class="play-icon" aria-hidden="true">
+                ★
+              </span>
+
+              <span>
+                Explore Academies
+              </span>
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats hero-animate-item">
+
+            <div class="hero-stat">
+
+              <strong>
+                Youth
+              </strong>
+
+              <span>
+                First Approach
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                India
+              </strong>
+
+              <span>
+                National Network
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                Future
+              </strong>
+
+              <span>
+                Built Together
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="hero-stat">
-        <strong>2034</strong>
-        <span>WORLD CUP VISION</span>
+    </article>
+
+
+    <!-- =============================================
+         SLIDE 3
+    ============================================== -->
+
+    <article
+      class="hero-slide"
+      data-hero-slide
+      data-slide-index="2"
+      aria-hidden="true"
+    >
+
+      <div
+        class="hero-slide-background"
+        style="
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(2, 13, 31, 0.97) 0%,
+              rgba(3, 18, 40, 0.91) 39%,
+              rgba(3, 18, 40, 0.54) 68%,
+              rgba(3, 18, 40, 0.15) 100%
+            ),
+            url('images/hero-slide-3.png');
+        "
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="hero-slide-inner">
+
+        <div class="hero-slide-content">
+
+          <div class="hero-eyebrow hero-animate-item">
+
+            <span class="hero-eyebrow-line"></span>
+
+            <span>
+              A Journey for Every Generation
+            </span>
+
+          </div>
+
+
+          <h2 class="hero-title hero-animate-item">
+
+            <span class="hero-title-small">
+              The Journey Today
+            </span>
+
+            <span class="hero-title-main">
+              The Victory Tomorrow
+            </span>
+
+            <span class="hero-title-accent">
+              The Legacy Forever
+            </span>
+
+          </h2>
+
+
+          <p class="hero-description hero-animate-item">
+            Every player discovered, every coach empowered and every academy
+            strengthened becomes part of India's lasting football legacy.
+          </p>
+
+
+          <div class="hero-buttons hero-animate-item">
+
+            <a
+              href="#mission"
+              class="primary-button"
+            >
+              <span>
+                Discover the Mission
+              </span>
+
+              <span aria-hidden="true">
+                ↗
+              </span>
+            </a>
+
+
+            <a
+              href="#supporters"
+              class="secondary-button"
+            >
+              <span class="play-icon" aria-hidden="true">
+                🇮🇳
+              </span>
+
+              <span>
+                Join the Movement
+              </span>
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats hero-animate-item">
+
+            <div class="hero-stat">
+
+              <strong>
+                One
+              </strong>
+
+              <span>
+                Nation
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                One
+              </strong>
+
+              <span>
+                Football Family
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                One
+              </strong>
+
+              <span>
+                Shared Dream
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-    </div>
+    </article>
+
+
+    <!-- =============================================
+         SLIDE 4
+    ============================================== -->
+
+    <article
+      class="hero-slide hero-slide-trophy"
+      data-hero-slide
+      data-slide-index="3"
+      aria-hidden="true"
+    >
+
+      <div
+        class="hero-slide-background"
+        style="
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(2, 13, 31, 0.98) 0%,
+              rgba(3, 18, 40, 0.92) 39%,
+              rgba(3, 18, 40, 0.50) 67%,
+              rgba(3, 18, 40, 0.12) 100%
+            ),
+            url('images/hero-slide-4.png');
+        "
+        aria-hidden="true"
+      ></div>
+
+
+      <div
+        class="hero-trophy-glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="hero-slide-inner">
+
+        <div class="hero-slide-content">
+
+          <div class="hero-eyebrow hero-animate-item">
+
+            <span class="hero-eyebrow-line"></span>
+
+            <span>
+              The World Is Watching
+            </span>
+
+          </div>
+
+
+          <h2 class="hero-title hero-animate-item">
+
+            <span class="hero-title-small">
+              The Dream
+            </span>
+
+            <span class="hero-title-main">
+              Begins Now
+            </span>
+
+            <span class="hero-title-accent">
+              Mission FIFA 2034
+            </span>
+
+          </h2>
+
+
+          <p class="hero-description hero-animate-item">
+            The road to the world's biggest football stage begins with belief,
+            organisation, opportunity and millions of Indians moving together.
+          </p>
+
+
+          <div class="hero-buttons hero-animate-item">
+
+            <a
+              href="#join-mission"
+              class="primary-button"
+            >
+              <span>
+                Become a Supporter
+              </span>
+
+              <span aria-hidden="true">
+                ↗
+              </span>
+            </a>
+
+
+            <a
+              href="#vision"
+              class="secondary-button"
+            >
+              <span class="play-icon" aria-hidden="true">
+                🏆
+              </span>
+
+              <span>
+                View the Roadmap
+              </span>
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats hero-animate-item">
+
+            <div class="hero-stat">
+
+              <strong>
+                Dream
+              </strong>
+
+              <span>
+                With Courage
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                Build
+              </strong>
+
+              <span>
+                With Purpose
+              </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+              <strong>
+                Rise
+              </strong>
+
+              <span>
+                Together
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
 
   </div>
 
-  <div class="hero-side-text">
+
+  <!-- =================================================
+       SIDE TEXT
+  ================================================== -->
+
+  <div
+    class="hero-side-text"
+    aria-hidden="true"
+  >
     BHARAT · FOOTBALL · YOUTH · FUTURE
   </div>
+
+
+  <!-- =================================================
+       CAROUSEL NAVIGATION
+  ================================================== -->
+
+  <div class="hero-carousel-controls">
+
+    <div class="hero-slide-counter">
+
+      <span id="heroCurrentSlide">
+        01
+      </span>
+
+      <span class="hero-counter-divider"></span>
+
+      <span id="heroTotalSlides">
+        04
+      </span>
+
+    </div>
+
+
+    <div
+      class="hero-carousel-dots"
+      id="heroCarouselDots"
+      aria-label="Choose a hero slide"
+    >
+
+      <button
+    type="button"
+    class="hero-carousel-dot is-active"
+    data-hero-dot="0"
+    aria-label="Show slide 1"
+    aria-current="true"
+></button>
+
+
+      <button
+        type="button"
+        class="hero-carousel-dot"
+        data-hero-dot="1"
+        aria-label="Show slide 2"
+        aria-current="false"
+      >
+      </button>
+
+
+      <button
+        type="button"
+        class="hero-carousel-dot"
+        data-hero-dot="2"
+        aria-label="Show slide 3"
+        aria-current="false"
+      >
+      </button>
+
+
+      <button
+        type="button"
+        class="hero-carousel-dot"
+        data-hero-dot="3"
+        aria-label="Show slide 4"
+        aria-current="false"
+      >
+      </button>
+
+    </div>
+
+
+    <div class="hero-carousel-arrows">
+
+      <button
+        type="button"
+        class="hero-carousel-arrow"
+        id="heroPreviousButton"
+        aria-label="Show previous hero slide"
+      >
+        <span aria-hidden="true">
+          ←
+        </span>
+      </button>
+
+
+      <button
+        type="button"
+        class="hero-carousel-arrow"
+        id="heroNextButton"
+        aria-label="Show next hero slide"
+      >
+        <span aria-hidden="true">
+          →
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================================
+       AUTOPLAY PROGRESS
+  ================================================== -->
+
+  <div
+    class="hero-carousel-progress"
+    aria-hidden="true"
+  >
+    <span id="heroCarouselProgress"></span>
+  </div>
+
+
+  <!-- Scroll indicator -->
+
+  <a
+    href="#mission"
+    class="hero-scroll-indicator"
+    aria-label="Scroll to the mission section"
+  >
+
+    <span>
+      Scroll to Discover
+    </span>
+
+    <span class="hero-scroll-line"></span>
+
+  </a>
 
 </section>
 
@@ -2880,11 +3591,15 @@
         tabindex="0"
       >
 
-        <div class="role-card-number">01</div>
+        <div class="role-card-number" aria-hidden="true">
+  01
+</div>
 
-        <div class="role-icon-wrapper">
-          <span class="role-icon" aria-hidden="true">⚽</span>
-        </div>
+<div class="role-icon-wrapper" aria-hidden="true">
+  <span class="role-icon">
+    ⚽
+  </span>
+</div>
 
         <div class="role-card-content">
 
@@ -2922,16 +3637,18 @@
      <!-- ================= COACH CARD ================= -->
 
 <article
-  class="join-role-card"
+  class="join-role-card reveal"
   data-role="coach"
   tabindex="0"
 >
 
-  <div class="role-card-number">02</div>
+  <div class="role-card-number" aria-hidden="true">
+  02
+</div>
 
-  <div class="role-icon-wrapper">
-    <span class="role-icon" aria-hidden="true">📋</span>
-  </div>
+<div class="role-icon-wrapper" aria-hidden="true">
+  <span class="role-icon">📋</span>
+</div>
 
   <div class="role-card-content">
 
@@ -2969,20 +3686,22 @@
       <!-- ================= ACADEMY CARD ================= -->
 
       <article
-        class="join-role-card featured-role-card"
-        data-role="academy"
-        tabindex="0"
-      >
+    class="join-role-card featured-role-card reveal"
+    data-role="academy"
+    tabindex="0"
+>
 
         <div class="featured-role-label">
-          Build the Future
+          featured Role
         </div>
 
-        <div class="role-card-number">03</div>
+        <div class="role-card-number" aria-hidden="true">
+  03
+</div>
 
-        <div class="role-icon-wrapper">
-          <span class="role-icon" aria-hidden="true">🏟️</span>
-        </div>
+<div class="role-icon-wrapper" aria-hidden="true">
+  <span class="role-icon">🏟️</span>
+</div>
 
         <div class="role-card-content">
 
@@ -3020,16 +3739,18 @@
       <!-- ================= SCOUT CARD ================= -->
 
       <article
-        class="join-role-card"
+    class="join-role-card reveal"
         data-role="scout"
         tabindex="0"
       >
 
-        <div class="role-card-number">04</div>
+        <div class="role-card-number" aria-hidden="true">
+  04
+</div>
 
-        <div class="role-icon-wrapper">
-          <span class="role-icon" aria-hidden="true">🔍</span>
-        </div>
+<div class="role-icon-wrapper" aria-hidden="true">
+  <span class="role-icon">🔍</span>
+</div>
 
         <div class="role-card-content">
 
@@ -3072,11 +3793,13 @@
         tabindex="0"
       >
 
-        <div class="role-card-number">05</div>
+        <div class="role-card-number" aria-hidden="true">
+  05
+</div>
 
-        <div class="role-icon-wrapper">
-          <span class="role-icon" aria-hidden="true">🇮🇳</span>
-        </div>
+<div class="role-icon-wrapper" aria-hidden="true">
+  <span class="role-icon">🤝</span>
+</div>
 
         <div class="role-card-content">
 

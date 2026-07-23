@@ -1,0 +1,3173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Bharat Football Fans admin news management portal."
+    >
+
+    <title>
+        News Management | Bharat Football Fans Admin
+    </title>
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Admin Styles -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-news.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         LOADING SCREEN
+    ====================================================== -->
+
+    <div
+        class="admin-loading-screen"
+        id="loadingScreen"
+        aria-label="Loading admin news management"
+    >
+
+        <div class="admin-loading-content">
+
+            <div class="admin-loading-logo">
+
+                <i
+                    class="fa-solid fa-newspaper"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+            <strong>
+                Bharat Football Fans
+            </strong>
+
+            <span>
+                Loading news management...
+            </span>
+
+            <div class="admin-loading-bar">
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADMIN APPLICATION
+    ====================================================== -->
+
+    <div class="admin-app">
+
+
+        <!-- =================================================
+             SIDEBAR OVERLAY
+        ================================================== -->
+
+        <div
+            class="admin-sidebar-overlay"
+            id="sidebarOverlay"
+            hidden
+        ></div>
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="sidebar"
+            aria-label="Admin navigation"
+        >
+
+            <div class="admin-sidebar-header">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="admin-brand"
+                    aria-label="Bharat Football Fans Admin Dashboard"
+                >
+
+                    <span class="admin-brand-icon">
+
+                        <i
+                            class="fa-solid fa-futbol"
+                            aria-hidden="true"
+                        ></i>
+
+                    </span>
+
+                    <span class="admin-brand-copy">
+
+                        <strong>
+                            BHARAT FOOTBALL
+                        </strong>
+
+                        <small>
+                            ADMIN PORTAL
+                        </small>
+
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="admin-sidebar-close"
+                    id="sidebarCloseButton"
+                    aria-label="Close sidebar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar administrator -->
+
+            <div class="admin-sidebar-profile">
+
+                <div class="admin-sidebar-avatar">
+
+                    <span>
+                        IB
+                    </span>
+
+                </div>
+
+                <div class="admin-sidebar-profile-copy">
+
+                    <strong>
+                        Issac Belho
+                    </strong>
+
+                    <span>
+                        Super Administrator
+                    </span>
+
+                </div>
+
+                <span
+                    class="admin-online-indicator"
+                    title="Online"
+                ></span>
+
+            </div>
+
+
+            <!-- Sidebar navigation -->
+
+            <nav class="admin-navigation">
+
+                <div class="admin-nav-section">
+
+                    <span class="admin-nav-heading">
+                        OVERVIEW
+                    </span>
+
+                    <a
+                        href="admin-dashboard.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-nav-section">
+
+                    <span class="admin-nav-heading">
+                        MANAGEMENT
+                    </span>
+
+                    <a
+                        href="admin-users.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Users
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-players.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-person-running"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Players
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-coaches.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-chalkboard-user"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Coaches
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-scouts.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-binoculars"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Scouts
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-academies.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-building-columns"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Academies
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-trials.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-stopwatch"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Trials
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="admin-nav-section">
+
+                    <span class="admin-nav-heading">
+                        CONTENT
+                    </span>
+
+                    <a
+                        href="admin-news.html"
+                        class="admin-nav-link active"
+                        aria-current="page"
+                    >
+
+                        <i
+                            class="fa-solid fa-newspaper"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            News
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-events.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-calendar-days"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Events
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="admin-media.html"
+                        class="admin-nav-link"
+                    >
+
+                        <i
+                            class="fa-solid fa-photo-film"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Media
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar footer -->
+
+            <div class="admin-sidebar-footer">
+
+                <a
+                    href="admin-settings.html"
+                    class="admin-nav-link"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    class="admin-sidebar-logout"
+                    id="logoutButton"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <div class="admin-main">
+
+
+            <!-- =============================================
+                 TOPBAR
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        type="button"
+                        class="admin-mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open sidebar"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                    <div class="admin-topbar-title">
+
+                        <span>
+                            Content Management
+                        </span>
+
+                        <strong>
+                            News
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-actions">
+
+                    <button
+                        type="button"
+                        class="admin-topbar-icon-button"
+                        id="searchButton"
+                        aria-label="Open global search"
+                        title="Search"
+                    >
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="admin-topbar-icon-button admin-notification-button"
+                        id="notificationButton"
+                        aria-label="Open notifications"
+                    >
+
+                        <i
+                            class="fa-regular fa-bell"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span
+                            class="admin-notification-count"
+                            id="notificationCount"
+                        >
+                            3
+                        </span>
+
+                    </button>
+
+                    <div class="admin-profile-wrapper">
+
+                        <button
+                            type="button"
+                            class="admin-profile-button"
+                            id="profileButton"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+
+                            <span class="admin-profile-avatar">
+                                IB
+                            </span>
+
+                            <span class="admin-profile-copy">
+
+                                <strong>
+                                    Issac Belho
+                                </strong>
+
+                                <small>
+                                    Administrator
+                                </small>
+
+                            </span>
+
+                            <i
+                                class="fa-solid fa-chevron-down"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 PAGE CONTENT
+            ============================================== -->
+
+            <main class="admin-page-content">
+
+
+                <!-- Page heading -->
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <span class="admin-page-tag">
+                            CONTENT CONTROL
+                        </span>
+
+                        <h1>
+                            News Management
+                        </h1>
+
+                        <p>
+                            Create, review, publish and manage football news,
+                            academy updates, announcements and featured stories.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-primary-button"
+                        id="createNewsButton"
+                    >
+
+                        <i
+                            class="fa-solid fa-plus"
+                            aria-hidden="true"
+                        ></i>
+
+                        Create Article
+
+                    </button>
+
+                </section>
+
+
+                <!-- =========================================
+                     NEWS STATISTICS
+                ========================================== -->
+
+                <section
+                    class="news-stats-grid"
+                    aria-label="News statistics"
+                >
+
+                    <article class="news-stat-card">
+
+                        <div class="news-stat-icon">
+
+                            <i
+                                class="fa-solid fa-newspaper"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 id="totalNewsCount">
+                                48
+                            </h2>
+
+                            <p>
+                                Total Articles
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-stat-card">
+
+                        <div class="news-stat-icon success">
+
+                            <i
+                                class="fa-solid fa-circle-check"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 id="publishedNewsCount">
+                                32
+                            </h2>
+
+                            <p>
+                                Published
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-stat-card">
+
+                        <div class="news-stat-icon warning">
+
+                            <i
+                                class="fa-solid fa-pen-ruler"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 id="draftNewsCount">
+                                9
+                            </h2>
+
+                            <p>
+                                Draft Articles
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-stat-card">
+
+                        <div class="news-stat-icon primary">
+
+                            <i
+                                class="fa-solid fa-star"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 id="featuredNewsCount">
+                                5
+                            </h2>
+
+                            <p>
+                                Featured Stories
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="news-stat-card">
+
+                        <div class="news-stat-icon danger">
+
+                            <i
+                                class="fa-solid fa-box-archive"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2 id="archivedNewsCount">
+                                7
+                            </h2>
+
+                            <p>
+                                Archived
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+                                <!-- =========================================
+                     SEARCH & FILTERS
+                ========================================== -->
+
+                <section class="news-toolbar">
+
+                    <div class="news-search-wrapper">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <input
+                            type="search"
+                            id="newsSearchInput"
+                            placeholder="Search articles, academy, author..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="news-filter-group">
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="announcement">
+                                Announcement
+                            </option>
+
+                            <option value="academy">
+                                Academy
+                            </option>
+
+                            <option value="players">
+                                Players
+                            </option>
+
+                            <option value="trials">
+                                Trials
+                            </option>
+
+                            <option value="events">
+                                Events
+                            </option>
+
+                            <option value="national-team">
+                                National Team
+                            </option>
+
+                        </select>
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="published">
+                                Published
+                            </option>
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                            <option value="scheduled">
+                                Scheduled
+                            </option>
+
+                            <option value="archived">
+                                Archived
+                            </option>
+
+                        </select>
+
+                        <select id="authorFilter">
+
+                            <option value="all">
+                                All Authors
+                            </option>
+
+                            <option value="issac">
+                                Issac Belho
+                            </option>
+
+                            <option value="admin">
+                                Admin
+                            </option>
+
+                            <option value="editor">
+                                Editor
+                            </option>
+
+                        </select>
+
+                        <input
+                            type="date"
+                            id="publishDateFilter"
+                        >
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="resetFiltersButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-rotate"
+                                aria-hidden="true"
+                            ></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     BULK ACTIONS
+                ========================================== -->
+
+                <section class="news-actions-bar">
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="admin-primary-button"
+                            id="bulkPublishButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-upload"
+                                aria-hidden="true"
+                            ></i>
+
+                            Publish
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="bulkArchiveButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-box-archive"
+                                aria-hidden="true"
+                            ></i>
+
+                            Archive
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="admin-danger-button"
+                            id="bulkDeleteButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-trash"
+                                aria-hidden="true"
+                            ></i>
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="exportCsvButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-csv"
+                                aria-hidden="true"
+                            ></i>
+
+                            CSV
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="exportPdfButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-file-pdf"
+                                aria-hidden="true"
+                            ></i>
+
+                            PDF
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     PERFORMANCE OVERVIEW
+                ========================================== -->
+
+                <section class="news-overview-grid">
+
+                    <article class="news-overview-card">
+
+                        <h3>
+                            Total Views
+                        </h3>
+
+                        <strong>
+                            254,812
+                        </strong>
+
+                        <small>
+                            Combined article views
+                        </small>
+
+                        <div class="news-progress">
+
+                            <div
+                                class="news-progress-bar"
+                                style="width:84%;"
+                            ></div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="news-overview-card">
+
+                        <h3>
+                            Published This Month
+                        </h3>
+
+                        <strong>
+                            18
+                        </strong>
+
+                        <small>
+                            New public articles
+                        </small>
+
+                        <div class="news-progress">
+
+                            <div
+                                class="news-progress-bar success"
+                                style="width:68%;"
+                            ></div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="news-overview-card">
+
+                        <h3>
+                            Featured Stories
+                        </h3>
+
+                        <strong>
+                            5
+                        </strong>
+
+                        <small>
+                            Highlighted on homepage
+                        </small>
+
+                        <div class="news-progress">
+
+                            <div
+                                class="news-progress-bar warning"
+                                style="width:42%;"
+                            ></div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =========================================
+                     NEWS TABLE
+                ========================================== -->
+
+                <section class="news-table-card">
+
+                    <div class="news-table-header">
+
+                        <div>
+
+                            <h2>
+                                News Articles
+                            </h2>
+
+                            <p>
+                                Manage every article published on the Bharat Football Fans platform.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="news-table-wrapper">
+
+                        <table class="news-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+
+                                        <input
+                                            type="checkbox"
+                                            id="selectAllNews"
+                                        >
+
+                                    </th>
+
+                                    <th>
+                                        Article
+                                    </th>
+
+                                    <th>
+                                        Category
+                                    </th>
+
+                                    <th>
+                                        Author
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Views
+                                    </th>
+
+                                    <th>
+                                        Published
+                                    </th>
+
+                                    <th>
+                                        Featured
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="newsTableBody">
+                                                                <!-- ARTICLE 1 -->
+
+                                <tr
+                                    data-news-id="news-001"
+                                    data-title="Mission FIFA 2034 Officially Launched"
+                                    data-category="announcement"
+                                    data-author="Admin"
+                                    data-status="published"
+                                    data-date="2026-07-22"
+                                    data-featured="true"
+                                >
+
+                                    <td>
+
+                                        <input
+                                            type="checkbox"
+                                            class="news-checkbox"
+                                        >
+
+                                    </td>
+
+                                    <td>
+
+                                        <strong>
+                                            Mission FIFA 2034 Officially Launched
+                                        </strong>
+
+                                        <span>
+                                            National campaign announcement
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        Announcement
+
+                                    </td>
+
+                                    <td>
+
+                                        Admin
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="news-status published">
+                                            Published
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        18,425
+
+                                    </td>
+
+                                    <td>
+
+                                        22 Jul 2026
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="featured-badge">
+                                            ★ Featured
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button
+                                                type="button"
+                                                class="news-action-button"
+                                                data-action="preview"
+                                                title="Preview"
+                                            >
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                class="news-action-button"
+                                                data-action="edit"
+                                                title="Edit"
+                                            >
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                class="news-action-button danger"
+                                                data-action="delete"
+                                                title="Delete"
+                                            >
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ARTICLE 2 -->
+
+                                <tr
+                                    data-news-id="news-002"
+                                    data-title="Minerva Academy Opens New Intake"
+                                    data-category="academy"
+                                    data-author="Issac Belho"
+                                    data-status="published"
+                                    data-date="2026-07-20"
+                                    data-featured="true"
+                                >
+
+                                    <td><input type="checkbox" class="news-checkbox"></td>
+
+                                    <td>
+
+                                        <strong>
+                                            Minerva Academy Opens New Intake
+                                        </strong>
+
+                                        <span>
+                                            Academy admissions now live
+                                        </span>
+
+                                    </td>
+
+                                    <td>Academy</td>
+
+                                    <td>Issac Belho</td>
+
+                                    <td>
+
+                                        <span class="news-status published">
+                                            Published
+                                        </span>
+
+                                    </td>
+
+                                    <td>12,917</td>
+
+                                    <td>20 Jul 2026</td>
+
+                                    <td>
+
+                                        <span class="featured-badge">
+                                            ★ Featured
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button type="button" class="news-action-button" data-action="preview">
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button" data-action="edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button danger" data-action="delete">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ARTICLE 3 -->
+
+                                <tr
+                                    data-news-id="news-003"
+                                    data-title="National Talent Hunt Begins"
+                                    data-category="trials"
+                                    data-author="Editor"
+                                    data-status="scheduled"
+                                    data-date="2026-07-30"
+                                    data-featured="false"
+                                >
+
+                                    <td><input type="checkbox" class="news-checkbox"></td>
+
+                                    <td>
+
+                                        <strong>
+                                            National Talent Hunt Begins
+                                        </strong>
+
+                                        <span>
+                                            Upcoming nationwide trials
+                                        </span>
+
+                                    </td>
+
+                                    <td>Trials</td>
+
+                                    <td>Editor</td>
+
+                                    <td>
+
+                                        <span class="news-status scheduled">
+                                            Scheduled
+                                        </span>
+
+                                    </td>
+
+                                    <td>—</td>
+
+                                    <td>30 Jul 2026</td>
+
+                                    <td>No</td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button type="button" class="news-action-button" data-action="preview">
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button" data-action="edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button danger" data-action="delete">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ARTICLE 4 -->
+
+                                <tr
+                                    data-news-id="news-004"
+                                    data-title="Top Young Players to Watch"
+                                    data-category="players"
+                                    data-author="Issac Belho"
+                                    data-status="draft"
+                                    data-date="2026-07-19"
+                                    data-featured="false"
+                                >
+
+                                    <td><input type="checkbox" class="news-checkbox"></td>
+
+                                    <td>
+
+                                        <strong>
+                                            Top Young Players to Watch
+                                        </strong>
+
+                                        <span>
+                                            Editorial feature article
+                                        </span>
+
+                                    </td>
+
+                                    <td>Players</td>
+
+                                    <td>Issac Belho</td>
+
+                                    <td>
+
+                                        <span class="news-status draft">
+                                            Draft
+                                        </span>
+
+                                    </td>
+
+                                    <td>—</td>
+
+                                    <td>19 Jul 2026</td>
+
+                                    <td>No</td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button type="button" class="news-action-button" data-action="preview">
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button" data-action="edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button danger" data-action="delete">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ARTICLE 5 -->
+
+                                <tr
+                                    data-news-id="news-005"
+                                    data-title="Grassroots Football Festival"
+                                    data-category="events"
+                                    data-author="Admin"
+                                    data-status="published"
+                                    data-date="2026-07-18"
+                                    data-featured="false"
+                                >
+
+                                    <td><input type="checkbox" class="news-checkbox"></td>
+
+                                    <td>
+
+                                        <strong>
+                                            Grassroots Football Festival
+                                        </strong>
+
+                                        <span>
+                                            Community football celebration
+                                        </span>
+
+                                    </td>
+
+                                    <td>Events</td>
+
+                                    <td>Admin</td>
+
+                                    <td>
+
+                                        <span class="news-status published">
+                                            Published
+                                        </span>
+
+                                    </td>
+
+                                    <td>7,316</td>
+
+                                    <td>18 Jul 2026</td>
+
+                                    <td>No</td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button type="button" class="news-action-button" data-action="preview">
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button" data-action="edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button danger" data-action="delete">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ARTICLE 6 -->
+
+                                <tr
+                                    data-news-id="news-006"
+                                    data-title="Indian U17 Squad Preparation"
+                                    data-category="national-team"
+                                    data-author="Editor"
+                                    data-status="archived"
+                                    data-date="2026-06-28"
+                                    data-featured="false"
+                                >
+
+                                    <td><input type="checkbox" class="news-checkbox"></td>
+
+                                    <td>
+
+                                        <strong>
+                                            Indian U17 Squad Preparation
+                                        </strong>
+
+                                        <span>
+                                            Previous national update
+                                        </span>
+
+                                    </td>
+
+                                    <td>National Team</td>
+
+                                    <td>Editor</td>
+
+                                    <td>
+
+                                        <span class="news-status archived">
+                                            Archived
+                                        </span>
+
+                                    </td>
+
+                                    <td>21,504</td>
+
+                                    <td>28 Jun 2026</td>
+
+                                    <td>No</td>
+
+                                    <td>
+
+                                        <div class="news-actions">
+
+                                            <button type="button" class="news-action-button" data-action="preview">
+
+                                                <i class="fa-solid fa-eye"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button" data-action="edit">
+
+                                                <i class="fa-solid fa-pen"></i>
+
+                                            </button>
+
+                                            <button type="button" class="news-action-button danger" data-action="delete">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+                                                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         EMPTY STATE
+                    ====================================== -->
+
+                    <div
+                        class="news-empty-state"
+                        id="newsEmptyState"
+                        hidden
+                    >
+
+                        <div class="news-empty-icon">
+
+                            <i
+                                class="fa-regular fa-newspaper"
+                                aria-hidden="true"
+                            ></i>
+
+                        </div>
+
+                        <h3>
+                            No articles found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filter options.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         PAGINATION
+                    ====================================== -->
+
+                    <div class="news-pagination">
+
+                        <p id="paginationInfo">
+                            Showing 1–6 of 6 articles
+                        </p>
+
+                        <div class="news-pagination-actions">
+
+                            <button
+                                type="button"
+                                class="admin-secondary-button"
+                                id="previousPageButton"
+                                disabled
+                            >
+
+                                <i
+                                    class="fa-solid fa-chevron-left"
+                                    aria-hidden="true"
+                                ></i>
+
+                                Previous
+
+                            </button>
+
+                            <span
+                                class="news-page-number"
+                                id="currentPageNumber"
+                            >
+                                1
+                            </span>
+
+                            <button
+                                type="button"
+                                class="admin-secondary-button"
+                                id="nextPageButton"
+                                disabled
+                            >
+
+                                Next
+
+                                <i
+                                    class="fa-solid fa-chevron-right"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PREVIEW ARTICLE MODAL
+    ====================================================== -->
+
+    <div
+        class="news-modal"
+        id="previewNewsModal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="previewNewsTitle"
+    >
+
+        <div
+            class="news-modal-backdrop"
+            data-close-modal
+        ></div>
+
+        <div class="news-modal-dialog news-preview-dialog">
+
+            <div class="news-modal-header">
+
+                <div>
+
+                    <span class="news-modal-label">
+                        ARTICLE PREVIEW
+                    </span>
+
+                    <h2 id="previewNewsTitle">
+                        Article Preview
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="news-modal-close"
+                    data-close-modal
+                    aria-label="Close preview"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="news-modal-body">
+
+                <article class="news-preview-card">
+
+                    <div class="news-preview-image">
+
+                        <img
+                            id="previewNewsImage"
+                            src="images/news/mission-fifa-2034.jpg"
+                            alt="Article featured image preview"
+                        >
+
+                        <span
+                            class="news-preview-category"
+                            id="previewNewsCategory"
+                        >
+                            Announcement
+                        </span>
+
+                    </div>
+
+                    <div class="news-preview-content">
+
+                        <div class="news-preview-meta">
+
+                            <span>
+
+                                <i
+                                    class="fa-regular fa-user"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span id="previewNewsAuthor">
+                                    Admin
+                                </span>
+
+                            </span>
+
+                            <span>
+
+                                <i
+                                    class="fa-regular fa-calendar"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span id="previewNewsDate">
+                                    22 Jul 2026
+                                </span>
+
+                            </span>
+
+                            <span>
+
+                                <i
+                                    class="fa-regular fa-eye"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span id="previewNewsViews">
+                                    18,425 views
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                        <h3 id="previewNewsHeading">
+                            Mission FIFA 2034 Officially Launched
+                        </h3>
+
+                        <p
+                            class="news-preview-excerpt"
+                            id="previewNewsExcerpt"
+                        >
+                            Bharat Football Fans officially launches the Mission FIFA 2034 movement.
+                        </p>
+
+                        <div
+                            class="news-preview-body"
+                            id="previewNewsBody"
+                        >
+                            <p>
+                                Article content will appear here.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="news-modal-footer">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button"
+                    data-close-modal
+                >
+                    Close Preview
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-primary-button"
+                    id="editFromPreviewButton"
+                >
+
+                    <i
+                        class="fa-solid fa-pen"
+                        aria-hidden="true"
+                    ></i>
+
+                    Edit Article
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CREATE / EDIT NEWS MODAL
+    ====================================================== -->
+
+    <div
+        class="news-modal"
+        id="newsFormModal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="newsFormTitle"
+    >
+
+        <div
+            class="news-modal-backdrop"
+            data-close-modal
+        ></div>
+
+        <div class="news-modal-dialog news-form-dialog">
+
+            <div class="news-modal-header">
+
+                <div>
+
+                    <span class="news-modal-label">
+                        CONTENT EDITOR
+                    </span>
+
+                    <h2 id="newsFormTitle">
+                        Create News Article
+                    </h2>
+
+                    <p>
+                        Add the article details, featured image, content and publishing settings.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="news-modal-close"
+                    data-close-modal
+                    aria-label="Close article editor"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <form
+                class="news-form"
+                id="newsForm"
+                novalidate
+            >
+
+                <div class="news-modal-body">
+
+                    <div class="news-form-layout">
+
+
+                        <!-- =================================
+                             MAIN ARTICLE FIELDS
+                        ================================== -->
+
+                        <div class="news-form-main">
+
+                            <section class="news-form-section">
+
+                                <div class="news-form-section-heading">
+
+                                    <div>
+
+                                        <h3>
+                                            Article Information
+                                        </h3>
+
+                                        <p>
+                                            Enter the main public information for the news article.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="news-form-grid">
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsTitle">
+                                            Article Title
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="newsTitle"
+                                            name="title"
+                                            maxlength="120"
+                                            placeholder="Enter a clear article title"
+                                            required
+                                        >
+
+                                        <div class="news-field-footer">
+
+                                            <small class="news-field-error">
+                                                Article title is required.
+                                            </small>
+
+                                            <span id="newsTitleCount">
+                                                0 / 120
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsSlug">
+                                            Article URL Slug
+                                        </label>
+
+                                        <div class="news-slug-input">
+
+                                            <span>
+                                                news-details.html?article=
+                                            </span>
+
+                                            <input
+                                                type="text"
+                                                id="newsSlug"
+                                                name="slug"
+                                                placeholder="mission-fifa-2034-launch"
+                                            >
+
+                                        </div>
+
+                                        <small class="news-field-help">
+                                            Generated automatically from the title, but you may edit it.
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsExcerpt">
+                                            Short Excerpt
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <textarea
+                                            id="newsExcerpt"
+                                            name="excerpt"
+                                            rows="3"
+                                            maxlength="240"
+                                            placeholder="Write a brief summary shown on article cards"
+                                            required
+                                        ></textarea>
+
+                                        <div class="news-field-footer">
+
+                                            <small class="news-field-error">
+                                                A short article excerpt is required.
+                                            </small>
+
+                                            <span id="newsExcerptCount">
+                                                0 / 240
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsContent">
+                                            Article Content
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <div class="news-editor-toolbar">
+
+                                            <button
+                                                type="button"
+                                                data-editor-command="bold"
+                                                title="Bold"
+                                            >
+                                                <i class="fa-solid fa-bold"></i>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                data-editor-command="italic"
+                                                title="Italic"
+                                            >
+                                                <i class="fa-solid fa-italic"></i>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                data-editor-command="insertUnorderedList"
+                                                title="Bullet list"
+                                            >
+                                                <i class="fa-solid fa-list-ul"></i>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                data-editor-command="insertOrderedList"
+                                                title="Numbered list"
+                                            >
+                                                <i class="fa-solid fa-list-ol"></i>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                data-editor-command="createLink"
+                                                title="Insert link"
+                                            >
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                id="clearArticleFormattingButton"
+                                                title="Clear formatting"
+                                            >
+                                                <i class="fa-solid fa-eraser"></i>
+                                            </button>
+
+                                        </div>
+
+                                        <div
+                                            class="news-content-editor"
+                                            id="newsContentEditor"
+                                            contenteditable="true"
+                                            role="textbox"
+                                            aria-multiline="true"
+                                            data-placeholder="Write the complete news article here..."
+                                        ></div>
+
+                                        <textarea
+                                            id="newsContent"
+                                            name="content"
+                                            hidden
+                                            required
+                                        ></textarea>
+
+                                        <small class="news-field-error">
+                                            Article content is required.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- =============================
+                                 FEATURED IMAGE
+                            ============================== -->
+
+                            <section class="news-form-section">
+
+                                <div class="news-form-section-heading">
+
+                                    <div>
+
+                                        <h3>
+                                            Featured Image
+                                        </h3>
+
+                                        <p>
+                                            This image will appear on the homepage and article page.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    class="news-image-upload"
+                                    id="newsImageUpload"
+                                >
+
+                                    <input
+                                        type="file"
+                                        id="newsImageInput"
+                                        name="featuredImage"
+                                        accept="image/png,image/jpeg,image/webp"
+                                        hidden
+                                    >
+
+                                    <div
+                                        class="news-image-placeholder"
+                                        id="newsImagePlaceholder"
+                                    >
+
+                                        <i
+                                            class="fa-solid fa-cloud-arrow-up"
+                                            aria-hidden="true"
+                                        ></i>
+
+                                        <h4>
+                                            Upload featured image
+                                        </h4>
+
+                                        <p>
+                                            Drag and drop an image here or choose one from your device.
+                                        </p>
+
+                                        <button
+                                            type="button"
+                                            class="admin-secondary-button"
+                                            id="chooseNewsImageButton"
+                                        >
+                                            Choose Image
+                                        </button>
+
+                                        <small>
+                                            PNG, JPG or WebP · Recommended 1600 × 900 px · Maximum 5 MB
+                                        </small>
+
+                                    </div>
+
+
+                                    <div
+                                        class="news-image-preview"
+                                        id="newsImagePreview"
+                                        hidden
+                                    >
+
+                                        <img
+                                            id="newsImagePreviewElement"
+                                            src=""
+                                            alt="Selected featured image preview"
+                                        >
+
+                                        <div class="news-image-preview-overlay">
+
+                                            <button
+                                                type="button"
+                                                class="admin-secondary-button"
+                                                id="replaceNewsImageButton"
+                                            >
+
+                                                <i
+                                                    class="fa-solid fa-arrows-rotate"
+                                                    aria-hidden="true"
+                                                ></i>
+
+                                                Replace
+
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                class="admin-danger-button"
+                                                id="removeNewsImageButton"
+                                            >
+
+                                                <i
+                                                    class="fa-solid fa-trash"
+                                                    aria-hidden="true"
+                                                ></i>
+
+                                                Remove
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- =============================
+                                 SEO SETTINGS
+                            ============================== -->
+
+                            <section class="news-form-section">
+
+                                <div class="news-form-section-heading">
+
+                                    <div>
+
+                                        <h3>
+                                            Search Engine Settings
+                                        </h3>
+
+                                        <p>
+                                            Improve how this article appears in search engines and social sharing.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="news-form-grid">
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsSeoTitle">
+                                            SEO Title
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="newsSeoTitle"
+                                            name="seoTitle"
+                                            maxlength="60"
+                                            placeholder="Search engine title"
+                                        >
+
+                                        <div class="news-field-footer">
+
+                                            <small class="news-field-help">
+                                                Leave blank to use the article title.
+                                            </small>
+
+                                            <span id="newsSeoTitleCount">
+                                                0 / 60
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsSeoDescription">
+                                            SEO Description
+                                        </label>
+
+                                        <textarea
+                                            id="newsSeoDescription"
+                                            name="seoDescription"
+                                            rows="3"
+                                            maxlength="160"
+                                            placeholder="Short search engine description"
+                                        ></textarea>
+
+                                        <div class="news-field-footer">
+
+                                            <small class="news-field-help">
+                                                Leave blank to use the article excerpt.
+                                            </small>
+
+                                            <span id="newsSeoDescriptionCount">
+                                                0 / 160
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsKeywords">
+                                            Keywords
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="newsKeywords"
+                                            name="keywords"
+                                            placeholder="football, India, Mission FIFA 2034"
+                                        >
+
+                                        <small class="news-field-help">
+                                            Separate keywords using commas.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+
+                        <!-- =================================
+                             PUBLISHING SIDEBAR
+                        ================================== -->
+
+                        <aside class="news-form-sidebar">
+
+                            <section class="news-form-section">
+
+                                <div class="news-form-section-heading">
+
+                                    <div>
+
+                                        <h3>
+                                            Publishing
+                                        </h3>
+
+                                        <p>
+                                            Control article visibility and publication.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="news-form-grid">
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsStatus">
+                                            Status
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <select
+                                            id="newsStatus"
+                                            name="status"
+                                            required
+                                        >
+
+                                            <option value="draft">
+                                                Draft
+                                            </option>
+
+                                            <option value="published">
+                                                Published
+                                            </option>
+
+                                            <option value="scheduled">
+                                                Scheduled
+                                            </option>
+
+                                            <option value="archived">
+                                                Archived
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsCategory">
+                                            Category
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <select
+                                            id="newsCategory"
+                                            name="category"
+                                            required
+                                        >
+
+                                            <option value="">
+                                                Select category
+                                            </option>
+
+                                            <option value="announcement">
+                                                Announcement
+                                            </option>
+
+                                            <option value="academy">
+                                                Academy
+                                            </option>
+
+                                            <option value="players">
+                                                Players
+                                            </option>
+
+                                            <option value="trials">
+                                                Trials
+                                            </option>
+
+                                            <option value="events">
+                                                Events
+                                            </option>
+
+                                            <option value="national-team">
+                                                National Team
+                                            </option>
+
+                                        </select>
+
+                                        <small class="news-field-error">
+                                            Please select an article category.
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsAuthor">
+                                            Author
+                                            <span aria-hidden="true">*</span>
+                                        </label>
+
+                                        <select
+                                            id="newsAuthor"
+                                            name="author"
+                                            required
+                                        >
+
+                                            <option value="">
+                                                Select author
+                                            </option>
+
+                                            <option value="Issac Belho">
+                                                Issac Belho
+                                            </option>
+
+                                            <option value="Admin">
+                                                Admin
+                                            </option>
+
+                                            <option value="Editor">
+                                                Editor
+                                            </option>
+
+                                        </select>
+
+                                        <small class="news-field-error">
+                                            Please select an author.
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="news-field news-field-full">
+
+                                        <label for="newsPublishDate">
+                                            Publish Date
+                                        </label>
+
+                                        <input
+                                            type="date"
+                                            id="newsPublishDate"
+                                            name="publishDate"
+                                        >
+
+                                    </div>
+
+
+                                    <div
+                                        class="news-field news-field-full"
+                                        id="scheduleTimeField"
+                                        hidden
+                                    >
+
+                                        <label for="newsPublishTime">
+                                            Publish Time
+                                        </label>
+
+                                        <input
+                                            type="time"
+                                            id="newsPublishTime"
+                                            name="publishTime"
+                                        >
+
+                                    </div>
+
+
+                                    <div class="news-toggle-card">
+
+                                        <div>
+
+                                            <strong>
+                                                Feature Article
+                                            </strong>
+
+                                            <span>
+                                                Show this story prominently on the homepage.
+                                            </span>
+
+                                        </div>
+
+                                        <label class="news-toggle">
+
+                                            <input
+                                                type="checkbox"
+                                                id="newsFeatured"
+                                                name="featured"
+                                            >
+
+                                            <span class="news-toggle-slider"></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="news-toggle-card">
+
+                                        <div>
+
+                                            <strong>
+                                                Allow Sharing
+                                            </strong>
+
+                                            <span>
+                                                Enable public social sharing buttons.
+                                            </span>
+
+                                        </div>
+
+                                        <label class="news-toggle">
+
+                                            <input
+                                                type="checkbox"
+                                                id="newsAllowSharing"
+                                                name="allowSharing"
+                                                checked
+                                            >
+
+                                            <span class="news-toggle-slider"></span>
+
+                                        </label>
+
+                                    </div>
+
+
+                                    <div class="news-toggle-card">
+
+                                        <div>
+
+                                            <strong>
+                                                Allow Comments
+                                            </strong>
+
+                                            <span>
+                                                Enable article comments when supported.
+                                            </span>
+
+                                        </div>
+
+                                        <label class="news-toggle">
+
+                                            <input
+                                                type="checkbox"
+                                                id="newsAllowComments"
+                                                name="allowComments"
+                                            >
+
+                                            <span class="news-toggle-slider"></span>
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <section class="news-form-section">
+
+                                <div class="news-form-section-heading">
+
+                                    <div>
+
+                                        <h3>
+                                            Article Details
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="news-form-summary">
+
+                                    <div>
+
+                                        <span>
+                                            Reading time
+                                        </span>
+
+                                        <strong id="newsReadingTime">
+                                            0 min
+                                        </strong>
+
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Word count
+                                        </span>
+
+                                        <strong id="newsWordCount">
+                                            0 words
+                                        </strong>
+
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Last saved
+                                        </span>
+
+                                        <strong id="newsLastSaved">
+                                            Not saved
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+
+                <div class="news-modal-footer news-form-footer">
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="saveNewsDraftButton"
+                        >
+
+                            <i
+                                class="fa-regular fa-floppy-disk"
+                                aria-hidden="true"
+                            ></i>
+
+                            Save Draft
+
+                        </button>
+
+                        <span
+                            class="news-save-status"
+                            id="newsSaveStatus"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            data-close-modal
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="previewFormNewsButton"
+                        >
+
+                            <i
+                                class="fa-regular fa-eye"
+                                aria-hidden="true"
+                            ></i>
+
+                            Preview
+
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="admin-primary-button"
+                            id="saveNewsButton"
+                        >
+
+                            <i
+                                class="fa-solid fa-check"
+                                aria-hidden="true"
+                            ></i>
+
+                            Save Article
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+        <!-- =====================================================
+         DELETE ARTICLE MODAL
+    ====================================================== -->
+
+    <div
+        class="news-modal"
+        id="deleteNewsModal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteNewsTitle"
+    >
+
+        <div
+            class="news-modal-backdrop"
+            data-close-modal
+        ></div>
+
+        <div class="news-modal-dialog news-delete-dialog">
+
+            <div class="news-modal-header">
+
+                <h2 id="deleteNewsTitle">
+                    Delete Article
+                </h2>
+
+                <button
+                    type="button"
+                    class="news-modal-close"
+                    data-close-modal
+                    aria-label="Close"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="news-modal-body">
+
+                <div class="news-delete-icon">
+
+                    <i
+                        class="fa-solid fa-triangle-exclamation"
+                        aria-hidden="true"
+                    ></i>
+
+                </div>
+
+                <h3 id="deleteNewsName">
+                    Mission FIFA 2034 Officially Launched
+                </h3>
+
+                <p>
+                    This article will be permanently removed from the admin
+                    panel and public website.
+                </p>
+
+                <p>
+                    This action cannot be undone.
+                </p>
+
+            </div>
+
+            <div class="news-modal-footer">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button"
+                    data-close-modal
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="confirmDeleteNewsButton"
+                >
+
+                    <i
+                        class="fa-solid fa-trash"
+                        aria-hidden="true"
+                    ></i>
+
+                    Delete Article
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GLOBAL SEARCH
+    ====================================================== -->
+
+    <div
+        class="admin-global-search"
+        id="globalSearchOverlay"
+        hidden
+    >
+
+        <div class="admin-global-search-box">
+
+            <div class="admin-global-search-header">
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                ></i>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search anywhere..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="closeGlobalSearchButton"
+                    aria-label="Close search"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div
+                id="globalSearchResults"
+                class="admin-global-search-results"
+            >
+
+                <p class="admin-global-search-empty">
+                    Start typing to search...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATIONS PANEL
+    ====================================================== -->
+
+    <aside
+        class="admin-notifications-panel"
+        id="notificationsPanel"
+        hidden
+    >
+
+        <div class="admin-panel-header">
+
+            <h3>
+                Notifications
+            </h3>
+
+            <button
+                type="button"
+                id="closeNotificationsButton"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="admin-notification-list">
+
+            <article class="admin-notification-item">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+
+                    <strong>
+                        Article published
+                    </strong>
+
+                    <span>
+                        Mission FIFA 2034 is now live.
+                    </span>
+
+                </div>
+
+            </article>
+
+            <article class="admin-notification-item">
+
+                <i class="fa-solid fa-pen"></i>
+
+                <div>
+
+                    <strong>
+                        Draft updated
+                    </strong>
+
+                    <span>
+                        Top Young Players to Watch.
+                    </span>
+
+                </div>
+
+            </article>
+
+            <article class="admin-notification-item">
+
+                <i class="fa-solid fa-star"></i>
+
+                <div>
+
+                    <strong>
+                        Featured article changed
+                    </strong>
+
+                    <span>
+                        Homepage updated.
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         PROFILE MENU
+    ====================================================== -->
+
+    <div
+        class="admin-profile-menu"
+        id="profileMenu"
+        hidden
+    >
+
+        <a href="admin-profile.html">
+
+            <i class="fa-regular fa-user"></i>
+
+            My Profile
+
+        </a>
+
+        <a href="admin-settings.html">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+        <button
+            type="button"
+            id="profileLogoutButton"
+        >
+
+            <i
+                class="fa-solid fa-arrow-right-from-bracket"
+                aria-hidden="true"
+            ></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+    ====================================================== -->
+
+    <div
+        class="news-modal"
+        id="logoutModal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div
+            class="news-modal-backdrop"
+            data-close-logout
+        ></div>
+
+        <div class="news-modal-dialog">
+
+            <div class="news-modal-header">
+
+                <h2>
+                    Logout
+                </h2>
+
+            </div>
+
+            <div class="news-modal-body">
+
+                <p>
+                    Are you sure you want to logout from the Admin Portal?
+                </p>
+
+            </div>
+
+            <div class="news-modal-footer">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button"
+                    data-close-logout
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="confirmLogoutButton"
+                >
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOASTS
+    ====================================================== -->
+
+    <div
+        id="toastRegion"
+        class="admin-toast-region"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/admin-news.js"></script>
+
+</body>
+
+</html>

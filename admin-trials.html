@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin • Trial Management | Bharat Football Fans
+    </title>
+
+    <meta
+        name="description"
+        content="Manage football trials across India."
+    >
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-trials.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ===================================================== -->
+<!-- LOADING -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-loading-screen"
+    id="loadingScreen"
+>
+
+    <div class="admin-loader"></div>
+
+    <p>
+        Loading Trial Management...
+    </p>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- APP -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-app"
+    id="adminApp"
+>
+
+<!-- ===================================================== -->
+<!-- SIDEBAR -->
+<!-- ===================================================== -->
+
+<aside
+    class="admin-sidebar"
+    id="sidebar"
+>
+
+<header class="admin-sidebar-header">
+
+<div class="admin-brand">
+
+<div class="admin-brand-mark">
+BFF
+</div>
+
+<div class="admin-brand-copy">
+
+<strong>
+Bharat Football Fans
+</strong>
+
+<span>
+Admin Portal
+</span>
+
+</div>
+
+</div>
+
+<button
+class="admin-sidebar-close-button"
+id="sidebarCloseButton"
+type="button"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</header>
+
+<!-- Profile -->
+
+<section class="admin-sidebar-profile">
+
+<div class="admin-sidebar-profile-avatar">
+
+A
+
+</div>
+
+<div>
+
+<strong>
+
+Administrator
+
+</strong>
+
+<span>
+
+Super Admin
+
+</span>
+
+</div>
+
+</section>
+
+<!-- Navigation -->
+
+<nav class="admin-navigation">
+
+<a
+class="admin-navigation-link"
+href="admin-dashboard.html"
+>
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>
+Dashboard
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link"
+href="admin-users.html"
+>
+
+<i class="fa-solid fa-users"></i>
+
+<span>
+Users
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link"
+href="admin-players.html"
+>
+
+<i class="fa-solid fa-futbol"></i>
+
+<span>
+Players
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link"
+href="admin-coaches.html"
+>
+
+<i class="fa-solid fa-whistle"></i>
+
+<span>
+Coaches
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link"
+href="admin-scouts.html"
+>
+
+<i class="fa-solid fa-binoculars"></i>
+
+<span>
+Scouts
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link"
+href="admin-academies.html"
+>
+
+<i class="fa-solid fa-school"></i>
+
+<span>
+Academies
+</span>
+
+</a>
+
+<a
+class="admin-navigation-link active"
+href="admin-trials.html"
+>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<span>
+Trials
+</span>
+
+</a>
+
+</nav>
+
+<div class="admin-sidebar-spacer"></div>
+
+<section class="admin-sidebar-support-card">
+
+<h3>
+
+Need Help?
+
+</h3>
+
+<p>
+
+Manage football trials, registrations and academy events.
+
+</p>
+
+<a href="#">
+
+Contact Support
+
+</a>
+
+</section>
+
+<button
+class="admin-sidebar-logout-button"
+id="logoutButton"
+type="button"
+>
+
+<i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</aside>
+
+<div
+class="admin-sidebar-overlay"
+id="sidebarOverlay"
+></div>
+
+<!-- ===================================================== -->
+<!-- MAIN -->
+<!-- ===================================================== -->
+
+<div class="admin-main-wrapper">
+
+<!-- TOPBAR -->
+
+<header class="admin-topbar">
+
+<div class="admin-topbar-left">
+
+<button
+class="admin-mobile-menu-button"
+id="mobileMenuButton"
+type="button"
+>
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="admin-topbar-heading">
+
+<span>
+
+Administration
+
+</span>
+
+<h1>
+
+Trial Management
+
+</h1>
+
+</div>
+
+</div>
+
+<div class="admin-topbar-actions">
+
+<button
+class="admin-topbar-icon-button"
+id="searchButton"
+type="button"
+>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+<button
+class="admin-topbar-icon-button"
+id="notificationButton"
+type="button"
+>
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<button
+class="admin-topbar-profile-button"
+id="profileButton"
+type="button"
+>
+
+<div class="admin-topbar-avatar">
+
+A
+
+</div>
+
+<div class="admin-topbar-profile-copy">
+
+<strong>
+
+Administrator
+
+</strong>
+
+<span>
+
+Super Admin
+
+</span>
+
+</div>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ===================================================== -->
+<!-- CONTENT -->
+<!-- ===================================================== -->
+
+<main class="admin-page-content">
+
+<section class="admin-page-heading">
+
+<div>
+
+<span class="admin-page-tag">
+
+TRIAL MANAGEMENT
+
+</span>
+
+<h2>
+
+Manage Football Trials
+
+</h2>
+
+<p>
+
+Create, schedule, monitor and manage football trials across India.
+
+</p>
+
+</div>
+
+<button
+class="admin-primary-button"
+id="createTrialButton"
+type="button"
+>
+
+<i class="fa-solid fa-plus"></i>
+
+New Trial
+
+</button>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- STATISTICS -->
+<!-- ===================================================== -->
+
+<section class="trial-stats-grid">
+
+<article class="trial-stat-card">
+
+<div class="trial-stat-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<div>
+
+<h3 id="totalTrials">
+
+148
+
+</h3>
+
+<p>
+
+Total Trials
+
+</p>
+
+</div>
+
+</article>
+
+<article class="trial-stat-card">
+
+<div class="trial-stat-icon success">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+<div>
+
+<h3 id="upcomingTrials">
+
+36
+
+</h3>
+
+<p>
+
+Upcoming
+
+</p>
+
+</div>
+
+</article>
+
+<article class="trial-stat-card">
+
+<div class="trial-stat-icon warning">
+
+<i class="fa-solid fa-play"></i>
+
+</div>
+
+<div>
+
+<h3 id="liveTrials">
+
+8
+
+</h3>
+
+<p>
+
+Live
+
+</p>
+
+</div>
+
+</article>
+
+<article class="trial-stat-card">
+
+<div class="trial-stat-icon primary">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<h3 id="completedTrials">
+
+91
+
+</h3>
+
+<p>
+
+Completed
+
+</p>
+
+</div>
+
+</article>
+
+<article class="trial-stat-card">
+
+<div class="trial-stat-icon danger">
+
+<i class="fa-solid fa-ban"></i>
+
+</div>
+
+<div>
+
+<h3 id="cancelledTrials">
+
+13
+
+</h3>
+
+<p>
+
+Cancelled
+
+</p>
+
+</div>
+
+</article>
+
+</section>
+<!-- ===================================================== -->
+<!-- FILTERS & ACTIONS -->
+<!-- ===================================================== -->
+
+<section class="trial-toolbar">
+
+    <div class="trial-search-wrapper">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            id="trialSearchInput"
+            type="search"
+            placeholder="Search by trial name, academy, city..."
+            autocomplete="off"
+        >
+
+    </div>
+
+    <div class="trial-filter-group">
+
+        <select id="academyFilter">
+
+            <option value="">
+                All Academies
+            </option>
+
+            <option>
+                Minerva Academy
+            </option>
+
+            <option>
+                Bengaluru FC
+            </option>
+
+            <option>
+                Kerala Blasters
+            </option>
+
+            <option>
+                FC Goa
+            </option>
+
+        </select>
+
+        <select id="statusFilter">
+
+            <option value="">
+                All Status
+            </option>
+
+            <option value="Upcoming">
+                Upcoming
+            </option>
+
+            <option value="Live">
+                Live
+            </option>
+
+            <option value="Completed">
+                Completed
+            </option>
+
+            <option value="Cancelled">
+                Cancelled
+            </option>
+
+        </select>
+
+        <select id="ageFilter">
+
+            <option value="">
+                All Age Groups
+            </option>
+
+            <option>
+                U-10
+            </option>
+
+            <option>
+                U-13
+            </option>
+
+            <option>
+                U-15
+            </option>
+
+            <option>
+                U-18
+            </option>
+
+            <option>
+                Senior
+            </option>
+
+        </select>
+
+        <input
+            id="trialDateFilter"
+            type="date"
+        >
+
+        <button
+            class="admin-secondary-button"
+            id="resetFiltersButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            Reset
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- BULK ACTIONS -->
+<!-- ===================================================== -->
+
+<section class="trial-actions-bar">
+
+    <div>
+
+        <button
+            class="admin-primary-button"
+            id="bulkPublishButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-upload"></i>
+
+            Publish
+
+        </button>
+
+        <button
+            class="admin-secondary-button"
+            id="bulkCancelButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-ban"></i>
+
+            Cancel
+
+        </button>
+
+        <button
+            class="admin-danger-button"
+            id="bulkDeleteButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-trash"></i>
+
+            Delete
+
+        </button>
+
+    </div>
+
+    <div>
+
+        <button
+            class="admin-secondary-button"
+            id="exportCsvButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            CSV
+
+        </button>
+
+        <button
+            class="admin-secondary-button"
+            id="exportPdfButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            PDF
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- REGISTRATION OVERVIEW -->
+<!-- ===================================================== -->
+
+<section class="trial-overview-grid">
+
+    <article class="trial-overview-card">
+
+        <h3>
+
+            Total Registrations
+
+        </h3>
+
+        <strong id="totalRegistrations">
+
+            4,276
+
+        </strong>
+
+        <div class="trial-progress">
+
+            <div
+                class="trial-progress-bar"
+                style="width:82%;"
+            ></div>
+
+        </div>
+
+        <small>
+
+            82% of expected registrations achieved
+
+        </small>
+
+    </article>
+
+    <article class="trial-overview-card">
+
+        <h3>
+
+            Available Slots
+
+        </h3>
+
+        <strong id="availableSlots">
+
+            312
+
+        </strong>
+
+        <div class="trial-progress">
+
+            <div
+                class="trial-progress-bar warning"
+                style="width:38%;"
+            ></div>
+
+        </div>
+
+        <small>
+
+            Limited capacity remaining
+
+        </small>
+
+    </article>
+
+    <article class="trial-overview-card">
+
+        <h3>
+
+            Success Rate
+
+        </h3>
+
+        <strong id="selectionRate">
+
+            14%
+
+        </strong>
+
+        <div class="trial-progress">
+
+            <div
+                class="trial-progress-bar success"
+                style="width:14%;"
+            ></div>
+
+        </div>
+
+        <small>
+
+            Average player selection rate
+
+        </small>
+
+    </article>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- TRIAL TABLE -->
+<!-- ===================================================== -->
+
+<section class="trial-table-card">
+
+    <div class="trial-table-header">
+
+        <div>
+
+            <h3>
+
+                Football Trials
+
+            </h3>
+
+            <p>
+
+                Manage all scheduled football trials.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="trial-table-wrapper">
+
+        <table
+            class="trial-table"
+            id="trialTable"
+        >
+
+            <thead>
+
+                <tr>
+
+                    <th>
+
+                        <input
+                            id="selectAllTrials"
+                            type="checkbox"
+                        >
+
+                    </th>
+
+                    <th>
+                        Trial
+                    </th>
+
+                    <th>
+                        Academy
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Age
+                    </th>
+
+                    <th>
+                        Registered
+                    </th>
+
+                    <th>
+                        Capacity
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="trialTableBody">
+                                <tr>
+
+                    <td>
+                        <input
+                            class="trial-checkbox"
+                            type="checkbox"
+                        >
+                    </td>
+
+                    <td>
+
+                        <strong>
+                            North India Elite Trials
+                        </strong>
+
+                        <span>
+                            TR-1001
+                        </span>
+
+                    </td>
+
+                    <td>
+                        Minerva Academy
+                    </td>
+
+                    <td>
+                        Mohali, Punjab
+                    </td>
+
+                    <td>
+                        U-15
+                    </td>
+
+                    <td>
+                        182
+                    </td>
+
+                    <td>
+                        250
+                    </td>
+
+                    <td>
+                        12 Aug 2026
+                    </td>
+
+                    <td>
+
+                        <span class="trial-status upcoming">
+
+                            Upcoming
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="trial-actions">
+
+                            <button
+                                class="trial-action-button"
+                                title="View"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button"
+                                title="Edit"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button danger"
+                                title="Delete"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input
+                            class="trial-checkbox"
+                            type="checkbox"
+                        >
+                    </td>
+
+                    <td>
+
+                        <strong>
+                            South India Talent Hunt
+                        </strong>
+
+                        <span>
+                            TR-1002
+                        </span>
+
+                    </td>
+
+                    <td>
+                        Bengaluru FC
+                    </td>
+
+                    <td>
+                        Bengaluru
+                    </td>
+
+                    <td>
+                        U-18
+                    </td>
+
+                    <td>
+                        246
+                    </td>
+
+                    <td>
+                        250
+                    </td>
+
+                    <td>
+                        28 Jul 2026
+                    </td>
+
+                    <td>
+
+                        <span class="trial-status live">
+
+                            Live
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="trial-actions">
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button danger"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input
+                            class="trial-checkbox"
+                            type="checkbox"
+                        >
+                    </td>
+
+                    <td>
+
+                        <strong>
+                            Goa Future Stars
+                        </strong>
+
+                        <span>
+                            TR-1003
+                        </span>
+
+                    </td>
+
+                    <td>
+                        FC Goa
+                    </td>
+
+                    <td>
+                        Goa
+                    </td>
+
+                    <td>
+                        U-13
+                    </td>
+
+                    <td>
+                        250
+                    </td>
+
+                    <td>
+                        250
+                    </td>
+
+                    <td>
+                        18 Jul 2026
+                    </td>
+
+                    <td>
+
+                        <span class="trial-status completed">
+
+                            Completed
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="trial-actions">
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-chart-line"></i>
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input
+                            class="trial-checkbox"
+                            type="checkbox"
+                        >
+                    </td>
+
+                    <td>
+
+                        <strong>
+                            Kerala Regional Trials
+                        </strong>
+
+                        <span>
+                            TR-1004
+                        </span>
+
+                    </td>
+
+                    <td>
+                        Kerala Blasters
+                    </td>
+
+                    <td>
+                        Kochi
+                    </td>
+
+                    <td>
+                        U-15
+                    </td>
+
+                    <td>
+                        58
+                    </td>
+
+                    <td>
+                        200
+                    </td>
+
+                    <td>
+                        04 Aug 2026
+                    </td>
+
+                    <td>
+
+                        <span class="trial-status cancelled">
+
+                            Cancelled
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="trial-actions">
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button"
+                            >
+                                <i class="fa-solid fa-rotate"></i>
+                            </button>
+
+                            <button
+                                class="trial-action-button danger"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Pagination -->
+
+    <div class="trial-pagination">
+
+        <button
+            class="admin-secondary-button"
+            id="previousPageButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+            Previous
+
+        </button>
+
+        <div class="trial-pagination-info">
+
+            Page
+
+            <strong>
+
+                1
+
+            </strong>
+
+            of
+
+            <strong>
+
+                12
+
+            </strong>
+
+        </div>
+
+        <button
+            class="admin-secondary-button"
+            id="nextPageButton"
+            type="button"
+        >
+
+            Next
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ===================================================== -->
+<!-- VIEW TRIAL MODAL -->
+<!-- ===================================================== -->
+
+<div
+    class="trial-modal"
+    id="viewTrialModal"
+    hidden
+>
+
+    <div class="trial-modal-backdrop"></div>
+
+    <div class="trial-modal-dialog">
+
+        <div class="trial-modal-header">
+
+            <div>
+
+                <h2>
+
+                    Trial Details
+
+                </h2>
+
+                <p>
+
+                    View complete trial information.
+
+                </p>
+
+            </div>
+
+            <button
+                class="trial-modal-close"
+                data-close-modal
+                type="button"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="trial-modal-body">
+
+            <div class="trial-details-grid">
+
+                <div class="trial-detail-card">
+
+                    <span>Trial ID</span>
+
+                    <strong id="viewTrialId">
+
+                        TR-1001
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Academy</span>
+
+                    <strong id="viewAcademy">
+
+                        Minerva Academy
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Age Group</span>
+
+                    <strong id="viewAgeGroup">
+
+                        U-15
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Status</span>
+
+                    <strong id="viewStatus">
+
+                        Upcoming
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Date</span>
+
+                    <strong id="viewDate">
+
+                        12 August 2026
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Venue</span>
+
+                    <strong id="viewVenue">
+
+                        Mohali, Punjab
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Registrations</span>
+
+                    <strong id="viewRegistrations">
+
+                        182 / 250
+
+                    </strong>
+
+                </div>
+
+                <div class="trial-detail-card">
+
+                    <span>Selection Ratio</span>
+
+                    <strong>
+
+                        15%
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- CREATE / EDIT TRIAL MODAL -->
+<!-- ===================================================== -->
+
+<div
+    class="trial-modal"
+    id="trialFormModal"
+    hidden
+>
+
+    <div class="trial-modal-backdrop"></div>
+
+    <div class="trial-modal-dialog large">
+
+        <div class="trial-modal-header">
+
+            <div>
+
+                <h2>
+
+                    Create Football Trial
+
+                </h2>
+
+                <p>
+
+                    Add a new football trial.
+
+                </p>
+
+            </div>
+
+            <button
+                class="trial-modal-close"
+                data-close-modal
+                type="button"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form
+            id="trialForm"
+            class="trial-form"
+        >
+
+            <div class="trial-form-grid">
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Trial Name
+
+                    </label>
+
+                    <input
+                        id="trialName"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Academy
+
+                    </label>
+
+                    <select
+                        id="trialAcademy"
+                        required
+                    >
+
+                        <option value="">
+
+                            Select Academy
+
+                        </option>
+
+                        <option>
+
+                            Minerva Academy
+
+                        </option>
+
+                        <option>
+
+                            Bengaluru FC
+
+                        </option>
+
+                        <option>
+
+                            Kerala Blasters
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Age Group
+
+                    </label>
+
+                    <select
+                        id="trialAge"
+                        required
+                    >
+
+                        <option>
+
+                            U-10
+
+                        </option>
+
+                        <option>
+
+                            U-13
+
+                        </option>
+
+                        <option>
+
+                            U-15
+
+                        </option>
+
+                        <option>
+
+                            U-18
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Capacity
+
+                    </label>
+
+                    <input
+                        id="trialCapacity"
+                        type="number"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Trial Date
+
+                    </label>
+
+                    <input
+                        id="trialDate"
+                        type="date"
+                        required
+                    >
+
+                </div>
+
+                <div class="trial-field">
+
+                    <label>
+
+                        Time
+
+                    </label>
+
+                    <input
+                        id="trialTime"
+                        type="time"
+                        required
+                    >
+
+                </div>
+
+                <div class="trial-field full-width">
+
+                    <label>
+
+                        Venue
+
+                    </label>
+
+                    <input
+                        id="trialVenue"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+                <div class="trial-field full-width">
+
+                    <label>
+
+                        Description
+
+                    </label>
+
+                    <textarea
+                        id="trialDescription"
+                        rows="5"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <div class="trial-form-footer">
+
+                <button
+                    class="admin-secondary-button"
+                    type="button"
+                    data-close-modal
+                >
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="admin-primary-button"
+                    type="submit"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Trial
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- ===================================================== -->
+<!-- DELETE CONFIRMATION MODAL -->
+<!-- ===================================================== -->
+
+<div
+    class="trial-modal"
+    id="deleteTrialModal"
+    hidden
+>
+
+    <div class="trial-modal-backdrop"></div>
+
+    <div class="trial-modal-dialog small">
+
+        <div class="trial-modal-header">
+
+            <div>
+
+                <h2>
+                    Delete Trial
+                </h2>
+
+                <p>
+                    This action cannot be undone.
+                </p>
+
+            </div>
+
+            <button
+                class="trial-modal-close"
+                data-close-modal
+                type="button"
+                aria-label="Close delete confirmation"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="trial-modal-body">
+
+            <div class="trial-delete-warning">
+
+                <div class="trial-delete-icon">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+                    <p>
+                        You are about to delete
+                        <strong id="deleteTrialName">
+                            this football trial
+                        </strong>.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="trial-form-footer">
+
+            <button
+                class="admin-secondary-button"
+                type="button"
+                data-close-modal
+            >
+                Cancel
+            </button>
+
+            <button
+                class="admin-danger-button"
+                id="confirmDeleteTrialButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete Trial
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- GLOBAL SEARCH OVERLAY -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-global-search-overlay"
+    id="globalSearchOverlay"
+    hidden
+>
+
+    <div class="admin-global-search-dialog">
+
+        <div class="admin-global-search-header">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="globalSearchInput"
+                type="search"
+                placeholder="Search trials, academies, locations..."
+                autocomplete="off"
+            >
+
+            <button
+                id="closeGlobalSearchButton"
+                type="button"
+                aria-label="Close search"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div
+            class="admin-global-search-results"
+            id="globalSearchResults"
+        >
+
+            <p class="admin-global-search-empty">
+                Start typing to search trial records.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- PROFILE MENU -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-profile-menu"
+    id="profileMenu"
+    hidden
+>
+
+    <div class="admin-profile-menu-header">
+
+        <div class="admin-profile-menu-avatar">
+            A
+        </div>
+
+        <div>
+
+            <strong>
+                Administrator
+            </strong>
+
+            <span>
+                Super Admin
+            </span>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="admin-profile.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            My Profile
+
+        </a>
+
+        <a href="admin-settings.html">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+        <button
+            id="profileLogoutButton"
+            type="button"
+        >
+
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </nav>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- NOTIFICATION PANEL -->
+<!-- ===================================================== -->
+
+<aside
+    class="admin-notifications-panel"
+    id="notificationsPanel"
+    aria-hidden="true"
+>
+
+    <div class="admin-notifications-header">
+
+        <div>
+
+            <h2>
+                Notifications
+            </h2>
+
+            <span>
+                Latest admin updates
+            </span>
+
+        </div>
+
+        <button
+            class="admin-notifications-close-button"
+            id="closeNotificationsButton"
+            type="button"
+            aria-label="Close notifications"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <div class="admin-notifications-list">
+
+        <article class="admin-notification-item unread">
+
+            <div class="admin-notification-item-icon">
+
+                <i class="fa-solid fa-calendar-plus"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    New trial created
+                </strong>
+
+                <p>
+                    Minerva Academy added a new U-15 trial in Mohali.
+                </p>
+
+                <time>
+                    10 minutes ago
+                </time>
+
+            </div>
+
+        </article>
+
+        <article class="admin-notification-item unread">
+
+            <div class="admin-notification-item-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Registration milestone
+                </strong>
+
+                <p>
+                    South India Talent Hunt has reached 90% capacity.
+                </p>
+
+                <time>
+                    1 hour ago
+                </time>
+
+            </div>
+
+        </article>
+
+        <article class="admin-notification-item">
+
+            <div class="admin-notification-item-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Trial completed
+                </strong>
+
+                <p>
+                    Goa Future Stars trial has been marked as completed.
+                </p>
+
+                <time>
+                    Yesterday
+                </time>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="admin-notifications-footer">
+
+        <a href="admin-notifications.html">
+            View all notifications
+        </a>
+
+    </div>
+
+</aside>
+
+<!-- ===================================================== -->
+<!-- LOGOUT MODAL -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-common-modal"
+    id="logoutModal"
+    hidden
+>
+
+    <button
+        class="admin-common-modal-backdrop"
+        data-close-logout
+        type="button"
+        aria-label="Close logout confirmation"
+    ></button>
+
+    <div
+        class="admin-common-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="logoutModalTitle"
+    >
+
+        <div class="admin-common-modal-header">
+
+            <h2 id="logoutModalTitle">
+                Confirm Logout
+            </h2>
+
+            <button
+                class="admin-common-modal-close"
+                data-close-logout
+                type="button"
+                aria-label="Close logout confirmation"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="admin-common-modal-body">
+
+            <p>
+                Are you sure you want to log out of the admin portal?
+            </p>
+
+        </div>
+
+        <div class="admin-common-modal-footer">
+
+            <button
+                class="admin-secondary-button"
+                data-close-logout
+                type="button"
+            >
+                Stay Logged In
+            </button>
+
+            <button
+                class="admin-danger-button"
+                id="confirmLogoutButton"
+                type="button"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 Bharat Football Fans. All rights reserved.
+    </p>
+
+    <div>
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Support
+        </a>
+
+    </div>
+
+</footer>
+
+</main>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- TOAST REGION -->
+<!-- ===================================================== -->
+
+<div
+    class="admin-toast-region"
+    id="toastRegion"
+    aria-live="polite"
+    aria-atomic="true"
+></div>
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="js/admin-trials.js"></script>
+
+</body>
+
+</html>

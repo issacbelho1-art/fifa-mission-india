@@ -159,7 +159,7 @@ const academyDatabase = {minerva:{
 
         website:
 
-    "https://minervaacademy.com"
+    "https://minervaacademyfc.in"
 
     }
 
